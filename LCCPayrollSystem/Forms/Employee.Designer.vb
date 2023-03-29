@@ -41,7 +41,6 @@ Partial Class Employee
         Me.Label6 = New System.Windows.Forms.Label()
         Me.Label8 = New System.Windows.Forms.Label()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
-        Me.Button3 = New System.Windows.Forms.Button()
         Me.BTNNEW = New System.Windows.Forms.Button()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.Panel7 = New System.Windows.Forms.Panel()
@@ -238,7 +237,6 @@ Partial Class Employee
         '
         'GroupBox2
         '
-        Me.GroupBox2.Controls.Add(Me.Button3)
         Me.GroupBox2.Controls.Add(Me.BTNNEW)
         Me.GroupBox2.Location = New System.Drawing.Point(12, 203)
         Me.GroupBox2.Name = "GroupBox2"
@@ -246,22 +244,13 @@ Partial Class Employee
         Me.GroupBox2.TabIndex = 34
         Me.GroupBox2.TabStop = False
         '
-        'Button3
-        '
-        Me.Button3.Location = New System.Drawing.Point(106, 20)
-        Me.Button3.Name = "Button3"
-        Me.Button3.Size = New System.Drawing.Size(89, 47)
-        Me.Button3.TabIndex = 2
-        Me.Button3.Text = "Deactivate"
-        Me.Button3.UseVisualStyleBackColor = True
-        '
         'BTNNEW
         '
         Me.BTNNEW.Location = New System.Drawing.Point(7, 20)
         Me.BTNNEW.Name = "BTNNEW"
-        Me.BTNNEW.Size = New System.Drawing.Size(89, 47)
+        Me.BTNNEW.Size = New System.Drawing.Size(195, 47)
         Me.BTNNEW.TabIndex = 0
-        Me.BTNNEW.Text = "Add/Update Employee"
+        Me.BTNNEW.Text = "View Employee"
         Me.BTNNEW.UseVisualStyleBackColor = True
         '
         'GroupBox1
@@ -373,7 +362,6 @@ Partial Class Employee
     Friend WithEvents Label6 As Label
     Friend WithEvents Label8 As Label
     Friend WithEvents GroupBox2 As GroupBox
-    Friend WithEvents Button3 As Button
     Friend WithEvents BTNNEW As Button
     Friend WithEvents GroupBox1 As GroupBox
     Friend WithEvents Panel7 As Panel

@@ -113,7 +113,7 @@ Partial Class Dashboard
         Me.Button8.BackColor = System.Drawing.Color.White
         Me.Button8.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button8.ForeColor = System.Drawing.Color.Black
-        Me.Button8.Location = New System.Drawing.Point(8, 201)
+        Me.Button8.Location = New System.Drawing.Point(8, 200)
         Me.Button8.Name = "Button8"
         Me.Button8.Size = New System.Drawing.Size(179, 46)
         Me.Button8.TabIndex = 22
@@ -124,7 +124,7 @@ Partial Class Dashboard
         '
         Me.PictureBox14.BackColor = System.Drawing.Color.Transparent
         Me.PictureBox14.Image = CType(resources.GetObject("PictureBox14.Image"), System.Drawing.Image)
-        Me.PictureBox14.Location = New System.Drawing.Point(26, 403)
+        Me.PictureBox14.Location = New System.Drawing.Point(26, 398)
         Me.PictureBox14.Margin = New System.Windows.Forms.Padding(2)
         Me.PictureBox14.Name = "PictureBox14"
         Me.PictureBox14.Size = New System.Drawing.Size(27, 30)
@@ -137,7 +137,7 @@ Partial Class Dashboard
         Me.Button7.BackColor = System.Drawing.Color.White
         Me.Button7.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button7.ForeColor = System.Drawing.Color.Black
-        Me.Button7.Location = New System.Drawing.Point(8, 394)
+        Me.Button7.Location = New System.Drawing.Point(8, 390)
         Me.Button7.Name = "Button7"
         Me.Button7.Size = New System.Drawing.Size(179, 47)
         Me.Button7.TabIndex = 20
@@ -184,7 +184,7 @@ Partial Class Dashboard
         '
         Me.PictureBox5.BackColor = System.Drawing.Color.Transparent
         Me.PictureBox5.Image = CType(resources.GetObject("PictureBox5.Image"), System.Drawing.Image)
-        Me.PictureBox5.Location = New System.Drawing.Point(26, 352)
+        Me.PictureBox5.Location = New System.Drawing.Point(26, 351)
         Me.PictureBox5.Margin = New System.Windows.Forms.Padding(2)
         Me.PictureBox5.Name = "PictureBox5"
         Me.PictureBox5.Size = New System.Drawing.Size(27, 30)
@@ -196,7 +196,7 @@ Partial Class Dashboard
         '
         Me.PictureBox4.BackColor = System.Drawing.Color.Transparent
         Me.PictureBox4.Image = CType(resources.GetObject("PictureBox4.Image"), System.Drawing.Image)
-        Me.PictureBox4.Location = New System.Drawing.Point(26, 307)
+        Me.PictureBox4.Location = New System.Drawing.Point(26, 304)
         Me.PictureBox4.Margin = New System.Windows.Forms.Padding(2)
         Me.PictureBox4.Name = "PictureBox4"
         Me.PictureBox4.Size = New System.Drawing.Size(27, 30)
@@ -245,7 +245,7 @@ Partial Class Dashboard
         Me.Button6.BackColor = System.Drawing.Color.White
         Me.Button6.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button6.ForeColor = System.Drawing.Color.Black
-        Me.Button6.Location = New System.Drawing.Point(8, 298)
+        Me.Button6.Location = New System.Drawing.Point(8, 296)
         Me.Button6.Name = "Button6"
         Me.Button6.Size = New System.Drawing.Size(179, 46)
         Me.Button6.TabIndex = 5
@@ -257,7 +257,7 @@ Partial Class Dashboard
         Me.Button5.BackColor = System.Drawing.Color.White
         Me.Button5.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button5.ForeColor = System.Drawing.Color.Black
-        Me.Button5.Location = New System.Drawing.Point(8, 347)
+        Me.Button5.Location = New System.Drawing.Point(8, 344)
         Me.Button5.Name = "Button5"
         Me.Button5.Size = New System.Drawing.Size(179, 44)
         Me.Button5.TabIndex = 4
@@ -269,7 +269,7 @@ Partial Class Dashboard
         Me.Button4.BackColor = System.Drawing.Color.White
         Me.Button4.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button4.ForeColor = System.Drawing.Color.Black
-        Me.Button4.Location = New System.Drawing.Point(8, 250)
+        Me.Button4.Location = New System.Drawing.Point(8, 248)
         Me.Button4.Name = "Button4"
         Me.Button4.Size = New System.Drawing.Size(179, 46)
         Me.Button4.TabIndex = 3
