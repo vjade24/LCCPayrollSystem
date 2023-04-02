@@ -1,9 +1,11 @@
 ﻿Imports System.Data.SqlClient
 
 Public Class Employee
+
+
     Private Sub Label2_Click(sender As Object, e As EventArgs) Handles Label2.Click
         Me.Hide()
-        Dashboard.Show()
+        'Dashboard.Show()
     End Sub
 
     Private Sub Employee_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -40,7 +42,17 @@ Public Class Employee
 
     Private Sub BTNNEW_Click(sender As Object, e As EventArgs) Handles BTNNEW.Click
         Me.Hide()
+        Me.Dispose()
         EmployeeAddUpdate.Show()
     End Sub
 
+    Private Sub btnPrint_Click(sender As Object, e As EventArgs) Handles btnPrint.Click
+
+        Dim OBJ As New ReportViewer
+        OBJ.StringReportFile = "EmployeeListReport"
+        OBJ.StringQuery = "select * from employee_tbl"
+        OBJ.Show()
+        Me.Hide()
+
+    End Sub
 End Class

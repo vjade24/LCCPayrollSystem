@@ -757,7 +757,7 @@ SELECT Id, full_name, user_name, user_password, user_type FROM user_tbl WHERE (I
               <DbSource ConnectionRef="payrolldbConnectionString (MySettings)" DbObjectName="payrolldb.dbo.vw_payroll_tbl" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>SELECT Id, payroll_no, period_from, period_to, employee_id, employee_name, last_name, first_name, middle_name, department_assigned, rate_basis_descr, monthly_rate, daily_rate, hourly_rate, unit_rate, regular_wages, overtime_amt, allowances_amt, adjustments_amt, worked_days, absent_days, absent_amt, lates_in_min, lates_in_amt, cash_advance_amt, sss_med_amt, sss_loan_amt, pag_ibig_amt, phic_amt, wtax_amt, other_ded_amt, other_loans_amt, gross_pay, net_pay, remarks FROM dbo.vw_payroll_tbl</CommandText>
+                    <CommandText>SELECT Id, payroll_no, period_from, period_to, employee_id, employee_name, last_name, first_name, middle_name, department_assigned, rate_basis_descr, monthly_rate, daily_rate, hourly_rate, unit_rate, regular_wages, overtime_amt, allowances_amt, adjustments_amt, worked_days, absent_days, absent_amt, lates_in_min, lates_in_amt, cash_advance_amt, sss_med_amt, sss_loan_amt, pag_ibig_amt, phic_amt, wtax_amt, other_ded_amt, other_loans_amt, gross_pay, net_pay, remarks, photo FROM vw_payroll_tbl</CommandText>
                     <Parameters />
                   </DbCommand>
                 </SelectCommand>
@@ -799,6 +799,7 @@ SELECT Id, full_name, user_name, user_password, user_type FROM user_tbl WHERE (I
               <Mapping SourceColumn="gross_pay" DataSetColumn="gross_pay" />
               <Mapping SourceColumn="net_pay" DataSetColumn="net_pay" />
               <Mapping SourceColumn="remarks" DataSetColumn="remarks" />
+              <Mapping SourceColumn="photo" DataSetColumn="photo" />
             </Mappings>
             <Sources />
           </TableAdapter>
@@ -943,7 +944,7 @@ SELECT Id, full_name, user_name, user_password, user_type FROM user_tbl WHERE (I
   <xs:element name="payrolldbDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="payrolldbDataSet" msprop:Generator_UserDSName="payrolldbDataSet">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="deduction_list_tbl" msprop:Generator_TableClassName="deduction_list_tblDataTable" msprop:Generator_TableVarName="tablededuction_list_tbl" msprop:Generator_TablePropName="deduction_list_tbl" msprop:Generator_RowDeletingName="deduction_list_tblRowDeleting" msprop:Generator_RowChangingName="deduction_list_tblRowChanging" msprop:Generator_RowEvHandlerName="deduction_list_tblRowChangeEventHandler" msprop:Generator_RowDeletedName="deduction_list_tblRowDeleted" msprop:Generator_UserTableName="deduction_list_tbl" msprop:Generator_RowChangedName="deduction_list_tblRowChanged" msprop:Generator_RowEvArgName="deduction_list_tblRowChangeEvent" msprop:Generator_RowClassName="deduction_list_tblRow">
+        <xs:element name="deduction_list_tbl" msprop:Generator_TableClassName="deduction_list_tblDataTable" msprop:Generator_TableVarName="tablededuction_list_tbl" msprop:Generator_RowChangedName="deduction_list_tblRowChanged" msprop:Generator_TablePropName="deduction_list_tbl" msprop:Generator_RowDeletingName="deduction_list_tblRowDeleting" msprop:Generator_RowChangingName="deduction_list_tblRowChanging" msprop:Generator_RowEvHandlerName="deduction_list_tblRowChangeEventHandler" msprop:Generator_RowDeletedName="deduction_list_tblRowDeleted" msprop:Generator_RowClassName="deduction_list_tblRow" msprop:Generator_UserTableName="deduction_list_tbl" msprop:Generator_RowEvArgName="deduction_list_tblRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="deduction_code" msprop:Generator_ColumnVarNameInTable="columndeduction_code" msprop:Generator_ColumnPropNameInRow="deduction_code" msprop:Generator_ColumnPropNameInTable="deduction_codeColumn" msprop:Generator_UserColumnName="deduction_code">
@@ -963,7 +964,7 @@ SELECT Id, full_name, user_name, user_password, user_type FROM user_tbl WHERE (I
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="employee_tbl" msprop:Generator_TableClassName="employee_tblDataTable" msprop:Generator_TableVarName="tableemployee_tbl" msprop:Generator_TablePropName="employee_tbl" msprop:Generator_RowDeletingName="employee_tblRowDeleting" msprop:Generator_RowChangingName="employee_tblRowChanging" msprop:Generator_RowEvHandlerName="employee_tblRowChangeEventHandler" msprop:Generator_RowDeletedName="employee_tblRowDeleted" msprop:Generator_UserTableName="employee_tbl" msprop:Generator_RowChangedName="employee_tblRowChanged" msprop:Generator_RowEvArgName="employee_tblRowChangeEvent" msprop:Generator_RowClassName="employee_tblRow">
+        <xs:element name="employee_tbl" msprop:Generator_TableClassName="employee_tblDataTable" msprop:Generator_TableVarName="tableemployee_tbl" msprop:Generator_RowChangedName="employee_tblRowChanged" msprop:Generator_TablePropName="employee_tbl" msprop:Generator_RowDeletingName="employee_tblRowDeleting" msprop:Generator_RowChangingName="employee_tblRowChanging" msprop:Generator_RowEvHandlerName="employee_tblRowChangeEventHandler" msprop:Generator_RowDeletedName="employee_tblRowDeleted" msprop:Generator_RowClassName="employee_tblRow" msprop:Generator_UserTableName="employee_tbl" msprop:Generator_RowEvArgName="employee_tblRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="Id" msprop:Generator_ColumnVarNameInTable="columnId" msprop:Generator_ColumnPropNameInRow="Id" msprop:Generator_ColumnPropNameInTable="IdColumn" msprop:Generator_UserColumnName="Id" type="xs:int" />
@@ -1147,7 +1148,7 @@ SELECT Id, full_name, user_name, user_password, user_type FROM user_tbl WHERE (I
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="payroll_deduction_tbl" msprop:Generator_TableClassName="payroll_deduction_tblDataTable" msprop:Generator_TableVarName="tablepayroll_deduction_tbl" msprop:Generator_TablePropName="payroll_deduction_tbl" msprop:Generator_RowDeletingName="payroll_deduction_tblRowDeleting" msprop:Generator_RowChangingName="payroll_deduction_tblRowChanging" msprop:Generator_RowEvHandlerName="payroll_deduction_tblRowChangeEventHandler" msprop:Generator_RowDeletedName="payroll_deduction_tblRowDeleted" msprop:Generator_UserTableName="payroll_deduction_tbl" msprop:Generator_RowChangedName="payroll_deduction_tblRowChanged" msprop:Generator_RowEvArgName="payroll_deduction_tblRowChangeEvent" msprop:Generator_RowClassName="payroll_deduction_tblRow">
+        <xs:element name="payroll_deduction_tbl" msprop:Generator_TableClassName="payroll_deduction_tblDataTable" msprop:Generator_TableVarName="tablepayroll_deduction_tbl" msprop:Generator_RowChangedName="payroll_deduction_tblRowChanged" msprop:Generator_TablePropName="payroll_deduction_tbl" msprop:Generator_RowDeletingName="payroll_deduction_tblRowDeleting" msprop:Generator_RowChangingName="payroll_deduction_tblRowChanging" msprop:Generator_RowEvHandlerName="payroll_deduction_tblRowChangeEventHandler" msprop:Generator_RowDeletedName="payroll_deduction_tblRowDeleted" msprop:Generator_RowClassName="payroll_deduction_tblRow" msprop:Generator_UserTableName="payroll_deduction_tbl" msprop:Generator_RowEvArgName="payroll_deduction_tblRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="Id" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnId" msprop:Generator_ColumnPropNameInRow="Id" msprop:Generator_ColumnPropNameInTable="IdColumn" msprop:Generator_UserColumnName="Id" type="xs:int" />
@@ -1185,7 +1186,7 @@ SELECT Id, full_name, user_name, user_password, user_type FROM user_tbl WHERE (I
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="payroll_tbl" msprop:Generator_TableClassName="payroll_tblDataTable" msprop:Generator_TableVarName="tablepayroll_tbl" msprop:Generator_TablePropName="payroll_tbl" msprop:Generator_RowDeletingName="payroll_tblRowDeleting" msprop:Generator_RowChangingName="payroll_tblRowChanging" msprop:Generator_RowEvHandlerName="payroll_tblRowChangeEventHandler" msprop:Generator_RowDeletedName="payroll_tblRowDeleted" msprop:Generator_UserTableName="payroll_tbl" msprop:Generator_RowChangedName="payroll_tblRowChanged" msprop:Generator_RowEvArgName="payroll_tblRowChangeEvent" msprop:Generator_RowClassName="payroll_tblRow">
+        <xs:element name="payroll_tbl" msprop:Generator_TableClassName="payroll_tblDataTable" msprop:Generator_TableVarName="tablepayroll_tbl" msprop:Generator_RowChangedName="payroll_tblRowChanged" msprop:Generator_TablePropName="payroll_tbl" msprop:Generator_RowDeletingName="payroll_tblRowDeleting" msprop:Generator_RowChangingName="payroll_tblRowChanging" msprop:Generator_RowEvHandlerName="payroll_tblRowChangeEventHandler" msprop:Generator_RowDeletedName="payroll_tblRowDeleted" msprop:Generator_RowClassName="payroll_tblRow" msprop:Generator_UserTableName="payroll_tbl" msprop:Generator_RowEvArgName="payroll_tblRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="Id" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnId" msprop:Generator_ColumnPropNameInRow="Id" msprop:Generator_ColumnPropNameInTable="IdColumn" msprop:Generator_UserColumnName="Id" type="xs:int" />
@@ -1273,7 +1274,7 @@ SELECT Id, full_name, user_name, user_password, user_type FROM user_tbl WHERE (I
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="user_tbl" msprop:Generator_TableClassName="user_tblDataTable" msprop:Generator_TableVarName="tableuser_tbl" msprop:Generator_TablePropName="user_tbl" msprop:Generator_RowDeletingName="user_tblRowDeleting" msprop:Generator_RowChangingName="user_tblRowChanging" msprop:Generator_RowEvHandlerName="user_tblRowChangeEventHandler" msprop:Generator_RowDeletedName="user_tblRowDeleted" msprop:Generator_UserTableName="user_tbl" msprop:Generator_RowChangedName="user_tblRowChanged" msprop:Generator_RowEvArgName="user_tblRowChangeEvent" msprop:Generator_RowClassName="user_tblRow">
+        <xs:element name="user_tbl" msprop:Generator_TableClassName="user_tblDataTable" msprop:Generator_TableVarName="tableuser_tbl" msprop:Generator_RowChangedName="user_tblRowChanged" msprop:Generator_TablePropName="user_tbl" msprop:Generator_RowDeletingName="user_tblRowDeleting" msprop:Generator_RowChangingName="user_tblRowChanging" msprop:Generator_RowEvHandlerName="user_tblRowChangeEventHandler" msprop:Generator_RowDeletedName="user_tblRowDeleted" msprop:Generator_RowClassName="user_tblRow" msprop:Generator_UserTableName="user_tbl" msprop:Generator_RowEvArgName="user_tblRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="Id" msprop:Generator_ColumnVarNameInTable="columnId" msprop:Generator_ColumnPropNameInRow="Id" msprop:Generator_ColumnPropNameInTable="IdColumn" msprop:Generator_UserColumnName="Id" type="xs:int" />
@@ -1308,7 +1309,7 @@ SELECT Id, full_name, user_name, user_password, user_type FROM user_tbl WHERE (I
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="vw_payroll_tbl" msprop:Generator_TableClassName="vw_payroll_tblDataTable" msprop:Generator_TableVarName="tablevw_payroll_tbl" msprop:Generator_TablePropName="vw_payroll_tbl" msprop:Generator_RowDeletingName="vw_payroll_tblRowDeleting" msprop:Generator_RowChangingName="vw_payroll_tblRowChanging" msprop:Generator_RowEvHandlerName="vw_payroll_tblRowChangeEventHandler" msprop:Generator_RowDeletedName="vw_payroll_tblRowDeleted" msprop:Generator_UserTableName="vw_payroll_tbl" msprop:Generator_RowChangedName="vw_payroll_tblRowChanged" msprop:Generator_RowEvArgName="vw_payroll_tblRowChangeEvent" msprop:Generator_RowClassName="vw_payroll_tblRow">
+        <xs:element name="vw_payroll_tbl" msprop:Generator_TableClassName="vw_payroll_tblDataTable" msprop:Generator_TableVarName="tablevw_payroll_tbl" msprop:Generator_RowChangedName="vw_payroll_tblRowChanged" msprop:Generator_TablePropName="vw_payroll_tbl" msprop:Generator_RowDeletingName="vw_payroll_tblRowDeleting" msprop:Generator_RowChangingName="vw_payroll_tblRowChanging" msprop:Generator_RowEvHandlerName="vw_payroll_tblRowChangeEventHandler" msprop:Generator_RowDeletedName="vw_payroll_tblRowDeleted" msprop:Generator_RowClassName="vw_payroll_tblRow" msprop:Generator_UserTableName="vw_payroll_tbl" msprop:Generator_RowEvArgName="vw_payroll_tblRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="Id" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnId" msprop:Generator_ColumnPropNameInRow="Id" msprop:Generator_ColumnPropNameInTable="IdColumn" msprop:Generator_UserColumnName="Id" type="xs:int" />
@@ -1400,10 +1401,11 @@ SELECT Id, full_name, user_name, user_password, user_type FROM user_tbl WHERE (I
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
+              <xs:element name="photo" msprop:Generator_ColumnVarNameInTable="columnphoto" msprop:Generator_ColumnPropNameInRow="photo" msprop:Generator_ColumnPropNameInTable="photoColumn" msprop:Generator_UserColumnName="photo" type="xs:base64Binary" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="sp_dashboard" msprop:Generator_TableClassName="sp_dashboardDataTable" msprop:Generator_TableVarName="tablesp_dashboard" msprop:Generator_TablePropName="sp_dashboard" msprop:Generator_RowDeletingName="sp_dashboardRowDeleting" msprop:Generator_RowChangingName="sp_dashboardRowChanging" msprop:Generator_RowEvHandlerName="sp_dashboardRowChangeEventHandler" msprop:Generator_RowDeletedName="sp_dashboardRowDeleted" msprop:Generator_UserTableName="sp_dashboard" msprop:Generator_RowChangedName="sp_dashboardRowChanged" msprop:Generator_RowEvArgName="sp_dashboardRowChangeEvent" msprop:Generator_RowClassName="sp_dashboardRow">
+        <xs:element name="sp_dashboard" msprop:Generator_TableClassName="sp_dashboardDataTable" msprop:Generator_TableVarName="tablesp_dashboard" msprop:Generator_RowChangedName="sp_dashboardRowChanged" msprop:Generator_TablePropName="sp_dashboard" msprop:Generator_RowDeletingName="sp_dashboardRowDeleting" msprop:Generator_RowChangingName="sp_dashboardRowChanging" msprop:Generator_RowEvHandlerName="sp_dashboardRowChangeEventHandler" msprop:Generator_RowDeletedName="sp_dashboardRowDeleted" msprop:Generator_RowClassName="sp_dashboardRow" msprop:Generator_UserTableName="sp_dashboard" msprop:Generator_RowEvArgName="sp_dashboardRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="total_active_empl" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columntotal_active_empl" msprop:Generator_ColumnPropNameInRow="total_active_empl" msprop:Generator_ColumnPropNameInTable="total_active_emplColumn" msprop:Generator_UserColumnName="total_active_empl" type="xs:int" minOccurs="0" />
@@ -1412,7 +1414,7 @@ SELECT Id, full_name, user_name, user_password, user_type FROM user_tbl WHERE (I
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="sp_payroll_payslip_rep" msprop:Generator_TableClassName="sp_payroll_payslip_repDataTable" msprop:Generator_TableVarName="tablesp_payroll_payslip_rep" msprop:Generator_TablePropName="sp_payroll_payslip_rep" msprop:Generator_RowDeletingName="sp_payroll_payslip_repRowDeleting" msprop:Generator_RowChangingName="sp_payroll_payslip_repRowChanging" msprop:Generator_RowEvHandlerName="sp_payroll_payslip_repRowChangeEventHandler" msprop:Generator_RowDeletedName="sp_payroll_payslip_repRowDeleted" msprop:Generator_UserTableName="sp_payroll_payslip_rep" msprop:Generator_RowChangedName="sp_payroll_payslip_repRowChanged" msprop:Generator_RowEvArgName="sp_payroll_payslip_repRowChangeEvent" msprop:Generator_RowClassName="sp_payroll_payslip_repRow">
+        <xs:element name="sp_payroll_payslip_rep" msprop:Generator_TableClassName="sp_payroll_payslip_repDataTable" msprop:Generator_TableVarName="tablesp_payroll_payslip_rep" msprop:Generator_RowChangedName="sp_payroll_payslip_repRowChanged" msprop:Generator_TablePropName="sp_payroll_payslip_rep" msprop:Generator_RowDeletingName="sp_payroll_payslip_repRowDeleting" msprop:Generator_RowChangingName="sp_payroll_payslip_repRowChanging" msprop:Generator_RowEvHandlerName="sp_payroll_payslip_repRowChangeEventHandler" msprop:Generator_RowDeletedName="sp_payroll_payslip_repRowDeleted" msprop:Generator_RowClassName="sp_payroll_payslip_repRow" msprop:Generator_UserTableName="sp_payroll_payslip_rep" msprop:Generator_RowEvArgName="sp_payroll_payslip_repRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="Id" msdata:ReadOnly="true" msdata:AutoIncrement="true" msprop:Generator_ColumnVarNameInTable="columnId" msprop:Generator_ColumnPropNameInRow="Id" msprop:Generator_ColumnPropNameInTable="IdColumn" msprop:Generator_UserColumnName="Id" type="xs:int" />
@@ -1521,7 +1523,7 @@ SELECT Id, full_name, user_name, user_password, user_type FROM user_tbl WHERE (I
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="sp_payroll_tbl_rep" msprop:Generator_TableClassName="sp_payroll_tbl_repDataTable" msprop:Generator_TableVarName="tablesp_payroll_tbl_rep" msprop:Generator_TablePropName="sp_payroll_tbl_rep" msprop:Generator_RowDeletingName="sp_payroll_tbl_repRowDeleting" msprop:Generator_RowChangingName="sp_payroll_tbl_repRowChanging" msprop:Generator_RowEvHandlerName="sp_payroll_tbl_repRowChangeEventHandler" msprop:Generator_RowDeletedName="sp_payroll_tbl_repRowDeleted" msprop:Generator_UserTableName="sp_payroll_tbl_rep" msprop:Generator_RowChangedName="sp_payroll_tbl_repRowChanged" msprop:Generator_RowEvArgName="sp_payroll_tbl_repRowChangeEvent" msprop:Generator_RowClassName="sp_payroll_tbl_repRow">
+        <xs:element name="sp_payroll_tbl_rep" msprop:Generator_TableClassName="sp_payroll_tbl_repDataTable" msprop:Generator_TableVarName="tablesp_payroll_tbl_rep" msprop:Generator_RowChangedName="sp_payroll_tbl_repRowChanged" msprop:Generator_TablePropName="sp_payroll_tbl_rep" msprop:Generator_RowDeletingName="sp_payroll_tbl_repRowDeleting" msprop:Generator_RowChangingName="sp_payroll_tbl_repRowChanging" msprop:Generator_RowEvHandlerName="sp_payroll_tbl_repRowChangeEventHandler" msprop:Generator_RowDeletedName="sp_payroll_tbl_repRowDeleted" msprop:Generator_RowClassName="sp_payroll_tbl_repRow" msprop:Generator_UserTableName="sp_payroll_tbl_rep" msprop:Generator_RowEvArgName="sp_payroll_tbl_repRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="Id" msdata:ReadOnly="true" msdata:AutoIncrement="true" msprop:Generator_ColumnVarNameInTable="columnId" msprop:Generator_ColumnPropNameInRow="Id" msprop:Generator_ColumnPropNameInTable="IdColumn" msprop:Generator_UserColumnName="Id" type="xs:int" />

@@ -2,39 +2,39 @@
 Imports System.Data.SqlClient
 Imports CrystalDecisions.CrystalReports.Engine
 Imports System.IO
-Public Class Dashboard
-    Private Sub Dashboard_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+Public Class Dashboard1
+    Private Sub Dashboard1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         reload_dashboard()
     End Sub
-    Private Sub Button7_Click(sender As Object, e As EventArgs) Handles Button7.Click
+    Private Sub Button7_Click(sender As Object, e As EventArgs) Handles btnRegister.Click
         'Me.Close()
         Register.Show()
     End Sub
-    Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
+    Private Sub Button3_Click(sender As Object, e As EventArgs) Handles btnLogout.Click
         Me.Close()
         login.Show()
     End Sub
 
-    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles btnEmployee.Click
         'Me.Close()
         Employee.Show()
     End Sub
-    Private Sub Button8_Click(sender As Object, e As EventArgs) Handles Button8.Click
+    Private Sub Button8_Click(sender As Object, e As EventArgs) Handles btnDeduction.Click
         'Me.Close()
         Deduction.Show()
     End Sub
 
-    Private Sub Button4_Click(sender As Object, e As EventArgs) Handles Button4.Click
+    Private Sub Button4_Click(sender As Object, e As EventArgs) Handles btnPayroll.Click
         'Me.Close()
         Payroll.Show()
     End Sub
 
-    Private Sub Button5_Click(sender As Object, e As EventArgs) Handles Button5.Click
+    Private Sub Button5_Click(sender As Object, e As EventArgs) Handles btnReport.Click
         'Me.Close()
         Reports.Show()
     End Sub
 
-    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
+    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles btnDashboard.Click
         reload_dashboard()
     End Sub
 
@@ -77,7 +77,7 @@ Public Class Dashboard
                                 Dim cryRpt As New ReportDocument
                                 'Dim report_path As String = Path.Combine(Application.StartupPath, "Dashboard.rpt")
                                 'Dim report_path As String = "D:\03 - Work\02 - Solutions\PayrollSystem\PayrollSystem\PayrollSystem\Reports\Payslip.rpt"
-                                Dim report_path As String = Path.Combine(Application.StartupPath, "Dashboard.rpt").Replace("bin\Debug", "\Reports").Replace("bin\Release", "\Reports")
+                                Dim report_path As String = Path.Combine(Application.StartupPath, "DashboardReport.rpt").Replace("bin\Debug", "\Reports").Replace("bin\Release", "\Reports")
                                 cryRpt.Load(report_path)
                                 cryRpt.SetDataSource(dt)
                                 CrystalReportViewer1.ReportSource = cryRpt

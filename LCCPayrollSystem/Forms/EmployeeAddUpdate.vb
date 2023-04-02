@@ -62,13 +62,20 @@ Public Class EmployeeAddUpdate
                     PhotoPictureBox.Image = My.Resources.DefaultUserImg
                 End Try
 
-                btn_save.Visible = False
-                btn_cancel.Visible = False
-                btndel.Visible = True
-                btnedit.Visible = True
-                btn_browse.Visible = True
+                btn_save.Enabled = False
+                btn_cancel.Enabled = False
+                btndel.Enabled = True
+                btnedit.Enabled = True
+                btn_browse.Enabled = True
+
             Else
                 MsgBox("NO DATA FOUND!", MsgBoxStyle.Exclamation)
+                clearentry()
+                btn_save.Enabled = True
+                btn_cancel.Enabled = True
+                btndel.Enabled = False
+                btnedit.Enabled = False
+                btn_browse.Enabled = True
             End If
 
         Catch ex As Exception
@@ -90,11 +97,11 @@ Public Class EmployeeAddUpdate
         Me.Employee_tblTableAdapter.Fill(Me.PayrolldbDataSet.employee_tbl)
         clearentry()
 
-        btn_save.Visible = True
-        btn_cancel.Visible = True
-        btndel.Visible = False
-        btnedit.Visible = False
-        btn_browse.Visible = False
+        btn_save.Enabled = True
+        btn_cancel.Enabled = True
+        btndel.Enabled = False
+        btnedit.Enabled = False
+        btn_browse.Enabled = False
     End Sub
 
     Private Sub btn_new_Click(sender As Object, e As EventArgs) Handles btn_new.Click
@@ -111,11 +118,11 @@ Public Class EmployeeAddUpdate
             next_nbr = Double.Parse(dt.Rows(0)("Id").ToString()) + 1
             IdTextBox.Text = next_nbr.ToString()
         End If
-        btn_save.Visible = True
-        btn_cancel.Visible = True
-        btndel.Visible = False
-        btnedit.Visible = False
-        btn_browse.Visible = True
+        btn_save.Enabled = True
+        btn_cancel.Enabled = True
+        btndel.Enabled = False
+        btnedit.Enabled = False
+        btn_browse.Enabled = True
     End Sub
 
     Private Sub btn_browse_Click(sender As Object, e As EventArgs) Handles btn_browse.Click
@@ -136,11 +143,11 @@ Public Class EmployeeAddUpdate
             Dim query As String = "delete from employee_tbl where id ='" + IdTextBox.Text + "'"
             DeleteQuery(query)
             clearentry()
-            btn_save.Visible = True
-            btn_cancel.Visible = True
-            btndel.Visible = False
-            btnedit.Visible = False
-            btn_browse.Visible = False
+            btn_save.Enabled = True
+            btn_cancel.Enabled = True
+            btndel.Enabled = False
+            btnedit.Enabled = False
+            btn_browse.Enabled = False
         End If
     End Sub
 
@@ -190,6 +197,10 @@ Public Class EmployeeAddUpdate
             Else
                 MsgBox("Successfully Inserted!", MsgBoxStyle.Information)
                 clearentry()
+
+                Me.Close()
+                Me.Dispose()
+                Employee.Show()
             End If
             conn.Close()
 
@@ -259,20 +270,20 @@ Public Class EmployeeAddUpdate
                 conn.Close()
             End Try
 
-            btn_save.Visible = True
-            btn_cancel.Visible = True
-            btndel.Visible = False
-            btnedit.Visible = False
-            btn_browse.Visible = False
+            btn_save.Enabled = True
+            btn_cancel.Enabled = True
+            btndel.Enabled = False
+            btnedit.Enabled = False
+            btn_browse.Enabled = False
         End If
     End Sub
 
     Private Sub btn_cancel_Click(sender As Object, e As EventArgs) Handles btn_cancel.Click
         clearentry()
-        btndel.Visible = False
-        btnedit.Visible = False
-        btn_save.Visible = True
-        btn_browse.Visible = False
+        btndel.Enabled = False
+        btnedit.Enabled = False
+        btn_save.Enabled = True
+        btn_browse.Enabled = False
     End Sub
     Public Sub clearentry()
         IdTextBox.Text = ""

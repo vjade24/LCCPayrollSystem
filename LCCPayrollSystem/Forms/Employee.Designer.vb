@@ -29,6 +29,7 @@ Partial Class Employee
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.GroupBox4 = New System.Windows.Forms.GroupBox()
+        Me.btnPrint = New System.Windows.Forms.Button()
         Me.Employee_tblDataGridView = New System.Windows.Forms.DataGridView()
         Me.Label13 = New System.Windows.Forms.Label()
         Me.Label14 = New System.Windows.Forms.Label()
@@ -107,6 +108,7 @@ Partial Class Employee
         '
         'GroupBox4
         '
+        Me.GroupBox4.Controls.Add(Me.btnPrint)
         Me.GroupBox4.Controls.Add(Me.Employee_tblDataGridView)
         Me.GroupBox4.Controls.Add(Me.Label13)
         Me.GroupBox4.Controls.Add(Me.Label14)
@@ -117,11 +119,24 @@ Partial Class Employee
         Me.GroupBox4.TabIndex = 36
         Me.GroupBox4.TabStop = False
         '
+        'btnPrint
+        '
+        Me.btnPrint.Location = New System.Drawing.Point(503, 23)
+        Me.btnPrint.Name = "btnPrint"
+        Me.btnPrint.Size = New System.Drawing.Size(149, 35)
+        Me.btnPrint.TabIndex = 15
+        Me.btnPrint.Text = "Print Employee List"
+        Me.btnPrint.UseVisualStyleBackColor = True
+        '
         'Employee_tblDataGridView
         '
+        Me.Employee_tblDataGridView.AllowUserToAddRows = False
+        Me.Employee_tblDataGridView.AllowUserToDeleteRows = False
         Me.Employee_tblDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.Employee_tblDataGridView.Location = New System.Drawing.Point(10, 61)
         Me.Employee_tblDataGridView.Name = "Employee_tblDataGridView"
+        Me.Employee_tblDataGridView.ReadOnly = True
+        Me.Employee_tblDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.Employee_tblDataGridView.Size = New System.Drawing.Size(642, 348)
         Me.Employee_tblDataGridView.TabIndex = 14
         '
@@ -250,7 +265,7 @@ Partial Class Employee
         Me.BTNNEW.Name = "BTNNEW"
         Me.BTNNEW.Size = New System.Drawing.Size(195, 47)
         Me.BTNNEW.TabIndex = 0
-        Me.BTNNEW.Text = "View Employee"
+        Me.BTNNEW.Text = "Create, Remove and Update Employee"
         Me.BTNNEW.UseVisualStyleBackColor = True
         '
         'GroupBox1
@@ -370,4 +385,5 @@ Partial Class Employee
     Friend WithEvents PictureBox12 As PictureBox
     Friend WithEvents Employee_tblDataGridView As DataGridView
     Friend WithEvents Timer1 As Timer
+    Friend WithEvents btnPrint As Button
 End Class

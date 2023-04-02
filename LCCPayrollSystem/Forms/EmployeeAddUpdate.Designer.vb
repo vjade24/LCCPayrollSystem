@@ -837,7 +837,7 @@ Partial Class EmployeeAddUpdate
         'btn_cancel
         '
         Me.btn_cancel.BackColor = System.Drawing.SystemColors.GrayText
-        Me.btn_cancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btn_cancel.FlatStyle = System.Windows.Forms.FlatStyle.System
         Me.btn_cancel.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btn_cancel.ForeColor = System.Drawing.Color.White
         Me.btn_cancel.ImageKey = "(none)"
@@ -851,7 +851,7 @@ Partial Class EmployeeAddUpdate
         'btnedit
         '
         Me.btnedit.BackColor = System.Drawing.Color.Green
-        Me.btnedit.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnedit.FlatStyle = System.Windows.Forms.FlatStyle.System
         Me.btnedit.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnedit.ForeColor = System.Drawing.Color.White
         Me.btnedit.Location = New System.Drawing.Point(688, 599)
@@ -864,7 +864,7 @@ Partial Class EmployeeAddUpdate
         'btndel
         '
         Me.btndel.BackColor = System.Drawing.Color.DarkRed
-        Me.btndel.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btndel.FlatStyle = System.Windows.Forms.FlatStyle.System
         Me.btndel.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btndel.ForeColor = System.Drawing.Color.White
         Me.btndel.Location = New System.Drawing.Point(777, 599)
@@ -877,7 +877,7 @@ Partial Class EmployeeAddUpdate
         'btn_save
         '
         Me.btn_save.BackColor = System.Drawing.SystemColors.HotTrack
-        Me.btn_save.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btn_save.FlatStyle = System.Windows.Forms.FlatStyle.System
         Me.btn_save.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btn_save.ForeColor = System.Drawing.Color.White
         Me.btn_save.Location = New System.Drawing.Point(777, 640)

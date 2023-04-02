@@ -3070,6 +3070,8 @@ Partial Public Class payrolldbDataSet
         
         Private columnremarks As Global.System.Data.DataColumn
         
+        Private columnphoto As Global.System.Data.DataColumn
+        
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
         Public Sub New()
@@ -3386,6 +3388,14 @@ Partial Public Class payrolldbDataSet
         End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public ReadOnly Property photoColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnphoto
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
          Global.System.ComponentModel.Browsable(false)>  _
         Public ReadOnly Property Count() As Integer
@@ -3456,9 +3466,10 @@ Partial Public Class payrolldbDataSet
                     ByVal other_loans_amt As Decimal,  _
                     ByVal gross_pay As Decimal,  _
                     ByVal net_pay As Decimal,  _
-                    ByVal remarks As String) As vw_payroll_tblRow
+                    ByVal remarks As String,  _
+                    ByVal photo() As Byte) As vw_payroll_tblRow
             Dim rowvw_payroll_tblRow As vw_payroll_tblRow = CType(Me.NewRow,vw_payroll_tblRow)
-            Dim columnValuesArray() As Object = New Object() {Nothing, payroll_no, period_from, period_to, employee_id, employee_name, last_name, first_name, middle_name, department_assigned, rate_basis_descr, monthly_rate, daily_rate, hourly_rate, unit_rate, regular_wages, overtime_amt, allowances_amt, adjustments_amt, worked_days, absent_days, absent_amt, lates_in_min, lates_in_amt, cash_advance_amt, sss_med_amt, sss_loan_amt, pag_ibig_amt, phic_amt, wtax_amt, other_ded_amt, other_loans_amt, gross_pay, net_pay, remarks}
+            Dim columnValuesArray() As Object = New Object() {Nothing, payroll_no, period_from, period_to, employee_id, employee_name, last_name, first_name, middle_name, department_assigned, rate_basis_descr, monthly_rate, daily_rate, hourly_rate, unit_rate, regular_wages, overtime_amt, allowances_amt, adjustments_amt, worked_days, absent_days, absent_amt, lates_in_min, lates_in_amt, cash_advance_amt, sss_med_amt, sss_loan_amt, pag_ibig_amt, phic_amt, wtax_amt, other_ded_amt, other_loans_amt, gross_pay, net_pay, remarks, photo}
             rowvw_payroll_tblRow.ItemArray = columnValuesArray
             Me.Rows.Add(rowvw_payroll_tblRow)
             Return rowvw_payroll_tblRow
@@ -3522,6 +3533,7 @@ Partial Public Class payrolldbDataSet
             Me.columngross_pay = MyBase.Columns("gross_pay")
             Me.columnnet_pay = MyBase.Columns("net_pay")
             Me.columnremarks = MyBase.Columns("remarks")
+            Me.columnphoto = MyBase.Columns("photo")
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -3597,6 +3609,8 @@ Partial Public Class payrolldbDataSet
             MyBase.Columns.Add(Me.columnnet_pay)
             Me.columnremarks = New Global.System.Data.DataColumn("remarks", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnremarks)
+            Me.columnphoto = New Global.System.Data.DataColumn("photo", GetType(Byte()), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnphoto)
             Me.Constraints.Add(New Global.System.Data.UniqueConstraint("Constraint1", New Global.System.Data.DataColumn() {Me.columnId}, true))
             Me.columnId.AutoIncrement = true
             Me.columnId.AutoIncrementSeed = -1
@@ -8321,6 +8335,21 @@ Partial Public Class payrolldbDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Property photo() As Byte()
+            Get
+                Try 
+                    Return CType(Me(Me.tablevw_payroll_tbl.photoColumn),Byte())
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'photo' in table 'vw_payroll_tbl' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tablevw_payroll_tbl.photoColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
         Public Function Ispayroll_noNull() As Boolean
             Return Me.IsNull(Me.tablevw_payroll_tbl.payroll_noColumn)
         End Function
@@ -8725,6 +8754,18 @@ Partial Public Class payrolldbDataSet
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
         Public Sub SetremarksNull()
             Me(Me.tablevw_payroll_tbl.remarksColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Function IsphotoNull() As Boolean
+            Return Me.IsNull(Me.tablevw_payroll_tbl.photoColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Sub SetphotoNull()
+            Me(Me.tablevw_payroll_tbl.photoColumn) = Global.System.Convert.DBNull
         End Sub
     End Class
     
@@ -15790,6 +15831,7 @@ Namespace payrolldbDataSetTableAdapters
             tableMapping.ColumnMappings.Add("gross_pay", "gross_pay")
             tableMapping.ColumnMappings.Add("net_pay", "net_pay")
             tableMapping.ColumnMappings.Add("remarks", "remarks")
+            tableMapping.ColumnMappings.Add("photo", "photo")
             Me._adapter.TableMappings.Add(tableMapping)
         End Sub
         
@@ -15811,8 +15853,8 @@ Namespace payrolldbDataSetTableAdapters
                 "e, daily_rate, hourly_rate, unit_rate, regular_wages, overtime_amt, allowances_a"& _ 
                 "mt, adjustments_amt, worked_days, absent_days, absent_amt, lates_in_min, lates_i"& _ 
                 "n_amt, cash_advance_amt, sss_med_amt, sss_loan_amt, pag_ibig_amt, phic_amt, wtax"& _ 
-                "_amt, other_ded_amt, other_loans_amt, gross_pay, net_pay, remarks FROM dbo.vw_pa"& _ 
-                "yroll_tbl"
+                "_amt, other_ded_amt, other_loans_amt, gross_pay, net_pay, remarks, photo FROM vw"& _ 
+                "_payroll_tbl"
             Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
         End Sub
         

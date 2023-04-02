@@ -45,24 +45,25 @@ Partial Class Register
         Me.Label16 = New System.Windows.Forms.Label()
         Me.Label17 = New System.Windows.Forms.Label()
         Me.Label18 = New System.Windows.Forms.Label()
-        Me.Label3 = New System.Windows.Forms.Label()
         Me.txtb_search = New System.Windows.Forms.TextBox()
         Me.DataGridView1 = New System.Windows.Forms.DataGridView()
-        Me.PayrolldbDataSet = New LCCPayrollSystem.payrolldbDataSet()
-        Me.UsertblBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.User_tblTableAdapter = New LCCPayrollSystem.payrolldbDataSetTableAdapters.user_tblTableAdapter()
         Me.IdDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.FullnameDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.UsernameDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.UserpasswordDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.UsertypeDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.UsertblBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.PayrolldbDataSet = New LCCPayrollSystem.payrolldbDataSet()
+        Me.User_tblTableAdapter = New LCCPayrollSystem.payrolldbDataSetTableAdapters.user_tblTableAdapter()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
+        Me.btnCreate = New System.Windows.Forms.Button()
+        Me.Label4 = New System.Windows.Forms.Label()
         Me.Panel2.SuspendLayout()
         CType(Me.PictureBox7, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PayrolldbDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.UsertblBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PayrolldbDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         Me.SuspendLayout()
@@ -84,7 +85,7 @@ Partial Class Register
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.ForeColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
-        Me.Label2.Location = New System.Drawing.Point(870, 0)
+        Me.Label2.Location = New System.Drawing.Point(676, 0)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(27, 31)
         Me.Label2.TabIndex = 33
@@ -116,11 +117,11 @@ Partial Class Register
         'btn_cancel
         '
         Me.btn_cancel.BackColor = System.Drawing.SystemColors.GrayText
-        Me.btn_cancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btn_cancel.FlatStyle = System.Windows.Forms.FlatStyle.System
         Me.btn_cancel.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btn_cancel.ForeColor = System.Drawing.Color.White
         Me.btn_cancel.ImageKey = "(none)"
-        Me.btn_cancel.Location = New System.Drawing.Point(81, 441)
+        Me.btn_cancel.Location = New System.Drawing.Point(17, 423)
         Me.btn_cancel.Name = "btn_cancel"
         Me.btn_cancel.Size = New System.Drawing.Size(83, 35)
         Me.btn_cancel.TabIndex = 127
@@ -130,10 +131,10 @@ Partial Class Register
         'btnedit
         '
         Me.btnedit.BackColor = System.Drawing.Color.Green
-        Me.btnedit.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btnedit.FlatStyle = System.Windows.Forms.FlatStyle.System
         Me.btnedit.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnedit.ForeColor = System.Drawing.Color.White
-        Me.btnedit.Location = New System.Drawing.Point(81, 400)
+        Me.btnedit.Location = New System.Drawing.Point(17, 382)
         Me.btnedit.Name = "btnedit"
         Me.btnedit.Size = New System.Drawing.Size(83, 35)
         Me.btnedit.TabIndex = 126
@@ -143,10 +144,10 @@ Partial Class Register
         'btndel
         '
         Me.btndel.BackColor = System.Drawing.Color.DarkRed
-        Me.btndel.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btndel.FlatStyle = System.Windows.Forms.FlatStyle.System
         Me.btndel.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btndel.ForeColor = System.Drawing.Color.White
-        Me.btndel.Location = New System.Drawing.Point(170, 400)
+        Me.btndel.Location = New System.Drawing.Point(106, 382)
         Me.btndel.Name = "btndel"
         Me.btndel.Size = New System.Drawing.Size(83, 35)
         Me.btndel.TabIndex = 125
@@ -156,14 +157,14 @@ Partial Class Register
         'btn_save
         '
         Me.btn_save.BackColor = System.Drawing.SystemColors.HotTrack
-        Me.btn_save.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.btn_save.FlatStyle = System.Windows.Forms.FlatStyle.System
         Me.btn_save.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btn_save.ForeColor = System.Drawing.Color.White
-        Me.btn_save.Location = New System.Drawing.Point(170, 441)
+        Me.btn_save.Location = New System.Drawing.Point(106, 423)
         Me.btn_save.Name = "btn_save"
         Me.btn_save.Size = New System.Drawing.Size(83, 35)
         Me.btn_save.TabIndex = 124
-        Me.btn_save.Text = "Add"
+        Me.btn_save.Text = "Create"
         Me.btn_save.UseVisualStyleBackColor = False
         '
         'CheckBox1
@@ -171,7 +172,7 @@ Partial Class Register
         Me.CheckBox1.AutoSize = True
         Me.CheckBox1.BackColor = System.Drawing.Color.DarkGray
         Me.CheckBox1.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.CheckBox1.Location = New System.Drawing.Point(21, 278)
+        Me.CheckBox1.Location = New System.Drawing.Point(17, 278)
         Me.CheckBox1.Margin = New System.Windows.Forms.Padding(2)
         Me.CheckBox1.Name = "CheckBox1"
         Me.CheckBox1.Size = New System.Drawing.Size(127, 21)
@@ -182,17 +183,17 @@ Partial Class Register
         'txtb_user_confirm_password
         '
         Me.txtb_user_confirm_password.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtb_user_confirm_password.Location = New System.Drawing.Point(21, 246)
+        Me.txtb_user_confirm_password.Location = New System.Drawing.Point(17, 246)
         Me.txtb_user_confirm_password.Name = "txtb_user_confirm_password"
         Me.txtb_user_confirm_password.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
-        Me.txtb_user_confirm_password.Size = New System.Drawing.Size(290, 23)
+        Me.txtb_user_confirm_password.Size = New System.Drawing.Size(236, 23)
         Me.txtb_user_confirm_password.TabIndex = 19
         '
         'Label7
         '
         Me.Label7.AutoSize = True
         Me.Label7.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label7.Location = New System.Drawing.Point(208, 25)
+        Me.Label7.Location = New System.Drawing.Point(17, 19)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(29, 17)
         Me.Label7.TabIndex = 18
@@ -204,33 +205,33 @@ Partial Class Register
         Me.txtb_user_type.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.txtb_user_type.FormattingEnabled = True
         Me.txtb_user_type.Items.AddRange(New Object() {"Admin", "Staff", "Employee"})
-        Me.txtb_user_type.Location = New System.Drawing.Point(21, 341)
+        Me.txtb_user_type.Location = New System.Drawing.Point(17, 341)
         Me.txtb_user_type.Name = "txtb_user_type"
-        Me.txtb_user_type.Size = New System.Drawing.Size(290, 25)
+        Me.txtb_user_type.Size = New System.Drawing.Size(236, 25)
         Me.txtb_user_type.TabIndex = 8
         '
         'txtb_user_password
         '
         Me.txtb_user_password.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtb_user_password.Location = New System.Drawing.Point(21, 192)
+        Me.txtb_user_password.Location = New System.Drawing.Point(17, 192)
         Me.txtb_user_password.Name = "txtb_user_password"
         Me.txtb_user_password.PasswordChar = Global.Microsoft.VisualBasic.ChrW(42)
-        Me.txtb_user_password.Size = New System.Drawing.Size(290, 23)
+        Me.txtb_user_password.Size = New System.Drawing.Size(236, 23)
         Me.txtb_user_password.TabIndex = 6
         '
         'txtb_user_name
         '
         Me.txtb_user_name.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtb_user_name.Location = New System.Drawing.Point(22, 141)
+        Me.txtb_user_name.Location = New System.Drawing.Point(17, 141)
         Me.txtb_user_name.Name = "txtb_user_name"
-        Me.txtb_user_name.Size = New System.Drawing.Size(290, 23)
+        Me.txtb_user_name.Size = New System.Drawing.Size(236, 23)
         Me.txtb_user_name.TabIndex = 4
         '
         'Label14
         '
         Me.Label14.AutoSize = True
         Me.Label14.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label14.Location = New System.Drawing.Point(18, 311)
+        Me.Label14.Location = New System.Drawing.Point(17, 311)
         Me.Label14.Name = "Label14"
         Me.Label14.Size = New System.Drawing.Size(77, 17)
         Me.Label14.TabIndex = 4
@@ -249,15 +250,15 @@ Partial Class Register
         'txtb_full_name
         '
         Me.txtb_full_name.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtb_full_name.Location = New System.Drawing.Point(21, 81)
+        Me.txtb_full_name.Location = New System.Drawing.Point(17, 81)
         Me.txtb_full_name.Name = "txtb_full_name"
-        Me.txtb_full_name.Size = New System.Drawing.Size(290, 23)
+        Me.txtb_full_name.Size = New System.Drawing.Size(236, 23)
         Me.txtb_full_name.TabIndex = 2
         '
         'txtb_id
         '
         Me.txtb_id.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtb_id.Location = New System.Drawing.Point(249, 22)
+        Me.txtb_id.Location = New System.Drawing.Point(52, 16)
         Me.txtb_id.Name = "txtb_id"
         Me.txtb_id.Size = New System.Drawing.Size(62, 23)
         Me.txtb_id.TabIndex = 0
@@ -277,7 +278,7 @@ Partial Class Register
         '
         Me.Label17.AutoSize = True
         Me.Label17.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label17.Location = New System.Drawing.Point(18, 117)
+        Me.Label17.Location = New System.Drawing.Point(17, 117)
         Me.Label17.Name = "Label17"
         Me.Label17.Size = New System.Drawing.Size(79, 17)
         Me.Label17.TabIndex = 1
@@ -293,23 +294,13 @@ Partial Class Register
         Me.Label18.TabIndex = 0
         Me.Label18.Text = "Name :"
         '
-        'Label3
-        '
-        Me.Label3.AutoSize = True
-        Me.Label3.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.Location = New System.Drawing.Point(146, 22)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(51, 17)
-        Me.Label3.TabIndex = 24
-        Me.Label3.Text = "Search"
-        '
         'txtb_search
         '
         Me.txtb_search.AccessibleName = ""
         Me.txtb_search.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.txtb_search.Location = New System.Drawing.Point(216, 22)
+        Me.txtb_search.Location = New System.Drawing.Point(10, 48)
         Me.txtb_search.Name = "txtb_search"
-        Me.txtb_search.Size = New System.Drawing.Size(188, 23)
+        Me.txtb_search.Size = New System.Drawing.Size(135, 23)
         Me.txtb_search.TabIndex = 24
         '
         'DataGridView1
@@ -322,26 +313,13 @@ Partial Class Register
         Me.DataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.IdDataGridViewTextBoxColumn, Me.FullnameDataGridViewTextBoxColumn, Me.UsernameDataGridViewTextBoxColumn, Me.UserpasswordDataGridViewTextBoxColumn, Me.UsertypeDataGridViewTextBoxColumn})
         Me.DataGridView1.DataSource = Me.UsertblBindingSource
-        Me.DataGridView1.Location = New System.Drawing.Point(26, 52)
+        Me.DataGridView1.Location = New System.Drawing.Point(10, 78)
         Me.DataGridView1.Name = "DataGridView1"
         Me.DataGridView1.ReadOnly = True
         Me.DataGridView1.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.[Single]
-        Me.DataGridView1.Size = New System.Drawing.Size(378, 440)
+        Me.DataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
+        Me.DataGridView1.Size = New System.Drawing.Size(378, 411)
         Me.DataGridView1.TabIndex = 11
-        '
-        'PayrolldbDataSet
-        '
-        Me.PayrolldbDataSet.DataSetName = "payrolldbDataSet"
-        Me.PayrolldbDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
-        '
-        'UsertblBindingSource
-        '
-        Me.UsertblBindingSource.DataMember = "user_tbl"
-        Me.UsertblBindingSource.DataSource = Me.PayrolldbDataSet
-        '
-        'User_tblTableAdapter
-        '
-        Me.User_tblTableAdapter.ClearBeforeFill = True
         '
         'IdDataGridViewTextBoxColumn
         '
@@ -349,7 +327,7 @@ Partial Class Register
         Me.IdDataGridViewTextBoxColumn.HeaderText = "ID"
         Me.IdDataGridViewTextBoxColumn.Name = "IdDataGridViewTextBoxColumn"
         Me.IdDataGridViewTextBoxColumn.ReadOnly = True
-        Me.IdDataGridViewTextBoxColumn.Width = 43
+        Me.IdDataGridViewTextBoxColumn.Width = 46
         '
         'FullnameDataGridViewTextBoxColumn
         '
@@ -357,7 +335,7 @@ Partial Class Register
         Me.FullnameDataGridViewTextBoxColumn.HeaderText = "Full Name"
         Me.FullnameDataGridViewTextBoxColumn.Name = "FullnameDataGridViewTextBoxColumn"
         Me.FullnameDataGridViewTextBoxColumn.ReadOnly = True
-        Me.FullnameDataGridViewTextBoxColumn.Width = 79
+        Me.FullnameDataGridViewTextBoxColumn.Width = 97
         '
         'UsernameDataGridViewTextBoxColumn
         '
@@ -365,7 +343,7 @@ Partial Class Register
         Me.UsernameDataGridViewTextBoxColumn.HeaderText = "User Name"
         Me.UsernameDataGridViewTextBoxColumn.Name = "UsernameDataGridViewTextBoxColumn"
         Me.UsernameDataGridViewTextBoxColumn.ReadOnly = True
-        Me.UsernameDataGridViewTextBoxColumn.Width = 85
+        Me.UsernameDataGridViewTextBoxColumn.Width = 102
         '
         'UserpasswordDataGridViewTextBoxColumn
         '
@@ -381,7 +359,21 @@ Partial Class Register
         Me.UsertypeDataGridViewTextBoxColumn.HeaderText = "User Type"
         Me.UsertypeDataGridViewTextBoxColumn.Name = "UsertypeDataGridViewTextBoxColumn"
         Me.UsertypeDataGridViewTextBoxColumn.ReadOnly = True
-        Me.UsertypeDataGridViewTextBoxColumn.Width = 81
+        Me.UsertypeDataGridViewTextBoxColumn.Width = 90
+        '
+        'UsertblBindingSource
+        '
+        Me.UsertblBindingSource.DataMember = "user_tbl"
+        Me.UsertblBindingSource.DataSource = Me.PayrolldbDataSet
+        '
+        'PayrolldbDataSet
+        '
+        Me.PayrolldbDataSet.DataSetName = "payrolldbDataSet"
+        Me.PayrolldbDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
+        'User_tblTableAdapter
+        '
+        Me.User_tblTableAdapter.ClearBeforeFill = True
         '
         'GroupBox1
         '
@@ -403,31 +395,54 @@ Partial Class Register
         Me.GroupBox1.Controls.Add(Me.txtb_user_confirm_password)
         Me.GroupBox1.Controls.Add(Me.txtb_user_password)
         Me.GroupBox1.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.GroupBox1.Location = New System.Drawing.Point(26, 80)
+        Me.GroupBox1.ForeColor = System.Drawing.Color.White
+        Me.GroupBox1.Location = New System.Drawing.Point(26, 82)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(332, 510)
+        Me.GroupBox1.Size = New System.Drawing.Size(267, 510)
         Me.GroupBox1.TabIndex = 128
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "User Information"
         '
         'GroupBox2
         '
+        Me.GroupBox2.Controls.Add(Me.btnCreate)
+        Me.GroupBox2.Controls.Add(Me.Label4)
         Me.GroupBox2.Controls.Add(Me.DataGridView1)
         Me.GroupBox2.Controls.Add(Me.txtb_search)
-        Me.GroupBox2.Controls.Add(Me.Label3)
         Me.GroupBox2.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.GroupBox2.Location = New System.Drawing.Point(364, 80)
+        Me.GroupBox2.Location = New System.Drawing.Point(299, 82)
         Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Size = New System.Drawing.Size(437, 510)
+        Me.GroupBox2.Size = New System.Drawing.Size(404, 510)
         Me.GroupBox2.TabIndex = 129
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "List of Users"
+        '
+        'btnCreate
+        '
+        Me.btnCreate.Location = New System.Drawing.Point(285, 38)
+        Me.btnCreate.Name = "btnCreate"
+        Me.btnCreate.Size = New System.Drawing.Size(103, 33)
+        Me.btnCreate.TabIndex = 42
+        Me.btnCreate.Text = "Create New"
+        Me.btnCreate.UseVisualStyleBackColor = True
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label4.ForeColor = System.Drawing.SystemColors.InactiveCaptionText
+        Me.Label4.Location = New System.Drawing.Point(6, 25)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(76, 20)
+        Me.Label4.TabIndex = 41
+        Me.Label4.Text = "Search :"
         '
         'Register
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(896, 604)
+        Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.ClientSize = New System.Drawing.Size(713, 604)
         Me.Controls.Add(Me.GroupBox2)
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.Panel2)
@@ -439,8 +454,8 @@ Partial Class Register
         Me.Panel2.PerformLayout()
         CType(Me.PictureBox7, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.DataGridView1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PayrolldbDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.UsertblBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PayrolldbDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
         Me.GroupBox2.ResumeLayout(False)
@@ -469,7 +484,6 @@ Partial Class Register
     Friend WithEvents Label16 As Label
     Friend WithEvents Label17 As Label
     Friend WithEvents Label18 As Label
-    Friend WithEvents Label3 As Label
     Friend WithEvents txtb_search As TextBox
     Friend WithEvents DataGridView1 As DataGridView
     Friend WithEvents PayrolldbDataSet As payrolldbDataSet
@@ -482,4 +496,6 @@ Partial Class Register
     Friend WithEvents UsertypeDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents GroupBox1 As GroupBox
     Friend WithEvents GroupBox2 As GroupBox
+    Friend WithEvents Label4 As Label
+    Friend WithEvents btnCreate As Button
 End Class

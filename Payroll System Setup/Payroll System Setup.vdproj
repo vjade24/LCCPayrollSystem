@@ -39,7 +39,19 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_2F7611767D1C4D1E86A912BF47AF8527"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_340A833309AD4A018FAA9E3772A8D82B"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_4804226E16474066AB0D1D1ED6378805"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -63,19 +75,7 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_8D4AA989423242F39E9AAE88D3098C1A"
-        "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_94C562DB33F34C1E9B229CF1515DEDB6"
-        "OwnerKey" = "8:_UNDEFINED"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_A6363E099AF441C5AA92123FD8F68AF4"
+        "MsmKey" = "8:_9522D74F9E23472CA34DD8BD50257962"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -88,6 +88,12 @@
         "Entry"
         {
         "MsmKey" = "8:_D43F1181CD0343A9AD312D20F9178B30"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_F728F7202B024FECA9201DCD17D7D43C"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -180,13 +186,38 @@
         "InstallerBootstrapper" = "3:2"
             "BootstrapperCfg:{63ACBE69-63AA-4F98-B2B6-99F9E24495F2}"
             {
-            "Enabled" = "11:FALSE"
+            "Enabled" = "11:TRUE"
             "PromptEnabled" = "11:TRUE"
             "PrerequisitesLocation" = "2:1"
             "Url" = "8:"
             "ComponentsUrl" = "8:D:\\01 - Installers\\CRforVS_redist_install_64bit_13_0_23"
                 "Items"
                 {
+                    "{EDC2488A-8267-493A-A98E-7D9C3B36CDF3}:.NETFramework,Version=v4.6"
+                    {
+                    "Name" = "8:Microsoft .NET Framework 4.6 (x86 and x64)"
+                    "ProductCode" = "8:.NETFramework,Version=v4.6"
+                    }
+                    "{EDC2488A-8267-493A-A98E-7D9C3B36CDF3}:Microsoft.Net.Framework.3.5.SP1"
+                    {
+                    "Name" = "8:.NET Framework 3.5 SP1"
+                    "ProductCode" = "8:Microsoft.Net.Framework.3.5.SP1"
+                    }
+                    "{EDC2488A-8267-493A-A98E-7D9C3B36CDF3}:Microsoft.Visual.C++.14.0.x64"
+                    {
+                    "Name" = "8:Visual C++ \"14\" Runtime Libraries (x64)"
+                    "ProductCode" = "8:Microsoft.Visual.C++.14.0.x64"
+                    }
+                    "{EDC2488A-8267-493A-A98E-7D9C3B36CDF3}:Microsoft.Visual.C++.14.0.x86"
+                    {
+                    "Name" = "8:Visual C++ \"14\" Runtime Libraries (x86)"
+                    "ProductCode" = "8:Microsoft.Visual.C++.14.0.x86"
+                    }
+                    "{EDC2488A-8267-493A-A98E-7D9C3B36CDF3}:SAP.CrystalReports14.NET.2.0"
+                    {
+                    "Name" = "8:SAP Crystal Reports Runtime Engine for .NET Framework"
+                    "ProductCode" = "8:SAP.CrystalReports14.NET.2.0"
+                    }
                 }
             }
         }
@@ -311,6 +342,46 @@
             "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_2F7611767D1C4D1E86A912BF47AF8527"
+            {
+            "SourcePath" = "8:..\\LCCPayrollSystem\\Reports\\DashboardReport.rpt"
+            "TargetName" = "8:DashboardReport.rpt"
+            "Tag" = "8:"
+            "Folder" = "8:_6435800E3E8E4D11ACE1BC44920D8154"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_4804226E16474066AB0D1D1ED6378805"
+            {
+            "SourcePath" = "8:..\\LCCPayrollSystem\\Reports\\PayslipReport.rpt"
+            "TargetName" = "8:PayslipReport.rpt"
+            "Tag" = "8:"
+            "Folder" = "8:_6435800E3E8E4D11ACE1BC44920D8154"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
             "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_5BD52815BE2099F55088FE6179427F79"
             {
             "AssemblyRegister" = "3:1"
@@ -373,50 +444,10 @@
             "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_8D4AA989423242F39E9AAE88D3098C1A"
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_9522D74F9E23472CA34DD8BD50257962"
             {
-            "SourcePath" = "8:..\\LCCPayrollSystem\\Reports\\Payroll.rpt"
-            "TargetName" = "8:Payroll.rpt"
-            "Tag" = "8:"
-            "Folder" = "8:_6435800E3E8E4D11ACE1BC44920D8154"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_94C562DB33F34C1E9B229CF1515DEDB6"
-            {
-            "SourcePath" = "8:..\\LCCPayrollSystem\\Reports\\Dashboard.rpt"
-            "TargetName" = "8:Dashboard.rpt"
-            "Tag" = "8:"
-            "Folder" = "8:_6435800E3E8E4D11ACE1BC44920D8154"
-            "Condition" = "8:"
-            "Transitive" = "11:FALSE"
-            "Vital" = "11:TRUE"
-            "ReadOnly" = "11:FALSE"
-            "Hidden" = "11:FALSE"
-            "System" = "11:FALSE"
-            "Permanent" = "11:FALSE"
-            "SharedLegacy" = "11:FALSE"
-            "PackageAs" = "3:1"
-            "Register" = "3:1"
-            "Exclude" = "11:FALSE"
-            "IsDependency" = "11:FALSE"
-            "IsolateTo" = "8:"
-            }
-            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_A6363E099AF441C5AA92123FD8F68AF4"
-            {
-            "SourcePath" = "8:..\\LCCPayrollSystem\\Reports\\Payslip.rpt"
-            "TargetName" = "8:Payslip.rpt"
+            "SourcePath" = "8:..\\LCCPayrollSystem\\Reports\\PayrollReport.rpt"
+            "TargetName" = "8:PayrollReport.rpt"
             "Tag" = "8:"
             "Folder" = "8:_6435800E3E8E4D11ACE1BC44920D8154"
             "Condition" = "8:"
@@ -468,6 +499,26 @@
             {
             "SourcePath" = "8:..\\LCCPayrollSystem\\LCC icon.ico"
             "TargetName" = "8:LCC icon.ico"
+            "Tag" = "8:"
+            "Folder" = "8:_6435800E3E8E4D11ACE1BC44920D8154"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_F728F7202B024FECA9201DCD17D7D43C"
+            {
+            "SourcePath" = "8:..\\LCCPayrollSystem\\Reports\\EmployeeListReport.rpt"
+            "TargetName" = "8:EmployeeListReport.rpt"
             "Tag" = "8:"
             "Folder" = "8:_6435800E3E8E4D11ACE1BC44920D8154"
             "Condition" = "8:"
@@ -552,7 +603,7 @@
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:LCC Payroll System"
         "ProductCode" = "8:{4DEDD519-56A9-45AE-9F68-69BC30C5C940}"
-        "PackageCode" = "8:{FF691EF8-C398-43BC-A67E-B81C1772B325}"
+        "PackageCode" = "8:{3890413C-0EDF-4F68-8812-FF6BA61DEC1B}"
         "UpgradeCode" = "8:{501DAED0-D973-47A2-96E3-16B135A33899}"
         "AspNetVersion" = "8:4.0.30319.0"
         "RestartWWWService" = "11:FALSE"
@@ -1101,7 +1152,7 @@
         {
             "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_340A833309AD4A018FAA9E3772A8D82B"
             {
-            "SourcePath" = "8:..\\LCCPayrollSystem\\obj\\Release\\LCCPayrollSystem.exe"
+            "SourcePath" = "8:..\\LCCPayrollSystem\\obj\\Debug\\LCCPayrollSystem.exe"
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_6435800E3E8E4D11ACE1BC44920D8154"

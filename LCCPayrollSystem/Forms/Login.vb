@@ -16,14 +16,93 @@ Public Class login
             If (dt.Rows.Count > 0) Then
                 MsgBox("Welcome to LCC Payroll System!", MsgBoxStyle.Information)
                 Me.Hide()
-                Dashboard.lbl_welcome.Text = "Welcome, " + dt.Rows(0)("full_name").ToString()
-                Dashboard.lbl_top.Text = dt.Rows(0)("full_name").ToString()
-                Dashboard.Show()
+
+                Dim FormDashboard1 As New Dashboard1
+                FormDashboard1.lbl_welcome.Text = "Welcome, " + dt.Rows(0)("full_name").ToString()
+                FormDashboard1.textbox_login.Text = dt.Rows(0)("full_name").ToString() + " (" + dt.Rows(0)("user_type").ToString().Trim + ")"
+                FormDashboard1.Show()
 
                 txtb_username.Text = ""
                 txtb_userpassword.Text = ""
+
+                If dt.Rows(0)("user_type").ToString().Trim = "Admin" Then
+
+                    FormDashboard1.btnDashboard.Visible = True
+                    FormDashboard1.btnPayroll.Visible = True
+                    FormDashboard1.btnAttendance.Visible = True
+                    FormDashboard1.btnReport.Visible = True
+                    FormDashboard1.btnEmployee.Visible = True
+                    FormDashboard1.btnDeduction.Visible = True
+                    FormDashboard1.btnRegister.Visible = True
+
+                    FormDashboard1.picDashboard.Visible = True
+                    FormDashboard1.picPayroll.Visible = True
+                    FormDashboard1.picAttendance.Visible = True
+                    FormDashboard1.picReport.Visible = True
+                    FormDashboard1.picEmployee.Visible = True
+                    FormDashboard1.picDeduction.Visible = True
+                    FormDashboard1.picRegister.Visible = True
+
+                ElseIf dt.Rows(0)("user_type").ToString().Trim = "Staff" Then
+
+                    FormDashboard1.btnDashboard.Visible = True
+                    FormDashboard1.btnPayroll.Visible = True
+                    FormDashboard1.btnAttendance.Visible = True
+                    FormDashboard1.btnReport.Visible = False
+                    FormDashboard1.btnEmployee.Visible = False
+                    FormDashboard1.btnDeduction.Visible = False
+                    FormDashboard1.btnRegister.Visible = False
+
+                    FormDashboard1.picDashboard.Visible = True
+                    FormDashboard1.picPayroll.Visible = True
+                    FormDashboard1.picAttendance.Visible = True
+                    FormDashboard1.picReport.Visible = False
+                    FormDashboard1.picEmployee.Visible = False
+                    FormDashboard1.picDeduction.Visible = False
+                    FormDashboard1.picRegister.Visible = False
+
+                ElseIf dt.Rows(0)("user_type").ToString().Trim = "Employee" Then
+
+                    FormDashboard1.btnDashboard.Visible = True
+                    FormDashboard1.btnPayroll.Visible = False
+                    FormDashboard1.btnAttendance.Visible = False
+                    FormDashboard1.btnReport.Visible = True
+                    FormDashboard1.btnEmployee.Visible = False
+                    FormDashboard1.btnDeduction.Visible = False
+                    FormDashboard1.btnRegister.Visible = False
+
+                    FormDashboard1.picDashboard.Visible = True
+                    FormDashboard1.picPayroll.Visible = False
+                    FormDashboard1.picAttendance.Visible = False
+                    FormDashboard1.picReport.Visible = True
+                    FormDashboard1.picEmployee.Visible = False
+                    FormDashboard1.picDeduction.Visible = False
+                    FormDashboard1.picRegister.Visible = False
+                Else
+
+                    MsgBox("This User is no User Type", MsgBoxStyle.Information)
+                    FormDashboard1.btnDashboard.Visible = True
+                    FormDashboard1.btnPayroll.Visible = False
+                    FormDashboard1.btnAttendance.Visible = False
+                    FormDashboard1.btnReport.Visible = False
+                    FormDashboard1.btnEmployee.Visible = False
+                    FormDashboard1.btnDeduction.Visible = False
+                    FormDashboard1.btnRegister.Visible = False
+
+                    FormDashboard1.picDashboard.Visible = True
+                    FormDashboard1.picPayroll.Visible = False
+                    FormDashboard1.picAttendance.Visible = False
+                    FormDashboard1.picReport.Visible = False
+                    FormDashboard1.picEmployee.Visible = False
+                    FormDashboard1.picDeduction.Visible = False
+                    FormDashboard1.picRegister.Visible = False
+
+                End If
+                conn.Dispose()
             Else
                 MsgBox("Account not found!", MsgBoxStyle.Critical)
+                conn.Dispose()
+
             End If
         End If
     End Sub

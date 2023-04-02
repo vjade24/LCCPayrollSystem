@@ -83,10 +83,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CommonClasses\CommonClasses.vb" />
-    <Compile Include="Forms\Dashboard.Designer.vb">
-      <DependentUpon>Dashboard.vb</DependentUpon>
+    <Compile Include="Forms\Dashboard1.Designer.vb">
+      <DependentUpon>Dashboard1.vb</DependentUpon>
     </Compile>
-    <Compile Include="Forms\Dashboard.vb">
+    <Compile Include="Forms\Dashboard1.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\Deduction.Designer.vb">
@@ -119,6 +119,12 @@
     <Compile Include="Forms\Payroll.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Forms\PayrollList.Designer.vb">
+      <DependentUpon>PayrollList.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\PayrollList.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Forms\Register.Designer.vb">
       <DependentUpon>Register.vb</DependentUpon>
     </Compile>
@@ -129,6 +135,12 @@
       <DependentUpon>Reports.vb</DependentUpon>
     </Compile>
     <Compile Include="Forms\Reports.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ReportViewer.Designer.vb">
+      <DependentUpon>ReportViewer.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\ReportViewer.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
@@ -151,26 +163,34 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>payrolldbDataSet.xsd</DependentUpon>
     </Compile>
-    <Compile Include="Reports\Dashboard.vb">
+    <Compile Include="Reports\DashboardReport.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>Dashboard.rpt</DependentUpon>
+      <DependentUpon>DashboardReport.rpt</DependentUpon>
+      <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Reports\Payroll.vb">
+    <Compile Include="Reports\EmployeeListReport.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>Payroll.rpt</DependentUpon>
+      <DependentUpon>EmployeeListReport.rpt</DependentUpon>
+      <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Reports\Payslip.vb">
+    <Compile Include="Reports\PayrollReport.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>Payslip.rpt</DependentUpon>
+      <DependentUpon>PayrollReport.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\PayslipReport.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PayslipReport.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Forms\Dashboard.resx">
-      <DependentUpon>Dashboard.vb</DependentUpon>
+    <EmbeddedResource Include="Forms\Dashboard1.resx">
+      <DependentUpon>Dashboard1.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Deduction.resx">
       <DependentUpon>Deduction.vb</DependentUpon>
@@ -187,11 +207,17 @@
     <EmbeddedResource Include="Forms\Payroll.resx">
       <DependentUpon>Payroll.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\PayrollList.resx">
+      <DependentUpon>PayrollList.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Register.resx">
       <DependentUpon>Register.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Reports.resx">
       <DependentUpon>Reports.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ReportViewer.resx">
+      <DependentUpon>ReportViewer.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
@@ -199,17 +225,21 @@
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="Reports\Dashboard.rpt">
+    <EmbeddedResource Include="Reports\DashboardReport.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>Dashboard.vb</LastGenOutput>
+      <LastGenOutput>DashboardReport.vb</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="Reports\Payroll.rpt">
+    <EmbeddedResource Include="Reports\EmployeeListReport.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>Payroll.vb</LastGenOutput>
+      <LastGenOutput>EmployeeListReport.vb</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="Reports\Payslip.rpt">
+    <EmbeddedResource Include="Reports\PayrollReport.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>Payslip.vb</LastGenOutput>
+      <LastGenOutput>PayrollReport.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\PayslipReport.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>PayslipReport.vb</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
@@ -222,7 +252,9 @@
       <CustomToolNamespace>My</CustomToolNamespace>
       <LastGenOutput>Settings.Designer.vb</LastGenOutput>
     </None>
-    <None Include="App.config" />
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="payrolldbDataSet.xsc">
       <DependentUpon>payrolldbDataSet.xsd</DependentUpon>
     </None>
@@ -240,6 +272,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="LCC icon.ico" />
+    <None Include="Resources\LCC LOGO.png" />
     <None Include="Resources\DefaultUserImg.png" />
     <None Include="Resources\DefaultPhoto.jpg" />
   </ItemGroup>
