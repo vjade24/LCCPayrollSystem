@@ -26,11 +26,13 @@ Public Class ReportViewer
                 cryRpt.SetDataSource(dt)
                 CrystalReportViewer1.ReportSource = cryRpt
                 CrystalReportViewer1.Refresh()
+
             Else
                 MsgBox("NO DATA FOUND!", MsgBoxStyle.Exclamation)
-                Dim cryRpt As New ReportDocument
-                CrystalReportViewer1.ReportSource = cryRpt
-                CrystalReportViewer1.Refresh()
+                Me.Hide()
+                'Dim cryRpt As New ReportDocument
+                'CrystalReportViewer1.ReportSource = cryRpt
+                'CrystalReportViewer1.Refresh()
             End If
         Catch ex As Exception
             MsgBox(ex.Message.ToString().Trim(), MsgBoxStyle.Exclamation)

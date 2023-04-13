@@ -417,7 +417,7 @@ SELECT Id, deduction_code, deduction_descr, employee_id, employee_name, deduct_p
               <DbSource ConnectionRef="payrolldbConnectionString (MySettings)" DbObjectName="payrolldb.dbo.payroll_tbl" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <DeleteCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>DELETE FROM [dbo].[payroll_tbl] WHERE (([Id] = @Original_Id) AND ((@IsNull_payroll_no = 1 AND [payroll_no] IS NULL) OR ([payroll_no] = @Original_payroll_no)) AND ((@IsNull_period_from = 1 AND [period_from] IS NULL) OR ([period_from] = @Original_period_from)) AND ((@IsNull_period_to = 1 AND [period_to] IS NULL) OR ([period_to] = @Original_period_to)) AND ((@IsNull_employee_id = 1 AND [employee_id] IS NULL) OR ([employee_id] = @Original_employee_id)) AND ((@IsNull_last_name = 1 AND [last_name] IS NULL) OR ([last_name] = @Original_last_name)) AND ((@IsNull_first_name = 1 AND [first_name] IS NULL) OR ([first_name] = @Original_first_name)) AND ((@IsNull_middle_name = 1 AND [middle_name] IS NULL) OR ([middle_name] = @Original_middle_name)) AND ((@IsNull_department_assigned = 1 AND [department_assigned] IS NULL) OR ([department_assigned] = @Original_department_assigned)) AND ((@IsNull_rate_basis_descr = 1 AND [rate_basis_descr] IS NULL) OR ([rate_basis_descr] = @Original_rate_basis_descr)) AND ((@IsNull_monthly_rate = 1 AND [monthly_rate] IS NULL) OR ([monthly_rate] = @Original_monthly_rate)) AND ((@IsNull_daily_rate = 1 AND [daily_rate] IS NULL) OR ([daily_rate] = @Original_daily_rate)) AND ((@IsNull_hourly_rate = 1 AND [hourly_rate] IS NULL) OR ([hourly_rate] = @Original_hourly_rate)) AND ((@IsNull_unit_rate = 1 AND [unit_rate] IS NULL) OR ([unit_rate] = @Original_unit_rate)) AND ((@IsNull_regular_wages = 1 AND [regular_wages] IS NULL) OR ([regular_wages] = @Original_regular_wages)) AND ((@IsNull_overtime_amt = 1 AND [overtime_amt] IS NULL) OR ([overtime_amt] = @Original_overtime_amt)) AND ((@IsNull_allowances_amt = 1 AND [allowances_amt] IS NULL) OR ([allowances_amt] = @Original_allowances_amt)) AND ((@IsNull_adjustments_amt = 1 AND [adjustments_amt] IS NULL) OR ([adjustments_amt] = @Original_adjustments_amt)) AND ((@IsNull_worked_days = 1 AND [worked_days] IS NULL) OR ([worked_days] = @Original_worked_days)) AND ((@IsNull_absent_days = 1 AND [absent_days] IS NULL) OR ([absent_days] = @Original_absent_days)) AND ((@IsNull_absent_amt = 1 AND [absent_amt] IS NULL) OR ([absent_amt] = @Original_absent_amt)) AND ((@IsNull_lates_in_min = 1 AND [lates_in_min] IS NULL) OR ([lates_in_min] = @Original_lates_in_min)) AND ((@IsNull_lates_in_amt = 1 AND [lates_in_amt] IS NULL) OR ([lates_in_amt] = @Original_lates_in_amt)) AND ((@IsNull_cash_advance_amt = 1 AND [cash_advance_amt] IS NULL) OR ([cash_advance_amt] = @Original_cash_advance_amt)) AND ((@IsNull_sss_med_amt = 1 AND [sss_med_amt] IS NULL) OR ([sss_med_amt] = @Original_sss_med_amt)) AND ((@IsNull_sss_loan_amt = 1 AND [sss_loan_amt] IS NULL) OR ([sss_loan_amt] = @Original_sss_loan_amt)) AND ((@IsNull_pag_ibig_amt = 1 AND [pag_ibig_amt] IS NULL) OR ([pag_ibig_amt] = @Original_pag_ibig_amt)) AND ((@IsNull_phic_amt = 1 AND [phic_amt] IS NULL) OR ([phic_amt] = @Original_phic_amt)) AND ((@IsNull_wtax_amt = 1 AND [wtax_amt] IS NULL) OR ([wtax_amt] = @Original_wtax_amt)) AND ((@IsNull_other_ded_amt = 1 AND [other_ded_amt] IS NULL) OR ([other_ded_amt] = @Original_other_ded_amt)) AND ((@IsNull_other_loans_amt = 1 AND [other_loans_amt] IS NULL) OR ([other_loans_amt] = @Original_other_loans_amt)) AND ((@IsNull_gross_pay = 1 AND [gross_pay] IS NULL) OR ([gross_pay] = @Original_gross_pay)) AND ((@IsNull_net_pay = 1 AND [net_pay] IS NULL) OR ([net_pay] = @Original_net_pay)))</CommandText>
+                    <CommandText>DELETE FROM [payroll_tbl] WHERE (([Id] = @Original_Id) AND ((@IsNull_payroll_no = 1 AND [payroll_no] IS NULL) OR ([payroll_no] = @Original_payroll_no)) AND ((@IsNull_period_from = 1 AND [period_from] IS NULL) OR ([period_from] = @Original_period_from)) AND ((@IsNull_period_to = 1 AND [period_to] IS NULL) OR ([period_to] = @Original_period_to)) AND ((@IsNull_employee_id = 1 AND [employee_id] IS NULL) OR ([employee_id] = @Original_employee_id)) AND ((@IsNull_last_name = 1 AND [last_name] IS NULL) OR ([last_name] = @Original_last_name)) AND ((@IsNull_first_name = 1 AND [first_name] IS NULL) OR ([first_name] = @Original_first_name)) AND ((@IsNull_middle_name = 1 AND [middle_name] IS NULL) OR ([middle_name] = @Original_middle_name)) AND ((@IsNull_department_assigned = 1 AND [department_assigned] IS NULL) OR ([department_assigned] = @Original_department_assigned)) AND ((@IsNull_rate_basis_descr = 1 AND [rate_basis_descr] IS NULL) OR ([rate_basis_descr] = @Original_rate_basis_descr)) AND ((@IsNull_monthly_rate = 1 AND [monthly_rate] IS NULL) OR ([monthly_rate] = @Original_monthly_rate)) AND ((@IsNull_daily_rate = 1 AND [daily_rate] IS NULL) OR ([daily_rate] = @Original_daily_rate)) AND ((@IsNull_hourly_rate = 1 AND [hourly_rate] IS NULL) OR ([hourly_rate] = @Original_hourly_rate)) AND ((@IsNull_unit_rate = 1 AND [unit_rate] IS NULL) OR ([unit_rate] = @Original_unit_rate)) AND ((@IsNull_regular_wages = 1 AND [regular_wages] IS NULL) OR ([regular_wages] = @Original_regular_wages)) AND ((@IsNull_overtime_amt = 1 AND [overtime_amt] IS NULL) OR ([overtime_amt] = @Original_overtime_amt)) AND ((@IsNull_allowances_amt = 1 AND [allowances_amt] IS NULL) OR ([allowances_amt] = @Original_allowances_amt)) AND ((@IsNull_adjustments_amt = 1 AND [adjustments_amt] IS NULL) OR ([adjustments_amt] = @Original_adjustments_amt)) AND ((@IsNull_worked_days = 1 AND [worked_days] IS NULL) OR ([worked_days] = @Original_worked_days)) AND ((@IsNull_absent_days = 1 AND [absent_days] IS NULL) OR ([absent_days] = @Original_absent_days)) AND ((@IsNull_absent_amt = 1 AND [absent_amt] IS NULL) OR ([absent_amt] = @Original_absent_amt)) AND ((@IsNull_lates_in_min = 1 AND [lates_in_min] IS NULL) OR ([lates_in_min] = @Original_lates_in_min)) AND ((@IsNull_lates_in_amt = 1 AND [lates_in_amt] IS NULL) OR ([lates_in_amt] = @Original_lates_in_amt)) AND ((@IsNull_cash_advance_amt = 1 AND [cash_advance_amt] IS NULL) OR ([cash_advance_amt] = @Original_cash_advance_amt)) AND ((@IsNull_sss_med_amt = 1 AND [sss_med_amt] IS NULL) OR ([sss_med_amt] = @Original_sss_med_amt)) AND ((@IsNull_sss_loan_amt = 1 AND [sss_loan_amt] IS NULL) OR ([sss_loan_amt] = @Original_sss_loan_amt)) AND ((@IsNull_pag_ibig_amt = 1 AND [pag_ibig_amt] IS NULL) OR ([pag_ibig_amt] = @Original_pag_ibig_amt)) AND ((@IsNull_phic_amt = 1 AND [phic_amt] IS NULL) OR ([phic_amt] = @Original_phic_amt)) AND ((@IsNull_wtax_amt = 1 AND [wtax_amt] IS NULL) OR ([wtax_amt] = @Original_wtax_amt)) AND ((@IsNull_other_ded_amt = 1 AND [other_ded_amt] IS NULL) OR ([other_ded_amt] = @Original_other_ded_amt)) AND ((@IsNull_other_loans_amt = 1 AND [other_loans_amt] IS NULL) OR ([other_loans_amt] = @Original_other_loans_amt)) AND ((@IsNull_gross_pay = 1 AND [gross_pay] IS NULL) OR ([gross_pay] = @Original_gross_pay)) AND ((@IsNull_net_pay = 1 AND [net_pay] IS NULL) OR ([net_pay] = @Original_net_pay)) AND ((@IsNull_king_coop_loan = 1 AND [king_coop_loan] IS NULL) OR ([king_coop_loan] = @Original_king_coop_loan)) AND ((@IsNull_lbp_loan = 1 AND [lbp_loan] IS NULL) OR ([lbp_loan] = @Original_lbp_loan)))</CommandText>
                     <Parameters>
                       <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_Id" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="Id" SourceColumnNullMapping="false" SourceVersion="Original" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_payroll_no" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="payroll_no" SourceColumnNullMapping="true" SourceVersion="Original" />
@@ -484,13 +484,17 @@ SELECT Id, deduction_code, deduction_descr, employee_id, employee_name, deduct_p
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Currency" Direction="Input" ParameterName="@Original_gross_pay" Precision="0" ProviderType="Money" Scale="0" Size="0" SourceColumn="gross_pay" SourceColumnNullMapping="false" SourceVersion="Original" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_net_pay" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="net_pay" SourceColumnNullMapping="true" SourceVersion="Original" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Currency" Direction="Input" ParameterName="@Original_net_pay" Precision="0" ProviderType="Money" Scale="0" Size="0" SourceColumn="net_pay" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_king_coop_loan" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="king_coop_loan" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Currency" Direction="Input" ParameterName="@Original_king_coop_loan" Precision="0" ProviderType="Money" Scale="0" Size="0" SourceColumn="king_coop_loan" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_lbp_loan" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="lbp_loan" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Currency" Direction="Input" ParameterName="@Original_lbp_loan" Precision="0" ProviderType="Money" Scale="0" Size="0" SourceColumn="lbp_loan" SourceColumnNullMapping="false" SourceVersion="Original" />
                     </Parameters>
                   </DbCommand>
                 </DeleteCommand>
                 <InsertCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>INSERT INTO [dbo].[payroll_tbl] ([payroll_no], [period_from], [period_to], [employee_id], [last_name], [first_name], [middle_name], [department_assigned], [rate_basis_descr], [monthly_rate], [daily_rate], [hourly_rate], [unit_rate], [regular_wages], [overtime_amt], [allowances_amt], [adjustments_amt], [worked_days], [absent_days], [absent_amt], [lates_in_min], [lates_in_amt], [cash_advance_amt], [sss_med_amt], [sss_loan_amt], [pag_ibig_amt], [phic_amt], [wtax_amt], [other_ded_amt], [other_loans_amt], [gross_pay], [net_pay], [remarks]) VALUES (@payroll_no, @period_from, @period_to, @employee_id, @last_name, @first_name, @middle_name, @department_assigned, @rate_basis_descr, @monthly_rate, @daily_rate, @hourly_rate, @unit_rate, @regular_wages, @overtime_amt, @allowances_amt, @adjustments_amt, @worked_days, @absent_days, @absent_amt, @lates_in_min, @lates_in_amt, @cash_advance_amt, @sss_med_amt, @sss_loan_amt, @pag_ibig_amt, @phic_amt, @wtax_amt, @other_ded_amt, @other_loans_amt, @gross_pay, @net_pay, @remarks);
-SELECT Id, payroll_no, period_from, period_to, employee_id, last_name, first_name, middle_name, department_assigned, rate_basis_descr, monthly_rate, daily_rate, hourly_rate, unit_rate, regular_wages, overtime_amt, allowances_amt, adjustments_amt, worked_days, absent_days, absent_amt, lates_in_min, lates_in_amt, cash_advance_amt, sss_med_amt, sss_loan_amt, pag_ibig_amt, phic_amt, wtax_amt, other_ded_amt, other_loans_amt, gross_pay, net_pay, remarks FROM payroll_tbl WHERE (Id = SCOPE_IDENTITY())</CommandText>
+                    <CommandText>INSERT INTO [payroll_tbl] ([payroll_no], [period_from], [period_to], [employee_id], [last_name], [first_name], [middle_name], [department_assigned], [rate_basis_descr], [monthly_rate], [daily_rate], [hourly_rate], [unit_rate], [regular_wages], [overtime_amt], [allowances_amt], [adjustments_amt], [worked_days], [absent_days], [absent_amt], [lates_in_min], [lates_in_amt], [cash_advance_amt], [sss_med_amt], [sss_loan_amt], [pag_ibig_amt], [phic_amt], [wtax_amt], [other_ded_amt], [other_loans_amt], [gross_pay], [net_pay], [remarks], [king_coop_loan], [lbp_loan]) VALUES (@payroll_no, @period_from, @period_to, @employee_id, @last_name, @first_name, @middle_name, @department_assigned, @rate_basis_descr, @monthly_rate, @daily_rate, @hourly_rate, @unit_rate, @regular_wages, @overtime_amt, @allowances_amt, @adjustments_amt, @worked_days, @absent_days, @absent_amt, @lates_in_min, @lates_in_amt, @cash_advance_amt, @sss_med_amt, @sss_loan_amt, @pag_ibig_amt, @phic_amt, @wtax_amt, @other_ded_amt, @other_loans_amt, @gross_pay, @net_pay, @remarks, @king_coop_loan, @lbp_loan);
+SELECT Id, payroll_no, period_from, period_to, employee_id, last_name, first_name, middle_name, department_assigned, rate_basis_descr, monthly_rate, daily_rate, hourly_rate, unit_rate, regular_wages, overtime_amt, allowances_amt, adjustments_amt, worked_days, absent_days, absent_amt, lates_in_min, lates_in_amt, cash_advance_amt, sss_med_amt, sss_loan_amt, pag_ibig_amt, phic_amt, wtax_amt, other_ded_amt, other_loans_amt, gross_pay, net_pay, remarks, king_coop_loan, lbp_loan FROM payroll_tbl WHERE (Id = SCOPE_IDENTITY())</CommandText>
                     <Parameters>
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="StringFixedLength" Direction="Input" ParameterName="@payroll_no" Precision="0" ProviderType="NChar" Scale="0" Size="0" SourceColumn="payroll_no" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Date" Direction="Input" ParameterName="@period_from" Precision="0" ProviderType="Date" Scale="0" Size="0" SourceColumn="period_from" SourceColumnNullMapping="false" SourceVersion="Current" />
@@ -525,19 +529,21 @@ SELECT Id, payroll_no, period_from, period_to, employee_id, last_name, first_nam
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Currency" Direction="Input" ParameterName="@gross_pay" Precision="0" ProviderType="Money" Scale="0" Size="0" SourceColumn="gross_pay" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Currency" Direction="Input" ParameterName="@net_pay" Precision="0" ProviderType="Money" Scale="0" Size="0" SourceColumn="net_pay" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@remarks" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="remarks" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Currency" Direction="Input" ParameterName="@king_coop_loan" Precision="0" ProviderType="Money" Scale="0" Size="0" SourceColumn="king_coop_loan" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Currency" Direction="Input" ParameterName="@lbp_loan" Precision="0" ProviderType="Money" Scale="0" Size="0" SourceColumn="lbp_loan" SourceColumnNullMapping="false" SourceVersion="Current" />
                     </Parameters>
                   </DbCommand>
                 </InsertCommand>
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>SELECT Id, payroll_no, period_from, period_to, employee_id, last_name, first_name, middle_name, department_assigned, rate_basis_descr, monthly_rate, daily_rate, hourly_rate, unit_rate, regular_wages, overtime_amt, allowances_amt, adjustments_amt, worked_days, absent_days, absent_amt, lates_in_min, lates_in_amt, cash_advance_amt, sss_med_amt, sss_loan_amt, pag_ibig_amt, phic_amt, wtax_amt, other_ded_amt, other_loans_amt, gross_pay, net_pay, remarks FROM dbo.payroll_tbl</CommandText>
+                    <CommandText>SELECT Id, payroll_no, period_from, period_to, employee_id, last_name, first_name, middle_name, department_assigned, rate_basis_descr, monthly_rate, daily_rate, hourly_rate, unit_rate, regular_wages, overtime_amt, allowances_amt, adjustments_amt, worked_days, absent_days, absent_amt, lates_in_min, lates_in_amt, cash_advance_amt, sss_med_amt, sss_loan_amt, pag_ibig_amt, phic_amt, wtax_amt, other_ded_amt, other_loans_amt, gross_pay, net_pay, remarks, king_coop_loan, lbp_loan FROM payroll_tbl</CommandText>
                     <Parameters />
                   </DbCommand>
                 </SelectCommand>
                 <UpdateCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>UPDATE [dbo].[payroll_tbl] SET [payroll_no] = @payroll_no, [period_from] = @period_from, [period_to] = @period_to, [employee_id] = @employee_id, [last_name] = @last_name, [first_name] = @first_name, [middle_name] = @middle_name, [department_assigned] = @department_assigned, [rate_basis_descr] = @rate_basis_descr, [monthly_rate] = @monthly_rate, [daily_rate] = @daily_rate, [hourly_rate] = @hourly_rate, [unit_rate] = @unit_rate, [regular_wages] = @regular_wages, [overtime_amt] = @overtime_amt, [allowances_amt] = @allowances_amt, [adjustments_amt] = @adjustments_amt, [worked_days] = @worked_days, [absent_days] = @absent_days, [absent_amt] = @absent_amt, [lates_in_min] = @lates_in_min, [lates_in_amt] = @lates_in_amt, [cash_advance_amt] = @cash_advance_amt, [sss_med_amt] = @sss_med_amt, [sss_loan_amt] = @sss_loan_amt, [pag_ibig_amt] = @pag_ibig_amt, [phic_amt] = @phic_amt, [wtax_amt] = @wtax_amt, [other_ded_amt] = @other_ded_amt, [other_loans_amt] = @other_loans_amt, [gross_pay] = @gross_pay, [net_pay] = @net_pay, [remarks] = @remarks WHERE (([Id] = @Original_Id) AND ((@IsNull_payroll_no = 1 AND [payroll_no] IS NULL) OR ([payroll_no] = @Original_payroll_no)) AND ((@IsNull_period_from = 1 AND [period_from] IS NULL) OR ([period_from] = @Original_period_from)) AND ((@IsNull_period_to = 1 AND [period_to] IS NULL) OR ([period_to] = @Original_period_to)) AND ((@IsNull_employee_id = 1 AND [employee_id] IS NULL) OR ([employee_id] = @Original_employee_id)) AND ((@IsNull_last_name = 1 AND [last_name] IS NULL) OR ([last_name] = @Original_last_name)) AND ((@IsNull_first_name = 1 AND [first_name] IS NULL) OR ([first_name] = @Original_first_name)) AND ((@IsNull_middle_name = 1 AND [middle_name] IS NULL) OR ([middle_name] = @Original_middle_name)) AND ((@IsNull_department_assigned = 1 AND [department_assigned] IS NULL) OR ([department_assigned] = @Original_department_assigned)) AND ((@IsNull_rate_basis_descr = 1 AND [rate_basis_descr] IS NULL) OR ([rate_basis_descr] = @Original_rate_basis_descr)) AND ((@IsNull_monthly_rate = 1 AND [monthly_rate] IS NULL) OR ([monthly_rate] = @Original_monthly_rate)) AND ((@IsNull_daily_rate = 1 AND [daily_rate] IS NULL) OR ([daily_rate] = @Original_daily_rate)) AND ((@IsNull_hourly_rate = 1 AND [hourly_rate] IS NULL) OR ([hourly_rate] = @Original_hourly_rate)) AND ((@IsNull_unit_rate = 1 AND [unit_rate] IS NULL) OR ([unit_rate] = @Original_unit_rate)) AND ((@IsNull_regular_wages = 1 AND [regular_wages] IS NULL) OR ([regular_wages] = @Original_regular_wages)) AND ((@IsNull_overtime_amt = 1 AND [overtime_amt] IS NULL) OR ([overtime_amt] = @Original_overtime_amt)) AND ((@IsNull_allowances_amt = 1 AND [allowances_amt] IS NULL) OR ([allowances_amt] = @Original_allowances_amt)) AND ((@IsNull_adjustments_amt = 1 AND [adjustments_amt] IS NULL) OR ([adjustments_amt] = @Original_adjustments_amt)) AND ((@IsNull_worked_days = 1 AND [worked_days] IS NULL) OR ([worked_days] = @Original_worked_days)) AND ((@IsNull_absent_days = 1 AND [absent_days] IS NULL) OR ([absent_days] = @Original_absent_days)) AND ((@IsNull_absent_amt = 1 AND [absent_amt] IS NULL) OR ([absent_amt] = @Original_absent_amt)) AND ((@IsNull_lates_in_min = 1 AND [lates_in_min] IS NULL) OR ([lates_in_min] = @Original_lates_in_min)) AND ((@IsNull_lates_in_amt = 1 AND [lates_in_amt] IS NULL) OR ([lates_in_amt] = @Original_lates_in_amt)) AND ((@IsNull_cash_advance_amt = 1 AND [cash_advance_amt] IS NULL) OR ([cash_advance_amt] = @Original_cash_advance_amt)) AND ((@IsNull_sss_med_amt = 1 AND [sss_med_amt] IS NULL) OR ([sss_med_amt] = @Original_sss_med_amt)) AND ((@IsNull_sss_loan_amt = 1 AND [sss_loan_amt] IS NULL) OR ([sss_loan_amt] = @Original_sss_loan_amt)) AND ((@IsNull_pag_ibig_amt = 1 AND [pag_ibig_amt] IS NULL) OR ([pag_ibig_amt] = @Original_pag_ibig_amt)) AND ((@IsNull_phic_amt = 1 AND [phic_amt] IS NULL) OR ([phic_amt] = @Original_phic_amt)) AND ((@IsNull_wtax_amt = 1 AND [wtax_amt] IS NULL) OR ([wtax_amt] = @Original_wtax_amt)) AND ((@IsNull_other_ded_amt = 1 AND [other_ded_amt] IS NULL) OR ([other_ded_amt] = @Original_other_ded_amt)) AND ((@IsNull_other_loans_amt = 1 AND [other_loans_amt] IS NULL) OR ([other_loans_amt] = @Original_other_loans_amt)) AND ((@IsNull_gross_pay = 1 AND [gross_pay] IS NULL) OR ([gross_pay] = @Original_gross_pay)) AND ((@IsNull_net_pay = 1 AND [net_pay] IS NULL) OR ([net_pay] = @Original_net_pay)));
-SELECT Id, payroll_no, period_from, period_to, employee_id, last_name, first_name, middle_name, department_assigned, rate_basis_descr, monthly_rate, daily_rate, hourly_rate, unit_rate, regular_wages, overtime_amt, allowances_amt, adjustments_amt, worked_days, absent_days, absent_amt, lates_in_min, lates_in_amt, cash_advance_amt, sss_med_amt, sss_loan_amt, pag_ibig_amt, phic_amt, wtax_amt, other_ded_amt, other_loans_amt, gross_pay, net_pay, remarks FROM payroll_tbl WHERE (Id = @Id)</CommandText>
+                    <CommandText>UPDATE [payroll_tbl] SET [payroll_no] = @payroll_no, [period_from] = @period_from, [period_to] = @period_to, [employee_id] = @employee_id, [last_name] = @last_name, [first_name] = @first_name, [middle_name] = @middle_name, [department_assigned] = @department_assigned, [rate_basis_descr] = @rate_basis_descr, [monthly_rate] = @monthly_rate, [daily_rate] = @daily_rate, [hourly_rate] = @hourly_rate, [unit_rate] = @unit_rate, [regular_wages] = @regular_wages, [overtime_amt] = @overtime_amt, [allowances_amt] = @allowances_amt, [adjustments_amt] = @adjustments_amt, [worked_days] = @worked_days, [absent_days] = @absent_days, [absent_amt] = @absent_amt, [lates_in_min] = @lates_in_min, [lates_in_amt] = @lates_in_amt, [cash_advance_amt] = @cash_advance_amt, [sss_med_amt] = @sss_med_amt, [sss_loan_amt] = @sss_loan_amt, [pag_ibig_amt] = @pag_ibig_amt, [phic_amt] = @phic_amt, [wtax_amt] = @wtax_amt, [other_ded_amt] = @other_ded_amt, [other_loans_amt] = @other_loans_amt, [gross_pay] = @gross_pay, [net_pay] = @net_pay, [remarks] = @remarks, [king_coop_loan] = @king_coop_loan, [lbp_loan] = @lbp_loan WHERE (([Id] = @Original_Id) AND ((@IsNull_payroll_no = 1 AND [payroll_no] IS NULL) OR ([payroll_no] = @Original_payroll_no)) AND ((@IsNull_period_from = 1 AND [period_from] IS NULL) OR ([period_from] = @Original_period_from)) AND ((@IsNull_period_to = 1 AND [period_to] IS NULL) OR ([period_to] = @Original_period_to)) AND ((@IsNull_employee_id = 1 AND [employee_id] IS NULL) OR ([employee_id] = @Original_employee_id)) AND ((@IsNull_last_name = 1 AND [last_name] IS NULL) OR ([last_name] = @Original_last_name)) AND ((@IsNull_first_name = 1 AND [first_name] IS NULL) OR ([first_name] = @Original_first_name)) AND ((@IsNull_middle_name = 1 AND [middle_name] IS NULL) OR ([middle_name] = @Original_middle_name)) AND ((@IsNull_department_assigned = 1 AND [department_assigned] IS NULL) OR ([department_assigned] = @Original_department_assigned)) AND ((@IsNull_rate_basis_descr = 1 AND [rate_basis_descr] IS NULL) OR ([rate_basis_descr] = @Original_rate_basis_descr)) AND ((@IsNull_monthly_rate = 1 AND [monthly_rate] IS NULL) OR ([monthly_rate] = @Original_monthly_rate)) AND ((@IsNull_daily_rate = 1 AND [daily_rate] IS NULL) OR ([daily_rate] = @Original_daily_rate)) AND ((@IsNull_hourly_rate = 1 AND [hourly_rate] IS NULL) OR ([hourly_rate] = @Original_hourly_rate)) AND ((@IsNull_unit_rate = 1 AND [unit_rate] IS NULL) OR ([unit_rate] = @Original_unit_rate)) AND ((@IsNull_regular_wages = 1 AND [regular_wages] IS NULL) OR ([regular_wages] = @Original_regular_wages)) AND ((@IsNull_overtime_amt = 1 AND [overtime_amt] IS NULL) OR ([overtime_amt] = @Original_overtime_amt)) AND ((@IsNull_allowances_amt = 1 AND [allowances_amt] IS NULL) OR ([allowances_amt] = @Original_allowances_amt)) AND ((@IsNull_adjustments_amt = 1 AND [adjustments_amt] IS NULL) OR ([adjustments_amt] = @Original_adjustments_amt)) AND ((@IsNull_worked_days = 1 AND [worked_days] IS NULL) OR ([worked_days] = @Original_worked_days)) AND ((@IsNull_absent_days = 1 AND [absent_days] IS NULL) OR ([absent_days] = @Original_absent_days)) AND ((@IsNull_absent_amt = 1 AND [absent_amt] IS NULL) OR ([absent_amt] = @Original_absent_amt)) AND ((@IsNull_lates_in_min = 1 AND [lates_in_min] IS NULL) OR ([lates_in_min] = @Original_lates_in_min)) AND ((@IsNull_lates_in_amt = 1 AND [lates_in_amt] IS NULL) OR ([lates_in_amt] = @Original_lates_in_amt)) AND ((@IsNull_cash_advance_amt = 1 AND [cash_advance_amt] IS NULL) OR ([cash_advance_amt] = @Original_cash_advance_amt)) AND ((@IsNull_sss_med_amt = 1 AND [sss_med_amt] IS NULL) OR ([sss_med_amt] = @Original_sss_med_amt)) AND ((@IsNull_sss_loan_amt = 1 AND [sss_loan_amt] IS NULL) OR ([sss_loan_amt] = @Original_sss_loan_amt)) AND ((@IsNull_pag_ibig_amt = 1 AND [pag_ibig_amt] IS NULL) OR ([pag_ibig_amt] = @Original_pag_ibig_amt)) AND ((@IsNull_phic_amt = 1 AND [phic_amt] IS NULL) OR ([phic_amt] = @Original_phic_amt)) AND ((@IsNull_wtax_amt = 1 AND [wtax_amt] IS NULL) OR ([wtax_amt] = @Original_wtax_amt)) AND ((@IsNull_other_ded_amt = 1 AND [other_ded_amt] IS NULL) OR ([other_ded_amt] = @Original_other_ded_amt)) AND ((@IsNull_other_loans_amt = 1 AND [other_loans_amt] IS NULL) OR ([other_loans_amt] = @Original_other_loans_amt)) AND ((@IsNull_gross_pay = 1 AND [gross_pay] IS NULL) OR ([gross_pay] = @Original_gross_pay)) AND ((@IsNull_net_pay = 1 AND [net_pay] IS NULL) OR ([net_pay] = @Original_net_pay)) AND ((@IsNull_king_coop_loan = 1 AND [king_coop_loan] IS NULL) OR ([king_coop_loan] = @Original_king_coop_loan)) AND ((@IsNull_lbp_loan = 1 AND [lbp_loan] IS NULL) OR ([lbp_loan] = @Original_lbp_loan)));
+SELECT Id, payroll_no, period_from, period_to, employee_id, last_name, first_name, middle_name, department_assigned, rate_basis_descr, monthly_rate, daily_rate, hourly_rate, unit_rate, regular_wages, overtime_amt, allowances_amt, adjustments_amt, worked_days, absent_days, absent_amt, lates_in_min, lates_in_amt, cash_advance_amt, sss_med_amt, sss_loan_amt, pag_ibig_amt, phic_amt, wtax_amt, other_ded_amt, other_loans_amt, gross_pay, net_pay, remarks, king_coop_loan, lbp_loan FROM payroll_tbl WHERE (Id = @Id)</CommandText>
                     <Parameters>
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="StringFixedLength" Direction="Input" ParameterName="@payroll_no" Precision="0" ProviderType="NChar" Scale="0" Size="0" SourceColumn="payroll_no" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Date" Direction="Input" ParameterName="@period_from" Precision="0" ProviderType="Date" Scale="0" Size="0" SourceColumn="period_from" SourceColumnNullMapping="false" SourceVersion="Current" />
@@ -572,6 +578,8 @@ SELECT Id, payroll_no, period_from, period_to, employee_id, last_name, first_nam
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Currency" Direction="Input" ParameterName="@gross_pay" Precision="0" ProviderType="Money" Scale="0" Size="0" SourceColumn="gross_pay" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Currency" Direction="Input" ParameterName="@net_pay" Precision="0" ProviderType="Money" Scale="0" Size="0" SourceColumn="net_pay" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="@remarks" Precision="0" ProviderType="NVarChar" Scale="0" Size="0" SourceColumn="remarks" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Currency" Direction="Input" ParameterName="@king_coop_loan" Precision="0" ProviderType="Money" Scale="0" Size="0" SourceColumn="king_coop_loan" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Currency" Direction="Input" ParameterName="@lbp_loan" Precision="0" ProviderType="Money" Scale="0" Size="0" SourceColumn="lbp_loan" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_Id" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="Id" SourceColumnNullMapping="false" SourceVersion="Original" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_payroll_no" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="payroll_no" SourceColumnNullMapping="true" SourceVersion="Original" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="StringFixedLength" Direction="Input" ParameterName="@Original_payroll_no" Precision="0" ProviderType="NChar" Scale="0" Size="0" SourceColumn="payroll_no" SourceColumnNullMapping="false" SourceVersion="Original" />
@@ -637,6 +645,10 @@ SELECT Id, payroll_no, period_from, period_to, employee_id, last_name, first_nam
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Currency" Direction="Input" ParameterName="@Original_gross_pay" Precision="0" ProviderType="Money" Scale="0" Size="0" SourceColumn="gross_pay" SourceColumnNullMapping="false" SourceVersion="Original" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_net_pay" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="net_pay" SourceColumnNullMapping="true" SourceVersion="Original" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Currency" Direction="Input" ParameterName="@Original_net_pay" Precision="0" ProviderType="Money" Scale="0" Size="0" SourceColumn="net_pay" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_king_coop_loan" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="king_coop_loan" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Currency" Direction="Input" ParameterName="@Original_king_coop_loan" Precision="0" ProviderType="Money" Scale="0" Size="0" SourceColumn="king_coop_loan" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_lbp_loan" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="lbp_loan" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Currency" Direction="Input" ParameterName="@Original_lbp_loan" Precision="0" ProviderType="Money" Scale="0" Size="0" SourceColumn="lbp_loan" SourceColumnNullMapping="false" SourceVersion="Original" />
                       <Parameter AllowDbNull="false" AutogeneratedName="Id" ColumnName="Id" DataSourceName="payrolldb.dbo.payroll_tbl" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@Id" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="Id" SourceColumnNullMapping="false" SourceVersion="Current" />
                     </Parameters>
                   </DbCommand>
@@ -678,6 +690,8 @@ SELECT Id, payroll_no, period_from, period_to, employee_id, last_name, first_nam
               <Mapping SourceColumn="gross_pay" DataSetColumn="gross_pay" />
               <Mapping SourceColumn="net_pay" DataSetColumn="net_pay" />
               <Mapping SourceColumn="remarks" DataSetColumn="remarks" />
+              <Mapping SourceColumn="king_coop_loan" DataSetColumn="king_coop_loan" />
+              <Mapping SourceColumn="lbp_loan" DataSetColumn="lbp_loan" />
             </Mappings>
             <Sources />
           </TableAdapter>
@@ -757,7 +771,7 @@ SELECT Id, full_name, user_name, user_password, user_type FROM user_tbl WHERE (I
               <DbSource ConnectionRef="payrolldbConnectionString (MySettings)" DbObjectName="payrolldb.dbo.vw_payroll_tbl" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>SELECT Id, payroll_no, period_from, period_to, employee_id, employee_name, last_name, first_name, middle_name, department_assigned, rate_basis_descr, monthly_rate, daily_rate, hourly_rate, unit_rate, regular_wages, overtime_amt, allowances_amt, adjustments_amt, worked_days, absent_days, absent_amt, lates_in_min, lates_in_amt, cash_advance_amt, sss_med_amt, sss_loan_amt, pag_ibig_amt, phic_amt, wtax_amt, other_ded_amt, other_loans_amt, gross_pay, net_pay, remarks, photo FROM vw_payroll_tbl</CommandText>
+                    <CommandText>SELECT Id, payroll_no, period_from, period_to, employee_id, employee_name, last_name, first_name, middle_name, department_assigned, rate_basis_descr, monthly_rate, daily_rate, hourly_rate, unit_rate, regular_wages, overtime_amt, allowances_amt, adjustments_amt, worked_days, absent_days, absent_amt, lates_in_min, lates_in_amt, cash_advance_amt, sss_med_amt, sss_loan_amt, pag_ibig_amt, phic_amt, wtax_amt, other_ded_amt, other_loans_amt, gross_pay, net_pay, remarks, photo, king_coop_loan, lbp_loan FROM vw_payroll_tbl</CommandText>
                     <Parameters />
                   </DbCommand>
                 </SelectCommand>
@@ -800,6 +814,8 @@ SELECT Id, full_name, user_name, user_password, user_type FROM user_tbl WHERE (I
               <Mapping SourceColumn="net_pay" DataSetColumn="net_pay" />
               <Mapping SourceColumn="remarks" DataSetColumn="remarks" />
               <Mapping SourceColumn="photo" DataSetColumn="photo" />
+              <Mapping SourceColumn="king_coop_loan" DataSetColumn="king_coop_loan" />
+              <Mapping SourceColumn="lbp_loan" DataSetColumn="lbp_loan" />
             </Mappings>
             <Sources />
           </TableAdapter>
@@ -933,6 +949,116 @@ SELECT Id, full_name, user_name, user_password, user_type FROM user_tbl WHERE (I
               <Mapping SourceColumn="gross_pay" DataSetColumn="gross_pay" />
               <Mapping SourceColumn="net_pay" DataSetColumn="net_pay" />
               <Mapping SourceColumn="remarks" DataSetColumn="remarks" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="time_schedule_empl_tblTableAdapter" GeneratorDataComponentClassName="time_schedule_empl_tblTableAdapter" Name="time_schedule_empl_tbl" UserDataComponentName="time_schedule_empl_tblTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="payrolldbConnectionString (MySettings)" DbObjectName="payrolldb.dbo.time_schedule_empl_tbl" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <DeleteCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>DELETE FROM [dbo].[time_schedule_empl_tbl] WHERE (([Id] = @Original_Id) AND ([tse_date] = @Original_tse_date) AND ((@IsNull_empl_id = 1 AND [empl_id] IS NULL) OR ([empl_id] = @Original_empl_id)) AND ((@IsNull_tse_in_am = 1 AND [tse_in_am] IS NULL) OR ([tse_in_am] = @Original_tse_in_am)) AND ((@IsNull_tse_out_am = 1 AND [tse_out_am] IS NULL) OR ([tse_out_am] = @Original_tse_out_am)) AND ((@IsNull_tse_in_pm = 1 AND [tse_in_pm] IS NULL) OR ([tse_in_pm] = @Original_tse_in_pm)) AND ((@IsNull_tse_out_pm = 1 AND [tse_out_pm] IS NULL) OR ([tse_out_pm] = @Original_tse_out_pm)))</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_Id" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="Id" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Date" Direction="Input" ParameterName="@Original_tse_date" Precision="0" ProviderType="Date" Scale="0" Size="0" SourceColumn="tse_date" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_empl_id" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="empl_id" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_empl_id" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="empl_id" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_tse_in_am" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="tse_in_am" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_tse_in_am" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="tse_in_am" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_tse_out_am" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="tse_out_am" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_tse_out_am" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="tse_out_am" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_tse_in_pm" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="tse_in_pm" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_tse_in_pm" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="tse_in_pm" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_tse_out_pm" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="tse_out_pm" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_tse_out_pm" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="tse_out_pm" SourceColumnNullMapping="false" SourceVersion="Original" />
+                    </Parameters>
+                  </DbCommand>
+                </DeleteCommand>
+                <InsertCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>INSERT INTO [dbo].[time_schedule_empl_tbl] ([tse_date], [empl_id], [tse_in_am], [tse_out_am], [tse_in_pm], [tse_out_pm]) VALUES (@tse_date, @empl_id, @tse_in_am, @tse_out_am, @tse_in_pm, @tse_out_pm);
+SELECT Id, tse_date, empl_id, tse_in_am, tse_out_am, tse_in_pm, tse_out_pm FROM time_schedule_empl_tbl WHERE (Id = SCOPE_IDENTITY())</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Date" Direction="Input" ParameterName="@tse_date" Precision="0" ProviderType="Date" Scale="0" Size="0" SourceColumn="tse_date" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@empl_id" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="empl_id" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@tse_in_am" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="tse_in_am" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@tse_out_am" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="tse_out_am" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@tse_in_pm" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="tse_in_pm" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@tse_out_pm" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="tse_out_pm" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </InsertCommand>
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT Id, tse_date, empl_id, tse_in_am, tse_out_am, tse_in_pm, tse_out_pm FROM dbo.time_schedule_empl_tbl</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+                <UpdateCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>UPDATE [dbo].[time_schedule_empl_tbl] SET [tse_date] = @tse_date, [empl_id] = @empl_id, [tse_in_am] = @tse_in_am, [tse_out_am] = @tse_out_am, [tse_in_pm] = @tse_in_pm, [tse_out_pm] = @tse_out_pm WHERE (([Id] = @Original_Id) AND ([tse_date] = @Original_tse_date) AND ((@IsNull_empl_id = 1 AND [empl_id] IS NULL) OR ([empl_id] = @Original_empl_id)) AND ((@IsNull_tse_in_am = 1 AND [tse_in_am] IS NULL) OR ([tse_in_am] = @Original_tse_in_am)) AND ((@IsNull_tse_out_am = 1 AND [tse_out_am] IS NULL) OR ([tse_out_am] = @Original_tse_out_am)) AND ((@IsNull_tse_in_pm = 1 AND [tse_in_pm] IS NULL) OR ([tse_in_pm] = @Original_tse_in_pm)) AND ((@IsNull_tse_out_pm = 1 AND [tse_out_pm] IS NULL) OR ([tse_out_pm] = @Original_tse_out_pm)));
+SELECT Id, tse_date, empl_id, tse_in_am, tse_out_am, tse_in_pm, tse_out_pm FROM time_schedule_empl_tbl WHERE (Id = @Id)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Date" Direction="Input" ParameterName="@tse_date" Precision="0" ProviderType="Date" Scale="0" Size="0" SourceColumn="tse_date" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@empl_id" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="empl_id" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@tse_in_am" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="tse_in_am" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@tse_out_am" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="tse_out_am" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@tse_in_pm" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="tse_in_pm" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@tse_out_pm" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="tse_out_pm" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_Id" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="Id" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Date" Direction="Input" ParameterName="@Original_tse_date" Precision="0" ProviderType="Date" Scale="0" Size="0" SourceColumn="tse_date" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_empl_id" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="empl_id" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_empl_id" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="empl_id" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_tse_in_am" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="tse_in_am" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_tse_in_am" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="tse_in_am" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_tse_out_am" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="tse_out_am" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_tse_out_am" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="tse_out_am" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_tse_in_pm" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="tse_in_pm" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_tse_in_pm" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="tse_in_pm" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_tse_out_pm" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="tse_out_pm" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_tse_out_pm" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="tse_out_pm" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="Id" ColumnName="Id" DataSourceName="payrolldb.dbo.time_schedule_empl_tbl" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@Id" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="Id" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </UpdateCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="Id" DataSetColumn="Id" />
+              <Mapping SourceColumn="tse_date" DataSetColumn="tse_date" />
+              <Mapping SourceColumn="empl_id" DataSetColumn="empl_id" />
+              <Mapping SourceColumn="tse_in_am" DataSetColumn="tse_in_am" />
+              <Mapping SourceColumn="tse_out_am" DataSetColumn="tse_out_am" />
+              <Mapping SourceColumn="tse_in_pm" DataSetColumn="tse_in_pm" />
+              <Mapping SourceColumn="tse_out_pm" DataSetColumn="tse_out_pm" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="vw_time_schedule_empl_tblTableAdapter" GeneratorDataComponentClassName="vw_time_schedule_empl_tblTableAdapter" Name="vw_time_schedule_empl_tbl" UserDataComponentName="vw_time_schedule_empl_tblTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="payrolldbConnectionString (MySettings)" DbObjectName="payrolldb.dbo.vw_time_schedule_empl_tbl" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT Id, dayname, tse_date, empl_id, employee_name, tse_in_am, tse_out_am, tse_in_pm, tse_out_pm, converted_tse_in_am, converted_tse_in_pm, converted_tse_out_am, converted_tse_out_pm FROM vw_time_schedule_empl_tbl</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="Id" DataSetColumn="Id" />
+              <Mapping SourceColumn="dayname" DataSetColumn="dayname" />
+              <Mapping SourceColumn="tse_date" DataSetColumn="tse_date" />
+              <Mapping SourceColumn="empl_id" DataSetColumn="empl_id" />
+              <Mapping SourceColumn="employee_name" DataSetColumn="employee_name" />
+              <Mapping SourceColumn="tse_in_am" DataSetColumn="tse_in_am" />
+              <Mapping SourceColumn="tse_out_am" DataSetColumn="tse_out_am" />
+              <Mapping SourceColumn="tse_in_pm" DataSetColumn="tse_in_pm" />
+              <Mapping SourceColumn="tse_out_pm" DataSetColumn="tse_out_pm" />
+              <Mapping SourceColumn="converted_tse_in_am" DataSetColumn="converted_tse_in_am" />
+              <Mapping SourceColumn="converted_tse_out_am" DataSetColumn="converted_tse_out_am" />
+              <Mapping SourceColumn="converted_tse_in_pm" DataSetColumn="converted_tse_in_pm" />
+              <Mapping SourceColumn="converted_tse_out_pm" DataSetColumn="converted_tse_out_pm" />
             </Mappings>
             <Sources />
           </TableAdapter>
@@ -1271,6 +1397,8 @@ SELECT Id, full_name, user_name, user_password, user_type FROM user_tbl WHERE (I
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
+              <xs:element name="king_coop_loan" msprop:Generator_ColumnVarNameInTable="columnking_coop_loan" msprop:Generator_ColumnPropNameInRow="king_coop_loan" msprop:Generator_ColumnPropNameInTable="king_coop_loanColumn" msprop:Generator_UserColumnName="king_coop_loan" type="xs:decimal" minOccurs="0" />
+              <xs:element name="lbp_loan" msprop:Generator_ColumnVarNameInTable="columnlbp_loan" msprop:Generator_ColumnPropNameInRow="lbp_loan" msprop:Generator_ColumnPropNameInTable="lbp_loanColumn" msprop:Generator_UserColumnName="lbp_loan" type="xs:decimal" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
@@ -1402,6 +1530,8 @@ SELECT Id, full_name, user_name, user_password, user_type FROM user_tbl WHERE (I
                 </xs:simpleType>
               </xs:element>
               <xs:element name="photo" msprop:Generator_ColumnVarNameInTable="columnphoto" msprop:Generator_ColumnPropNameInRow="photo" msprop:Generator_ColumnPropNameInTable="photoColumn" msprop:Generator_UserColumnName="photo" type="xs:base64Binary" minOccurs="0" />
+              <xs:element name="king_coop_loan" msprop:Generator_ColumnVarNameInTable="columnking_coop_loan" msprop:Generator_ColumnPropNameInRow="king_coop_loan" msprop:Generator_ColumnPropNameInTable="king_coop_loanColumn" msprop:Generator_UserColumnName="king_coop_loan" type="xs:decimal" minOccurs="0" />
+              <xs:element name="lbp_loan" msprop:Generator_ColumnVarNameInTable="columnlbp_loan" msprop:Generator_ColumnPropNameInRow="lbp_loan" msprop:Generator_ColumnPropNameInTable="lbp_loanColumn" msprop:Generator_UserColumnName="lbp_loan" type="xs:decimal" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
@@ -1618,6 +1748,110 @@ SELECT Id, full_name, user_name, user_password, user_type FROM user_tbl WHERE (I
             </xs:sequence>
           </xs:complexType>
         </xs:element>
+        <xs:element name="time_schedule_empl_tbl" msprop:Generator_TableClassName="time_schedule_empl_tblDataTable" msprop:Generator_TableVarName="tabletime_schedule_empl_tbl" msprop:Generator_RowChangedName="time_schedule_empl_tblRowChanged" msprop:Generator_TablePropName="time_schedule_empl_tbl" msprop:Generator_RowDeletingName="time_schedule_empl_tblRowDeleting" msprop:Generator_RowChangingName="time_schedule_empl_tblRowChanging" msprop:Generator_RowEvHandlerName="time_schedule_empl_tblRowChangeEventHandler" msprop:Generator_RowDeletedName="time_schedule_empl_tblRowDeleted" msprop:Generator_RowClassName="time_schedule_empl_tblRow" msprop:Generator_UserTableName="time_schedule_empl_tbl" msprop:Generator_RowEvArgName="time_schedule_empl_tblRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Id" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnId" msprop:Generator_ColumnPropNameInRow="Id" msprop:Generator_ColumnPropNameInTable="IdColumn" msprop:Generator_UserColumnName="Id" type="xs:int" />
+              <xs:element name="tse_date" msprop:Generator_ColumnVarNameInTable="columntse_date" msprop:Generator_ColumnPropNameInRow="tse_date" msprop:Generator_ColumnPropNameInTable="tse_dateColumn" msprop:Generator_UserColumnName="tse_date" type="xs:dateTime" />
+              <xs:element name="empl_id" msprop:Generator_ColumnVarNameInTable="columnempl_id" msprop:Generator_ColumnPropNameInRow="empl_id" msprop:Generator_ColumnPropNameInTable="empl_idColumn" msprop:Generator_UserColumnName="empl_id" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="8" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="tse_in_am" msprop:Generator_ColumnVarNameInTable="columntse_in_am" msprop:Generator_ColumnPropNameInRow="tse_in_am" msprop:Generator_ColumnPropNameInTable="tse_in_amColumn" msprop:Generator_UserColumnName="tse_in_am" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="5" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="tse_out_am" msprop:Generator_ColumnVarNameInTable="columntse_out_am" msprop:Generator_ColumnPropNameInRow="tse_out_am" msprop:Generator_ColumnPropNameInTable="tse_out_amColumn" msprop:Generator_UserColumnName="tse_out_am" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="5" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="tse_in_pm" msprop:Generator_ColumnVarNameInTable="columntse_in_pm" msprop:Generator_ColumnPropNameInRow="tse_in_pm" msprop:Generator_ColumnPropNameInTable="tse_in_pmColumn" msprop:Generator_UserColumnName="tse_in_pm" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="5" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="tse_out_pm" msprop:Generator_ColumnVarNameInTable="columntse_out_pm" msprop:Generator_ColumnPropNameInRow="tse_out_pm" msprop:Generator_ColumnPropNameInTable="tse_out_pmColumn" msprop:Generator_UserColumnName="tse_out_pm" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="5" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="vw_time_schedule_empl_tbl" msprop:Generator_TableClassName="vw_time_schedule_empl_tblDataTable" msprop:Generator_TableVarName="tablevw_time_schedule_empl_tbl" msprop:Generator_TablePropName="vw_time_schedule_empl_tbl" msprop:Generator_RowDeletingName="vw_time_schedule_empl_tblRowDeleting" msprop:Generator_RowChangingName="vw_time_schedule_empl_tblRowChanging" msprop:Generator_RowEvHandlerName="vw_time_schedule_empl_tblRowChangeEventHandler" msprop:Generator_RowDeletedName="vw_time_schedule_empl_tblRowDeleted" msprop:Generator_UserTableName="vw_time_schedule_empl_tbl" msprop:Generator_RowChangedName="vw_time_schedule_empl_tblRowChanged" msprop:Generator_RowEvArgName="vw_time_schedule_empl_tblRowChangeEvent" msprop:Generator_RowClassName="vw_time_schedule_empl_tblRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Id" msprop:Generator_ColumnVarNameInTable="columnId" msprop:Generator_ColumnPropNameInRow="Id" msprop:Generator_ColumnPropNameInTable="IdColumn" msprop:Generator_UserColumnName="Id" type="xs:int" />
+              <xs:element name="dayname" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columndayname" msprop:Generator_ColumnPropNameInRow="dayname" msprop:Generator_ColumnPropNameInTable="daynameColumn" msprop:Generator_UserColumnName="dayname" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="4000" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="tse_date" msprop:Generator_ColumnVarNameInTable="columntse_date" msprop:Generator_ColumnPropNameInRow="tse_date" msprop:Generator_ColumnPropNameInTable="tse_dateColumn" msprop:Generator_UserColumnName="tse_date" type="xs:dateTime" />
+              <xs:element name="empl_id" msprop:Generator_ColumnVarNameInTable="columnempl_id" msprop:Generator_ColumnPropNameInRow="empl_id" msprop:Generator_ColumnPropNameInTable="empl_idColumn" msprop:Generator_UserColumnName="empl_id" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="8" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="employee_name" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnemployee_name" msprop:Generator_ColumnPropNameInRow="employee_name" msprop:Generator_ColumnPropNameInTable="employee_nameColumn" msprop:Generator_UserColumnName="employee_name" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="152" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="tse_in_am" msprop:Generator_ColumnVarNameInTable="columntse_in_am" msprop:Generator_ColumnPropNameInRow="tse_in_am" msprop:Generator_ColumnPropNameInTable="tse_in_amColumn" msprop:Generator_UserColumnName="tse_in_am" type="xs:duration" minOccurs="0" />
+              <xs:element name="tse_out_am" msprop:Generator_ColumnVarNameInTable="columntse_out_am" msprop:Generator_ColumnPropNameInRow="tse_out_am" msprop:Generator_ColumnPropNameInTable="tse_out_amColumn" msprop:Generator_UserColumnName="tse_out_am" type="xs:duration" minOccurs="0" />
+              <xs:element name="tse_in_pm" msprop:Generator_ColumnVarNameInTable="columntse_in_pm" msprop:Generator_ColumnPropNameInRow="tse_in_pm" msprop:Generator_ColumnPropNameInTable="tse_in_pmColumn" msprop:Generator_UserColumnName="tse_in_pm" type="xs:duration" minOccurs="0" />
+              <xs:element name="tse_out_pm" msprop:Generator_ColumnVarNameInTable="columntse_out_pm" msprop:Generator_ColumnPropNameInRow="tse_out_pm" msprop:Generator_ColumnPropNameInTable="tse_out_pmColumn" msprop:Generator_UserColumnName="tse_out_pm" type="xs:duration" minOccurs="0" />
+              <xs:element name="converted_tse_in_am" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnconverted_tse_in_am" msprop:Generator_ColumnPropNameInRow="converted_tse_in_am" msprop:Generator_ColumnPropNameInTable="converted_tse_in_amColumn" msprop:Generator_UserColumnName="converted_tse_in_am" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="converted_tse_out_am" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnconverted_tse_out_am" msprop:Generator_ColumnPropNameInRow="converted_tse_out_am" msprop:Generator_ColumnPropNameInTable="converted_tse_out_amColumn" msprop:Generator_UserColumnName="converted_tse_out_am" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="converted_tse_in_pm" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnconverted_tse_in_pm" msprop:Generator_ColumnPropNameInRow="converted_tse_in_pm" msprop:Generator_ColumnPropNameInTable="converted_tse_in_pmColumn" msprop:Generator_UserColumnName="converted_tse_in_pm" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="converted_tse_out_pm" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnconverted_tse_out_pm" msprop:Generator_ColumnPropNameInRow="converted_tse_out_pm" msprop:Generator_ColumnPropNameInTable="converted_tse_out_pmColumn" msprop:Generator_UserColumnName="converted_tse_out_pm" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
       </xs:choice>
     </xs:complexType>
     <xs:unique name="Constraint1" msdata:PrimaryKey="true">
@@ -1650,6 +1884,14 @@ SELECT Id, full_name, user_name, user_password, user_type FROM user_tbl WHERE (I
     </xs:unique>
     <xs:unique name="sp_payroll_tbl_rep_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
       <xs:selector xpath=".//mstns:sp_payroll_tbl_rep" />
+      <xs:field xpath="mstns:Id" />
+    </xs:unique>
+    <xs:unique name="time_schedule_empl_tbl_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:time_schedule_empl_tbl" />
+      <xs:field xpath="mstns:Id" />
+    </xs:unique>
+    <xs:unique name="vw_time_schedule_empl_tbl_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:vw_time_schedule_empl_tbl" />
       <xs:field xpath="mstns:Id" />
     </xs:unique>
   </xs:element>

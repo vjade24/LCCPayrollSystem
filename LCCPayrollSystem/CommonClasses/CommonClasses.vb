@@ -89,18 +89,16 @@ Module CommonClasses
 
     Public Sub InsertQuery(query)
         Try
-            Using conn As SqlConnection = New SqlConnection(connection)
-                Using cmd As SqlCommand = New SqlCommand(query, conn)
-                    conn.Open()
-                    result = cmd.ExecuteNonQuery()
-                    If result = 0 Then
-                        MsgBox("No Data Inserted!", MsgBoxStyle.Critical)
-                    Else
-                        MsgBox("Successfully Inserted!", MsgBoxStyle.Information)
-                    End If
-                    conn.Close()
-                End Using
-            End Using
+            Dim conn As SqlConnection = New SqlConnection(connection)
+            Dim cmd As SqlCommand = New SqlCommand(query, conn)
+            conn.Open()
+            result = cmd.ExecuteNonQuery()
+            If result = 0 Then
+                MsgBox("No Data Inserted!", MsgBoxStyle.Critical)
+            Else
+                MsgBox("Successfully Inserted!", MsgBoxStyle.Information)
+            End If
+            conn.Close()
 
         Catch ex As Exception
             MsgBox("Something went wrong!" + ex.Message.ToString(), MsgBoxStyle.Critical)

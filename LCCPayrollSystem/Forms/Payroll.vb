@@ -10,6 +10,10 @@ Public Class Payroll
     End Sub
 
     Private Sub Payroll_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        'TODO: This line of code loads data into the 'PayrolldbDataSet1.vw_payroll_tbl' table. You can move, or remove it, as needed.
+        Me.Vw_payroll_tblTableAdapter.Fill(Me.PayrolldbDataSet1.vw_payroll_tbl)
+        'TODO: This line of code loads data into the 'PayrolldbDataSet.payroll_tbl' table. You can move, or remove it, as needed.
+        Me.Payroll_tblTableAdapter.Fill(Me.PayrolldbDataSet.payroll_tbl)
         'TODO: This line of code loads data into the 'PayrolldbDataSet.vw_payroll_tbl' table. You can move, or remove it, as needed.
         Me.Vw_payroll_tblTableAdapter.Fill(Me.PayrolldbDataSet.vw_payroll_tbl)
         clearentry()
@@ -42,6 +46,8 @@ Public Class Payroll
         deduction = deduction + Double.Parse(Wtax_amtTextBox.Text)
         deduction = deduction + Double.Parse(Other_ded_amtTextBox.Text)
         deduction = deduction + Double.Parse(Other_loans_amtTextBox.Text)
+        deduction = deduction + Double.Parse(King_coop_loanTextBox.Text)
+        deduction = deduction + Double.Parse(Lbp_loanTextBox.Text)
         total_deduction_TextBox.Text = deduction.ToString("###,##0.00")
     End Sub
     Private Sub calculate_net_pay()
@@ -159,6 +165,8 @@ Public Class Payroll
                 Dim dt_sss_loan_amt As New DataTable
                 Dim dt_sss_med_amt As New DataTable
                 Dim dt_wtax_amt As New DataTable
+                Dim dt_king_coop_loan As New DataTable
+                Dim dt_lbp_loan As New DataTable
 
 
                 Dim query_cash_advance_amt As String
@@ -169,6 +177,8 @@ Public Class Payroll
                 Dim query_sss_loan_amt As String
                 Dim query_sss_med_amt As String
                 Dim query_wtax_amt As String
+                Dim query_dt_king_coop_loan As String
+                Dim query_lbp_loan As String
 
                 query_cash_advance_amt = "SELECT ISNULL(SUM(deduct_amt),0) AS deduct_amt FROM payroll_deduction_tbl WHERE employee_id = '" + Employee_idComboBox.SelectedValue.ToString.Trim() + "' AND deduction_code = 'cash_advance_amt'	AND (deduct_period_from BETWEEN '" + Period_fromDateTimePicker.Value.ToString.Trim + "' AND '" + Period_toDateTimePicker.Value.ToString.Trim + "' OR deduct_period_to BETWEEN '" + Period_fromDateTimePicker.Value.ToString.Trim + "' AND '" + Period_toDateTimePicker.Value.ToString.Trim + "')"
                 query_other_ded_amt = "SELECT ISNULL(SUM(deduct_amt),0) AS deduct_amt FROM payroll_deduction_tbl WHERE employee_id = '" + Employee_idComboBox.SelectedValue.ToString.Trim() + "' AND deduction_code = 'other_ded_amt'	AND (deduct_period_from BETWEEN '" + Period_fromDateTimePicker.Value.ToString.Trim + "' AND '" + Period_toDateTimePicker.Value.ToString.Trim + "' OR deduct_period_to BETWEEN '" + Period_fromDateTimePicker.Value.ToString.Trim + "' AND '" + Period_toDateTimePicker.Value.ToString.Trim + "')"
@@ -178,6 +188,8 @@ Public Class Payroll
                 query_sss_loan_amt = "SELECT ISNULL(SUM(deduct_amt),0) AS deduct_amt FROM payroll_deduction_tbl WHERE employee_id = '" + Employee_idComboBox.SelectedValue.ToString.Trim() + "' AND deduction_code = 'sss_loan_amt'	AND (deduct_period_from BETWEEN '" + Period_fromDateTimePicker.Value.ToString.Trim + "' AND '" + Period_toDateTimePicker.Value.ToString.Trim + "' OR deduct_period_to BETWEEN '" + Period_fromDateTimePicker.Value.ToString.Trim + "' AND '" + Period_toDateTimePicker.Value.ToString.Trim + "')"
                 query_sss_med_amt = "SELECT ISNULL(SUM(deduct_amt),0) AS deduct_amt FROM payroll_deduction_tbl WHERE employee_id = '" + Employee_idComboBox.SelectedValue.ToString.Trim() + "' AND deduction_code = 'sss_med_amt'	AND (deduct_period_from BETWEEN '" + Period_fromDateTimePicker.Value.ToString.Trim + "' AND '" + Period_toDateTimePicker.Value.ToString.Trim + "' OR deduct_period_to BETWEEN '" + Period_fromDateTimePicker.Value.ToString.Trim + "' AND '" + Period_toDateTimePicker.Value.ToString.Trim + "')"
                 query_wtax_amt = "SELECT ISNULL(SUM(deduct_amt),0) AS deduct_amt FROM payroll_deduction_tbl WHERE employee_id = '" + Employee_idComboBox.SelectedValue.ToString.Trim() + "' AND deduction_code = 'wtax_amt'	AND (deduct_period_from BETWEEN '" + Period_fromDateTimePicker.Value.ToString.Trim + "' AND '" + Period_toDateTimePicker.Value.ToString.Trim + "' OR deduct_period_to BETWEEN '" + Period_fromDateTimePicker.Value.ToString.Trim + "' AND '" + Period_toDateTimePicker.Value.ToString.Trim + "')"
+                query_dt_king_coop_loan = "SELECT ISNULL(SUM(deduct_amt),0) AS deduct_amt FROM payroll_deduction_tbl WHERE employee_id = '" + Employee_idComboBox.SelectedValue.ToString.Trim() + "' AND deduction_code = 'king_coop_loan'	AND (deduct_period_from BETWEEN '" + Period_fromDateTimePicker.Value.ToString.Trim + "' AND '" + Period_toDateTimePicker.Value.ToString.Trim + "' OR deduct_period_to BETWEEN '" + Period_fromDateTimePicker.Value.ToString.Trim + "' AND '" + Period_toDateTimePicker.Value.ToString.Trim + "')"
+                query_lbp_loan = "SELECT ISNULL(SUM(deduct_amt),0) AS deduct_amt FROM payroll_deduction_tbl WHERE employee_id = '" + Employee_idComboBox.SelectedValue.ToString.Trim() + "' AND deduction_code = 'lbp_loan'	AND (deduct_period_from BETWEEN '" + Period_fromDateTimePicker.Value.ToString.Trim + "' AND '" + Period_toDateTimePicker.Value.ToString.Trim + "' OR deduct_period_to BETWEEN '" + Period_fromDateTimePicker.Value.ToString.Trim + "' AND '" + Period_toDateTimePicker.Value.ToString.Trim + "')"
 
                 dt_cash_advance_amt = RetrieveData(query_cash_advance_amt)
                 dt_other_ded_amt = RetrieveData(query_other_ded_amt)
@@ -187,6 +199,8 @@ Public Class Payroll
                 dt_sss_loan_amt = RetrieveData(query_sss_loan_amt)
                 dt_sss_med_amt = RetrieveData(query_sss_med_amt)
                 dt_wtax_amt = RetrieveData(query_wtax_amt)
+                dt_king_coop_loan = RetrieveData(query_dt_king_coop_loan)
+                dt_lbp_loan = RetrieveData(query_lbp_loan)
 
                 Cash_advance_amtTextBox.Text = Double.Parse(dt_cash_advance_amt.Rows(0)("deduct_amt").ToString()).ToString("###,##0.00")
                 Other_ded_amtTextBox.Text = Double.Parse(dt_other_ded_amt.Rows(0)("deduct_amt").ToString()).ToString("###,##0.00")
@@ -196,6 +210,8 @@ Public Class Payroll
                 Sss_loan_amtTextBox.Text = Double.Parse(dt_sss_loan_amt.Rows(0)("deduct_amt").ToString()).ToString("###,##0.00")
                 Sss_med_amtTextBox.Text = Double.Parse(dt_sss_med_amt.Rows(0)("deduct_amt").ToString()).ToString("###,##0.00")
                 Wtax_amtTextBox.Text = Double.Parse(dt_wtax_amt.Rows(0)("deduct_amt").ToString()).ToString("###,##0.00")
+                King_coop_loanTextBox.Text = Double.Parse(dt_king_coop_loan.Rows(0)("deduct_amt").ToString()).ToString("###,##0.00")
+                Lbp_loanTextBox.Text = Double.Parse(dt_lbp_loan.Rows(0)("deduct_amt").ToString()).ToString("###,##0.00")
 
                 ' ******************************************************************************
                 ' **** This portion is to Get the Deduction amount of Individual Employee ******
@@ -246,12 +262,15 @@ Public Class Payroll
         Wtax_amtTextBox.Text = "0.00"
         Other_ded_amtTextBox.Text = "0.00"
         Other_loans_amtTextBox.Text = "0.00"
+        King_coop_loanTextBox.Text = "0.00"
+        Lbp_loanTextBox.Text = "0.00"
         Gross_payTextBox.Text = "0.00"
         Net_payTextBox.Text = "0.00"
         RemarksTextBox.Text = ""
         IdTextBox.Text = ""
         total_deduction_TextBox.Text = "0.00"
 
+        PhotoPictureBox.Image = My.Resources.DefaultUserImg
     End Sub
 
     'Private Sub btn_generate_no_Click(sender As Object, e As EventArgs) Handles btn_generate_no.Click
@@ -339,7 +358,7 @@ Public Class Payroll
         End If
 
         Dim insert_update_query As String
-        insert_update_query = "insert into payroll_tbl values (@payroll_no,@period_from,@period_to,@employee_id,@last_name,@first_name,@middle_name,@department_assigned,@rate_basis_descr,@monthly_rate,@daily_rate,@hourly_rate,@unit_rate,@regular_wages,@overtime_amt,@allowances_amt,@adjustments_amt,@worked_days,@absent_days,@absent_amt,@lates_in_min,@lates_in_amt,@cash_advance_amt,@sss_med_amt,@sss_loan_amt,@pag_ibig_amt,@phic_amt,@wtax_amt,@other_ded_amt,@other_loans_amt,@gross_pay,@net_pay,@remarks)"
+        insert_update_query = "insert into payroll_tbl values (@payroll_no,@period_from,@period_to,@employee_id,@last_name,@first_name,@middle_name,@department_assigned,@rate_basis_descr,@monthly_rate,@daily_rate,@hourly_rate,@unit_rate,@regular_wages,@overtime_amt,@allowances_amt,@adjustments_amt,@worked_days,@absent_days,@absent_amt,@lates_in_min,@lates_in_amt,@cash_advance_amt,@sss_med_amt,@sss_loan_amt,@pag_ibig_amt,@phic_amt,@wtax_amt,@other_ded_amt,@other_loans_amt,@gross_pay,@net_pay,@remarks,@king_coop_loan,@lbp_loan)"
 
         Dim command1 As New SqlCommand(insert_update_query, conn)
 
@@ -377,6 +396,8 @@ Public Class Payroll
         command1.Parameters.Add("@gross_pay", SqlDbType.Money).Value = Gross_payTextBox.Text
         command1.Parameters.Add("@net_pay", SqlDbType.Money).Value = Net_payTextBox.Text
         command1.Parameters.Add("@remarks", SqlDbType.VarChar).Value = RemarksTextBox.Text
+        command1.Parameters.Add("@king_coop_loan", SqlDbType.VarChar).Value = King_coop_loanTextBox.Text
+        command1.Parameters.Add("@lbp_loan", SqlDbType.VarChar).Value = Lbp_loanTextBox.Text
         Try
             conn.Open()
             result = command1.ExecuteNonQuery()
@@ -419,7 +440,7 @@ Public Class Payroll
             MessageBox.Show("You pressed No, Record will be remain")
         ElseIf result = DialogResult.Yes Then
             Dim insert_update_query As String
-            insert_update_query = "update payroll_tbl set rate_basis_descr = @rate_basis_descr,monthly_rate = @monthly_rate, daily_rate = @daily_rate,hourly_rate =@hourly_rate,unit_rate = @unit_rate,regular_wages = @regular_wages,overtime_amt = @overtime_amt,allowances_amt = @allowances_amt, adjustments_amt = @adjustments_amt, worked_days = @worked_days, absent_days = @absent_days, absent_amt = @absent_amt, lates_in_min = @lates_in_min, lates_in_amt = @lates_in_amt, cash_advance_amt = @cash_advance_amt, sss_med_amt = @sss_med_amt, sss_loan_amt = @sss_loan_amt, pag_ibig_amt = @pag_ibig_amt, phic_amt = @phic_amt,wtax_amt = @wtax_amt, other_ded_amt = @other_ded_amt, other_loans_amt = @other_loans_amt, gross_pay =@gross_pay,net_pay = @net_pay, remarks = @remarks where Id = @Id"
+            insert_update_query = "update payroll_tbl set rate_basis_descr = @rate_basis_descr,monthly_rate = @monthly_rate, daily_rate = @daily_rate,hourly_rate =@hourly_rate,unit_rate = @unit_rate,regular_wages = @regular_wages,overtime_amt = @overtime_amt,allowances_amt = @allowances_amt, adjustments_amt = @adjustments_amt, worked_days = @worked_days, absent_days = @absent_days, absent_amt = @absent_amt, lates_in_min = @lates_in_min, lates_in_amt = @lates_in_amt, cash_advance_amt = @cash_advance_amt, sss_med_amt = @sss_med_amt, sss_loan_amt = @sss_loan_amt, pag_ibig_amt = @pag_ibig_amt, phic_amt = @phic_amt,wtax_amt = @wtax_amt, other_ded_amt = @other_ded_amt, other_loans_amt = @other_loans_amt, gross_pay =@gross_pay,net_pay = @net_pay, remarks = @remarks, king_coop_loan = @king_coop_loan, lbp_loan = @lbp_loan where Id = @Id"
             Dim command1 As New SqlCommand(insert_update_query, conn)
             command1.Parameters.Add("@Id", SqlDbType.VarChar).Value = IdTextBox.Text
             command1.Parameters.Add("@payroll_no", SqlDbType.VarChar).Value = Payroll_noComboBox.Text
@@ -455,6 +476,8 @@ Public Class Payroll
             command1.Parameters.Add("@gross_pay", SqlDbType.Money).Value = Gross_payTextBox.Text
             command1.Parameters.Add("@net_pay", SqlDbType.Money).Value = Net_payTextBox.Text
             command1.Parameters.Add("@remarks", SqlDbType.VarChar).Value = RemarksTextBox.Text
+            command1.Parameters.Add("@king_coop_loan", SqlDbType.VarChar).Value = King_coop_loanTextBox.Text
+            command1.Parameters.Add("@lbp_loan", SqlDbType.VarChar).Value = Lbp_loanTextBox.Text
             Try
                 conn.Open()
                 result = command1.ExecuteNonQuery()
@@ -495,6 +518,7 @@ Public Class Payroll
         Dim result As DialogResult = MessageBox.Show("You can Update or Delete this Record", "Update or Delete Record", MessageBoxButtons.YesNo)
         If result = DialogResult.No Then
             'MessageBox.Show("You pressed No, Record will be remain")
+            clearentry()
         ElseIf result = DialogResult.Yes Then
             clearentry()
             Payroll_noComboBox.Text = Vw_payroll_tblDataGridView.CurrentRow.Cells(1).Value.ToString.Trim()
@@ -531,6 +555,8 @@ Public Class Payroll
             Gross_payTextBox.Text = Double.Parse(Vw_payroll_tblDataGridView.CurrentRow.Cells(32).Value.ToString.Trim()).ToString("###,##0.00")
             Net_payTextBox.Text = Double.Parse(Vw_payroll_tblDataGridView.CurrentRow.Cells(33).Value.ToString.Trim()).ToString("###,##0.00")
             RemarksTextBox.Text = Vw_payroll_tblDataGridView.CurrentRow.Cells(34).Value.ToString.Trim()
+            King_coop_loanTextBox.Text = Double.Parse(Vw_payroll_tblDataGridView.CurrentRow.Cells(36).Value.ToString.Trim()).ToString("###,##0.00")
+            Lbp_loanTextBox.Text = Double.Parse(Vw_payroll_tblDataGridView.CurrentRow.Cells(37).Value.ToString.Trim()).ToString("###,##0.00")
             IdTextBox.Text = Vw_payroll_tblDataGridView.CurrentRow.Cells(0).Value.ToString.Trim()
 
             Try
@@ -588,18 +614,23 @@ Public Class Payroll
             Hourly_rateTextBox.Enabled = True
             Unit_rateTextBox.Enabled = True
 
-            Dim conn As SqlConnection = New SqlConnection(connection)
-            Dim cmd As SqlCommand = New SqlCommand("select top 1 payroll_no from payroll_tbl order by id desc", conn)
-            Dim sda As SqlDataAdapter = New SqlDataAdapter(cmd)
-            Dim dt As DataTable = New DataTable
-            sda.Fill(dt)
-            If (dt.Rows.Count < 0) Then
+            Try
+                Dim conn As SqlConnection = New SqlConnection(connection)
+                Dim cmd As SqlCommand = New SqlCommand("select top 1 payroll_no from payroll_tbl order by id desc", conn)
+                Dim sda As SqlDataAdapter = New SqlDataAdapter(cmd)
+                Dim dt As DataTable = New DataTable
+                sda.Fill(dt)
+                If (dt Is Nothing) Then
+                    Payroll_noComboBox.Text = "000001"
+                Else
+                    Dim payroll_no As Double
+                    payroll_no = Double.Parse(dt.Rows(0)("payroll_no").ToString()) + 1
+                    Payroll_noComboBox.Text = ("00000" + payroll_no.ToString()).PadRight(6)
+                End If
+
+            Catch ex As Exception
                 Payroll_noComboBox.Text = "000001"
-            Else
-                Dim payroll_no As Double
-                payroll_no = Double.Parse(dt.Rows(0)("payroll_no").ToString()) + 1
-                Payroll_noComboBox.Text = ("00000" + payroll_no.ToString()).PadRight(6)
-            End If
+            End Try
         End If
     End Sub
 
@@ -633,7 +664,4 @@ Public Class Payroll
         CommonQuery(query, Vw_payroll_tblDataGridView)
     End Sub
 
-    Private Sub Vw_payroll_tblDataGridView_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles Vw_payroll_tblDataGridView.CellContentClick
-
-    End Sub
 End Class

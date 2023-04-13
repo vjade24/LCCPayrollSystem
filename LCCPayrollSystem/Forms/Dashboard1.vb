@@ -100,4 +100,8 @@ Public Class Dashboard1
         Label16.Text = DateTime.Now.ToShortTimeString
         Label17.Text = DateTime.Now.ToLongDateString
     End Sub
+
+    Private Sub btnAttendance_Click(sender As Object, e As EventArgs) Handles btnAttendance.Click
+        Attendance.Show()
+    End Sub
 End Class

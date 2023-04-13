@@ -56,6 +56,8 @@ Partial Class Payroll
         Dim Middle_nameLabel As System.Windows.Forms.Label
         Dim First_nameLabel As System.Windows.Forms.Label
         Dim IdLabel As System.Windows.Forms.Label
+        Dim King_coop_loanLabel As System.Windows.Forms.Label
+        Dim Lbp_loanLabel As System.Windows.Forms.Label
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Payroll))
         Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
@@ -90,6 +92,10 @@ Partial Class Payroll
         Me.Adjustments_amtTextBox = New System.Windows.Forms.TextBox()
         Me.Allowances_amtTextBox = New System.Windows.Forms.TextBox()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.Lbp_loanTextBox = New System.Windows.Forms.TextBox()
+        Me.King_coop_loanTextBox = New System.Windows.Forms.TextBox()
+        Me.Payroll_tblBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.PayrolldbDataSet = New LCCPayrollSystem.payrolldbDataSet()
         Me.total_deduction_TextBox = New System.Windows.Forms.TextBox()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Absent_daysTextBox = New System.Windows.Forms.TextBox()
@@ -149,14 +155,19 @@ Partial Class Payroll
         Me.NetpayDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.RemarksDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.photo = New System.Windows.Forms.DataGridViewImageColumn()
+        Me.king_coop_loan = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.lbp_loan = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.VwpayrolltblBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.PayrolldbDataSet = New LCCPayrollSystem.payrolldbDataSet()
         Me.GroupBox7 = New System.Windows.Forms.GroupBox()
+        Me.Label13 = New System.Windows.Forms.Label()
         Me.Label14 = New System.Windows.Forms.Label()
         Me.txtbSearch = New System.Windows.Forms.TextBox()
         Me.btnCreate = New System.Windows.Forms.Button()
         Me.btndel = New System.Windows.Forms.Button()
         Me.Vw_payroll_tblTableAdapter = New LCCPayrollSystem.payrolldbDataSetTableAdapters.vw_payroll_tblTableAdapter()
+        Me.Payroll_tblTableAdapter = New LCCPayrollSystem.payrolldbDataSetTableAdapters.payroll_tblTableAdapter()
+        Me.TableAdapterManager = New LCCPayrollSystem.payrolldbDataSetTableAdapters.TableAdapterManager()
+        Me.PayrolldbDataSet1 = New LCCPayrollSystem.payrolldbDataSet()
         Period_toLabel = New System.Windows.Forms.Label()
         Period_fromLabel = New System.Windows.Forms.Label()
         Payroll_noLabel = New System.Windows.Forms.Label()
@@ -190,6 +201,8 @@ Partial Class Payroll
         Middle_nameLabel = New System.Windows.Forms.Label()
         First_nameLabel = New System.Windows.Forms.Label()
         IdLabel = New System.Windows.Forms.Label()
+        King_coop_loanLabel = New System.Windows.Forms.Label()
+        Lbp_loanLabel = New System.Windows.Forms.Label()
         Me.Panel2.SuspendLayout()
         CType(Me.PictureBox7, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox5.SuspendLayout()
@@ -197,11 +210,13 @@ Partial Class Payroll
         CType(Me.PhotoPictureBox, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox4.SuspendLayout()
         Me.GroupBox1.SuspendLayout()
+        CType(Me.Payroll_tblBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PayrolldbDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox6.SuspendLayout()
         CType(Me.Vw_payroll_tblDataGridView, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.VwpayrolltblBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PayrolldbDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox7.SuspendLayout()
+        CType(Me.PayrolldbDataSet1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Period_toLabel
@@ -298,7 +313,7 @@ Partial Class Payroll
         '
         Net_payLabel.AutoSize = True
         Net_payLabel.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Net_payLabel.Location = New System.Drawing.Point(262, 288)
+        Net_payLabel.Location = New System.Drawing.Point(263, 306)
         Net_payLabel.Name = "Net_payLabel"
         Net_payLabel.Size = New System.Drawing.Size(74, 19)
         Net_payLabel.TabIndex = 63
@@ -307,7 +322,7 @@ Partial Class Payroll
         'RemarksLabel
         '
         RemarksLabel.AutoSize = True
-        RemarksLabel.Location = New System.Drawing.Point(9, 216)
+        RemarksLabel.Location = New System.Drawing.Point(11, 241)
         RemarksLabel.Name = "RemarksLabel"
         RemarksLabel.Size = New System.Drawing.Size(62, 17)
         RemarksLabel.TabIndex = 65
@@ -506,6 +521,24 @@ Partial Class Payroll
         IdLabel.TabIndex = 1
         IdLabel.Text = "Id:"
         IdLabel.Visible = False
+        '
+        'King_coop_loanLabel
+        '
+        King_coop_loanLabel.AutoSize = True
+        King_coop_loanLabel.Location = New System.Drawing.Point(11, 212)
+        King_coop_loanLabel.Name = "King_coop_loanLabel"
+        King_coop_loanLabel.Size = New System.Drawing.Size(114, 17)
+        King_coop_loanLabel.TabIndex = 117
+        King_coop_loanLabel.Text = "King Coop Loan"
+        '
+        'Lbp_loanLabel
+        '
+        Lbp_loanLabel.AutoSize = True
+        Lbp_loanLabel.Location = New System.Drawing.Point(264, 212)
+        Lbp_loanLabel.Name = "Lbp_loanLabel"
+        Lbp_loanLabel.Size = New System.Drawing.Size(69, 17)
+        Lbp_loanLabel.TabIndex = 118
+        Lbp_loanLabel.Text = "LBP Loan:"
         '
         'Panel2
         '
@@ -722,7 +755,7 @@ Partial Class Payroll
         Me.btn_calculate.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(0, Byte), Integer))
         Me.btn_calculate.FlatStyle = System.Windows.Forms.FlatStyle.System
         Me.btn_calculate.ForeColor = System.Drawing.Color.White
-        Me.btn_calculate.Location = New System.Drawing.Point(415, 247)
+        Me.btn_calculate.Location = New System.Drawing.Point(414, 270)
         Me.btn_calculate.Name = "btn_calculate"
         Me.btn_calculate.Size = New System.Drawing.Size(124, 35)
         Me.btn_calculate.TabIndex = 117
@@ -731,17 +764,17 @@ Partial Class Payroll
         '
         'RemarksTextBox
         '
-        Me.RemarksTextBox.Location = New System.Drawing.Point(128, 209)
+        Me.RemarksTextBox.Location = New System.Drawing.Point(127, 241)
         Me.RemarksTextBox.Multiline = True
         Me.RemarksTextBox.Name = "RemarksTextBox"
-        Me.RemarksTextBox.Size = New System.Drawing.Size(122, 62)
+        Me.RemarksTextBox.Size = New System.Drawing.Size(122, 41)
         Me.RemarksTextBox.TabIndex = 66
         '
         'Net_payTextBox
         '
         Me.Net_payTextBox.BackColor = System.Drawing.SystemColors.ActiveBorder
         Me.Net_payTextBox.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Net_payTextBox.Location = New System.Drawing.Point(415, 288)
+        Me.Net_payTextBox.Location = New System.Drawing.Point(415, 306)
         Me.Net_payTextBox.Name = "Net_payTextBox"
         Me.Net_payTextBox.ReadOnly = True
         Me.Net_payTextBox.Size = New System.Drawing.Size(123, 27)
@@ -840,6 +873,10 @@ Partial Class Payroll
         '
         'GroupBox1
         '
+        Me.GroupBox1.Controls.Add(Lbp_loanLabel)
+        Me.GroupBox1.Controls.Add(Me.Lbp_loanTextBox)
+        Me.GroupBox1.Controls.Add(King_coop_loanLabel)
+        Me.GroupBox1.Controls.Add(Me.King_coop_loanTextBox)
         Me.GroupBox1.Controls.Add(Me.RemarksTextBox)
         Me.GroupBox1.Controls.Add(Me.btn_calculate)
         Me.GroupBox1.Controls.Add(Me.total_deduction_TextBox)
@@ -874,16 +911,45 @@ Partial Class Payroll
         Me.GroupBox1.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupBox1.Location = New System.Drawing.Point(721, 189)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(553, 332)
+        Me.GroupBox1.Size = New System.Drawing.Size(559, 343)
         Me.GroupBox1.TabIndex = 117
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Deductions"
+        '
+        'Lbp_loanTextBox
+        '
+        Me.Lbp_loanTextBox.Location = New System.Drawing.Point(414, 209)
+        Me.Lbp_loanTextBox.Name = "Lbp_loanTextBox"
+        Me.Lbp_loanTextBox.Size = New System.Drawing.Size(123, 23)
+        Me.Lbp_loanTextBox.TabIndex = 119
+        Me.Lbp_loanTextBox.Text = "0.00"
+        Me.Lbp_loanTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
+        '
+        'King_coop_loanTextBox
+        '
+        Me.King_coop_loanTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.Payroll_tblBindingSource, "king_coop_loan", True))
+        Me.King_coop_loanTextBox.Location = New System.Drawing.Point(128, 209)
+        Me.King_coop_loanTextBox.Name = "King_coop_loanTextBox"
+        Me.King_coop_loanTextBox.Size = New System.Drawing.Size(123, 23)
+        Me.King_coop_loanTextBox.TabIndex = 118
+        Me.King_coop_loanTextBox.Text = "0.00"
+        Me.King_coop_loanTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
+        '
+        'Payroll_tblBindingSource
+        '
+        Me.Payroll_tblBindingSource.DataMember = "payroll_tbl"
+        Me.Payroll_tblBindingSource.DataSource = Me.PayrolldbDataSet
+        '
+        'PayrolldbDataSet
+        '
+        Me.PayrolldbDataSet.DataSetName = "payrolldbDataSet"
+        Me.PayrolldbDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
         '
         'total_deduction_TextBox
         '
         Me.total_deduction_TextBox.BackColor = System.Drawing.SystemColors.ActiveBorder
         Me.total_deduction_TextBox.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.total_deduction_TextBox.Location = New System.Drawing.Point(415, 216)
+        Me.total_deduction_TextBox.Location = New System.Drawing.Point(414, 238)
         Me.total_deduction_TextBox.Name = "total_deduction_TextBox"
         Me.total_deduction_TextBox.ReadOnly = True
         Me.total_deduction_TextBox.Size = New System.Drawing.Size(123, 27)
@@ -895,7 +961,7 @@ Partial Class Payroll
         '
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Century Gothic", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.Location = New System.Drawing.Point(262, 216)
+        Me.Label3.Location = New System.Drawing.Point(261, 238)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(139, 19)
         Me.Label3.TabIndex = 61
@@ -1106,13 +1172,13 @@ Partial Class Payroll
         Me.Vw_payroll_tblDataGridView.AllowUserToDeleteRows = False
         Me.Vw_payroll_tblDataGridView.AutoGenerateColumns = False
         Me.Vw_payroll_tblDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.Vw_payroll_tblDataGridView.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.IdDataGridViewTextBoxColumn, Me.PayrollnoDataGridViewTextBoxColumn, Me.PeriodfromDataGridViewTextBoxColumn, Me.PeriodtoDataGridViewTextBoxColumn, Me.EmployeeidDataGridViewTextBoxColumn, Me.EmployeenameDataGridViewTextBoxColumn, Me.LastnameDataGridViewTextBoxColumn, Me.FirstnameDataGridViewTextBoxColumn, Me.MiddlenameDataGridViewTextBoxColumn, Me.DepartmentassignedDataGridViewTextBoxColumn, Me.RatebasisdescrDataGridViewTextBoxColumn, Me.MonthlyrateDataGridViewTextBoxColumn, Me.DailyrateDataGridViewTextBoxColumn, Me.HourlyrateDataGridViewTextBoxColumn, Me.UnitrateDataGridViewTextBoxColumn, Me.RegularwagesDataGridViewTextBoxColumn, Me.OvertimeamtDataGridViewTextBoxColumn, Me.AllowancesamtDataGridViewTextBoxColumn, Me.AdjustmentsamtDataGridViewTextBoxColumn, Me.WorkeddaysDataGridViewTextBoxColumn, Me.AbsentdaysDataGridViewTextBoxColumn, Me.AbsentamtDataGridViewTextBoxColumn, Me.LatesinminDataGridViewTextBoxColumn, Me.LatesinamtDataGridViewTextBoxColumn, Me.CashadvanceamtDataGridViewTextBoxColumn, Me.SssmedamtDataGridViewTextBoxColumn, Me.SssloanamtDataGridViewTextBoxColumn, Me.PagibigamtDataGridViewTextBoxColumn, Me.PhicamtDataGridViewTextBoxColumn, Me.WtaxamtDataGridViewTextBoxColumn, Me.OtherdedamtDataGridViewTextBoxColumn, Me.OtherloansamtDataGridViewTextBoxColumn, Me.GrosspayDataGridViewTextBoxColumn, Me.NetpayDataGridViewTextBoxColumn, Me.RemarksDataGridViewTextBoxColumn, Me.photo})
+        Me.Vw_payroll_tblDataGridView.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.IdDataGridViewTextBoxColumn, Me.PayrollnoDataGridViewTextBoxColumn, Me.PeriodfromDataGridViewTextBoxColumn, Me.PeriodtoDataGridViewTextBoxColumn, Me.EmployeeidDataGridViewTextBoxColumn, Me.EmployeenameDataGridViewTextBoxColumn, Me.LastnameDataGridViewTextBoxColumn, Me.FirstnameDataGridViewTextBoxColumn, Me.MiddlenameDataGridViewTextBoxColumn, Me.DepartmentassignedDataGridViewTextBoxColumn, Me.RatebasisdescrDataGridViewTextBoxColumn, Me.MonthlyrateDataGridViewTextBoxColumn, Me.DailyrateDataGridViewTextBoxColumn, Me.HourlyrateDataGridViewTextBoxColumn, Me.UnitrateDataGridViewTextBoxColumn, Me.RegularwagesDataGridViewTextBoxColumn, Me.OvertimeamtDataGridViewTextBoxColumn, Me.AllowancesamtDataGridViewTextBoxColumn, Me.AdjustmentsamtDataGridViewTextBoxColumn, Me.WorkeddaysDataGridViewTextBoxColumn, Me.AbsentdaysDataGridViewTextBoxColumn, Me.AbsentamtDataGridViewTextBoxColumn, Me.LatesinminDataGridViewTextBoxColumn, Me.LatesinamtDataGridViewTextBoxColumn, Me.CashadvanceamtDataGridViewTextBoxColumn, Me.SssmedamtDataGridViewTextBoxColumn, Me.SssloanamtDataGridViewTextBoxColumn, Me.PagibigamtDataGridViewTextBoxColumn, Me.PhicamtDataGridViewTextBoxColumn, Me.WtaxamtDataGridViewTextBoxColumn, Me.OtherdedamtDataGridViewTextBoxColumn, Me.OtherloansamtDataGridViewTextBoxColumn, Me.GrosspayDataGridViewTextBoxColumn, Me.NetpayDataGridViewTextBoxColumn, Me.RemarksDataGridViewTextBoxColumn, Me.photo, Me.king_coop_loan, Me.lbp_loan})
         Me.Vw_payroll_tblDataGridView.DataSource = Me.VwpayrolltblBindingSource
-        Me.Vw_payroll_tblDataGridView.Location = New System.Drawing.Point(15, 85)
+        Me.Vw_payroll_tblDataGridView.Location = New System.Drawing.Point(15, 98)
         Me.Vw_payroll_tblDataGridView.Name = "Vw_payroll_tblDataGridView"
         Me.Vw_payroll_tblDataGridView.ReadOnly = True
         Me.Vw_payroll_tblDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.Vw_payroll_tblDataGridView.Size = New System.Drawing.Size(344, 387)
+        Me.Vw_payroll_tblDataGridView.Size = New System.Drawing.Size(344, 374)
         Me.Vw_payroll_tblDataGridView.TabIndex = 0
         '
         'IdDataGridViewTextBoxColumn
@@ -1126,10 +1192,9 @@ Partial Class Payroll
         'PayrollnoDataGridViewTextBoxColumn
         '
         Me.PayrollnoDataGridViewTextBoxColumn.DataPropertyName = "payroll_no"
-        Me.PayrollnoDataGridViewTextBoxColumn.HeaderText = "payroll_no"
+        Me.PayrollnoDataGridViewTextBoxColumn.HeaderText = "Payroll No"
         Me.PayrollnoDataGridViewTextBoxColumn.Name = "PayrollnoDataGridViewTextBoxColumn"
         Me.PayrollnoDataGridViewTextBoxColumn.ReadOnly = True
-        Me.PayrollnoDataGridViewTextBoxColumn.Visible = False
         '
         'PeriodfromDataGridViewTextBoxColumn
         '
@@ -1408,18 +1473,30 @@ Partial Class Payroll
         Me.photo.ReadOnly = True
         Me.photo.Visible = False
         '
+        'king_coop_loan
+        '
+        Me.king_coop_loan.DataPropertyName = "king_coop_loan"
+        Me.king_coop_loan.HeaderText = "king_coop_loan"
+        Me.king_coop_loan.Name = "king_coop_loan"
+        Me.king_coop_loan.ReadOnly = True
+        Me.king_coop_loan.Visible = False
+        '
+        'lbp_loan
+        '
+        Me.lbp_loan.DataPropertyName = "lbp_loan"
+        Me.lbp_loan.HeaderText = "lbp_loan"
+        Me.lbp_loan.Name = "lbp_loan"
+        Me.lbp_loan.ReadOnly = True
+        Me.lbp_loan.Visible = False
+        '
         'VwpayrolltblBindingSource
         '
         Me.VwpayrolltblBindingSource.DataMember = "vw_payroll_tbl"
         Me.VwpayrolltblBindingSource.DataSource = Me.PayrolldbDataSet
         '
-        'PayrolldbDataSet
-        '
-        Me.PayrolldbDataSet.DataSetName = "payrolldbDataSet"
-        Me.PayrolldbDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
-        '
         'GroupBox7
         '
+        Me.GroupBox7.Controls.Add(Me.Label13)
         Me.GroupBox7.Controls.Add(Me.Label14)
         Me.GroupBox7.Controls.Add(Me.txtbSearch)
         Me.GroupBox7.Controls.Add(Me.btnCreate)
@@ -1432,12 +1509,23 @@ Partial Class Payroll
         Me.GroupBox7.TabStop = False
         Me.GroupBox7.Text = "Payroll List"
         '
+        'Label13
+        '
+        Me.Label13.AutoSize = True
+        Me.Label13.Font = New System.Drawing.Font("Century Gothic", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label13.ForeColor = System.Drawing.Color.Black
+        Me.Label13.Location = New System.Drawing.Point(12, 51)
+        Me.Label13.Name = "Label13"
+        Me.Label13.Size = New System.Drawing.Size(139, 16)
+        Me.Label13.TabIndex = 41
+        Me.Label13.Text = "(First Name or Lastname)"
+        '
         'Label14
         '
         Me.Label14.AutoSize = True
         Me.Label14.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label14.ForeColor = System.Drawing.SystemColors.InactiveCaptionText
-        Me.Label14.Location = New System.Drawing.Point(11, 34)
+        Me.Label14.Location = New System.Drawing.Point(11, 33)
         Me.Label14.Name = "Label14"
         Me.Label14.Size = New System.Drawing.Size(76, 20)
         Me.Label14.TabIndex = 40
@@ -1445,14 +1533,14 @@ Partial Class Payroll
         '
         'txtbSearch
         '
-        Me.txtbSearch.Location = New System.Drawing.Point(15, 57)
+        Me.txtbSearch.Location = New System.Drawing.Point(15, 70)
         Me.txtbSearch.Name = "txtbSearch"
         Me.txtbSearch.Size = New System.Drawing.Size(152, 23)
         Me.txtbSearch.TabIndex = 39
         '
         'btnCreate
         '
-        Me.btnCreate.Location = New System.Drawing.Point(194, 47)
+        Me.btnCreate.Location = New System.Drawing.Point(194, 60)
         Me.btnCreate.Name = "btnCreate"
         Me.btnCreate.Size = New System.Drawing.Size(165, 32)
         Me.btnCreate.TabIndex = 1
@@ -1476,11 +1564,31 @@ Partial Class Payroll
         '
         Me.Vw_payroll_tblTableAdapter.ClearBeforeFill = True
         '
+        'Payroll_tblTableAdapter
+        '
+        Me.Payroll_tblTableAdapter.ClearBeforeFill = True
+        '
+        'TableAdapterManager
+        '
+        Me.TableAdapterManager.BackupDataSetBeforeUpdate = False
+        Me.TableAdapterManager.deduction_list_tblTableAdapter = Nothing
+        Me.TableAdapterManager.employee_tblTableAdapter = Nothing
+        Me.TableAdapterManager.payroll_deduction_tblTableAdapter = Nothing
+        Me.TableAdapterManager.payroll_tblTableAdapter = Me.Payroll_tblTableAdapter
+        Me.TableAdapterManager.time_schedule_empl_tblTableAdapter = Nothing
+        Me.TableAdapterManager.UpdateOrder = LCCPayrollSystem.payrolldbDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
+        Me.TableAdapterManager.user_tblTableAdapter = Nothing
+        '
+        'PayrolldbDataSet1
+        '
+        Me.PayrolldbDataSet1.DataSetName = "payrolldbDataSet"
+        Me.PayrolldbDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
         'Payroll
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1287, 585)
+        Me.ClientSize = New System.Drawing.Size(1292, 585)
         Me.Controls.Add(Me.GroupBox7)
         Me.Controls.Add(Me.btnCancel)
         Me.Controls.Add(Me.GroupBox6)
@@ -1508,13 +1616,15 @@ Partial Class Payroll
         Me.GroupBox4.PerformLayout()
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
+        CType(Me.Payroll_tblBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PayrolldbDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox6.ResumeLayout(False)
         Me.GroupBox6.PerformLayout()
         CType(Me.Vw_payroll_tblDataGridView, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.VwpayrolltblBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PayrolldbDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox7.ResumeLayout(False)
         Me.GroupBox7.PerformLayout()
+        CType(Me.PayrolldbDataSet1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -1581,6 +1691,16 @@ Partial Class Payroll
     Friend WithEvents btndel As Button
     Friend WithEvents Label4 As Label
     Friend WithEvents Label5 As Label
+    Friend WithEvents Label13 As Label
+    Friend WithEvents Payroll_tblBindingSource As BindingSource
+    Friend WithEvents Payroll_tblTableAdapter As payrolldbDataSetTableAdapters.payroll_tblTableAdapter
+    Friend WithEvents TableAdapterManager As payrolldbDataSetTableAdapters.TableAdapterManager
+    Friend WithEvents King_coop_loanTextBox As TextBox
+    Friend WithEvents Lbp_loanTextBox As TextBox
+    Friend WithEvents PayrolldbDataSet1 As payrolldbDataSet
+    Friend WithEvents photo As DataGridViewImageColumn
+    Friend WithEvents king_coop_loan As DataGridViewTextBoxColumn
+    Friend WithEvents lbp_loan As DataGridViewTextBoxColumn
     Friend WithEvents IdDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents PayrollnoDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents PeriodfromDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
@@ -1616,5 +1736,4 @@ Partial Class Payroll
     Friend WithEvents GrosspayDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents NetpayDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents RemarksDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
-    Friend WithEvents photo As DataGridViewImageColumn
 End Class

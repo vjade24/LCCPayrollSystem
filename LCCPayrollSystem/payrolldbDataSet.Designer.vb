@@ -43,6 +43,10 @@ Partial Public Class payrolldbDataSet
     
     Private tablesp_payroll_tbl_rep As sp_payroll_tbl_repDataTable
     
+    Private tabletime_schedule_empl_tbl As time_schedule_empl_tblDataTable
+    
+    Private tablevw_time_schedule_empl_tbl As vw_time_schedule_empl_tblDataTable
+    
     Private _schemaSerializationMode As Global.System.Data.SchemaSerializationMode = Global.System.Data.SchemaSerializationMode.IncludeSchema
     
     <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -98,6 +102,12 @@ Partial Public Class payrolldbDataSet
             End If
             If (Not (ds.Tables("sp_payroll_tbl_rep")) Is Nothing) Then
                 MyBase.Tables.Add(New sp_payroll_tbl_repDataTable(ds.Tables("sp_payroll_tbl_rep")))
+            End If
+            If (Not (ds.Tables("time_schedule_empl_tbl")) Is Nothing) Then
+                MyBase.Tables.Add(New time_schedule_empl_tblDataTable(ds.Tables("time_schedule_empl_tbl")))
+            End If
+            If (Not (ds.Tables("vw_time_schedule_empl_tbl")) Is Nothing) Then
+                MyBase.Tables.Add(New vw_time_schedule_empl_tblDataTable(ds.Tables("vw_time_schedule_empl_tbl")))
             End If
             Me.DataSetName = ds.DataSetName
             Me.Prefix = ds.Prefix
@@ -208,6 +218,26 @@ Partial Public Class payrolldbDataSet
     
     <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
      Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
+     Global.System.ComponentModel.Browsable(false),  _
+     Global.System.ComponentModel.DesignerSerializationVisibility(Global.System.ComponentModel.DesignerSerializationVisibility.Content)>  _
+    Public ReadOnly Property time_schedule_empl_tbl() As time_schedule_empl_tblDataTable
+        Get
+            Return Me.tabletime_schedule_empl_tbl
+        End Get
+    End Property
+    
+    <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+     Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
+     Global.System.ComponentModel.Browsable(false),  _
+     Global.System.ComponentModel.DesignerSerializationVisibility(Global.System.ComponentModel.DesignerSerializationVisibility.Content)>  _
+    Public ReadOnly Property vw_time_schedule_empl_tbl() As vw_time_schedule_empl_tblDataTable
+        Get
+            Return Me.tablevw_time_schedule_empl_tbl
+        End Get
+    End Property
+    
+    <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+     Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
      Global.System.ComponentModel.BrowsableAttribute(true),  _
      Global.System.ComponentModel.DesignerSerializationVisibilityAttribute(Global.System.ComponentModel.DesignerSerializationVisibility.Visible)>  _
     Public Overrides Property SchemaSerializationMode() As Global.System.Data.SchemaSerializationMode
@@ -300,6 +330,12 @@ Partial Public Class payrolldbDataSet
             If (Not (ds.Tables("sp_payroll_tbl_rep")) Is Nothing) Then
                 MyBase.Tables.Add(New sp_payroll_tbl_repDataTable(ds.Tables("sp_payroll_tbl_rep")))
             End If
+            If (Not (ds.Tables("time_schedule_empl_tbl")) Is Nothing) Then
+                MyBase.Tables.Add(New time_schedule_empl_tblDataTable(ds.Tables("time_schedule_empl_tbl")))
+            End If
+            If (Not (ds.Tables("vw_time_schedule_empl_tbl")) Is Nothing) Then
+                MyBase.Tables.Add(New vw_time_schedule_empl_tblDataTable(ds.Tables("vw_time_schedule_empl_tbl")))
+            End If
             Me.DataSetName = ds.DataSetName
             Me.Prefix = ds.Prefix
             Me.Namespace = ds.Namespace
@@ -386,6 +422,18 @@ Partial Public Class payrolldbDataSet
                 Me.tablesp_payroll_tbl_rep.InitVars
             End If
         End If
+        Me.tabletime_schedule_empl_tbl = CType(MyBase.Tables("time_schedule_empl_tbl"),time_schedule_empl_tblDataTable)
+        If (initTable = true) Then
+            If (Not (Me.tabletime_schedule_empl_tbl) Is Nothing) Then
+                Me.tabletime_schedule_empl_tbl.InitVars
+            End If
+        End If
+        Me.tablevw_time_schedule_empl_tbl = CType(MyBase.Tables("vw_time_schedule_empl_tbl"),vw_time_schedule_empl_tblDataTable)
+        If (initTable = true) Then
+            If (Not (Me.tablevw_time_schedule_empl_tbl) Is Nothing) Then
+                Me.tablevw_time_schedule_empl_tbl.InitVars
+            End If
+        End If
     End Sub
     
     <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -414,6 +462,10 @@ Partial Public Class payrolldbDataSet
         MyBase.Tables.Add(Me.tablesp_payroll_payslip_rep)
         Me.tablesp_payroll_tbl_rep = New sp_payroll_tbl_repDataTable()
         MyBase.Tables.Add(Me.tablesp_payroll_tbl_rep)
+        Me.tabletime_schedule_empl_tbl = New time_schedule_empl_tblDataTable()
+        MyBase.Tables.Add(Me.tabletime_schedule_empl_tbl)
+        Me.tablevw_time_schedule_empl_tbl = New vw_time_schedule_empl_tblDataTable()
+        MyBase.Tables.Add(Me.tablevw_time_schedule_empl_tbl)
     End Sub
     
     <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -467,6 +519,18 @@ Partial Public Class payrolldbDataSet
     <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
      Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
     Private Function ShouldSerializesp_payroll_tbl_rep() As Boolean
+        Return false
+    End Function
+    
+    <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+     Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+    Private Function ShouldSerializetime_schedule_empl_tbl() As Boolean
+        Return false
+    End Function
+    
+    <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+     Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+    Private Function ShouldSerializevw_time_schedule_empl_tbl() As Boolean
         Return false
     End Function
     
@@ -554,6 +618,12 @@ Partial Public Class payrolldbDataSet
     
     <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
     Public Delegate Sub sp_payroll_tbl_repRowChangeEventHandler(ByVal sender As Object, ByVal e As sp_payroll_tbl_repRowChangeEvent)
+    
+    <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+    Public Delegate Sub time_schedule_empl_tblRowChangeEventHandler(ByVal sender As Object, ByVal e As time_schedule_empl_tblRowChangeEvent)
+    
+    <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+    Public Delegate Sub vw_time_schedule_empl_tblRowChangeEventHandler(ByVal sender As Object, ByVal e As vw_time_schedule_empl_tblRowChangeEvent)
     
     '''<summary>
     '''Represents the strongly named DataTable class.
@@ -2016,6 +2086,10 @@ Partial Public Class payrolldbDataSet
         
         Private columnremarks As Global.System.Data.DataColumn
         
+        Private columnking_coop_loan As Global.System.Data.DataColumn
+        
+        Private columnlbp_loan As Global.System.Data.DataColumn
+        
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
         Public Sub New()
@@ -2324,6 +2398,22 @@ Partial Public Class payrolldbDataSet
         End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public ReadOnly Property king_coop_loanColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnking_coop_loan
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public ReadOnly Property lbp_loanColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnlbp_loan
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
          Global.System.ComponentModel.Browsable(false)>  _
         Public ReadOnly Property Count() As Integer
@@ -2393,9 +2483,11 @@ Partial Public Class payrolldbDataSet
                     ByVal other_loans_amt As Decimal,  _
                     ByVal gross_pay As Decimal,  _
                     ByVal net_pay As Decimal,  _
-                    ByVal remarks As String) As payroll_tblRow
+                    ByVal remarks As String,  _
+                    ByVal king_coop_loan As Decimal,  _
+                    ByVal lbp_loan As Decimal) As payroll_tblRow
             Dim rowpayroll_tblRow As payroll_tblRow = CType(Me.NewRow,payroll_tblRow)
-            Dim columnValuesArray() As Object = New Object() {Nothing, payroll_no, period_from, period_to, employee_id, last_name, first_name, middle_name, department_assigned, rate_basis_descr, monthly_rate, daily_rate, hourly_rate, unit_rate, regular_wages, overtime_amt, allowances_amt, adjustments_amt, worked_days, absent_days, absent_amt, lates_in_min, lates_in_amt, cash_advance_amt, sss_med_amt, sss_loan_amt, pag_ibig_amt, phic_amt, wtax_amt, other_ded_amt, other_loans_amt, gross_pay, net_pay, remarks}
+            Dim columnValuesArray() As Object = New Object() {Nothing, payroll_no, period_from, period_to, employee_id, last_name, first_name, middle_name, department_assigned, rate_basis_descr, monthly_rate, daily_rate, hourly_rate, unit_rate, regular_wages, overtime_amt, allowances_amt, adjustments_amt, worked_days, absent_days, absent_amt, lates_in_min, lates_in_amt, cash_advance_amt, sss_med_amt, sss_loan_amt, pag_ibig_amt, phic_amt, wtax_amt, other_ded_amt, other_loans_amt, gross_pay, net_pay, remarks, king_coop_loan, lbp_loan}
             rowpayroll_tblRow.ItemArray = columnValuesArray
             Me.Rows.Add(rowpayroll_tblRow)
             Return rowpayroll_tblRow
@@ -2458,6 +2550,8 @@ Partial Public Class payrolldbDataSet
             Me.columngross_pay = MyBase.Columns("gross_pay")
             Me.columnnet_pay = MyBase.Columns("net_pay")
             Me.columnremarks = MyBase.Columns("remarks")
+            Me.columnking_coop_loan = MyBase.Columns("king_coop_loan")
+            Me.columnlbp_loan = MyBase.Columns("lbp_loan")
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -2531,6 +2625,10 @@ Partial Public Class payrolldbDataSet
             MyBase.Columns.Add(Me.columnnet_pay)
             Me.columnremarks = New Global.System.Data.DataColumn("remarks", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnremarks)
+            Me.columnking_coop_loan = New Global.System.Data.DataColumn("king_coop_loan", GetType(Decimal), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnking_coop_loan)
+            Me.columnlbp_loan = New Global.System.Data.DataColumn("lbp_loan", GetType(Decimal), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnlbp_loan)
             Me.Constraints.Add(New Global.System.Data.UniqueConstraint("Constraint1", New Global.System.Data.DataColumn() {Me.columnId}, true))
             Me.columnId.AutoIncrement = true
             Me.columnId.AutoIncrementSeed = -1
@@ -3072,6 +3170,10 @@ Partial Public Class payrolldbDataSet
         
         Private columnphoto As Global.System.Data.DataColumn
         
+        Private columnking_coop_loan As Global.System.Data.DataColumn
+        
+        Private columnlbp_loan As Global.System.Data.DataColumn
+        
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
         Public Sub New()
@@ -3396,6 +3498,22 @@ Partial Public Class payrolldbDataSet
         End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public ReadOnly Property king_coop_loanColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnking_coop_loan
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public ReadOnly Property lbp_loanColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnlbp_loan
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
          Global.System.ComponentModel.Browsable(false)>  _
         Public ReadOnly Property Count() As Integer
@@ -3467,9 +3585,11 @@ Partial Public Class payrolldbDataSet
                     ByVal gross_pay As Decimal,  _
                     ByVal net_pay As Decimal,  _
                     ByVal remarks As String,  _
-                    ByVal photo() As Byte) As vw_payroll_tblRow
+                    ByVal photo() As Byte,  _
+                    ByVal king_coop_loan As Decimal,  _
+                    ByVal lbp_loan As Decimal) As vw_payroll_tblRow
             Dim rowvw_payroll_tblRow As vw_payroll_tblRow = CType(Me.NewRow,vw_payroll_tblRow)
-            Dim columnValuesArray() As Object = New Object() {Nothing, payroll_no, period_from, period_to, employee_id, employee_name, last_name, first_name, middle_name, department_assigned, rate_basis_descr, monthly_rate, daily_rate, hourly_rate, unit_rate, regular_wages, overtime_amt, allowances_amt, adjustments_amt, worked_days, absent_days, absent_amt, lates_in_min, lates_in_amt, cash_advance_amt, sss_med_amt, sss_loan_amt, pag_ibig_amt, phic_amt, wtax_amt, other_ded_amt, other_loans_amt, gross_pay, net_pay, remarks, photo}
+            Dim columnValuesArray() As Object = New Object() {Nothing, payroll_no, period_from, period_to, employee_id, employee_name, last_name, first_name, middle_name, department_assigned, rate_basis_descr, monthly_rate, daily_rate, hourly_rate, unit_rate, regular_wages, overtime_amt, allowances_amt, adjustments_amt, worked_days, absent_days, absent_amt, lates_in_min, lates_in_amt, cash_advance_amt, sss_med_amt, sss_loan_amt, pag_ibig_amt, phic_amt, wtax_amt, other_ded_amt, other_loans_amt, gross_pay, net_pay, remarks, photo, king_coop_loan, lbp_loan}
             rowvw_payroll_tblRow.ItemArray = columnValuesArray
             Me.Rows.Add(rowvw_payroll_tblRow)
             Return rowvw_payroll_tblRow
@@ -3534,6 +3654,8 @@ Partial Public Class payrolldbDataSet
             Me.columnnet_pay = MyBase.Columns("net_pay")
             Me.columnremarks = MyBase.Columns("remarks")
             Me.columnphoto = MyBase.Columns("photo")
+            Me.columnking_coop_loan = MyBase.Columns("king_coop_loan")
+            Me.columnlbp_loan = MyBase.Columns("lbp_loan")
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -3611,6 +3733,10 @@ Partial Public Class payrolldbDataSet
             MyBase.Columns.Add(Me.columnremarks)
             Me.columnphoto = New Global.System.Data.DataColumn("photo", GetType(Byte()), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnphoto)
+            Me.columnking_coop_loan = New Global.System.Data.DataColumn("king_coop_loan", GetType(Decimal), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnking_coop_loan)
+            Me.columnlbp_loan = New Global.System.Data.DataColumn("lbp_loan", GetType(Decimal), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnlbp_loan)
             Me.Constraints.Add(New Global.System.Data.UniqueConstraint("Constraint1", New Global.System.Data.DataColumn() {Me.columnId}, true))
             Me.columnId.AutoIncrement = true
             Me.columnId.AutoIncrementSeed = -1
@@ -5569,6 +5695,786 @@ Partial Public Class payrolldbDataSet
     End Class
     
     '''<summary>
+    '''Represents the strongly named DataTable class.
+    '''</summary>
+    <Global.System.Serializable(),  _
+     Global.System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")>  _
+    Partial Public Class time_schedule_empl_tblDataTable
+        Inherits Global.System.Data.TypedTableBase(Of time_schedule_empl_tblRow)
+        
+        Private columnId As Global.System.Data.DataColumn
+        
+        Private columntse_date As Global.System.Data.DataColumn
+        
+        Private columnempl_id As Global.System.Data.DataColumn
+        
+        Private columntse_in_am As Global.System.Data.DataColumn
+        
+        Private columntse_out_am As Global.System.Data.DataColumn
+        
+        Private columntse_in_pm As Global.System.Data.DataColumn
+        
+        Private columntse_out_pm As Global.System.Data.DataColumn
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Sub New()
+            MyBase.New
+            Me.TableName = "time_schedule_empl_tbl"
+            Me.BeginInit
+            Me.InitClass
+            Me.EndInit
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Friend Sub New(ByVal table As Global.System.Data.DataTable)
+            MyBase.New
+            Me.TableName = table.TableName
+            If (table.CaseSensitive <> table.DataSet.CaseSensitive) Then
+                Me.CaseSensitive = table.CaseSensitive
+            End If
+            If (table.Locale.ToString <> table.DataSet.Locale.ToString) Then
+                Me.Locale = table.Locale
+            End If
+            If (table.Namespace <> table.DataSet.Namespace) Then
+                Me.Namespace = table.Namespace
+            End If
+            Me.Prefix = table.Prefix
+            Me.MinimumCapacity = table.MinimumCapacity
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Protected Sub New(ByVal info As Global.System.Runtime.Serialization.SerializationInfo, ByVal context As Global.System.Runtime.Serialization.StreamingContext)
+            MyBase.New(info, context)
+            Me.InitVars
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public ReadOnly Property IdColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnId
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public ReadOnly Property tse_dateColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columntse_date
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public ReadOnly Property empl_idColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnempl_id
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public ReadOnly Property tse_in_amColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columntse_in_am
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public ReadOnly Property tse_out_amColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columntse_out_am
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public ReadOnly Property tse_in_pmColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columntse_in_pm
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public ReadOnly Property tse_out_pmColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columntse_out_pm
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
+         Global.System.ComponentModel.Browsable(false)>  _
+        Public ReadOnly Property Count() As Integer
+            Get
+                Return Me.Rows.Count
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Default ReadOnly Property Item(ByVal index As Integer) As time_schedule_empl_tblRow
+            Get
+                Return CType(Me.Rows(index),time_schedule_empl_tblRow)
+            End Get
+        End Property
+        
+        <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Event time_schedule_empl_tblRowChanging As time_schedule_empl_tblRowChangeEventHandler
+        
+        <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Event time_schedule_empl_tblRowChanged As time_schedule_empl_tblRowChangeEventHandler
+        
+        <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Event time_schedule_empl_tblRowDeleting As time_schedule_empl_tblRowChangeEventHandler
+        
+        <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Event time_schedule_empl_tblRowDeleted As time_schedule_empl_tblRowChangeEventHandler
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Overloads Sub Addtime_schedule_empl_tblRow(ByVal row As time_schedule_empl_tblRow)
+            Me.Rows.Add(row)
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Overloads Function Addtime_schedule_empl_tblRow(ByVal tse_date As Date, ByVal empl_id As String, ByVal tse_in_am As String, ByVal tse_out_am As String, ByVal tse_in_pm As String, ByVal tse_out_pm As String) As time_schedule_empl_tblRow
+            Dim rowtime_schedule_empl_tblRow As time_schedule_empl_tblRow = CType(Me.NewRow,time_schedule_empl_tblRow)
+            Dim columnValuesArray() As Object = New Object() {Nothing, tse_date, empl_id, tse_in_am, tse_out_am, tse_in_pm, tse_out_pm}
+            rowtime_schedule_empl_tblRow.ItemArray = columnValuesArray
+            Me.Rows.Add(rowtime_schedule_empl_tblRow)
+            Return rowtime_schedule_empl_tblRow
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Function FindById(ByVal Id As Integer) As time_schedule_empl_tblRow
+            Return CType(Me.Rows.Find(New Object() {Id}),time_schedule_empl_tblRow)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Overrides Function Clone() As Global.System.Data.DataTable
+            Dim cln As time_schedule_empl_tblDataTable = CType(MyBase.Clone,time_schedule_empl_tblDataTable)
+            cln.InitVars
+            Return cln
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Protected Overrides Function CreateInstance() As Global.System.Data.DataTable
+            Return New time_schedule_empl_tblDataTable()
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Friend Sub InitVars()
+            Me.columnId = MyBase.Columns("Id")
+            Me.columntse_date = MyBase.Columns("tse_date")
+            Me.columnempl_id = MyBase.Columns("empl_id")
+            Me.columntse_in_am = MyBase.Columns("tse_in_am")
+            Me.columntse_out_am = MyBase.Columns("tse_out_am")
+            Me.columntse_in_pm = MyBase.Columns("tse_in_pm")
+            Me.columntse_out_pm = MyBase.Columns("tse_out_pm")
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Private Sub InitClass()
+            Me.columnId = New Global.System.Data.DataColumn("Id", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnId)
+            Me.columntse_date = New Global.System.Data.DataColumn("tse_date", GetType(Date), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columntse_date)
+            Me.columnempl_id = New Global.System.Data.DataColumn("empl_id", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnempl_id)
+            Me.columntse_in_am = New Global.System.Data.DataColumn("tse_in_am", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columntse_in_am)
+            Me.columntse_out_am = New Global.System.Data.DataColumn("tse_out_am", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columntse_out_am)
+            Me.columntse_in_pm = New Global.System.Data.DataColumn("tse_in_pm", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columntse_in_pm)
+            Me.columntse_out_pm = New Global.System.Data.DataColumn("tse_out_pm", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columntse_out_pm)
+            Me.Constraints.Add(New Global.System.Data.UniqueConstraint("Constraint1", New Global.System.Data.DataColumn() {Me.columnId}, true))
+            Me.columnId.AutoIncrement = true
+            Me.columnId.AutoIncrementSeed = -1
+            Me.columnId.AutoIncrementStep = -1
+            Me.columnId.AllowDBNull = false
+            Me.columnId.ReadOnly = true
+            Me.columnId.Unique = true
+            Me.columntse_date.AllowDBNull = false
+            Me.columnempl_id.MaxLength = 8
+            Me.columntse_in_am.MaxLength = 5
+            Me.columntse_out_am.MaxLength = 5
+            Me.columntse_in_pm.MaxLength = 5
+            Me.columntse_out_pm.MaxLength = 5
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Function Newtime_schedule_empl_tblRow() As time_schedule_empl_tblRow
+            Return CType(Me.NewRow,time_schedule_empl_tblRow)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Protected Overrides Function NewRowFromBuilder(ByVal builder As Global.System.Data.DataRowBuilder) As Global.System.Data.DataRow
+            Return New time_schedule_empl_tblRow(builder)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Protected Overrides Function GetRowType() As Global.System.Type
+            Return GetType(time_schedule_empl_tblRow)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Protected Overrides Sub OnRowChanged(ByVal e As Global.System.Data.DataRowChangeEventArgs)
+            MyBase.OnRowChanged(e)
+            If (Not (Me.time_schedule_empl_tblRowChangedEvent) Is Nothing) Then
+                RaiseEvent time_schedule_empl_tblRowChanged(Me, New time_schedule_empl_tblRowChangeEvent(CType(e.Row,time_schedule_empl_tblRow), e.Action))
+            End If
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Protected Overrides Sub OnRowChanging(ByVal e As Global.System.Data.DataRowChangeEventArgs)
+            MyBase.OnRowChanging(e)
+            If (Not (Me.time_schedule_empl_tblRowChangingEvent) Is Nothing) Then
+                RaiseEvent time_schedule_empl_tblRowChanging(Me, New time_schedule_empl_tblRowChangeEvent(CType(e.Row,time_schedule_empl_tblRow), e.Action))
+            End If
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Protected Overrides Sub OnRowDeleted(ByVal e As Global.System.Data.DataRowChangeEventArgs)
+            MyBase.OnRowDeleted(e)
+            If (Not (Me.time_schedule_empl_tblRowDeletedEvent) Is Nothing) Then
+                RaiseEvent time_schedule_empl_tblRowDeleted(Me, New time_schedule_empl_tblRowChangeEvent(CType(e.Row,time_schedule_empl_tblRow), e.Action))
+            End If
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Protected Overrides Sub OnRowDeleting(ByVal e As Global.System.Data.DataRowChangeEventArgs)
+            MyBase.OnRowDeleting(e)
+            If (Not (Me.time_schedule_empl_tblRowDeletingEvent) Is Nothing) Then
+                RaiseEvent time_schedule_empl_tblRowDeleting(Me, New time_schedule_empl_tblRowChangeEvent(CType(e.Row,time_schedule_empl_tblRow), e.Action))
+            End If
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Sub Removetime_schedule_empl_tblRow(ByVal row As time_schedule_empl_tblRow)
+            Me.Rows.Remove(row)
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Shared Function GetTypedTableSchema(ByVal xs As Global.System.Xml.Schema.XmlSchemaSet) As Global.System.Xml.Schema.XmlSchemaComplexType
+            Dim type As Global.System.Xml.Schema.XmlSchemaComplexType = New Global.System.Xml.Schema.XmlSchemaComplexType()
+            Dim sequence As Global.System.Xml.Schema.XmlSchemaSequence = New Global.System.Xml.Schema.XmlSchemaSequence()
+            Dim ds As payrolldbDataSet = New payrolldbDataSet()
+            Dim any1 As Global.System.Xml.Schema.XmlSchemaAny = New Global.System.Xml.Schema.XmlSchemaAny()
+            any1.Namespace = "http://www.w3.org/2001/XMLSchema"
+            any1.MinOccurs = New Decimal(0)
+            any1.MaxOccurs = Decimal.MaxValue
+            any1.ProcessContents = Global.System.Xml.Schema.XmlSchemaContentProcessing.Lax
+            sequence.Items.Add(any1)
+            Dim any2 As Global.System.Xml.Schema.XmlSchemaAny = New Global.System.Xml.Schema.XmlSchemaAny()
+            any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1"
+            any2.MinOccurs = New Decimal(1)
+            any2.ProcessContents = Global.System.Xml.Schema.XmlSchemaContentProcessing.Lax
+            sequence.Items.Add(any2)
+            Dim attribute1 As Global.System.Xml.Schema.XmlSchemaAttribute = New Global.System.Xml.Schema.XmlSchemaAttribute()
+            attribute1.Name = "namespace"
+            attribute1.FixedValue = ds.Namespace
+            type.Attributes.Add(attribute1)
+            Dim attribute2 As Global.System.Xml.Schema.XmlSchemaAttribute = New Global.System.Xml.Schema.XmlSchemaAttribute()
+            attribute2.Name = "tableTypeName"
+            attribute2.FixedValue = "time_schedule_empl_tblDataTable"
+            type.Attributes.Add(attribute2)
+            type.Particle = sequence
+            Dim dsSchema As Global.System.Xml.Schema.XmlSchema = ds.GetSchemaSerializable
+            If xs.Contains(dsSchema.TargetNamespace) Then
+                Dim s1 As Global.System.IO.MemoryStream = New Global.System.IO.MemoryStream()
+                Dim s2 As Global.System.IO.MemoryStream = New Global.System.IO.MemoryStream()
+                Try 
+                    Dim schema As Global.System.Xml.Schema.XmlSchema = Nothing
+                    dsSchema.Write(s1)
+                    Dim schemas As Global.System.Collections.IEnumerator = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator
+                    Do While schemas.MoveNext
+                        schema = CType(schemas.Current,Global.System.Xml.Schema.XmlSchema)
+                        s2.SetLength(0)
+                        schema.Write(s2)
+                        If (s1.Length = s2.Length) Then
+                            s1.Position = 0
+                            s2.Position = 0
+                            
+                            Do While ((s1.Position <> s1.Length)  _
+                                        AndAlso (s1.ReadByte = s2.ReadByte))
+                                
+                                
+                            Loop
+                            If (s1.Position = s1.Length) Then
+                                Return type
+                            End If
+                        End If
+                        
+                    Loop
+                Finally
+                    If (Not (s1) Is Nothing) Then
+                        s1.Close
+                    End If
+                    If (Not (s2) Is Nothing) Then
+                        s2.Close
+                    End If
+                End Try
+            End If
+            xs.Add(dsSchema)
+            Return type
+        End Function
+    End Class
+    
+    '''<summary>
+    '''Represents the strongly named DataTable class.
+    '''</summary>
+    <Global.System.Serializable(),  _
+     Global.System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")>  _
+    Partial Public Class vw_time_schedule_empl_tblDataTable
+        Inherits Global.System.Data.TypedTableBase(Of vw_time_schedule_empl_tblRow)
+        
+        Private columnId As Global.System.Data.DataColumn
+        
+        Private columndayname As Global.System.Data.DataColumn
+        
+        Private columntse_date As Global.System.Data.DataColumn
+        
+        Private columnempl_id As Global.System.Data.DataColumn
+        
+        Private columnemployee_name As Global.System.Data.DataColumn
+        
+        Private columntse_in_am As Global.System.Data.DataColumn
+        
+        Private columntse_out_am As Global.System.Data.DataColumn
+        
+        Private columntse_in_pm As Global.System.Data.DataColumn
+        
+        Private columntse_out_pm As Global.System.Data.DataColumn
+        
+        Private columnconverted_tse_in_am As Global.System.Data.DataColumn
+        
+        Private columnconverted_tse_out_am As Global.System.Data.DataColumn
+        
+        Private columnconverted_tse_in_pm As Global.System.Data.DataColumn
+        
+        Private columnconverted_tse_out_pm As Global.System.Data.DataColumn
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Sub New()
+            MyBase.New
+            Me.TableName = "vw_time_schedule_empl_tbl"
+            Me.BeginInit
+            Me.InitClass
+            Me.EndInit
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Friend Sub New(ByVal table As Global.System.Data.DataTable)
+            MyBase.New
+            Me.TableName = table.TableName
+            If (table.CaseSensitive <> table.DataSet.CaseSensitive) Then
+                Me.CaseSensitive = table.CaseSensitive
+            End If
+            If (table.Locale.ToString <> table.DataSet.Locale.ToString) Then
+                Me.Locale = table.Locale
+            End If
+            If (table.Namespace <> table.DataSet.Namespace) Then
+                Me.Namespace = table.Namespace
+            End If
+            Me.Prefix = table.Prefix
+            Me.MinimumCapacity = table.MinimumCapacity
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Protected Sub New(ByVal info As Global.System.Runtime.Serialization.SerializationInfo, ByVal context As Global.System.Runtime.Serialization.StreamingContext)
+            MyBase.New(info, context)
+            Me.InitVars
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public ReadOnly Property IdColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnId
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public ReadOnly Property daynameColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columndayname
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public ReadOnly Property tse_dateColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columntse_date
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public ReadOnly Property empl_idColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnempl_id
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public ReadOnly Property employee_nameColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnemployee_name
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public ReadOnly Property tse_in_amColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columntse_in_am
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public ReadOnly Property tse_out_amColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columntse_out_am
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public ReadOnly Property tse_in_pmColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columntse_in_pm
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public ReadOnly Property tse_out_pmColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columntse_out_pm
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public ReadOnly Property converted_tse_in_amColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnconverted_tse_in_am
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public ReadOnly Property converted_tse_out_amColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnconverted_tse_out_am
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public ReadOnly Property converted_tse_in_pmColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnconverted_tse_in_pm
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public ReadOnly Property converted_tse_out_pmColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnconverted_tse_out_pm
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
+         Global.System.ComponentModel.Browsable(false)>  _
+        Public ReadOnly Property Count() As Integer
+            Get
+                Return Me.Rows.Count
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Default ReadOnly Property Item(ByVal index As Integer) As vw_time_schedule_empl_tblRow
+            Get
+                Return CType(Me.Rows(index),vw_time_schedule_empl_tblRow)
+            End Get
+        End Property
+        
+        <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Event vw_time_schedule_empl_tblRowChanging As vw_time_schedule_empl_tblRowChangeEventHandler
+        
+        <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Event vw_time_schedule_empl_tblRowChanged As vw_time_schedule_empl_tblRowChangeEventHandler
+        
+        <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Event vw_time_schedule_empl_tblRowDeleting As vw_time_schedule_empl_tblRowChangeEventHandler
+        
+        <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Event vw_time_schedule_empl_tblRowDeleted As vw_time_schedule_empl_tblRowChangeEventHandler
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Overloads Sub Addvw_time_schedule_empl_tblRow(ByVal row As vw_time_schedule_empl_tblRow)
+            Me.Rows.Add(row)
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Overloads Function Addvw_time_schedule_empl_tblRow(ByVal Id As Integer, ByVal dayname As String, ByVal tse_date As Date, ByVal empl_id As String, ByVal employee_name As String, ByVal tse_in_am As System.TimeSpan, ByVal tse_out_am As System.TimeSpan, ByVal tse_in_pm As System.TimeSpan, ByVal tse_out_pm As System.TimeSpan, ByVal converted_tse_in_am As String, ByVal converted_tse_out_am As String, ByVal converted_tse_in_pm As String, ByVal converted_tse_out_pm As String) As vw_time_schedule_empl_tblRow
+            Dim rowvw_time_schedule_empl_tblRow As vw_time_schedule_empl_tblRow = CType(Me.NewRow,vw_time_schedule_empl_tblRow)
+            Dim columnValuesArray() As Object = New Object() {Id, dayname, tse_date, empl_id, employee_name, tse_in_am, tse_out_am, tse_in_pm, tse_out_pm, converted_tse_in_am, converted_tse_out_am, converted_tse_in_pm, converted_tse_out_pm}
+            rowvw_time_schedule_empl_tblRow.ItemArray = columnValuesArray
+            Me.Rows.Add(rowvw_time_schedule_empl_tblRow)
+            Return rowvw_time_schedule_empl_tblRow
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Function FindById(ByVal Id As Integer) As vw_time_schedule_empl_tblRow
+            Return CType(Me.Rows.Find(New Object() {Id}),vw_time_schedule_empl_tblRow)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Overrides Function Clone() As Global.System.Data.DataTable
+            Dim cln As vw_time_schedule_empl_tblDataTable = CType(MyBase.Clone,vw_time_schedule_empl_tblDataTable)
+            cln.InitVars
+            Return cln
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Protected Overrides Function CreateInstance() As Global.System.Data.DataTable
+            Return New vw_time_schedule_empl_tblDataTable()
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Friend Sub InitVars()
+            Me.columnId = MyBase.Columns("Id")
+            Me.columndayname = MyBase.Columns("dayname")
+            Me.columntse_date = MyBase.Columns("tse_date")
+            Me.columnempl_id = MyBase.Columns("empl_id")
+            Me.columnemployee_name = MyBase.Columns("employee_name")
+            Me.columntse_in_am = MyBase.Columns("tse_in_am")
+            Me.columntse_out_am = MyBase.Columns("tse_out_am")
+            Me.columntse_in_pm = MyBase.Columns("tse_in_pm")
+            Me.columntse_out_pm = MyBase.Columns("tse_out_pm")
+            Me.columnconverted_tse_in_am = MyBase.Columns("converted_tse_in_am")
+            Me.columnconverted_tse_out_am = MyBase.Columns("converted_tse_out_am")
+            Me.columnconverted_tse_in_pm = MyBase.Columns("converted_tse_in_pm")
+            Me.columnconverted_tse_out_pm = MyBase.Columns("converted_tse_out_pm")
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Private Sub InitClass()
+            Me.columnId = New Global.System.Data.DataColumn("Id", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnId)
+            Me.columndayname = New Global.System.Data.DataColumn("dayname", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columndayname)
+            Me.columntse_date = New Global.System.Data.DataColumn("tse_date", GetType(Date), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columntse_date)
+            Me.columnempl_id = New Global.System.Data.DataColumn("empl_id", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnempl_id)
+            Me.columnemployee_name = New Global.System.Data.DataColumn("employee_name", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnemployee_name)
+            Me.columntse_in_am = New Global.System.Data.DataColumn("tse_in_am", GetType(Global.System.TimeSpan), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columntse_in_am)
+            Me.columntse_out_am = New Global.System.Data.DataColumn("tse_out_am", GetType(Global.System.TimeSpan), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columntse_out_am)
+            Me.columntse_in_pm = New Global.System.Data.DataColumn("tse_in_pm", GetType(Global.System.TimeSpan), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columntse_in_pm)
+            Me.columntse_out_pm = New Global.System.Data.DataColumn("tse_out_pm", GetType(Global.System.TimeSpan), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columntse_out_pm)
+            Me.columnconverted_tse_in_am = New Global.System.Data.DataColumn("converted_tse_in_am", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnconverted_tse_in_am)
+            Me.columnconverted_tse_out_am = New Global.System.Data.DataColumn("converted_tse_out_am", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnconverted_tse_out_am)
+            Me.columnconverted_tse_in_pm = New Global.System.Data.DataColumn("converted_tse_in_pm", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnconverted_tse_in_pm)
+            Me.columnconverted_tse_out_pm = New Global.System.Data.DataColumn("converted_tse_out_pm", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnconverted_tse_out_pm)
+            Me.Constraints.Add(New Global.System.Data.UniqueConstraint("Constraint1", New Global.System.Data.DataColumn() {Me.columnId}, true))
+            Me.columnId.AllowDBNull = false
+            Me.columnId.Unique = true
+            Me.columndayname.ReadOnly = true
+            Me.columndayname.MaxLength = 4000
+            Me.columntse_date.AllowDBNull = false
+            Me.columnempl_id.MaxLength = 8
+            Me.columnemployee_name.ReadOnly = true
+            Me.columnemployee_name.MaxLength = 152
+            Me.columnconverted_tse_in_am.ReadOnly = true
+            Me.columnconverted_tse_in_am.MaxLength = 30
+            Me.columnconverted_tse_out_am.ReadOnly = true
+            Me.columnconverted_tse_out_am.MaxLength = 30
+            Me.columnconverted_tse_in_pm.ReadOnly = true
+            Me.columnconverted_tse_in_pm.MaxLength = 30
+            Me.columnconverted_tse_out_pm.ReadOnly = true
+            Me.columnconverted_tse_out_pm.MaxLength = 30
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Function Newvw_time_schedule_empl_tblRow() As vw_time_schedule_empl_tblRow
+            Return CType(Me.NewRow,vw_time_schedule_empl_tblRow)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Protected Overrides Function NewRowFromBuilder(ByVal builder As Global.System.Data.DataRowBuilder) As Global.System.Data.DataRow
+            Return New vw_time_schedule_empl_tblRow(builder)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Protected Overrides Function GetRowType() As Global.System.Type
+            Return GetType(vw_time_schedule_empl_tblRow)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Protected Overrides Sub OnRowChanged(ByVal e As Global.System.Data.DataRowChangeEventArgs)
+            MyBase.OnRowChanged(e)
+            If (Not (Me.vw_time_schedule_empl_tblRowChangedEvent) Is Nothing) Then
+                RaiseEvent vw_time_schedule_empl_tblRowChanged(Me, New vw_time_schedule_empl_tblRowChangeEvent(CType(e.Row,vw_time_schedule_empl_tblRow), e.Action))
+            End If
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Protected Overrides Sub OnRowChanging(ByVal e As Global.System.Data.DataRowChangeEventArgs)
+            MyBase.OnRowChanging(e)
+            If (Not (Me.vw_time_schedule_empl_tblRowChangingEvent) Is Nothing) Then
+                RaiseEvent vw_time_schedule_empl_tblRowChanging(Me, New vw_time_schedule_empl_tblRowChangeEvent(CType(e.Row,vw_time_schedule_empl_tblRow), e.Action))
+            End If
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Protected Overrides Sub OnRowDeleted(ByVal e As Global.System.Data.DataRowChangeEventArgs)
+            MyBase.OnRowDeleted(e)
+            If (Not (Me.vw_time_schedule_empl_tblRowDeletedEvent) Is Nothing) Then
+                RaiseEvent vw_time_schedule_empl_tblRowDeleted(Me, New vw_time_schedule_empl_tblRowChangeEvent(CType(e.Row,vw_time_schedule_empl_tblRow), e.Action))
+            End If
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Protected Overrides Sub OnRowDeleting(ByVal e As Global.System.Data.DataRowChangeEventArgs)
+            MyBase.OnRowDeleting(e)
+            If (Not (Me.vw_time_schedule_empl_tblRowDeletingEvent) Is Nothing) Then
+                RaiseEvent vw_time_schedule_empl_tblRowDeleting(Me, New vw_time_schedule_empl_tblRowChangeEvent(CType(e.Row,vw_time_schedule_empl_tblRow), e.Action))
+            End If
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Sub Removevw_time_schedule_empl_tblRow(ByVal row As vw_time_schedule_empl_tblRow)
+            Me.Rows.Remove(row)
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Shared Function GetTypedTableSchema(ByVal xs As Global.System.Xml.Schema.XmlSchemaSet) As Global.System.Xml.Schema.XmlSchemaComplexType
+            Dim type As Global.System.Xml.Schema.XmlSchemaComplexType = New Global.System.Xml.Schema.XmlSchemaComplexType()
+            Dim sequence As Global.System.Xml.Schema.XmlSchemaSequence = New Global.System.Xml.Schema.XmlSchemaSequence()
+            Dim ds As payrolldbDataSet = New payrolldbDataSet()
+            Dim any1 As Global.System.Xml.Schema.XmlSchemaAny = New Global.System.Xml.Schema.XmlSchemaAny()
+            any1.Namespace = "http://www.w3.org/2001/XMLSchema"
+            any1.MinOccurs = New Decimal(0)
+            any1.MaxOccurs = Decimal.MaxValue
+            any1.ProcessContents = Global.System.Xml.Schema.XmlSchemaContentProcessing.Lax
+            sequence.Items.Add(any1)
+            Dim any2 As Global.System.Xml.Schema.XmlSchemaAny = New Global.System.Xml.Schema.XmlSchemaAny()
+            any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1"
+            any2.MinOccurs = New Decimal(1)
+            any2.ProcessContents = Global.System.Xml.Schema.XmlSchemaContentProcessing.Lax
+            sequence.Items.Add(any2)
+            Dim attribute1 As Global.System.Xml.Schema.XmlSchemaAttribute = New Global.System.Xml.Schema.XmlSchemaAttribute()
+            attribute1.Name = "namespace"
+            attribute1.FixedValue = ds.Namespace
+            type.Attributes.Add(attribute1)
+            Dim attribute2 As Global.System.Xml.Schema.XmlSchemaAttribute = New Global.System.Xml.Schema.XmlSchemaAttribute()
+            attribute2.Name = "tableTypeName"
+            attribute2.FixedValue = "vw_time_schedule_empl_tblDataTable"
+            type.Attributes.Add(attribute2)
+            type.Particle = sequence
+            Dim dsSchema As Global.System.Xml.Schema.XmlSchema = ds.GetSchemaSerializable
+            If xs.Contains(dsSchema.TargetNamespace) Then
+                Dim s1 As Global.System.IO.MemoryStream = New Global.System.IO.MemoryStream()
+                Dim s2 As Global.System.IO.MemoryStream = New Global.System.IO.MemoryStream()
+                Try 
+                    Dim schema As Global.System.Xml.Schema.XmlSchema = Nothing
+                    dsSchema.Write(s1)
+                    Dim schemas As Global.System.Collections.IEnumerator = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator
+                    Do While schemas.MoveNext
+                        schema = CType(schemas.Current,Global.System.Xml.Schema.XmlSchema)
+                        s2.SetLength(0)
+                        schema.Write(s2)
+                        If (s1.Length = s2.Length) Then
+                            s1.Position = 0
+                            s2.Position = 0
+                            
+                            Do While ((s1.Position <> s1.Length)  _
+                                        AndAlso (s1.ReadByte = s2.ReadByte))
+                                
+                                
+                            Loop
+                            If (s1.Position = s1.Length) Then
+                                Return type
+                            End If
+                        End If
+                        
+                    Loop
+                Finally
+                    If (Not (s1) Is Nothing) Then
+                        s1.Close
+                    End If
+                    If (Not (s2) Is Nothing) Then
+                        s2.Close
+                    End If
+                End Try
+            End If
+            xs.Add(dsSchema)
+            Return type
+        End Function
+    End Class
+    
+    '''<summary>
     '''Represents strongly named DataRow class.
     '''</summary>
     Partial Public Class deduction_list_tblRow
@@ -7267,6 +8173,36 @@ Partial Public Class payrolldbDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Property king_coop_loan() As Decimal
+            Get
+                Try 
+                    Return CType(Me(Me.tablepayroll_tbl.king_coop_loanColumn),Decimal)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'king_coop_loan' in table 'payroll_tbl' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tablepayroll_tbl.king_coop_loanColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Property lbp_loan() As Decimal
+            Get
+                Try 
+                    Return CType(Me(Me.tablepayroll_tbl.lbp_loanColumn),Decimal)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'lbp_loan' in table 'payroll_tbl' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tablepayroll_tbl.lbp_loanColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
         Public Function Ispayroll_noNull() As Boolean
             Return Me.IsNull(Me.tablepayroll_tbl.payroll_noColumn)
         End Function
@@ -7659,6 +8595,30 @@ Partial Public Class payrolldbDataSet
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
         Public Sub SetremarksNull()
             Me(Me.tablepayroll_tbl.remarksColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Function Isking_coop_loanNull() As Boolean
+            Return Me.IsNull(Me.tablepayroll_tbl.king_coop_loanColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Sub Setking_coop_loanNull()
+            Me(Me.tablepayroll_tbl.king_coop_loanColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Function Islbp_loanNull() As Boolean
+            Return Me.IsNull(Me.tablepayroll_tbl.lbp_loanColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Sub Setlbp_loanNull()
+            Me(Me.tablepayroll_tbl.lbp_loanColumn) = Global.System.Convert.DBNull
         End Sub
     End Class
     
@@ -8350,6 +9310,36 @@ Partial Public Class payrolldbDataSet
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Property king_coop_loan() As Decimal
+            Get
+                Try 
+                    Return CType(Me(Me.tablevw_payroll_tbl.king_coop_loanColumn),Decimal)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'king_coop_loan' in table 'vw_payroll_tbl' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tablevw_payroll_tbl.king_coop_loanColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Property lbp_loan() As Decimal
+            Get
+                Try 
+                    Return CType(Me(Me.tablevw_payroll_tbl.lbp_loanColumn),Decimal)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'lbp_loan' in table 'vw_payroll_tbl' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tablevw_payroll_tbl.lbp_loanColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
         Public Function Ispayroll_noNull() As Boolean
             Return Me.IsNull(Me.tablevw_payroll_tbl.payroll_noColumn)
         End Function
@@ -8766,6 +9756,30 @@ Partial Public Class payrolldbDataSet
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
         Public Sub SetphotoNull()
             Me(Me.tablevw_payroll_tbl.photoColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Function Isking_coop_loanNull() As Boolean
+            Return Me.IsNull(Me.tablevw_payroll_tbl.king_coop_loanColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Sub Setking_coop_loanNull()
+            Me(Me.tablevw_payroll_tbl.king_coop_loanColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Function Islbp_loanNull() As Boolean
+            Return Me.IsNull(Me.tablevw_payroll_tbl.lbp_loanColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Sub Setlbp_loanNull()
+            Me(Me.tablevw_payroll_tbl.lbp_loanColumn) = Global.System.Convert.DBNull
         End Sub
     End Class
     
@@ -10822,6 +11836,521 @@ Partial Public Class payrolldbDataSet
     End Class
     
     '''<summary>
+    '''Represents strongly named DataRow class.
+    '''</summary>
+    Partial Public Class time_schedule_empl_tblRow
+        Inherits Global.System.Data.DataRow
+        
+        Private tabletime_schedule_empl_tbl As time_schedule_empl_tblDataTable
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Friend Sub New(ByVal rb As Global.System.Data.DataRowBuilder)
+            MyBase.New(rb)
+            Me.tabletime_schedule_empl_tbl = CType(Me.Table,time_schedule_empl_tblDataTable)
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Property Id() As Integer
+            Get
+                Return CType(Me(Me.tabletime_schedule_empl_tbl.IdColumn),Integer)
+            End Get
+            Set
+                Me(Me.tabletime_schedule_empl_tbl.IdColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Property tse_date() As Date
+            Get
+                Return CType(Me(Me.tabletime_schedule_empl_tbl.tse_dateColumn),Date)
+            End Get
+            Set
+                Me(Me.tabletime_schedule_empl_tbl.tse_dateColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Property empl_id() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tabletime_schedule_empl_tbl.empl_idColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'empl_id' in table 'time_schedule_empl_tbl' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tabletime_schedule_empl_tbl.empl_idColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Property tse_in_am() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tabletime_schedule_empl_tbl.tse_in_amColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'tse_in_am' in table 'time_schedule_empl_tbl' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tabletime_schedule_empl_tbl.tse_in_amColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Property tse_out_am() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tabletime_schedule_empl_tbl.tse_out_amColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'tse_out_am' in table 'time_schedule_empl_tbl' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tabletime_schedule_empl_tbl.tse_out_amColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Property tse_in_pm() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tabletime_schedule_empl_tbl.tse_in_pmColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'tse_in_pm' in table 'time_schedule_empl_tbl' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tabletime_schedule_empl_tbl.tse_in_pmColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Property tse_out_pm() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tabletime_schedule_empl_tbl.tse_out_pmColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'tse_out_pm' in table 'time_schedule_empl_tbl' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tabletime_schedule_empl_tbl.tse_out_pmColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Function Isempl_idNull() As Boolean
+            Return Me.IsNull(Me.tabletime_schedule_empl_tbl.empl_idColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Sub Setempl_idNull()
+            Me(Me.tabletime_schedule_empl_tbl.empl_idColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Function Istse_in_amNull() As Boolean
+            Return Me.IsNull(Me.tabletime_schedule_empl_tbl.tse_in_amColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Sub Settse_in_amNull()
+            Me(Me.tabletime_schedule_empl_tbl.tse_in_amColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Function Istse_out_amNull() As Boolean
+            Return Me.IsNull(Me.tabletime_schedule_empl_tbl.tse_out_amColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Sub Settse_out_amNull()
+            Me(Me.tabletime_schedule_empl_tbl.tse_out_amColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Function Istse_in_pmNull() As Boolean
+            Return Me.IsNull(Me.tabletime_schedule_empl_tbl.tse_in_pmColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Sub Settse_in_pmNull()
+            Me(Me.tabletime_schedule_empl_tbl.tse_in_pmColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Function Istse_out_pmNull() As Boolean
+            Return Me.IsNull(Me.tabletime_schedule_empl_tbl.tse_out_pmColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Sub Settse_out_pmNull()
+            Me(Me.tabletime_schedule_empl_tbl.tse_out_pmColumn) = Global.System.Convert.DBNull
+        End Sub
+    End Class
+    
+    '''<summary>
+    '''Represents strongly named DataRow class.
+    '''</summary>
+    Partial Public Class vw_time_schedule_empl_tblRow
+        Inherits Global.System.Data.DataRow
+        
+        Private tablevw_time_schedule_empl_tbl As vw_time_schedule_empl_tblDataTable
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Friend Sub New(ByVal rb As Global.System.Data.DataRowBuilder)
+            MyBase.New(rb)
+            Me.tablevw_time_schedule_empl_tbl = CType(Me.Table,vw_time_schedule_empl_tblDataTable)
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Property Id() As Integer
+            Get
+                Return CType(Me(Me.tablevw_time_schedule_empl_tbl.IdColumn),Integer)
+            End Get
+            Set
+                Me(Me.tablevw_time_schedule_empl_tbl.IdColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Property dayname() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tablevw_time_schedule_empl_tbl.daynameColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'dayname' in table 'vw_time_schedule_empl_tbl' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tablevw_time_schedule_empl_tbl.daynameColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Property tse_date() As Date
+            Get
+                Return CType(Me(Me.tablevw_time_schedule_empl_tbl.tse_dateColumn),Date)
+            End Get
+            Set
+                Me(Me.tablevw_time_schedule_empl_tbl.tse_dateColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Property empl_id() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tablevw_time_schedule_empl_tbl.empl_idColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'empl_id' in table 'vw_time_schedule_empl_tbl' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tablevw_time_schedule_empl_tbl.empl_idColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Property employee_name() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tablevw_time_schedule_empl_tbl.employee_nameColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'employee_name' in table 'vw_time_schedule_empl_tbl' is DBNu"& _ 
+                            "ll.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tablevw_time_schedule_empl_tbl.employee_nameColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Property tse_in_am() As System.TimeSpan
+            Get
+                Try 
+                    Return CType(Me(Me.tablevw_time_schedule_empl_tbl.tse_in_amColumn),Global.System.TimeSpan)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'tse_in_am' in table 'vw_time_schedule_empl_tbl' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tablevw_time_schedule_empl_tbl.tse_in_amColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Property tse_out_am() As System.TimeSpan
+            Get
+                Try 
+                    Return CType(Me(Me.tablevw_time_schedule_empl_tbl.tse_out_amColumn),Global.System.TimeSpan)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'tse_out_am' in table 'vw_time_schedule_empl_tbl' is DBNull."& _ 
+                            "", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tablevw_time_schedule_empl_tbl.tse_out_amColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Property tse_in_pm() As System.TimeSpan
+            Get
+                Try 
+                    Return CType(Me(Me.tablevw_time_schedule_empl_tbl.tse_in_pmColumn),Global.System.TimeSpan)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'tse_in_pm' in table 'vw_time_schedule_empl_tbl' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tablevw_time_schedule_empl_tbl.tse_in_pmColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Property tse_out_pm() As System.TimeSpan
+            Get
+                Try 
+                    Return CType(Me(Me.tablevw_time_schedule_empl_tbl.tse_out_pmColumn),Global.System.TimeSpan)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'tse_out_pm' in table 'vw_time_schedule_empl_tbl' is DBNull."& _ 
+                            "", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tablevw_time_schedule_empl_tbl.tse_out_pmColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Property converted_tse_in_am() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tablevw_time_schedule_empl_tbl.converted_tse_in_amColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'converted_tse_in_am' in table 'vw_time_schedule_empl_tbl' i"& _ 
+                            "s DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tablevw_time_schedule_empl_tbl.converted_tse_in_amColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Property converted_tse_out_am() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tablevw_time_schedule_empl_tbl.converted_tse_out_amColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'converted_tse_out_am' in table 'vw_time_schedule_empl_tbl' "& _ 
+                            "is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tablevw_time_schedule_empl_tbl.converted_tse_out_amColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Property converted_tse_in_pm() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tablevw_time_schedule_empl_tbl.converted_tse_in_pmColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'converted_tse_in_pm' in table 'vw_time_schedule_empl_tbl' i"& _ 
+                            "s DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tablevw_time_schedule_empl_tbl.converted_tse_in_pmColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Property converted_tse_out_pm() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tablevw_time_schedule_empl_tbl.converted_tse_out_pmColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'converted_tse_out_pm' in table 'vw_time_schedule_empl_tbl' "& _ 
+                            "is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tablevw_time_schedule_empl_tbl.converted_tse_out_pmColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Function IsdaynameNull() As Boolean
+            Return Me.IsNull(Me.tablevw_time_schedule_empl_tbl.daynameColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Sub SetdaynameNull()
+            Me(Me.tablevw_time_schedule_empl_tbl.daynameColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Function Isempl_idNull() As Boolean
+            Return Me.IsNull(Me.tablevw_time_schedule_empl_tbl.empl_idColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Sub Setempl_idNull()
+            Me(Me.tablevw_time_schedule_empl_tbl.empl_idColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Function Isemployee_nameNull() As Boolean
+            Return Me.IsNull(Me.tablevw_time_schedule_empl_tbl.employee_nameColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Sub Setemployee_nameNull()
+            Me(Me.tablevw_time_schedule_empl_tbl.employee_nameColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Function Istse_in_amNull() As Boolean
+            Return Me.IsNull(Me.tablevw_time_schedule_empl_tbl.tse_in_amColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Sub Settse_in_amNull()
+            Me(Me.tablevw_time_schedule_empl_tbl.tse_in_amColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Function Istse_out_amNull() As Boolean
+            Return Me.IsNull(Me.tablevw_time_schedule_empl_tbl.tse_out_amColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Sub Settse_out_amNull()
+            Me(Me.tablevw_time_schedule_empl_tbl.tse_out_amColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Function Istse_in_pmNull() As Boolean
+            Return Me.IsNull(Me.tablevw_time_schedule_empl_tbl.tse_in_pmColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Sub Settse_in_pmNull()
+            Me(Me.tablevw_time_schedule_empl_tbl.tse_in_pmColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Function Istse_out_pmNull() As Boolean
+            Return Me.IsNull(Me.tablevw_time_schedule_empl_tbl.tse_out_pmColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Sub Settse_out_pmNull()
+            Me(Me.tablevw_time_schedule_empl_tbl.tse_out_pmColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Function Isconverted_tse_in_amNull() As Boolean
+            Return Me.IsNull(Me.tablevw_time_schedule_empl_tbl.converted_tse_in_amColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Sub Setconverted_tse_in_amNull()
+            Me(Me.tablevw_time_schedule_empl_tbl.converted_tse_in_amColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Function Isconverted_tse_out_amNull() As Boolean
+            Return Me.IsNull(Me.tablevw_time_schedule_empl_tbl.converted_tse_out_amColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Sub Setconverted_tse_out_amNull()
+            Me(Me.tablevw_time_schedule_empl_tbl.converted_tse_out_amColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Function Isconverted_tse_in_pmNull() As Boolean
+            Return Me.IsNull(Me.tablevw_time_schedule_empl_tbl.converted_tse_in_pmColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Sub Setconverted_tse_in_pmNull()
+            Me(Me.tablevw_time_schedule_empl_tbl.converted_tse_in_pmColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Function Isconverted_tse_out_pmNull() As Boolean
+            Return Me.IsNull(Me.tablevw_time_schedule_empl_tbl.converted_tse_out_pmColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Sub Setconverted_tse_out_pmNull()
+            Me(Me.tablevw_time_schedule_empl_tbl.converted_tse_out_pmColumn) = Global.System.Convert.DBNull
+        End Sub
+    End Class
+    
+    '''<summary>
     '''Row event argument class
     '''</summary>
     <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
@@ -11131,6 +12660,78 @@ Partial Public Class payrolldbDataSet
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
         Public ReadOnly Property Row() As sp_payroll_tbl_repRow
+            Get
+                Return Me.eventRow
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public ReadOnly Property Action() As Global.System.Data.DataRowAction
+            Get
+                Return Me.eventAction
+            End Get
+        End Property
+    End Class
+    
+    '''<summary>
+    '''Row event argument class
+    '''</summary>
+    <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+    Public Class time_schedule_empl_tblRowChangeEvent
+        Inherits Global.System.EventArgs
+        
+        Private eventRow As time_schedule_empl_tblRow
+        
+        Private eventAction As Global.System.Data.DataRowAction
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Sub New(ByVal row As time_schedule_empl_tblRow, ByVal action As Global.System.Data.DataRowAction)
+            MyBase.New
+            Me.eventRow = row
+            Me.eventAction = action
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public ReadOnly Property Row() As time_schedule_empl_tblRow
+            Get
+                Return Me.eventRow
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public ReadOnly Property Action() As Global.System.Data.DataRowAction
+            Get
+                Return Me.eventAction
+            End Get
+        End Property
+    End Class
+    
+    '''<summary>
+    '''Row event argument class
+    '''</summary>
+    <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+    Public Class vw_time_schedule_empl_tblRowChangeEvent
+        Inherits Global.System.EventArgs
+        
+        Private eventRow As vw_time_schedule_empl_tblRow
+        
+        Private eventAction As Global.System.Data.DataRowAction
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Sub New(ByVal row As vw_time_schedule_empl_tblRow, ByVal action As Global.System.Data.DataRowAction)
+            MyBase.New
+            Me.eventRow = row
+            Me.eventAction = action
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public ReadOnly Property Row() As vw_time_schedule_empl_tblRow
             Get
                 Return Me.eventRow
             End Get
@@ -13784,52 +15385,56 @@ Namespace payrolldbDataSetTableAdapters
             tableMapping.ColumnMappings.Add("gross_pay", "gross_pay")
             tableMapping.ColumnMappings.Add("net_pay", "net_pay")
             tableMapping.ColumnMappings.Add("remarks", "remarks")
+            tableMapping.ColumnMappings.Add("king_coop_loan", "king_coop_loan")
+            tableMapping.ColumnMappings.Add("lbp_loan", "lbp_loan")
             Me._adapter.TableMappings.Add(tableMapping)
             Me._adapter.DeleteCommand = New Global.System.Data.SqlClient.SqlCommand()
             Me._adapter.DeleteCommand.Connection = Me.Connection
-            Me._adapter.DeleteCommand.CommandText = "DELETE FROM [dbo].[payroll_tbl] WHERE (([Id] = @Original_Id) AND ((@IsNull_payrol"& _ 
-                "l_no = 1 AND [payroll_no] IS NULL) OR ([payroll_no] = @Original_payroll_no)) AND"& _ 
-                " ((@IsNull_period_from = 1 AND [period_from] IS NULL) OR ([period_from] = @Origi"& _ 
-                "nal_period_from)) AND ((@IsNull_period_to = 1 AND [period_to] IS NULL) OR ([peri"& _ 
-                "od_to] = @Original_period_to)) AND ((@IsNull_employee_id = 1 AND [employee_id] I"& _ 
-                "S NULL) OR ([employee_id] = @Original_employee_id)) AND ((@IsNull_last_name = 1 "& _ 
-                "AND [last_name] IS NULL) OR ([last_name] = @Original_last_name)) AND ((@IsNull_f"& _ 
-                "irst_name = 1 AND [first_name] IS NULL) OR ([first_name] = @Original_first_name)"& _ 
-                ") AND ((@IsNull_middle_name = 1 AND [middle_name] IS NULL) OR ([middle_name] = @"& _ 
-                "Original_middle_name)) AND ((@IsNull_department_assigned = 1 AND [department_ass"& _ 
-                "igned] IS NULL) OR ([department_assigned] = @Original_department_assigned)) AND "& _ 
-                "((@IsNull_rate_basis_descr = 1 AND [rate_basis_descr] IS NULL) OR ([rate_basis_d"& _ 
-                "escr] = @Original_rate_basis_descr)) AND ((@IsNull_monthly_rate = 1 AND [monthly"& _ 
-                "_rate] IS NULL) OR ([monthly_rate] = @Original_monthly_rate)) AND ((@IsNull_dail"& _ 
-                "y_rate = 1 AND [daily_rate] IS NULL) OR ([daily_rate] = @Original_daily_rate)) A"& _ 
-                "ND ((@IsNull_hourly_rate = 1 AND [hourly_rate] IS NULL) OR ([hourly_rate] = @Ori"& _ 
-                "ginal_hourly_rate)) AND ((@IsNull_unit_rate = 1 AND [unit_rate] IS NULL) OR ([un"& _ 
-                "it_rate] = @Original_unit_rate)) AND ((@IsNull_regular_wages = 1 AND [regular_wa"& _ 
-                "ges] IS NULL) OR ([regular_wages] = @Original_regular_wages)) AND ((@IsNull_over"& _ 
-                "time_amt = 1 AND [overtime_amt] IS NULL) OR ([overtime_amt] = @Original_overtime"& _ 
-                "_amt)) AND ((@IsNull_allowances_amt = 1 AND [allowances_amt] IS NULL) OR ([allow"& _ 
-                "ances_amt] = @Original_allowances_amt)) AND ((@IsNull_adjustments_amt = 1 AND [a"& _ 
-                "djustments_amt] IS NULL) OR ([adjustments_amt] = @Original_adjustments_amt)) AND"& _ 
-                " ((@IsNull_worked_days = 1 AND [worked_days] IS NULL) OR ([worked_days] = @Origi"& _ 
-                "nal_worked_days)) AND ((@IsNull_absent_days = 1 AND [absent_days] IS NULL) OR (["& _ 
-                "absent_days] = @Original_absent_days)) AND ((@IsNull_absent_amt = 1 AND [absent_"& _ 
-                "amt] IS NULL) OR ([absent_amt] = @Original_absent_amt)) AND ((@IsNull_lates_in_m"& _ 
-                "in = 1 AND [lates_in_min] IS NULL) OR ([lates_in_min] = @Original_lates_in_min))"& _ 
-                " AND ((@IsNull_lates_in_amt = 1 AND [lates_in_amt] IS NULL) OR ([lates_in_amt] ="& _ 
-                " @Original_lates_in_amt)) AND ((@IsNull_cash_advance_amt = 1 AND [cash_advance_a"& _ 
-                "mt] IS NULL) OR ([cash_advance_amt] = @Original_cash_advance_amt)) AND ((@IsNull"& _ 
-                "_sss_med_amt = 1 AND [sss_med_amt] IS NULL) OR ([sss_med_amt] = @Original_sss_me"& _ 
-                "d_amt)) AND ((@IsNull_sss_loan_amt = 1 AND [sss_loan_amt] IS NULL) OR ([sss_loan"& _ 
-                "_amt] = @Original_sss_loan_amt)) AND ((@IsNull_pag_ibig_amt = 1 AND [pag_ibig_am"& _ 
-                "t] IS NULL) OR ([pag_ibig_amt] = @Original_pag_ibig_amt)) AND ((@IsNull_phic_amt"& _ 
-                " = 1 AND [phic_amt] IS NULL) OR ([phic_amt] = @Original_phic_amt)) AND ((@IsNull"& _ 
-                "_wtax_amt = 1 AND [wtax_amt] IS NULL) OR ([wtax_amt] = @Original_wtax_amt)) AND "& _ 
-                "((@IsNull_other_ded_amt = 1 AND [other_ded_amt] IS NULL) OR ([other_ded_amt] = @"& _ 
-                "Original_other_ded_amt)) AND ((@IsNull_other_loans_amt = 1 AND [other_loans_amt]"& _ 
-                " IS NULL) OR ([other_loans_amt] = @Original_other_loans_amt)) AND ((@IsNull_gros"& _ 
-                "s_pay = 1 AND [gross_pay] IS NULL) OR ([gross_pay] = @Original_gross_pay)) AND ("& _ 
-                "(@IsNull_net_pay = 1 AND [net_pay] IS NULL) OR ([net_pay] = @Original_net_pay)))"& _ 
-                ""
+            Me._adapter.DeleteCommand.CommandText = "DELETE FROM [payroll_tbl] WHERE (([Id] = @Original_Id) AND ((@IsNull_payroll_no ="& _ 
+                " 1 AND [payroll_no] IS NULL) OR ([payroll_no] = @Original_payroll_no)) AND ((@Is"& _ 
+                "Null_period_from = 1 AND [period_from] IS NULL) OR ([period_from] = @Original_pe"& _ 
+                "riod_from)) AND ((@IsNull_period_to = 1 AND [period_to] IS NULL) OR ([period_to]"& _ 
+                " = @Original_period_to)) AND ((@IsNull_employee_id = 1 AND [employee_id] IS NULL"& _ 
+                ") OR ([employee_id] = @Original_employee_id)) AND ((@IsNull_last_name = 1 AND [l"& _ 
+                "ast_name] IS NULL) OR ([last_name] = @Original_last_name)) AND ((@IsNull_first_n"& _ 
+                "ame = 1 AND [first_name] IS NULL) OR ([first_name] = @Original_first_name)) AND "& _ 
+                "((@IsNull_middle_name = 1 AND [middle_name] IS NULL) OR ([middle_name] = @Origin"& _ 
+                "al_middle_name)) AND ((@IsNull_department_assigned = 1 AND [department_assigned]"& _ 
+                " IS NULL) OR ([department_assigned] = @Original_department_assigned)) AND ((@IsN"& _ 
+                "ull_rate_basis_descr = 1 AND [rate_basis_descr] IS NULL) OR ([rate_basis_descr] "& _ 
+                "= @Original_rate_basis_descr)) AND ((@IsNull_monthly_rate = 1 AND [monthly_rate]"& _ 
+                " IS NULL) OR ([monthly_rate] = @Original_monthly_rate)) AND ((@IsNull_daily_rate"& _ 
+                " = 1 AND [daily_rate] IS NULL) OR ([daily_rate] = @Original_daily_rate)) AND ((@"& _ 
+                "IsNull_hourly_rate = 1 AND [hourly_rate] IS NULL) OR ([hourly_rate] = @Original_"& _ 
+                "hourly_rate)) AND ((@IsNull_unit_rate = 1 AND [unit_rate] IS NULL) OR ([unit_rat"& _ 
+                "e] = @Original_unit_rate)) AND ((@IsNull_regular_wages = 1 AND [regular_wages] I"& _ 
+                "S NULL) OR ([regular_wages] = @Original_regular_wages)) AND ((@IsNull_overtime_a"& _ 
+                "mt = 1 AND [overtime_amt] IS NULL) OR ([overtime_amt] = @Original_overtime_amt))"& _ 
+                " AND ((@IsNull_allowances_amt = 1 AND [allowances_amt] IS NULL) OR ([allowances_"& _ 
+                "amt] = @Original_allowances_amt)) AND ((@IsNull_adjustments_amt = 1 AND [adjustm"& _ 
+                "ents_amt] IS NULL) OR ([adjustments_amt] = @Original_adjustments_amt)) AND ((@Is"& _ 
+                "Null_worked_days = 1 AND [worked_days] IS NULL) OR ([worked_days] = @Original_wo"& _ 
+                "rked_days)) AND ((@IsNull_absent_days = 1 AND [absent_days] IS NULL) OR ([absent"& _ 
+                "_days] = @Original_absent_days)) AND ((@IsNull_absent_amt = 1 AND [absent_amt] I"& _ 
+                "S NULL) OR ([absent_amt] = @Original_absent_amt)) AND ((@IsNull_lates_in_min = 1"& _ 
+                " AND [lates_in_min] IS NULL) OR ([lates_in_min] = @Original_lates_in_min)) AND ("& _ 
+                "(@IsNull_lates_in_amt = 1 AND [lates_in_amt] IS NULL) OR ([lates_in_amt] = @Orig"& _ 
+                "inal_lates_in_amt)) AND ((@IsNull_cash_advance_amt = 1 AND [cash_advance_amt] IS"& _ 
+                " NULL) OR ([cash_advance_amt] = @Original_cash_advance_amt)) AND ((@IsNull_sss_m"& _ 
+                "ed_amt = 1 AND [sss_med_amt] IS NULL) OR ([sss_med_amt] = @Original_sss_med_amt)"& _ 
+                ") AND ((@IsNull_sss_loan_amt = 1 AND [sss_loan_amt] IS NULL) OR ([sss_loan_amt] "& _ 
+                "= @Original_sss_loan_amt)) AND ((@IsNull_pag_ibig_amt = 1 AND [pag_ibig_amt] IS "& _ 
+                "NULL) OR ([pag_ibig_amt] = @Original_pag_ibig_amt)) AND ((@IsNull_phic_amt = 1 A"& _ 
+                "ND [phic_amt] IS NULL) OR ([phic_amt] = @Original_phic_amt)) AND ((@IsNull_wtax_"& _ 
+                "amt = 1 AND [wtax_amt] IS NULL) OR ([wtax_amt] = @Original_wtax_amt)) AND ((@IsN"& _ 
+                "ull_other_ded_amt = 1 AND [other_ded_amt] IS NULL) OR ([other_ded_amt] = @Origin"& _ 
+                "al_other_ded_amt)) AND ((@IsNull_other_loans_amt = 1 AND [other_loans_amt] IS NU"& _ 
+                "LL) OR ([other_loans_amt] = @Original_other_loans_amt)) AND ((@IsNull_gross_pay "& _ 
+                "= 1 AND [gross_pay] IS NULL) OR ([gross_pay] = @Original_gross_pay)) AND ((@IsNu"& _ 
+                "ll_net_pay = 1 AND [net_pay] IS NULL) OR ([net_pay] = @Original_net_pay)) AND (("& _ 
+                "@IsNull_king_coop_loan = 1 AND [king_coop_loan] IS NULL) OR ([king_coop_loan] = "& _ 
+                "@Original_king_coop_loan)) AND ((@IsNull_lbp_loan = 1 AND [lbp_loan] IS NULL) OR"& _ 
+                " ([lbp_loan] = @Original_lbp_loan)))"
             Me._adapter.DeleteCommand.CommandType = Global.System.Data.CommandType.Text
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_Id", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Id", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_payroll_no", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "payroll_no", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
@@ -13896,28 +15501,33 @@ Namespace payrolldbDataSetTableAdapters
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_gross_pay", Global.System.Data.SqlDbType.Money, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "gross_pay", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_net_pay", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "net_pay", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_net_pay", Global.System.Data.SqlDbType.Money, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "net_pay", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_king_coop_loan", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "king_coop_loan", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_king_coop_loan", Global.System.Data.SqlDbType.Money, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "king_coop_loan", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_lbp_loan", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "lbp_loan", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_lbp_loan", Global.System.Data.SqlDbType.Money, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "lbp_loan", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.InsertCommand = New Global.System.Data.SqlClient.SqlCommand()
             Me._adapter.InsertCommand.Connection = Me.Connection
-            Me._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[payroll_tbl] ([payroll_no], [period_from], [period_to], [emplo"& _ 
-                "yee_id], [last_name], [first_name], [middle_name], [department_assigned], [rate_"& _ 
-                "basis_descr], [monthly_rate], [daily_rate], [hourly_rate], [unit_rate], [regular"& _ 
-                "_wages], [overtime_amt], [allowances_amt], [adjustments_amt], [worked_days], [ab"& _ 
-                "sent_days], [absent_amt], [lates_in_min], [lates_in_amt], [cash_advance_amt], [s"& _ 
-                "ss_med_amt], [sss_loan_amt], [pag_ibig_amt], [phic_amt], [wtax_amt], [other_ded_"& _ 
-                "amt], [other_loans_amt], [gross_pay], [net_pay], [remarks]) VALUES (@payroll_no,"& _ 
-                " @period_from, @period_to, @employee_id, @last_name, @first_name, @middle_name, "& _ 
-                "@department_assigned, @rate_basis_descr, @monthly_rate, @daily_rate, @hourly_rat"& _ 
-                "e, @unit_rate, @regular_wages, @overtime_amt, @allowances_amt, @adjustments_amt,"& _ 
-                " @worked_days, @absent_days, @absent_amt, @lates_in_min, @lates_in_amt, @cash_ad"& _ 
-                "vance_amt, @sss_med_amt, @sss_loan_amt, @pag_ibig_amt, @phic_amt, @wtax_amt, @ot"& _ 
-                "her_ded_amt, @other_loans_amt, @gross_pay, @net_pay, @remarks);"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT Id, payr"& _ 
-                "oll_no, period_from, period_to, employee_id, last_name, first_name, middle_name,"& _ 
-                " department_assigned, rate_basis_descr, monthly_rate, daily_rate, hourly_rate, u"& _ 
-                "nit_rate, regular_wages, overtime_amt, allowances_amt, adjustments_amt, worked_d"& _ 
-                "ays, absent_days, absent_amt, lates_in_min, lates_in_amt, cash_advance_amt, sss_"& _ 
-                "med_amt, sss_loan_amt, pag_ibig_amt, phic_amt, wtax_amt, other_ded_amt, other_lo"& _ 
-                "ans_amt, gross_pay, net_pay, remarks FROM payroll_tbl WHERE (Id = SCOPE_IDENTITY"& _ 
-                "())"
+            Me._adapter.InsertCommand.CommandText = "INSERT INTO [payroll_tbl] ([payroll_no], [period_from], [period_to], [employee_id"& _ 
+                "], [last_name], [first_name], [middle_name], [department_assigned], [rate_basis_"& _ 
+                "descr], [monthly_rate], [daily_rate], [hourly_rate], [unit_rate], [regular_wages"& _ 
+                "], [overtime_amt], [allowances_amt], [adjustments_amt], [worked_days], [absent_d"& _ 
+                "ays], [absent_amt], [lates_in_min], [lates_in_amt], [cash_advance_amt], [sss_med"& _ 
+                "_amt], [sss_loan_amt], [pag_ibig_amt], [phic_amt], [wtax_amt], [other_ded_amt], "& _ 
+                "[other_loans_amt], [gross_pay], [net_pay], [remarks], [king_coop_loan], [lbp_loa"& _ 
+                "n]) VALUES (@payroll_no, @period_from, @period_to, @employee_id, @last_name, @fi"& _ 
+                "rst_name, @middle_name, @department_assigned, @rate_basis_descr, @monthly_rate, "& _ 
+                "@daily_rate, @hourly_rate, @unit_rate, @regular_wages, @overtime_amt, @allowance"& _ 
+                "s_amt, @adjustments_amt, @worked_days, @absent_days, @absent_amt, @lates_in_min,"& _ 
+                " @lates_in_amt, @cash_advance_amt, @sss_med_amt, @sss_loan_amt, @pag_ibig_amt, @"& _ 
+                "phic_amt, @wtax_amt, @other_ded_amt, @other_loans_amt, @gross_pay, @net_pay, @re"& _ 
+                "marks, @king_coop_loan, @lbp_loan);"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT Id, payroll_no, period_from, period_"& _ 
+                "to, employee_id, last_name, first_name, middle_name, department_assigned, rate_b"& _ 
+                "asis_descr, monthly_rate, daily_rate, hourly_rate, unit_rate, regular_wages, ove"& _ 
+                "rtime_amt, allowances_amt, adjustments_amt, worked_days, absent_days, absent_amt"& _ 
+                ", lates_in_min, lates_in_amt, cash_advance_amt, sss_med_amt, sss_loan_amt, pag_i"& _ 
+                "big_amt, phic_amt, wtax_amt, other_ded_amt, other_loans_amt, gross_pay, net_pay,"& _ 
+                " remarks, king_coop_loan, lbp_loan FROM payroll_tbl WHERE (Id = SCOPE_IDENTITY()"& _ 
+                ")"
             Me._adapter.InsertCommand.CommandType = Global.System.Data.CommandType.Text
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@payroll_no", Global.System.Data.SqlDbType.NChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "payroll_no", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@period_from", Global.System.Data.SqlDbType.[Date], 0, Global.System.Data.ParameterDirection.Input, 0, 0, "period_from", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
@@ -13952,69 +15562,75 @@ Namespace payrolldbDataSetTableAdapters
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@gross_pay", Global.System.Data.SqlDbType.Money, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "gross_pay", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@net_pay", Global.System.Data.SqlDbType.Money, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "net_pay", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@remarks", Global.System.Data.SqlDbType.NVarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "remarks", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@king_coop_loan", Global.System.Data.SqlDbType.Money, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "king_coop_loan", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@lbp_loan", Global.System.Data.SqlDbType.Money, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "lbp_loan", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand = New Global.System.Data.SqlClient.SqlCommand()
             Me._adapter.UpdateCommand.Connection = Me.Connection
-            Me._adapter.UpdateCommand.CommandText = "UPDATE [dbo].[payroll_tbl] SET [payroll_no] = @payroll_no, [period_from] = @perio"& _ 
-                "d_from, [period_to] = @period_to, [employee_id] = @employee_id, [last_name] = @l"& _ 
-                "ast_name, [first_name] = @first_name, [middle_name] = @middle_name, [department_"& _ 
-                "assigned] = @department_assigned, [rate_basis_descr] = @rate_basis_descr, [month"& _ 
-                "ly_rate] = @monthly_rate, [daily_rate] = @daily_rate, [hourly_rate] = @hourly_ra"& _ 
-                "te, [unit_rate] = @unit_rate, [regular_wages] = @regular_wages, [overtime_amt] ="& _ 
-                " @overtime_amt, [allowances_amt] = @allowances_amt, [adjustments_amt] = @adjustm"& _ 
-                "ents_amt, [worked_days] = @worked_days, [absent_days] = @absent_days, [absent_am"& _ 
-                "t] = @absent_amt, [lates_in_min] = @lates_in_min, [lates_in_amt] = @lates_in_amt"& _ 
-                ", [cash_advance_amt] = @cash_advance_amt, [sss_med_amt] = @sss_med_amt, [sss_loa"& _ 
-                "n_amt] = @sss_loan_amt, [pag_ibig_amt] = @pag_ibig_amt, [phic_amt] = @phic_amt, "& _ 
-                "[wtax_amt] = @wtax_amt, [other_ded_amt] = @other_ded_amt, [other_loans_amt] = @o"& _ 
-                "ther_loans_amt, [gross_pay] = @gross_pay, [net_pay] = @net_pay, [remarks] = @rem"& _ 
-                "arks WHERE (([Id] = @Original_Id) AND ((@IsNull_payroll_no = 1 AND [payroll_no] "& _ 
-                "IS NULL) OR ([payroll_no] = @Original_payroll_no)) AND ((@IsNull_period_from = 1"& _ 
-                " AND [period_from] IS NULL) OR ([period_from] = @Original_period_from)) AND ((@I"& _ 
-                "sNull_period_to = 1 AND [period_to] IS NULL) OR ([period_to] = @Original_period_"& _ 
-                "to)) AND ((@IsNull_employee_id = 1 AND [employee_id] IS NULL) OR ([employee_id] "& _ 
-                "= @Original_employee_id)) AND ((@IsNull_last_name = 1 AND [last_name] IS NULL) O"& _ 
-                "R ([last_name] = @Original_last_name)) AND ((@IsNull_first_name = 1 AND [first_n"& _ 
-                "ame] IS NULL) OR ([first_name] = @Original_first_name)) AND ((@IsNull_middle_nam"& _ 
-                "e = 1 AND [middle_name] IS NULL) OR ([middle_name] = @Original_middle_name)) AND"& _ 
-                " ((@IsNull_department_assigned = 1 AND [department_assigned] IS NULL) OR ([depar"& _ 
-                "tment_assigned] = @Original_department_assigned)) AND ((@IsNull_rate_basis_descr"& _ 
-                " = 1 AND [rate_basis_descr] IS NULL) OR ([rate_basis_descr] = @Original_rate_bas"& _ 
-                "is_descr)) AND ((@IsNull_monthly_rate = 1 AND [monthly_rate] IS NULL) OR ([month"& _ 
-                "ly_rate] = @Original_monthly_rate)) AND ((@IsNull_daily_rate = 1 AND [daily_rate"& _ 
-                "] IS NULL) OR ([daily_rate] = @Original_daily_rate)) AND ((@IsNull_hourly_rate ="& _ 
-                " 1 AND [hourly_rate] IS NULL) OR ([hourly_rate] = @Original_hourly_rate)) AND (("& _ 
-                "@IsNull_unit_rate = 1 AND [unit_rate] IS NULL) OR ([unit_rate] = @Original_unit_"& _ 
-                "rate)) AND ((@IsNull_regular_wages = 1 AND [regular_wages] IS NULL) OR ([regular"& _ 
-                "_wages] = @Original_regular_wages)) AND ((@IsNull_overtime_amt = 1 AND [overtime"& _ 
-                "_amt] IS NULL) OR ([overtime_amt] = @Original_overtime_amt)) AND ((@IsNull_allow"& _ 
-                "ances_amt = 1 AND [allowances_amt] IS NULL) OR ([allowances_amt] = @Original_all"& _ 
-                "owances_amt)) AND ((@IsNull_adjustments_amt = 1 AND [adjustments_amt] IS NULL) O"& _ 
-                "R ([adjustments_amt] = @Original_adjustments_amt)) AND ((@IsNull_worked_days = 1"& _ 
-                " AND [worked_days] IS NULL) OR ([worked_days] = @Original_worked_days)) AND ((@I"& _ 
-                "sNull_absent_days = 1 AND [absent_days] IS NULL) OR ([absent_days] = @Original_a"& _ 
-                "bsent_days)) AND ((@IsNull_absent_amt = 1 AND [absent_amt] IS NULL) OR ([absent_"& _ 
-                "amt] = @Original_absent_amt)) AND ((@IsNull_lates_in_min = 1 AND [lates_in_min] "& _ 
-                "IS NULL) OR ([lates_in_min] = @Original_lates_in_min)) AND ((@IsNull_lates_in_am"& _ 
-                "t = 1 AND [lates_in_amt] IS NULL) OR ([lates_in_amt] = @Original_lates_in_amt)) "& _ 
-                "AND ((@IsNull_cash_advance_amt = 1 AND [cash_advance_amt] IS NULL) OR ([cash_adv"& _ 
-                "ance_amt] = @Original_cash_advance_amt)) AND ((@IsNull_sss_med_amt = 1 AND [sss_"& _ 
-                "med_amt] IS NULL) OR ([sss_med_amt] = @Original_sss_med_amt)) AND ((@IsNull_sss_"& _ 
-                "loan_amt = 1 AND [sss_loan_amt] IS NULL) OR ([sss_loan_amt] = @Original_sss_loan"& _ 
-                "_amt)) AND ((@IsNull_pag_ibig_amt = 1 AND [pag_ibig_amt] IS NULL) OR ([pag_ibig_"& _ 
-                "amt] = @Original_pag_ibig_amt)) AND ((@IsNull_phic_amt = 1 AND [phic_amt] IS NUL"& _ 
-                "L) OR ([phic_amt] = @Original_phic_amt)) AND ((@IsNull_wtax_amt = 1 AND [wtax_am"& _ 
-                "t] IS NULL) OR ([wtax_amt] = @Original_wtax_amt)) AND ((@IsNull_other_ded_amt = "& _ 
-                "1 AND [other_ded_amt] IS NULL) OR ([other_ded_amt] = @Original_other_ded_amt)) A"& _ 
-                "ND ((@IsNull_other_loans_amt = 1 AND [other_loans_amt] IS NULL) OR ([other_loans"& _ 
-                "_amt] = @Original_other_loans_amt)) AND ((@IsNull_gross_pay = 1 AND [gross_pay] "& _ 
-                "IS NULL) OR ([gross_pay] = @Original_gross_pay)) AND ((@IsNull_net_pay = 1 AND ["& _ 
-                "net_pay] IS NULL) OR ([net_pay] = @Original_net_pay)));"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT Id, payroll_no, "& _ 
-                "period_from, period_to, employee_id, last_name, first_name, middle_name, departm"& _ 
-                "ent_assigned, rate_basis_descr, monthly_rate, daily_rate, hourly_rate, unit_rate"& _ 
-                ", regular_wages, overtime_amt, allowances_amt, adjustments_amt, worked_days, abs"& _ 
-                "ent_days, absent_amt, lates_in_min, lates_in_amt, cash_advance_amt, sss_med_amt,"& _ 
-                " sss_loan_amt, pag_ibig_amt, phic_amt, wtax_amt, other_ded_amt, other_loans_amt,"& _ 
-                " gross_pay, net_pay, remarks FROM payroll_tbl WHERE (Id = @Id)"
+            Me._adapter.UpdateCommand.CommandText = "UPDATE [payroll_tbl] SET [payroll_no] = @payroll_no, [period_from] = @period_from"& _ 
+                ", [period_to] = @period_to, [employee_id] = @employee_id, [last_name] = @last_na"& _ 
+                "me, [first_name] = @first_name, [middle_name] = @middle_name, [department_assign"& _ 
+                "ed] = @department_assigned, [rate_basis_descr] = @rate_basis_descr, [monthly_rat"& _ 
+                "e] = @monthly_rate, [daily_rate] = @daily_rate, [hourly_rate] = @hourly_rate, [u"& _ 
+                "nit_rate] = @unit_rate, [regular_wages] = @regular_wages, [overtime_amt] = @over"& _ 
+                "time_amt, [allowances_amt] = @allowances_amt, [adjustments_amt] = @adjustments_a"& _ 
+                "mt, [worked_days] = @worked_days, [absent_days] = @absent_days, [absent_amt] = @"& _ 
+                "absent_amt, [lates_in_min] = @lates_in_min, [lates_in_amt] = @lates_in_amt, [cas"& _ 
+                "h_advance_amt] = @cash_advance_amt, [sss_med_amt] = @sss_med_amt, [sss_loan_amt]"& _ 
+                " = @sss_loan_amt, [pag_ibig_amt] = @pag_ibig_amt, [phic_amt] = @phic_amt, [wtax_"& _ 
+                "amt] = @wtax_amt, [other_ded_amt] = @other_ded_amt, [other_loans_amt] = @other_l"& _ 
+                "oans_amt, [gross_pay] = @gross_pay, [net_pay] = @net_pay, [remarks] = @remarks, "& _ 
+                "[king_coop_loan] = @king_coop_loan, [lbp_loan] = @lbp_loan WHERE (([Id] = @Origi"& _ 
+                "nal_Id) AND ((@IsNull_payroll_no = 1 AND [payroll_no] IS NULL) OR ([payroll_no] "& _ 
+                "= @Original_payroll_no)) AND ((@IsNull_period_from = 1 AND [period_from] IS NULL"& _ 
+                ") OR ([period_from] = @Original_period_from)) AND ((@IsNull_period_to = 1 AND [p"& _ 
+                "eriod_to] IS NULL) OR ([period_to] = @Original_period_to)) AND ((@IsNull_employe"& _ 
+                "e_id = 1 AND [employee_id] IS NULL) OR ([employee_id] = @Original_employee_id)) "& _ 
+                "AND ((@IsNull_last_name = 1 AND [last_name] IS NULL) OR ([last_name] = @Original"& _ 
+                "_last_name)) AND ((@IsNull_first_name = 1 AND [first_name] IS NULL) OR ([first_n"& _ 
+                "ame] = @Original_first_name)) AND ((@IsNull_middle_name = 1 AND [middle_name] IS"& _ 
+                " NULL) OR ([middle_name] = @Original_middle_name)) AND ((@IsNull_department_assi"& _ 
+                "gned = 1 AND [department_assigned] IS NULL) OR ([department_assigned] = @Origina"& _ 
+                "l_department_assigned)) AND ((@IsNull_rate_basis_descr = 1 AND [rate_basis_descr"& _ 
+                "] IS NULL) OR ([rate_basis_descr] = @Original_rate_basis_descr)) AND ((@IsNull_m"& _ 
+                "onthly_rate = 1 AND [monthly_rate] IS NULL) OR ([monthly_rate] = @Original_month"& _ 
+                "ly_rate)) AND ((@IsNull_daily_rate = 1 AND [daily_rate] IS NULL) OR ([daily_rate"& _ 
+                "] = @Original_daily_rate)) AND ((@IsNull_hourly_rate = 1 AND [hourly_rate] IS NU"& _ 
+                "LL) OR ([hourly_rate] = @Original_hourly_rate)) AND ((@IsNull_unit_rate = 1 AND "& _ 
+                "[unit_rate] IS NULL) OR ([unit_rate] = @Original_unit_rate)) AND ((@IsNull_regul"& _ 
+                "ar_wages = 1 AND [regular_wages] IS NULL) OR ([regular_wages] = @Original_regula"& _ 
+                "r_wages)) AND ((@IsNull_overtime_amt = 1 AND [overtime_amt] IS NULL) OR ([overti"& _ 
+                "me_amt] = @Original_overtime_amt)) AND ((@IsNull_allowances_amt = 1 AND [allowan"& _ 
+                "ces_amt] IS NULL) OR ([allowances_amt] = @Original_allowances_amt)) AND ((@IsNul"& _ 
+                "l_adjustments_amt = 1 AND [adjustments_amt] IS NULL) OR ([adjustments_amt] = @Or"& _ 
+                "iginal_adjustments_amt)) AND ((@IsNull_worked_days = 1 AND [worked_days] IS NULL"& _ 
+                ") OR ([worked_days] = @Original_worked_days)) AND ((@IsNull_absent_days = 1 AND "& _ 
+                "[absent_days] IS NULL) OR ([absent_days] = @Original_absent_days)) AND ((@IsNull"& _ 
+                "_absent_amt = 1 AND [absent_amt] IS NULL) OR ([absent_amt] = @Original_absent_am"& _ 
+                "t)) AND ((@IsNull_lates_in_min = 1 AND [lates_in_min] IS NULL) OR ([lates_in_min"& _ 
+                "] = @Original_lates_in_min)) AND ((@IsNull_lates_in_amt = 1 AND [lates_in_amt] I"& _ 
+                "S NULL) OR ([lates_in_amt] = @Original_lates_in_amt)) AND ((@IsNull_cash_advance"& _ 
+                "_amt = 1 AND [cash_advance_amt] IS NULL) OR ([cash_advance_amt] = @Original_cash"& _ 
+                "_advance_amt)) AND ((@IsNull_sss_med_amt = 1 AND [sss_med_amt] IS NULL) OR ([sss"& _ 
+                "_med_amt] = @Original_sss_med_amt)) AND ((@IsNull_sss_loan_amt = 1 AND [sss_loan"& _ 
+                "_amt] IS NULL) OR ([sss_loan_amt] = @Original_sss_loan_amt)) AND ((@IsNull_pag_i"& _ 
+                "big_amt = 1 AND [pag_ibig_amt] IS NULL) OR ([pag_ibig_amt] = @Original_pag_ibig_"& _ 
+                "amt)) AND ((@IsNull_phic_amt = 1 AND [phic_amt] IS NULL) OR ([phic_amt] = @Origi"& _ 
+                "nal_phic_amt)) AND ((@IsNull_wtax_amt = 1 AND [wtax_amt] IS NULL) OR ([wtax_amt]"& _ 
+                " = @Original_wtax_amt)) AND ((@IsNull_other_ded_amt = 1 AND [other_ded_amt] IS N"& _ 
+                "ULL) OR ([other_ded_amt] = @Original_other_ded_amt)) AND ((@IsNull_other_loans_a"& _ 
+                "mt = 1 AND [other_loans_amt] IS NULL) OR ([other_loans_amt] = @Original_other_lo"& _ 
+                "ans_amt)) AND ((@IsNull_gross_pay = 1 AND [gross_pay] IS NULL) OR ([gross_pay] ="& _ 
+                " @Original_gross_pay)) AND ((@IsNull_net_pay = 1 AND [net_pay] IS NULL) OR ([net"& _ 
+                "_pay] = @Original_net_pay)) AND ((@IsNull_king_coop_loan = 1 AND [king_coop_loan"& _ 
+                "] IS NULL) OR ([king_coop_loan] = @Original_king_coop_loan)) AND ((@IsNull_lbp_l"& _ 
+                "oan = 1 AND [lbp_loan] IS NULL) OR ([lbp_loan] = @Original_lbp_loan)));"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT "& _ 
+                "Id, payroll_no, period_from, period_to, employee_id, last_name, first_name, midd"& _ 
+                "le_name, department_assigned, rate_basis_descr, monthly_rate, daily_rate, hourly"& _ 
+                "_rate, unit_rate, regular_wages, overtime_amt, allowances_amt, adjustments_amt, "& _ 
+                "worked_days, absent_days, absent_amt, lates_in_min, lates_in_amt, cash_advance_a"& _ 
+                "mt, sss_med_amt, sss_loan_amt, pag_ibig_amt, phic_amt, wtax_amt, other_ded_amt, "& _ 
+                "other_loans_amt, gross_pay, net_pay, remarks, king_coop_loan, lbp_loan FROM payr"& _ 
+                "oll_tbl WHERE (Id = @Id)"
             Me._adapter.UpdateCommand.CommandType = Global.System.Data.CommandType.Text
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@payroll_no", Global.System.Data.SqlDbType.NChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "payroll_no", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@period_from", Global.System.Data.SqlDbType.[Date], 0, Global.System.Data.ParameterDirection.Input, 0, 0, "period_from", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
@@ -14049,6 +15665,8 @@ Namespace payrolldbDataSetTableAdapters
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@gross_pay", Global.System.Data.SqlDbType.Money, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "gross_pay", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@net_pay", Global.System.Data.SqlDbType.Money, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "net_pay", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@remarks", Global.System.Data.SqlDbType.NVarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "remarks", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@king_coop_loan", Global.System.Data.SqlDbType.Money, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "king_coop_loan", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@lbp_loan", Global.System.Data.SqlDbType.Money, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "lbp_loan", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_Id", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Id", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_payroll_no", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "payroll_no", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_payroll_no", Global.System.Data.SqlDbType.NChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "payroll_no", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
@@ -14114,6 +15732,10 @@ Namespace payrolldbDataSetTableAdapters
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_gross_pay", Global.System.Data.SqlDbType.Money, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "gross_pay", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_net_pay", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "net_pay", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_net_pay", Global.System.Data.SqlDbType.Money, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "net_pay", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_king_coop_loan", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "king_coop_loan", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_king_coop_loan", Global.System.Data.SqlDbType.Money, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "king_coop_loan", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_lbp_loan", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "lbp_loan", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_lbp_loan", Global.System.Data.SqlDbType.Money, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "lbp_loan", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Id", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.Input, 0, 0, "Id", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
         End Sub
         
@@ -14135,7 +15757,8 @@ Namespace payrolldbDataSetTableAdapters
                 "hourly_rate, unit_rate, regular_wages, overtime_amt, allowances_amt, adjustments"& _ 
                 "_amt, worked_days, absent_days, absent_amt, lates_in_min, lates_in_amt, cash_adv"& _ 
                 "ance_amt, sss_med_amt, sss_loan_amt, pag_ibig_amt, phic_amt, wtax_amt, other_ded"& _ 
-                "_amt, other_loans_amt, gross_pay, net_pay, remarks FROM dbo.payroll_tbl"
+                "_amt, other_loans_amt, gross_pay, net_pay, remarks, king_coop_loan, lbp_loan FRO"& _ 
+                "M payroll_tbl"
             Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
         End Sub
         
@@ -14228,7 +15851,9 @@ Namespace payrolldbDataSetTableAdapters
                     ByVal Original_other_ded_amt As Global.System.Nullable(Of Decimal),  _
                     ByVal Original_other_loans_amt As Global.System.Nullable(Of Decimal),  _
                     ByVal Original_gross_pay As Global.System.Nullable(Of Decimal),  _
-                    ByVal Original_net_pay As Global.System.Nullable(Of Decimal)) As Integer
+                    ByVal Original_net_pay As Global.System.Nullable(Of Decimal),  _
+                    ByVal Original_king_coop_loan As Global.System.Nullable(Of Decimal),  _
+                    ByVal Original_lbp_loan As Global.System.Nullable(Of Decimal)) As Integer
             Me.Adapter.DeleteCommand.Parameters(0).Value = CType(Original_Id,Integer)
             If (Original_payroll_no Is Nothing) Then
                 Me.Adapter.DeleteCommand.Parameters(1).Value = CType(1,Object)
@@ -14454,6 +16079,20 @@ Namespace payrolldbDataSetTableAdapters
                 Me.Adapter.DeleteCommand.Parameters(63).Value = CType(1,Object)
                 Me.Adapter.DeleteCommand.Parameters(64).Value = Global.System.DBNull.Value
             End If
+            If (Original_king_coop_loan.HasValue = true) Then
+                Me.Adapter.DeleteCommand.Parameters(65).Value = CType(0,Object)
+                Me.Adapter.DeleteCommand.Parameters(66).Value = CType(Original_king_coop_loan.Value,Decimal)
+            Else
+                Me.Adapter.DeleteCommand.Parameters(65).Value = CType(1,Object)
+                Me.Adapter.DeleteCommand.Parameters(66).Value = Global.System.DBNull.Value
+            End If
+            If (Original_lbp_loan.HasValue = true) Then
+                Me.Adapter.DeleteCommand.Parameters(67).Value = CType(0,Object)
+                Me.Adapter.DeleteCommand.Parameters(68).Value = CType(Original_lbp_loan.Value,Decimal)
+            Else
+                Me.Adapter.DeleteCommand.Parameters(67).Value = CType(1,Object)
+                Me.Adapter.DeleteCommand.Parameters(68).Value = Global.System.DBNull.Value
+            End If
             Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.DeleteCommand.Connection.State
             If ((Me.Adapter.DeleteCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
                         <> Global.System.Data.ConnectionState.Open) Then
@@ -14506,7 +16145,9 @@ Namespace payrolldbDataSetTableAdapters
                     ByVal other_loans_amt As Global.System.Nullable(Of Decimal),  _
                     ByVal gross_pay As Global.System.Nullable(Of Decimal),  _
                     ByVal net_pay As Global.System.Nullable(Of Decimal),  _
-                    ByVal remarks As String) As Integer
+                    ByVal remarks As String,  _
+                    ByVal king_coop_loan As Global.System.Nullable(Of Decimal),  _
+                    ByVal lbp_loan As Global.System.Nullable(Of Decimal)) As Integer
             If (payroll_no Is Nothing) Then
                 Me.Adapter.InsertCommand.Parameters(0).Value = Global.System.DBNull.Value
             Else
@@ -14672,6 +16313,16 @@ Namespace payrolldbDataSetTableAdapters
             Else
                 Me.Adapter.InsertCommand.Parameters(32).Value = CType(remarks,String)
             End If
+            If (king_coop_loan.HasValue = true) Then
+                Me.Adapter.InsertCommand.Parameters(33).Value = CType(king_coop_loan.Value,Decimal)
+            Else
+                Me.Adapter.InsertCommand.Parameters(33).Value = Global.System.DBNull.Value
+            End If
+            If (lbp_loan.HasValue = true) Then
+                Me.Adapter.InsertCommand.Parameters(34).Value = CType(lbp_loan.Value,Decimal)
+            Else
+                Me.Adapter.InsertCommand.Parameters(34).Value = Global.System.DBNull.Value
+            End If
             Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.InsertCommand.Connection.State
             If ((Me.Adapter.InsertCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
                         <> Global.System.Data.ConnectionState.Open) Then
@@ -14725,6 +16376,8 @@ Namespace payrolldbDataSetTableAdapters
                     ByVal gross_pay As Global.System.Nullable(Of Decimal),  _
                     ByVal net_pay As Global.System.Nullable(Of Decimal),  _
                     ByVal remarks As String,  _
+                    ByVal king_coop_loan As Global.System.Nullable(Of Decimal),  _
+                    ByVal lbp_loan As Global.System.Nullable(Of Decimal),  _
                     ByVal Original_Id As Integer,  _
                     ByVal Original_payroll_no As String,  _
                     ByVal Original_period_from As Global.System.Nullable(Of Date),  _
@@ -14758,6 +16411,8 @@ Namespace payrolldbDataSetTableAdapters
                     ByVal Original_other_loans_amt As Global.System.Nullable(Of Decimal),  _
                     ByVal Original_gross_pay As Global.System.Nullable(Of Decimal),  _
                     ByVal Original_net_pay As Global.System.Nullable(Of Decimal),  _
+                    ByVal Original_king_coop_loan As Global.System.Nullable(Of Decimal),  _
+                    ByVal Original_lbp_loan As Global.System.Nullable(Of Decimal),  _
                     ByVal Id As Integer) As Integer
             If (payroll_no Is Nothing) Then
                 Me.Adapter.UpdateCommand.Parameters(0).Value = Global.System.DBNull.Value
@@ -14924,232 +16579,256 @@ Namespace payrolldbDataSetTableAdapters
             Else
                 Me.Adapter.UpdateCommand.Parameters(32).Value = CType(remarks,String)
             End If
-            Me.Adapter.UpdateCommand.Parameters(33).Value = CType(Original_Id,Integer)
-            If (Original_payroll_no Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(34).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(35).Value = Global.System.DBNull.Value
+            If (king_coop_loan.HasValue = true) Then
+                Me.Adapter.UpdateCommand.Parameters(33).Value = CType(king_coop_loan.Value,Decimal)
             Else
-                Me.Adapter.UpdateCommand.Parameters(34).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(35).Value = CType(Original_payroll_no,String)
+                Me.Adapter.UpdateCommand.Parameters(33).Value = Global.System.DBNull.Value
             End If
-            If (Original_period_from.HasValue = true) Then
-                Me.Adapter.UpdateCommand.Parameters(36).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(37).Value = CType(Original_period_from.Value,Date)
+            If (lbp_loan.HasValue = true) Then
+                Me.Adapter.UpdateCommand.Parameters(34).Value = CType(lbp_loan.Value,Decimal)
             Else
+                Me.Adapter.UpdateCommand.Parameters(34).Value = Global.System.DBNull.Value
+            End If
+            Me.Adapter.UpdateCommand.Parameters(35).Value = CType(Original_Id,Integer)
+            If (Original_payroll_no Is Nothing) Then
                 Me.Adapter.UpdateCommand.Parameters(36).Value = CType(1,Object)
                 Me.Adapter.UpdateCommand.Parameters(37).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(36).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(37).Value = CType(Original_payroll_no,String)
             End If
-            If (Original_period_to.HasValue = true) Then
+            If (Original_period_from.HasValue = true) Then
                 Me.Adapter.UpdateCommand.Parameters(38).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(39).Value = CType(Original_period_to.Value,Date)
+                Me.Adapter.UpdateCommand.Parameters(39).Value = CType(Original_period_from.Value,Date)
             Else
                 Me.Adapter.UpdateCommand.Parameters(38).Value = CType(1,Object)
                 Me.Adapter.UpdateCommand.Parameters(39).Value = Global.System.DBNull.Value
             End If
-            If (Original_employee_id Is Nothing) Then
+            If (Original_period_to.HasValue = true) Then
+                Me.Adapter.UpdateCommand.Parameters(40).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(41).Value = CType(Original_period_to.Value,Date)
+            Else
                 Me.Adapter.UpdateCommand.Parameters(40).Value = CType(1,Object)
                 Me.Adapter.UpdateCommand.Parameters(41).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.UpdateCommand.Parameters(40).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(41).Value = CType(Original_employee_id,String)
             End If
-            If (Original_last_name Is Nothing) Then
+            If (Original_employee_id Is Nothing) Then
                 Me.Adapter.UpdateCommand.Parameters(42).Value = CType(1,Object)
                 Me.Adapter.UpdateCommand.Parameters(43).Value = Global.System.DBNull.Value
             Else
                 Me.Adapter.UpdateCommand.Parameters(42).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(43).Value = CType(Original_last_name,String)
+                Me.Adapter.UpdateCommand.Parameters(43).Value = CType(Original_employee_id,String)
             End If
-            If (Original_first_name Is Nothing) Then
+            If (Original_last_name Is Nothing) Then
                 Me.Adapter.UpdateCommand.Parameters(44).Value = CType(1,Object)
                 Me.Adapter.UpdateCommand.Parameters(45).Value = Global.System.DBNull.Value
             Else
                 Me.Adapter.UpdateCommand.Parameters(44).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(45).Value = CType(Original_first_name,String)
+                Me.Adapter.UpdateCommand.Parameters(45).Value = CType(Original_last_name,String)
             End If
-            If (Original_middle_name Is Nothing) Then
+            If (Original_first_name Is Nothing) Then
                 Me.Adapter.UpdateCommand.Parameters(46).Value = CType(1,Object)
                 Me.Adapter.UpdateCommand.Parameters(47).Value = Global.System.DBNull.Value
             Else
                 Me.Adapter.UpdateCommand.Parameters(46).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(47).Value = CType(Original_middle_name,String)
+                Me.Adapter.UpdateCommand.Parameters(47).Value = CType(Original_first_name,String)
             End If
-            If (Original_department_assigned Is Nothing) Then
+            If (Original_middle_name Is Nothing) Then
                 Me.Adapter.UpdateCommand.Parameters(48).Value = CType(1,Object)
                 Me.Adapter.UpdateCommand.Parameters(49).Value = Global.System.DBNull.Value
             Else
                 Me.Adapter.UpdateCommand.Parameters(48).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(49).Value = CType(Original_department_assigned,String)
+                Me.Adapter.UpdateCommand.Parameters(49).Value = CType(Original_middle_name,String)
             End If
-            If (Original_rate_basis_descr Is Nothing) Then
+            If (Original_department_assigned Is Nothing) Then
                 Me.Adapter.UpdateCommand.Parameters(50).Value = CType(1,Object)
                 Me.Adapter.UpdateCommand.Parameters(51).Value = Global.System.DBNull.Value
             Else
                 Me.Adapter.UpdateCommand.Parameters(50).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(51).Value = CType(Original_rate_basis_descr,String)
+                Me.Adapter.UpdateCommand.Parameters(51).Value = CType(Original_department_assigned,String)
             End If
-            If (Original_monthly_rate.HasValue = true) Then
-                Me.Adapter.UpdateCommand.Parameters(52).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(53).Value = CType(Original_monthly_rate.Value,Decimal)
-            Else
+            If (Original_rate_basis_descr Is Nothing) Then
                 Me.Adapter.UpdateCommand.Parameters(52).Value = CType(1,Object)
                 Me.Adapter.UpdateCommand.Parameters(53).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(52).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(53).Value = CType(Original_rate_basis_descr,String)
             End If
-            If (Original_daily_rate.HasValue = true) Then
+            If (Original_monthly_rate.HasValue = true) Then
                 Me.Adapter.UpdateCommand.Parameters(54).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(55).Value = CType(Original_daily_rate.Value,Decimal)
+                Me.Adapter.UpdateCommand.Parameters(55).Value = CType(Original_monthly_rate.Value,Decimal)
             Else
                 Me.Adapter.UpdateCommand.Parameters(54).Value = CType(1,Object)
                 Me.Adapter.UpdateCommand.Parameters(55).Value = Global.System.DBNull.Value
             End If
-            If (Original_hourly_rate.HasValue = true) Then
+            If (Original_daily_rate.HasValue = true) Then
                 Me.Adapter.UpdateCommand.Parameters(56).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(57).Value = CType(Original_hourly_rate.Value,Decimal)
+                Me.Adapter.UpdateCommand.Parameters(57).Value = CType(Original_daily_rate.Value,Decimal)
             Else
                 Me.Adapter.UpdateCommand.Parameters(56).Value = CType(1,Object)
                 Me.Adapter.UpdateCommand.Parameters(57).Value = Global.System.DBNull.Value
             End If
-            If (Original_unit_rate.HasValue = true) Then
+            If (Original_hourly_rate.HasValue = true) Then
                 Me.Adapter.UpdateCommand.Parameters(58).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(59).Value = CType(Original_unit_rate.Value,Decimal)
+                Me.Adapter.UpdateCommand.Parameters(59).Value = CType(Original_hourly_rate.Value,Decimal)
             Else
                 Me.Adapter.UpdateCommand.Parameters(58).Value = CType(1,Object)
                 Me.Adapter.UpdateCommand.Parameters(59).Value = Global.System.DBNull.Value
             End If
-            If (Original_regular_wages.HasValue = true) Then
+            If (Original_unit_rate.HasValue = true) Then
                 Me.Adapter.UpdateCommand.Parameters(60).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(61).Value = CType(Original_regular_wages.Value,Decimal)
+                Me.Adapter.UpdateCommand.Parameters(61).Value = CType(Original_unit_rate.Value,Decimal)
             Else
                 Me.Adapter.UpdateCommand.Parameters(60).Value = CType(1,Object)
                 Me.Adapter.UpdateCommand.Parameters(61).Value = Global.System.DBNull.Value
             End If
-            If (Original_overtime_amt.HasValue = true) Then
+            If (Original_regular_wages.HasValue = true) Then
                 Me.Adapter.UpdateCommand.Parameters(62).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(63).Value = CType(Original_overtime_amt.Value,Decimal)
+                Me.Adapter.UpdateCommand.Parameters(63).Value = CType(Original_regular_wages.Value,Decimal)
             Else
                 Me.Adapter.UpdateCommand.Parameters(62).Value = CType(1,Object)
                 Me.Adapter.UpdateCommand.Parameters(63).Value = Global.System.DBNull.Value
             End If
-            If (Original_allowances_amt.HasValue = true) Then
+            If (Original_overtime_amt.HasValue = true) Then
                 Me.Adapter.UpdateCommand.Parameters(64).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(65).Value = CType(Original_allowances_amt.Value,Decimal)
+                Me.Adapter.UpdateCommand.Parameters(65).Value = CType(Original_overtime_amt.Value,Decimal)
             Else
                 Me.Adapter.UpdateCommand.Parameters(64).Value = CType(1,Object)
                 Me.Adapter.UpdateCommand.Parameters(65).Value = Global.System.DBNull.Value
             End If
-            If (Original_adjustments_amt.HasValue = true) Then
+            If (Original_allowances_amt.HasValue = true) Then
                 Me.Adapter.UpdateCommand.Parameters(66).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(67).Value = CType(Original_adjustments_amt.Value,Decimal)
+                Me.Adapter.UpdateCommand.Parameters(67).Value = CType(Original_allowances_amt.Value,Decimal)
             Else
                 Me.Adapter.UpdateCommand.Parameters(66).Value = CType(1,Object)
                 Me.Adapter.UpdateCommand.Parameters(67).Value = Global.System.DBNull.Value
             End If
-            If (Original_worked_days.HasValue = true) Then
+            If (Original_adjustments_amt.HasValue = true) Then
                 Me.Adapter.UpdateCommand.Parameters(68).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(69).Value = CType(Original_worked_days.Value,Decimal)
+                Me.Adapter.UpdateCommand.Parameters(69).Value = CType(Original_adjustments_amt.Value,Decimal)
             Else
                 Me.Adapter.UpdateCommand.Parameters(68).Value = CType(1,Object)
                 Me.Adapter.UpdateCommand.Parameters(69).Value = Global.System.DBNull.Value
             End If
-            If (Original_absent_days.HasValue = true) Then
+            If (Original_worked_days.HasValue = true) Then
                 Me.Adapter.UpdateCommand.Parameters(70).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(71).Value = CType(Original_absent_days.Value,Decimal)
+                Me.Adapter.UpdateCommand.Parameters(71).Value = CType(Original_worked_days.Value,Decimal)
             Else
                 Me.Adapter.UpdateCommand.Parameters(70).Value = CType(1,Object)
                 Me.Adapter.UpdateCommand.Parameters(71).Value = Global.System.DBNull.Value
             End If
-            If (Original_absent_amt.HasValue = true) Then
+            If (Original_absent_days.HasValue = true) Then
                 Me.Adapter.UpdateCommand.Parameters(72).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(73).Value = CType(Original_absent_amt.Value,Decimal)
+                Me.Adapter.UpdateCommand.Parameters(73).Value = CType(Original_absent_days.Value,Decimal)
             Else
                 Me.Adapter.UpdateCommand.Parameters(72).Value = CType(1,Object)
                 Me.Adapter.UpdateCommand.Parameters(73).Value = Global.System.DBNull.Value
             End If
-            If (Original_lates_in_min.HasValue = true) Then
+            If (Original_absent_amt.HasValue = true) Then
                 Me.Adapter.UpdateCommand.Parameters(74).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(75).Value = CType(Original_lates_in_min.Value,Integer)
+                Me.Adapter.UpdateCommand.Parameters(75).Value = CType(Original_absent_amt.Value,Decimal)
             Else
                 Me.Adapter.UpdateCommand.Parameters(74).Value = CType(1,Object)
                 Me.Adapter.UpdateCommand.Parameters(75).Value = Global.System.DBNull.Value
             End If
-            If (Original_lates_in_amt.HasValue = true) Then
+            If (Original_lates_in_min.HasValue = true) Then
                 Me.Adapter.UpdateCommand.Parameters(76).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(77).Value = CType(Original_lates_in_amt.Value,Decimal)
+                Me.Adapter.UpdateCommand.Parameters(77).Value = CType(Original_lates_in_min.Value,Integer)
             Else
                 Me.Adapter.UpdateCommand.Parameters(76).Value = CType(1,Object)
                 Me.Adapter.UpdateCommand.Parameters(77).Value = Global.System.DBNull.Value
             End If
-            If (Original_cash_advance_amt.HasValue = true) Then
+            If (Original_lates_in_amt.HasValue = true) Then
                 Me.Adapter.UpdateCommand.Parameters(78).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(79).Value = CType(Original_cash_advance_amt.Value,Decimal)
+                Me.Adapter.UpdateCommand.Parameters(79).Value = CType(Original_lates_in_amt.Value,Decimal)
             Else
                 Me.Adapter.UpdateCommand.Parameters(78).Value = CType(1,Object)
                 Me.Adapter.UpdateCommand.Parameters(79).Value = Global.System.DBNull.Value
             End If
-            If (Original_sss_med_amt.HasValue = true) Then
+            If (Original_cash_advance_amt.HasValue = true) Then
                 Me.Adapter.UpdateCommand.Parameters(80).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(81).Value = CType(Original_sss_med_amt.Value,Decimal)
+                Me.Adapter.UpdateCommand.Parameters(81).Value = CType(Original_cash_advance_amt.Value,Decimal)
             Else
                 Me.Adapter.UpdateCommand.Parameters(80).Value = CType(1,Object)
                 Me.Adapter.UpdateCommand.Parameters(81).Value = Global.System.DBNull.Value
             End If
-            If (Original_sss_loan_amt.HasValue = true) Then
+            If (Original_sss_med_amt.HasValue = true) Then
                 Me.Adapter.UpdateCommand.Parameters(82).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(83).Value = CType(Original_sss_loan_amt.Value,Decimal)
+                Me.Adapter.UpdateCommand.Parameters(83).Value = CType(Original_sss_med_amt.Value,Decimal)
             Else
                 Me.Adapter.UpdateCommand.Parameters(82).Value = CType(1,Object)
                 Me.Adapter.UpdateCommand.Parameters(83).Value = Global.System.DBNull.Value
             End If
-            If (Original_pag_ibig_amt.HasValue = true) Then
+            If (Original_sss_loan_amt.HasValue = true) Then
                 Me.Adapter.UpdateCommand.Parameters(84).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(85).Value = CType(Original_pag_ibig_amt.Value,Decimal)
+                Me.Adapter.UpdateCommand.Parameters(85).Value = CType(Original_sss_loan_amt.Value,Decimal)
             Else
                 Me.Adapter.UpdateCommand.Parameters(84).Value = CType(1,Object)
                 Me.Adapter.UpdateCommand.Parameters(85).Value = Global.System.DBNull.Value
             End If
-            If (Original_phic_amt.HasValue = true) Then
+            If (Original_pag_ibig_amt.HasValue = true) Then
                 Me.Adapter.UpdateCommand.Parameters(86).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(87).Value = CType(Original_phic_amt.Value,Decimal)
+                Me.Adapter.UpdateCommand.Parameters(87).Value = CType(Original_pag_ibig_amt.Value,Decimal)
             Else
                 Me.Adapter.UpdateCommand.Parameters(86).Value = CType(1,Object)
                 Me.Adapter.UpdateCommand.Parameters(87).Value = Global.System.DBNull.Value
             End If
-            If (Original_wtax_amt.HasValue = true) Then
+            If (Original_phic_amt.HasValue = true) Then
                 Me.Adapter.UpdateCommand.Parameters(88).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(89).Value = CType(Original_wtax_amt.Value,Decimal)
+                Me.Adapter.UpdateCommand.Parameters(89).Value = CType(Original_phic_amt.Value,Decimal)
             Else
                 Me.Adapter.UpdateCommand.Parameters(88).Value = CType(1,Object)
                 Me.Adapter.UpdateCommand.Parameters(89).Value = Global.System.DBNull.Value
             End If
-            If (Original_other_ded_amt.HasValue = true) Then
+            If (Original_wtax_amt.HasValue = true) Then
                 Me.Adapter.UpdateCommand.Parameters(90).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(91).Value = CType(Original_other_ded_amt.Value,Decimal)
+                Me.Adapter.UpdateCommand.Parameters(91).Value = CType(Original_wtax_amt.Value,Decimal)
             Else
                 Me.Adapter.UpdateCommand.Parameters(90).Value = CType(1,Object)
                 Me.Adapter.UpdateCommand.Parameters(91).Value = Global.System.DBNull.Value
             End If
-            If (Original_other_loans_amt.HasValue = true) Then
+            If (Original_other_ded_amt.HasValue = true) Then
                 Me.Adapter.UpdateCommand.Parameters(92).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(93).Value = CType(Original_other_loans_amt.Value,Decimal)
+                Me.Adapter.UpdateCommand.Parameters(93).Value = CType(Original_other_ded_amt.Value,Decimal)
             Else
                 Me.Adapter.UpdateCommand.Parameters(92).Value = CType(1,Object)
                 Me.Adapter.UpdateCommand.Parameters(93).Value = Global.System.DBNull.Value
             End If
-            If (Original_gross_pay.HasValue = true) Then
+            If (Original_other_loans_amt.HasValue = true) Then
                 Me.Adapter.UpdateCommand.Parameters(94).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(95).Value = CType(Original_gross_pay.Value,Decimal)
+                Me.Adapter.UpdateCommand.Parameters(95).Value = CType(Original_other_loans_amt.Value,Decimal)
             Else
                 Me.Adapter.UpdateCommand.Parameters(94).Value = CType(1,Object)
                 Me.Adapter.UpdateCommand.Parameters(95).Value = Global.System.DBNull.Value
             End If
-            If (Original_net_pay.HasValue = true) Then
+            If (Original_gross_pay.HasValue = true) Then
                 Me.Adapter.UpdateCommand.Parameters(96).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(97).Value = CType(Original_net_pay.Value,Decimal)
+                Me.Adapter.UpdateCommand.Parameters(97).Value = CType(Original_gross_pay.Value,Decimal)
             Else
                 Me.Adapter.UpdateCommand.Parameters(96).Value = CType(1,Object)
                 Me.Adapter.UpdateCommand.Parameters(97).Value = Global.System.DBNull.Value
             End If
-            Me.Adapter.UpdateCommand.Parameters(98).Value = CType(Id,Integer)
+            If (Original_net_pay.HasValue = true) Then
+                Me.Adapter.UpdateCommand.Parameters(98).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(99).Value = CType(Original_net_pay.Value,Decimal)
+            Else
+                Me.Adapter.UpdateCommand.Parameters(98).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(99).Value = Global.System.DBNull.Value
+            End If
+            If (Original_king_coop_loan.HasValue = true) Then
+                Me.Adapter.UpdateCommand.Parameters(100).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(101).Value = CType(Original_king_coop_loan.Value,Decimal)
+            Else
+                Me.Adapter.UpdateCommand.Parameters(100).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(101).Value = Global.System.DBNull.Value
+            End If
+            If (Original_lbp_loan.HasValue = true) Then
+                Me.Adapter.UpdateCommand.Parameters(102).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(103).Value = CType(Original_lbp_loan.Value,Decimal)
+            Else
+                Me.Adapter.UpdateCommand.Parameters(102).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(103).Value = Global.System.DBNull.Value
+            End If
+            Me.Adapter.UpdateCommand.Parameters(104).Value = CType(Id,Integer)
             Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.UpdateCommand.Connection.State
             If ((Me.Adapter.UpdateCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
                         <> Global.System.Data.ConnectionState.Open) Then
@@ -15203,6 +16882,8 @@ Namespace payrolldbDataSetTableAdapters
                     ByVal gross_pay As Global.System.Nullable(Of Decimal),  _
                     ByVal net_pay As Global.System.Nullable(Of Decimal),  _
                     ByVal remarks As String,  _
+                    ByVal king_coop_loan As Global.System.Nullable(Of Decimal),  _
+                    ByVal lbp_loan As Global.System.Nullable(Of Decimal),  _
                     ByVal Original_Id As Integer,  _
                     ByVal Original_payroll_no As String,  _
                     ByVal Original_period_from As Global.System.Nullable(Of Date),  _
@@ -15235,8 +16916,10 @@ Namespace payrolldbDataSetTableAdapters
                     ByVal Original_other_ded_amt As Global.System.Nullable(Of Decimal),  _
                     ByVal Original_other_loans_amt As Global.System.Nullable(Of Decimal),  _
                     ByVal Original_gross_pay As Global.System.Nullable(Of Decimal),  _
-                    ByVal Original_net_pay As Global.System.Nullable(Of Decimal)) As Integer
-            Return Me.Update(payroll_no, period_from, period_to, employee_id, last_name, first_name, middle_name, department_assigned, rate_basis_descr, monthly_rate, daily_rate, hourly_rate, unit_rate, regular_wages, overtime_amt, allowances_amt, adjustments_amt, worked_days, absent_days, absent_amt, lates_in_min, lates_in_amt, cash_advance_amt, sss_med_amt, sss_loan_amt, pag_ibig_amt, phic_amt, wtax_amt, other_ded_amt, other_loans_amt, gross_pay, net_pay, remarks, Original_Id, Original_payroll_no, Original_period_from, Original_period_to, Original_employee_id, Original_last_name, Original_first_name, Original_middle_name, Original_department_assigned, Original_rate_basis_descr, Original_monthly_rate, Original_daily_rate, Original_hourly_rate, Original_unit_rate, Original_regular_wages, Original_overtime_amt, Original_allowances_amt, Original_adjustments_amt, Original_worked_days, Original_absent_days, Original_absent_amt, Original_lates_in_min, Original_lates_in_amt, Original_cash_advance_amt, Original_sss_med_amt, Original_sss_loan_amt, Original_pag_ibig_amt, Original_phic_amt, Original_wtax_amt, Original_other_ded_amt, Original_other_loans_amt, Original_gross_pay, Original_net_pay, Original_Id)
+                    ByVal Original_net_pay As Global.System.Nullable(Of Decimal),  _
+                    ByVal Original_king_coop_loan As Global.System.Nullable(Of Decimal),  _
+                    ByVal Original_lbp_loan As Global.System.Nullable(Of Decimal)) As Integer
+            Return Me.Update(payroll_no, period_from, period_to, employee_id, last_name, first_name, middle_name, department_assigned, rate_basis_descr, monthly_rate, daily_rate, hourly_rate, unit_rate, regular_wages, overtime_amt, allowances_amt, adjustments_amt, worked_days, absent_days, absent_amt, lates_in_min, lates_in_amt, cash_advance_amt, sss_med_amt, sss_loan_amt, pag_ibig_amt, phic_amt, wtax_amt, other_ded_amt, other_loans_amt, gross_pay, net_pay, remarks, king_coop_loan, lbp_loan, Original_Id, Original_payroll_no, Original_period_from, Original_period_to, Original_employee_id, Original_last_name, Original_first_name, Original_middle_name, Original_department_assigned, Original_rate_basis_descr, Original_monthly_rate, Original_daily_rate, Original_hourly_rate, Original_unit_rate, Original_regular_wages, Original_overtime_amt, Original_allowances_amt, Original_adjustments_amt, Original_worked_days, Original_absent_days, Original_absent_amt, Original_lates_in_min, Original_lates_in_amt, Original_cash_advance_amt, Original_sss_med_amt, Original_sss_loan_amt, Original_pag_ibig_amt, Original_phic_amt, Original_wtax_amt, Original_other_ded_amt, Original_other_loans_amt, Original_gross_pay, Original_net_pay, Original_king_coop_loan, Original_lbp_loan, Original_Id)
         End Function
     End Class
     
@@ -15832,6 +17515,8 @@ Namespace payrolldbDataSetTableAdapters
             tableMapping.ColumnMappings.Add("net_pay", "net_pay")
             tableMapping.ColumnMappings.Add("remarks", "remarks")
             tableMapping.ColumnMappings.Add("photo", "photo")
+            tableMapping.ColumnMappings.Add("king_coop_loan", "king_coop_loan")
+            tableMapping.ColumnMappings.Add("lbp_loan", "lbp_loan")
             Me._adapter.TableMappings.Add(tableMapping)
         End Sub
         
@@ -15853,8 +17538,8 @@ Namespace payrolldbDataSetTableAdapters
                 "e, daily_rate, hourly_rate, unit_rate, regular_wages, overtime_amt, allowances_a"& _ 
                 "mt, adjustments_amt, worked_days, absent_days, absent_amt, lates_in_min, lates_i"& _ 
                 "n_amt, cash_advance_amt, sss_med_amt, sss_loan_amt, pag_ibig_amt, phic_amt, wtax"& _ 
-                "_amt, other_ded_amt, other_loans_amt, gross_pay, net_pay, remarks, photo FROM vw"& _ 
-                "_payroll_tbl"
+                "_amt, other_ded_amt, other_loans_amt, gross_pay, net_pay, remarks, photo, king_c"& _ 
+                "oop_loan, lbp_loan FROM vw_payroll_tbl"
             Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
         End Sub
         
@@ -16555,6 +18240,666 @@ Namespace payrolldbDataSetTableAdapters
     End Class
     
     '''<summary>
+    '''Represents the connection and commands used to retrieve and save data.
+    '''</summary>
+    <Global.System.ComponentModel.DesignerCategoryAttribute("code"),  _
+     Global.System.ComponentModel.ToolboxItem(true),  _
+     Global.System.ComponentModel.DataObjectAttribute(true),  _
+     Global.System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner"& _ 
+        ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a"),  _
+     Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
+    Partial Public Class time_schedule_empl_tblTableAdapter
+        Inherits Global.System.ComponentModel.Component
+        
+        Private WithEvents _adapter As Global.System.Data.SqlClient.SqlDataAdapter
+        
+        Private _connection As Global.System.Data.SqlClient.SqlConnection
+        
+        Private _transaction As Global.System.Data.SqlClient.SqlTransaction
+        
+        Private _commandCollection() As Global.System.Data.SqlClient.SqlCommand
+        
+        Private _clearBeforeFill As Boolean
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Sub New()
+            MyBase.New
+            Me.ClearBeforeFill = true
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Protected Friend ReadOnly Property Adapter() As Global.System.Data.SqlClient.SqlDataAdapter
+            Get
+                If (Me._adapter Is Nothing) Then
+                    Me.InitAdapter
+                End If
+                Return Me._adapter
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Friend Property Connection() As Global.System.Data.SqlClient.SqlConnection
+            Get
+                If (Me._connection Is Nothing) Then
+                    Me.InitConnection
+                End If
+                Return Me._connection
+            End Get
+            Set
+                Me._connection = value
+                If (Not (Me.Adapter.InsertCommand) Is Nothing) Then
+                    Me.Adapter.InsertCommand.Connection = value
+                End If
+                If (Not (Me.Adapter.DeleteCommand) Is Nothing) Then
+                    Me.Adapter.DeleteCommand.Connection = value
+                End If
+                If (Not (Me.Adapter.UpdateCommand) Is Nothing) Then
+                    Me.Adapter.UpdateCommand.Connection = value
+                End If
+                Dim i As Integer = 0
+                Do While (i < Me.CommandCollection.Length)
+                    If (Not (Me.CommandCollection(i)) Is Nothing) Then
+                        CType(Me.CommandCollection(i),Global.System.Data.SqlClient.SqlCommand).Connection = value
+                    End If
+                    i = (i + 1)
+                Loop
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Friend Property Transaction() As Global.System.Data.SqlClient.SqlTransaction
+            Get
+                Return Me._transaction
+            End Get
+            Set
+                Me._transaction = value
+                Dim i As Integer = 0
+                Do While (i < Me.CommandCollection.Length)
+                    Me.CommandCollection(i).Transaction = Me._transaction
+                    i = (i + 1)
+                Loop
+                If ((Not (Me.Adapter) Is Nothing)  _
+                            AndAlso (Not (Me.Adapter.DeleteCommand) Is Nothing)) Then
+                    Me.Adapter.DeleteCommand.Transaction = Me._transaction
+                End If
+                If ((Not (Me.Adapter) Is Nothing)  _
+                            AndAlso (Not (Me.Adapter.InsertCommand) Is Nothing)) Then
+                    Me.Adapter.InsertCommand.Transaction = Me._transaction
+                End If
+                If ((Not (Me.Adapter) Is Nothing)  _
+                            AndAlso (Not (Me.Adapter.UpdateCommand) Is Nothing)) Then
+                    Me.Adapter.UpdateCommand.Transaction = Me._transaction
+                End If
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Protected ReadOnly Property CommandCollection() As Global.System.Data.SqlClient.SqlCommand()
+            Get
+                If (Me._commandCollection Is Nothing) Then
+                    Me.InitCommandCollection
+                End If
+                Return Me._commandCollection
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Property ClearBeforeFill() As Boolean
+            Get
+                Return Me._clearBeforeFill
+            End Get
+            Set
+                Me._clearBeforeFill = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Private Sub InitAdapter()
+            Me._adapter = New Global.System.Data.SqlClient.SqlDataAdapter()
+            Dim tableMapping As Global.System.Data.Common.DataTableMapping = New Global.System.Data.Common.DataTableMapping()
+            tableMapping.SourceTable = "Table"
+            tableMapping.DataSetTable = "time_schedule_empl_tbl"
+            tableMapping.ColumnMappings.Add("Id", "Id")
+            tableMapping.ColumnMappings.Add("tse_date", "tse_date")
+            tableMapping.ColumnMappings.Add("empl_id", "empl_id")
+            tableMapping.ColumnMappings.Add("tse_in_am", "tse_in_am")
+            tableMapping.ColumnMappings.Add("tse_out_am", "tse_out_am")
+            tableMapping.ColumnMappings.Add("tse_in_pm", "tse_in_pm")
+            tableMapping.ColumnMappings.Add("tse_out_pm", "tse_out_pm")
+            Me._adapter.TableMappings.Add(tableMapping)
+            Me._adapter.DeleteCommand = New Global.System.Data.SqlClient.SqlCommand()
+            Me._adapter.DeleteCommand.Connection = Me.Connection
+            Me._adapter.DeleteCommand.CommandText = "DELETE FROM [dbo].[time_schedule_empl_tbl] WHERE (([Id] = @Original_Id) AND ([tse"& _ 
+                "_date] = @Original_tse_date) AND ((@IsNull_empl_id = 1 AND [empl_id] IS NULL) OR"& _ 
+                " ([empl_id] = @Original_empl_id)) AND ((@IsNull_tse_in_am = 1 AND [tse_in_am] IS"& _ 
+                " NULL) OR ([tse_in_am] = @Original_tse_in_am)) AND ((@IsNull_tse_out_am = 1 AND "& _ 
+                "[tse_out_am] IS NULL) OR ([tse_out_am] = @Original_tse_out_am)) AND ((@IsNull_ts"& _ 
+                "e_in_pm = 1 AND [tse_in_pm] IS NULL) OR ([tse_in_pm] = @Original_tse_in_pm)) AND"& _ 
+                " ((@IsNull_tse_out_pm = 1 AND [tse_out_pm] IS NULL) OR ([tse_out_pm] = @Original"& _ 
+                "_tse_out_pm)))"
+            Me._adapter.DeleteCommand.CommandType = Global.System.Data.CommandType.Text
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_Id", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Id", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_tse_date", Global.System.Data.SqlDbType.[Date], 0, Global.System.Data.ParameterDirection.Input, 0, 0, "tse_date", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_empl_id", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "empl_id", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_empl_id", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "empl_id", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_tse_in_am", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "tse_in_am", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_tse_in_am", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "tse_in_am", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_tse_out_am", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "tse_out_am", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_tse_out_am", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "tse_out_am", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_tse_in_pm", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "tse_in_pm", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_tse_in_pm", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "tse_in_pm", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_tse_out_pm", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "tse_out_pm", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_tse_out_pm", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "tse_out_pm", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.InsertCommand = New Global.System.Data.SqlClient.SqlCommand()
+            Me._adapter.InsertCommand.Connection = Me.Connection
+            Me._adapter.InsertCommand.CommandText = "INSERT INTO [dbo].[time_schedule_empl_tbl] ([tse_date], [empl_id], [tse_in_am], ["& _ 
+                "tse_out_am], [tse_in_pm], [tse_out_pm]) VALUES (@tse_date, @empl_id, @tse_in_am,"& _ 
+                " @tse_out_am, @tse_in_pm, @tse_out_pm);"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT Id, tse_date, empl_id, tse_in_am"& _ 
+                ", tse_out_am, tse_in_pm, tse_out_pm FROM time_schedule_empl_tbl WHERE (Id = SCOP"& _ 
+                "E_IDENTITY())"
+            Me._adapter.InsertCommand.CommandType = Global.System.Data.CommandType.Text
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@tse_date", Global.System.Data.SqlDbType.[Date], 0, Global.System.Data.ParameterDirection.Input, 0, 0, "tse_date", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@empl_id", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "empl_id", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@tse_in_am", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "tse_in_am", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@tse_out_am", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "tse_out_am", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@tse_in_pm", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "tse_in_pm", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@tse_out_pm", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "tse_out_pm", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand = New Global.System.Data.SqlClient.SqlCommand()
+            Me._adapter.UpdateCommand.Connection = Me.Connection
+            Me._adapter.UpdateCommand.CommandText = "UPDATE [dbo].[time_schedule_empl_tbl] SET [tse_date] = @tse_date, [empl_id] = @em"& _ 
+                "pl_id, [tse_in_am] = @tse_in_am, [tse_out_am] = @tse_out_am, [tse_in_pm] = @tse_"& _ 
+                "in_pm, [tse_out_pm] = @tse_out_pm WHERE (([Id] = @Original_Id) AND ([tse_date] ="& _ 
+                " @Original_tse_date) AND ((@IsNull_empl_id = 1 AND [empl_id] IS NULL) OR ([empl_"& _ 
+                "id] = @Original_empl_id)) AND ((@IsNull_tse_in_am = 1 AND [tse_in_am] IS NULL) O"& _ 
+                "R ([tse_in_am] = @Original_tse_in_am)) AND ((@IsNull_tse_out_am = 1 AND [tse_out"& _ 
+                "_am] IS NULL) OR ([tse_out_am] = @Original_tse_out_am)) AND ((@IsNull_tse_in_pm "& _ 
+                "= 1 AND [tse_in_pm] IS NULL) OR ([tse_in_pm] = @Original_tse_in_pm)) AND ((@IsNu"& _ 
+                "ll_tse_out_pm = 1 AND [tse_out_pm] IS NULL) OR ([tse_out_pm] = @Original_tse_out"& _ 
+                "_pm)));"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT Id, tse_date, empl_id, tse_in_am, tse_out_am, tse_in_pm, tse_out"& _ 
+                "_pm FROM time_schedule_empl_tbl WHERE (Id = @Id)"
+            Me._adapter.UpdateCommand.CommandType = Global.System.Data.CommandType.Text
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@tse_date", Global.System.Data.SqlDbType.[Date], 0, Global.System.Data.ParameterDirection.Input, 0, 0, "tse_date", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@empl_id", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "empl_id", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@tse_in_am", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "tse_in_am", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@tse_out_am", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "tse_out_am", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@tse_in_pm", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "tse_in_pm", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@tse_out_pm", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "tse_out_pm", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_Id", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "Id", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_tse_date", Global.System.Data.SqlDbType.[Date], 0, Global.System.Data.ParameterDirection.Input, 0, 0, "tse_date", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_empl_id", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "empl_id", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_empl_id", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "empl_id", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_tse_in_am", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "tse_in_am", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_tse_in_am", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "tse_in_am", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_tse_out_am", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "tse_out_am", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_tse_out_am", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "tse_out_am", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_tse_in_pm", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "tse_in_pm", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_tse_in_pm", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "tse_in_pm", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_tse_out_pm", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "tse_out_pm", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_tse_out_pm", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "tse_out_pm", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Id", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.Input, 0, 0, "Id", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Private Sub InitConnection()
+            Me._connection = New Global.System.Data.SqlClient.SqlConnection()
+            Me._connection.ConnectionString = Global.LCCPayrollSystem.My.MySettings.Default.payrolldbConnectionString
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Private Sub InitCommandCollection()
+            Me._commandCollection = New Global.System.Data.SqlClient.SqlCommand(0) {}
+            Me._commandCollection(0) = New Global.System.Data.SqlClient.SqlCommand()
+            Me._commandCollection(0).Connection = Me.Connection
+            Me._commandCollection(0).CommandText = "SELECT Id, tse_date, empl_id, tse_in_am, tse_out_am, tse_in_pm, tse_out_pm FROM d"& _ 
+                "bo.time_schedule_empl_tbl"
+            Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Fill, true)>  _
+        Public Overloads Overridable Function Fill(ByVal dataTable As payrolldbDataSet.time_schedule_empl_tblDataTable) As Integer
+            Me.Adapter.SelectCommand = Me.CommandCollection(0)
+            If (Me.ClearBeforeFill = true) Then
+                dataTable.Clear
+            End If
+            Dim returnValue As Integer = Me.Adapter.Fill(dataTable)
+            Return returnValue
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.[Select], true)>  _
+        Public Overloads Overridable Function GetData() As payrolldbDataSet.time_schedule_empl_tblDataTable
+            Me.Adapter.SelectCommand = Me.CommandCollection(0)
+            Dim dataTable As payrolldbDataSet.time_schedule_empl_tblDataTable = New payrolldbDataSet.time_schedule_empl_tblDataTable()
+            Me.Adapter.Fill(dataTable)
+            Return dataTable
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
+        Public Overloads Overridable Function Update(ByVal dataTable As payrolldbDataSet.time_schedule_empl_tblDataTable) As Integer
+            Return Me.Adapter.Update(dataTable)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
+        Public Overloads Overridable Function Update(ByVal dataSet As payrolldbDataSet) As Integer
+            Return Me.Adapter.Update(dataSet, "time_schedule_empl_tbl")
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
+        Public Overloads Overridable Function Update(ByVal dataRow As Global.System.Data.DataRow) As Integer
+            Return Me.Adapter.Update(New Global.System.Data.DataRow() {dataRow})
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
+        Public Overloads Overridable Function Update(ByVal dataRows() As Global.System.Data.DataRow) As Integer
+            Return Me.Adapter.Update(dataRows)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Delete, true)>  _
+        Public Overloads Overridable Function Delete(ByVal Original_Id As Integer, ByVal Original_tse_date As Date, ByVal Original_empl_id As String, ByVal Original_tse_in_am As String, ByVal Original_tse_out_am As String, ByVal Original_tse_in_pm As String, ByVal Original_tse_out_pm As String) As Integer
+            Me.Adapter.DeleteCommand.Parameters(0).Value = CType(Original_Id,Integer)
+            Me.Adapter.DeleteCommand.Parameters(1).Value = CType(Original_tse_date,Date)
+            If (Original_empl_id Is Nothing) Then
+                Me.Adapter.DeleteCommand.Parameters(2).Value = CType(1,Object)
+                Me.Adapter.DeleteCommand.Parameters(3).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.DeleteCommand.Parameters(2).Value = CType(0,Object)
+                Me.Adapter.DeleteCommand.Parameters(3).Value = CType(Original_empl_id,String)
+            End If
+            If (Original_tse_in_am Is Nothing) Then
+                Me.Adapter.DeleteCommand.Parameters(4).Value = CType(1,Object)
+                Me.Adapter.DeleteCommand.Parameters(5).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.DeleteCommand.Parameters(4).Value = CType(0,Object)
+                Me.Adapter.DeleteCommand.Parameters(5).Value = CType(Original_tse_in_am,String)
+            End If
+            If (Original_tse_out_am Is Nothing) Then
+                Me.Adapter.DeleteCommand.Parameters(6).Value = CType(1,Object)
+                Me.Adapter.DeleteCommand.Parameters(7).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.DeleteCommand.Parameters(6).Value = CType(0,Object)
+                Me.Adapter.DeleteCommand.Parameters(7).Value = CType(Original_tse_out_am,String)
+            End If
+            If (Original_tse_in_pm Is Nothing) Then
+                Me.Adapter.DeleteCommand.Parameters(8).Value = CType(1,Object)
+                Me.Adapter.DeleteCommand.Parameters(9).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.DeleteCommand.Parameters(8).Value = CType(0,Object)
+                Me.Adapter.DeleteCommand.Parameters(9).Value = CType(Original_tse_in_pm,String)
+            End If
+            If (Original_tse_out_pm Is Nothing) Then
+                Me.Adapter.DeleteCommand.Parameters(10).Value = CType(1,Object)
+                Me.Adapter.DeleteCommand.Parameters(11).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.DeleteCommand.Parameters(10).Value = CType(0,Object)
+                Me.Adapter.DeleteCommand.Parameters(11).Value = CType(Original_tse_out_pm,String)
+            End If
+            Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.DeleteCommand.Connection.State
+            If ((Me.Adapter.DeleteCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
+                        <> Global.System.Data.ConnectionState.Open) Then
+                Me.Adapter.DeleteCommand.Connection.Open
+            End If
+            Try 
+                Dim returnValue As Integer = Me.Adapter.DeleteCommand.ExecuteNonQuery
+                Return returnValue
+            Finally
+                If (previousConnectionState = Global.System.Data.ConnectionState.Closed) Then
+                    Me.Adapter.DeleteCommand.Connection.Close
+                End If
+            End Try
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Insert, true)>  _
+        Public Overloads Overridable Function Insert(ByVal tse_date As Date, ByVal empl_id As String, ByVal tse_in_am As String, ByVal tse_out_am As String, ByVal tse_in_pm As String, ByVal tse_out_pm As String) As Integer
+            Me.Adapter.InsertCommand.Parameters(0).Value = CType(tse_date,Date)
+            If (empl_id Is Nothing) Then
+                Me.Adapter.InsertCommand.Parameters(1).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.InsertCommand.Parameters(1).Value = CType(empl_id,String)
+            End If
+            If (tse_in_am Is Nothing) Then
+                Me.Adapter.InsertCommand.Parameters(2).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.InsertCommand.Parameters(2).Value = CType(tse_in_am,String)
+            End If
+            If (tse_out_am Is Nothing) Then
+                Me.Adapter.InsertCommand.Parameters(3).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.InsertCommand.Parameters(3).Value = CType(tse_out_am,String)
+            End If
+            If (tse_in_pm Is Nothing) Then
+                Me.Adapter.InsertCommand.Parameters(4).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.InsertCommand.Parameters(4).Value = CType(tse_in_pm,String)
+            End If
+            If (tse_out_pm Is Nothing) Then
+                Me.Adapter.InsertCommand.Parameters(5).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.InsertCommand.Parameters(5).Value = CType(tse_out_pm,String)
+            End If
+            Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.InsertCommand.Connection.State
+            If ((Me.Adapter.InsertCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
+                        <> Global.System.Data.ConnectionState.Open) Then
+                Me.Adapter.InsertCommand.Connection.Open
+            End If
+            Try 
+                Dim returnValue As Integer = Me.Adapter.InsertCommand.ExecuteNonQuery
+                Return returnValue
+            Finally
+                If (previousConnectionState = Global.System.Data.ConnectionState.Closed) Then
+                    Me.Adapter.InsertCommand.Connection.Close
+                End If
+            End Try
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Update, true)>  _
+        Public Overloads Overridable Function Update(ByVal tse_date As Date, ByVal empl_id As String, ByVal tse_in_am As String, ByVal tse_out_am As String, ByVal tse_in_pm As String, ByVal tse_out_pm As String, ByVal Original_Id As Integer, ByVal Original_tse_date As Date, ByVal Original_empl_id As String, ByVal Original_tse_in_am As String, ByVal Original_tse_out_am As String, ByVal Original_tse_in_pm As String, ByVal Original_tse_out_pm As String, ByVal Id As Integer) As Integer
+            Me.Adapter.UpdateCommand.Parameters(0).Value = CType(tse_date,Date)
+            If (empl_id Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(1).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(1).Value = CType(empl_id,String)
+            End If
+            If (tse_in_am Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(2).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(2).Value = CType(tse_in_am,String)
+            End If
+            If (tse_out_am Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(3).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(3).Value = CType(tse_out_am,String)
+            End If
+            If (tse_in_pm Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(4).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(4).Value = CType(tse_in_pm,String)
+            End If
+            If (tse_out_pm Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(5).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(5).Value = CType(tse_out_pm,String)
+            End If
+            Me.Adapter.UpdateCommand.Parameters(6).Value = CType(Original_Id,Integer)
+            Me.Adapter.UpdateCommand.Parameters(7).Value = CType(Original_tse_date,Date)
+            If (Original_empl_id Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(8).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(9).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(8).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(9).Value = CType(Original_empl_id,String)
+            End If
+            If (Original_tse_in_am Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(10).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(11).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(10).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(11).Value = CType(Original_tse_in_am,String)
+            End If
+            If (Original_tse_out_am Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(12).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(13).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(12).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(13).Value = CType(Original_tse_out_am,String)
+            End If
+            If (Original_tse_in_pm Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(14).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(15).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(14).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(15).Value = CType(Original_tse_in_pm,String)
+            End If
+            If (Original_tse_out_pm Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(16).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(17).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(16).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(17).Value = CType(Original_tse_out_pm,String)
+            End If
+            Me.Adapter.UpdateCommand.Parameters(18).Value = CType(Id,Integer)
+            Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.UpdateCommand.Connection.State
+            If ((Me.Adapter.UpdateCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
+                        <> Global.System.Data.ConnectionState.Open) Then
+                Me.Adapter.UpdateCommand.Connection.Open
+            End If
+            Try 
+                Dim returnValue As Integer = Me.Adapter.UpdateCommand.ExecuteNonQuery
+                Return returnValue
+            Finally
+                If (previousConnectionState = Global.System.Data.ConnectionState.Closed) Then
+                    Me.Adapter.UpdateCommand.Connection.Close
+                End If
+            End Try
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Update, true)>  _
+        Public Overloads Overridable Function Update(ByVal tse_date As Date, ByVal empl_id As String, ByVal tse_in_am As String, ByVal tse_out_am As String, ByVal tse_in_pm As String, ByVal tse_out_pm As String, ByVal Original_Id As Integer, ByVal Original_tse_date As Date, ByVal Original_empl_id As String, ByVal Original_tse_in_am As String, ByVal Original_tse_out_am As String, ByVal Original_tse_in_pm As String, ByVal Original_tse_out_pm As String) As Integer
+            Return Me.Update(tse_date, empl_id, tse_in_am, tse_out_am, tse_in_pm, tse_out_pm, Original_Id, Original_tse_date, Original_empl_id, Original_tse_in_am, Original_tse_out_am, Original_tse_in_pm, Original_tse_out_pm, Original_Id)
+        End Function
+    End Class
+    
+    '''<summary>
+    '''Represents the connection and commands used to retrieve and save data.
+    '''</summary>
+    <Global.System.ComponentModel.DesignerCategoryAttribute("code"),  _
+     Global.System.ComponentModel.ToolboxItem(true),  _
+     Global.System.ComponentModel.DataObjectAttribute(true),  _
+     Global.System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner"& _ 
+        ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a"),  _
+     Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
+    Partial Public Class vw_time_schedule_empl_tblTableAdapter
+        Inherits Global.System.ComponentModel.Component
+        
+        Private WithEvents _adapter As Global.System.Data.SqlClient.SqlDataAdapter
+        
+        Private _connection As Global.System.Data.SqlClient.SqlConnection
+        
+        Private _transaction As Global.System.Data.SqlClient.SqlTransaction
+        
+        Private _commandCollection() As Global.System.Data.SqlClient.SqlCommand
+        
+        Private _clearBeforeFill As Boolean
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Sub New()
+            MyBase.New
+            Me.ClearBeforeFill = true
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Protected Friend ReadOnly Property Adapter() As Global.System.Data.SqlClient.SqlDataAdapter
+            Get
+                If (Me._adapter Is Nothing) Then
+                    Me.InitAdapter
+                End If
+                Return Me._adapter
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Friend Property Connection() As Global.System.Data.SqlClient.SqlConnection
+            Get
+                If (Me._connection Is Nothing) Then
+                    Me.InitConnection
+                End If
+                Return Me._connection
+            End Get
+            Set
+                Me._connection = value
+                If (Not (Me.Adapter.InsertCommand) Is Nothing) Then
+                    Me.Adapter.InsertCommand.Connection = value
+                End If
+                If (Not (Me.Adapter.DeleteCommand) Is Nothing) Then
+                    Me.Adapter.DeleteCommand.Connection = value
+                End If
+                If (Not (Me.Adapter.UpdateCommand) Is Nothing) Then
+                    Me.Adapter.UpdateCommand.Connection = value
+                End If
+                Dim i As Integer = 0
+                Do While (i < Me.CommandCollection.Length)
+                    If (Not (Me.CommandCollection(i)) Is Nothing) Then
+                        CType(Me.CommandCollection(i),Global.System.Data.SqlClient.SqlCommand).Connection = value
+                    End If
+                    i = (i + 1)
+                Loop
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Friend Property Transaction() As Global.System.Data.SqlClient.SqlTransaction
+            Get
+                Return Me._transaction
+            End Get
+            Set
+                Me._transaction = value
+                Dim i As Integer = 0
+                Do While (i < Me.CommandCollection.Length)
+                    Me.CommandCollection(i).Transaction = Me._transaction
+                    i = (i + 1)
+                Loop
+                If ((Not (Me.Adapter) Is Nothing)  _
+                            AndAlso (Not (Me.Adapter.DeleteCommand) Is Nothing)) Then
+                    Me.Adapter.DeleteCommand.Transaction = Me._transaction
+                End If
+                If ((Not (Me.Adapter) Is Nothing)  _
+                            AndAlso (Not (Me.Adapter.InsertCommand) Is Nothing)) Then
+                    Me.Adapter.InsertCommand.Transaction = Me._transaction
+                End If
+                If ((Not (Me.Adapter) Is Nothing)  _
+                            AndAlso (Not (Me.Adapter.UpdateCommand) Is Nothing)) Then
+                    Me.Adapter.UpdateCommand.Transaction = Me._transaction
+                End If
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Protected ReadOnly Property CommandCollection() As Global.System.Data.SqlClient.SqlCommand()
+            Get
+                If (Me._commandCollection Is Nothing) Then
+                    Me.InitCommandCollection
+                End If
+                Return Me._commandCollection
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Public Property ClearBeforeFill() As Boolean
+            Get
+                Return Me._clearBeforeFill
+            End Get
+            Set
+                Me._clearBeforeFill = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Private Sub InitAdapter()
+            Me._adapter = New Global.System.Data.SqlClient.SqlDataAdapter()
+            Dim tableMapping As Global.System.Data.Common.DataTableMapping = New Global.System.Data.Common.DataTableMapping()
+            tableMapping.SourceTable = "Table"
+            tableMapping.DataSetTable = "vw_time_schedule_empl_tbl"
+            tableMapping.ColumnMappings.Add("Id", "Id")
+            tableMapping.ColumnMappings.Add("dayname", "dayname")
+            tableMapping.ColumnMappings.Add("tse_date", "tse_date")
+            tableMapping.ColumnMappings.Add("empl_id", "empl_id")
+            tableMapping.ColumnMappings.Add("employee_name", "employee_name")
+            tableMapping.ColumnMappings.Add("tse_in_am", "tse_in_am")
+            tableMapping.ColumnMappings.Add("tse_out_am", "tse_out_am")
+            tableMapping.ColumnMappings.Add("tse_in_pm", "tse_in_pm")
+            tableMapping.ColumnMappings.Add("tse_out_pm", "tse_out_pm")
+            tableMapping.ColumnMappings.Add("converted_tse_in_am", "converted_tse_in_am")
+            tableMapping.ColumnMappings.Add("converted_tse_out_am", "converted_tse_out_am")
+            tableMapping.ColumnMappings.Add("converted_tse_in_pm", "converted_tse_in_pm")
+            tableMapping.ColumnMappings.Add("converted_tse_out_pm", "converted_tse_out_pm")
+            Me._adapter.TableMappings.Add(tableMapping)
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Private Sub InitConnection()
+            Me._connection = New Global.System.Data.SqlClient.SqlConnection()
+            Me._connection.ConnectionString = Global.LCCPayrollSystem.My.MySettings.Default.payrolldbConnectionString
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
+        Private Sub InitCommandCollection()
+            Me._commandCollection = New Global.System.Data.SqlClient.SqlCommand(0) {}
+            Me._commandCollection(0) = New Global.System.Data.SqlClient.SqlCommand()
+            Me._commandCollection(0).Connection = Me.Connection
+            Me._commandCollection(0).CommandText = "SELECT Id, dayname, tse_date, empl_id, employee_name, tse_in_am, tse_out_am, tse_"& _ 
+                "in_pm, tse_out_pm, converted_tse_in_am, converted_tse_in_pm, converted_tse_out_a"& _ 
+                "m, converted_tse_out_pm FROM vw_time_schedule_empl_tbl"
+            Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Fill, true)>  _
+        Public Overloads Overridable Function Fill(ByVal dataTable As payrolldbDataSet.vw_time_schedule_empl_tblDataTable) As Integer
+            Me.Adapter.SelectCommand = Me.CommandCollection(0)
+            If (Me.ClearBeforeFill = true) Then
+                dataTable.Clear
+            End If
+            Dim returnValue As Integer = Me.Adapter.Fill(dataTable)
+            Return returnValue
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.[Select], true)>  _
+        Public Overloads Overridable Function GetData() As payrolldbDataSet.vw_time_schedule_empl_tblDataTable
+            Me.Adapter.SelectCommand = Me.CommandCollection(0)
+            Dim dataTable As payrolldbDataSet.vw_time_schedule_empl_tblDataTable = New payrolldbDataSet.vw_time_schedule_empl_tblDataTable()
+            Me.Adapter.Fill(dataTable)
+            Return dataTable
+        End Function
+    End Class
+    
+    '''<summary>
     '''TableAdapterManager is used to coordinate TableAdapters in the dataset to enable Hierarchical Update scenarios
     '''</summary>
     <Global.System.ComponentModel.DesignerCategoryAttribute("code"),  _
@@ -16576,6 +18921,8 @@ Namespace payrolldbDataSetTableAdapters
         Private _payroll_tblTableAdapter As payroll_tblTableAdapter
         
         Private _user_tblTableAdapter As user_tblTableAdapter
+        
+        Private _time_schedule_empl_tblTableAdapter As time_schedule_empl_tblTableAdapter
         
         Private _backupDataSetBeforeUpdate As Boolean
         
@@ -16663,6 +19010,20 @@ Namespace payrolldbDataSetTableAdapters
         End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0"),  _
+         Global.System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso"& _ 
+            "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3"& _ 
+            "a", "System.Drawing.Design.UITypeEditor")>  _
+        Public Property time_schedule_empl_tblTableAdapter() As time_schedule_empl_tblTableAdapter
+            Get
+                Return Me._time_schedule_empl_tblTableAdapter
+            End Get
+            Set
+                Me._time_schedule_empl_tblTableAdapter = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
         Public Property BackupDataSetBeforeUpdate() As Boolean
             Get
@@ -16701,6 +19062,10 @@ Namespace payrolldbDataSetTableAdapters
                             AndAlso (Not (Me._user_tblTableAdapter.Connection) Is Nothing)) Then
                     Return Me._user_tblTableAdapter.Connection
                 End If
+                If ((Not (Me._time_schedule_empl_tblTableAdapter) Is Nothing)  _
+                            AndAlso (Not (Me._time_schedule_empl_tblTableAdapter.Connection) Is Nothing)) Then
+                    Return Me._time_schedule_empl_tblTableAdapter.Connection
+                End If
                 Return Nothing
             End Get
             Set
@@ -16727,6 +19092,9 @@ Namespace payrolldbDataSetTableAdapters
                     count = (count + 1)
                 End If
                 If (Not (Me._user_tblTableAdapter) Is Nothing) Then
+                    count = (count + 1)
+                End If
+                If (Not (Me._time_schedule_empl_tblTableAdapter) Is Nothing) Then
                     count = (count + 1)
                 End If
                 Return count
@@ -16785,6 +19153,15 @@ Namespace payrolldbDataSetTableAdapters
                     allChangedRows.AddRange(updatedRows)
                 End If
             End If
+            If (Not (Me._time_schedule_empl_tblTableAdapter) Is Nothing) Then
+                Dim updatedRows() As Global.System.Data.DataRow = dataSet.time_schedule_empl_tbl.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.ModifiedCurrent)
+                updatedRows = Me.GetRealUpdatedRows(updatedRows, allAddedRows)
+                If ((Not (updatedRows) Is Nothing)  _
+                            AndAlso (0 < updatedRows.Length)) Then
+                    result = (result + Me._time_schedule_empl_tblTableAdapter.Update(updatedRows))
+                    allChangedRows.AddRange(updatedRows)
+                End If
+            End If
             Return result
         End Function
         
@@ -16835,6 +19212,14 @@ Namespace payrolldbDataSetTableAdapters
                     allAddedRows.AddRange(addedRows)
                 End If
             End If
+            If (Not (Me._time_schedule_empl_tblTableAdapter) Is Nothing) Then
+                Dim addedRows() As Global.System.Data.DataRow = dataSet.time_schedule_empl_tbl.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Added)
+                If ((Not (addedRows) Is Nothing)  _
+                            AndAlso (0 < addedRows.Length)) Then
+                    result = (result + Me._time_schedule_empl_tblTableAdapter.Update(addedRows))
+                    allAddedRows.AddRange(addedRows)
+                End If
+            End If
             Return result
         End Function
         
@@ -16845,6 +19230,14 @@ Namespace payrolldbDataSetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")>  _
         Private Function UpdateDeletedRows(ByVal dataSet As payrolldbDataSet, ByVal allChangedRows As Global.System.Collections.Generic.List(Of Global.System.Data.DataRow)) As Integer
             Dim result As Integer = 0
+            If (Not (Me._time_schedule_empl_tblTableAdapter) Is Nothing) Then
+                Dim deletedRows() As Global.System.Data.DataRow = dataSet.time_schedule_empl_tbl.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Deleted)
+                If ((Not (deletedRows) Is Nothing)  _
+                            AndAlso (0 < deletedRows.Length)) Then
+                    result = (result + Me._time_schedule_empl_tblTableAdapter.Update(deletedRows))
+                    allChangedRows.AddRange(deletedRows)
+                End If
+            End If
             If (Not (Me._user_tblTableAdapter) Is Nothing) Then
                 Dim deletedRows() As Global.System.Data.DataRow = dataSet.user_tbl.Select(Nothing, Nothing, Global.System.Data.DataViewRowState.Deleted)
                 If ((Not (deletedRows) Is Nothing)  _
@@ -16951,6 +19344,11 @@ Namespace payrolldbDataSetTableAdapters
                 Throw New Global.System.ArgumentException("All TableAdapters managed by a TableAdapterManager must use the same connection s"& _ 
                         "tring.")
             End If
+            If ((Not (Me._time_schedule_empl_tblTableAdapter) Is Nothing)  _
+                        AndAlso (Me.MatchTableAdapterConnection(Me._time_schedule_empl_tblTableAdapter.Connection) = false)) Then
+                Throw New Global.System.ArgumentException("All TableAdapters managed by a TableAdapterManager must use the same connection s"& _ 
+                        "tring.")
+            End If
             Dim workConnection As Global.System.Data.IDbConnection = Me.Connection
             If (workConnection Is Nothing) Then
                 Throw New Global.System.ApplicationException("TableAdapterManager contains no connection information. Set each TableAdapterMana"& _ 
@@ -17026,6 +19424,15 @@ Namespace payrolldbDataSetTableAdapters
                     If Me._user_tblTableAdapter.Adapter.AcceptChangesDuringUpdate Then
                         Me._user_tblTableAdapter.Adapter.AcceptChangesDuringUpdate = false
                         adaptersWithAcceptChangesDuringUpdate.Add(Me._user_tblTableAdapter.Adapter)
+                    End If
+                End If
+                If (Not (Me._time_schedule_empl_tblTableAdapter) Is Nothing) Then
+                    revertConnections.Add(Me._time_schedule_empl_tblTableAdapter, Me._time_schedule_empl_tblTableAdapter.Connection)
+                    Me._time_schedule_empl_tblTableAdapter.Connection = CType(workConnection,Global.System.Data.SqlClient.SqlConnection)
+                    Me._time_schedule_empl_tblTableAdapter.Transaction = CType(workTransaction,Global.System.Data.SqlClient.SqlTransaction)
+                    If Me._time_schedule_empl_tblTableAdapter.Adapter.AcceptChangesDuringUpdate Then
+                        Me._time_schedule_empl_tblTableAdapter.Adapter.AcceptChangesDuringUpdate = false
+                        adaptersWithAcceptChangesDuringUpdate.Add(Me._time_schedule_empl_tblTableAdapter.Adapter)
                     End If
                 End If
                 '
@@ -17107,6 +19514,10 @@ Namespace payrolldbDataSetTableAdapters
                 If (Not (Me._user_tblTableAdapter) Is Nothing) Then
                     Me._user_tblTableAdapter.Connection = CType(revertConnections(Me._user_tblTableAdapter),Global.System.Data.SqlClient.SqlConnection)
                     Me._user_tblTableAdapter.Transaction = Nothing
+                End If
+                If (Not (Me._time_schedule_empl_tblTableAdapter) Is Nothing) Then
+                    Me._time_schedule_empl_tblTableAdapter.Connection = CType(revertConnections(Me._time_schedule_empl_tblTableAdapter),Global.System.Data.SqlClient.SqlConnection)
+                    Me._time_schedule_empl_tblTableAdapter.Transaction = Nothing
                 End If
                 If (0 < adaptersWithAcceptChangesDuringUpdate.Count) Then
                     Dim adapters((adaptersWithAcceptChangesDuringUpdate.Count) - 1) As Global.System.Data.Common.DataAdapter
