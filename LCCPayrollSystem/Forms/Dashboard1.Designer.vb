@@ -688,6 +688,12 @@ Partial Class Dashboard1
         Me.CrystalReportViewer1.ActiveViewIndex = -1
         Me.CrystalReportViewer1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.CrystalReportViewer1.Cursor = System.Windows.Forms.Cursors.Default
+        Me.CrystalReportViewer1.DisplayBackgroundEdge = False
+        Me.CrystalReportViewer1.DisplayStatusBar = False
+        Me.CrystalReportViewer1.DisplayToolbar = False
+        Me.CrystalReportViewer1.EnableDrillDown = False
+        Me.CrystalReportViewer1.EnableRefresh = False
+        Me.CrystalReportViewer1.EnableToolTips = False
         Me.CrystalReportViewer1.Location = New System.Drawing.Point(201, 252)
         Me.CrystalReportViewer1.Name = "CrystalReportViewer1"
         Me.CrystalReportViewer1.ShowCloseButton = False

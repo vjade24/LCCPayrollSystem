@@ -557,7 +557,7 @@ Partial Class Payroll
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.ForeColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
-        Me.Label2.Location = New System.Drawing.Point(1247, 0)
+        Me.Label2.Location = New System.Drawing.Point(1269, 0)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(27, 31)
         Me.Label2.TabIndex = 33
@@ -1082,7 +1082,7 @@ Partial Class Payroll
         Me.btnCancel.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnCancel.ForeColor = System.Drawing.SystemColors.ControlText
         Me.btnCancel.ImageKey = "(none)"
-        Me.btnCancel.Location = New System.Drawing.Point(997, 538)
+        Me.btnCancel.Location = New System.Drawing.Point(998, 538)
         Me.btnCancel.Name = "btnCancel"
         Me.btnCancel.Size = New System.Drawing.Size(83, 35)
         Me.btnCancel.TabIndex = 151
@@ -1095,7 +1095,7 @@ Partial Class Payroll
         Me.btnupdate.FlatStyle = System.Windows.Forms.FlatStyle.System
         Me.btnupdate.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnupdate.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.btnupdate.Location = New System.Drawing.Point(1086, 538)
+        Me.btnupdate.Location = New System.Drawing.Point(1087, 538)
         Me.btnupdate.Name = "btnupdate"
         Me.btnupdate.Size = New System.Drawing.Size(83, 35)
         Me.btnupdate.TabIndex = 150
@@ -1108,7 +1108,7 @@ Partial Class Payroll
         Me.btn_save.FlatStyle = System.Windows.Forms.FlatStyle.System
         Me.btn_save.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btn_save.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.btn_save.Location = New System.Drawing.Point(1175, 538)
+        Me.btn_save.Location = New System.Drawing.Point(1176, 538)
         Me.btn_save.Name = "btn_save"
         Me.btn_save.Size = New System.Drawing.Size(83, 35)
         Me.btn_save.TabIndex = 148
@@ -1178,7 +1178,7 @@ Partial Class Payroll
         Me.Vw_payroll_tblDataGridView.Name = "Vw_payroll_tblDataGridView"
         Me.Vw_payroll_tblDataGridView.ReadOnly = True
         Me.Vw_payroll_tblDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.Vw_payroll_tblDataGridView.Size = New System.Drawing.Size(344, 374)
+        Me.Vw_payroll_tblDataGridView.Size = New System.Drawing.Size(344, 390)
         Me.Vw_payroll_tblDataGridView.TabIndex = 0
         '
         'IdDataGridViewTextBoxColumn
@@ -1504,7 +1504,7 @@ Partial Class Payroll
         Me.GroupBox7.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupBox7.Location = New System.Drawing.Point(12, 66)
         Me.GroupBox7.Name = "GroupBox7"
-        Me.GroupBox7.Size = New System.Drawing.Size(371, 487)
+        Me.GroupBox7.Size = New System.Drawing.Size(371, 510)
         Me.GroupBox7.TabIndex = 152
         Me.GroupBox7.TabStop = False
         Me.GroupBox7.Text = "Payroll List"
@@ -1588,7 +1588,7 @@ Partial Class Payroll
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1292, 585)
+        Me.ClientSize = New System.Drawing.Size(1297, 585)
         Me.Controls.Add(Me.GroupBox7)
         Me.Controls.Add(Me.btnCancel)
         Me.Controls.Add(Me.GroupBox6)

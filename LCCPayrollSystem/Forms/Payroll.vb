@@ -663,5 +663,4 @@ Public Class Payroll
         query = "select * from vw_payroll_tbl WHERE employee_name LIKE '%" + txtbSearch.Text + "%'"
         CommonQuery(query, Vw_payroll_tblDataGridView)
     End Sub
-
 End Class

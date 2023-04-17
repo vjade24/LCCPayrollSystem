@@ -5,6 +5,8 @@ Imports System.IO
 Public Class Dashboard1
     Private Sub Dashboard1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         reload_dashboard()
+        Label16.Text = DateTime.Now.ToShortTimeString
+        Label17.Text = DateTime.Now.ToLongDateString
     End Sub
     Private Sub Button7_Click(sender As Object, e As EventArgs) Handles btnRegister.Click
         'Me.Close()
@@ -39,6 +41,7 @@ Public Class Dashboard1
     End Sub
 
     Private Sub reload_dashboard()
+
         Try
             Using dt As New DataTable()
                 Using conn As SqlConnection = New SqlConnection(connection)
