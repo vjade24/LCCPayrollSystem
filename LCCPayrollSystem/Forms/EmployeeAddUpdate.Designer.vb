@@ -56,11 +56,6 @@ Partial Class EmployeeAddUpdate
         Dim Date_resignedLabel As System.Windows.Forms.Label
         Dim User_idLabel As System.Windows.Forms.Label
         Dim Civil_statusLabel As System.Windows.Forms.Label
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(EmployeeAddUpdate))
-        Me.Panel2 = New System.Windows.Forms.Panel()
-        Me.Label2 = New System.Windows.Forms.Label()
-        Me.PictureBox7 = New System.Windows.Forms.PictureBox()
-        Me.Label1 = New System.Windows.Forms.Label()
         Me.IdTextBox = New System.Windows.Forms.TextBox()
         Me.Last_nameTextBox = New System.Windows.Forms.TextBox()
         Me.First_nameTextBox = New System.Windows.Forms.TextBox()
@@ -142,8 +137,6 @@ Partial Class EmployeeAddUpdate
         Date_resignedLabel = New System.Windows.Forms.Label()
         User_idLabel = New System.Windows.Forms.Label()
         Civil_statusLabel = New System.Windows.Forms.Label()
-        Me.Panel2.SuspendLayout()
-        CType(Me.PictureBox7, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.AgeNumericUpDown, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PhotoPictureBox, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PayrolldbDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -155,7 +148,7 @@ Partial Class EmployeeAddUpdate
         '
         IdLabel.AutoSize = True
         IdLabel.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        IdLabel.Location = New System.Drawing.Point(46, 72)
+        IdLabel.Location = New System.Drawing.Point(26, 12)
         IdLabel.Name = "IdLabel"
         IdLabel.Size = New System.Drawing.Size(123, 17)
         IdLabel.TabIndex = 34
@@ -165,7 +158,7 @@ Partial Class EmployeeAddUpdate
         '
         Last_nameLabel.AutoSize = True
         Last_nameLabel.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Last_nameLabel.Location = New System.Drawing.Point(50, 123)
+        Last_nameLabel.Location = New System.Drawing.Point(30, 63)
         Last_nameLabel.Name = "Last_nameLabel"
         Last_nameLabel.Size = New System.Drawing.Size(76, 17)
         Last_nameLabel.TabIndex = 36
@@ -175,7 +168,7 @@ Partial Class EmployeeAddUpdate
         '
         First_nameLabel.AutoSize = True
         First_nameLabel.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        First_nameLabel.Location = New System.Drawing.Point(259, 123)
+        First_nameLabel.Location = New System.Drawing.Point(239, 63)
         First_nameLabel.Name = "First_nameLabel"
         First_nameLabel.Size = New System.Drawing.Size(75, 17)
         First_nameLabel.TabIndex = 38
@@ -185,7 +178,7 @@ Partial Class EmployeeAddUpdate
         '
         Middle_nameLabel.AutoSize = True
         Middle_nameLabel.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Middle_nameLabel.Location = New System.Drawing.Point(464, 123)
+        Middle_nameLabel.Location = New System.Drawing.Point(444, 63)
         Middle_nameLabel.Name = "Middle_nameLabel"
         Middle_nameLabel.Size = New System.Drawing.Size(99, 17)
         Middle_nameLabel.TabIndex = 40
@@ -195,7 +188,7 @@ Partial Class EmployeeAddUpdate
         '
         Birth_dateLabel.AutoSize = True
         Birth_dateLabel.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Birth_dateLabel.Location = New System.Drawing.Point(50, 169)
+        Birth_dateLabel.Location = New System.Drawing.Point(30, 109)
         Birth_dateLabel.Name = "Birth_dateLabel"
         Birth_dateLabel.Size = New System.Drawing.Size(76, 17)
         Birth_dateLabel.TabIndex = 42
@@ -205,7 +198,7 @@ Partial Class EmployeeAddUpdate
         '
         AgeLabel.AutoSize = True
         AgeLabel.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        AgeLabel.Location = New System.Drawing.Point(154, 169)
+        AgeLabel.Location = New System.Drawing.Point(134, 109)
         AgeLabel.Name = "AgeLabel"
         AgeLabel.Size = New System.Drawing.Size(38, 17)
         AgeLabel.TabIndex = 44
@@ -215,7 +208,7 @@ Partial Class EmployeeAddUpdate
         '
         GenderLabel.AutoSize = True
         GenderLabel.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        GenderLabel.Location = New System.Drawing.Point(259, 167)
+        GenderLabel.Location = New System.Drawing.Point(239, 107)
         GenderLabel.Name = "GenderLabel"
         GenderLabel.Size = New System.Drawing.Size(58, 17)
         GenderLabel.TabIndex = 46
@@ -225,7 +218,7 @@ Partial Class EmployeeAddUpdate
         '
         AddressLabel.AutoSize = True
         AddressLabel.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        AddressLabel.Location = New System.Drawing.Point(259, 262)
+        AddressLabel.Location = New System.Drawing.Point(239, 202)
         AddressLabel.Name = "AddressLabel"
         AddressLabel.Size = New System.Drawing.Size(61, 17)
         AddressLabel.TabIndex = 48
@@ -235,7 +228,7 @@ Partial Class EmployeeAddUpdate
         '
         Contact_noLabel.AutoSize = True
         Contact_noLabel.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Contact_noLabel.Location = New System.Drawing.Point(467, 169)
+        Contact_noLabel.Location = New System.Drawing.Point(447, 109)
         Contact_noLabel.Name = "Contact_noLabel"
         Contact_noLabel.Size = New System.Drawing.Size(85, 17)
         Contact_noLabel.TabIndex = 50
@@ -245,7 +238,7 @@ Partial Class EmployeeAddUpdate
         '
         CitizenshipLabel.AutoSize = True
         CitizenshipLabel.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        CitizenshipLabel.Location = New System.Drawing.Point(259, 216)
+        CitizenshipLabel.Location = New System.Drawing.Point(239, 156)
         CitizenshipLabel.Name = "CitizenshipLabel"
         CitizenshipLabel.Size = New System.Drawing.Size(78, 17)
         CitizenshipLabel.TabIndex = 52
@@ -255,7 +248,7 @@ Partial Class EmployeeAddUpdate
         '
         ReligionLabel.AutoSize = True
         ReligionLabel.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        ReligionLabel.Location = New System.Drawing.Point(50, 261)
+        ReligionLabel.Location = New System.Drawing.Point(30, 201)
         ReligionLabel.Name = "ReligionLabel"
         ReligionLabel.Size = New System.Drawing.Size(59, 17)
         ReligionLabel.TabIndex = 56
@@ -265,7 +258,7 @@ Partial Class EmployeeAddUpdate
         '
         Tin_noLabel.AutoSize = True
         Tin_noLabel.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Tin_noLabel.Location = New System.Drawing.Point(50, 307)
+        Tin_noLabel.Location = New System.Drawing.Point(30, 247)
         Tin_noLabel.Name = "Tin_noLabel"
         Tin_noLabel.Size = New System.Drawing.Size(49, 17)
         Tin_noLabel.TabIndex = 58
@@ -275,7 +268,7 @@ Partial Class EmployeeAddUpdate
         '
         Sss_noLabel.AutoSize = True
         Sss_noLabel.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Sss_noLabel.Location = New System.Drawing.Point(259, 307)
+        Sss_noLabel.Location = New System.Drawing.Point(239, 247)
         Sss_noLabel.Name = "Sss_noLabel"
         Sss_noLabel.Size = New System.Drawing.Size(48, 17)
         Sss_noLabel.TabIndex = 60
@@ -285,7 +278,7 @@ Partial Class EmployeeAddUpdate
         '
         Phic_noLabel.AutoSize = True
         Phic_noLabel.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Phic_noLabel.Location = New System.Drawing.Point(259, 354)
+        Phic_noLabel.Location = New System.Drawing.Point(239, 294)
         Phic_noLabel.Name = "Phic_noLabel"
         Phic_noLabel.Size = New System.Drawing.Size(61, 17)
         Phic_noLabel.TabIndex = 62
@@ -295,7 +288,7 @@ Partial Class EmployeeAddUpdate
         '
         Pag_ibig_noLabel.AutoSize = True
         Pag_ibig_noLabel.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Pag_ibig_noLabel.Location = New System.Drawing.Point(50, 354)
+        Pag_ibig_noLabel.Location = New System.Drawing.Point(30, 294)
         Pag_ibig_noLabel.Name = "Pag_ibig_noLabel"
         Pag_ibig_noLabel.Size = New System.Drawing.Size(88, 17)
         Pag_ibig_noLabel.TabIndex = 64
@@ -305,7 +298,7 @@ Partial Class EmployeeAddUpdate
         '
         Department_assignedLabel.AutoSize = True
         Department_assignedLabel.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Department_assignedLabel.Location = New System.Drawing.Point(47, 445)
+        Department_assignedLabel.Location = New System.Drawing.Point(27, 385)
         Department_assignedLabel.Name = "Department_assignedLabel"
         Department_assignedLabel.Size = New System.Drawing.Size(150, 17)
         Department_assignedLabel.TabIndex = 66
@@ -315,7 +308,7 @@ Partial Class EmployeeAddUpdate
         '
         Date_hireLabel.AutoSize = True
         Date_hireLabel.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Date_hireLabel.Location = New System.Drawing.Point(47, 631)
+        Date_hireLabel.Location = New System.Drawing.Point(27, 571)
         Date_hireLabel.Name = "Date_hireLabel"
         Date_hireLabel.Size = New System.Drawing.Size(70, 17)
         Date_hireLabel.TabIndex = 68
@@ -325,7 +318,7 @@ Partial Class EmployeeAddUpdate
         '
         Father_nameLabel.AutoSize = True
         Father_nameLabel.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Father_nameLabel.Location = New System.Drawing.Point(47, 493)
+        Father_nameLabel.Location = New System.Drawing.Point(27, 433)
         Father_nameLabel.Name = "Father_nameLabel"
         Father_nameLabel.Size = New System.Drawing.Size(92, 17)
         Father_nameLabel.TabIndex = 70
@@ -335,7 +328,7 @@ Partial Class EmployeeAddUpdate
         '
         Mother_nameLabel.AutoSize = True
         Mother_nameLabel.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Mother_nameLabel.Location = New System.Drawing.Point(47, 539)
+        Mother_nameLabel.Location = New System.Drawing.Point(27, 479)
         Mother_nameLabel.Name = "Mother_nameLabel"
         Mother_nameLabel.Size = New System.Drawing.Size(101, 17)
         Mother_nameLabel.TabIndex = 72
@@ -345,7 +338,7 @@ Partial Class EmployeeAddUpdate
         '
         HeightLabel.AutoSize = True
         HeightLabel.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        HeightLabel.Location = New System.Drawing.Point(50, 215)
+        HeightLabel.Location = New System.Drawing.Point(30, 155)
         HeightLabel.Name = "HeightLabel"
         HeightLabel.Size = New System.Drawing.Size(53, 17)
         HeightLabel.TabIndex = 74
@@ -355,7 +348,7 @@ Partial Class EmployeeAddUpdate
         '
         WeightLabel.AutoSize = True
         WeightLabel.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        WeightLabel.Location = New System.Drawing.Point(154, 218)
+        WeightLabel.Location = New System.Drawing.Point(134, 158)
         WeightLabel.Name = "WeightLabel"
         WeightLabel.Size = New System.Drawing.Size(57, 17)
         WeightLabel.TabIndex = 76
@@ -365,7 +358,7 @@ Partial Class EmployeeAddUpdate
         '
         Employment_statusLabel.AutoSize = True
         Employment_statusLabel.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Employment_statusLabel.Location = New System.Drawing.Point(258, 445)
+        Employment_statusLabel.Location = New System.Drawing.Point(238, 385)
         Employment_statusLabel.Name = "Employment_statusLabel"
         Employment_statusLabel.Size = New System.Drawing.Size(135, 17)
         Employment_statusLabel.TabIndex = 78
@@ -375,7 +368,7 @@ Partial Class EmployeeAddUpdate
         '
         PositionLabel.AutoSize = True
         PositionLabel.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        PositionLabel.Location = New System.Drawing.Point(50, 399)
+        PositionLabel.Location = New System.Drawing.Point(30, 339)
         PositionLabel.Name = "PositionLabel"
         PositionLabel.Size = New System.Drawing.Size(63, 17)
         PositionLabel.TabIndex = 80
@@ -385,7 +378,7 @@ Partial Class EmployeeAddUpdate
         '
         Spouse_nameLabel.AutoSize = True
         Spouse_nameLabel.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Spouse_nameLabel.Location = New System.Drawing.Point(47, 585)
+        Spouse_nameLabel.Location = New System.Drawing.Point(27, 525)
         Spouse_nameLabel.Name = "Spouse_nameLabel"
         Spouse_nameLabel.Size = New System.Drawing.Size(98, 17)
         Spouse_nameLabel.TabIndex = 82
@@ -395,7 +388,7 @@ Partial Class EmployeeAddUpdate
         '
         Rate_basis_descrLabel.AutoSize = True
         Rate_basis_descrLabel.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Rate_basis_descrLabel.Location = New System.Drawing.Point(467, 399)
+        Rate_basis_descrLabel.Location = New System.Drawing.Point(447, 339)
         Rate_basis_descrLabel.Name = "Rate_basis_descrLabel"
         Rate_basis_descrLabel.Size = New System.Drawing.Size(111, 17)
         Rate_basis_descrLabel.TabIndex = 86
@@ -405,7 +398,7 @@ Partial Class EmployeeAddUpdate
         '
         Monthly_rateLabel.AutoSize = True
         Monthly_rateLabel.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Monthly_rateLabel.Location = New System.Drawing.Point(467, 445)
+        Monthly_rateLabel.Location = New System.Drawing.Point(447, 385)
         Monthly_rateLabel.Name = "Monthly_rateLabel"
         Monthly_rateLabel.Size = New System.Drawing.Size(94, 17)
         Monthly_rateLabel.TabIndex = 88
@@ -415,7 +408,7 @@ Partial Class EmployeeAddUpdate
         '
         Daily_rateLabel.AutoSize = True
         Daily_rateLabel.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Daily_rateLabel.Location = New System.Drawing.Point(467, 493)
+        Daily_rateLabel.Location = New System.Drawing.Point(447, 433)
         Daily_rateLabel.Name = "Daily_rateLabel"
         Daily_rateLabel.Size = New System.Drawing.Size(72, 17)
         Daily_rateLabel.TabIndex = 90
@@ -425,7 +418,7 @@ Partial Class EmployeeAddUpdate
         '
         Hourly_rateLabel.AutoSize = True
         Hourly_rateLabel.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Hourly_rateLabel.Location = New System.Drawing.Point(467, 539)
+        Hourly_rateLabel.Location = New System.Drawing.Point(447, 479)
         Hourly_rateLabel.Name = "Hourly_rateLabel"
         Hourly_rateLabel.Size = New System.Drawing.Size(80, 17)
         Hourly_rateLabel.TabIndex = 92
@@ -435,7 +428,7 @@ Partial Class EmployeeAddUpdate
         '
         Unit_rateLabel.AutoSize = True
         Unit_rateLabel.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Unit_rateLabel.Location = New System.Drawing.Point(467, 585)
+        Unit_rateLabel.Location = New System.Drawing.Point(447, 525)
         Unit_rateLabel.Name = "Unit_rateLabel"
         Unit_rateLabel.Size = New System.Drawing.Size(66, 17)
         Unit_rateLabel.TabIndex = 94
@@ -445,7 +438,7 @@ Partial Class EmployeeAddUpdate
         '
         Employee_statusLabel.AutoSize = True
         Employee_statusLabel.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Employee_statusLabel.Location = New System.Drawing.Point(467, 631)
+        Employee_statusLabel.Location = New System.Drawing.Point(447, 571)
         Employee_statusLabel.Name = "Employee_statusLabel"
         Employee_statusLabel.Size = New System.Drawing.Size(117, 17)
         Employee_statusLabel.TabIndex = 96
@@ -455,7 +448,7 @@ Partial Class EmployeeAddUpdate
         '
         Date_resignedLabel.AutoSize = True
         Date_resignedLabel.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Date_resignedLabel.Location = New System.Drawing.Point(258, 631)
+        Date_resignedLabel.Location = New System.Drawing.Point(238, 571)
         Date_resignedLabel.Name = "Date_resignedLabel"
         Date_resignedLabel.Size = New System.Drawing.Size(101, 17)
         Date_resignedLabel.TabIndex = 98
@@ -465,7 +458,7 @@ Partial Class EmployeeAddUpdate
         '
         User_idLabel.AutoSize = True
         User_idLabel.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        User_idLabel.Location = New System.Drawing.Point(467, 354)
+        User_idLabel.Location = New System.Drawing.Point(447, 294)
         User_idLabel.Name = "User_idLabel"
         User_idLabel.Size = New System.Drawing.Size(53, 17)
         User_idLabel.TabIndex = 103
@@ -475,62 +468,16 @@ Partial Class EmployeeAddUpdate
         '
         Civil_statusLabel.AutoSize = True
         Civil_statusLabel.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Civil_statusLabel.Location = New System.Drawing.Point(474, 216)
+        Civil_statusLabel.Location = New System.Drawing.Point(454, 156)
         Civil_statusLabel.Name = "Civil_statusLabel"
         Civil_statusLabel.Size = New System.Drawing.Size(78, 17)
         Civil_statusLabel.TabIndex = 132
         Civil_statusLabel.Text = "civil status:"
         '
-        'Panel2
-        '
-        Me.Panel2.BackColor = System.Drawing.Color.ForestGreen
-        Me.Panel2.Controls.Add(Me.Label2)
-        Me.Panel2.Controls.Add(Me.PictureBox7)
-        Me.Panel2.Controls.Add(Me.Label1)
-        Me.Panel2.Location = New System.Drawing.Point(0, 0)
-        Me.Panel2.Margin = New System.Windows.Forms.Padding(2)
-        Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(897, 57)
-        Me.Panel2.TabIndex = 33
-        '
-        'Label2
-        '
-        Me.Label2.AutoSize = True
-        Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.ForeColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
-        Me.Label2.Location = New System.Drawing.Point(870, 0)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(27, 31)
-        Me.Label2.TabIndex = 33
-        Me.Label2.Text = "x"
-        '
-        'PictureBox7
-        '
-        Me.PictureBox7.BackColor = System.Drawing.Color.Transparent
-        Me.PictureBox7.Image = CType(resources.GetObject("PictureBox7.Image"), System.Drawing.Image)
-        Me.PictureBox7.Location = New System.Drawing.Point(26, 11)
-        Me.PictureBox7.Margin = New System.Windows.Forms.Padding(2)
-        Me.PictureBox7.Name = "PictureBox7"
-        Me.PictureBox7.Size = New System.Drawing.Size(27, 30)
-        Me.PictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.PictureBox7.TabIndex = 12
-        Me.PictureBox7.TabStop = False
-        '
-        'Label1
-        '
-        Me.Label1.AutoSize = True
-        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 16.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.ForeColor = System.Drawing.Color.White
-        Me.Label1.Location = New System.Drawing.Point(201, 15)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(245, 26)
-        Me.Label1.TabIndex = 4
-        Me.Label1.Text = "Employee Information"
-        '
         'IdTextBox
         '
         Me.IdTextBox.Font = New System.Drawing.Font("Century Gothic", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.IdTextBox.Location = New System.Drawing.Point(49, 92)
+        Me.IdTextBox.Location = New System.Drawing.Point(29, 32)
         Me.IdTextBox.Multiline = True
         Me.IdTextBox.Name = "IdTextBox"
         Me.IdTextBox.Size = New System.Drawing.Size(200, 28)
@@ -539,7 +486,7 @@ Partial Class EmployeeAddUpdate
         'Last_nameTextBox
         '
         Me.Last_nameTextBox.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Last_nameTextBox.Location = New System.Drawing.Point(47, 143)
+        Me.Last_nameTextBox.Location = New System.Drawing.Point(27, 83)
         Me.Last_nameTextBox.Name = "Last_nameTextBox"
         Me.Last_nameTextBox.Size = New System.Drawing.Size(200, 23)
         Me.Last_nameTextBox.TabIndex = 37
@@ -547,7 +494,7 @@ Partial Class EmployeeAddUpdate
         'First_nameTextBox
         '
         Me.First_nameTextBox.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.First_nameTextBox.Location = New System.Drawing.Point(259, 143)
+        Me.First_nameTextBox.Location = New System.Drawing.Point(239, 83)
         Me.First_nameTextBox.Name = "First_nameTextBox"
         Me.First_nameTextBox.Size = New System.Drawing.Size(200, 23)
         Me.First_nameTextBox.TabIndex = 39
@@ -555,7 +502,7 @@ Partial Class EmployeeAddUpdate
         'Middle_nameTextBox
         '
         Me.Middle_nameTextBox.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Middle_nameTextBox.Location = New System.Drawing.Point(466, 143)
+        Me.Middle_nameTextBox.Location = New System.Drawing.Point(446, 83)
         Me.Middle_nameTextBox.Name = "Middle_nameTextBox"
         Me.Middle_nameTextBox.Size = New System.Drawing.Size(200, 23)
         Me.Middle_nameTextBox.TabIndex = 41
@@ -564,7 +511,7 @@ Partial Class EmployeeAddUpdate
         '
         Me.Birth_dateDateTimePicker.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Birth_dateDateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.Birth_dateDateTimePicker.Location = New System.Drawing.Point(50, 189)
+        Me.Birth_dateDateTimePicker.Location = New System.Drawing.Point(30, 129)
         Me.Birth_dateDateTimePicker.Name = "Birth_dateDateTimePicker"
         Me.Birth_dateDateTimePicker.Size = New System.Drawing.Size(98, 23)
         Me.Birth_dateDateTimePicker.TabIndex = 43
@@ -572,7 +519,7 @@ Partial Class EmployeeAddUpdate
         'AgeNumericUpDown
         '
         Me.AgeNumericUpDown.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.AgeNumericUpDown.Location = New System.Drawing.Point(157, 189)
+        Me.AgeNumericUpDown.Location = New System.Drawing.Point(137, 129)
         Me.AgeNumericUpDown.Name = "AgeNumericUpDown"
         Me.AgeNumericUpDown.Size = New System.Drawing.Size(91, 23)
         Me.AgeNumericUpDown.TabIndex = 45
@@ -583,7 +530,7 @@ Partial Class EmployeeAddUpdate
         Me.GenderComboBox.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GenderComboBox.FormattingEnabled = True
         Me.GenderComboBox.Items.AddRange(New Object() {"Male", "Female"})
-        Me.GenderComboBox.Location = New System.Drawing.Point(259, 189)
+        Me.GenderComboBox.Location = New System.Drawing.Point(239, 129)
         Me.GenderComboBox.Name = "GenderComboBox"
         Me.GenderComboBox.Size = New System.Drawing.Size(200, 25)
         Me.GenderComboBox.TabIndex = 47
@@ -591,7 +538,7 @@ Partial Class EmployeeAddUpdate
         'AddressTextBox
         '
         Me.AddressTextBox.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.AddressTextBox.Location = New System.Drawing.Point(259, 280)
+        Me.AddressTextBox.Location = New System.Drawing.Point(239, 220)
         Me.AddressTextBox.Name = "AddressTextBox"
         Me.AddressTextBox.Size = New System.Drawing.Size(408, 23)
         Me.AddressTextBox.TabIndex = 49
@@ -599,7 +546,7 @@ Partial Class EmployeeAddUpdate
         'Contact_noTextBox
         '
         Me.Contact_noTextBox.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Contact_noTextBox.Location = New System.Drawing.Point(466, 189)
+        Me.Contact_noTextBox.Location = New System.Drawing.Point(446, 129)
         Me.Contact_noTextBox.Name = "Contact_noTextBox"
         Me.Contact_noTextBox.Size = New System.Drawing.Size(200, 23)
         Me.Contact_noTextBox.TabIndex = 51
@@ -607,7 +554,7 @@ Partial Class EmployeeAddUpdate
         'CitizenshipTextBox
         '
         Me.CitizenshipTextBox.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.CitizenshipTextBox.Location = New System.Drawing.Point(259, 236)
+        Me.CitizenshipTextBox.Location = New System.Drawing.Point(239, 176)
         Me.CitizenshipTextBox.Name = "CitizenshipTextBox"
         Me.CitizenshipTextBox.Size = New System.Drawing.Size(198, 23)
         Me.CitizenshipTextBox.TabIndex = 53
@@ -615,7 +562,7 @@ Partial Class EmployeeAddUpdate
         'ReligionTextBox
         '
         Me.ReligionTextBox.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ReligionTextBox.Location = New System.Drawing.Point(50, 281)
+        Me.ReligionTextBox.Location = New System.Drawing.Point(30, 221)
         Me.ReligionTextBox.Name = "ReligionTextBox"
         Me.ReligionTextBox.Size = New System.Drawing.Size(200, 23)
         Me.ReligionTextBox.TabIndex = 57
@@ -623,7 +570,7 @@ Partial Class EmployeeAddUpdate
         'Tin_noTextBox
         '
         Me.Tin_noTextBox.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Tin_noTextBox.Location = New System.Drawing.Point(50, 327)
+        Me.Tin_noTextBox.Location = New System.Drawing.Point(30, 267)
         Me.Tin_noTextBox.Name = "Tin_noTextBox"
         Me.Tin_noTextBox.Size = New System.Drawing.Size(200, 23)
         Me.Tin_noTextBox.TabIndex = 59
@@ -631,7 +578,7 @@ Partial Class EmployeeAddUpdate
         'Sss_noTextBox
         '
         Me.Sss_noTextBox.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Sss_noTextBox.Location = New System.Drawing.Point(259, 327)
+        Me.Sss_noTextBox.Location = New System.Drawing.Point(239, 267)
         Me.Sss_noTextBox.Name = "Sss_noTextBox"
         Me.Sss_noTextBox.Size = New System.Drawing.Size(194, 23)
         Me.Sss_noTextBox.TabIndex = 61
@@ -639,7 +586,7 @@ Partial Class EmployeeAddUpdate
         'Phic_noTextBox
         '
         Me.Phic_noTextBox.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Phic_noTextBox.Location = New System.Drawing.Point(259, 373)
+        Me.Phic_noTextBox.Location = New System.Drawing.Point(239, 313)
         Me.Phic_noTextBox.Name = "Phic_noTextBox"
         Me.Phic_noTextBox.Size = New System.Drawing.Size(194, 23)
         Me.Phic_noTextBox.TabIndex = 63
@@ -647,7 +594,7 @@ Partial Class EmployeeAddUpdate
         'Pag_ibig_noTextBox
         '
         Me.Pag_ibig_noTextBox.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Pag_ibig_noTextBox.Location = New System.Drawing.Point(50, 373)
+        Me.Pag_ibig_noTextBox.Location = New System.Drawing.Point(30, 313)
         Me.Pag_ibig_noTextBox.Name = "Pag_ibig_noTextBox"
         Me.Pag_ibig_noTextBox.Size = New System.Drawing.Size(200, 23)
         Me.Pag_ibig_noTextBox.TabIndex = 65
@@ -656,7 +603,7 @@ Partial Class EmployeeAddUpdate
         '
         Me.Date_hireDateTimePicker.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Date_hireDateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.Date_hireDateTimePicker.Location = New System.Drawing.Point(47, 651)
+        Me.Date_hireDateTimePicker.Location = New System.Drawing.Point(27, 591)
         Me.Date_hireDateTimePicker.Name = "Date_hireDateTimePicker"
         Me.Date_hireDateTimePicker.Size = New System.Drawing.Size(200, 23)
         Me.Date_hireDateTimePicker.TabIndex = 69
@@ -664,7 +611,7 @@ Partial Class EmployeeAddUpdate
         'Father_nameTextBox
         '
         Me.Father_nameTextBox.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Father_nameTextBox.Location = New System.Drawing.Point(47, 513)
+        Me.Father_nameTextBox.Location = New System.Drawing.Point(27, 453)
         Me.Father_nameTextBox.Name = "Father_nameTextBox"
         Me.Father_nameTextBox.Size = New System.Drawing.Size(411, 23)
         Me.Father_nameTextBox.TabIndex = 71
@@ -672,7 +619,7 @@ Partial Class EmployeeAddUpdate
         'Mother_nameTextBox
         '
         Me.Mother_nameTextBox.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Mother_nameTextBox.Location = New System.Drawing.Point(47, 559)
+        Me.Mother_nameTextBox.Location = New System.Drawing.Point(27, 499)
         Me.Mother_nameTextBox.Name = "Mother_nameTextBox"
         Me.Mother_nameTextBox.Size = New System.Drawing.Size(411, 23)
         Me.Mother_nameTextBox.TabIndex = 73
@@ -680,7 +627,7 @@ Partial Class EmployeeAddUpdate
         'HeightTextBox
         '
         Me.HeightTextBox.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.HeightTextBox.Location = New System.Drawing.Point(50, 235)
+        Me.HeightTextBox.Location = New System.Drawing.Point(30, 175)
         Me.HeightTextBox.Name = "HeightTextBox"
         Me.HeightTextBox.Size = New System.Drawing.Size(98, 23)
         Me.HeightTextBox.TabIndex = 75
@@ -688,7 +635,7 @@ Partial Class EmployeeAddUpdate
         'WeightTextBox
         '
         Me.WeightTextBox.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.WeightTextBox.Location = New System.Drawing.Point(157, 236)
+        Me.WeightTextBox.Location = New System.Drawing.Point(137, 176)
         Me.WeightTextBox.Name = "WeightTextBox"
         Me.WeightTextBox.Size = New System.Drawing.Size(93, 23)
         Me.WeightTextBox.TabIndex = 77
@@ -696,7 +643,7 @@ Partial Class EmployeeAddUpdate
         'PositionTextBox
         '
         Me.PositionTextBox.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.PositionTextBox.Location = New System.Drawing.Point(50, 419)
+        Me.PositionTextBox.Location = New System.Drawing.Point(30, 359)
         Me.PositionTextBox.Name = "PositionTextBox"
         Me.PositionTextBox.Size = New System.Drawing.Size(408, 23)
         Me.PositionTextBox.TabIndex = 81
@@ -704,7 +651,7 @@ Partial Class EmployeeAddUpdate
         'Spouse_nameTextBox
         '
         Me.Spouse_nameTextBox.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Spouse_nameTextBox.Location = New System.Drawing.Point(47, 605)
+        Me.Spouse_nameTextBox.Location = New System.Drawing.Point(27, 545)
         Me.Spouse_nameTextBox.Name = "Spouse_nameTextBox"
         Me.Spouse_nameTextBox.Size = New System.Drawing.Size(411, 23)
         Me.Spouse_nameTextBox.TabIndex = 83
@@ -712,7 +659,7 @@ Partial Class EmployeeAddUpdate
         'Monthly_rateTextBox
         '
         Me.Monthly_rateTextBox.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Monthly_rateTextBox.Location = New System.Drawing.Point(467, 465)
+        Me.Monthly_rateTextBox.Location = New System.Drawing.Point(447, 405)
         Me.Monthly_rateTextBox.Name = "Monthly_rateTextBox"
         Me.Monthly_rateTextBox.Size = New System.Drawing.Size(199, 23)
         Me.Monthly_rateTextBox.TabIndex = 89
@@ -722,7 +669,7 @@ Partial Class EmployeeAddUpdate
         'Daily_rateTextBox
         '
         Me.Daily_rateTextBox.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Daily_rateTextBox.Location = New System.Drawing.Point(467, 513)
+        Me.Daily_rateTextBox.Location = New System.Drawing.Point(447, 453)
         Me.Daily_rateTextBox.Name = "Daily_rateTextBox"
         Me.Daily_rateTextBox.Size = New System.Drawing.Size(199, 23)
         Me.Daily_rateTextBox.TabIndex = 91
@@ -732,7 +679,7 @@ Partial Class EmployeeAddUpdate
         'Hourly_rateTextBox
         '
         Me.Hourly_rateTextBox.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Hourly_rateTextBox.Location = New System.Drawing.Point(467, 559)
+        Me.Hourly_rateTextBox.Location = New System.Drawing.Point(447, 499)
         Me.Hourly_rateTextBox.Name = "Hourly_rateTextBox"
         Me.Hourly_rateTextBox.Size = New System.Drawing.Size(199, 23)
         Me.Hourly_rateTextBox.TabIndex = 93
@@ -742,7 +689,7 @@ Partial Class EmployeeAddUpdate
         'Unit_rateTextBox
         '
         Me.Unit_rateTextBox.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Unit_rateTextBox.Location = New System.Drawing.Point(467, 605)
+        Me.Unit_rateTextBox.Location = New System.Drawing.Point(447, 545)
         Me.Unit_rateTextBox.Name = "Unit_rateTextBox"
         Me.Unit_rateTextBox.Size = New System.Drawing.Size(199, 23)
         Me.Unit_rateTextBox.TabIndex = 95
@@ -753,7 +700,7 @@ Partial Class EmployeeAddUpdate
         '
         Me.Date_resignedDateTimePicker.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Date_resignedDateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.Date_resignedDateTimePicker.Location = New System.Drawing.Point(258, 651)
+        Me.Date_resignedDateTimePicker.Location = New System.Drawing.Point(238, 591)
         Me.Date_resignedDateTimePicker.Name = "Date_resignedDateTimePicker"
         Me.Date_resignedDateTimePicker.Size = New System.Drawing.Size(200, 23)
         Me.Date_resignedDateTimePicker.TabIndex = 99
@@ -762,7 +709,7 @@ Partial Class EmployeeAddUpdate
         '
         Me.PhotoPictureBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
         Me.PhotoPictureBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.PhotoPictureBox.Location = New System.Drawing.Point(693, 143)
+        Me.PhotoPictureBox.Location = New System.Drawing.Point(673, 83)
         Me.PhotoPictureBox.Name = "PhotoPictureBox"
         Me.PhotoPictureBox.Size = New System.Drawing.Size(167, 160)
         Me.PhotoPictureBox.TabIndex = 101
@@ -771,7 +718,7 @@ Partial Class EmployeeAddUpdate
         'btn_Find
         '
         Me.btn_Find.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btn_Find.Location = New System.Drawing.Point(257, 92)
+        Me.btn_Find.Location = New System.Drawing.Point(237, 32)
         Me.btn_Find.Name = "btn_Find"
         Me.btn_Find.Size = New System.Drawing.Size(75, 23)
         Me.btn_Find.TabIndex = 102
@@ -799,6 +746,7 @@ Partial Class EmployeeAddUpdate
         Me.TableAdapterManager.employee_tblTableAdapter = Me.Employee_tblTableAdapter
         Me.TableAdapterManager.payroll_deduction_tblTableAdapter = Nothing
         Me.TableAdapterManager.payroll_tblTableAdapter = Nothing
+        Me.TableAdapterManager.time_schedule_empl_tblTableAdapter = Nothing
         Me.TableAdapterManager.UpdateOrder = LCCPayrollSystem.payrolldbDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
         Me.TableAdapterManager.user_tblTableAdapter = Me.User_tblTableAdapter
         '
@@ -813,7 +761,7 @@ Partial Class EmployeeAddUpdate
         Me.User_idComboBox.DisplayMember = "full_name"
         Me.User_idComboBox.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.User_idComboBox.FormattingEnabled = True
-        Me.User_idComboBox.Location = New System.Drawing.Point(467, 373)
+        Me.User_idComboBox.Location = New System.Drawing.Point(447, 313)
         Me.User_idComboBox.Name = "User_idComboBox"
         Me.User_idComboBox.Size = New System.Drawing.Size(199, 25)
         Me.User_idComboBox.TabIndex = 104
@@ -827,7 +775,7 @@ Partial Class EmployeeAddUpdate
         'btn_new
         '
         Me.btn_new.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btn_new.Location = New System.Drawing.Point(335, 92)
+        Me.btn_new.Location = New System.Drawing.Point(315, 32)
         Me.btn_new.Name = "btn_new"
         Me.btn_new.Size = New System.Drawing.Size(122, 23)
         Me.btn_new.TabIndex = 105
@@ -841,7 +789,7 @@ Partial Class EmployeeAddUpdate
         Me.btn_cancel.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btn_cancel.ForeColor = System.Drawing.Color.White
         Me.btn_cancel.ImageKey = "(none)"
-        Me.btn_cancel.Location = New System.Drawing.Point(688, 640)
+        Me.btn_cancel.Location = New System.Drawing.Point(668, 580)
         Me.btn_cancel.Name = "btn_cancel"
         Me.btn_cancel.Size = New System.Drawing.Size(83, 35)
         Me.btn_cancel.TabIndex = 131
@@ -854,7 +802,7 @@ Partial Class EmployeeAddUpdate
         Me.btnedit.FlatStyle = System.Windows.Forms.FlatStyle.System
         Me.btnedit.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnedit.ForeColor = System.Drawing.Color.White
-        Me.btnedit.Location = New System.Drawing.Point(688, 599)
+        Me.btnedit.Location = New System.Drawing.Point(668, 539)
         Me.btnedit.Name = "btnedit"
         Me.btnedit.Size = New System.Drawing.Size(83, 35)
         Me.btnedit.TabIndex = 130
@@ -867,7 +815,7 @@ Partial Class EmployeeAddUpdate
         Me.btndel.FlatStyle = System.Windows.Forms.FlatStyle.System
         Me.btndel.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btndel.ForeColor = System.Drawing.Color.White
-        Me.btndel.Location = New System.Drawing.Point(777, 599)
+        Me.btndel.Location = New System.Drawing.Point(757, 539)
         Me.btndel.Name = "btndel"
         Me.btndel.Size = New System.Drawing.Size(83, 35)
         Me.btndel.TabIndex = 129
@@ -880,7 +828,7 @@ Partial Class EmployeeAddUpdate
         Me.btn_save.FlatStyle = System.Windows.Forms.FlatStyle.System
         Me.btn_save.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btn_save.ForeColor = System.Drawing.Color.White
-        Me.btn_save.Location = New System.Drawing.Point(777, 640)
+        Me.btn_save.Location = New System.Drawing.Point(757, 580)
         Me.btn_save.Name = "btn_save"
         Me.btn_save.Size = New System.Drawing.Size(83, 35)
         Me.btn_save.TabIndex = 128
@@ -890,7 +838,7 @@ Partial Class EmployeeAddUpdate
         'btn_browse
         '
         Me.btn_browse.ForeColor = System.Drawing.SystemColors.InfoText
-        Me.btn_browse.Location = New System.Drawing.Point(693, 309)
+        Me.btn_browse.Location = New System.Drawing.Point(673, 249)
         Me.btn_browse.Name = "btn_browse"
         Me.btn_browse.Size = New System.Drawing.Size(167, 23)
         Me.btn_browse.TabIndex = 132
@@ -907,7 +855,7 @@ Partial Class EmployeeAddUpdate
         Me.rate_basis_ComboBox.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.rate_basis_ComboBox.FormattingEnabled = True
         Me.rate_basis_ComboBox.Items.AddRange(New Object() {"Monthly", "Daily", "Hourly", "Per Unit"})
-        Me.rate_basis_ComboBox.Location = New System.Drawing.Point(467, 419)
+        Me.rate_basis_ComboBox.Location = New System.Drawing.Point(447, 359)
         Me.rate_basis_ComboBox.Name = "rate_basis_ComboBox"
         Me.rate_basis_ComboBox.Size = New System.Drawing.Size(199, 25)
         Me.rate_basis_ComboBox.TabIndex = 135
@@ -918,7 +866,7 @@ Partial Class EmployeeAddUpdate
         Me.Employment_statusComboBox.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Employment_statusComboBox.FormattingEnabled = True
         Me.Employment_statusComboBox.Items.AddRange(New Object() {"Full-Time", "Part-Time"})
-        Me.Employment_statusComboBox.Location = New System.Drawing.Point(255, 465)
+        Me.Employment_statusComboBox.Location = New System.Drawing.Point(235, 405)
         Me.Employment_statusComboBox.Name = "Employment_statusComboBox"
         Me.Employment_statusComboBox.Size = New System.Drawing.Size(203, 25)
         Me.Employment_statusComboBox.TabIndex = 136
@@ -929,7 +877,7 @@ Partial Class EmployeeAddUpdate
         Me.Employee_statusComboBox.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Employee_statusComboBox.FormattingEnabled = True
         Me.Employee_statusComboBox.Items.AddRange(New Object() {"Active", "In-Active"})
-        Me.Employee_statusComboBox.Location = New System.Drawing.Point(467, 651)
+        Me.Employee_statusComboBox.Location = New System.Drawing.Point(447, 591)
         Me.Employee_statusComboBox.Name = "Employee_statusComboBox"
         Me.Employee_statusComboBox.Size = New System.Drawing.Size(199, 25)
         Me.Employee_statusComboBox.TabIndex = 137
@@ -940,7 +888,7 @@ Partial Class EmployeeAddUpdate
         Me.Civil_statusComboBox.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Civil_statusComboBox.FormattingEnabled = True
         Me.Civil_statusComboBox.Items.AddRange(New Object() {"Single", "Married", "Widowed", "Separated"})
-        Me.Civil_statusComboBox.Location = New System.Drawing.Point(466, 234)
+        Me.Civil_statusComboBox.Location = New System.Drawing.Point(446, 174)
         Me.Civil_statusComboBox.Name = "Civil_statusComboBox"
         Me.Civil_statusComboBox.Size = New System.Drawing.Size(200, 25)
         Me.Civil_statusComboBox.TabIndex = 138
@@ -951,7 +899,7 @@ Partial Class EmployeeAddUpdate
         Me.Department_assignedComboBox.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Department_assignedComboBox.FormattingEnabled = True
         Me.Department_assignedComboBox.Items.AddRange(New Object() {"College", "Senior High School", "Junior High School", "Elementary"})
-        Me.Department_assignedComboBox.Location = New System.Drawing.Point(47, 465)
+        Me.Department_assignedComboBox.Location = New System.Drawing.Point(27, 405)
         Me.Department_assignedComboBox.Name = "Department_assignedComboBox"
         Me.Department_assignedComboBox.Size = New System.Drawing.Size(200, 25)
         Me.Department_assignedComboBox.TabIndex = 139
@@ -960,7 +908,7 @@ Partial Class EmployeeAddUpdate
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(897, 698)
+        Me.ClientSize = New System.Drawing.Size(882, 559)
         Me.Controls.Add(Last_nameLabel)
         Me.Controls.Add(Me.btn_browse)
         Me.Controls.Add(Me.rate_basis_ComboBox)
@@ -972,7 +920,6 @@ Partial Class EmployeeAddUpdate
         Me.Controls.Add(Me.PhotoPictureBox)
         Me.Controls.Add(Me.IdTextBox)
         Me.Controls.Add(Me.btnedit)
-        Me.Controls.Add(Me.Panel2)
         Me.Controls.Add(Me.ReligionTextBox)
         Me.Controls.Add(Employee_statusLabel)
         Me.Controls.Add(Me.btndel)
@@ -1040,9 +987,6 @@ Partial Class EmployeeAddUpdate
         Me.Name = "EmployeeAddUpdate"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "EmployeeAddUpdate"
-        Me.Panel2.ResumeLayout(False)
-        Me.Panel2.PerformLayout()
-        CType(Me.PictureBox7, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.AgeNumericUpDown, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PhotoPictureBox, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PayrolldbDataSet, System.ComponentModel.ISupportInitialize).EndInit()
@@ -1052,11 +996,6 @@ Partial Class EmployeeAddUpdate
         Me.PerformLayout()
 
     End Sub
-
-    Friend WithEvents Panel2 As Panel
-    Friend WithEvents Label2 As Label
-    Friend WithEvents PictureBox7 As PictureBox
-    Friend WithEvents Label1 As Label
     Friend WithEvents IdTextBox As TextBox
     Friend WithEvents Last_nameTextBox As TextBox
     Friend WithEvents First_nameTextBox As TextBox

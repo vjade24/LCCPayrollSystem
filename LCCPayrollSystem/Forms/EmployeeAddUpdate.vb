@@ -4,7 +4,7 @@ Imports System.Data.SqlClient
 Public Class EmployeeAddUpdate
     Dim conn As SqlConnection = New SqlConnection(connection)
     Dim result As Integer
-    Private Sub Label2_Click(sender As Object, e As EventArgs) Handles Label2.Click
+    Private Sub Label2_Click(sender As Object, e As EventArgs) 
         Me.Hide()
         Employee.Show()
     End Sub

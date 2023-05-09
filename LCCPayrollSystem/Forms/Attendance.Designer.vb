@@ -31,14 +31,27 @@ Partial Class Attendance
         Dim Tse_out_pmLabel As System.Windows.Forms.Label
         Dim Label1 As System.Windows.Forms.Label
         Dim Label2 As System.Windows.Forms.Label
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle9 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle10 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle11 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle12 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.TabControl1 = New System.Windows.Forms.TabControl()
         Me.TabPage1 = New System.Windows.Forms.TabPage()
         Me.btnRemoveEntry = New System.Windows.Forms.Button()
         Me.Vw_time_schedule_empl_tblDataGridView = New System.Windows.Forms.DataGridView()
+        Me.DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn6 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn7 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn8 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn9 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn10 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn11 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn12 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DataGridViewTextBoxColumn13 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Vw_time_schedule_empl_tblBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.PayrolldbDataSet = New LCCPayrollSystem.payrolldbDataSet()
         Me.btnGenerateSked = New System.Windows.Forms.Button()
@@ -56,19 +69,6 @@ Partial Class Attendance
         Me.btnSearch = New System.Windows.Forms.Button()
         Me.Vw_time_schedule_empl_tblTableAdapter = New LCCPayrollSystem.payrolldbDataSetTableAdapters.vw_time_schedule_empl_tblTableAdapter()
         Me.TableAdapterManager = New LCCPayrollSystem.payrolldbDataSetTableAdapters.TableAdapterManager()
-        Me.DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn5 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn6 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn7 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn8 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn9 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn10 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn11 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn12 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DataGridViewTextBoxColumn13 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Employee_nameLabel = New System.Windows.Forms.Label()
         Tse_dateLabel = New System.Windows.Forms.Label()
         Tse_in_amLabel = New System.Windows.Forms.Label()
@@ -164,7 +164,7 @@ Partial Class Attendance
         Me.TabControl1.Location = New System.Drawing.Point(12, 75)
         Me.TabControl1.Name = "TabControl1"
         Me.TabControl1.SelectedIndex = 0
-        Me.TabControl1.Size = New System.Drawing.Size(776, 449)
+        Me.TabControl1.Size = New System.Drawing.Size(750, 411)
         Me.TabControl1.TabIndex = 0
         '
         'TabPage1
@@ -187,7 +187,7 @@ Partial Class Attendance
         Me.TabPage1.Location = New System.Drawing.Point(4, 22)
         Me.TabPage1.Name = "TabPage1"
         Me.TabPage1.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage1.Size = New System.Drawing.Size(768, 423)
+        Me.TabPage1.Size = New System.Drawing.Size(742, 385)
         Me.TabPage1.TabIndex = 0
         Me.TabPage1.Text = "Employee Schedule"
         Me.TabPage1.UseVisualStyleBackColor = True
@@ -213,8 +213,118 @@ Partial Class Attendance
         Me.Vw_time_schedule_empl_tblDataGridView.Name = "Vw_time_schedule_empl_tblDataGridView"
         Me.Vw_time_schedule_empl_tblDataGridView.ReadOnly = True
         Me.Vw_time_schedule_empl_tblDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.Vw_time_schedule_empl_tblDataGridView.Size = New System.Drawing.Size(643, 284)
+        Me.Vw_time_schedule_empl_tblDataGridView.Size = New System.Drawing.Size(643, 257)
         Me.Vw_time_schedule_empl_tblDataGridView.TabIndex = 16
+        '
+        'DataGridViewTextBoxColumn1
+        '
+        Me.DataGridViewTextBoxColumn1.DataPropertyName = "Id"
+        Me.DataGridViewTextBoxColumn1.HeaderText = "Id"
+        Me.DataGridViewTextBoxColumn1.Name = "DataGridViewTextBoxColumn1"
+        Me.DataGridViewTextBoxColumn1.ReadOnly = True
+        Me.DataGridViewTextBoxColumn1.Visible = False
+        '
+        'DataGridViewTextBoxColumn2
+        '
+        Me.DataGridViewTextBoxColumn2.DataPropertyName = "dayname"
+        Me.DataGridViewTextBoxColumn2.HeaderText = "dayname"
+        Me.DataGridViewTextBoxColumn2.Name = "DataGridViewTextBoxColumn2"
+        Me.DataGridViewTextBoxColumn2.ReadOnly = True
+        '
+        'DataGridViewTextBoxColumn3
+        '
+        Me.DataGridViewTextBoxColumn3.DataPropertyName = "tse_date"
+        Me.DataGridViewTextBoxColumn3.HeaderText = "tse_date"
+        Me.DataGridViewTextBoxColumn3.Name = "DataGridViewTextBoxColumn3"
+        Me.DataGridViewTextBoxColumn3.ReadOnly = True
+        '
+        'DataGridViewTextBoxColumn4
+        '
+        Me.DataGridViewTextBoxColumn4.DataPropertyName = "empl_id"
+        Me.DataGridViewTextBoxColumn4.HeaderText = "empl_id"
+        Me.DataGridViewTextBoxColumn4.Name = "DataGridViewTextBoxColumn4"
+        Me.DataGridViewTextBoxColumn4.ReadOnly = True
+        Me.DataGridViewTextBoxColumn4.Visible = False
+        '
+        'DataGridViewTextBoxColumn5
+        '
+        Me.DataGridViewTextBoxColumn5.DataPropertyName = "employee_name"
+        Me.DataGridViewTextBoxColumn5.HeaderText = "employee_name"
+        Me.DataGridViewTextBoxColumn5.Name = "DataGridViewTextBoxColumn5"
+        Me.DataGridViewTextBoxColumn5.ReadOnly = True
+        Me.DataGridViewTextBoxColumn5.Visible = False
+        '
+        'DataGridViewTextBoxColumn6
+        '
+        Me.DataGridViewTextBoxColumn6.DataPropertyName = "tse_in_am"
+        Me.DataGridViewTextBoxColumn6.HeaderText = "tse_in_am"
+        Me.DataGridViewTextBoxColumn6.Name = "DataGridViewTextBoxColumn6"
+        Me.DataGridViewTextBoxColumn6.ReadOnly = True
+        Me.DataGridViewTextBoxColumn6.Visible = False
+        '
+        'DataGridViewTextBoxColumn7
+        '
+        Me.DataGridViewTextBoxColumn7.DataPropertyName = "tse_out_am"
+        Me.DataGridViewTextBoxColumn7.HeaderText = "tse_out_am"
+        Me.DataGridViewTextBoxColumn7.Name = "DataGridViewTextBoxColumn7"
+        Me.DataGridViewTextBoxColumn7.ReadOnly = True
+        Me.DataGridViewTextBoxColumn7.Visible = False
+        '
+        'DataGridViewTextBoxColumn8
+        '
+        Me.DataGridViewTextBoxColumn8.DataPropertyName = "tse_in_pm"
+        Me.DataGridViewTextBoxColumn8.HeaderText = "tse_in_pm"
+        Me.DataGridViewTextBoxColumn8.Name = "DataGridViewTextBoxColumn8"
+        Me.DataGridViewTextBoxColumn8.ReadOnly = True
+        Me.DataGridViewTextBoxColumn8.Visible = False
+        '
+        'DataGridViewTextBoxColumn9
+        '
+        Me.DataGridViewTextBoxColumn9.DataPropertyName = "tse_out_pm"
+        Me.DataGridViewTextBoxColumn9.HeaderText = "tse_out_pm"
+        Me.DataGridViewTextBoxColumn9.Name = "DataGridViewTextBoxColumn9"
+        Me.DataGridViewTextBoxColumn9.ReadOnly = True
+        Me.DataGridViewTextBoxColumn9.Visible = False
+        '
+        'DataGridViewTextBoxColumn10
+        '
+        Me.DataGridViewTextBoxColumn10.DataPropertyName = "converted_tse_in_am"
+        DataGridViewCellStyle9.Format = "t"
+        DataGridViewCellStyle9.NullValue = "----"
+        Me.DataGridViewTextBoxColumn10.DefaultCellStyle = DataGridViewCellStyle9
+        Me.DataGridViewTextBoxColumn10.HeaderText = "converted_tse_in_am"
+        Me.DataGridViewTextBoxColumn10.Name = "DataGridViewTextBoxColumn10"
+        Me.DataGridViewTextBoxColumn10.ReadOnly = True
+        '
+        'DataGridViewTextBoxColumn11
+        '
+        Me.DataGridViewTextBoxColumn11.DataPropertyName = "converted_tse_out_am"
+        DataGridViewCellStyle10.Format = "t"
+        DataGridViewCellStyle10.NullValue = "----"
+        Me.DataGridViewTextBoxColumn11.DefaultCellStyle = DataGridViewCellStyle10
+        Me.DataGridViewTextBoxColumn11.HeaderText = "converted_tse_out_am"
+        Me.DataGridViewTextBoxColumn11.Name = "DataGridViewTextBoxColumn11"
+        Me.DataGridViewTextBoxColumn11.ReadOnly = True
+        '
+        'DataGridViewTextBoxColumn12
+        '
+        Me.DataGridViewTextBoxColumn12.DataPropertyName = "converted_tse_in_pm"
+        DataGridViewCellStyle11.Format = "t"
+        DataGridViewCellStyle11.NullValue = "----"
+        Me.DataGridViewTextBoxColumn12.DefaultCellStyle = DataGridViewCellStyle11
+        Me.DataGridViewTextBoxColumn12.HeaderText = "converted_tse_in_pm"
+        Me.DataGridViewTextBoxColumn12.Name = "DataGridViewTextBoxColumn12"
+        Me.DataGridViewTextBoxColumn12.ReadOnly = True
+        '
+        'DataGridViewTextBoxColumn13
+        '
+        Me.DataGridViewTextBoxColumn13.DataPropertyName = "converted_tse_out_pm"
+        DataGridViewCellStyle12.Format = "t"
+        DataGridViewCellStyle12.NullValue = "----"
+        Me.DataGridViewTextBoxColumn13.DefaultCellStyle = DataGridViewCellStyle12
+        Me.DataGridViewTextBoxColumn13.HeaderText = "converted_tse_out_pm"
+        Me.DataGridViewTextBoxColumn13.Name = "DataGridViewTextBoxColumn13"
+        Me.DataGridViewTextBoxColumn13.ReadOnly = True
         '
         'Vw_time_schedule_empl_tblBindingSource
         '
@@ -364,121 +474,11 @@ Partial Class Attendance
         Me.TableAdapterManager.UpdateOrder = LCCPayrollSystem.payrolldbDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
         Me.TableAdapterManager.user_tblTableAdapter = Nothing
         '
-        'DataGridViewTextBoxColumn1
-        '
-        Me.DataGridViewTextBoxColumn1.DataPropertyName = "Id"
-        Me.DataGridViewTextBoxColumn1.HeaderText = "Id"
-        Me.DataGridViewTextBoxColumn1.Name = "DataGridViewTextBoxColumn1"
-        Me.DataGridViewTextBoxColumn1.ReadOnly = True
-        Me.DataGridViewTextBoxColumn1.Visible = False
-        '
-        'DataGridViewTextBoxColumn2
-        '
-        Me.DataGridViewTextBoxColumn2.DataPropertyName = "dayname"
-        Me.DataGridViewTextBoxColumn2.HeaderText = "dayname"
-        Me.DataGridViewTextBoxColumn2.Name = "DataGridViewTextBoxColumn2"
-        Me.DataGridViewTextBoxColumn2.ReadOnly = True
-        '
-        'DataGridViewTextBoxColumn3
-        '
-        Me.DataGridViewTextBoxColumn3.DataPropertyName = "tse_date"
-        Me.DataGridViewTextBoxColumn3.HeaderText = "tse_date"
-        Me.DataGridViewTextBoxColumn3.Name = "DataGridViewTextBoxColumn3"
-        Me.DataGridViewTextBoxColumn3.ReadOnly = True
-        '
-        'DataGridViewTextBoxColumn4
-        '
-        Me.DataGridViewTextBoxColumn4.DataPropertyName = "empl_id"
-        Me.DataGridViewTextBoxColumn4.HeaderText = "empl_id"
-        Me.DataGridViewTextBoxColumn4.Name = "DataGridViewTextBoxColumn4"
-        Me.DataGridViewTextBoxColumn4.ReadOnly = True
-        Me.DataGridViewTextBoxColumn4.Visible = False
-        '
-        'DataGridViewTextBoxColumn5
-        '
-        Me.DataGridViewTextBoxColumn5.DataPropertyName = "employee_name"
-        Me.DataGridViewTextBoxColumn5.HeaderText = "employee_name"
-        Me.DataGridViewTextBoxColumn5.Name = "DataGridViewTextBoxColumn5"
-        Me.DataGridViewTextBoxColumn5.ReadOnly = True
-        Me.DataGridViewTextBoxColumn5.Visible = False
-        '
-        'DataGridViewTextBoxColumn6
-        '
-        Me.DataGridViewTextBoxColumn6.DataPropertyName = "tse_in_am"
-        Me.DataGridViewTextBoxColumn6.HeaderText = "tse_in_am"
-        Me.DataGridViewTextBoxColumn6.Name = "DataGridViewTextBoxColumn6"
-        Me.DataGridViewTextBoxColumn6.ReadOnly = True
-        Me.DataGridViewTextBoxColumn6.Visible = False
-        '
-        'DataGridViewTextBoxColumn7
-        '
-        Me.DataGridViewTextBoxColumn7.DataPropertyName = "tse_out_am"
-        Me.DataGridViewTextBoxColumn7.HeaderText = "tse_out_am"
-        Me.DataGridViewTextBoxColumn7.Name = "DataGridViewTextBoxColumn7"
-        Me.DataGridViewTextBoxColumn7.ReadOnly = True
-        Me.DataGridViewTextBoxColumn7.Visible = False
-        '
-        'DataGridViewTextBoxColumn8
-        '
-        Me.DataGridViewTextBoxColumn8.DataPropertyName = "tse_in_pm"
-        Me.DataGridViewTextBoxColumn8.HeaderText = "tse_in_pm"
-        Me.DataGridViewTextBoxColumn8.Name = "DataGridViewTextBoxColumn8"
-        Me.DataGridViewTextBoxColumn8.ReadOnly = True
-        Me.DataGridViewTextBoxColumn8.Visible = False
-        '
-        'DataGridViewTextBoxColumn9
-        '
-        Me.DataGridViewTextBoxColumn9.DataPropertyName = "tse_out_pm"
-        Me.DataGridViewTextBoxColumn9.HeaderText = "tse_out_pm"
-        Me.DataGridViewTextBoxColumn9.Name = "DataGridViewTextBoxColumn9"
-        Me.DataGridViewTextBoxColumn9.ReadOnly = True
-        Me.DataGridViewTextBoxColumn9.Visible = False
-        '
-        'DataGridViewTextBoxColumn10
-        '
-        Me.DataGridViewTextBoxColumn10.DataPropertyName = "converted_tse_in_am"
-        DataGridViewCellStyle1.Format = "t"
-        DataGridViewCellStyle1.NullValue = "----"
-        Me.DataGridViewTextBoxColumn10.DefaultCellStyle = DataGridViewCellStyle1
-        Me.DataGridViewTextBoxColumn10.HeaderText = "converted_tse_in_am"
-        Me.DataGridViewTextBoxColumn10.Name = "DataGridViewTextBoxColumn10"
-        Me.DataGridViewTextBoxColumn10.ReadOnly = True
-        '
-        'DataGridViewTextBoxColumn11
-        '
-        Me.DataGridViewTextBoxColumn11.DataPropertyName = "converted_tse_out_am"
-        DataGridViewCellStyle2.Format = "t"
-        DataGridViewCellStyle2.NullValue = "----"
-        Me.DataGridViewTextBoxColumn11.DefaultCellStyle = DataGridViewCellStyle2
-        Me.DataGridViewTextBoxColumn11.HeaderText = "converted_tse_out_am"
-        Me.DataGridViewTextBoxColumn11.Name = "DataGridViewTextBoxColumn11"
-        Me.DataGridViewTextBoxColumn11.ReadOnly = True
-        '
-        'DataGridViewTextBoxColumn12
-        '
-        Me.DataGridViewTextBoxColumn12.DataPropertyName = "converted_tse_in_pm"
-        DataGridViewCellStyle3.Format = "t"
-        DataGridViewCellStyle3.NullValue = "----"
-        Me.DataGridViewTextBoxColumn12.DefaultCellStyle = DataGridViewCellStyle3
-        Me.DataGridViewTextBoxColumn12.HeaderText = "converted_tse_in_pm"
-        Me.DataGridViewTextBoxColumn12.Name = "DataGridViewTextBoxColumn12"
-        Me.DataGridViewTextBoxColumn12.ReadOnly = True
-        '
-        'DataGridViewTextBoxColumn13
-        '
-        Me.DataGridViewTextBoxColumn13.DataPropertyName = "converted_tse_out_pm"
-        DataGridViewCellStyle4.Format = "t"
-        DataGridViewCellStyle4.NullValue = "----"
-        Me.DataGridViewTextBoxColumn13.DefaultCellStyle = DataGridViewCellStyle4
-        Me.DataGridViewTextBoxColumn13.HeaderText = "converted_tse_out_pm"
-        Me.DataGridViewTextBoxColumn13.Name = "DataGridViewTextBoxColumn13"
-        Me.DataGridViewTextBoxColumn13.ReadOnly = True
-        '
         'Attendance
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(808, 544)
+        Me.ClientSize = New System.Drawing.Size(882, 559)
         Me.Controls.Add(Me.btnSearch)
         Me.Controls.Add(Label2)
         Me.Controls.Add(Me.ComboBoxMonth)
@@ -487,6 +487,7 @@ Partial Class Attendance
         Me.Controls.Add(Employee_nameLabel)
         Me.Controls.Add(Me.Employee_nameComboBox)
         Me.Controls.Add(Me.TabControl1)
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "Attendance"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Attendance"

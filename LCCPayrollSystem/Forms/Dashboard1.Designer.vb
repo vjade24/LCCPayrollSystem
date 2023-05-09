@@ -25,30 +25,10 @@ Partial Class Dashboard1
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Dashboard1))
         Me.Label4 = New System.Windows.Forms.Label()
-        Me.PictureBox7 = New System.Windows.Forms.PictureBox()
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.picDeduction = New System.Windows.Forms.PictureBox()
-        Me.btnDeduction = New System.Windows.Forms.Button()
-        Me.picRegister = New System.Windows.Forms.PictureBox()
-        Me.btnRegister = New System.Windows.Forms.Button()
-        Me.lbl_welcome = New System.Windows.Forms.Label()
-        Me.btnLogout = New System.Windows.Forms.Button()
-        Me.picDashboard = New System.Windows.Forms.PictureBox()
-        Me.Label19 = New System.Windows.Forms.Label()
-        Me.picReport = New System.Windows.Forms.PictureBox()
-        Me.picPayroll = New System.Windows.Forms.PictureBox()
-        Me.picEmployee = New System.Windows.Forms.PictureBox()
-        Me.btnDashboard = New System.Windows.Forms.Button()
-        Me.btnAttendance = New System.Windows.Forms.Button()
-        Me.btnReport = New System.Windows.Forms.Button()
-        Me.btnPayroll = New System.Windows.Forms.Button()
-        Me.btnEmployee = New System.Windows.Forms.Button()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
-        Me.picAttendance = New System.Windows.Forms.PictureBox()
         Me.PictureBox8 = New System.Windows.Forms.PictureBox()
         Me.PictureBox13 = New System.Windows.Forms.PictureBox()
-        Me.Panel2 = New System.Windows.Forms.Panel()
         Me.Label8 = New System.Windows.Forms.Label()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.Panel3 = New System.Windows.Forms.Panel()
@@ -69,23 +49,13 @@ Partial Class Dashboard1
         Me.Label17 = New System.Windows.Forms.Label()
         Me.Label16 = New System.Windows.Forms.Label()
         Me.PictureBox12 = New System.Windows.Forms.PictureBox()
-        Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Panel4 = New System.Windows.Forms.Panel()
         Me.CrystalReportViewer1 = New CrystalDecisions.Windows.Forms.CrystalReportViewer()
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         Me.textbox_login = New System.Windows.Forms.TextBox()
-        CType(Me.PictureBox7, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.picDeduction, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.picRegister, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.picDashboard, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.picReport, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.picPayroll, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.picEmployee, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.picAttendance, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox8, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox13, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.Panel2.SuspendLayout()
         Me.Panel3.SuspendLayout()
         CType(Me.PictureBox9, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel5.SuspendLayout()
@@ -94,7 +64,6 @@ Partial Class Dashboard1
         CType(Me.PictureBox11, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel7.SuspendLayout()
         CType(Me.PictureBox12, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.Panel1.SuspendLayout()
         Me.Panel4.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -109,213 +78,6 @@ Partial Class Dashboard1
         Me.Label4.Size = New System.Drawing.Size(47, 18)
         Me.Label4.TabIndex = 19
         Me.Label4.Text = "Active"
-        '
-        'PictureBox7
-        '
-        Me.PictureBox7.BackColor = System.Drawing.Color.Transparent
-        Me.PictureBox7.Image = CType(resources.GetObject("PictureBox7.Image"), System.Drawing.Image)
-        Me.PictureBox7.Location = New System.Drawing.Point(9, 11)
-        Me.PictureBox7.Margin = New System.Windows.Forms.Padding(2)
-        Me.PictureBox7.Name = "PictureBox7"
-        Me.PictureBox7.Size = New System.Drawing.Size(27, 30)
-        Me.PictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.PictureBox7.TabIndex = 12
-        Me.PictureBox7.TabStop = False
-        '
-        'Label1
-        '
-        Me.Label1.AutoSize = True
-        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 16.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.ForeColor = System.Drawing.Color.White
-        Me.Label1.Location = New System.Drawing.Point(201, 15)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(378, 26)
-        Me.Label1.TabIndex = 4
-        Me.Label1.Text = "LCC Payroll Management System "
-        '
-        'picDeduction
-        '
-        Me.picDeduction.BackColor = System.Drawing.Color.Transparent
-        Me.picDeduction.Image = CType(resources.GetObject("picDeduction.Image"), System.Drawing.Image)
-        Me.picDeduction.Location = New System.Drawing.Point(26, 385)
-        Me.picDeduction.Margin = New System.Windows.Forms.Padding(2)
-        Me.picDeduction.Name = "picDeduction"
-        Me.picDeduction.Size = New System.Drawing.Size(27, 30)
-        Me.picDeduction.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.picDeduction.TabIndex = 23
-        Me.picDeduction.TabStop = False
-        '
-        'btnDeduction
-        '
-        Me.btnDeduction.BackColor = System.Drawing.Color.White
-        Me.btnDeduction.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnDeduction.Location = New System.Drawing.Point(8, 376)
-        Me.btnDeduction.Name = "btnDeduction"
-        Me.btnDeduction.Size = New System.Drawing.Size(179, 46)
-        Me.btnDeduction.TabIndex = 22
-        Me.btnDeduction.Text = "Deduction"
-        Me.btnDeduction.UseVisualStyleBackColor = False
-        '
-        'picRegister
-        '
-        Me.picRegister.BackColor = System.Drawing.Color.Transparent
-        Me.picRegister.Image = CType(resources.GetObject("picRegister.Image"), System.Drawing.Image)
-        Me.picRegister.Location = New System.Drawing.Point(26, 441)
-        Me.picRegister.Margin = New System.Windows.Forms.Padding(2)
-        Me.picRegister.Name = "picRegister"
-        Me.picRegister.Size = New System.Drawing.Size(27, 30)
-        Me.picRegister.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.picRegister.TabIndex = 21
-        Me.picRegister.TabStop = False
-        '
-        'btnRegister
-        '
-        Me.btnRegister.BackColor = System.Drawing.Color.White
-        Me.btnRegister.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnRegister.Location = New System.Drawing.Point(8, 432)
-        Me.btnRegister.Name = "btnRegister"
-        Me.btnRegister.Size = New System.Drawing.Size(179, 47)
-        Me.btnRegister.TabIndex = 20
-        Me.btnRegister.Text = "Register"
-        Me.btnRegister.UseVisualStyleBackColor = False
-        '
-        'lbl_welcome
-        '
-        Me.lbl_welcome.AutoSize = True
-        Me.lbl_welcome.BackColor = System.Drawing.Color.Transparent
-        Me.lbl_welcome.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbl_welcome.ForeColor = System.Drawing.Color.Black
-        Me.lbl_welcome.Location = New System.Drawing.Point(12, 62)
-        Me.lbl_welcome.Name = "lbl_welcome"
-        Me.lbl_welcome.Size = New System.Drawing.Size(13, 13)
-        Me.lbl_welcome.TabIndex = 19
-        Me.lbl_welcome.Text = "--"
-        '
-        'btnLogout
-        '
-        Me.btnLogout.BackColor = System.Drawing.Color.White
-        Me.btnLogout.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnLogout.Location = New System.Drawing.Point(8, 487)
-        Me.btnLogout.Name = "btnLogout"
-        Me.btnLogout.Size = New System.Drawing.Size(179, 44)
-        Me.btnLogout.TabIndex = 12
-        Me.btnLogout.Text = "Logout"
-        Me.btnLogout.UseVisualStyleBackColor = False
-        '
-        'picDashboard
-        '
-        Me.picDashboard.BackColor = System.Drawing.Color.Transparent
-        Me.picDashboard.Image = CType(resources.GetObject("picDashboard.Image"), System.Drawing.Image)
-        Me.picDashboard.Location = New System.Drawing.Point(26, 105)
-        Me.picDashboard.Margin = New System.Windows.Forms.Padding(2)
-        Me.picDashboard.Name = "picDashboard"
-        Me.picDashboard.Size = New System.Drawing.Size(27, 30)
-        Me.picDashboard.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.picDashboard.TabIndex = 11
-        Me.picDashboard.TabStop = False
-        '
-        'Label19
-        '
-        Me.Label19.AutoSize = True
-        Me.Label19.BackColor = System.Drawing.Color.Transparent
-        Me.Label19.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label19.ForeColor = System.Drawing.Color.White
-        Me.Label19.Location = New System.Drawing.Point(886, 0)
-        Me.Label19.Name = "Label19"
-        Me.Label19.Size = New System.Drawing.Size(15, 18)
-        Me.Label19.TabIndex = 19
-        Me.Label19.Text = "x"
-        '
-        'picReport
-        '
-        Me.picReport.BackColor = System.Drawing.Color.Transparent
-        Me.picReport.Image = CType(resources.GetObject("picReport.Image"), System.Drawing.Image)
-        Me.picReport.Location = New System.Drawing.Point(26, 273)
-        Me.picReport.Margin = New System.Windows.Forms.Padding(2)
-        Me.picReport.Name = "picReport"
-        Me.picReport.Size = New System.Drawing.Size(27, 30)
-        Me.picReport.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.picReport.TabIndex = 10
-        Me.picReport.TabStop = False
-        '
-        'picPayroll
-        '
-        Me.picPayroll.BackColor = System.Drawing.Color.Transparent
-        Me.picPayroll.Image = CType(resources.GetObject("picPayroll.Image"), System.Drawing.Image)
-        Me.picPayroll.Location = New System.Drawing.Point(26, 161)
-        Me.picPayroll.Margin = New System.Windows.Forms.Padding(2)
-        Me.picPayroll.Name = "picPayroll"
-        Me.picPayroll.Size = New System.Drawing.Size(27, 30)
-        Me.picPayroll.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.picPayroll.TabIndex = 8
-        Me.picPayroll.TabStop = False
-        '
-        'picEmployee
-        '
-        Me.picEmployee.BackColor = System.Drawing.Color.Transparent
-        Me.picEmployee.Image = CType(resources.GetObject("picEmployee.Image"), System.Drawing.Image)
-        Me.picEmployee.Location = New System.Drawing.Point(26, 329)
-        Me.picEmployee.Margin = New System.Windows.Forms.Padding(2)
-        Me.picEmployee.Name = "picEmployee"
-        Me.picEmployee.Size = New System.Drawing.Size(27, 30)
-        Me.picEmployee.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.picEmployee.TabIndex = 7
-        Me.picEmployee.TabStop = False
-        '
-        'btnDashboard
-        '
-        Me.btnDashboard.BackColor = System.Drawing.Color.White
-        Me.btnDashboard.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnDashboard.Location = New System.Drawing.Point(8, 96)
-        Me.btnDashboard.Name = "btnDashboard"
-        Me.btnDashboard.Size = New System.Drawing.Size(179, 47)
-        Me.btnDashboard.TabIndex = 6
-        Me.btnDashboard.Text = "     Dashboard"
-        Me.btnDashboard.UseVisualStyleBackColor = False
-        '
-        'btnAttendance
-        '
-        Me.btnAttendance.BackColor = System.Drawing.Color.White
-        Me.btnAttendance.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnAttendance.Location = New System.Drawing.Point(8, 209)
-        Me.btnAttendance.Name = "btnAttendance"
-        Me.btnAttendance.Size = New System.Drawing.Size(179, 46)
-        Me.btnAttendance.TabIndex = 5
-        Me.btnAttendance.Text = "      Attendance"
-        Me.btnAttendance.UseVisualStyleBackColor = False
-        '
-        'btnReport
-        '
-        Me.btnReport.BackColor = System.Drawing.Color.White
-        Me.btnReport.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnReport.Location = New System.Drawing.Point(8, 265)
-        Me.btnReport.Name = "btnReport"
-        Me.btnReport.Size = New System.Drawing.Size(179, 44)
-        Me.btnReport.TabIndex = 4
-        Me.btnReport.Text = "Report"
-        Me.btnReport.UseVisualStyleBackColor = False
-        '
-        'btnPayroll
-        '
-        Me.btnPayroll.BackColor = System.Drawing.Color.White
-        Me.btnPayroll.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnPayroll.Location = New System.Drawing.Point(8, 153)
-        Me.btnPayroll.Name = "btnPayroll"
-        Me.btnPayroll.Size = New System.Drawing.Size(179, 46)
-        Me.btnPayroll.TabIndex = 3
-        Me.btnPayroll.Text = "Payroll"
-        Me.btnPayroll.UseVisualStyleBackColor = False
-        '
-        'btnEmployee
-        '
-        Me.btnEmployee.BackColor = System.Drawing.Color.White
-        Me.btnEmployee.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnEmployee.Location = New System.Drawing.Point(8, 319)
-        Me.btnEmployee.Name = "btnEmployee"
-        Me.btnEmployee.Size = New System.Drawing.Size(179, 47)
-        Me.btnEmployee.TabIndex = 0
-        Me.btnEmployee.Text = "    Employee"
-        Me.btnEmployee.UseVisualStyleBackColor = False
         '
         'Label6
         '
@@ -341,18 +103,6 @@ Partial Class Dashboard1
         Me.Label5.TabIndex = 20
         Me.Label5.Text = "Employees"
         '
-        'picAttendance
-        '
-        Me.picAttendance.BackColor = System.Drawing.Color.Transparent
-        Me.picAttendance.Image = CType(resources.GetObject("picAttendance.Image"), System.Drawing.Image)
-        Me.picAttendance.Location = New System.Drawing.Point(26, 217)
-        Me.picAttendance.Margin = New System.Windows.Forms.Padding(2)
-        Me.picAttendance.Name = "picAttendance"
-        Me.picAttendance.Size = New System.Drawing.Size(27, 30)
-        Me.picAttendance.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.picAttendance.TabIndex = 9
-        Me.picAttendance.TabStop = False
-        '
         'PictureBox8
         '
         Me.PictureBox8.BackColor = System.Drawing.Color.Transparent
@@ -369,25 +119,13 @@ Partial Class Dashboard1
         '
         Me.PictureBox13.BackColor = System.Drawing.Color.Transparent
         Me.PictureBox13.Image = CType(resources.GetObject("PictureBox13.Image"), System.Drawing.Image)
-        Me.PictureBox13.Location = New System.Drawing.Point(852, 63)
+        Me.PictureBox13.Location = New System.Drawing.Point(663, 15)
         Me.PictureBox13.Margin = New System.Windows.Forms.Padding(2)
         Me.PictureBox13.Name = "PictureBox13"
         Me.PictureBox13.Size = New System.Drawing.Size(31, 28)
         Me.PictureBox13.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
         Me.PictureBox13.TabIndex = 38
         Me.PictureBox13.TabStop = False
-        '
-        'Panel2
-        '
-        Me.Panel2.BackColor = System.Drawing.Color.ForestGreen
-        Me.Panel2.Controls.Add(Me.Label19)
-        Me.Panel2.Controls.Add(Me.PictureBox7)
-        Me.Panel2.Controls.Add(Me.Label1)
-        Me.Panel2.Location = New System.Drawing.Point(-6, 0)
-        Me.Panel2.Margin = New System.Windows.Forms.Padding(2)
-        Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(904, 57)
-        Me.Panel2.TabIndex = 31
         '
         'Label8
         '
@@ -420,7 +158,7 @@ Partial Class Dashboard1
         Me.Panel3.Controls.Add(Me.Label5)
         Me.Panel3.Controls.Add(Me.Label4)
         Me.Panel3.Controls.Add(Me.PictureBox8)
-        Me.Panel3.Location = New System.Drawing.Point(200, 105)
+        Me.Panel3.Location = New System.Drawing.Point(11, 57)
         Me.Panel3.Margin = New System.Windows.Forms.Padding(2)
         Me.Panel3.Name = "Panel3"
         Me.Panel3.Size = New System.Drawing.Size(220, 142)
@@ -445,7 +183,7 @@ Partial Class Dashboard1
         Me.Panel5.Controls.Add(Me.Label11)
         Me.Panel5.Controls.Add(Me.Label10)
         Me.Panel5.Controls.Add(Me.PictureBox10)
-        Me.Panel5.Location = New System.Drawing.Point(663, 105)
+        Me.Panel5.Location = New System.Drawing.Point(474, 57)
         Me.Panel5.Margin = New System.Windows.Forms.Padding(2)
         Me.Panel5.Name = "Panel5"
         Me.Panel5.Size = New System.Drawing.Size(220, 142)
@@ -506,7 +244,7 @@ Partial Class Dashboard1
         Me.Panel6.Controls.Add(Me.Label14)
         Me.Panel6.Controls.Add(Me.Label13)
         Me.Panel6.Controls.Add(Me.PictureBox11)
-        Me.Panel6.Location = New System.Drawing.Point(663, 262)
+        Me.Panel6.Location = New System.Drawing.Point(474, 214)
         Me.Panel6.Margin = New System.Windows.Forms.Padding(2)
         Me.Panel6.Name = "Panel6"
         Me.Panel6.Size = New System.Drawing.Size(220, 142)
@@ -579,7 +317,7 @@ Partial Class Dashboard1
         Me.Panel7.Controls.Add(Me.Label17)
         Me.Panel7.Controls.Add(Me.Label16)
         Me.Panel7.Controls.Add(Me.PictureBox12)
-        Me.Panel7.Location = New System.Drawing.Point(663, 409)
+        Me.Panel7.Location = New System.Drawing.Point(474, 361)
         Me.Panel7.Margin = New System.Windows.Forms.Padding(2)
         Me.Panel7.Name = "Panel7"
         Me.Panel7.Size = New System.Drawing.Size(220, 122)
@@ -633,38 +371,13 @@ Partial Class Dashboard1
         Me.PictureBox12.TabIndex = 16
         Me.PictureBox12.TabStop = False
         '
-        'Panel1
-        '
-        Me.Panel1.BackColor = System.Drawing.Color.Silver
-        Me.Panel1.Controls.Add(Me.picDeduction)
-        Me.Panel1.Controls.Add(Me.btnDeduction)
-        Me.Panel1.Controls.Add(Me.picRegister)
-        Me.Panel1.Controls.Add(Me.btnRegister)
-        Me.Panel1.Controls.Add(Me.lbl_welcome)
-        Me.Panel1.Controls.Add(Me.btnLogout)
-        Me.Panel1.Controls.Add(Me.picDashboard)
-        Me.Panel1.Controls.Add(Me.picReport)
-        Me.Panel1.Controls.Add(Me.picAttendance)
-        Me.Panel1.Controls.Add(Me.picPayroll)
-        Me.Panel1.Controls.Add(Me.picEmployee)
-        Me.Panel1.Controls.Add(Me.btnDashboard)
-        Me.Panel1.Controls.Add(Me.btnAttendance)
-        Me.Panel1.Controls.Add(Me.btnReport)
-        Me.Panel1.Controls.Add(Me.btnPayroll)
-        Me.Panel1.Controls.Add(Me.btnEmployee)
-        Me.Panel1.Dock = System.Windows.Forms.DockStyle.Left
-        Me.Panel1.Location = New System.Drawing.Point(0, 0)
-        Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(195, 535)
-        Me.Panel1.TabIndex = 30
-        '
         'Label2
         '
         Me.Label2.AutoSize = True
         Me.Label2.BackColor = System.Drawing.Color.Transparent
         Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 13.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.ForeColor = System.Drawing.Color.Black
-        Me.Label2.Location = New System.Drawing.Point(201, 67)
+        Me.Label2.Location = New System.Drawing.Point(12, 19)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(102, 24)
         Me.Label2.TabIndex = 37
@@ -677,7 +390,7 @@ Partial Class Dashboard1
         Me.Panel4.Controls.Add(Me.Label8)
         Me.Panel4.Controls.Add(Me.Label7)
         Me.Panel4.Controls.Add(Me.PictureBox9)
-        Me.Panel4.Location = New System.Drawing.Point(432, 105)
+        Me.Panel4.Location = New System.Drawing.Point(243, 57)
         Me.Panel4.Margin = New System.Windows.Forms.Padding(2)
         Me.Panel4.Name = "Panel4"
         Me.Panel4.Size = New System.Drawing.Size(220, 142)
@@ -694,7 +407,7 @@ Partial Class Dashboard1
         Me.CrystalReportViewer1.EnableDrillDown = False
         Me.CrystalReportViewer1.EnableRefresh = False
         Me.CrystalReportViewer1.EnableToolTips = False
-        Me.CrystalReportViewer1.Location = New System.Drawing.Point(201, 252)
+        Me.CrystalReportViewer1.Location = New System.Drawing.Point(12, 204)
         Me.CrystalReportViewer1.Name = "CrystalReportViewer1"
         Me.CrystalReportViewer1.ShowCloseButton = False
         Me.CrystalReportViewer1.ShowCopyButton = False
@@ -720,7 +433,7 @@ Partial Class Dashboard1
         Me.textbox_login.BackColor = System.Drawing.SystemColors.Control
         Me.textbox_login.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.textbox_login.Cursor = System.Windows.Forms.Cursors.Default
-        Me.textbox_login.Location = New System.Drawing.Point(614, 74)
+        Me.textbox_login.Location = New System.Drawing.Point(425, 26)
         Me.textbox_login.Name = "textbox_login"
         Me.textbox_login.ReadOnly = True
         Me.textbox_login.Size = New System.Drawing.Size(225, 13)
@@ -731,34 +444,22 @@ Partial Class Dashboard1
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(897, 535)
+        Me.ClientSize = New System.Drawing.Size(711, 498)
         Me.Controls.Add(Me.textbox_login)
         Me.Controls.Add(Me.CrystalReportViewer1)
         Me.Controls.Add(Me.PictureBox13)
-        Me.Controls.Add(Me.Panel2)
         Me.Controls.Add(Me.Panel3)
         Me.Controls.Add(Me.Panel5)
         Me.Controls.Add(Me.Panel6)
         Me.Controls.Add(Me.Panel7)
-        Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Panel4)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "Dashboard1"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Dashboard1"
-        CType(Me.PictureBox7, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.picDeduction, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.picRegister, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.picDashboard, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.picReport, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.picPayroll, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.picEmployee, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.picAttendance, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox8, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox13, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.Panel2.ResumeLayout(False)
-        Me.Panel2.PerformLayout()
         Me.Panel3.ResumeLayout(False)
         Me.Panel3.PerformLayout()
         CType(Me.PictureBox9, System.ComponentModel.ISupportInitialize).EndInit()
@@ -771,8 +472,6 @@ Partial Class Dashboard1
         Me.Panel7.ResumeLayout(False)
         Me.Panel7.PerformLayout()
         CType(Me.PictureBox12, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.Panel1.ResumeLayout(False)
-        Me.Panel1.PerformLayout()
         Me.Panel4.ResumeLayout(False)
         Me.Panel4.PerformLayout()
         Me.ResumeLayout(False)
@@ -781,30 +480,10 @@ Partial Class Dashboard1
     End Sub
 
     Friend WithEvents Label4 As Label
-    Friend WithEvents PictureBox7 As PictureBox
-    Friend WithEvents Label1 As Label
-    Friend WithEvents picDeduction As PictureBox
-    Friend WithEvents btnDeduction As Button
-    Friend WithEvents picRegister As PictureBox
-    Friend WithEvents btnRegister As Button
-    Friend WithEvents lbl_welcome As Label
-    Friend WithEvents btnLogout As Button
-    Friend WithEvents picDashboard As PictureBox
-    Friend WithEvents Label19 As Label
-    Friend WithEvents picReport As PictureBox
-    Friend WithEvents picPayroll As PictureBox
-    Friend WithEvents picEmployee As PictureBox
-    Friend WithEvents btnDashboard As Button
-    Friend WithEvents btnAttendance As Button
-    Friend WithEvents btnReport As Button
-    Friend WithEvents btnPayroll As Button
-    Friend WithEvents btnEmployee As Button
     Friend WithEvents Label6 As Label
     Friend WithEvents Label5 As Label
-    Friend WithEvents picAttendance As PictureBox
     Friend WithEvents PictureBox8 As PictureBox
     Friend WithEvents PictureBox13 As PictureBox
-    Friend WithEvents Panel2 As Panel
     Friend WithEvents Label8 As Label
     Friend WithEvents Label7 As Label
     Friend WithEvents Panel3 As Panel
@@ -825,7 +504,6 @@ Partial Class Dashboard1
     Friend WithEvents Label17 As Label
     Friend WithEvents Label16 As Label
     Friend WithEvents PictureBox12 As PictureBox
-    Friend WithEvents Panel1 As Panel
     Friend WithEvents Label2 As Label
     Friend WithEvents Panel4 As Panel
     Friend WithEvents CrystalReportViewer1 As CrystalDecisions.Windows.Forms.CrystalReportViewer

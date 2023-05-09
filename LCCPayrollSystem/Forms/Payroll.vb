@@ -4,7 +4,7 @@ Imports System.Data.SqlClient
 Public Class Payroll
     Dim conn As SqlConnection = New SqlConnection(connection)
     Dim result As Integer
-    Private Sub Label2_Click(sender As Object, e As EventArgs) Handles Label2.Click
+    Private Sub Label2_Click(sender As Object, e As EventArgs)
         Me.Hide()
         'Dashboard.Show()
     End Sub
@@ -17,6 +17,10 @@ Public Class Payroll
         'TODO: This line of code loads data into the 'PayrolldbDataSet.vw_payroll_tbl' table. You can move, or remove it, as needed.
         Me.Vw_payroll_tblTableAdapter.Fill(Me.PayrolldbDataSet.vw_payroll_tbl)
         clearentry()
+
+        Period_fromDateTimePicker.Value = DateTime.Now.Month.ToString().Trim() + "/01/" + DateTime.Now.Year().ToString().Trim()
+        Period_toDateTimePicker.Value = DateTime.Parse(Period_fromDateTimePicker.Value).AddMonths(1).AddDays(-1)
+
         Dim query As String = "select distinct payroll_no from payroll_tbl"
         ComboboxQuery(query, Payroll_noComboBox, "payroll_no", "payroll_no")
 
@@ -233,8 +237,8 @@ Public Class Payroll
     'End Sub
 
     Private Sub clearentry()
-        Period_fromDateTimePicker.Value = DateTime.Now.Month.ToString().Trim() + "/01/" + DateTime.Now.Year().ToString().Trim()
-        Period_toDateTimePicker.Value = DateTime.Parse(Period_fromDateTimePicker.Value).AddMonths(1).AddDays(-1)
+        'Period_fromDateTimePicker.Value = DateTime.Now.Month.ToString().Trim() + "/01/" + DateTime.Now.Year().ToString().Trim()
+        'Period_toDateTimePicker.Value = DateTime.Parse(Period_fromDateTimePicker.Value).AddMonths(1).AddDays(-1)
 
         Last_nameTextBox.Text = ""
         First_nameTextBox.Text = ""

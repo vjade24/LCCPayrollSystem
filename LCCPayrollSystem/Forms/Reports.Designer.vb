@@ -24,15 +24,10 @@ Partial Class Reports
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Dim Department_assignedLabel As System.Windows.Forms.Label
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Reports))
-        Dim DataGridViewCellStyle9 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle10 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim Period_fromLabel As System.Windows.Forms.Label
         Dim Period_toLabel As System.Windows.Forms.Label
-        Me.Panel2 = New System.Windows.Forms.Panel()
-        Me.Label2 = New System.Windows.Forms.Label()
-        Me.PictureBox7 = New System.Windows.Forms.PictureBox()
-        Me.Label1 = New System.Windows.Forms.Label()
+        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.PayrolldbDataSet = New LCCPayrollSystem.payrolldbDataSet()
         Me.Vw_payroll_tblBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.Vw_payroll_tblTableAdapter = New LCCPayrollSystem.payrolldbDataSetTableAdapters.vw_payroll_tblTableAdapter()
@@ -84,8 +79,6 @@ Partial Class Reports
         Department_assignedLabel = New System.Windows.Forms.Label()
         Period_fromLabel = New System.Windows.Forms.Label()
         Period_toLabel = New System.Windows.Forms.Label()
-        Me.Panel2.SuspendLayout()
-        CType(Me.PictureBox7, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PayrolldbDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Vw_payroll_tblBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Vw_payroll_tblDataGridView, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -102,51 +95,25 @@ Partial Class Reports
         Department_assignedLabel.TabIndex = 37
         Department_assignedLabel.Text = "Department"
         '
-        'Panel2
+        'Period_fromLabel
         '
-        Me.Panel2.BackColor = System.Drawing.Color.ForestGreen
-        Me.Panel2.Controls.Add(Me.Label2)
-        Me.Panel2.Controls.Add(Me.PictureBox7)
-        Me.Panel2.Controls.Add(Me.Label1)
-        Me.Panel2.Location = New System.Drawing.Point(0, 0)
-        Me.Panel2.Margin = New System.Windows.Forms.Padding(2)
-        Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(1001, 57)
-        Me.Panel2.TabIndex = 34
+        Period_fromLabel.AutoSize = True
+        Period_fromLabel.ForeColor = System.Drawing.Color.White
+        Period_fromLabel.Location = New System.Drawing.Point(249, 91)
+        Period_fromLabel.Name = "Period_fromLabel"
+        Period_fromLabel.Size = New System.Drawing.Size(60, 13)
+        Period_fromLabel.TabIndex = 110
+        Period_fromLabel.Text = "Period from"
         '
-        'Label2
+        'Period_toLabel
         '
-        Me.Label2.AutoSize = True
-        Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.ForeColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
-        Me.Label2.Location = New System.Drawing.Point(974, 0)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(27, 31)
-        Me.Label2.TabIndex = 33
-        Me.Label2.Text = "x"
-        '
-        'PictureBox7
-        '
-        Me.PictureBox7.BackColor = System.Drawing.Color.Transparent
-        Me.PictureBox7.Image = CType(resources.GetObject("PictureBox7.Image"), System.Drawing.Image)
-        Me.PictureBox7.Location = New System.Drawing.Point(26, 11)
-        Me.PictureBox7.Margin = New System.Windows.Forms.Padding(2)
-        Me.PictureBox7.Name = "PictureBox7"
-        Me.PictureBox7.Size = New System.Drawing.Size(27, 30)
-        Me.PictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.PictureBox7.TabIndex = 12
-        Me.PictureBox7.TabStop = False
-        '
-        'Label1
-        '
-        Me.Label1.AutoSize = True
-        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 16.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.ForeColor = System.Drawing.Color.White
-        Me.Label1.Location = New System.Drawing.Point(201, 15)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(200, 26)
-        Me.Label1.TabIndex = 4
-        Me.Label1.Text = "Generate Reports"
+        Period_toLabel.AutoSize = True
+        Period_toLabel.ForeColor = System.Drawing.Color.White
+        Period_toLabel.Location = New System.Drawing.Point(402, 91)
+        Period_toLabel.Name = "Period_toLabel"
+        Period_toLabel.Size = New System.Drawing.Size(49, 13)
+        Period_toLabel.TabIndex = 111
+        Period_toLabel.Text = "Period to"
         '
         'PayrolldbDataSet
         '
@@ -170,6 +137,7 @@ Partial Class Reports
         Me.TableAdapterManager.employee_tblTableAdapter = Nothing
         Me.TableAdapterManager.payroll_deduction_tblTableAdapter = Nothing
         Me.TableAdapterManager.payroll_tblTableAdapter = Nothing
+        Me.TableAdapterManager.time_schedule_empl_tblTableAdapter = Nothing
         Me.TableAdapterManager.UpdateOrder = LCCPayrollSystem.payrolldbDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
         Me.TableAdapterManager.user_tblTableAdapter = Nothing
         '
@@ -184,7 +152,7 @@ Partial Class Reports
         Me.Vw_payroll_tblDataGridView.Location = New System.Drawing.Point(26, 136)
         Me.Vw_payroll_tblDataGridView.Name = "Vw_payroll_tblDataGridView"
         Me.Vw_payroll_tblDataGridView.ReadOnly = True
-        Me.Vw_payroll_tblDataGridView.Size = New System.Drawing.Size(943, 364)
+        Me.Vw_payroll_tblDataGridView.Size = New System.Drawing.Size(844, 364)
         Me.Vw_payroll_tblDataGridView.TabIndex = 35
         '
         'DataGridViewTextBoxColumn1
@@ -440,10 +408,10 @@ Partial Class Reports
         'DataGridViewTextBoxColumn33
         '
         Me.DataGridViewTextBoxColumn33.DataPropertyName = "gross_pay"
-        DataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
-        DataGridViewCellStyle9.Format = "N2"
-        DataGridViewCellStyle9.NullValue = Nothing
-        Me.DataGridViewTextBoxColumn33.DefaultCellStyle = DataGridViewCellStyle9
+        DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
+        DataGridViewCellStyle5.Format = "N2"
+        DataGridViewCellStyle5.NullValue = Nothing
+        Me.DataGridViewTextBoxColumn33.DefaultCellStyle = DataGridViewCellStyle5
         Me.DataGridViewTextBoxColumn33.HeaderText = "Gross pay"
         Me.DataGridViewTextBoxColumn33.Name = "DataGridViewTextBoxColumn33"
         Me.DataGridViewTextBoxColumn33.ReadOnly = True
@@ -451,10 +419,10 @@ Partial Class Reports
         'DataGridViewTextBoxColumn34
         '
         Me.DataGridViewTextBoxColumn34.DataPropertyName = "net_pay"
-        DataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
-        DataGridViewCellStyle10.Format = "N2"
-        DataGridViewCellStyle10.NullValue = Nothing
-        Me.DataGridViewTextBoxColumn34.DefaultCellStyle = DataGridViewCellStyle10
+        DataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
+        DataGridViewCellStyle6.Format = "N2"
+        DataGridViewCellStyle6.NullValue = Nothing
+        Me.DataGridViewTextBoxColumn34.DefaultCellStyle = DataGridViewCellStyle6
         Me.DataGridViewTextBoxColumn34.HeaderText = "Net pay"
         Me.DataGridViewTextBoxColumn34.Name = "DataGridViewTextBoxColumn34"
         Me.DataGridViewTextBoxColumn34.ReadOnly = True
@@ -476,7 +444,7 @@ Partial Class Reports
         '
         'Button1
         '
-        Me.Button1.Location = New System.Drawing.Point(862, 91)
+        Me.Button1.Location = New System.Drawing.Point(763, 89)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(107, 39)
         Me.Button1.TabIndex = 36
@@ -485,7 +453,7 @@ Partial Class Reports
         '
         'Button2
         '
-        Me.Button2.Location = New System.Drawing.Point(749, 91)
+        Me.Button2.Location = New System.Drawing.Point(650, 89)
         Me.Button2.Name = "Button2"
         Me.Button2.Size = New System.Drawing.Size(107, 39)
         Me.Button2.TabIndex = 37
@@ -510,16 +478,6 @@ Partial Class Reports
         '
         Me.Payroll_tblTableAdapter.ClearBeforeFill = True
         '
-        'Period_fromLabel
-        '
-        Period_fromLabel.AutoSize = True
-        Period_fromLabel.ForeColor = System.Drawing.Color.White
-        Period_fromLabel.Location = New System.Drawing.Point(249, 91)
-        Period_fromLabel.Name = "Period_fromLabel"
-        Period_fromLabel.Size = New System.Drawing.Size(60, 13)
-        Period_fromLabel.TabIndex = 110
-        Period_fromLabel.Text = "Period from"
-        '
         'Period_fromDateTimePicker
         '
         Me.Period_fromDateTimePicker.DataBindings.Add(New System.Windows.Forms.Binding("Value", Me.Payroll_tblBindingSource, "period_from", True))
@@ -528,16 +486,6 @@ Partial Class Reports
         Me.Period_fromDateTimePicker.Name = "Period_fromDateTimePicker"
         Me.Period_fromDateTimePicker.Size = New System.Drawing.Size(147, 20)
         Me.Period_fromDateTimePicker.TabIndex = 111
-        '
-        'Period_toLabel
-        '
-        Period_toLabel.AutoSize = True
-        Period_toLabel.ForeColor = System.Drawing.Color.White
-        Period_toLabel.Location = New System.Drawing.Point(402, 91)
-        Period_toLabel.Name = "Period_toLabel"
-        Period_toLabel.Size = New System.Drawing.Size(49, 13)
-        Period_toLabel.TabIndex = 111
-        Period_toLabel.Text = "Period to"
         '
         'Period_toDateTimePicker
         '
@@ -553,7 +501,7 @@ Partial Class Reports
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.ClientSize = New System.Drawing.Size(1002, 535)
+        Me.ClientSize = New System.Drawing.Size(882, 559)
         Me.Controls.Add(Period_toLabel)
         Me.Controls.Add(Me.Period_toDateTimePicker)
         Me.Controls.Add(Period_fromLabel)
@@ -563,14 +511,10 @@ Partial Class Reports
         Me.Controls.Add(Me.Button2)
         Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.Vw_payroll_tblDataGridView)
-        Me.Controls.Add(Me.Panel2)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "Reports"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Reports"
-        Me.Panel2.ResumeLayout(False)
-        Me.Panel2.PerformLayout()
-        CType(Me.PictureBox7, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PayrolldbDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.Vw_payroll_tblBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.Vw_payroll_tblDataGridView, System.ComponentModel.ISupportInitialize).EndInit()
@@ -579,11 +523,6 @@ Partial Class Reports
         Me.PerformLayout()
 
     End Sub
-
-    Friend WithEvents Panel2 As Panel
-    Friend WithEvents Label2 As Label
-    Friend WithEvents PictureBox7 As PictureBox
-    Friend WithEvents Label1 As Label
     Friend WithEvents PayrolldbDataSet As payrolldbDataSet
     Friend WithEvents Vw_payroll_tblBindingSource As BindingSource
     Friend WithEvents Vw_payroll_tblTableAdapter As payrolldbDataSetTableAdapters.vw_payroll_tblTableAdapter

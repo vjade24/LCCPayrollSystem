@@ -113,6 +113,12 @@
     <Compile Include="Forms\Attendance.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Forms\Dashboard.Designer.vb">
+      <DependentUpon>Dashboard.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Dashboard.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Forms\Dashboard1.Designer.vb">
       <DependentUpon>Dashboard1.vb</DependentUpon>
     </Compile>
@@ -123,6 +129,12 @@
       <DependentUpon>Deduction.vb</DependentUpon>
     </Compile>
     <Compile Include="Forms\Deduction.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\DTRUpload.Designer.vb">
+      <DependentUpon>DTRUpload.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\DTRUpload.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\Employee.Designer.vb">
@@ -222,11 +234,17 @@
     <EmbeddedResource Include="Forms\Attendance.resx">
       <DependentUpon>Attendance.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Dashboard.resx">
+      <DependentUpon>Dashboard.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Dashboard1.resx">
       <DependentUpon>Dashboard1.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Deduction.resx">
       <DependentUpon>Deduction.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\DTRUpload.resx">
+      <DependentUpon>DTRUpload.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Employee.resx">
       <DependentUpon>Employee.vb</DependentUpon>

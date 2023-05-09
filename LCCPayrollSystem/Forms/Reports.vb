@@ -7,7 +7,7 @@ Imports System.Data
 Imports CrystalDecisions
 Imports System.IO
 Public Class Reports
-    Private Sub Label2_Click(sender As Object, e As EventArgs) Handles Label2.Click
+    Private Sub Label2_Click(sender As Object, e As EventArgs)
         Me.Hide()
     End Sub
     Private Sub Reports_Load(sender As Object, e As EventArgs) Handles MyBase.Load

@@ -23,17 +23,7 @@ Partial Class PayrollList
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(PayrollList))
-        Me.Panel2 = New System.Windows.Forms.Panel()
-        Me.Label2 = New System.Windows.Forms.Label()
-        Me.PictureBox7 = New System.Windows.Forms.PictureBox()
-        Me.Label1 = New System.Windows.Forms.Label()
         Me.Vw_payroll_tblDataGridView = New System.Windows.Forms.DataGridView()
-        Me.Label13 = New System.Windows.Forms.Label()
-        Me.Label14 = New System.Windows.Forms.Label()
-        Me.txtbSearch = New System.Windows.Forms.TextBox()
-        Me.btn_create = New System.Windows.Forms.Button()
-        Me.Button1 = New System.Windows.Forms.Button()
         Me.IdDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.PayrollnoDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.PeriodfromDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -71,60 +61,17 @@ Partial Class PayrollList
         Me.RemarksDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Vw_payroll_tblBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.PayrolldbDataSet = New LCCPayrollSystem.payrolldbDataSet()
+        Me.Label13 = New System.Windows.Forms.Label()
+        Me.Label14 = New System.Windows.Forms.Label()
+        Me.txtbSearch = New System.Windows.Forms.TextBox()
+        Me.btn_create = New System.Windows.Forms.Button()
+        Me.Button1 = New System.Windows.Forms.Button()
         Me.Vw_payroll_tblTableAdapter = New LCCPayrollSystem.payrolldbDataSetTableAdapters.vw_payroll_tblTableAdapter()
         Me.TableAdapterManager = New LCCPayrollSystem.payrolldbDataSetTableAdapters.TableAdapterManager()
-        Me.Panel2.SuspendLayout()
-        CType(Me.PictureBox7, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Vw_payroll_tblDataGridView, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Vw_payroll_tblBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PayrolldbDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
-        '
-        'Panel2
-        '
-        Me.Panel2.BackColor = System.Drawing.Color.ForestGreen
-        Me.Panel2.Controls.Add(Me.Label2)
-        Me.Panel2.Controls.Add(Me.PictureBox7)
-        Me.Panel2.Controls.Add(Me.Label1)
-        Me.Panel2.Location = New System.Drawing.Point(0, 0)
-        Me.Panel2.Margin = New System.Windows.Forms.Padding(2)
-        Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(897, 57)
-        Me.Panel2.TabIndex = 34
-        '
-        'Label2
-        '
-        Me.Label2.AutoSize = True
-        Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.ForeColor = System.Drawing.Color.FromArgb(CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(224, Byte), Integer))
-        Me.Label2.Location = New System.Drawing.Point(870, 0)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(27, 31)
-        Me.Label2.TabIndex = 33
-        Me.Label2.Text = "x"
-        '
-        'PictureBox7
-        '
-        Me.PictureBox7.BackColor = System.Drawing.Color.Transparent
-        Me.PictureBox7.Image = CType(resources.GetObject("PictureBox7.Image"), System.Drawing.Image)
-        Me.PictureBox7.Location = New System.Drawing.Point(26, 11)
-        Me.PictureBox7.Margin = New System.Windows.Forms.Padding(2)
-        Me.PictureBox7.Name = "PictureBox7"
-        Me.PictureBox7.Size = New System.Drawing.Size(27, 30)
-        Me.PictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
-        Me.PictureBox7.TabIndex = 12
-        Me.PictureBox7.TabStop = False
-        '
-        'Label1
-        '
-        Me.Label1.AutoSize = True
-        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 16.2!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.ForeColor = System.Drawing.Color.White
-        Me.Label1.Location = New System.Drawing.Point(201, 15)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(170, 26)
-        Me.Label1.TabIndex = 4
-        Me.Label1.Text = "List of Payrolls"
         '
         'Vw_payroll_tblDataGridView
         '
@@ -140,52 +87,6 @@ Partial Class PayrollList
         Me.Vw_payroll_tblDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.Vw_payroll_tblDataGridView.Size = New System.Drawing.Size(872, 397)
         Me.Vw_payroll_tblDataGridView.TabIndex = 35
-        '
-        'Label13
-        '
-        Me.Label13.AutoSize = True
-        Me.Label13.ForeColor = System.Drawing.Color.White
-        Me.Label13.Location = New System.Drawing.Point(95, 80)
-        Me.Label13.Name = "Label13"
-        Me.Label13.Size = New System.Drawing.Size(124, 13)
-        Me.Label13.TabIndex = 38
-        Me.Label13.Text = "(First Name or Lastname)"
-        '
-        'Label14
-        '
-        Me.Label14.AutoSize = True
-        Me.Label14.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label14.ForeColor = System.Drawing.Color.White
-        Me.Label14.Location = New System.Drawing.Point(13, 75)
-        Me.Label14.Name = "Label14"
-        Me.Label14.Size = New System.Drawing.Size(76, 20)
-        Me.Label14.TabIndex = 37
-        Me.Label14.Text = "Search :"
-        '
-        'txtbSearch
-        '
-        Me.txtbSearch.Location = New System.Drawing.Point(14, 96)
-        Me.txtbSearch.Name = "txtbSearch"
-        Me.txtbSearch.Size = New System.Drawing.Size(230, 20)
-        Me.txtbSearch.TabIndex = 36
-        '
-        'btn_create
-        '
-        Me.btn_create.Location = New System.Drawing.Point(749, 80)
-        Me.btn_create.Name = "btn_create"
-        Me.btn_create.Size = New System.Drawing.Size(137, 36)
-        Me.btn_create.TabIndex = 39
-        Me.btn_create.Text = "Create Payroll"
-        Me.btn_create.UseVisualStyleBackColor = True
-        '
-        'Button1
-        '
-        Me.Button1.Location = New System.Drawing.Point(250, 80)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(77, 36)
-        Me.Button1.TabIndex = 40
-        Me.Button1.Text = "Reload"
-        Me.Button1.UseVisualStyleBackColor = True
         '
         'IdDataGridViewTextBoxColumn
         '
@@ -468,6 +369,52 @@ Partial Class PayrollList
         Me.PayrolldbDataSet.DataSetName = "payrolldbDataSet"
         Me.PayrolldbDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
         '
+        'Label13
+        '
+        Me.Label13.AutoSize = True
+        Me.Label13.ForeColor = System.Drawing.Color.White
+        Me.Label13.Location = New System.Drawing.Point(95, 80)
+        Me.Label13.Name = "Label13"
+        Me.Label13.Size = New System.Drawing.Size(124, 13)
+        Me.Label13.TabIndex = 38
+        Me.Label13.Text = "(First Name or Lastname)"
+        '
+        'Label14
+        '
+        Me.Label14.AutoSize = True
+        Me.Label14.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label14.ForeColor = System.Drawing.Color.White
+        Me.Label14.Location = New System.Drawing.Point(13, 75)
+        Me.Label14.Name = "Label14"
+        Me.Label14.Size = New System.Drawing.Size(76, 20)
+        Me.Label14.TabIndex = 37
+        Me.Label14.Text = "Search :"
+        '
+        'txtbSearch
+        '
+        Me.txtbSearch.Location = New System.Drawing.Point(14, 96)
+        Me.txtbSearch.Name = "txtbSearch"
+        Me.txtbSearch.Size = New System.Drawing.Size(230, 20)
+        Me.txtbSearch.TabIndex = 36
+        '
+        'btn_create
+        '
+        Me.btn_create.Location = New System.Drawing.Point(749, 80)
+        Me.btn_create.Name = "btn_create"
+        Me.btn_create.Size = New System.Drawing.Size(137, 36)
+        Me.btn_create.TabIndex = 39
+        Me.btn_create.Text = "Create Payroll"
+        Me.btn_create.UseVisualStyleBackColor = True
+        '
+        'Button1
+        '
+        Me.Button1.Location = New System.Drawing.Point(250, 80)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(77, 36)
+        Me.Button1.TabIndex = 40
+        Me.Button1.Text = "Reload"
+        Me.Button1.UseVisualStyleBackColor = True
+        '
         'Vw_payroll_tblTableAdapter
         '
         Me.Vw_payroll_tblTableAdapter.ClearBeforeFill = True
@@ -480,6 +427,7 @@ Partial Class PayrollList
         Me.TableAdapterManager.employee_tblTableAdapter = Nothing
         Me.TableAdapterManager.payroll_deduction_tblTableAdapter = Nothing
         Me.TableAdapterManager.payroll_tblTableAdapter = Nothing
+        Me.TableAdapterManager.time_schedule_empl_tblTableAdapter = Nothing
         Me.TableAdapterManager.UpdateOrder = LCCPayrollSystem.payrolldbDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
         Me.TableAdapterManager.user_tblTableAdapter = Nothing
         '
@@ -488,21 +436,17 @@ Partial Class PayrollList
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.ClientSize = New System.Drawing.Size(898, 535)
+        Me.ClientSize = New System.Drawing.Size(882, 559)
         Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.btn_create)
         Me.Controls.Add(Me.Label13)
         Me.Controls.Add(Me.Label14)
         Me.Controls.Add(Me.txtbSearch)
         Me.Controls.Add(Me.Vw_payroll_tblDataGridView)
-        Me.Controls.Add(Me.Panel2)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "PayrollList"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "PayrollList"
-        Me.Panel2.ResumeLayout(False)
-        Me.Panel2.PerformLayout()
-        CType(Me.PictureBox7, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.Vw_payroll_tblDataGridView, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.Vw_payroll_tblBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PayrolldbDataSet, System.ComponentModel.ISupportInitialize).EndInit()
@@ -510,11 +454,6 @@ Partial Class PayrollList
         Me.PerformLayout()
 
     End Sub
-
-    Friend WithEvents Panel2 As Panel
-    Friend WithEvents Label2 As Label
-    Friend WithEvents PictureBox7 As PictureBox
-    Friend WithEvents Label1 As Label
     Friend WithEvents PayrolldbDataSet As payrolldbDataSet
     Friend WithEvents Vw_payroll_tblBindingSource As BindingSource
     Friend WithEvents Vw_payroll_tblTableAdapter As payrolldbDataSetTableAdapters.vw_payroll_tblTableAdapter

@@ -8,35 +8,35 @@ Public Class Dashboard1
         Label16.Text = DateTime.Now.ToShortTimeString
         Label17.Text = DateTime.Now.ToLongDateString
     End Sub
-    Private Sub Button7_Click(sender As Object, e As EventArgs) Handles btnRegister.Click
+    Private Sub Button7_Click(sender As Object, e As EventArgs)
         'Me.Close()
         Register.Show()
     End Sub
-    Private Sub Button3_Click(sender As Object, e As EventArgs) Handles btnLogout.Click
+    Private Sub Button3_Click(sender As Object, e As EventArgs)
         Me.Close()
         login.Show()
     End Sub
 
-    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles btnEmployee.Click
+    Private Sub Button1_Click(sender As Object, e As EventArgs)
         'Me.Close()
         Employee.Show()
     End Sub
-    Private Sub Button8_Click(sender As Object, e As EventArgs) Handles btnDeduction.Click
+    Private Sub Button8_Click(sender As Object, e As EventArgs)
         'Me.Close()
         Deduction.Show()
     End Sub
 
-    Private Sub Button4_Click(sender As Object, e As EventArgs) Handles btnPayroll.Click
+    Private Sub Button4_Click(sender As Object, e As EventArgs)
         'Me.Close()
         Payroll.Show()
     End Sub
 
-    Private Sub Button5_Click(sender As Object, e As EventArgs) Handles btnReport.Click
+    Private Sub Button5_Click(sender As Object, e As EventArgs)
         'Me.Close()
         Reports.Show()
     End Sub
 
-    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles btnDashboard.Click
+    Private Sub Button2_Click(sender As Object, e As EventArgs)
         reload_dashboard()
     End Sub
 
@@ -104,7 +104,7 @@ Public Class Dashboard1
         Label17.Text = DateTime.Now.ToLongDateString
     End Sub
 
-    Private Sub btnAttendance_Click(sender As Object, e As EventArgs) Handles btnAttendance.Click
+    Private Sub btnAttendance_Click(sender As Object, e As EventArgs)
         Attendance.Show()
     End Sub
 End Class
