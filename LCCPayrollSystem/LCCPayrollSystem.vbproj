@@ -294,6 +294,15 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <None Include="Database\payrolldb_20230510.bak" />
+    <None Include="LCC Payroll System Docs\1_attlog.dat" />
+    <None Include="LCC Payroll System Docs\ANNEX-MARCH-11-2523.xls" />
+    <None Include="LCC Payroll System Docs\EMPLOYEES-MASTERLIST.xlsx" />
+    <None Include="LCC Payroll System Docs\LCC Employee Master List.xlsx" />
+    <None Include="LCC Payroll System Docs\Payroll.pdf" />
+    <None Include="LCC Payroll System Docs\PayrollManagementSystem.docx" />
+    <None Include="LCC Payroll System Docs\Payslip.pdf" />
+    <None Include="LCC Payroll System Docs\systemgenerate_payroll.pdf" />
     <None Include="My Project\app.manifest" />
     <None Include="My Project\Application.myapp">
       <Generator>MyApplicationCodeGenerator</Generator>
@@ -324,6 +333,12 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="LCC icon.ico" />
+    <Content Include="LCC Payroll System Docs\308048468_476550104220220_2458348750346303023_n.jpg" />
+    <Content Include="LCC Payroll System Docs\309790943_632345614935543_3944338403619020744_n.jpg" />
+    <Content Include="LCC Payroll System Docs\338799949_6041424295895353_3773677618917175368_n.jpg" />
+    <Content Include="LCC Payroll System Docs\339426671_1206949993288553_5915733424785278438_n.jpg" />
+    <Content Include="LCC Payroll System Docs\ERDPayroll.png" />
+    <Content Include="LCC Payroll System Docs\LCC logo PNG.png" />
     <None Include="Resources\LCC LOGO.png" />
     <None Include="Resources\DefaultUserImg.png" />
     <None Include="Resources\DefaultPhoto.jpg" />
@@ -335,5 +350,6 @@
       <Install>false</Install>
     </BootstrapperPackage>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>
