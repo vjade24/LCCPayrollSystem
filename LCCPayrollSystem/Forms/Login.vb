@@ -26,9 +26,9 @@ Public Class login
                     MsgBox("Welcome to LCC Payroll System!", MsgBoxStyle.Information)
                     Me.Hide()
 
-                    Dim FormDashboard1 As New Dashboard1
+                    Dim FormDashboard1 As New Dashboard
                     'FormDashboard1.lbl_welcome.Text = "Welcome, " + dt.Rows(0)("full_name").ToString()
-                    FormDashboard1.textbox_login.Text = dt.Rows(0)("full_name").ToString() + " (" + dt.Rows(0)("user_type").ToString().Trim + ")"
+                    'FormDashboard1.textbox_login.Text = dt.Rows(0)("full_name").ToString() + " (" + dt.Rows(0)("user_type").ToString().Trim + ")"
                     FormDashboard1.Show()
 
                     txtb_username.Text = ""
