@@ -743,6 +743,7 @@ Partial Class EmployeeAddUpdate
         '
         Me.TableAdapterManager.BackupDataSetBeforeUpdate = False
         Me.TableAdapterManager.deduction_list_tblTableAdapter = Nothing
+        Me.TableAdapterManager.dtr_conso_tblTableAdapter = Nothing
         Me.TableAdapterManager.employee_tblTableAdapter = Me.Employee_tblTableAdapter
         Me.TableAdapterManager.payroll_deduction_tblTableAdapter = Nothing
         Me.TableAdapterManager.payroll_tblTableAdapter = Nothing
@@ -908,7 +909,7 @@ Partial Class EmployeeAddUpdate
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(882, 559)
+        Me.ClientSize = New System.Drawing.Size(756, 525)
         Me.Controls.Add(Last_nameLabel)
         Me.Controls.Add(Me.btn_browse)
         Me.Controls.Add(Me.rate_basis_ComboBox)

@@ -126,7 +126,7 @@ Partial Class DTRUpload
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(784, 415)
+        Me.ClientSize = New System.Drawing.Size(740, 486)
         Me.Controls.Add(Me.btnLoad)
         Me.Controls.Add(Label3)
         Me.Controls.Add(Label2)

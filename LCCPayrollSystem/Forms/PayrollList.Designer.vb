@@ -424,6 +424,7 @@ Partial Class PayrollList
         Me.TableAdapterManager.BackupDataSetBeforeUpdate = False
         Me.TableAdapterManager.Connection = Nothing
         Me.TableAdapterManager.deduction_list_tblTableAdapter = Nothing
+        Me.TableAdapterManager.dtr_conso_tblTableAdapter = Nothing
         Me.TableAdapterManager.employee_tblTableAdapter = Nothing
         Me.TableAdapterManager.payroll_deduction_tblTableAdapter = Nothing
         Me.TableAdapterManager.payroll_tblTableAdapter = Nothing
@@ -436,7 +437,7 @@ Partial Class PayrollList
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.ClientSize = New System.Drawing.Size(882, 559)
+        Me.ClientSize = New System.Drawing.Size(756, 525)
         Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.btn_create)
         Me.Controls.Add(Me.Label13)

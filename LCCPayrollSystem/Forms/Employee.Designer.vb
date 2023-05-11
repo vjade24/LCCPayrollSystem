@@ -61,15 +61,15 @@ Partial Class Employee
         Me.GroupBox4.Controls.Add(Me.Label13)
         Me.GroupBox4.Controls.Add(Me.Label14)
         Me.GroupBox4.Controls.Add(Me.txtbSearch)
-        Me.GroupBox4.Location = New System.Drawing.Point(227, 72)
+        Me.GroupBox4.Location = New System.Drawing.Point(227, 12)
         Me.GroupBox4.Name = "GroupBox4"
-        Me.GroupBox4.Size = New System.Drawing.Size(658, 428)
+        Me.GroupBox4.Size = New System.Drawing.Size(517, 501)
         Me.GroupBox4.TabIndex = 36
         Me.GroupBox4.TabStop = False
         '
         'btnPrint
         '
-        Me.btnPrint.Location = New System.Drawing.Point(503, 23)
+        Me.btnPrint.Location = New System.Drawing.Point(362, 19)
         Me.btnPrint.Name = "btnPrint"
         Me.btnPrint.Size = New System.Drawing.Size(149, 35)
         Me.btnPrint.TabIndex = 15
@@ -85,7 +85,7 @@ Partial Class Employee
         Me.Employee_tblDataGridView.Name = "Employee_tblDataGridView"
         Me.Employee_tblDataGridView.ReadOnly = True
         Me.Employee_tblDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.Employee_tblDataGridView.Size = New System.Drawing.Size(642, 348)
+        Me.Employee_tblDataGridView.Size = New System.Drawing.Size(501, 434)
         Me.Employee_tblDataGridView.TabIndex = 14
         '
         'Label13
@@ -125,9 +125,9 @@ Partial Class Employee
         Me.GroupBox3.Controls.Add(Me.Label6)
         Me.GroupBox3.Controls.Add(Me.Label8)
         Me.GroupBox3.ForeColor = System.Drawing.Color.White
-        Me.GroupBox3.Location = New System.Drawing.Point(12, 294)
+        Me.GroupBox3.Location = New System.Drawing.Point(12, 234)
         Me.GroupBox3.Name = "GroupBox3"
-        Me.GroupBox3.Size = New System.Drawing.Size(209, 206)
+        Me.GroupBox3.Size = New System.Drawing.Size(209, 279)
         Me.GroupBox3.TabIndex = 35
         Me.GroupBox3.TabStop = False
         Me.GroupBox3.Text = "Employee Details"
@@ -201,7 +201,7 @@ Partial Class Employee
         'GroupBox2
         '
         Me.GroupBox2.Controls.Add(Me.BTNNEW)
-        Me.GroupBox2.Location = New System.Drawing.Point(12, 203)
+        Me.GroupBox2.Location = New System.Drawing.Point(12, 143)
         Me.GroupBox2.Name = "GroupBox2"
         Me.GroupBox2.Size = New System.Drawing.Size(209, 85)
         Me.GroupBox2.TabIndex = 34
@@ -219,7 +219,7 @@ Partial Class Employee
         'GroupBox1
         '
         Me.GroupBox1.Controls.Add(Me.Panel7)
-        Me.GroupBox1.Location = New System.Drawing.Point(12, 72)
+        Me.GroupBox1.Location = New System.Drawing.Point(12, 12)
         Me.GroupBox1.Name = "GroupBox1"
         Me.GroupBox1.Size = New System.Drawing.Size(209, 125)
         Me.GroupBox1.TabIndex = 33
@@ -282,7 +282,7 @@ Partial Class Employee
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.ClientSize = New System.Drawing.Size(882, 559)
+        Me.ClientSize = New System.Drawing.Size(756, 525)
         Me.Controls.Add(Me.GroupBox4)
         Me.Controls.Add(Me.GroupBox3)
         Me.Controls.Add(Me.GroupBox2)
