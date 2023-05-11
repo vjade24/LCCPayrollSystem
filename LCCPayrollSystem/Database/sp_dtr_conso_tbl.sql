@@ -4,7 +4,7 @@ GO
 -- Author:		<Author,,Name>
 -- Create date: <Create Date,,>
 -- Description:	<Description,,>
--- EXEC sp_dtr_conso_generation '2022','04',''
+-- EXEC sp_dtr_conso_generation '2022','05',''
 -- =============================================
 CREATE PROCEDURE sp_dtr_conso_generation
 	@p_dtr_year			VARCHAR(04)

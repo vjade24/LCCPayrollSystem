@@ -14,14 +14,19 @@ Public Class DTRUpload
             For Each line As String In lines
                 Try
                     Dim segments = line.Split(New String() {Microsoft.VisualBasic.vbTab}, StringSplitOptions.RemoveEmptyEntries)
-                    If DateTime.Parse(segments(1).ToString().Trim()).Year = Int32.Parse(ComboBoxYear.Text) And DateTime.Parse(segments(1).ToString().Trim()).Month = DateTime.ParseExact(ComboBoxMonth.Text, "MMMM", CultureInfo.CurrentCulture).Month Then
-                        Dim conn As SqlConnection = New SqlConnection(connection)
-                        Dim insert_query As String = "insert into dtr_upload_tbl values ( '" + segments(0).ToString().Trim + "','" + segments(1).ToString().Trim() + "','" + segments(2).ToString().Trim() + "','" + segments(3).ToString().Trim() + "','" + segments(4).ToString().Trim() + "','" + segments(5).ToString().Trim() + "','" + p_generated_by + "','" + DateTime.Now + "','" + TextBox1.Text.ToString().Trim() + "')"
-                        Dim cmd1 As SqlCommand = New SqlCommand(insert_query, conn)
-                        conn.Open()
-                        cmd1.ExecuteNonQuery()
-                        conn.Close()
+                    If segments.Length = 6 Then
+                        If DateTime.Parse(segments(1).ToString().Trim()).Year = Int32.Parse(ComboBoxYear.Text) And DateTime.Parse(segments(1).ToString().Trim()).Month = DateTime.ParseExact(ComboBoxMonth.Text, "MMMM", CultureInfo.CurrentCulture).Month Then
+                            Dim conn As SqlConnection = New SqlConnection(connection)
+                            Dim insert_query As String = "insert into dtr_upload_tbl values ( '" + segments(0).ToString().Trim + "','" + segments(1).ToString().Trim() + "','" + segments(2).ToString().Trim() + "','" + segments(3).ToString().Trim() + "','" + segments(4).ToString().Trim() + "','" + segments(5).ToString().Trim() + "','" + p_generated_by + "','" + DateTime.Now + "','" + TextBox1.Text.ToString().Trim() + "')"
+                            Dim cmd1 As SqlCommand = New SqlCommand(insert_query, conn)
+                            conn.Open()
+                            cmd1.ExecuteNonQuery()
+                            conn.Close()
+                        End If
+                    Else
+                        MessageBox.Show("This file is not valid for uploading!")
                     End If
+
                 Catch ex As Exception
                     MessageBox.Show(ex.Message.ToString())
                     Me.Close()
@@ -78,4 +83,5 @@ Public Class DTRUpload
     Private Sub btnLoad_Click(sender As Object, e As EventArgs) Handles btnLoad.Click
         RefreshData()
     End Sub
+
 End Class

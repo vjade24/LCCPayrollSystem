@@ -47,7 +47,7 @@ Partial Class Dashboard
         '
         'Panel1
         '
-        Me.Panel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(37, Byte), Integer), CType(CType(36, Byte), Integer), CType(CType(81, Byte), Integer))
+        Me.Panel1.BackColor = System.Drawing.Color.ForestGreen
         Me.Panel1.Controls.Add(Me.btnRegister)
         Me.Panel1.Controls.Add(Me.btnDeduction)
         Me.Panel1.Controls.Add(Me.PanelMenu)
@@ -95,7 +95,7 @@ Partial Class Dashboard
         '
         'PanelMenu
         '
-        Me.PanelMenu.BackColor = System.Drawing.Color.FromArgb(CType(CType(37, Byte), Integer), CType(CType(36, Byte), Integer), CType(CType(81, Byte), Integer))
+        Me.PanelMenu.BackColor = System.Drawing.Color.ForestGreen
         Me.PanelMenu.Controls.Add(Me.Label1)
         Me.PanelMenu.Controls.Add(Me.PictureBox1)
         Me.PanelMenu.Dock = System.Windows.Forms.DockStyle.Top
@@ -232,7 +232,7 @@ Partial Class Dashboard
         '
         'Panel2
         '
-        Me.Panel2.BackColor = System.Drawing.Color.FromArgb(CType(CType(37, Byte), Integer), CType(CType(36, Byte), Integer), CType(CType(81, Byte), Integer))
+        Me.Panel2.BackColor = System.Drawing.Color.ForestGreen
         Me.Panel2.Controls.Add(Me.btnMinimize)
         Me.Panel2.Controls.Add(Me.btnExit)
         Me.Panel2.Dock = System.Windows.Forms.DockStyle.Top

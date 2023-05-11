@@ -5,7 +5,6 @@ Imports System.Globalization
 Public Class Attendance
     Private Sub Attendance_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
-
         Dim query As String = "select id,concat(last_name,',', first_name,' ', middle_name) as full_name from employee_tbl"
         ComboboxQuery(query, Employee_nameComboBox, "id", "full_name")
 
@@ -100,6 +99,7 @@ Public Class Attendance
 
     Private Sub btnSearch_Click(sender As Object, e As EventArgs) Handles btnSearch.Click
         TimeScked()
+        'DTRConso()
     End Sub
 
     Private Sub TimeScked()
@@ -158,4 +158,12 @@ Public Class Attendance
             TimeScked()
         End If
     End Sub
+
+    'Private Sub DTRConso()
+    '    Dim monthName = ComboBoxMonth.Text.ToString().Trim()
+    '    Dim monthNumber = DateTime.ParseExact(monthName, "MMMM", CultureInfo.CurrentCulture).Month
+
+    '    Dim query As String = "select * from dtr_conso_tbl where employee_id = '" + Employee_nameComboBox.SelectedValue.ToString().Trim + "' and year(dtr_date) = " + ComboBoxYear.Text.ToString().Trim() + " and month(dtr_date) = " + monthNumber.ToString().Trim() + ""
+    '    CommonQuery(query, Dtr_conso_tblDataGridView)
+    'End Sub
 End Class

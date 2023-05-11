@@ -31,10 +31,10 @@ Partial Class Attendance
         Dim Tse_out_pmLabel As System.Windows.Forms.Label
         Dim Label1 As System.Windows.Forms.Label
         Dim Label2 As System.Windows.Forms.Label
-        Dim DataGridViewCellStyle9 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle10 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle11 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle12 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.TabControl1 = New System.Windows.Forms.TabControl()
         Me.TabPage1 = New System.Windows.Forms.TabPage()
         Me.btnRemoveEntry = New System.Windows.Forms.Button()
@@ -61,7 +61,7 @@ Partial Class Attendance
         Me.Tse_in_amDateTimePicker = New System.Windows.Forms.DateTimePicker()
         Me.btnSaveSked = New System.Windows.Forms.Button()
         Me.Tse_dateDateTimePicker = New System.Windows.Forms.DateTimePicker()
-        Me.TabPage2 = New System.Windows.Forms.TabPage()
+        Me.Dtr_conso_tblBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.TabPage3 = New System.Windows.Forms.TabPage()
         Me.Employee_nameComboBox = New System.Windows.Forms.ComboBox()
         Me.ComboBoxYear = New System.Windows.Forms.ComboBox()
@@ -69,6 +69,7 @@ Partial Class Attendance
         Me.btnSearch = New System.Windows.Forms.Button()
         Me.Vw_time_schedule_empl_tblTableAdapter = New LCCPayrollSystem.payrolldbDataSetTableAdapters.vw_time_schedule_empl_tblTableAdapter()
         Me.TableAdapterManager = New LCCPayrollSystem.payrolldbDataSetTableAdapters.TableAdapterManager()
+        Me.Dtr_conso_tblTableAdapter = New LCCPayrollSystem.payrolldbDataSetTableAdapters.dtr_conso_tblTableAdapter()
         Employee_nameLabel = New System.Windows.Forms.Label()
         Tse_dateLabel = New System.Windows.Forms.Label()
         Tse_in_amLabel = New System.Windows.Forms.Label()
@@ -82,12 +83,13 @@ Partial Class Attendance
         CType(Me.Vw_time_schedule_empl_tblDataGridView, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Vw_time_schedule_empl_tblBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PayrolldbDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.Dtr_conso_tblBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Employee_nameLabel
         '
         Employee_nameLabel.AutoSize = True
-        Employee_nameLabel.Location = New System.Drawing.Point(68, 25)
+        Employee_nameLabel.Location = New System.Drawing.Point(12, 25)
         Employee_nameLabel.Name = "Employee_nameLabel"
         Employee_nameLabel.Size = New System.Drawing.Size(84, 13)
         Employee_nameLabel.TabIndex = 6
@@ -141,7 +143,7 @@ Partial Class Attendance
         'Label1
         '
         Label1.AutoSize = True
-        Label1.Location = New System.Drawing.Point(365, 25)
+        Label1.Location = New System.Drawing.Point(309, 25)
         Label1.Name = "Label1"
         Label1.Size = New System.Drawing.Size(29, 13)
         Label1.TabIndex = 9
@@ -150,7 +152,7 @@ Partial Class Attendance
         'Label2
         '
         Label2.AutoSize = True
-        Label2.Location = New System.Drawing.Point(492, 25)
+        Label2.Location = New System.Drawing.Point(436, 25)
         Label2.Name = "Label2"
         Label2.Size = New System.Drawing.Size(37, 13)
         Label2.TabIndex = 11
@@ -159,12 +161,11 @@ Partial Class Attendance
         'TabControl1
         '
         Me.TabControl1.Controls.Add(Me.TabPage1)
-        Me.TabControl1.Controls.Add(Me.TabPage2)
         Me.TabControl1.Controls.Add(Me.TabPage3)
         Me.TabControl1.Location = New System.Drawing.Point(12, 75)
         Me.TabControl1.Name = "TabControl1"
         Me.TabControl1.SelectedIndex = 0
-        Me.TabControl1.Size = New System.Drawing.Size(750, 411)
+        Me.TabControl1.Size = New System.Drawing.Size(858, 472)
         Me.TabControl1.TabIndex = 0
         '
         'TabPage1
@@ -187,7 +188,7 @@ Partial Class Attendance
         Me.TabPage1.Location = New System.Drawing.Point(4, 22)
         Me.TabPage1.Name = "TabPage1"
         Me.TabPage1.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage1.Size = New System.Drawing.Size(742, 385)
+        Me.TabPage1.Size = New System.Drawing.Size(850, 446)
         Me.TabPage1.TabIndex = 0
         Me.TabPage1.Text = "Employee Schedule"
         Me.TabPage1.UseVisualStyleBackColor = True
@@ -289,9 +290,9 @@ Partial Class Attendance
         'DataGridViewTextBoxColumn10
         '
         Me.DataGridViewTextBoxColumn10.DataPropertyName = "converted_tse_in_am"
-        DataGridViewCellStyle9.Format = "t"
-        DataGridViewCellStyle9.NullValue = "----"
-        Me.DataGridViewTextBoxColumn10.DefaultCellStyle = DataGridViewCellStyle9
+        DataGridViewCellStyle1.Format = "t"
+        DataGridViewCellStyle1.NullValue = "----"
+        Me.DataGridViewTextBoxColumn10.DefaultCellStyle = DataGridViewCellStyle1
         Me.DataGridViewTextBoxColumn10.HeaderText = "converted_tse_in_am"
         Me.DataGridViewTextBoxColumn10.Name = "DataGridViewTextBoxColumn10"
         Me.DataGridViewTextBoxColumn10.ReadOnly = True
@@ -299,9 +300,9 @@ Partial Class Attendance
         'DataGridViewTextBoxColumn11
         '
         Me.DataGridViewTextBoxColumn11.DataPropertyName = "converted_tse_out_am"
-        DataGridViewCellStyle10.Format = "t"
-        DataGridViewCellStyle10.NullValue = "----"
-        Me.DataGridViewTextBoxColumn11.DefaultCellStyle = DataGridViewCellStyle10
+        DataGridViewCellStyle2.Format = "t"
+        DataGridViewCellStyle2.NullValue = "----"
+        Me.DataGridViewTextBoxColumn11.DefaultCellStyle = DataGridViewCellStyle2
         Me.DataGridViewTextBoxColumn11.HeaderText = "converted_tse_out_am"
         Me.DataGridViewTextBoxColumn11.Name = "DataGridViewTextBoxColumn11"
         Me.DataGridViewTextBoxColumn11.ReadOnly = True
@@ -309,9 +310,9 @@ Partial Class Attendance
         'DataGridViewTextBoxColumn12
         '
         Me.DataGridViewTextBoxColumn12.DataPropertyName = "converted_tse_in_pm"
-        DataGridViewCellStyle11.Format = "t"
-        DataGridViewCellStyle11.NullValue = "----"
-        Me.DataGridViewTextBoxColumn12.DefaultCellStyle = DataGridViewCellStyle11
+        DataGridViewCellStyle3.Format = "t"
+        DataGridViewCellStyle3.NullValue = "----"
+        Me.DataGridViewTextBoxColumn12.DefaultCellStyle = DataGridViewCellStyle3
         Me.DataGridViewTextBoxColumn12.HeaderText = "converted_tse_in_pm"
         Me.DataGridViewTextBoxColumn12.Name = "DataGridViewTextBoxColumn12"
         Me.DataGridViewTextBoxColumn12.ReadOnly = True
@@ -319,9 +320,9 @@ Partial Class Attendance
         'DataGridViewTextBoxColumn13
         '
         Me.DataGridViewTextBoxColumn13.DataPropertyName = "converted_tse_out_pm"
-        DataGridViewCellStyle12.Format = "t"
-        DataGridViewCellStyle12.NullValue = "----"
-        Me.DataGridViewTextBoxColumn13.DefaultCellStyle = DataGridViewCellStyle12
+        DataGridViewCellStyle4.Format = "t"
+        DataGridViewCellStyle4.NullValue = "----"
+        Me.DataGridViewTextBoxColumn13.DefaultCellStyle = DataGridViewCellStyle4
         Me.DataGridViewTextBoxColumn13.HeaderText = "converted_tse_out_pm"
         Me.DataGridViewTextBoxColumn13.Name = "DataGridViewTextBoxColumn13"
         Me.DataGridViewTextBoxColumn13.ReadOnly = True
@@ -403,22 +404,17 @@ Partial Class Attendance
         Me.Tse_dateDateTimePicker.Size = New System.Drawing.Size(248, 20)
         Me.Tse_dateDateTimePicker.TabIndex = 2
         '
-        'TabPage2
+        'Dtr_conso_tblBindingSource
         '
-        Me.TabPage2.Location = New System.Drawing.Point(4, 22)
-        Me.TabPage2.Name = "TabPage2"
-        Me.TabPage2.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage2.Size = New System.Drawing.Size(768, 423)
-        Me.TabPage2.TabIndex = 1
-        Me.TabPage2.Text = "Attendance"
-        Me.TabPage2.UseVisualStyleBackColor = True
+        Me.Dtr_conso_tblBindingSource.DataMember = "dtr_conso_tbl"
+        Me.Dtr_conso_tblBindingSource.DataSource = Me.PayrolldbDataSet
         '
         'TabPage3
         '
         Me.TabPage3.Location = New System.Drawing.Point(4, 22)
         Me.TabPage3.Name = "TabPage3"
         Me.TabPage3.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage3.Size = New System.Drawing.Size(768, 423)
+        Me.TabPage3.Size = New System.Drawing.Size(850, 446)
         Me.TabPage3.TabIndex = 2
         Me.TabPage3.Text = "Daily time Record"
         Me.TabPage3.UseVisualStyleBackColor = True
@@ -426,7 +422,7 @@ Partial Class Attendance
         'Employee_nameComboBox
         '
         Me.Employee_nameComboBox.FormattingEnabled = True
-        Me.Employee_nameComboBox.Location = New System.Drawing.Point(71, 41)
+        Me.Employee_nameComboBox.Location = New System.Drawing.Point(15, 41)
         Me.Employee_nameComboBox.Name = "Employee_nameComboBox"
         Me.Employee_nameComboBox.Size = New System.Drawing.Size(290, 21)
         Me.Employee_nameComboBox.TabIndex = 7
@@ -435,7 +431,7 @@ Partial Class Attendance
         '
         Me.ComboBoxYear.FormattingEnabled = True
         Me.ComboBoxYear.Items.AddRange(New Object() {"2020", "2021", "2022", "2023", "2024", "2025"})
-        Me.ComboBoxYear.Location = New System.Drawing.Point(367, 41)
+        Me.ComboBoxYear.Location = New System.Drawing.Point(311, 41)
         Me.ComboBoxYear.Name = "ComboBoxYear"
         Me.ComboBoxYear.Size = New System.Drawing.Size(121, 21)
         Me.ComboBoxYear.TabIndex = 8
@@ -444,14 +440,14 @@ Partial Class Attendance
         '
         Me.ComboBoxMonth.FormattingEnabled = True
         Me.ComboBoxMonth.Items.AddRange(New Object() {"January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"})
-        Me.ComboBoxMonth.Location = New System.Drawing.Point(494, 41)
+        Me.ComboBoxMonth.Location = New System.Drawing.Point(438, 41)
         Me.ComboBoxMonth.Name = "ComboBoxMonth"
         Me.ComboBoxMonth.Size = New System.Drawing.Size(121, 21)
         Me.ComboBoxMonth.TabIndex = 10
         '
         'btnSearch
         '
-        Me.btnSearch.Location = New System.Drawing.Point(621, 32)
+        Me.btnSearch.Location = New System.Drawing.Point(565, 32)
         Me.btnSearch.Name = "btnSearch"
         Me.btnSearch.Size = New System.Drawing.Size(75, 37)
         Me.btnSearch.TabIndex = 12
@@ -467,12 +463,17 @@ Partial Class Attendance
         Me.TableAdapterManager.BackupDataSetBeforeUpdate = False
         Me.TableAdapterManager.Connection = Nothing
         Me.TableAdapterManager.deduction_list_tblTableAdapter = Nothing
+        Me.TableAdapterManager.dtr_conso_tblTableAdapter = Nothing
         Me.TableAdapterManager.employee_tblTableAdapter = Nothing
         Me.TableAdapterManager.payroll_deduction_tblTableAdapter = Nothing
         Me.TableAdapterManager.payroll_tblTableAdapter = Nothing
         Me.TableAdapterManager.time_schedule_empl_tblTableAdapter = Nothing
         Me.TableAdapterManager.UpdateOrder = LCCPayrollSystem.payrolldbDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
         Me.TableAdapterManager.user_tblTableAdapter = Nothing
+        '
+        'Dtr_conso_tblTableAdapter
+        '
+        Me.Dtr_conso_tblTableAdapter.ClearBeforeFill = True
         '
         'Attendance
         '
@@ -497,6 +498,7 @@ Partial Class Attendance
         CType(Me.Vw_time_schedule_empl_tblDataGridView, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.Vw_time_schedule_empl_tblBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PayrolldbDataSet, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.Dtr_conso_tblBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -504,7 +506,6 @@ Partial Class Attendance
 
     Friend WithEvents TabControl1 As TabControl
     Friend WithEvents TabPage1 As TabPage
-    Friend WithEvents TabPage2 As TabPage
     Friend WithEvents Employee_nameComboBox As ComboBox
     Friend WithEvents btnSaveSked As Button
     Friend WithEvents Tse_dateDateTimePicker As DateTimePicker
@@ -536,4 +537,6 @@ Partial Class Attendance
     Friend WithEvents DataGridViewTextBoxColumn11 As DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn12 As DataGridViewTextBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn13 As DataGridViewTextBoxColumn
+    Friend WithEvents Dtr_conso_tblBindingSource As BindingSource
+    Friend WithEvents Dtr_conso_tblTableAdapter As payrolldbDataSetTableAdapters.dtr_conso_tblTableAdapter
 End Class
