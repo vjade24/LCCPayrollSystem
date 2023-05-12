@@ -133,7 +133,7 @@ Public Class EmployeeAddUpdate
         End If
     End Sub
 
-    Private Sub btndel_Click(sender As Object, e As EventArgs) Handles btndel.Click
+    Private Sub btndel_Click(sender As Object, e As EventArgs)
         Dim result As DialogResult = MessageBox.Show("Are you sure you want to Delete this Record?", "Delete Record", MessageBoxButtons.YesNoCancel)
         If result = DialogResult.Cancel Then
             MessageBox.Show("You pressed Cancel, Record will be remain")
@@ -151,7 +151,7 @@ Public Class EmployeeAddUpdate
         End If
     End Sub
 
-    Private Sub btn_save_Click(sender As Object, e As EventArgs) Handles btn_save.Click
+    Private Sub btn_save_Click(sender As Object, e As EventArgs)
         Dim ms As New MemoryStream
         PhotoPictureBox.Image.Save(ms, PhotoPictureBox.Image.RawFormat)
         Dim command1 As New SqlCommand("insert into employee_tbl values (@Id,@last_name,@first_name,@middle_name,@birth_date,@age,@gender,@address,@contact_no,@citizenship,@civil_status,@religion,@tin_no,@sss_no,@phic_no,@pag_ibig_no,@department_assigned, @date_hire,@father_name,@mother_name,@height,@weight,@employment_status,@position,@spouse_name,@user_id,@photo,@rate_basis_descr,@monthly_rate,@daily_rate,@hourly_rate,@unit_rate,@employee_status,@date_resigned)", conn)
@@ -210,7 +210,7 @@ Public Class EmployeeAddUpdate
         End Try
     End Sub
 
-    Private Sub btnedit_Click(sender As Object, e As EventArgs) Handles btnedit.Click
+    Private Sub btnedit_Click(sender As Object, e As EventArgs)
         Dim result As DialogResult = MessageBox.Show("Are you sure you want to Update this Record?", "Update Record", MessageBoxButtons.YesNoCancel)
         If result = DialogResult.Cancel Then
             MessageBox.Show("You pressed Cancel, Record will be remain")
@@ -278,7 +278,7 @@ Public Class EmployeeAddUpdate
         End If
     End Sub
 
-    Private Sub btn_cancel_Click(sender As Object, e As EventArgs) Handles btn_cancel.Click
+    Private Sub btn_cancel_Click(sender As Object, e As EventArgs)
         clearentry()
         btndel.Enabled = False
         btnedit.Enabled = False
@@ -342,4 +342,5 @@ Public Class EmployeeAddUpdate
 
         AgeNumericUpDown.Value = age.ToString()
     End Sub
+
 End Class

@@ -41,9 +41,11 @@ Public Class Employee
     End Sub
 
     Private Sub BTNNEW_Click(sender As Object, e As EventArgs) Handles BTNNEW.Click
-        Me.Hide()
-        Me.Dispose()
-        EmployeeAddUpdate.Show()
+        'Me.Hide()
+        'Me.Dispose()
+        'EmployeeAddUpdate.Show()
+        ActiveButton(sender, Color.ForestGreen)
+        OpenChildForm(New EmployeeAddUpdate)
     End Sub
 
     Private Sub btnPrint_Click(sender As Object, e As EventArgs) Handles btnPrint.Click
@@ -55,4 +57,35 @@ Public Class Employee
         Me.Hide()
 
     End Sub
+
+    Private currentBtn As Button
+    Private leftBorderBtn As Panel
+    Private currentChildForm As Form
+
+    Private Sub ActiveButton(senderBtn As Object, customColor As Color)
+        DisableButton()
+        currentBtn = CType(senderBtn, Button)
+    End Sub
+
+    Private Sub OpenChildForm(childForm As Form)
+        If currentChildForm IsNot Nothing Then
+            currentChildForm.Close()
+        End If
+        currentChildForm = childForm
+        childForm.TopLevel = False
+        childForm.FormBorderStyle = FormBorderStyle.None
+        childForm.Dock = DockStyle.Fill
+        Dashboard.PanelMain.Controls.Add(childForm)
+        Dashboard.PanelMain.Tag = childForm
+        childForm.BringToFront()
+        childForm.Show()
+        Dashboard.LblBreadCrump.Text = "Create New Employee"
+    End Sub
+
+    Private Sub DisableButton()
+        If currentBtn IsNot Nothing Then
+            currentBtn.BackColor = Color.White
+        End If
+    End Sub
+
 End Class

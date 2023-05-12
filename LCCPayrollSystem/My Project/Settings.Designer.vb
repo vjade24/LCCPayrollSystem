@@ -57,8 +57,8 @@ Namespace My
         <Global.System.Configuration.ApplicationScopedSettingAttribute(),  _
          Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.Configuration.SpecialSettingAttribute(Global.System.Configuration.SpecialSetting.ConnectionString),  _
-         Global.System.Configuration.DefaultSettingValueAttribute("Data Source=DESKTOP-AD3I7I5\SQLEXPRESS;Initial Catalog=payrolldb;User ID=sa;Passw"& _ 
-            "ord=systemadmin")>  _
+         Global.System.Configuration.DefaultSettingValueAttribute("Data Source=PICTO-702\HRIS_JADE;Initial Catalog=payrolldb;User ID=sa;Password=J@d"& _ 
+            "e123456")>  _
         Public ReadOnly Property payrolldbConnectionString() As String
             Get
                 Return CType(Me("payrolldbConnectionString"),String)

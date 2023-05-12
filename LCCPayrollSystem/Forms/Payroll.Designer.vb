@@ -59,8 +59,8 @@ Partial Class Payroll
         Dim King_coop_loanLabel As System.Windows.Forms.Label
         Dim Lbp_loanLabel As System.Windows.Forms.Label
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Payroll))
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle11 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle12 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.GroupBox5 = New System.Windows.Forms.GroupBox()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Period_toDateTimePicker = New System.Windows.Forms.DateTimePicker()
@@ -216,18 +216,18 @@ Partial Class Payroll
         'Period_toLabel
         '
         Period_toLabel.AutoSize = True
-        Period_toLabel.Location = New System.Drawing.Point(6, 122)
+        Period_toLabel.Location = New System.Drawing.Point(6, 117)
         Period_toLabel.Name = "Period_toLabel"
-        Period_toLabel.Size = New System.Drawing.Size(64, 16)
+        Period_toLabel.Size = New System.Drawing.Size(52, 14)
         Period_toLabel.TabIndex = 7
         Period_toLabel.Text = "Period to:"
         '
         'Period_fromLabel
         '
         Period_fromLabel.AutoSize = True
-        Period_fromLabel.Location = New System.Drawing.Point(4, 79)
+        Period_fromLabel.Location = New System.Drawing.Point(4, 73)
         Period_fromLabel.Name = "Period_fromLabel"
-        Period_fromLabel.Size = New System.Drawing.Size(78, 16)
+        Period_fromLabel.Size = New System.Drawing.Size(65, 14)
         Period_fromLabel.TabIndex = 5
         Period_fromLabel.Text = "Period from:"
         '
@@ -236,70 +236,70 @@ Partial Class Payroll
         Payroll_noLabel.AutoSize = True
         Payroll_noLabel.Location = New System.Drawing.Point(4, 27)
         Payroll_noLabel.Name = "Payroll_noLabel"
-        Payroll_noLabel.Size = New System.Drawing.Size(72, 16)
+        Payroll_noLabel.Size = New System.Drawing.Size(58, 14)
         Payroll_noLabel.TabIndex = 3
         Payroll_noLabel.Text = "Payroll No:"
         '
         'Department_assignedLabel
         '
         Department_assignedLabel.AutoSize = True
-        Department_assignedLabel.Location = New System.Drawing.Point(4, 164)
+        Department_assignedLabel.Location = New System.Drawing.Point(4, 161)
         Department_assignedLabel.Name = "Department_assignedLabel"
-        Department_assignedLabel.Size = New System.Drawing.Size(79, 16)
+        Department_assignedLabel.Size = New System.Drawing.Size(65, 14)
         Department_assignedLabel.TabIndex = 17
         Department_assignedLabel.Text = "Department:"
         '
         'Unit_rateLabel
         '
         Unit_rateLabel.AutoSize = True
-        Unit_rateLabel.Location = New System.Drawing.Point(99, 196)
+        Unit_rateLabel.Location = New System.Drawing.Point(87, 188)
         Unit_rateLabel.Name = "Unit_rateLabel"
-        Unit_rateLabel.Size = New System.Drawing.Size(61, 16)
+        Unit_rateLabel.Size = New System.Drawing.Size(50, 14)
         Unit_rateLabel.TabIndex = 27
         Unit_rateLabel.Text = "Unit rate:"
         '
         'Hourly_rateLabel
         '
         Hourly_rateLabel.AutoSize = True
-        Hourly_rateLabel.Location = New System.Drawing.Point(11, 195)
+        Hourly_rateLabel.Location = New System.Drawing.Point(8, 188)
         Hourly_rateLabel.Name = "Hourly_rateLabel"
-        Hourly_rateLabel.Size = New System.Drawing.Size(75, 16)
+        Hourly_rateLabel.Size = New System.Drawing.Size(63, 14)
         Hourly_rateLabel.TabIndex = 25
         Hourly_rateLabel.Text = "Hourly rate:"
         '
         'Daily_rateLabel
         '
         Daily_rateLabel.AutoSize = True
-        Daily_rateLabel.Location = New System.Drawing.Point(99, 142)
+        Daily_rateLabel.Location = New System.Drawing.Point(87, 136)
         Daily_rateLabel.Name = "Daily_rateLabel"
-        Daily_rateLabel.Size = New System.Drawing.Size(67, 16)
+        Daily_rateLabel.Size = New System.Drawing.Size(55, 14)
         Daily_rateLabel.TabIndex = 23
         Daily_rateLabel.Text = "Daily rate:"
         '
         'Monthly_rateLabel
         '
         Monthly_rateLabel.AutoSize = True
-        Monthly_rateLabel.Location = New System.Drawing.Point(11, 141)
+        Monthly_rateLabel.Location = New System.Drawing.Point(8, 136)
         Monthly_rateLabel.Name = "Monthly_rateLabel"
-        Monthly_rateLabel.Size = New System.Drawing.Size(84, 16)
+        Monthly_rateLabel.Size = New System.Drawing.Size(69, 14)
         Monthly_rateLabel.TabIndex = 21
         Monthly_rateLabel.Text = "Monthly rate:"
         '
         'Rate_basis_descrLabel
         '
         Rate_basis_descrLabel.AutoSize = True
-        Rate_basis_descrLabel.Location = New System.Drawing.Point(11, 81)
+        Rate_basis_descrLabel.Location = New System.Drawing.Point(8, 82)
         Rate_basis_descrLabel.Name = "Rate_basis_descrLabel"
-        Rate_basis_descrLabel.Size = New System.Drawing.Size(72, 16)
+        Rate_basis_descrLabel.Size = New System.Drawing.Size(59, 14)
         Rate_basis_descrLabel.TabIndex = 19
         Rate_basis_descrLabel.Text = "Rate Basis"
         '
         'Employee_idLabel
         '
         Employee_idLabel.AutoSize = True
-        Employee_idLabel.Location = New System.Drawing.Point(11, 28)
+        Employee_idLabel.Location = New System.Drawing.Point(8, 28)
         Employee_idLabel.Name = "Employee_idLabel"
-        Employee_idLabel.Size = New System.Drawing.Size(106, 16)
+        Employee_idLabel.Size = New System.Drawing.Size(85, 14)
         Employee_idLabel.TabIndex = 9
         Employee_idLabel.Text = "Employee name:"
         '
@@ -318,7 +318,7 @@ Partial Class Payroll
         RemarksLabel.AutoSize = True
         RemarksLabel.Location = New System.Drawing.Point(11, 241)
         RemarksLabel.Name = "RemarksLabel"
-        RemarksLabel.Size = New System.Drawing.Size(60, 16)
+        RemarksLabel.Size = New System.Drawing.Size(49, 14)
         RemarksLabel.TabIndex = 65
         RemarksLabel.Text = "Remarks"
         '
@@ -327,7 +327,7 @@ Partial Class Payroll
         Regular_wagesLabel.AutoSize = True
         Regular_wagesLabel.Location = New System.Drawing.Point(9, 53)
         Regular_wagesLabel.Name = "Regular_wagesLabel"
-        Regular_wagesLabel.Size = New System.Drawing.Size(53, 16)
+        Regular_wagesLabel.Size = New System.Drawing.Size(44, 14)
         Regular_wagesLabel.TabIndex = 63
         Regular_wagesLabel.Text = "Wages:"
         '
@@ -346,7 +346,7 @@ Partial Class Payroll
         Adjustments_amtLabel.AutoSize = True
         Adjustments_amtLabel.Location = New System.Drawing.Point(182, 48)
         Adjustments_amtLabel.Name = "Adjustments_amtLabel"
-        Adjustments_amtLabel.Size = New System.Drawing.Size(78, 16)
+        Adjustments_amtLabel.Size = New System.Drawing.Size(64, 14)
         Adjustments_amtLabel.TabIndex = 33
         Adjustments_amtLabel.Text = "Adjustment:"
         '
@@ -355,7 +355,7 @@ Partial Class Payroll
         Allowances_amtLabel.AutoSize = True
         Allowances_amtLabel.Location = New System.Drawing.Point(182, 22)
         Allowances_amtLabel.Name = "Allowances_amtLabel"
-        Allowances_amtLabel.Size = New System.Drawing.Size(71, 16)
+        Allowances_amtLabel.Size = New System.Drawing.Size(62, 14)
         Allowances_amtLabel.TabIndex = 31
         Allowances_amtLabel.Text = "Allowance:"
         '
@@ -364,7 +364,7 @@ Partial Class Payroll
         Overtime_amtLabel.AutoSize = True
         Overtime_amtLabel.Location = New System.Drawing.Point(9, 79)
         Overtime_amtLabel.Name = "Overtime_amtLabel"
-        Overtime_amtLabel.Size = New System.Drawing.Size(63, 16)
+        Overtime_amtLabel.Size = New System.Drawing.Size(53, 14)
         Overtime_amtLabel.TabIndex = 29
         Overtime_amtLabel.Text = "Overtime:"
         '
@@ -373,7 +373,7 @@ Partial Class Payroll
         Other_loans_amtLabel.AutoSize = True
         Other_loans_amtLabel.Location = New System.Drawing.Point(183, 183)
         Other_loans_amtLabel.Name = "Other_loans_amtLabel"
-        Other_loans_amtLabel.Size = New System.Drawing.Size(83, 16)
+        Other_loans_amtLabel.Size = New System.Drawing.Size(70, 14)
         Other_loans_amtLabel.TabIndex = 59
         Other_loans_amtLabel.Text = "Other Loans:"
         '
@@ -382,7 +382,7 @@ Partial Class Payroll
         Other_ded_amtLabel.AutoSize = True
         Other_ded_amtLabel.Location = New System.Drawing.Point(183, 154)
         Other_ded_amtLabel.Name = "Other_ded_amtLabel"
-        Other_ded_amtLabel.Size = New System.Drawing.Size(75, 16)
+        Other_ded_amtLabel.Size = New System.Drawing.Size(62, 14)
         Other_ded_amtLabel.TabIndex = 57
         Other_ded_amtLabel.Text = "Other Ded.:"
         '
@@ -391,7 +391,7 @@ Partial Class Payroll
         Wtax_amtLabel.AutoSize = True
         Wtax_amtLabel.Location = New System.Drawing.Point(183, 124)
         Wtax_amtLabel.Name = "Wtax_amtLabel"
-        Wtax_amtLabel.Size = New System.Drawing.Size(43, 16)
+        Wtax_amtLabel.Size = New System.Drawing.Size(35, 14)
         Wtax_amtLabel.TabIndex = 55
         Wtax_amtLabel.Text = "Wtax:"
         '
@@ -400,7 +400,7 @@ Partial Class Payroll
         Phic_amtLabel.AutoSize = True
         Phic_amtLabel.Location = New System.Drawing.Point(183, 94)
         Phic_amtLabel.Name = "Phic_amtLabel"
-        Phic_amtLabel.Size = New System.Drawing.Size(69, 16)
+        Phic_amtLabel.Size = New System.Drawing.Size(55, 14)
         Phic_amtLabel.TabIndex = 53
         Phic_amtLabel.Text = "Philhealth:"
         '
@@ -409,7 +409,7 @@ Partial Class Payroll
         Pag_ibig_amtLabel.AutoSize = True
         Pag_ibig_amtLabel.Location = New System.Drawing.Point(9, 183)
         Pag_ibig_amtLabel.Name = "Pag_ibig_amtLabel"
-        Pag_ibig_amtLabel.Size = New System.Drawing.Size(59, 16)
+        Pag_ibig_amtLabel.Size = New System.Drawing.Size(48, 14)
         Pag_ibig_amtLabel.TabIndex = 51
         Pag_ibig_amtLabel.Text = "Pag-ibig:"
         '
@@ -418,7 +418,7 @@ Partial Class Payroll
         Sss_loan_amtLabel.AutoSize = True
         Sss_loan_amtLabel.Location = New System.Drawing.Point(9, 154)
         Sss_loan_amtLabel.Name = "Sss_loan_amtLabel"
-        Sss_loan_amtLabel.Size = New System.Drawing.Size(67, 16)
+        Sss_loan_amtLabel.Size = New System.Drawing.Size(54, 14)
         Sss_loan_amtLabel.TabIndex = 49
         Sss_loan_amtLabel.Text = "SSS loan:"
         '
@@ -427,7 +427,7 @@ Partial Class Payroll
         Sss_med_amtLabel.AutoSize = True
         Sss_med_amtLabel.Location = New System.Drawing.Point(9, 124)
         Sss_med_amtLabel.Name = "Sss_med_amtLabel"
-        Sss_med_amtLabel.Size = New System.Drawing.Size(72, 16)
+        Sss_med_amtLabel.Size = New System.Drawing.Size(57, 14)
         Sss_med_amtLabel.TabIndex = 47
         Sss_med_amtLabel.Text = "SSS Med.:"
         '
@@ -436,7 +436,7 @@ Partial Class Payroll
         Cash_advance_amtLabel.AutoSize = True
         Cash_advance_amtLabel.Location = New System.Drawing.Point(9, 94)
         Cash_advance_amtLabel.Name = "Cash_advance_amtLabel"
-        Cash_advance_amtLabel.Size = New System.Drawing.Size(69, 16)
+        Cash_advance_amtLabel.Size = New System.Drawing.Size(59, 14)
         Cash_advance_amtLabel.TabIndex = 45
         Cash_advance_amtLabel.Text = "Cash Adv.:"
         '
@@ -445,7 +445,7 @@ Partial Class Payroll
         Lates_in_amtLabel.AutoSize = True
         Lates_in_amtLabel.Location = New System.Drawing.Point(183, 60)
         Lates_in_amtLabel.Name = "Lates_in_amtLabel"
-        Lates_in_amtLabel.Size = New System.Drawing.Size(75, 16)
+        Lates_in_amtLabel.Size = New System.Drawing.Size(61, 14)
         Lates_in_amtLabel.TabIndex = 43
         Lates_in_amtLabel.Text = "Lates Amt.:"
         '
@@ -454,7 +454,7 @@ Partial Class Payroll
         Lates_in_minLabel.AutoSize = True
         Lates_in_minLabel.Location = New System.Drawing.Point(9, 63)
         Lates_in_minLabel.Name = "Lates_in_minLabel"
-        Lates_in_minLabel.Size = New System.Drawing.Size(76, 16)
+        Lates_in_minLabel.Size = New System.Drawing.Size(61, 14)
         Lates_in_minLabel.TabIndex = 41
         Lates_in_minLabel.Text = "Last in min."
         '
@@ -463,7 +463,7 @@ Partial Class Payroll
         Absent_amtLabel.AutoSize = True
         Absent_amtLabel.Location = New System.Drawing.Point(183, 28)
         Absent_amtLabel.Name = "Absent_amtLabel"
-        Absent_amtLabel.Size = New System.Drawing.Size(84, 16)
+        Absent_amtLabel.Size = New System.Drawing.Size(69, 14)
         Absent_amtLabel.TabIndex = 39
         Absent_amtLabel.Text = "Absent Amt.:"
         '
@@ -472,7 +472,7 @@ Partial Class Payroll
         Absent_daysLabel.AutoSize = True
         Absent_daysLabel.Location = New System.Drawing.Point(9, 31)
         Absent_daysLabel.Name = "Absent_daysLabel"
-        Absent_daysLabel.Size = New System.Drawing.Size(85, 16)
+        Absent_daysLabel.Size = New System.Drawing.Size(71, 14)
         Absent_daysLabel.TabIndex = 37
         Absent_daysLabel.Text = "Days absent:"
         '
@@ -481,7 +481,7 @@ Partial Class Payroll
         Last_nameLabel.AutoSize = True
         Last_nameLabel.Location = New System.Drawing.Point(25, 50)
         Last_nameLabel.Name = "Last_nameLabel"
-        Last_nameLabel.Size = New System.Drawing.Size(69, 16)
+        Last_nameLabel.Size = New System.Drawing.Size(56, 14)
         Last_nameLabel.TabIndex = 11
         Last_nameLabel.Text = "last name:"
         Last_nameLabel.Visible = False
@@ -491,7 +491,7 @@ Partial Class Payroll
         Middle_nameLabel.AutoSize = True
         Middle_nameLabel.Location = New System.Drawing.Point(25, 102)
         Middle_nameLabel.Name = "Middle_nameLabel"
-        Middle_nameLabel.Size = New System.Drawing.Size(86, 16)
+        Middle_nameLabel.Size = New System.Drawing.Size(69, 14)
         Middle_nameLabel.TabIndex = 15
         Middle_nameLabel.Text = "middle name:"
         Middle_nameLabel.Visible = False
@@ -501,7 +501,7 @@ Partial Class Payroll
         First_nameLabel.AutoSize = True
         First_nameLabel.Location = New System.Drawing.Point(25, 76)
         First_nameLabel.Name = "First_nameLabel"
-        First_nameLabel.Size = New System.Drawing.Size(69, 16)
+        First_nameLabel.Size = New System.Drawing.Size(58, 14)
         First_nameLabel.TabIndex = 13
         First_nameLabel.Text = "first name:"
         First_nameLabel.Visible = False
@@ -511,7 +511,7 @@ Partial Class Payroll
         IdLabel.AutoSize = True
         IdLabel.Location = New System.Drawing.Point(61, 18)
         IdLabel.Name = "IdLabel"
-        IdLabel.Size = New System.Drawing.Size(22, 16)
+        IdLabel.Size = New System.Drawing.Size(18, 14)
         IdLabel.TabIndex = 1
         IdLabel.Text = "Id:"
         IdLabel.Visible = False
@@ -521,7 +521,7 @@ Partial Class Payroll
         King_coop_loanLabel.AutoSize = True
         King_coop_loanLabel.Location = New System.Drawing.Point(11, 212)
         King_coop_loanLabel.Name = "King_coop_loanLabel"
-        King_coop_loanLabel.Size = New System.Drawing.Size(72, 16)
+        King_coop_loanLabel.Size = New System.Drawing.Size(59, 14)
         King_coop_loanLabel.TabIndex = 117
         King_coop_loanLabel.Text = "King Coop:"
         '
@@ -530,7 +530,7 @@ Partial Class Payroll
         Lbp_loanLabel.AutoSize = True
         Lbp_loanLabel.Location = New System.Drawing.Point(183, 209)
         Lbp_loanLabel.Name = "Lbp_loanLabel"
-        Lbp_loanLabel.Size = New System.Drawing.Size(69, 16)
+        Lbp_loanLabel.Size = New System.Drawing.Size(56, 14)
         Lbp_loanLabel.TabIndex = 118
         Lbp_loanLabel.Text = "LBP Loan:"
         '
@@ -545,7 +545,7 @@ Partial Class Payroll
         Me.GroupBox5.Controls.Add(Me.Payroll_noComboBox)
         Me.GroupBox5.Controls.Add(Payroll_noLabel)
         Me.GroupBox5.Controls.Add(Department_assignedLabel)
-        Me.GroupBox5.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.GroupBox5.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupBox5.Location = New System.Drawing.Point(341, 12)
         Me.GroupBox5.Name = "GroupBox5"
         Me.GroupBox5.Size = New System.Drawing.Size(182, 217)
@@ -567,35 +567,35 @@ Partial Class Payroll
         'Period_toDateTimePicker
         '
         Me.Period_toDateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.Period_toDateTimePicker.Location = New System.Drawing.Point(7, 140)
+        Me.Period_toDateTimePicker.Location = New System.Drawing.Point(7, 136)
         Me.Period_toDateTimePicker.Name = "Period_toDateTimePicker"
-        Me.Period_toDateTimePicker.Size = New System.Drawing.Size(165, 22)
+        Me.Period_toDateTimePicker.Size = New System.Drawing.Size(165, 20)
         Me.Period_toDateTimePicker.TabIndex = 8
         '
         'Period_fromDateTimePicker
         '
         Me.Period_fromDateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.Period_fromDateTimePicker.Location = New System.Drawing.Point(8, 98)
+        Me.Period_fromDateTimePicker.Location = New System.Drawing.Point(8, 92)
         Me.Period_fromDateTimePicker.Name = "Period_fromDateTimePicker"
-        Me.Period_fromDateTimePicker.Size = New System.Drawing.Size(165, 22)
+        Me.Period_fromDateTimePicker.Size = New System.Drawing.Size(165, 20)
         Me.Period_fromDateTimePicker.TabIndex = 6
         '
         'department_assigned
         '
         Me.department_assigned.FormattingEnabled = True
         Me.department_assigned.Items.AddRange(New Object() {"College", "Senior High School", "Junior High School", "Elementary"})
-        Me.department_assigned.Location = New System.Drawing.Point(7, 183)
+        Me.department_assigned.Location = New System.Drawing.Point(7, 180)
         Me.department_assigned.Name = "department_assigned"
-        Me.department_assigned.Size = New System.Drawing.Size(165, 24)
+        Me.department_assigned.Size = New System.Drawing.Size(165, 22)
         Me.department_assigned.TabIndex = 109
         '
         'Payroll_noComboBox
         '
         Me.Payroll_noComboBox.Enabled = False
         Me.Payroll_noComboBox.FormattingEnabled = True
-        Me.Payroll_noComboBox.Location = New System.Drawing.Point(7, 51)
+        Me.Payroll_noComboBox.Location = New System.Drawing.Point(7, 46)
         Me.Payroll_noComboBox.Name = "Payroll_noComboBox"
-        Me.Payroll_noComboBox.Size = New System.Drawing.Size(89, 24)
+        Me.Payroll_noComboBox.Size = New System.Drawing.Size(89, 22)
         Me.Payroll_noComboBox.TabIndex = 70
         '
         'GroupBox2
@@ -614,10 +614,10 @@ Partial Class Payroll
         Me.GroupBox2.Controls.Add(Monthly_rateLabel)
         Me.GroupBox2.Controls.Add(Rate_basis_descrLabel)
         Me.GroupBox2.Controls.Add(Employee_idLabel)
-        Me.GroupBox2.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.GroupBox2.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupBox2.Location = New System.Drawing.Point(341, 235)
         Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Size = New System.Drawing.Size(182, 245)
+        Me.GroupBox2.Size = New System.Drawing.Size(182, 278)
         Me.GroupBox2.TabIndex = 118
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Employee Information"
@@ -648,16 +648,16 @@ Partial Class Payroll
         'Employee_idComboBox
         '
         Me.Employee_idComboBox.FormattingEnabled = True
-        Me.Employee_idComboBox.Location = New System.Drawing.Point(8, 50)
+        Me.Employee_idComboBox.Location = New System.Drawing.Point(8, 51)
         Me.Employee_idComboBox.Name = "Employee_idComboBox"
-        Me.Employee_idComboBox.Size = New System.Drawing.Size(164, 24)
+        Me.Employee_idComboBox.Size = New System.Drawing.Size(164, 22)
         Me.Employee_idComboBox.TabIndex = 69
         '
         'Unit_rateTextBox
         '
-        Me.Unit_rateTextBox.Location = New System.Drawing.Point(103, 217)
+        Me.Unit_rateTextBox.Location = New System.Drawing.Point(87, 211)
         Me.Unit_rateTextBox.Name = "Unit_rateTextBox"
-        Me.Unit_rateTextBox.Size = New System.Drawing.Size(69, 22)
+        Me.Unit_rateTextBox.Size = New System.Drawing.Size(69, 20)
         Me.Unit_rateTextBox.TabIndex = 28
         Me.Unit_rateTextBox.Text = "0.00"
         Me.Unit_rateTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
@@ -666,34 +666,34 @@ Partial Class Payroll
         '
         Me.rate_basis_ComboBox.FormattingEnabled = True
         Me.rate_basis_ComboBox.Items.AddRange(New Object() {"Monthly", "Daily", "Hourly", "Per Unit"})
-        Me.rate_basis_ComboBox.Location = New System.Drawing.Point(9, 103)
+        Me.rate_basis_ComboBox.Location = New System.Drawing.Point(8, 105)
         Me.rate_basis_ComboBox.Name = "rate_basis_ComboBox"
-        Me.rate_basis_ComboBox.Size = New System.Drawing.Size(106, 24)
+        Me.rate_basis_ComboBox.Size = New System.Drawing.Size(106, 22)
         Me.rate_basis_ComboBox.TabIndex = 111
         '
         'Hourly_rateTextBox
         '
-        Me.Hourly_rateTextBox.Location = New System.Drawing.Point(15, 216)
+        Me.Hourly_rateTextBox.Location = New System.Drawing.Point(8, 211)
         Me.Hourly_rateTextBox.Name = "Hourly_rateTextBox"
-        Me.Hourly_rateTextBox.Size = New System.Drawing.Size(69, 22)
+        Me.Hourly_rateTextBox.Size = New System.Drawing.Size(69, 20)
         Me.Hourly_rateTextBox.TabIndex = 26
         Me.Hourly_rateTextBox.Text = "0.00"
         Me.Hourly_rateTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
         'Daily_rateTextBox
         '
-        Me.Daily_rateTextBox.Location = New System.Drawing.Point(103, 163)
+        Me.Daily_rateTextBox.Location = New System.Drawing.Point(87, 159)
         Me.Daily_rateTextBox.Name = "Daily_rateTextBox"
-        Me.Daily_rateTextBox.Size = New System.Drawing.Size(69, 22)
+        Me.Daily_rateTextBox.Size = New System.Drawing.Size(69, 20)
         Me.Daily_rateTextBox.TabIndex = 24
         Me.Daily_rateTextBox.Text = "0.00"
         Me.Daily_rateTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
         'Monthly_rateTextBox
         '
-        Me.Monthly_rateTextBox.Location = New System.Drawing.Point(15, 162)
+        Me.Monthly_rateTextBox.Location = New System.Drawing.Point(8, 159)
         Me.Monthly_rateTextBox.Name = "Monthly_rateTextBox"
-        Me.Monthly_rateTextBox.Size = New System.Drawing.Size(69, 22)
+        Me.Monthly_rateTextBox.Size = New System.Drawing.Size(69, 20)
         Me.Monthly_rateTextBox.TabIndex = 22
         Me.Monthly_rateTextBox.Text = "0.00"
         Me.Monthly_rateTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
@@ -702,7 +702,7 @@ Partial Class Payroll
         '
         Me.btn_calculate.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(0, Byte), Integer))
         Me.btn_calculate.FlatStyle = System.Windows.Forms.FlatStyle.System
-        Me.btn_calculate.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btn_calculate.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btn_calculate.ForeColor = System.Drawing.Color.White
         Me.btn_calculate.Location = New System.Drawing.Point(273, 262)
         Me.btn_calculate.Name = "btn_calculate"
@@ -745,7 +745,7 @@ Partial Class Payroll
         Me.GroupBox4.Controls.Add(Me.Allowances_amtTextBox)
         Me.GroupBox4.Controls.Add(Allowances_amtLabel)
         Me.GroupBox4.Controls.Add(Overtime_amtLabel)
-        Me.GroupBox4.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.GroupBox4.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupBox4.Location = New System.Drawing.Point(529, 15)
         Me.GroupBox4.Name = "GroupBox4"
         Me.GroupBox4.Size = New System.Drawing.Size(370, 116)
@@ -758,7 +758,7 @@ Partial Class Payroll
         Me.Worked_daysLabel.AutoSize = True
         Me.Worked_daysLabel.Location = New System.Drawing.Point(9, 23)
         Me.Worked_daysLabel.Name = "Worked_daysLabel"
-        Me.Worked_daysLabel.Size = New System.Drawing.Size(67, 16)
+        Me.Worked_daysLabel.Size = New System.Drawing.Size(57, 14)
         Me.Worked_daysLabel.TabIndex = 64
         Me.Worked_daysLabel.Text = "Rendered:"
         '
@@ -766,7 +766,7 @@ Partial Class Payroll
         '
         Me.Worked_daysTextBox.Location = New System.Drawing.Point(88, 20)
         Me.Worked_daysTextBox.Name = "Worked_daysTextBox"
-        Me.Worked_daysTextBox.Size = New System.Drawing.Size(88, 22)
+        Me.Worked_daysTextBox.Size = New System.Drawing.Size(88, 20)
         Me.Worked_daysTextBox.TabIndex = 65
         Me.Worked_daysTextBox.Text = "0.00"
         Me.Worked_daysTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
@@ -776,7 +776,7 @@ Partial Class Payroll
         Me.Regular_wagesTextBox.Enabled = False
         Me.Regular_wagesTextBox.Location = New System.Drawing.Point(88, 50)
         Me.Regular_wagesTextBox.Name = "Regular_wagesTextBox"
-        Me.Regular_wagesTextBox.Size = New System.Drawing.Size(88, 22)
+        Me.Regular_wagesTextBox.Size = New System.Drawing.Size(88, 20)
         Me.Regular_wagesTextBox.TabIndex = 64
         Me.Regular_wagesTextBox.Text = "0.00"
         Me.Regular_wagesTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
@@ -785,7 +785,7 @@ Partial Class Payroll
         '
         Me.Overtime_amtTextBox.Location = New System.Drawing.Point(88, 80)
         Me.Overtime_amtTextBox.Name = "Overtime_amtTextBox"
-        Me.Overtime_amtTextBox.Size = New System.Drawing.Size(88, 22)
+        Me.Overtime_amtTextBox.Size = New System.Drawing.Size(88, 20)
         Me.Overtime_amtTextBox.TabIndex = 30
         Me.Overtime_amtTextBox.Text = "0.00"
         Me.Overtime_amtTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
@@ -806,7 +806,7 @@ Partial Class Payroll
         '
         Me.Adjustments_amtTextBox.Location = New System.Drawing.Point(272, 49)
         Me.Adjustments_amtTextBox.Name = "Adjustments_amtTextBox"
-        Me.Adjustments_amtTextBox.Size = New System.Drawing.Size(88, 22)
+        Me.Adjustments_amtTextBox.Size = New System.Drawing.Size(88, 20)
         Me.Adjustments_amtTextBox.TabIndex = 34
         Me.Adjustments_amtTextBox.Text = "0.00"
         Me.Adjustments_amtTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
@@ -815,7 +815,7 @@ Partial Class Payroll
         '
         Me.Allowances_amtTextBox.Location = New System.Drawing.Point(272, 20)
         Me.Allowances_amtTextBox.Name = "Allowances_amtTextBox"
-        Me.Allowances_amtTextBox.Size = New System.Drawing.Size(88, 22)
+        Me.Allowances_amtTextBox.Size = New System.Drawing.Size(88, 20)
         Me.Allowances_amtTextBox.TabIndex = 32
         Me.Allowances_amtTextBox.Text = "0.00"
         Me.Allowances_amtTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
@@ -857,10 +857,10 @@ Partial Class Payroll
         Me.GroupBox1.Controls.Add(Me.Absent_amtTextBox)
         Me.GroupBox1.Controls.Add(Absent_amtLabel)
         Me.GroupBox1.Controls.Add(Absent_daysLabel)
-        Me.GroupBox1.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.GroupBox1.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupBox1.Location = New System.Drawing.Point(528, 137)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(369, 335)
+        Me.GroupBox1.Size = New System.Drawing.Size(369, 342)
         Me.GroupBox1.TabIndex = 117
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Deductions"
@@ -869,7 +869,7 @@ Partial Class Payroll
         '
         Me.Lbp_loanTextBox.Location = New System.Drawing.Point(272, 203)
         Me.Lbp_loanTextBox.Name = "Lbp_loanTextBox"
-        Me.Lbp_loanTextBox.Size = New System.Drawing.Size(88, 22)
+        Me.Lbp_loanTextBox.Size = New System.Drawing.Size(88, 20)
         Me.Lbp_loanTextBox.TabIndex = 119
         Me.Lbp_loanTextBox.Text = "0.00"
         Me.Lbp_loanTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
@@ -879,7 +879,7 @@ Partial Class Payroll
         Me.King_coop_loanTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.Payroll_tblBindingSource, "king_coop_loan", True))
         Me.King_coop_loanTextBox.Location = New System.Drawing.Point(89, 208)
         Me.King_coop_loanTextBox.Name = "King_coop_loanTextBox"
-        Me.King_coop_loanTextBox.Size = New System.Drawing.Size(88, 22)
+        Me.King_coop_loanTextBox.Size = New System.Drawing.Size(88, 20)
         Me.King_coop_loanTextBox.TabIndex = 118
         Me.King_coop_loanTextBox.Text = "0.00"
         Me.King_coop_loanTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
@@ -920,7 +920,7 @@ Partial Class Payroll
         '
         Me.Absent_daysTextBox.Location = New System.Drawing.Point(89, 27)
         Me.Absent_daysTextBox.Name = "Absent_daysTextBox"
-        Me.Absent_daysTextBox.Size = New System.Drawing.Size(88, 22)
+        Me.Absent_daysTextBox.Size = New System.Drawing.Size(88, 20)
         Me.Absent_daysTextBox.TabIndex = 38
         Me.Absent_daysTextBox.Text = "0.00"
         Me.Absent_daysTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
@@ -929,7 +929,7 @@ Partial Class Payroll
         '
         Me.Other_loans_amtTextBox.Location = New System.Drawing.Point(273, 177)
         Me.Other_loans_amtTextBox.Name = "Other_loans_amtTextBox"
-        Me.Other_loans_amtTextBox.Size = New System.Drawing.Size(88, 22)
+        Me.Other_loans_amtTextBox.Size = New System.Drawing.Size(88, 20)
         Me.Other_loans_amtTextBox.TabIndex = 60
         Me.Other_loans_amtTextBox.Text = "0.00"
         Me.Other_loans_amtTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
@@ -938,7 +938,7 @@ Partial Class Payroll
         '
         Me.Other_ded_amtTextBox.Location = New System.Drawing.Point(273, 148)
         Me.Other_ded_amtTextBox.Name = "Other_ded_amtTextBox"
-        Me.Other_ded_amtTextBox.Size = New System.Drawing.Size(88, 22)
+        Me.Other_ded_amtTextBox.Size = New System.Drawing.Size(88, 20)
         Me.Other_ded_amtTextBox.TabIndex = 58
         Me.Other_ded_amtTextBox.Text = "0.00"
         Me.Other_ded_amtTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
@@ -947,7 +947,7 @@ Partial Class Payroll
         '
         Me.Wtax_amtTextBox.Location = New System.Drawing.Point(273, 118)
         Me.Wtax_amtTextBox.Name = "Wtax_amtTextBox"
-        Me.Wtax_amtTextBox.Size = New System.Drawing.Size(88, 22)
+        Me.Wtax_amtTextBox.Size = New System.Drawing.Size(88, 20)
         Me.Wtax_amtTextBox.TabIndex = 56
         Me.Wtax_amtTextBox.Text = "0.00"
         Me.Wtax_amtTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
@@ -956,7 +956,7 @@ Partial Class Payroll
         '
         Me.Phic_amtTextBox.Location = New System.Drawing.Point(273, 88)
         Me.Phic_amtTextBox.Name = "Phic_amtTextBox"
-        Me.Phic_amtTextBox.Size = New System.Drawing.Size(88, 22)
+        Me.Phic_amtTextBox.Size = New System.Drawing.Size(88, 20)
         Me.Phic_amtTextBox.TabIndex = 54
         Me.Phic_amtTextBox.Text = "0.00"
         Me.Phic_amtTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
@@ -965,7 +965,7 @@ Partial Class Payroll
         '
         Me.Pag_ibig_amtTextBox.Location = New System.Drawing.Point(89, 179)
         Me.Pag_ibig_amtTextBox.Name = "Pag_ibig_amtTextBox"
-        Me.Pag_ibig_amtTextBox.Size = New System.Drawing.Size(88, 22)
+        Me.Pag_ibig_amtTextBox.Size = New System.Drawing.Size(88, 20)
         Me.Pag_ibig_amtTextBox.TabIndex = 52
         Me.Pag_ibig_amtTextBox.Text = "0.00"
         Me.Pag_ibig_amtTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
@@ -974,7 +974,7 @@ Partial Class Payroll
         '
         Me.Sss_loan_amtTextBox.Location = New System.Drawing.Point(89, 150)
         Me.Sss_loan_amtTextBox.Name = "Sss_loan_amtTextBox"
-        Me.Sss_loan_amtTextBox.Size = New System.Drawing.Size(88, 22)
+        Me.Sss_loan_amtTextBox.Size = New System.Drawing.Size(88, 20)
         Me.Sss_loan_amtTextBox.TabIndex = 50
         Me.Sss_loan_amtTextBox.Text = "0.00"
         Me.Sss_loan_amtTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
@@ -983,7 +983,7 @@ Partial Class Payroll
         '
         Me.Sss_med_amtTextBox.Location = New System.Drawing.Point(89, 120)
         Me.Sss_med_amtTextBox.Name = "Sss_med_amtTextBox"
-        Me.Sss_med_amtTextBox.Size = New System.Drawing.Size(88, 22)
+        Me.Sss_med_amtTextBox.Size = New System.Drawing.Size(88, 20)
         Me.Sss_med_amtTextBox.TabIndex = 48
         Me.Sss_med_amtTextBox.Text = "0.00"
         Me.Sss_med_amtTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
@@ -992,7 +992,7 @@ Partial Class Payroll
         '
         Me.Cash_advance_amtTextBox.Location = New System.Drawing.Point(89, 90)
         Me.Cash_advance_amtTextBox.Name = "Cash_advance_amtTextBox"
-        Me.Cash_advance_amtTextBox.Size = New System.Drawing.Size(88, 22)
+        Me.Cash_advance_amtTextBox.Size = New System.Drawing.Size(88, 20)
         Me.Cash_advance_amtTextBox.TabIndex = 46
         Me.Cash_advance_amtTextBox.Text = "0.00"
         Me.Cash_advance_amtTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
@@ -1001,7 +1001,7 @@ Partial Class Payroll
         '
         Me.Lates_in_amtTextBox.Location = New System.Drawing.Point(273, 57)
         Me.Lates_in_amtTextBox.Name = "Lates_in_amtTextBox"
-        Me.Lates_in_amtTextBox.Size = New System.Drawing.Size(88, 22)
+        Me.Lates_in_amtTextBox.Size = New System.Drawing.Size(88, 20)
         Me.Lates_in_amtTextBox.TabIndex = 44
         Me.Lates_in_amtTextBox.Text = "0.00"
         Me.Lates_in_amtTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
@@ -1010,7 +1010,7 @@ Partial Class Payroll
         '
         Me.Lates_in_minTextBox.Location = New System.Drawing.Point(89, 59)
         Me.Lates_in_minTextBox.Name = "Lates_in_minTextBox"
-        Me.Lates_in_minTextBox.Size = New System.Drawing.Size(88, 22)
+        Me.Lates_in_minTextBox.Size = New System.Drawing.Size(88, 20)
         Me.Lates_in_minTextBox.TabIndex = 42
         Me.Lates_in_minTextBox.Text = "0.00"
         Me.Lates_in_minTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
@@ -1019,7 +1019,7 @@ Partial Class Payroll
         '
         Me.Absent_amtTextBox.Location = New System.Drawing.Point(273, 25)
         Me.Absent_amtTextBox.Name = "Absent_amtTextBox"
-        Me.Absent_amtTextBox.Size = New System.Drawing.Size(88, 22)
+        Me.Absent_amtTextBox.Size = New System.Drawing.Size(88, 20)
         Me.Absent_amtTextBox.TabIndex = 40
         Me.Absent_amtTextBox.Text = "0.00"
         Me.Absent_amtTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
@@ -1028,12 +1028,12 @@ Partial Class Payroll
         '
         Me.btnCancel.BackColor = System.Drawing.SystemColors.Control
         Me.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.System
-        Me.btnCancel.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnCancel.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnCancel.ForeColor = System.Drawing.SystemColors.ControlText
         Me.btnCancel.ImageKey = "(none)"
-        Me.btnCancel.Location = New System.Drawing.Point(636, 478)
+        Me.btnCancel.Location = New System.Drawing.Point(623, 485)
         Me.btnCancel.Name = "btnCancel"
-        Me.btnCancel.Size = New System.Drawing.Size(83, 28)
+        Me.btnCancel.Size = New System.Drawing.Size(88, 28)
         Me.btnCancel.TabIndex = 151
         Me.btnCancel.Text = "Cancel"
         Me.btnCancel.UseVisualStyleBackColor = False
@@ -1042,11 +1042,11 @@ Partial Class Payroll
         '
         Me.btnupdate.BackColor = System.Drawing.SystemColors.Control
         Me.btnupdate.FlatStyle = System.Windows.Forms.FlatStyle.System
-        Me.btnupdate.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnupdate.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btnupdate.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.btnupdate.Location = New System.Drawing.Point(725, 478)
+        Me.btnupdate.Location = New System.Drawing.Point(716, 485)
         Me.btnupdate.Name = "btnupdate"
-        Me.btnupdate.Size = New System.Drawing.Size(83, 28)
+        Me.btnupdate.Size = New System.Drawing.Size(88, 28)
         Me.btnupdate.TabIndex = 150
         Me.btnupdate.Text = "Update"
         Me.btnupdate.UseVisualStyleBackColor = False
@@ -1055,11 +1055,11 @@ Partial Class Payroll
         '
         Me.btn_save.BackColor = System.Drawing.SystemColors.Control
         Me.btn_save.FlatStyle = System.Windows.Forms.FlatStyle.System
-        Me.btn_save.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btn_save.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btn_save.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.btn_save.Location = New System.Drawing.Point(814, 478)
+        Me.btn_save.Location = New System.Drawing.Point(809, 485)
         Me.btn_save.Name = "btn_save"
-        Me.btn_save.Size = New System.Drawing.Size(83, 28)
+        Me.btn_save.Size = New System.Drawing.Size(88, 28)
         Me.btn_save.TabIndex = 148
         Me.btn_save.Text = "Create"
         Me.btn_save.UseVisualStyleBackColor = False
@@ -1074,7 +1074,7 @@ Partial Class Payroll
         Me.GroupBox6.Controls.Add(First_nameLabel)
         Me.GroupBox6.Controls.Add(Me.Last_nameTextBox)
         Me.GroupBox6.Controls.Add(IdLabel)
-        Me.GroupBox6.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.GroupBox6.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupBox6.Location = New System.Drawing.Point(917, 57)
         Me.GroupBox6.Name = "GroupBox6"
         Me.GroupBox6.Size = New System.Drawing.Size(264, 145)
@@ -1087,7 +1087,7 @@ Partial Class Payroll
         '
         Me.Middle_nameTextBox.Location = New System.Drawing.Point(97, 99)
         Me.Middle_nameTextBox.Name = "Middle_nameTextBox"
-        Me.Middle_nameTextBox.Size = New System.Drawing.Size(145, 22)
+        Me.Middle_nameTextBox.Size = New System.Drawing.Size(145, 20)
         Me.Middle_nameTextBox.TabIndex = 16
         Me.Middle_nameTextBox.Visible = False
         '
@@ -1095,7 +1095,7 @@ Partial Class Payroll
         '
         Me.IdTextBox.Location = New System.Drawing.Point(97, 21)
         Me.IdTextBox.Name = "IdTextBox"
-        Me.IdTextBox.Size = New System.Drawing.Size(145, 22)
+        Me.IdTextBox.Size = New System.Drawing.Size(145, 20)
         Me.IdTextBox.TabIndex = 2
         Me.IdTextBox.Visible = False
         '
@@ -1103,7 +1103,7 @@ Partial Class Payroll
         '
         Me.First_nameTextBox.Location = New System.Drawing.Point(97, 73)
         Me.First_nameTextBox.Name = "First_nameTextBox"
-        Me.First_nameTextBox.Size = New System.Drawing.Size(145, 22)
+        Me.First_nameTextBox.Size = New System.Drawing.Size(145, 20)
         Me.First_nameTextBox.TabIndex = 14
         Me.First_nameTextBox.Visible = False
         '
@@ -1111,7 +1111,7 @@ Partial Class Payroll
         '
         Me.Last_nameTextBox.Location = New System.Drawing.Point(97, 47)
         Me.Last_nameTextBox.Name = "Last_nameTextBox"
-        Me.Last_nameTextBox.Size = New System.Drawing.Size(145, 22)
+        Me.Last_nameTextBox.Size = New System.Drawing.Size(145, 20)
         Me.Last_nameTextBox.TabIndex = 12
         Me.Last_nameTextBox.Visible = False
         '
@@ -1123,11 +1123,11 @@ Partial Class Payroll
         Me.Vw_payroll_tblDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.Vw_payroll_tblDataGridView.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.IdDataGridViewTextBoxColumn, Me.PayrollnoDataGridViewTextBoxColumn, Me.PeriodfromDataGridViewTextBoxColumn, Me.PeriodtoDataGridViewTextBoxColumn, Me.EmployeeidDataGridViewTextBoxColumn, Me.EmployeenameDataGridViewTextBoxColumn, Me.LastnameDataGridViewTextBoxColumn, Me.FirstnameDataGridViewTextBoxColumn, Me.MiddlenameDataGridViewTextBoxColumn, Me.DepartmentassignedDataGridViewTextBoxColumn, Me.RatebasisdescrDataGridViewTextBoxColumn, Me.MonthlyrateDataGridViewTextBoxColumn, Me.DailyrateDataGridViewTextBoxColumn, Me.HourlyrateDataGridViewTextBoxColumn, Me.UnitrateDataGridViewTextBoxColumn, Me.RegularwagesDataGridViewTextBoxColumn, Me.OvertimeamtDataGridViewTextBoxColumn, Me.AllowancesamtDataGridViewTextBoxColumn, Me.AdjustmentsamtDataGridViewTextBoxColumn, Me.WorkeddaysDataGridViewTextBoxColumn, Me.AbsentdaysDataGridViewTextBoxColumn, Me.AbsentamtDataGridViewTextBoxColumn, Me.LatesinminDataGridViewTextBoxColumn, Me.LatesinamtDataGridViewTextBoxColumn, Me.CashadvanceamtDataGridViewTextBoxColumn, Me.SssmedamtDataGridViewTextBoxColumn, Me.SssloanamtDataGridViewTextBoxColumn, Me.PagibigamtDataGridViewTextBoxColumn, Me.PhicamtDataGridViewTextBoxColumn, Me.WtaxamtDataGridViewTextBoxColumn, Me.OtherdedamtDataGridViewTextBoxColumn, Me.OtherloansamtDataGridViewTextBoxColumn, Me.GrosspayDataGridViewTextBoxColumn, Me.NetpayDataGridViewTextBoxColumn, Me.RemarksDataGridViewTextBoxColumn, Me.photo, Me.king_coop_loan, Me.lbp_loan})
         Me.Vw_payroll_tblDataGridView.DataSource = Me.VwpayrolltblBindingSource
-        Me.Vw_payroll_tblDataGridView.Location = New System.Drawing.Point(15, 98)
+        Me.Vw_payroll_tblDataGridView.Location = New System.Drawing.Point(15, 92)
         Me.Vw_payroll_tblDataGridView.Name = "Vw_payroll_tblDataGridView"
         Me.Vw_payroll_tblDataGridView.ReadOnly = True
         Me.Vw_payroll_tblDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.Vw_payroll_tblDataGridView.Size = New System.Drawing.Size(295, 359)
+        Me.Vw_payroll_tblDataGridView.Size = New System.Drawing.Size(295, 399)
         Me.Vw_payroll_tblDataGridView.TabIndex = 0
         '
         'IdDataGridViewTextBoxColumn
@@ -1387,10 +1387,10 @@ Partial Class Payroll
         'GrosspayDataGridViewTextBoxColumn
         '
         Me.GrosspayDataGridViewTextBoxColumn.DataPropertyName = "gross_pay"
-        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
-        DataGridViewCellStyle1.Format = "N2"
-        DataGridViewCellStyle1.NullValue = Nothing
-        Me.GrosspayDataGridViewTextBoxColumn.DefaultCellStyle = DataGridViewCellStyle1
+        DataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
+        DataGridViewCellStyle11.Format = "N2"
+        DataGridViewCellStyle11.NullValue = Nothing
+        Me.GrosspayDataGridViewTextBoxColumn.DefaultCellStyle = DataGridViewCellStyle11
         Me.GrosspayDataGridViewTextBoxColumn.HeaderText = "Gross Pay"
         Me.GrosspayDataGridViewTextBoxColumn.Name = "GrosspayDataGridViewTextBoxColumn"
         Me.GrosspayDataGridViewTextBoxColumn.ReadOnly = True
@@ -1398,10 +1398,10 @@ Partial Class Payroll
         'NetpayDataGridViewTextBoxColumn
         '
         Me.NetpayDataGridViewTextBoxColumn.DataPropertyName = "net_pay"
-        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
-        DataGridViewCellStyle2.Format = "N2"
-        DataGridViewCellStyle2.NullValue = Nothing
-        Me.NetpayDataGridViewTextBoxColumn.DefaultCellStyle = DataGridViewCellStyle2
+        DataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
+        DataGridViewCellStyle12.Format = "N2"
+        DataGridViewCellStyle12.NullValue = Nothing
+        Me.NetpayDataGridViewTextBoxColumn.DefaultCellStyle = DataGridViewCellStyle12
         Me.NetpayDataGridViewTextBoxColumn.HeaderText = "Net Pay"
         Me.NetpayDataGridViewTextBoxColumn.Name = "NetpayDataGridViewTextBoxColumn"
         Me.NetpayDataGridViewTextBoxColumn.ReadOnly = True
@@ -1450,10 +1450,10 @@ Partial Class Payroll
         Me.GroupBox7.Controls.Add(Me.txtbSearch)
         Me.GroupBox7.Controls.Add(Me.btnCreate)
         Me.GroupBox7.Controls.Add(Me.Vw_payroll_tblDataGridView)
-        Me.GroupBox7.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.GroupBox7.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupBox7.Location = New System.Drawing.Point(12, 12)
         Me.GroupBox7.Name = "GroupBox7"
-        Me.GroupBox7.Size = New System.Drawing.Size(323, 491)
+        Me.GroupBox7.Size = New System.Drawing.Size(323, 501)
         Me.GroupBox7.TabIndex = 152
         Me.GroupBox7.TabStop = False
         Me.GroupBox7.Text = "Payroll List"
@@ -1463,7 +1463,7 @@ Partial Class Payroll
         Me.Label13.AutoSize = True
         Me.Label13.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label13.ForeColor = System.Drawing.Color.Black
-        Me.Label13.Location = New System.Drawing.Point(12, 51)
+        Me.Label13.Location = New System.Drawing.Point(12, 40)
         Me.Label13.Name = "Label13"
         Me.Label13.Size = New System.Drawing.Size(129, 14)
         Me.Label13.TabIndex = 41
@@ -1474,25 +1474,25 @@ Partial Class Payroll
         Me.Label14.AutoSize = True
         Me.Label14.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label14.ForeColor = System.Drawing.SystemColors.InactiveCaptionText
-        Me.Label14.Location = New System.Drawing.Point(11, 33)
+        Me.Label14.Location = New System.Drawing.Point(11, 22)
         Me.Label14.Name = "Label14"
-        Me.Label14.Size = New System.Drawing.Size(76, 20)
+        Me.Label14.Size = New System.Drawing.Size(71, 20)
         Me.Label14.TabIndex = 40
-        Me.Label14.Text = "Search :"
+        Me.Label14.Text = "Search:"
         '
         'txtbSearch
         '
-        Me.txtbSearch.Location = New System.Drawing.Point(15, 70)
+        Me.txtbSearch.Location = New System.Drawing.Point(15, 59)
         Me.txtbSearch.Name = "txtbSearch"
-        Me.txtbSearch.Size = New System.Drawing.Size(152, 22)
+        Me.txtbSearch.Size = New System.Drawing.Size(126, 20)
         Me.txtbSearch.TabIndex = 39
         '
         'btnCreate
         '
-        Me.btnCreate.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnCreate.Location = New System.Drawing.Point(184, 60)
+        Me.btnCreate.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnCreate.Location = New System.Drawing.Point(147, 49)
         Me.btnCreate.Name = "btnCreate"
-        Me.btnCreate.Size = New System.Drawing.Size(126, 33)
+        Me.btnCreate.Size = New System.Drawing.Size(163, 33)
         Me.btnCreate.TabIndex = 1
         Me.btnCreate.Text = "Create New Payroll"
         Me.btnCreate.UseVisualStyleBackColor = True
@@ -1501,11 +1501,11 @@ Partial Class Payroll
         '
         Me.btndel.BackColor = System.Drawing.SystemColors.Control
         Me.btndel.FlatStyle = System.Windows.Forms.FlatStyle.System
-        Me.btndel.Font = New System.Drawing.Font("Arial", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btndel.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btndel.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.btndel.Location = New System.Drawing.Point(529, 478)
+        Me.btndel.Location = New System.Drawing.Point(530, 485)
         Me.btndel.Name = "btndel"
-        Me.btndel.Size = New System.Drawing.Size(83, 28)
+        Me.btndel.Size = New System.Drawing.Size(88, 28)
         Me.btndel.TabIndex = 149
         Me.btndel.Text = "Delete"
         Me.btndel.UseVisualStyleBackColor = False

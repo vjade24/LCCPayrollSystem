@@ -237,4 +237,38 @@
   <metadata name="OpenFileDialog1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>736, 17</value>
   </metadata>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="btn_save.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        wwAADsMBx2+oZAAAALhJREFUOE/V0V0NAjEQBOATgAEMYAADKEABDnCABbxgAheYgf1CJym5coEHHphk
+        0r39u+l0+gXWxUPx0nhsuY+wL97f8FRcRIavxa1Eg79TokbNEKuihluLe1gglyXD6+yKilRo3hTBGVXp
+        4c8MpCmSrlmcXBaA+PwMX9Ev0JDBDOdavodmGlSMSVnSD8dk5xCRnvvHD2CcGiY3QwxDMqnC3gtGLsKS
+        PFdPz2vZx7DIc+FXg3+HaXoAsiI8vbR9RSYAAAAASUVORK5CYII=
+</value>
+  </data>
+  <data name="btnedit.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        wwAADsMBx2+oZAAAAH9JREFUOE9joBeIAWIHCJN00A3E/6HYDyRACgDZDNIEMwCEiXYJyOZbUBrZEKIM
+        AGk6DMRzgBikCcSHuYYgQNcMw8ZATBDg0ky0zSDFZGkG+Q+kEWYISZpBIBuI1wGxJBDDDCFaMwiADABp
+        goUBSZpBABTCIENAmOwkOyQBAwMArIkr3J+zMHUAAAAASUVORK5CYII=
+</value>
+  </data>
+  <data name="btndel.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        wwAADsMBx2+oZAAAAG9JREFUOE9joBVQA+J1SNgPiEkCME3GUHwLiAkCkAaYjf+R2DD+YSi7Cohxgmwg
+        BtmIDYDEQQbgBTADQK6RhNIgABMn2gCQQmQNIC+MNAOwAaIMiAHiOUAMMggddwMxSI4gABmCzQAQ5gHi
+        4QUYGACv3ClJzpGh7gAAAABJRU5ErkJggg==
+</value>
+  </data>
+  <data name="btn_cancel.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        wwAADsMBx2+oZAAAAHtJREFUOE9jGH6AB4gPA/E6KBsGuoH4FhCrgXl4wBwg/g/FIINAhoA0w8RAhuAF
+        IBtgirFhPyAmCHAZQpRmGED2CgiDnI4cJngBsp+RMSxM8IIqIEbWlI3GB8UOXgDyJ0wxzM/IYQJyHUEA
+        0ugAYcIByBCQa0YBBmBgAABz0y+G4ULklAAAAABJRU5ErkJggg==
+</value>
+  </data>
 </root>

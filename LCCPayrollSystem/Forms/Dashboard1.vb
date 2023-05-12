@@ -84,6 +84,7 @@ Public Class Dashboard1
                                 cryRpt.Load(report_path)
                                 cryRpt.SetDataSource(dt)
                                 CrystalReportViewer1.ReportSource = cryRpt
+                                CrystalReportViewer1.Zoom(130)
                                 CrystalReportViewer1.Refresh()
                             Else
                                 MsgBox("NO DATA FOUND!", MsgBoxStyle.Exclamation)

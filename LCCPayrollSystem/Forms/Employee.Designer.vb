@@ -63,13 +63,13 @@ Partial Class Employee
         Me.GroupBox4.Controls.Add(Me.txtbSearch)
         Me.GroupBox4.Location = New System.Drawing.Point(227, 12)
         Me.GroupBox4.Name = "GroupBox4"
-        Me.GroupBox4.Size = New System.Drawing.Size(517, 501)
+        Me.GroupBox4.Size = New System.Drawing.Size(666, 501)
         Me.GroupBox4.TabIndex = 36
         Me.GroupBox4.TabStop = False
         '
         'btnPrint
         '
-        Me.btnPrint.Location = New System.Drawing.Point(362, 19)
+        Me.btnPrint.Location = New System.Drawing.Point(511, 20)
         Me.btnPrint.Name = "btnPrint"
         Me.btnPrint.Size = New System.Drawing.Size(149, 35)
         Me.btnPrint.TabIndex = 15
@@ -85,7 +85,7 @@ Partial Class Employee
         Me.Employee_tblDataGridView.Name = "Employee_tblDataGridView"
         Me.Employee_tblDataGridView.ReadOnly = True
         Me.Employee_tblDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.Employee_tblDataGridView.Size = New System.Drawing.Size(501, 434)
+        Me.Employee_tblDataGridView.Size = New System.Drawing.Size(650, 434)
         Me.Employee_tblDataGridView.TabIndex = 14
         '
         'Label13
@@ -137,7 +137,7 @@ Partial Class Employee
         Me.lblinactive.AutoSize = True
         Me.lblinactive.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblinactive.ForeColor = System.Drawing.Color.White
-        Me.lblinactive.Location = New System.Drawing.Point(183, 84)
+        Me.lblinactive.Location = New System.Drawing.Point(186, 84)
         Me.lblinactive.Name = "lblinactive"
         Me.lblinactive.Size = New System.Drawing.Size(19, 20)
         Me.lblinactive.TabIndex = 6
@@ -148,7 +148,7 @@ Partial Class Employee
         Me.lblactive.AutoSize = True
         Me.lblactive.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblactive.ForeColor = System.Drawing.Color.White
-        Me.lblactive.Location = New System.Drawing.Point(169, 56)
+        Me.lblactive.Location = New System.Drawing.Point(186, 56)
         Me.lblactive.Name = "lblactive"
         Me.lblactive.Size = New System.Drawing.Size(19, 20)
         Me.lblactive.TabIndex = 5
@@ -159,7 +159,7 @@ Partial Class Employee
         Me.lbltotalemployee.AutoSize = True
         Me.lbltotalemployee.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lbltotalemployee.ForeColor = System.Drawing.Color.White
-        Me.lbltotalemployee.Location = New System.Drawing.Point(170, 24)
+        Me.lbltotalemployee.Location = New System.Drawing.Point(186, 24)
         Me.lbltotalemployee.Name = "lbltotalemployee"
         Me.lbltotalemployee.Size = New System.Drawing.Size(19, 20)
         Me.lbltotalemployee.TabIndex = 4
@@ -282,7 +282,7 @@ Partial Class Employee
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.ClientSize = New System.Drawing.Size(756, 525)
+        Me.ClientSize = New System.Drawing.Size(905, 525)
         Me.Controls.Add(Me.GroupBox4)
         Me.Controls.Add(Me.GroupBox3)
         Me.Controls.Add(Me.GroupBox2)

@@ -64,7 +64,7 @@
         CommonQuery(query, Payroll_deduction_tblDataGridView)
     End Sub
 
-    Private Sub btnupdate_Click(sender As Object, e As EventArgs) Handles btnupdate.Click
+    Private Sub btnupdate_Click(sender As Object, e As EventArgs)
         Dim result As DialogResult = MessageBox.Show("Are you sure you want to Update this Record?", "UPDATE RECORD", MessageBoxButtons.YesNo)
         If result = DialogResult.No Then
             MessageBox.Show("You pressed No, Record will be remain")
@@ -82,14 +82,14 @@
 
     End Sub
 
-    Private Sub btn_save_Click_1(sender As Object, e As EventArgs) Handles btn_save.Click
+    Private Sub btn_save_Click_1(sender As Object, e As EventArgs)
         Dim query As String = "insert into payroll_deduction_tbl values ('" + Deduction_descrComboBox.SelectedValue.ToString().Trim() + "','" + Deduction_descrComboBox.Text.ToString().Trim() + "','" + Employee_idComboBox.SelectedValue.ToString().Trim() + "','" + Employee_idComboBox.Text.ToString().Trim() + "','" + DateTime.Parse(Deduct_period_fromDateTimePicker.Value.ToString().Trim()) + "','" + DateTime.Parse(Deduct_period_toDateTimePicker.Value.ToString().Trim()) + "','" + Double.Parse(Deduct_amtTextBox.Text.ToString().Trim()).ToString + "')"
         InsertQuery(query)
         binddata()
         clearentry()
     End Sub
 
-    Private Sub Button2_Click_1(sender As Object, e As EventArgs) Handles Button2.Click
+    Private Sub Button2_Click_1(sender As Object, e As EventArgs)
         clearentry()
 
         Deduction_descrComboBox.Enabled = True
@@ -100,7 +100,7 @@
         btnupdate.Enabled = False
     End Sub
 
-    Private Sub btndel_Click_1(sender As Object, e As EventArgs) Handles btndel.Click
+    Private Sub btndel_Click_1(sender As Object, e As EventArgs)
         Dim result As DialogResult = MessageBox.Show("Are you sure you want to Delete this Record?", "DELETE RECORD", MessageBoxButtons.YesNo)
         If result = DialogResult.No Then
             MessageBox.Show("You pressed No, Record will be remain")
@@ -130,4 +130,5 @@
         End If
 
     End Sub
+
 End Class

@@ -37,12 +37,13 @@ Partial Class Dashboard
         Me.Label20 = New System.Windows.Forms.Label()
         Me.PanelMenu = New System.Windows.Forms.Panel()
         Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.textbox_login = New System.Windows.Forms.TextBox()
+        Me.LblBreadCrump = New System.Windows.Forms.Label()
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.PanelMain = New System.Windows.Forms.Panel()
-        Me.textbox_login = New System.Windows.Forms.TextBox()
         Me.PictureBox13 = New System.Windows.Forms.PictureBox()
-        Me.LblBreadCrump = New System.Windows.Forms.Label()
+        Me.IconPictureBox1 = New FontAwesome.Sharp.IconPictureBox()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -52,6 +53,7 @@ Partial Class Dashboard
         Me.Panel1.SuspendLayout()
         Me.Panel2.SuspendLayout()
         CType(Me.PictureBox13, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.IconPictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'btnEmployee
@@ -215,6 +217,7 @@ Partial Class Dashboard
         '
         'Panel1
         '
+        Me.Panel1.Controls.Add(Me.IconPictureBox1)
         Me.Panel1.Controls.Add(Me.textbox_login)
         Me.Panel1.Controls.Add(Me.PictureBox13)
         Me.Panel1.Controls.Add(Me.LblBreadCrump)
@@ -223,6 +226,30 @@ Partial Class Dashboard
         Me.Panel1.Name = "Panel1"
         Me.Panel1.Size = New System.Drawing.Size(905, 44)
         Me.Panel1.TabIndex = 8
+        '
+        'textbox_login
+        '
+        Me.textbox_login.BackColor = System.Drawing.SystemColors.Control
+        Me.textbox_login.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.textbox_login.Cursor = System.Windows.Forms.Cursors.Default
+        Me.textbox_login.Location = New System.Drawing.Point(475, 19)
+        Me.textbox_login.Name = "textbox_login"
+        Me.textbox_login.ReadOnly = True
+        Me.textbox_login.Size = New System.Drawing.Size(225, 13)
+        Me.textbox_login.TabIndex = 45
+        Me.textbox_login.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
+        '
+        'LblBreadCrump
+        '
+        Me.LblBreadCrump.AutoSize = True
+        Me.LblBreadCrump.BackColor = System.Drawing.Color.Transparent
+        Me.LblBreadCrump.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LblBreadCrump.ForeColor = System.Drawing.Color.DimGray
+        Me.LblBreadCrump.Location = New System.Drawing.Point(46, 11)
+        Me.LblBreadCrump.Name = "LblBreadCrump"
+        Me.LblBreadCrump.Size = New System.Drawing.Size(102, 24)
+        Me.LblBreadCrump.TabIndex = 43
+        Me.LblBreadCrump.Text = "Dashboard"
         '
         'Panel2
         '
@@ -253,18 +280,6 @@ Partial Class Dashboard
         Me.PanelMain.Size = New System.Drawing.Size(905, 525)
         Me.PanelMain.TabIndex = 9
         '
-        'textbox_login
-        '
-        Me.textbox_login.BackColor = System.Drawing.SystemColors.Control
-        Me.textbox_login.BorderStyle = System.Windows.Forms.BorderStyle.None
-        Me.textbox_login.Cursor = System.Windows.Forms.Cursors.Default
-        Me.textbox_login.Location = New System.Drawing.Point(475, 19)
-        Me.textbox_login.Name = "textbox_login"
-        Me.textbox_login.ReadOnly = True
-        Me.textbox_login.Size = New System.Drawing.Size(225, 13)
-        Me.textbox_login.TabIndex = 45
-        Me.textbox_login.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
-        '
         'PictureBox13
         '
         Me.PictureBox13.BackColor = System.Drawing.Color.Transparent
@@ -277,17 +292,17 @@ Partial Class Dashboard
         Me.PictureBox13.TabIndex = 44
         Me.PictureBox13.TabStop = False
         '
-        'LblBreadCrump
+        'IconPictureBox1
         '
-        Me.LblBreadCrump.AutoSize = True
-        Me.LblBreadCrump.BackColor = System.Drawing.Color.Transparent
-        Me.LblBreadCrump.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LblBreadCrump.ForeColor = System.Drawing.Color.Black
-        Me.LblBreadCrump.Location = New System.Drawing.Point(6, 12)
-        Me.LblBreadCrump.Name = "LblBreadCrump"
-        Me.LblBreadCrump.Size = New System.Drawing.Size(102, 24)
-        Me.LblBreadCrump.TabIndex = 43
-        Me.LblBreadCrump.Text = "Dashboard"
+        Me.IconPictureBox1.ActiveColor = System.Drawing.Color.Black
+        Me.IconPictureBox1.BackColor = System.Drawing.Color.Transparent
+        Me.IconPictureBox1.IconChar = FontAwesome.Sharp.IconChar.BarChart
+        Me.IconPictureBox1.InActiveColor = System.Drawing.Color.Gray
+        Me.IconPictureBox1.Location = New System.Drawing.Point(6, 6)
+        Me.IconPictureBox1.Name = "IconPictureBox1"
+        Me.IconPictureBox1.Size = New System.Drawing.Size(34, 32)
+        Me.IconPictureBox1.TabIndex = 46
+        Me.IconPictureBox1.TabStop = False
         '
         'Dashboard
         '
@@ -314,6 +329,7 @@ Partial Class Dashboard
         Me.Panel2.ResumeLayout(False)
         Me.Panel2.PerformLayout()
         CType(Me.PictureBox13, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.IconPictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -335,6 +351,7 @@ Partial Class Dashboard
     Friend WithEvents Label1 As Label
     Friend WithEvents PanelMain As Panel
     Friend WithEvents textbox_login As TextBox
-    Friend WithEvents PictureBox13 As PictureBox
     Friend WithEvents LblBreadCrump As Label
+    Friend WithEvents IconPictureBox1 As FontAwesome.Sharp.IconPictureBox
+    Friend WithEvents PictureBox13 As PictureBox
 End Class
