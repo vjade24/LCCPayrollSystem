@@ -70,7 +70,7 @@ Partial Class Register
         Me.btn_cancel.ImageKey = "(none)"
         Me.btn_cancel.Location = New System.Drawing.Point(17, 423)
         Me.btn_cancel.Name = "btn_cancel"
-        Me.btn_cancel.Size = New System.Drawing.Size(83, 35)
+        Me.btn_cancel.Size = New System.Drawing.Size(97, 35)
         Me.btn_cancel.TabIndex = 127
         Me.btn_cancel.Text = "Cancel"
         Me.btn_cancel.UseVisualStyleBackColor = False
@@ -83,7 +83,7 @@ Partial Class Register
         Me.btnedit.ForeColor = System.Drawing.Color.White
         Me.btnedit.Location = New System.Drawing.Point(17, 382)
         Me.btnedit.Name = "btnedit"
-        Me.btnedit.Size = New System.Drawing.Size(83, 35)
+        Me.btnedit.Size = New System.Drawing.Size(97, 35)
         Me.btnedit.TabIndex = 126
         Me.btnedit.Text = "Update"
         Me.btnedit.UseVisualStyleBackColor = False
@@ -94,9 +94,9 @@ Partial Class Register
         Me.btndel.FlatStyle = System.Windows.Forms.FlatStyle.System
         Me.btndel.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btndel.ForeColor = System.Drawing.Color.White
-        Me.btndel.Location = New System.Drawing.Point(106, 382)
+        Me.btndel.Location = New System.Drawing.Point(120, 382)
         Me.btndel.Name = "btndel"
-        Me.btndel.Size = New System.Drawing.Size(83, 35)
+        Me.btndel.Size = New System.Drawing.Size(97, 35)
         Me.btndel.TabIndex = 125
         Me.btndel.Text = "Delete"
         Me.btndel.UseVisualStyleBackColor = False
@@ -107,9 +107,9 @@ Partial Class Register
         Me.btn_save.FlatStyle = System.Windows.Forms.FlatStyle.System
         Me.btn_save.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.btn_save.ForeColor = System.Drawing.Color.White
-        Me.btn_save.Location = New System.Drawing.Point(106, 423)
+        Me.btn_save.Location = New System.Drawing.Point(120, 423)
         Me.btn_save.Name = "btn_save"
-        Me.btn_save.Size = New System.Drawing.Size(83, 35)
+        Me.btn_save.Size = New System.Drawing.Size(97, 35)
         Me.btn_save.TabIndex = 124
         Me.btn_save.Text = "Create"
         Me.btn_save.UseVisualStyleBackColor = False
@@ -265,7 +265,7 @@ Partial Class Register
         Me.DataGridView1.ReadOnly = True
         Me.DataGridView1.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.[Single]
         Me.DataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.DataGridView1.Size = New System.Drawing.Size(378, 411)
+        Me.DataGridView1.Size = New System.Drawing.Size(594, 411)
         Me.DataGridView1.TabIndex = 11
         '
         'IdDataGridViewTextBoxColumn
@@ -343,9 +343,9 @@ Partial Class Register
         Me.GroupBox1.Controls.Add(Me.txtb_user_password)
         Me.GroupBox1.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupBox1.ForeColor = System.Drawing.Color.White
-        Me.GroupBox1.Location = New System.Drawing.Point(76, 37)
+        Me.GroupBox1.Location = New System.Drawing.Point(12, 3)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(267, 510)
+        Me.GroupBox1.Size = New System.Drawing.Size(265, 510)
         Me.GroupBox1.TabIndex = 128
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "User Information"
@@ -357,16 +357,16 @@ Partial Class Register
         Me.GroupBox2.Controls.Add(Me.DataGridView1)
         Me.GroupBox2.Controls.Add(Me.txtb_search)
         Me.GroupBox2.Font = New System.Drawing.Font("Century Gothic", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.GroupBox2.Location = New System.Drawing.Point(349, 37)
+        Me.GroupBox2.Location = New System.Drawing.Point(283, 3)
         Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Size = New System.Drawing.Size(404, 510)
+        Me.GroupBox2.Size = New System.Drawing.Size(610, 510)
         Me.GroupBox2.TabIndex = 129
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "List of Users"
         '
         'btnCreate
         '
-        Me.btnCreate.Location = New System.Drawing.Point(285, 38)
+        Me.btnCreate.Location = New System.Drawing.Point(501, 39)
         Me.btnCreate.Name = "btnCreate"
         Me.btnCreate.Size = New System.Drawing.Size(103, 33)
         Me.btnCreate.TabIndex = 42
@@ -377,7 +377,7 @@ Partial Class Register
         '
         Me.Label4.AutoSize = True
         Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.ForeColor = System.Drawing.SystemColors.InactiveCaptionText
+        Me.Label4.ForeColor = System.Drawing.Color.White
         Me.Label4.Location = New System.Drawing.Point(6, 25)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(76, 20)
@@ -389,7 +389,7 @@ Partial Class Register
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.ClientSize = New System.Drawing.Size(756, 525)
+        Me.ClientSize = New System.Drawing.Size(905, 525)
         Me.Controls.Add(Me.GroupBox2)
         Me.Controls.Add(Me.GroupBox1)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None

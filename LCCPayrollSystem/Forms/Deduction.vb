@@ -64,54 +64,6 @@
         CommonQuery(query, Payroll_deduction_tblDataGridView)
     End Sub
 
-    Private Sub btnupdate_Click(sender As Object, e As EventArgs)
-        Dim result As DialogResult = MessageBox.Show("Are you sure you want to Update this Record?", "UPDATE RECORD", MessageBoxButtons.YesNo)
-        If result = DialogResult.No Then
-            MessageBox.Show("You pressed No, Record will be remain")
-        ElseIf result = DialogResult.Yes Then
-            Dim query As String = "update payroll_deduction_tbl set deduct_period_from = '" + Deduct_period_fromDateTimePicker.Value + "' , deduct_period_to = '" + Deduct_period_toDateTimePicker.Value + "', deduct_amt='" + Double.Parse(Deduct_amtTextBox.Text).ToString() + "' where id = '" + IdTextBox.Text + "'"
-            UpdateQuery(query)
-            binddata()
-            clearentry()
-
-            btndel.Enabled = True
-            Button2.Enabled = True
-            btn_save.Enabled = False
-            btnupdate.Enabled = False
-        End If
-
-    End Sub
-
-    Private Sub btn_save_Click_1(sender As Object, e As EventArgs)
-        Dim query As String = "insert into payroll_deduction_tbl values ('" + Deduction_descrComboBox.SelectedValue.ToString().Trim() + "','" + Deduction_descrComboBox.Text.ToString().Trim() + "','" + Employee_idComboBox.SelectedValue.ToString().Trim() + "','" + Employee_idComboBox.Text.ToString().Trim() + "','" + DateTime.Parse(Deduct_period_fromDateTimePicker.Value.ToString().Trim()) + "','" + DateTime.Parse(Deduct_period_toDateTimePicker.Value.ToString().Trim()) + "','" + Double.Parse(Deduct_amtTextBox.Text.ToString().Trim()).ToString + "')"
-        InsertQuery(query)
-        binddata()
-        clearentry()
-    End Sub
-
-    Private Sub Button2_Click_1(sender As Object, e As EventArgs)
-        clearentry()
-
-        Deduction_descrComboBox.Enabled = True
-        Employee_idComboBox.Enabled = True
-        btndel.Enabled = False
-        Button2.Enabled = False
-        btn_save.Enabled = True
-        btnupdate.Enabled = False
-    End Sub
-
-    Private Sub btndel_Click_1(sender As Object, e As EventArgs)
-        Dim result As DialogResult = MessageBox.Show("Are you sure you want to Delete this Record?", "DELETE RECORD", MessageBoxButtons.YesNo)
-        If result = DialogResult.No Then
-            MessageBox.Show("You pressed No, Record will be remain")
-        ElseIf result = DialogResult.Yes Then
-            Dim query As String = "delete from payroll_deduction_tbl where id = " + IdTextBox.Text + ""
-            DeleteQuery(query)
-            binddata()
-            clearentry()
-        End If
-    End Sub
-
     Private Sub btnCreate_Click(sender As Object, e As EventArgs) Handles btnCreate.Click
 
         Dim result As DialogResult = MessageBox.Show("Are you sure you want to Create New Record?", "CREATE NEW", MessageBoxButtons.YesNo)
@@ -131,4 +83,50 @@
 
     End Sub
 
+    Private Sub btn_save_Click(sender As Object, e As EventArgs) Handles btn_save.Click
+        Dim query As String = "insert into payroll_deduction_tbl values ('" + Deduction_descrComboBox.SelectedValue.ToString().Trim() + "','" + Deduction_descrComboBox.Text.ToString().Trim() + "','" + Employee_idComboBox.SelectedValue.ToString().Trim() + "','" + Employee_idComboBox.Text.ToString().Trim() + "','" + DateTime.Parse(Deduct_period_fromDateTimePicker.Value.ToString().Trim()) + "','" + DateTime.Parse(Deduct_period_toDateTimePicker.Value.ToString().Trim()) + "','" + Double.Parse(Deduct_amtTextBox.Text.ToString().Trim()).ToString + "')"
+        InsertQuery(query)
+        binddata()
+        clearentry()
+    End Sub
+
+    Private Sub btnupdate_Click_1(sender As Object, e As EventArgs) Handles btnupdate.Click
+        Dim result As DialogResult = MessageBox.Show("Are you sure you want to Update this Record?", "UPDATE RECORD", MessageBoxButtons.YesNo)
+        If result = DialogResult.No Then
+            MessageBox.Show("You pressed No, Record will be remain")
+        ElseIf result = DialogResult.Yes Then
+            Dim query As String = "update payroll_deduction_tbl set deduct_period_from = '" + Deduct_period_fromDateTimePicker.Value + "' , deduct_period_to = '" + Deduct_period_toDateTimePicker.Value + "', deduct_amt='" + Double.Parse(Deduct_amtTextBox.Text).ToString() + "' where id = '" + IdTextBox.Text + "'"
+            UpdateQuery(query)
+            binddata()
+            clearentry()
+
+            btndel.Enabled = True
+            Button2.Enabled = True
+            btn_save.Enabled = False
+            btnupdate.Enabled = False
+        End If
+    End Sub
+
+    Private Sub btndel_Click(sender As Object, e As EventArgs) Handles btndel.Click
+        Dim result As DialogResult = MessageBox.Show("Are you sure you want to Delete this Record?", "DELETE RECORD", MessageBoxButtons.YesNo)
+        If result = DialogResult.No Then
+            MessageBox.Show("You pressed No, Record will be remain")
+        ElseIf result = DialogResult.Yes Then
+            Dim query As String = "delete from payroll_deduction_tbl where id = " + IdTextBox.Text + ""
+            DeleteQuery(query)
+            binddata()
+            clearentry()
+        End If
+    End Sub
+
+    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
+        clearentry()
+
+        Deduction_descrComboBox.Enabled = True
+        Employee_idComboBox.Enabled = True
+        btndel.Enabled = False
+        Button2.Enabled = False
+        btn_save.Enabled = True
+        btnupdate.Enabled = False
+    End Sub
 End Class

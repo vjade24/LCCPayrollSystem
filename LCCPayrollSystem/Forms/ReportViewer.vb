@@ -24,6 +24,7 @@ Public Class ReportViewer
 
                 cryRpt.Load(report_path)
                 cryRpt.SetDataSource(dt)
+                CrystalReportViewer1.Zoom(75)
                 CrystalReportViewer1.ReportSource = cryRpt
                 CrystalReportViewer1.Refresh()
 

@@ -31,10 +31,10 @@ Partial Class Attendance
         Dim Tse_out_pmLabel As System.Windows.Forms.Label
         Dim Label1 As System.Windows.Forms.Label
         Dim Label2 As System.Windows.Forms.Label
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle7 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle8 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.TabControl1 = New System.Windows.Forms.TabControl()
         Me.TabPage1 = New System.Windows.Forms.TabPage()
         Me.btnRemoveEntry = New System.Windows.Forms.Button()
@@ -61,8 +61,8 @@ Partial Class Attendance
         Me.Tse_in_amDateTimePicker = New System.Windows.Forms.DateTimePicker()
         Me.btnSaveSked = New System.Windows.Forms.Button()
         Me.Tse_dateDateTimePicker = New System.Windows.Forms.DateTimePicker()
-        Me.Dtr_conso_tblBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.TabPage3 = New System.Windows.Forms.TabPage()
+        Me.Dtr_conso_tblBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.Employee_nameComboBox = New System.Windows.Forms.ComboBox()
         Me.ComboBoxYear = New System.Windows.Forms.ComboBox()
         Me.ComboBoxMonth = New System.Windows.Forms.ComboBox()
@@ -98,7 +98,7 @@ Partial Class Attendance
         'Tse_dateLabel
         '
         Tse_dateLabel.AutoSize = True
-        Tse_dateLabel.Location = New System.Drawing.Point(164, 46)
+        Tse_dateLabel.Location = New System.Drawing.Point(280, 22)
         Tse_dateLabel.Name = "Tse_dateLabel"
         Tse_dateLabel.Size = New System.Drawing.Size(48, 13)
         Tse_dateLabel.TabIndex = 1
@@ -107,7 +107,7 @@ Partial Class Attendance
         'Tse_in_amLabel
         '
         Tse_in_amLabel.AutoSize = True
-        Tse_in_amLabel.Location = New System.Drawing.Point(160, 70)
+        Tse_in_amLabel.Location = New System.Drawing.Point(276, 46)
         Tse_in_amLabel.Name = "Tse_in_amLabel"
         Tse_in_amLabel.Size = New System.Drawing.Size(52, 13)
         Tse_in_amLabel.TabIndex = 11
@@ -116,7 +116,7 @@ Partial Class Attendance
         'Tse_out_amLabel
         '
         Tse_out_amLabel.AutoSize = True
-        Tse_out_amLabel.Location = New System.Drawing.Point(319, 70)
+        Tse_out_amLabel.Location = New System.Drawing.Point(435, 46)
         Tse_out_amLabel.Name = "Tse_out_amLabel"
         Tse_out_amLabel.Size = New System.Drawing.Size(59, 13)
         Tse_out_amLabel.TabIndex = 12
@@ -125,7 +125,7 @@ Partial Class Attendance
         'Tse_in_pmLabel
         '
         Tse_in_pmLabel.AutoSize = True
-        Tse_in_pmLabel.Location = New System.Drawing.Point(160, 96)
+        Tse_in_pmLabel.Location = New System.Drawing.Point(276, 72)
         Tse_in_pmLabel.Name = "Tse_in_pmLabel"
         Tse_in_pmLabel.Size = New System.Drawing.Size(52, 13)
         Tse_in_pmLabel.TabIndex = 13
@@ -134,7 +134,7 @@ Partial Class Attendance
         'Tse_out_pmLabel
         '
         Tse_out_pmLabel.AutoSize = True
-        Tse_out_pmLabel.Location = New System.Drawing.Point(319, 96)
+        Tse_out_pmLabel.Location = New System.Drawing.Point(435, 72)
         Tse_out_pmLabel.Name = "Tse_out_pmLabel"
         Tse_out_pmLabel.Size = New System.Drawing.Size(59, 13)
         Tse_out_pmLabel.TabIndex = 14
@@ -195,7 +195,7 @@ Partial Class Attendance
         '
         'btnRemoveEntry
         '
-        Me.btnRemoveEntry.Location = New System.Drawing.Point(479, 78)
+        Me.btnRemoveEntry.Location = New System.Drawing.Point(595, 54)
         Me.btnRemoveEntry.Name = "btnRemoveEntry"
         Me.btnRemoveEntry.Size = New System.Drawing.Size(120, 31)
         Me.btnRemoveEntry.TabIndex = 17
@@ -210,11 +210,11 @@ Partial Class Attendance
         Me.Vw_time_schedule_empl_tblDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.Vw_time_schedule_empl_tblDataGridView.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn1, Me.DataGridViewTextBoxColumn2, Me.DataGridViewTextBoxColumn3, Me.DataGridViewTextBoxColumn4, Me.DataGridViewTextBoxColumn5, Me.DataGridViewTextBoxColumn6, Me.DataGridViewTextBoxColumn7, Me.DataGridViewTextBoxColumn8, Me.DataGridViewTextBoxColumn9, Me.DataGridViewTextBoxColumn10, Me.DataGridViewTextBoxColumn11, Me.DataGridViewTextBoxColumn12, Me.DataGridViewTextBoxColumn13})
         Me.Vw_time_schedule_empl_tblDataGridView.DataSource = Me.Vw_time_schedule_empl_tblBindingSource
-        Me.Vw_time_schedule_empl_tblDataGridView.Location = New System.Drawing.Point(37, 118)
+        Me.Vw_time_schedule_empl_tblDataGridView.Location = New System.Drawing.Point(6, 92)
         Me.Vw_time_schedule_empl_tblDataGridView.Name = "Vw_time_schedule_empl_tblDataGridView"
         Me.Vw_time_schedule_empl_tblDataGridView.ReadOnly = True
         Me.Vw_time_schedule_empl_tblDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.Vw_time_schedule_empl_tblDataGridView.Size = New System.Drawing.Size(643, 257)
+        Me.Vw_time_schedule_empl_tblDataGridView.Size = New System.Drawing.Size(838, 348)
         Me.Vw_time_schedule_empl_tblDataGridView.TabIndex = 16
         '
         'DataGridViewTextBoxColumn1
@@ -290,9 +290,9 @@ Partial Class Attendance
         'DataGridViewTextBoxColumn10
         '
         Me.DataGridViewTextBoxColumn10.DataPropertyName = "converted_tse_in_am"
-        DataGridViewCellStyle1.Format = "t"
-        DataGridViewCellStyle1.NullValue = "----"
-        Me.DataGridViewTextBoxColumn10.DefaultCellStyle = DataGridViewCellStyle1
+        DataGridViewCellStyle5.Format = "t"
+        DataGridViewCellStyle5.NullValue = "----"
+        Me.DataGridViewTextBoxColumn10.DefaultCellStyle = DataGridViewCellStyle5
         Me.DataGridViewTextBoxColumn10.HeaderText = "converted_tse_in_am"
         Me.DataGridViewTextBoxColumn10.Name = "DataGridViewTextBoxColumn10"
         Me.DataGridViewTextBoxColumn10.ReadOnly = True
@@ -300,9 +300,9 @@ Partial Class Attendance
         'DataGridViewTextBoxColumn11
         '
         Me.DataGridViewTextBoxColumn11.DataPropertyName = "converted_tse_out_am"
-        DataGridViewCellStyle2.Format = "t"
-        DataGridViewCellStyle2.NullValue = "----"
-        Me.DataGridViewTextBoxColumn11.DefaultCellStyle = DataGridViewCellStyle2
+        DataGridViewCellStyle6.Format = "t"
+        DataGridViewCellStyle6.NullValue = "----"
+        Me.DataGridViewTextBoxColumn11.DefaultCellStyle = DataGridViewCellStyle6
         Me.DataGridViewTextBoxColumn11.HeaderText = "converted_tse_out_am"
         Me.DataGridViewTextBoxColumn11.Name = "DataGridViewTextBoxColumn11"
         Me.DataGridViewTextBoxColumn11.ReadOnly = True
@@ -310,9 +310,9 @@ Partial Class Attendance
         'DataGridViewTextBoxColumn12
         '
         Me.DataGridViewTextBoxColumn12.DataPropertyName = "converted_tse_in_pm"
-        DataGridViewCellStyle3.Format = "t"
-        DataGridViewCellStyle3.NullValue = "----"
-        Me.DataGridViewTextBoxColumn12.DefaultCellStyle = DataGridViewCellStyle3
+        DataGridViewCellStyle7.Format = "t"
+        DataGridViewCellStyle7.NullValue = "----"
+        Me.DataGridViewTextBoxColumn12.DefaultCellStyle = DataGridViewCellStyle7
         Me.DataGridViewTextBoxColumn12.HeaderText = "converted_tse_in_pm"
         Me.DataGridViewTextBoxColumn12.Name = "DataGridViewTextBoxColumn12"
         Me.DataGridViewTextBoxColumn12.ReadOnly = True
@@ -320,9 +320,9 @@ Partial Class Attendance
         'DataGridViewTextBoxColumn13
         '
         Me.DataGridViewTextBoxColumn13.DataPropertyName = "converted_tse_out_pm"
-        DataGridViewCellStyle4.Format = "t"
-        DataGridViewCellStyle4.NullValue = "----"
-        Me.DataGridViewTextBoxColumn13.DefaultCellStyle = DataGridViewCellStyle4
+        DataGridViewCellStyle8.Format = "t"
+        DataGridViewCellStyle8.NullValue = "----"
+        Me.DataGridViewTextBoxColumn13.DefaultCellStyle = DataGridViewCellStyle8
         Me.DataGridViewTextBoxColumn13.HeaderText = "converted_tse_out_pm"
         Me.DataGridViewTextBoxColumn13.Name = "DataGridViewTextBoxColumn13"
         Me.DataGridViewTextBoxColumn13.ReadOnly = True
@@ -339,7 +339,7 @@ Partial Class Attendance
         '
         'btnGenerateSked
         '
-        Me.btnGenerateSked.Location = New System.Drawing.Point(37, 52)
+        Me.btnGenerateSked.Location = New System.Drawing.Point(195, 28)
         Me.btnGenerateSked.Name = "btnGenerateSked"
         Me.btnGenerateSked.Size = New System.Drawing.Size(75, 49)
         Me.btnGenerateSked.TabIndex = 16
@@ -350,7 +350,7 @@ Partial Class Attendance
         '
         Me.Tse_out_pmDateTimePicker.CustomFormat = "h:mmtt"
         Me.Tse_out_pmDateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom
-        Me.Tse_out_pmDateTimePicker.Location = New System.Drawing.Point(384, 92)
+        Me.Tse_out_pmDateTimePicker.Location = New System.Drawing.Point(500, 68)
         Me.Tse_out_pmDateTimePicker.Name = "Tse_out_pmDateTimePicker"
         Me.Tse_out_pmDateTimePicker.ShowUpDown = True
         Me.Tse_out_pmDateTimePicker.Size = New System.Drawing.Size(89, 20)
@@ -360,7 +360,7 @@ Partial Class Attendance
         '
         Me.Tse_in_pmDateTimePicker.CustomFormat = "h:mmtt"
         Me.Tse_in_pmDateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom
-        Me.Tse_in_pmDateTimePicker.Location = New System.Drawing.Point(225, 92)
+        Me.Tse_in_pmDateTimePicker.Location = New System.Drawing.Point(341, 68)
         Me.Tse_in_pmDateTimePicker.Name = "Tse_in_pmDateTimePicker"
         Me.Tse_in_pmDateTimePicker.ShowUpDown = True
         Me.Tse_in_pmDateTimePicker.Size = New System.Drawing.Size(89, 20)
@@ -370,7 +370,7 @@ Partial Class Attendance
         '
         Me.Tse_out_amDateTimePicker.CustomFormat = "h:mmtt"
         Me.Tse_out_amDateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom
-        Me.Tse_out_amDateTimePicker.Location = New System.Drawing.Point(384, 66)
+        Me.Tse_out_amDateTimePicker.Location = New System.Drawing.Point(500, 42)
         Me.Tse_out_amDateTimePicker.Name = "Tse_out_amDateTimePicker"
         Me.Tse_out_amDateTimePicker.ShowUpDown = True
         Me.Tse_out_amDateTimePicker.Size = New System.Drawing.Size(89, 20)
@@ -380,7 +380,7 @@ Partial Class Attendance
         '
         Me.Tse_in_amDateTimePicker.CustomFormat = "h:mmtt"
         Me.Tse_in_amDateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom
-        Me.Tse_in_amDateTimePicker.Location = New System.Drawing.Point(225, 66)
+        Me.Tse_in_amDateTimePicker.Location = New System.Drawing.Point(341, 42)
         Me.Tse_in_amDateTimePicker.Name = "Tse_in_amDateTimePicker"
         Me.Tse_in_amDateTimePicker.ShowUpDown = True
         Me.Tse_in_amDateTimePicker.Size = New System.Drawing.Size(89, 20)
@@ -388,7 +388,7 @@ Partial Class Attendance
         '
         'btnSaveSked
         '
-        Me.btnSaveSked.Location = New System.Drawing.Point(479, 46)
+        Me.btnSaveSked.Location = New System.Drawing.Point(595, 22)
         Me.btnSaveSked.Name = "btnSaveSked"
         Me.btnSaveSked.Size = New System.Drawing.Size(120, 31)
         Me.btnSaveSked.TabIndex = 11
@@ -399,15 +399,10 @@ Partial Class Attendance
         '
         Me.Tse_dateDateTimePicker.Enabled = False
         Me.Tse_dateDateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.Tse_dateDateTimePicker.Location = New System.Drawing.Point(225, 40)
+        Me.Tse_dateDateTimePicker.Location = New System.Drawing.Point(341, 16)
         Me.Tse_dateDateTimePicker.Name = "Tse_dateDateTimePicker"
         Me.Tse_dateDateTimePicker.Size = New System.Drawing.Size(248, 20)
         Me.Tse_dateDateTimePicker.TabIndex = 2
-        '
-        'Dtr_conso_tblBindingSource
-        '
-        Me.Dtr_conso_tblBindingSource.DataMember = "dtr_conso_tbl"
-        Me.Dtr_conso_tblBindingSource.DataSource = Me.PayrolldbDataSet
         '
         'TabPage3
         '
@@ -418,6 +413,11 @@ Partial Class Attendance
         Me.TabPage3.TabIndex = 2
         Me.TabPage3.Text = "Daily time Record"
         Me.TabPage3.UseVisualStyleBackColor = True
+        '
+        'Dtr_conso_tblBindingSource
+        '
+        Me.Dtr_conso_tblBindingSource.DataMember = "dtr_conso_tbl"
+        Me.Dtr_conso_tblBindingSource.DataSource = Me.PayrolldbDataSet
         '
         'Employee_nameComboBox
         '

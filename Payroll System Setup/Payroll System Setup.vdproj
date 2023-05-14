@@ -63,6 +63,12 @@
         }
         "Entry"
         {
+        "MsmKey" = "8:_826C04FA4CC541A68B556BA896A61A0B"
+        "OwnerKey" = "8:_340A833309AD4A018FAA9E3772A8D82B"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_8703D5C1A7F336CFE6973DC9481AE075"
         "OwnerKey" = "8:_5BD52815BE2099F55088FE6179427F79"
         "MsmSig" = "8:_UNDEFINED"
@@ -107,6 +113,12 @@
         {
         "MsmKey" = "8:_UNDEFINED"
         "OwnerKey" = "8:_340A833309AD4A018FAA9E3772A8D82B"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_UNDEFINED"
+        "OwnerKey" = "8:_826C04FA4CC541A68B556BA896A61A0B"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -186,7 +198,7 @@
         "InstallerBootstrapper" = "3:2"
             "BootstrapperCfg:{63ACBE69-63AA-4F98-B2B6-99F9E24495F2}"
             {
-            "Enabled" = "11:TRUE"
+            "Enabled" = "11:FALSE"
             "PromptEnabled" = "11:TRUE"
             "PrerequisitesLocation" = "2:1"
             "Url" = "8:"
@@ -413,6 +425,37 @@
             "IsDependency" = "11:TRUE"
             "IsolateTo" = "8:"
             }
+            "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_826C04FA4CC541A68B556BA896A61A0B"
+            {
+            "AssemblyRegister" = "3:1"
+            "AssemblyIsInGAC" = "11:FALSE"
+            "AssemblyAsmDisplayName" = "8:FontAwesome.Sharp, Version=4.5.2.0, Culture=neutral, processorArchitecture=MSIL"
+                "ScatterAssemblies"
+                {
+                    "_826C04FA4CC541A68B556BA896A61A0B"
+                    {
+                    "Name" = "8:FontAwesome.Sharp.dll"
+                    "Attributes" = "3:512"
+                    }
+                }
+            "SourcePath" = "8:FontAwesome.Sharp.dll"
+            "TargetName" = "8:"
+            "Tag" = "8:"
+            "Folder" = "8:_6435800E3E8E4D11ACE1BC44920D8154"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:TRUE"
+            "IsolateTo" = "8:"
+            }
             "{9F6F8455-1EF1-4B85-886A-4223BCC8E7F7}:_8703D5C1A7F336CFE6973DC9481AE075"
             {
             "AssemblyRegister" = "3:1"
@@ -603,7 +646,7 @@
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:LCC Payroll System"
         "ProductCode" = "8:{4DEDD519-56A9-45AE-9F68-69BC30C5C940}"
-        "PackageCode" = "8:{3890413C-0EDF-4F68-8812-FF6BA61DEC1B}"
+        "PackageCode" = "8:{FB1F292E-1E86-4035-8830-EE1872A53BA6}"
         "UpgradeCode" = "8:{501DAED0-D973-47A2-96E3-16B135A33899}"
         "AspNetVersion" = "8:4.0.30319.0"
         "RestartWWWService" = "11:FALSE"
@@ -1152,7 +1195,7 @@
         {
             "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_340A833309AD4A018FAA9E3772A8D82B"
             {
-            "SourcePath" = "8:..\\LCCPayrollSystem\\obj\\Debug\\LCCPayrollSystem.exe"
+            "SourcePath" = "8:..\\LCCPayrollSystem\\obj\\Release\\LCCPayrollSystem.exe"
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_6435800E3E8E4D11ACE1BC44920D8154"

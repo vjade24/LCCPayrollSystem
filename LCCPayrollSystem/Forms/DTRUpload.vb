@@ -69,6 +69,12 @@ Public Class DTRUpload
     End Sub
 
     Private Sub DTRUpload_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        'TODO: This line of code loads data into the 'PayrolldbDataSet.dtr_conso_tbl' table. You can move, or remove it, as needed.
+        Me.Dtr_conso_tblTableAdapter.Fill(Me.PayrolldbDataSet.dtr_conso_tbl)
+        'TODO: This line of code loads data into the 'PayrolldbDataSet.dtr_conso_tbl' table. You can move, or remove it, as needed.
+        'Me.Dtr_conso_tblTableAdapter.Fill(Me.PayrolldbDataSet.dtr_conso_tbl)
+        'TODO: This line of code loads data into the 'PayrolldbDataSet.dtr_conso_tbl' table. You can move, or remove it, as needed.
+        ' Me.Dtr_conso_tblTableAdapter.Fill(Me.PayrolldbDataSet.dtr_conso_tbl)
         ComboBoxYear.Text = DateTime.Now.Year.ToString()
         ComboBoxMonth.Text = MonthName(DateTime.Now.Month)
         RefreshData()
@@ -77,11 +83,62 @@ Public Class DTRUpload
     Private Sub RefreshData()
         Dim monthName = ComboBoxMonth.Text.ToString().Trim()
         Dim monthNumber = DateTime.ParseExact(monthName, "MMMM", CultureInfo.CurrentCulture).Month
-        Dim query As String = "select id,employee_id,bio_datetime from dtr_upload_tbl where YEAR(CONVERT(date,bio_datetime)) = '" + Int32.Parse(ComboBoxYear.Text).ToString().Trim() + "' AND MONTH(CONVERT(date,bio_datetime)) = '" + monthNumber.ToString().Trim() + "'"
+
+        Dim query As String = "select A.employee_id,B.employee_name,A.bio_datetime from dtr_upload_tbl A INNER JOIN vw_employee_tbl B ON B.Id = A.employee_id where YEAR(CONVERT(date,bio_datetime)) = '" + Int32.Parse(ComboBoxYear.Text).ToString().Trim() + "' AND MONTH(CONVERT(date,bio_datetime)) = '" + monthNumber.ToString().Trim() + "'"
         CommonQuery(query, DataGridView1)
+
+        Dim query_conso As String = "select A.id,A.employee_id,B.employee_name,A.dtr_date,A.time_in_am,A.time_out_am,A.time_in_pm,A.time_out_pm from dtr_conso_tbl A INNER JOIN vw_employee_tbl B ON B.Id = A.employee_id where YEAR(CONVERT(date,dtr_date)) = '" + Int32.Parse(ComboBoxYear.Text).ToString().Trim() + "' AND MONTH(CONVERT(date,dtr_date)) = '" + monthNumber.ToString().Trim() + "'"
+        CommonQuery(query_conso, Dtr_conso_tblDataGridView)
     End Sub
     Private Sub btnLoad_Click(sender As Object, e As EventArgs) Handles btnLoad.Click
         RefreshData()
     End Sub
 
+    Private Sub Dtr_conso_tblDataGridView_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles Dtr_conso_tblDataGridView.CellClick
+        Dim result As DialogResult = MessageBox.Show("Are you sure you want to edit this record?", "Edit Record", MessageBoxButtons.YesNo)
+        If result = DialogResult.No Then
+            MessageBox.Show("You pressed No")
+        ElseIf result = DialogResult.Yes Then
+            IdTextBox.Text = Dtr_conso_tblDataGridView.CurrentRow.Cells(0).Value.ToString()
+            Employee_idTextBox.Text = Dtr_conso_tblDataGridView.CurrentRow.Cells(2).Value.ToString()
+            Dtr_dateDateTimePicker.Value = DateTime.Parse(Dtr_conso_tblDataGridView.CurrentRow.Cells(3).Value.ToString())
+            Tse_in_amDateTimePicker.Value = DateTime.Parse(Dtr_conso_tblDataGridView.CurrentRow.Cells(4).Value.ToString())
+            Tse_out_amDateTimePicker.Value = DateTime.Parse(Dtr_conso_tblDataGridView.CurrentRow.Cells(5).Value.ToString())
+            Tse_in_pmDateTimePicker.Value = DateTime.Parse(Dtr_conso_tblDataGridView.CurrentRow.Cells(6).Value.ToString())
+            Tse_out_pmDateTimePicker.Value = DateTime.Parse(Dtr_conso_tblDataGridView.CurrentRow.Cells(7).Value.ToString())
+        End If
+    End Sub
+
+
+    Private Sub Dtr_conso_tblBindingNavigatorSaveItem_Click(sender As Object, e As EventArgs)
+        Me.Validate()
+        Me.Dtr_conso_tblBindingSource.EndEdit()
+        Me.TableAdapterManager.UpdateAll(Me.PayrolldbDataSet)
+
+    End Sub
+
+    Private Sub btnSave_Click(sender As Object, e As EventArgs) Handles btnSave.Click
+        Dim result As DialogResult = MessageBox.Show("Are you sure you want to save this record?", "Save Record", MessageBoxButtons.YesNo)
+        If result = DialogResult.No Then
+            MessageBox.Show("You pressed No")
+        ElseIf result = DialogResult.Yes Then
+            Try
+                Dim monthName = ComboBoxMonth.Text.ToString().Trim()
+                Dim monthNumber = DateTime.ParseExact(monthName, "MMMM", CultureInfo.CurrentCulture).Month
+
+                Dim query As String = "update dtr_conso_tbl set time_in_am = '" + Tse_in_amDateTimePicker.Value + "',time_out_am = '" + Tse_out_amDateTimePicker.Value + "',time_in_pm = '" + Tse_in_pmDateTimePicker.Value + "',time_out_pm = '" + Tse_out_pmDateTimePicker.Value + "' where id = '" + IdTextBox.Text.ToString().Trim + "'"
+                UpdateQuery(query)
+
+                Dim query_conso As String = "select A.id,A.employee_id,B.employee_name,A.dtr_date,A.time_in_am,A.time_out_am,A.time_in_pm,A.time_out_pm from dtr_conso_tbl A INNER JOIN vw_employee_tbl B ON B.Id = A.employee_id where YEAR(CONVERT(date,dtr_date)) = '" + Int32.Parse(ComboBoxYear.Text).ToString().Trim() + "' AND MONTH(CONVERT(date,dtr_date)) = '" + monthNumber.ToString().Trim() + "'"
+                CommonQuery(query_conso, Dtr_conso_tblDataGridView)
+            Catch ex As Exception
+                MessageBox.Show(ex.Message.ToString)
+            End Try
+
+        End If
+    End Sub
+
+    Private Sub btnShowGenerate_Click(sender As Object, e As EventArgs) Handles btnShowGenerate.Click
+        DTR.ShowDialog()
+    End Sub
 End Class

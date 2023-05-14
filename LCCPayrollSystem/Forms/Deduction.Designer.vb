@@ -55,13 +55,13 @@ Partial Class Deduction
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.Label14 = New System.Windows.Forms.Label()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
+        Me.Label13 = New System.Windows.Forms.Label()
         Me.btnCreate = New System.Windows.Forms.Button()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.btn_save = New FontAwesome.Sharp.IconButton()
         Me.btnupdate = New FontAwesome.Sharp.IconButton()
         Me.btndel = New FontAwesome.Sharp.IconButton()
         Me.Button2 = New FontAwesome.Sharp.IconButton()
-        Me.Label13 = New System.Windows.Forms.Label()
         IdLabel = New System.Windows.Forms.Label()
         Deduct_amtLabel = New System.Windows.Forms.Label()
         Deduct_period_toLabel = New System.Windows.Forms.Label()
@@ -81,8 +81,8 @@ Partial Class Deduction
         '
         IdLabel.AutoSize = True
         IdLabel.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        IdLabel.ForeColor = System.Drawing.Color.White
-        IdLabel.Location = New System.Drawing.Point(164, 33)
+        IdLabel.ForeColor = System.Drawing.Color.Black
+        IdLabel.Location = New System.Drawing.Point(56, 29)
         IdLabel.Name = "IdLabel"
         IdLabel.Size = New System.Drawing.Size(67, 14)
         IdLabel.TabIndex = 132
@@ -93,8 +93,8 @@ Partial Class Deduction
         '
         Deduct_amtLabel.AutoSize = True
         Deduct_amtLabel.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Deduct_amtLabel.ForeColor = System.Drawing.Color.White
-        Deduct_amtLabel.Location = New System.Drawing.Point(411, 130)
+        Deduct_amtLabel.ForeColor = System.Drawing.Color.Black
+        Deduct_amtLabel.Location = New System.Drawing.Point(452, 78)
         Deduct_amtLabel.Name = "Deduct_amtLabel"
         Deduct_amtLabel.Size = New System.Drawing.Size(86, 14)
         Deduct_amtLabel.TabIndex = 142
@@ -104,8 +104,8 @@ Partial Class Deduction
         '
         Deduct_period_toLabel.AutoSize = True
         Deduct_period_toLabel.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Deduct_period_toLabel.ForeColor = System.Drawing.Color.White
-        Deduct_period_toLabel.Location = New System.Drawing.Point(533, 76)
+        Deduct_period_toLabel.ForeColor = System.Drawing.Color.Black
+        Deduct_period_toLabel.Location = New System.Drawing.Point(574, 24)
         Deduct_period_toLabel.Name = "Deduct_period_toLabel"
         Deduct_period_toLabel.Size = New System.Drawing.Size(49, 14)
         Deduct_period_toLabel.TabIndex = 140
@@ -115,8 +115,8 @@ Partial Class Deduction
         '
         Deduct_period_fromLabel.AutoSize = True
         Deduct_period_fromLabel.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Deduct_period_fromLabel.ForeColor = System.Drawing.Color.White
-        Deduct_period_fromLabel.Location = New System.Drawing.Point(411, 76)
+        Deduct_period_fromLabel.ForeColor = System.Drawing.Color.Black
+        Deduct_period_fromLabel.Location = New System.Drawing.Point(452, 24)
         Deduct_period_fromLabel.Name = "Deduct_period_fromLabel"
         Deduct_period_fromLabel.Size = New System.Drawing.Size(65, 14)
         Deduct_period_fromLabel.TabIndex = 138
@@ -126,8 +126,8 @@ Partial Class Deduction
         '
         Employee_idLabel.AutoSize = True
         Employee_idLabel.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Employee_idLabel.ForeColor = System.Drawing.Color.White
-        Employee_idLabel.Location = New System.Drawing.Point(164, 131)
+        Employee_idLabel.ForeColor = System.Drawing.Color.Black
+        Employee_idLabel.Location = New System.Drawing.Point(205, 79)
         Employee_idLabel.Name = "Employee_idLabel"
         Employee_idLabel.Size = New System.Drawing.Size(86, 14)
         Employee_idLabel.TabIndex = 136
@@ -137,8 +137,8 @@ Partial Class Deduction
         '
         Deduction_descrLabel.AutoSize = True
         Deduction_descrLabel.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Deduction_descrLabel.ForeColor = System.Drawing.Color.White
-        Deduction_descrLabel.Location = New System.Drawing.Point(164, 81)
+        Deduction_descrLabel.ForeColor = System.Drawing.Color.Black
+        Deduction_descrLabel.Location = New System.Drawing.Point(205, 29)
         Deduction_descrLabel.Name = "Deduction_descrLabel"
         Deduction_descrLabel.Size = New System.Drawing.Size(58, 14)
         Deduction_descrLabel.TabIndex = 134
@@ -147,7 +147,7 @@ Partial Class Deduction
         'Deduct_amtTextBox
         '
         Me.Deduct_amtTextBox.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Deduct_amtTextBox.Location = New System.Drawing.Point(411, 154)
+        Me.Deduct_amtTextBox.Location = New System.Drawing.Point(452, 102)
         Me.Deduct_amtTextBox.Name = "Deduct_amtTextBox"
         Me.Deduct_amtTextBox.Size = New System.Drawing.Size(241, 20)
         Me.Deduct_amtTextBox.TabIndex = 143
@@ -158,7 +158,7 @@ Partial Class Deduction
         '
         Me.Deduct_period_toDateTimePicker.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Deduct_period_toDateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.Deduct_period_toDateTimePicker.Location = New System.Drawing.Point(533, 100)
+        Me.Deduct_period_toDateTimePicker.Location = New System.Drawing.Point(574, 48)
         Me.Deduct_period_toDateTimePicker.Name = "Deduct_period_toDateTimePicker"
         Me.Deduct_period_toDateTimePicker.Size = New System.Drawing.Size(119, 20)
         Me.Deduct_period_toDateTimePicker.TabIndex = 141
@@ -168,7 +168,7 @@ Partial Class Deduction
         '
         Me.Deduct_period_fromDateTimePicker.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Deduct_period_fromDateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.Deduct_period_fromDateTimePicker.Location = New System.Drawing.Point(411, 100)
+        Me.Deduct_period_fromDateTimePicker.Location = New System.Drawing.Point(452, 48)
         Me.Deduct_period_fromDateTimePicker.Name = "Deduct_period_fromDateTimePicker"
         Me.Deduct_period_fromDateTimePicker.Size = New System.Drawing.Size(119, 20)
         Me.Deduct_period_fromDateTimePicker.TabIndex = 139
@@ -178,7 +178,7 @@ Partial Class Deduction
         '
         Me.Employee_idComboBox.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Employee_idComboBox.FormattingEnabled = True
-        Me.Employee_idComboBox.Location = New System.Drawing.Point(164, 152)
+        Me.Employee_idComboBox.Location = New System.Drawing.Point(205, 100)
         Me.Employee_idComboBox.Name = "Employee_idComboBox"
         Me.Employee_idComboBox.Size = New System.Drawing.Size(241, 22)
         Me.Employee_idComboBox.TabIndex = 137
@@ -186,7 +186,7 @@ Partial Class Deduction
         'IdTextBox
         '
         Me.IdTextBox.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.IdTextBox.Location = New System.Drawing.Point(164, 54)
+        Me.IdTextBox.Location = New System.Drawing.Point(56, 50)
         Me.IdTextBox.Name = "IdTextBox"
         Me.IdTextBox.Size = New System.Drawing.Size(143, 20)
         Me.IdTextBox.TabIndex = 133
@@ -198,7 +198,7 @@ Partial Class Deduction
         Me.Deduction_descrComboBox.DisplayMember = "deduction_descr"
         Me.Deduction_descrComboBox.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Deduction_descrComboBox.FormattingEnabled = True
-        Me.Deduction_descrComboBox.Location = New System.Drawing.Point(164, 102)
+        Me.Deduction_descrComboBox.Location = New System.Drawing.Point(205, 50)
         Me.Deduction_descrComboBox.Name = "Deduction_descrComboBox"
         Me.Deduction_descrComboBox.Size = New System.Drawing.Size(241, 22)
         Me.Deduction_descrComboBox.TabIndex = 135
@@ -226,7 +226,7 @@ Partial Class Deduction
         Me.Payroll_deduction_tblDataGridView.Name = "Payroll_deduction_tblDataGridView"
         Me.Payroll_deduction_tblDataGridView.ReadOnly = True
         Me.Payroll_deduction_tblDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.Payroll_deduction_tblDataGridView.Size = New System.Drawing.Size(869, 174)
+        Me.Payroll_deduction_tblDataGridView.Size = New System.Drawing.Size(869, 243)
         Me.Payroll_deduction_tblDataGridView.TabIndex = 148
         '
         'IdDataGridViewTextBoxColumn
@@ -327,10 +327,10 @@ Partial Class Deduction
         Me.GroupBox1.Controls.Add(Me.Deduct_period_toDateTimePicker)
         Me.GroupBox1.Controls.Add(Deduct_amtLabel)
         Me.GroupBox1.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.GroupBox1.ForeColor = System.Drawing.Color.White
+        Me.GroupBox1.ForeColor = System.Drawing.Color.Black
         Me.GroupBox1.Location = New System.Drawing.Point(12, 3)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(881, 202)
+        Me.GroupBox1.Size = New System.Drawing.Size(881, 133)
         Me.GroupBox1.TabIndex = 151
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Deduction Information"
@@ -339,7 +339,7 @@ Partial Class Deduction
         '
         Me.Label14.AutoSize = True
         Me.Label14.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label14.ForeColor = System.Drawing.Color.White
+        Me.Label14.ForeColor = System.Drawing.Color.Black
         Me.Label14.Location = New System.Drawing.Point(6, 22)
         Me.Label14.Name = "Label14"
         Me.Label14.Size = New System.Drawing.Size(71, 20)
@@ -354,13 +354,23 @@ Partial Class Deduction
         Me.GroupBox2.Controls.Add(Me.Payroll_deduction_tblDataGridView)
         Me.GroupBox2.Controls.Add(Me.txtb_search)
         Me.GroupBox2.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.GroupBox2.ForeColor = System.Drawing.Color.White
-        Me.GroupBox2.Location = New System.Drawing.Point(12, 211)
+        Me.GroupBox2.ForeColor = System.Drawing.Color.Black
+        Me.GroupBox2.Location = New System.Drawing.Point(12, 142)
         Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Size = New System.Drawing.Size(881, 254)
+        Me.GroupBox2.Size = New System.Drawing.Size(881, 323)
         Me.GroupBox2.TabIndex = 152
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Deduction List"
+        '
+        'Label13
+        '
+        Me.Label13.AutoSize = True
+        Me.Label13.ForeColor = System.Drawing.Color.Black
+        Me.Label13.Location = New System.Drawing.Point(79, 27)
+        Me.Label13.Name = "Label13"
+        Me.Label13.Size = New System.Drawing.Size(129, 14)
+        Me.Label13.TabIndex = 153
+        Me.Label13.Text = "(First Name or Lastname)"
         '
         'btnCreate
         '
@@ -380,10 +390,9 @@ Partial Class Deduction
         Me.Panel1.Controls.Add(Me.btnupdate)
         Me.Panel1.Controls.Add(Me.btndel)
         Me.Panel1.Controls.Add(Me.Button2)
-        Me.Panel1.Dock = System.Windows.Forms.DockStyle.Bottom
         Me.Panel1.Location = New System.Drawing.Point(0, 471)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(905, 54)
+        Me.Panel1.Size = New System.Drawing.Size(887, 54)
         Me.Panel1.TabIndex = 153
         '
         'btn_save
@@ -393,7 +402,7 @@ Partial Class Deduction
         Me.btn_save.IconColor = System.Drawing.Color.Black
         Me.btn_save.IconSize = 16
         Me.btn_save.Image = CType(resources.GetObject("btn_save.Image"), System.Drawing.Image)
-        Me.btn_save.Location = New System.Drawing.Point(541, 0)
+        Me.btn_save.Location = New System.Drawing.Point(523, 0)
         Me.btn_save.Name = "btn_save"
         Me.btn_save.Padding = New System.Windows.Forms.Padding(10, 0, 0, 0)
         Me.btn_save.Size = New System.Drawing.Size(91, 54)
@@ -409,7 +418,7 @@ Partial Class Deduction
         Me.btnupdate.IconColor = System.Drawing.Color.Black
         Me.btnupdate.IconSize = 16
         Me.btnupdate.Image = CType(resources.GetObject("btnupdate.Image"), System.Drawing.Image)
-        Me.btnupdate.Location = New System.Drawing.Point(632, 0)
+        Me.btnupdate.Location = New System.Drawing.Point(614, 0)
         Me.btnupdate.Name = "btnupdate"
         Me.btnupdate.Padding = New System.Windows.Forms.Padding(10, 0, 0, 0)
         Me.btnupdate.Size = New System.Drawing.Size(91, 54)
@@ -425,7 +434,7 @@ Partial Class Deduction
         Me.btndel.IconColor = System.Drawing.Color.Black
         Me.btndel.IconSize = 16
         Me.btndel.Image = CType(resources.GetObject("btndel.Image"), System.Drawing.Image)
-        Me.btndel.Location = New System.Drawing.Point(723, 0)
+        Me.btndel.Location = New System.Drawing.Point(705, 0)
         Me.btndel.Name = "btndel"
         Me.btndel.Padding = New System.Windows.Forms.Padding(10, 0, 0, 0)
         Me.btndel.Size = New System.Drawing.Size(91, 54)
@@ -441,7 +450,7 @@ Partial Class Deduction
         Me.Button2.IconColor = System.Drawing.Color.Black
         Me.Button2.IconSize = 16
         Me.Button2.Image = CType(resources.GetObject("Button2.Image"), System.Drawing.Image)
-        Me.Button2.Location = New System.Drawing.Point(814, 0)
+        Me.Button2.Location = New System.Drawing.Point(796, 0)
         Me.Button2.Name = "Button2"
         Me.Button2.Padding = New System.Windows.Forms.Padding(10, 0, 0, 0)
         Me.Button2.Size = New System.Drawing.Size(91, 54)
@@ -450,21 +459,11 @@ Partial Class Deduction
         Me.Button2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.Button2.UseVisualStyleBackColor = True
         '
-        'Label13
-        '
-        Me.Label13.AutoSize = True
-        Me.Label13.ForeColor = System.Drawing.Color.White
-        Me.Label13.Location = New System.Drawing.Point(79, 27)
-        Me.Label13.Name = "Label13"
-        Me.Label13.Size = New System.Drawing.Size(129, 14)
-        Me.Label13.TabIndex = 153
-        Me.Label13.Text = "(First Name or Lastname)"
-        '
         'Deduction
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
+        Me.BackColor = System.Drawing.SystemColors.Control
         Me.ClientSize = New System.Drawing.Size(905, 525)
         Me.Controls.Add(Me.Panel1)
         Me.Controls.Add(Me.GroupBox2)

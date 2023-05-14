@@ -88,8 +88,8 @@ Partial Class Reports
         'Department_assignedLabel
         '
         Department_assignedLabel.AutoSize = True
-        Department_assignedLabel.ForeColor = System.Drawing.Color.White
-        Department_assignedLabel.Location = New System.Drawing.Point(23, 91)
+        Department_assignedLabel.ForeColor = System.Drawing.Color.Black
+        Department_assignedLabel.Location = New System.Drawing.Point(10, 14)
         Department_assignedLabel.Name = "Department_assignedLabel"
         Department_assignedLabel.Size = New System.Drawing.Size(62, 13)
         Department_assignedLabel.TabIndex = 37
@@ -98,8 +98,8 @@ Partial Class Reports
         'Period_fromLabel
         '
         Period_fromLabel.AutoSize = True
-        Period_fromLabel.ForeColor = System.Drawing.Color.White
-        Period_fromLabel.Location = New System.Drawing.Point(249, 91)
+        Period_fromLabel.ForeColor = System.Drawing.Color.Black
+        Period_fromLabel.Location = New System.Drawing.Point(236, 14)
         Period_fromLabel.Name = "Period_fromLabel"
         Period_fromLabel.Size = New System.Drawing.Size(60, 13)
         Period_fromLabel.TabIndex = 110
@@ -108,8 +108,8 @@ Partial Class Reports
         'Period_toLabel
         '
         Period_toLabel.AutoSize = True
-        Period_toLabel.ForeColor = System.Drawing.Color.White
-        Period_toLabel.Location = New System.Drawing.Point(402, 91)
+        Period_toLabel.ForeColor = System.Drawing.Color.Black
+        Period_toLabel.Location = New System.Drawing.Point(389, 14)
         Period_toLabel.Name = "Period_toLabel"
         Period_toLabel.Size = New System.Drawing.Size(49, 13)
         Period_toLabel.TabIndex = 111
@@ -150,10 +150,10 @@ Partial Class Reports
         Me.Vw_payroll_tblDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.Vw_payroll_tblDataGridView.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn1, Me.DataGridViewTextBoxColumn2, Me.DataGridViewTextBoxColumn3, Me.DataGridViewTextBoxColumn4, Me.DataGridViewTextBoxColumn5, Me.DataGridViewTextBoxColumn6, Me.DataGridViewTextBoxColumn7, Me.DataGridViewTextBoxColumn8, Me.DataGridViewTextBoxColumn9, Me.DataGridViewTextBoxColumn10, Me.DataGridViewTextBoxColumn11, Me.DataGridViewTextBoxColumn12, Me.DataGridViewTextBoxColumn13, Me.DataGridViewTextBoxColumn14, Me.DataGridViewTextBoxColumn15, Me.DataGridViewTextBoxColumn16, Me.DataGridViewTextBoxColumn17, Me.DataGridViewTextBoxColumn18, Me.DataGridViewTextBoxColumn19, Me.DataGridViewTextBoxColumn20, Me.DataGridViewTextBoxColumn21, Me.DataGridViewTextBoxColumn22, Me.DataGridViewTextBoxColumn23, Me.DataGridViewTextBoxColumn24, Me.DataGridViewTextBoxColumn25, Me.DataGridViewTextBoxColumn26, Me.DataGridViewTextBoxColumn27, Me.DataGridViewTextBoxColumn28, Me.DataGridViewTextBoxColumn29, Me.DataGridViewTextBoxColumn30, Me.DataGridViewTextBoxColumn31, Me.DataGridViewTextBoxColumn32, Me.DataGridViewTextBoxColumn33, Me.DataGridViewTextBoxColumn34, Me.DataGridViewTextBoxColumn35, Me.DataGridViewImageColumn1})
         Me.Vw_payroll_tblDataGridView.DataSource = Me.Vw_payroll_tblBindingSource
-        Me.Vw_payroll_tblDataGridView.Location = New System.Drawing.Point(26, 136)
+        Me.Vw_payroll_tblDataGridView.Location = New System.Drawing.Point(13, 59)
         Me.Vw_payroll_tblDataGridView.Name = "Vw_payroll_tblDataGridView"
         Me.Vw_payroll_tblDataGridView.ReadOnly = True
-        Me.Vw_payroll_tblDataGridView.Size = New System.Drawing.Size(844, 364)
+        Me.Vw_payroll_tblDataGridView.Size = New System.Drawing.Size(880, 454)
         Me.Vw_payroll_tblDataGridView.TabIndex = 35
         '
         'DataGridViewTextBoxColumn1
@@ -445,7 +445,7 @@ Partial Class Reports
         '
         'Button1
         '
-        Me.Button1.Location = New System.Drawing.Point(763, 89)
+        Me.Button1.Location = New System.Drawing.Point(786, 14)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(107, 39)
         Me.Button1.TabIndex = 36
@@ -454,7 +454,7 @@ Partial Class Reports
         '
         'Button2
         '
-        Me.Button2.Location = New System.Drawing.Point(650, 89)
+        Me.Button2.Location = New System.Drawing.Point(673, 14)
         Me.Button2.Name = "Button2"
         Me.Button2.Size = New System.Drawing.Size(107, 39)
         Me.Button2.TabIndex = 37
@@ -465,7 +465,7 @@ Partial Class Reports
         '
         Me.department_assigned.FormattingEnabled = True
         Me.department_assigned.Items.AddRange(New Object() {"College", "Senior High School", "Junior High School", "Elementary"})
-        Me.department_assigned.Location = New System.Drawing.Point(26, 107)
+        Me.department_assigned.Location = New System.Drawing.Point(13, 30)
         Me.department_assigned.Name = "department_assigned"
         Me.department_assigned.Size = New System.Drawing.Size(216, 21)
         Me.department_assigned.TabIndex = 110
@@ -483,7 +483,7 @@ Partial Class Reports
         '
         Me.Period_fromDateTimePicker.DataBindings.Add(New System.Windows.Forms.Binding("Value", Me.Payroll_tblBindingSource, "period_from", True))
         Me.Period_fromDateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.Period_fromDateTimePicker.Location = New System.Drawing.Point(252, 107)
+        Me.Period_fromDateTimePicker.Location = New System.Drawing.Point(239, 30)
         Me.Period_fromDateTimePicker.Name = "Period_fromDateTimePicker"
         Me.Period_fromDateTimePicker.Size = New System.Drawing.Size(147, 20)
         Me.Period_fromDateTimePicker.TabIndex = 111
@@ -492,7 +492,7 @@ Partial Class Reports
         '
         Me.Period_toDateTimePicker.DataBindings.Add(New System.Windows.Forms.Binding("Value", Me.Payroll_tblBindingSource, "period_to", True))
         Me.Period_toDateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.Period_toDateTimePicker.Location = New System.Drawing.Point(405, 107)
+        Me.Period_toDateTimePicker.Location = New System.Drawing.Point(392, 30)
         Me.Period_toDateTimePicker.Name = "Period_toDateTimePicker"
         Me.Period_toDateTimePicker.Size = New System.Drawing.Size(147, 20)
         Me.Period_toDateTimePicker.TabIndex = 112
@@ -501,8 +501,8 @@ Partial Class Reports
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.ClientSize = New System.Drawing.Size(756, 525)
+        Me.BackColor = System.Drawing.SystemColors.Control
+        Me.ClientSize = New System.Drawing.Size(905, 525)
         Me.Controls.Add(Period_toLabel)
         Me.Controls.Add(Me.Period_toDateTimePicker)
         Me.Controls.Add(Period_fromLabel)

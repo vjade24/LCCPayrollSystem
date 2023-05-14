@@ -58,4 +58,25 @@
     Private Sub Dashboard_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         OpenChildForm(New Dashboard1, "Dashboard")
     End Sub
+
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+        ActiveButton(sender, Color.ForestGreen)
+        OpenChildForm(New DTRUpload, "DTR Upload")
+    End Sub
+
+    Private Sub btnDeduction_Click(sender As Object, e As EventArgs) Handles btnDeduction.Click
+        ActiveButton(sender, Color.ForestGreen)
+        OpenChildForm(New Deduction, "Deduction")
+    End Sub
+
+    Private Sub btnLogout_Click(sender As Object, e As EventArgs) Handles btnLogout.Click
+        Me.Close()
+        Me.Dispose()
+        login.Show()
+    End Sub
+
+    Private Sub btnRegister_Click(sender As Object, e As EventArgs) Handles btnRegister.Click
+        ActiveButton(sender, Color.ForestGreen)
+        OpenChildForm(New Register, "Register")
+    End Sub
 End Class

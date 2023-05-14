@@ -145,7 +145,7 @@ Partial Class Dashboard1
         Me.Panel3.Location = New System.Drawing.Point(11, 11)
         Me.Panel3.Margin = New System.Windows.Forms.Padding(2)
         Me.Panel3.Name = "Panel3"
-        Me.Panel3.Size = New System.Drawing.Size(290, 142)
+        Me.Panel3.Size = New System.Drawing.Size(271, 142)
         Me.Panel3.TabIndex = 32
         '
         'PictureBox9
@@ -170,7 +170,7 @@ Partial Class Dashboard1
         Me.Panel5.Location = New System.Drawing.Point(609, 11)
         Me.Panel5.Margin = New System.Windows.Forms.Padding(2)
         Me.Panel5.Name = "Panel5"
-        Me.Panel5.Size = New System.Drawing.Size(290, 142)
+        Me.Panel5.Size = New System.Drawing.Size(271, 142)
         Me.Panel5.TabIndex = 34
         '
         'Label12
@@ -231,7 +231,7 @@ Partial Class Dashboard1
         Me.Panel6.Location = New System.Drawing.Point(609, 158)
         Me.Panel6.Margin = New System.Windows.Forms.Padding(2)
         Me.Panel6.Name = "Panel6"
-        Me.Panel6.Size = New System.Drawing.Size(290, 142)
+        Me.Panel6.Size = New System.Drawing.Size(271, 142)
         Me.Panel6.TabIndex = 35
         '
         'Label15
@@ -304,7 +304,7 @@ Partial Class Dashboard1
         Me.Panel7.Location = New System.Drawing.Point(609, 305)
         Me.Panel7.Margin = New System.Windows.Forms.Padding(2)
         Me.Panel7.Name = "Panel7"
-        Me.Panel7.Size = New System.Drawing.Size(290, 208)
+        Me.Panel7.Size = New System.Drawing.Size(271, 208)
         Me.Panel7.TabIndex = 39
         '
         'Label18
@@ -365,7 +365,7 @@ Partial Class Dashboard1
         Me.Panel4.Location = New System.Drawing.Point(310, 11)
         Me.Panel4.Margin = New System.Windows.Forms.Padding(2)
         Me.Panel4.Name = "Panel4"
-        Me.Panel4.Size = New System.Drawing.Size(290, 142)
+        Me.Panel4.Size = New System.Drawing.Size(271, 142)
         Me.Panel4.TabIndex = 33
         '
         'CrystalReportViewer1

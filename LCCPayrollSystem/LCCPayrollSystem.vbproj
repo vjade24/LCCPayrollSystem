@@ -138,6 +138,12 @@
     <Compile Include="Forms\Deduction.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Forms\DTR.Designer.vb">
+      <DependentUpon>DTR.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\DTR.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Forms\DTRUpload.Designer.vb">
       <DependentUpon>DTRUpload.vb</DependentUpon>
     </Compile>
@@ -249,6 +255,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Deduction.resx">
       <DependentUpon>Deduction.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\DTR.resx">
+      <DependentUpon>DTR.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\DTRUpload.resx">
       <DependentUpon>DTRUpload.vb</DependentUpon>

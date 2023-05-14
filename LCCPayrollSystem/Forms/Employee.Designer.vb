@@ -316,7 +316,6 @@ Partial Class Employee
     Friend WithEvents Label6 As Label
     Friend WithEvents Label8 As Label
     Friend WithEvents GroupBox2 As GroupBox
-    Friend WithEvents BTNNEW As Button
     Friend WithEvents GroupBox1 As GroupBox
     Friend WithEvents Panel7 As Panel
     Friend WithEvents lblDate As Label
@@ -325,4 +324,5 @@ Partial Class Employee
     Friend WithEvents Employee_tblDataGridView As DataGridView
     Friend WithEvents Timer1 As Timer
     Friend WithEvents btnPrint As Button
+    Friend WithEvents BTNNEW As Button
 End Class

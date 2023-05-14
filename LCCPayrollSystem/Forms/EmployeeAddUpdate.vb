@@ -133,25 +133,73 @@ Public Class EmployeeAddUpdate
         End If
     End Sub
 
-    Private Sub btndel_Click(sender As Object, e As EventArgs)
-        Dim result As DialogResult = MessageBox.Show("Are you sure you want to Delete this Record?", "Delete Record", MessageBoxButtons.YesNoCancel)
-        If result = DialogResult.Cancel Then
-            MessageBox.Show("You pressed Cancel, Record will be remain")
-        ElseIf result = DialogResult.No Then
-            MessageBox.Show("You pressed No, Record will be remain")
-        ElseIf result = DialogResult.Yes Then
-            Dim query As String = "delete from employee_tbl where id ='" + IdTextBox.Text + "'"
-            DeleteQuery(query)
-            clearentry()
-            btn_save.Enabled = True
-            btn_cancel.Enabled = True
-            btndel.Enabled = False
-            btnedit.Enabled = False
-            btn_browse.Enabled = False
-        End If
+    Public Sub clearentry()
+        IdTextBox.Text = ""
+        Last_nameTextBox.Text = ""
+        First_nameTextBox.Text = ""
+        Middle_nameTextBox.Text = ""
+        Birth_dateDateTimePicker.Text = ""
+        AgeNumericUpDown.Text = ""
+        GenderComboBox.Text = "Male"
+        AddressTextBox.Text = ""
+        Contact_noTextBox.Text = ""
+        CitizenshipTextBox.Text = ""
+        Civil_statusComboBox.Text = "Single"
+        ReligionTextBox.Text = ""
+        Tin_noTextBox.Text = ""
+        Sss_noTextBox.Text = ""
+        Phic_noTextBox.Text = ""
+        Pag_ibig_noTextBox.Text = ""
+        Department_assignedComboBox.Text = "College"
+        Date_hireDateTimePicker.Text = ""
+        Father_nameTextBox.Text = ""
+        Mother_nameTextBox.Text = ""
+        HeightTextBox.Text = ""
+        WeightTextBox.Text = ""
+        Employment_statusComboBox.Text = ""
+        PositionTextBox.Text = ""
+        Spouse_nameTextBox.Text = ""
+        User_idComboBox.SelectedIndex = 0
+        PhotoPictureBox.Image = My.Resources.DefaultUserImg
+        PhotoPictureBox.SizeMode = PictureBoxSizeMode.StretchImage
+        rate_basis_ComboBox.Text = "Monthly"
+        Monthly_rateTextBox.Text = ""
+        Daily_rateTextBox.Text = ""
+        Hourly_rateTextBox.Text = ""
+        Unit_rateTextBox.Text = ""
+        Employment_statusComboBox.Text = "Full-Time"
+        Date_resignedDateTimePicker.Text = ""
+        Employee_statusComboBox.Text = "Active"
+
     End Sub
 
-    Private Sub btn_save_Click(sender As Object, e As EventArgs)
+    Private Sub Birth_dateDateTimePicker_ValueChanged(sender As Object, e As EventArgs) Handles Birth_dateDateTimePicker.ValueChanged
+        'Dim birthdate As DateAndTime
+        'birthdate = DateTime.Parse(Birth_dateDateTimePicker.Value)
+
+        'age = (DateTime.Parse(Birth_dateDateTimePicker.Value) - DateTime.Now.Year)
+
+        Dim age As Integer
+        Dim date_from As New DateTime
+        Dim date_to As New DateTime
+
+        date_from = DateTime.Parse(Birth_dateDateTimePicker.Text.ToString().Trim())
+        date_to = DateTime.Parse(DateTime.Now.ToString())
+
+        age = (date_to.Year - date_from.Year)
+
+        AgeNumericUpDown.Value = age.ToString()
+    End Sub
+
+    Private Sub Button1_Click(sender As Object, e As EventArgs)
+        Me.Hide()
+        Dashboard.Show()
+
+
+
+    End Sub
+
+    Private Sub btn_save_Click_1(sender As Object, e As EventArgs) Handles btn_save.Click
         Dim ms As New MemoryStream
         PhotoPictureBox.Image.Save(ms, PhotoPictureBox.Image.RawFormat)
         Dim command1 As New SqlCommand("insert into employee_tbl values (@Id,@last_name,@first_name,@middle_name,@birth_date,@age,@gender,@address,@contact_no,@citizenship,@civil_status,@religion,@tin_no,@sss_no,@phic_no,@pag_ibig_no,@department_assigned, @date_hire,@father_name,@mother_name,@height,@weight,@employment_status,@position,@spouse_name,@user_id,@photo,@rate_basis_descr,@monthly_rate,@daily_rate,@hourly_rate,@unit_rate,@employee_status,@date_resigned)", conn)
@@ -210,7 +258,7 @@ Public Class EmployeeAddUpdate
         End Try
     End Sub
 
-    Private Sub btnedit_Click(sender As Object, e As EventArgs)
+    Private Sub btnedit_Click_1(sender As Object, e As EventArgs) Handles btnedit.Click
         Dim result As DialogResult = MessageBox.Show("Are you sure you want to Update this Record?", "Update Record", MessageBoxButtons.YesNoCancel)
         If result = DialogResult.Cancel Then
             MessageBox.Show("You pressed Cancel, Record will be remain")
@@ -278,69 +326,30 @@ Public Class EmployeeAddUpdate
         End If
     End Sub
 
-    Private Sub btn_cancel_Click(sender As Object, e As EventArgs)
+    Private Sub btndel_Click_1(sender As Object, e As EventArgs) Handles btndel.Click
+        Dim result As DialogResult = MessageBox.Show("Are you sure you want to Delete this Record?", "Delete Record", MessageBoxButtons.YesNoCancel)
+        If result = DialogResult.Cancel Then
+            MessageBox.Show("You pressed Cancel, Record will be remain")
+        ElseIf result = DialogResult.No Then
+            MessageBox.Show("You pressed No, Record will be remain")
+        ElseIf result = DialogResult.Yes Then
+            Dim query As String = "delete from employee_tbl where id ='" + IdTextBox.Text + "'"
+            DeleteQuery(query)
+            clearentry()
+            btn_save.Enabled = True
+            btn_cancel.Enabled = True
+            btndel.Enabled = False
+            btnedit.Enabled = False
+            btn_browse.Enabled = False
+        End If
+    End Sub
+
+    Private Sub btn_cancel_Click_1(sender As Object, e As EventArgs) Handles btn_cancel.Click
         clearentry()
         btndel.Enabled = False
         btnedit.Enabled = False
         btn_save.Enabled = True
         btn_browse.Enabled = False
-    End Sub
-    Public Sub clearentry()
-        IdTextBox.Text = ""
-        Last_nameTextBox.Text = ""
-        First_nameTextBox.Text = ""
-        Middle_nameTextBox.Text = ""
-        Birth_dateDateTimePicker.Text = ""
-        AgeNumericUpDown.Text = ""
-        GenderComboBox.Text = "Male"
-        AddressTextBox.Text = ""
-        Contact_noTextBox.Text = ""
-        CitizenshipTextBox.Text = ""
-        Civil_statusComboBox.Text = "Single"
-        ReligionTextBox.Text = ""
-        Tin_noTextBox.Text = ""
-        Sss_noTextBox.Text = ""
-        Phic_noTextBox.Text = ""
-        Pag_ibig_noTextBox.Text = ""
-        Department_assignedComboBox.Text = "College"
-        Date_hireDateTimePicker.Text = ""
-        Father_nameTextBox.Text = ""
-        Mother_nameTextBox.Text = ""
-        HeightTextBox.Text = ""
-        WeightTextBox.Text = ""
-        Employment_statusComboBox.Text = ""
-        PositionTextBox.Text = ""
-        Spouse_nameTextBox.Text = ""
-        User_idComboBox.SelectedIndex = 0
-        PhotoPictureBox.Image = My.Resources.DefaultUserImg
-        PhotoPictureBox.SizeMode = PictureBoxSizeMode.StretchImage
-        rate_basis_ComboBox.Text = "Monthly"
-        Monthly_rateTextBox.Text = ""
-        Daily_rateTextBox.Text = ""
-        Hourly_rateTextBox.Text = ""
-        Unit_rateTextBox.Text = ""
-        Employment_statusComboBox.Text = "Full-Time"
-        Date_resignedDateTimePicker.Text = ""
-        Employee_statusComboBox.Text = "Active"
-
-    End Sub
-
-    Private Sub Birth_dateDateTimePicker_ValueChanged(sender As Object, e As EventArgs) Handles Birth_dateDateTimePicker.ValueChanged
-        'Dim birthdate As DateAndTime
-        'birthdate = DateTime.Parse(Birth_dateDateTimePicker.Value)
-
-        'age = (DateTime.Parse(Birth_dateDateTimePicker.Value) - DateTime.Now.Year)
-
-        Dim age As Integer
-        Dim date_from As New DateTime
-        Dim date_to As New DateTime
-
-        date_from = DateTime.Parse(Birth_dateDateTimePicker.Text.ToString().Trim())
-        date_to = DateTime.Parse(DateTime.Now.ToString())
-
-        age = (date_to.Year - date_from.Year)
-
-        AgeNumericUpDown.Value = age.ToString()
     End Sub
 
 End Class

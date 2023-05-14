@@ -81,11 +81,11 @@ Partial Class PayrollList
         Me.Vw_payroll_tblDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.Vw_payroll_tblDataGridView.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.IdDataGridViewTextBoxColumn, Me.PayrollnoDataGridViewTextBoxColumn, Me.PeriodfromDataGridViewTextBoxColumn, Me.PeriodtoDataGridViewTextBoxColumn, Me.EmployeeidDataGridViewTextBoxColumn, Me.EmployeenameDataGridViewTextBoxColumn, Me.LastnameDataGridViewTextBoxColumn, Me.FirstnameDataGridViewTextBoxColumn, Me.MiddlenameDataGridViewTextBoxColumn, Me.DepartmentassignedDataGridViewTextBoxColumn, Me.RatebasisdescrDataGridViewTextBoxColumn, Me.MonthlyrateDataGridViewTextBoxColumn, Me.DailyrateDataGridViewTextBoxColumn, Me.HourlyrateDataGridViewTextBoxColumn, Me.UnitrateDataGridViewTextBoxColumn, Me.RegularwagesDataGridViewTextBoxColumn, Me.OvertimeamtDataGridViewTextBoxColumn, Me.AllowancesamtDataGridViewTextBoxColumn, Me.AdjustmentsamtDataGridViewTextBoxColumn, Me.WorkeddaysDataGridViewTextBoxColumn, Me.AbsentdaysDataGridViewTextBoxColumn, Me.AbsentamtDataGridViewTextBoxColumn, Me.LatesinminDataGridViewTextBoxColumn, Me.LatesinamtDataGridViewTextBoxColumn, Me.CashadvanceamtDataGridViewTextBoxColumn, Me.SssmedamtDataGridViewTextBoxColumn, Me.SssloanamtDataGridViewTextBoxColumn, Me.PagibigamtDataGridViewTextBoxColumn, Me.PhicamtDataGridViewTextBoxColumn, Me.WtaxamtDataGridViewTextBoxColumn, Me.OtherdedamtDataGridViewTextBoxColumn, Me.OtherloansamtDataGridViewTextBoxColumn, Me.GrosspayDataGridViewTextBoxColumn, Me.NetpayDataGridViewTextBoxColumn, Me.RemarksDataGridViewTextBoxColumn})
         Me.Vw_payroll_tblDataGridView.DataSource = Me.Vw_payroll_tblBindingSource
-        Me.Vw_payroll_tblDataGridView.Location = New System.Drawing.Point(14, 122)
+        Me.Vw_payroll_tblDataGridView.Location = New System.Drawing.Point(13, 56)
         Me.Vw_payroll_tblDataGridView.Name = "Vw_payroll_tblDataGridView"
         Me.Vw_payroll_tblDataGridView.ReadOnly = True
         Me.Vw_payroll_tblDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.Vw_payroll_tblDataGridView.Size = New System.Drawing.Size(872, 397)
+        Me.Vw_payroll_tblDataGridView.Size = New System.Drawing.Size(872, 457)
         Me.Vw_payroll_tblDataGridView.TabIndex = 35
         '
         'IdDataGridViewTextBoxColumn
@@ -373,7 +373,7 @@ Partial Class PayrollList
         '
         Me.Label13.AutoSize = True
         Me.Label13.ForeColor = System.Drawing.Color.White
-        Me.Label13.Location = New System.Drawing.Point(95, 80)
+        Me.Label13.Location = New System.Drawing.Point(94, 14)
         Me.Label13.Name = "Label13"
         Me.Label13.Size = New System.Drawing.Size(124, 13)
         Me.Label13.TabIndex = 38
@@ -384,7 +384,7 @@ Partial Class PayrollList
         Me.Label14.AutoSize = True
         Me.Label14.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label14.ForeColor = System.Drawing.Color.White
-        Me.Label14.Location = New System.Drawing.Point(13, 75)
+        Me.Label14.Location = New System.Drawing.Point(12, 9)
         Me.Label14.Name = "Label14"
         Me.Label14.Size = New System.Drawing.Size(76, 20)
         Me.Label14.TabIndex = 37
@@ -392,14 +392,14 @@ Partial Class PayrollList
         '
         'txtbSearch
         '
-        Me.txtbSearch.Location = New System.Drawing.Point(14, 96)
+        Me.txtbSearch.Location = New System.Drawing.Point(13, 30)
         Me.txtbSearch.Name = "txtbSearch"
         Me.txtbSearch.Size = New System.Drawing.Size(230, 20)
         Me.txtbSearch.TabIndex = 36
         '
         'btn_create
         '
-        Me.btn_create.Location = New System.Drawing.Point(749, 80)
+        Me.btn_create.Location = New System.Drawing.Point(748, 14)
         Me.btn_create.Name = "btn_create"
         Me.btn_create.Size = New System.Drawing.Size(137, 36)
         Me.btn_create.TabIndex = 39
@@ -408,7 +408,7 @@ Partial Class PayrollList
         '
         'Button1
         '
-        Me.Button1.Location = New System.Drawing.Point(250, 80)
+        Me.Button1.Location = New System.Drawing.Point(249, 14)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(77, 36)
         Me.Button1.TabIndex = 40
@@ -437,7 +437,7 @@ Partial Class PayrollList
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(64, Byte), Integer))
-        Me.ClientSize = New System.Drawing.Size(756, 525)
+        Me.ClientSize = New System.Drawing.Size(905, 525)
         Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.btn_create)
         Me.Controls.Add(Me.Label13)
