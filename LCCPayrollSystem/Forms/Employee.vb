@@ -9,9 +9,7 @@ Public Class Employee
     End Sub
 
     Private Sub Employee_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        Dim query As String = "select id AS ID,first_name AS FirstName,last_name AS LastName,middle_name as MiddleName,date_hire as DateHired,employee_status AS Status from employee_tbl"
-        CommonQuery(query, Employee_tblDataGridView)
-        CountEmployee()
+        RefreshData()
     End Sub
 
     Private Sub txtbSearch_TextChanged(sender As Object, e As EventArgs) Handles txtbSearch.TextChanged
@@ -91,5 +89,12 @@ Public Class Employee
     '        currentBtn.BackColor = Color.White
     '    End If
     'End Sub
+
+
+    Public Sub RefreshData()
+        Dim query As String = "select id AS ID,first_name AS FirstName,last_name AS LastName,middle_name as MiddleName,date_hire as DateHired,employee_status AS Status from employee_tbl"
+        CommonQuery(query, Employee_tblDataGridView)
+        CountEmployee()
+    End Sub
 
 End Class

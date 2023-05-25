@@ -85,7 +85,7 @@ Public Class login
 
                         FormDashboard1.picDashboard.Visible = True
                         FormDashboard1.picPayroll.Visible = False
-                        FormDashboard1.picAttendance.Visible = False
+                        FormDashboard1.picAttendance.Visible = True
                         FormDashboard1.picReport.Visible = True
                         FormDashboard1.picEmployee.Visible = False
                         FormDashboard1.picDeduction.Visible = False

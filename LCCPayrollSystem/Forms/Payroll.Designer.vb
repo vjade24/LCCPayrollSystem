@@ -164,6 +164,9 @@ Partial Class Payroll
         Me.Payroll_tblTableAdapter = New LCCPayrollSystem.payrolldbDataSetTableAdapters.payroll_tblTableAdapter()
         Me.TableAdapterManager = New LCCPayrollSystem.payrolldbDataSetTableAdapters.TableAdapterManager()
         Me.PayrolldbDataSet1 = New LCCPayrollSystem.payrolldbDataSet()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.LabelOvertime = New System.Windows.Forms.Label()
         Period_toLabel = New System.Windows.Forms.Label()
         Period_fromLabel = New System.Windows.Forms.Label()
         Payroll_noLabel = New System.Windows.Forms.Label()
@@ -335,7 +338,7 @@ Partial Class Payroll
         '
         Gross_payLabel.AutoSize = True
         Gross_payLabel.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Gross_payLabel.Location = New System.Drawing.Point(182, 77)
+        Gross_payLabel.Location = New System.Drawing.Point(182, 79)
         Gross_payLabel.Name = "Gross_payLabel"
         Gross_payLabel.Size = New System.Drawing.Size(93, 19)
         Gross_payLabel.TabIndex = 61
@@ -362,7 +365,7 @@ Partial Class Payroll
         'Overtime_amtLabel
         '
         Overtime_amtLabel.AutoSize = True
-        Overtime_amtLabel.Location = New System.Drawing.Point(9, 79)
+        Overtime_amtLabel.Location = New System.Drawing.Point(9, 81)
         Overtime_amtLabel.Name = "Overtime_amtLabel"
         Overtime_amtLabel.Size = New System.Drawing.Size(53, 14)
         Overtime_amtLabel.TabIndex = 29
@@ -733,6 +736,7 @@ Partial Class Payroll
         '
         'GroupBox4
         '
+        Me.GroupBox4.Controls.Add(Me.LabelOvertime)
         Me.GroupBox4.Controls.Add(Me.Worked_daysLabel)
         Me.GroupBox4.Controls.Add(Me.Worked_daysTextBox)
         Me.GroupBox4.Controls.Add(Regular_wagesLabel)
@@ -783,7 +787,7 @@ Partial Class Payroll
         '
         'Overtime_amtTextBox
         '
-        Me.Overtime_amtTextBox.Location = New System.Drawing.Point(88, 80)
+        Me.Overtime_amtTextBox.Location = New System.Drawing.Point(88, 82)
         Me.Overtime_amtTextBox.Name = "Overtime_amtTextBox"
         Me.Overtime_amtTextBox.Size = New System.Drawing.Size(88, 20)
         Me.Overtime_amtTextBox.TabIndex = 30
@@ -794,7 +798,7 @@ Partial Class Payroll
         '
         Me.Gross_payTextBox.BackColor = System.Drawing.SystemColors.ActiveBorder
         Me.Gross_payTextBox.Font = New System.Drawing.Font("Arial", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Gross_payTextBox.Location = New System.Drawing.Point(272, 79)
+        Me.Gross_payTextBox.Location = New System.Drawing.Point(272, 81)
         Me.Gross_payTextBox.Name = "Gross_payTextBox"
         Me.Gross_payTextBox.ReadOnly = True
         Me.Gross_payTextBox.Size = New System.Drawing.Size(88, 26)
@@ -822,6 +826,8 @@ Partial Class Payroll
         '
         'GroupBox1
         '
+        Me.GroupBox1.Controls.Add(Me.Label2)
+        Me.GroupBox1.Controls.Add(Me.Label1)
         Me.GroupBox1.Controls.Add(Lbp_loanLabel)
         Me.GroupBox1.Controls.Add(Me.Lbp_loanTextBox)
         Me.GroupBox1.Controls.Add(King_coop_loanLabel)
@@ -1524,6 +1530,7 @@ Partial Class Payroll
         Me.TableAdapterManager.deduction_list_tblTableAdapter = Nothing
         Me.TableAdapterManager.dtr_conso_tblTableAdapter = Nothing
         Me.TableAdapterManager.dtr_tblTableAdapter = Nothing
+        Me.TableAdapterManager.dtr_upload_tblTableAdapter = Nothing
         Me.TableAdapterManager.employee_tblTableAdapter = Nothing
         Me.TableAdapterManager.payroll_deduction_tblTableAdapter = Nothing
         Me.TableAdapterManager.payroll_tblTableAdapter = Me.Payroll_tblTableAdapter
@@ -1535,6 +1542,39 @@ Partial Class Payroll
         '
         Me.PayrolldbDataSet1.DataSetName = "payrolldbDataSet"
         Me.PayrolldbDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Font = New System.Drawing.Font("Century Gothic", 6.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.ForeColor = System.Drawing.Color.Red
+        Me.Label1.Location = New System.Drawing.Point(251, 45)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(111, 12)
+        Me.Label1.TabIndex = 122
+        Me.Label1.Text = "(hourly rate / 60 * lates min."
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Font = New System.Drawing.Font("Century Gothic", 6.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.ForeColor = System.Drawing.Color.Red
+        Me.Label2.Location = New System.Drawing.Point(260, 11)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(102, 12)
+        Me.Label2.TabIndex = 123
+        Me.Label2.Text = "(daily rate * days absent)"
+        '
+        'LabelOvertime
+        '
+        Me.LabelOvertime.AutoSize = True
+        Me.LabelOvertime.Font = New System.Drawing.Font("Century Gothic", 6.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LabelOvertime.ForeColor = System.Drawing.Color.Red
+        Me.LabelOvertime.Location = New System.Drawing.Point(74, 70)
+        Me.LabelOvertime.Name = "LabelOvertime"
+        Me.LabelOvertime.Size = New System.Drawing.Size(11, 12)
+        Me.LabelOvertime.TabIndex = 124
+        Me.LabelOvertime.Text = "--"
         '
         'Payroll
         '
@@ -1679,4 +1719,7 @@ Partial Class Payroll
     Friend WithEvents GrosspayDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents NetpayDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents RemarksDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents Label2 As Label
+    Friend WithEvents Label1 As Label
+    Friend WithEvents LabelOvertime As Label
 End Class

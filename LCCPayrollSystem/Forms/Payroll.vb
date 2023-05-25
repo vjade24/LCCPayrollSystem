@@ -85,9 +85,28 @@ Public Class Payroll
         absent_amt = Double.Parse(Daily_rateTextBox.Text) * Double.Parse(Absent_daysTextBox.Text)
         Absent_amtTextBox.Text = absent_amt.ToString("###,##0.00")
     End Sub
+    Private Sub calculate_overtime()
+
+        Dim conn As SqlConnection = New SqlConnection(connection)
+        Dim cmd1 As SqlCommand = New SqlCommand("select employee_name,ISNULL(SUM(late_time_min),0) AS late_time_min,ISNULL(SUM(under_time_min),0) AS under_time_min,ISNULL(SUM(ot_min),0) AS ot_min from dtr_tbl where employee_id = '" + Employee_idComboBox.SelectedValue.ToString().Trim() + "' AND dtr_date between '" + Period_fromDateTimePicker.Value + "' and '" + Period_toDateTimePicker.Value + "' and id = (SELECT MAX(A1.id) FROM dtr_tbl A1 WHERE A1.employee_id = dtr_tbl.employee_id AND A1.dtr_date = dtr_tbl.dtr_date) GROUP BY employee_name", conn)
+        Dim sda As SqlDataAdapter = New SqlDataAdapter(cmd1)
+        Dim dt As DataTable = New DataTable
+        sda.Fill(dt)
+
+        LabelOvertime.Text = "(hourly rate / 60 * OT min.)"
+        Dim ovtm_min As Double = 0
+        Dim ovtm_amt As Double
+        If dt.Rows.Count > 0 Then
+            LabelOvertime.Text = "(hourly rate / 60 * '" + Double.Parse(dt.Rows(0)("ot_min").ToString()).ToString("###,##0") + "')"
+            ovtm_min = Double.Parse(dt.Rows(0)("ot_min").ToString())
+        End If
+        ovtm_amt = (Double.Parse(Hourly_rateTextBox.Text) / 60) * Double.Parse(ovtm_min)
+        Overtime_amtTextBox.Text = ovtm_amt.ToString("###,##0.00")
+    End Sub
 
     Private Sub calculate_all()
         calculate_wages()
+        calculate_overtime()
         calculate_gross()
         calculate_absent()
         calculate_lates_undertime()

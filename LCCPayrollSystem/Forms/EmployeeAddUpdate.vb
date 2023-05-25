@@ -249,6 +249,12 @@ Public Class EmployeeAddUpdate
                 Me.Close()
                 Me.Dispose()
                 Employee.Show()
+
+                Dim formEmployee As New Employee
+                formEmployee.RefreshData()
+                formEmployee.txtbSearch.Text = "asdasd"
+                formEmployee.Employee_tblDataGridView.DataSource = Nothing
+
             End If
             conn.Close()
 
