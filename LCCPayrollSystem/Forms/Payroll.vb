@@ -73,9 +73,24 @@ Public Class Payroll
         End If
         Regular_wagesTextBox.Text = Regular_wages.ToString("###,##0.00")
     End Sub
+
+    Private Sub calculate_lates_undertime()
+        Dim lates_undertime_amt As Double
+        lates_undertime_amt = (Double.Parse(Hourly_rateTextBox.Text) / 60) * Double.Parse(Lates_in_minTextBox.Text)
+        Lates_in_amtTextBox.Text = lates_undertime_amt.ToString("###,##0.00")
+    End Sub
+
+    Private Sub calculate_absent()
+        Dim absent_amt As Double
+        absent_amt = Double.Parse(Daily_rateTextBox.Text) * Double.Parse(Absent_daysTextBox.Text)
+        Absent_amtTextBox.Text = absent_amt.ToString("###,##0.00")
+    End Sub
+
     Private Sub calculate_all()
         calculate_wages()
         calculate_gross()
+        calculate_absent()
+        calculate_lates_undertime()
         calculate_deductions()
         calculate_net_pay()
     End Sub
@@ -219,6 +234,43 @@ Public Class Payroll
 
                 ' ******************************************************************************
                 ' **** This portion is to Get the Deduction amount of Individual Employee ******
+                ' ******************************************************************************
+
+
+
+
+
+                ' ******************************************************************************
+                ' **** Calculate Late, undertime and Overtime **********************************
+                ' ******************************************************************************
+                Dim cmd1 As SqlCommand = New SqlCommand("select employee_name,ISNULL(SUM(late_time_min),0) AS late_time_min,ISNULL(SUM(under_time_min),0) AS under_time_min,ISNULL(SUM(ot_min),0) AS ot_min from dtr_tbl where employee_id = '" + Employee_idComboBox.SelectedValue.ToString().Trim() + "' AND dtr_date between '" + Period_fromDateTimePicker.Value.ToString.Trim + "' and '" + Period_toDateTimePicker.Value.ToString.Trim + "'  and id = (SELECT MAX(A1.id) FROM dtr_tbl A1 WHERE A1.employee_id = dtr_tbl.employee_id AND A1.dtr_date = dtr_tbl.dtr_date) GROUP BY employee_name", conn)
+                Dim sda1 As SqlDataAdapter = New SqlDataAdapter(cmd1)
+                Dim dt1 As DataTable = New DataTable
+                sda1.Fill(dt1)
+
+                Lates_in_minTextBox.Text = "0.00"
+                If dt1.Rows.Count > 0 Then
+                    Lates_in_minTextBox.Text = Double.Parse(dt1.Rows(0)("under_time_min").ToString()) + Double.Parse(dt1.Rows(0)("late_time_min").ToString())
+                End If
+                ' ******************************************************************************
+                ' **** Calculate Late, undertime and Overtime **********************************
+                ' ******************************************************************************
+
+
+                ' ******************************************************************************
+                ' **** Calculate Late, undertime and Overtime **********************************
+                ' ******************************************************************************
+                Dim cmd_absent As SqlCommand = New SqlCommand("select employee_name,COUNT(ISNULL(is_absent,0)) AS is_absent from dtr_tbl where employee_id = '" + Employee_idComboBox.SelectedValue.ToString().Trim() + "' AND dtr_date between '" + Period_fromDateTimePicker.Value.ToString.Trim + "' and '" + Period_toDateTimePicker.Value.ToString.Trim + "' AND ISNULL(is_absent,0)<> 0 and id = (SELECT MAX(A1.id) FROM dtr_tbl A1 WHERE A1.employee_id = dtr_tbl.employee_id AND A1.dtr_date = dtr_tbl.dtr_date)  GROUP BY employee_name", conn)
+                Dim sda_absent As SqlDataAdapter = New SqlDataAdapter(cmd_absent)
+                Dim dt_absent As DataTable = New DataTable
+                sda_absent.Fill(dt_absent)
+
+                Absent_daysTextBox.Text = "0.00"
+                If dt_absent.Rows.Count > 0 Then
+                    Absent_daysTextBox.Text = Double.Parse(dt_absent.Rows(0)("is_absent").ToString())
+                End If
+                ' ******************************************************************************
+                ' **** Calculate Late, undertime and Overtime **********************************
                 ' ******************************************************************************
 
                 calculate_all()
@@ -667,4 +719,5 @@ Public Class Payroll
         query = "select * from vw_payroll_tbl WHERE employee_name LIKE '%" + txtbSearch.Text + "%'"
         CommonQuery(query, Vw_payroll_tblDataGridView)
     End Sub
+
 End Class

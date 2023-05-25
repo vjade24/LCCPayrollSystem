@@ -10,7 +10,7 @@ Public Class login
 
         If date1.Date > date2.Date Then
 
-            MsgBox("Application is Expired!", MsgBoxStyle.Exclamation)
+            MsgBox("Application is Expired!, Contact the Administrator", MsgBoxStyle.Exclamation)
         Else
 
             If txtb_username.Text = Nothing Or txtb_userpassword.Text = Nothing Then

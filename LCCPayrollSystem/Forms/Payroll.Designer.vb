@@ -59,8 +59,8 @@ Partial Class Payroll
         Dim King_coop_loanLabel As System.Windows.Forms.Label
         Dim Lbp_loanLabel As System.Windows.Forms.Label
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Payroll))
-        Dim DataGridViewCellStyle11 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle12 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.GroupBox5 = New System.Windows.Forms.GroupBox()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Period_toDateTimePicker = New System.Windows.Forms.DateTimePicker()
@@ -1387,10 +1387,10 @@ Partial Class Payroll
         'GrosspayDataGridViewTextBoxColumn
         '
         Me.GrosspayDataGridViewTextBoxColumn.DataPropertyName = "gross_pay"
-        DataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
-        DataGridViewCellStyle11.Format = "N2"
-        DataGridViewCellStyle11.NullValue = Nothing
-        Me.GrosspayDataGridViewTextBoxColumn.DefaultCellStyle = DataGridViewCellStyle11
+        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
+        DataGridViewCellStyle1.Format = "N2"
+        DataGridViewCellStyle1.NullValue = Nothing
+        Me.GrosspayDataGridViewTextBoxColumn.DefaultCellStyle = DataGridViewCellStyle1
         Me.GrosspayDataGridViewTextBoxColumn.HeaderText = "Gross Pay"
         Me.GrosspayDataGridViewTextBoxColumn.Name = "GrosspayDataGridViewTextBoxColumn"
         Me.GrosspayDataGridViewTextBoxColumn.ReadOnly = True
@@ -1398,10 +1398,10 @@ Partial Class Payroll
         'NetpayDataGridViewTextBoxColumn
         '
         Me.NetpayDataGridViewTextBoxColumn.DataPropertyName = "net_pay"
-        DataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
-        DataGridViewCellStyle12.Format = "N2"
-        DataGridViewCellStyle12.NullValue = Nothing
-        Me.NetpayDataGridViewTextBoxColumn.DefaultCellStyle = DataGridViewCellStyle12
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
+        DataGridViewCellStyle2.Format = "N2"
+        DataGridViewCellStyle2.NullValue = Nothing
+        Me.NetpayDataGridViewTextBoxColumn.DefaultCellStyle = DataGridViewCellStyle2
         Me.NetpayDataGridViewTextBoxColumn.HeaderText = "Net Pay"
         Me.NetpayDataGridViewTextBoxColumn.Name = "NetpayDataGridViewTextBoxColumn"
         Me.NetpayDataGridViewTextBoxColumn.ReadOnly = True
@@ -1523,6 +1523,7 @@ Partial Class Payroll
         Me.TableAdapterManager.BackupDataSetBeforeUpdate = False
         Me.TableAdapterManager.deduction_list_tblTableAdapter = Nothing
         Me.TableAdapterManager.dtr_conso_tblTableAdapter = Nothing
+        Me.TableAdapterManager.dtr_tblTableAdapter = Nothing
         Me.TableAdapterManager.employee_tblTableAdapter = Nothing
         Me.TableAdapterManager.payroll_deduction_tblTableAdapter = Nothing
         Me.TableAdapterManager.payroll_tblTableAdapter = Me.Payroll_tblTableAdapter

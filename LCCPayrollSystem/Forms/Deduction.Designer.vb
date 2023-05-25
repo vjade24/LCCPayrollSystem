@@ -29,8 +29,8 @@ Partial Class Deduction
         Dim Deduct_period_fromLabel As System.Windows.Forms.Label
         Dim Employee_idLabel As System.Windows.Forms.Label
         Dim Deduction_descrLabel As System.Windows.Forms.Label
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Deduction))
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.Deduct_amtTextBox = New System.Windows.Forms.TextBox()
         Me.Deduct_period_toDateTimePicker = New System.Windows.Forms.DateTimePicker()
         Me.Deduct_period_fromDateTimePicker = New System.Windows.Forms.DateTimePicker()
@@ -40,14 +40,6 @@ Partial Class Deduction
         Me.DeductionlisttblBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.PayrolldbDataSet = New LCCPayrollSystem.payrolldbDataSet()
         Me.Payroll_deduction_tblDataGridView = New System.Windows.Forms.DataGridView()
-        Me.IdDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DeductioncodeDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DeductiondescrDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.EmployeeidDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.EmployeenameDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DeductperiodfromDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DeductperiodtoDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DeductamtDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.PayrolldeductiontblBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.txtb_search = New System.Windows.Forms.TextBox()
         Me.Deduction_list_tblTableAdapter = New LCCPayrollSystem.payrolldbDataSetTableAdapters.deduction_list_tblTableAdapter()
@@ -62,6 +54,14 @@ Partial Class Deduction
         Me.btnupdate = New FontAwesome.Sharp.IconButton()
         Me.btndel = New FontAwesome.Sharp.IconButton()
         Me.Button2 = New FontAwesome.Sharp.IconButton()
+        Me.IdDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DeductioncodeDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DeductiondescrDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.EmployeeidDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.EmployeenameDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DeductperiodfromDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DeductperiodtoDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DeductamtDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         IdLabel = New System.Windows.Forms.Label()
         Deduct_amtLabel = New System.Windows.Forms.Label()
         Deduct_period_toLabel = New System.Windows.Forms.Label()
@@ -228,67 +228,6 @@ Partial Class Deduction
         Me.Payroll_deduction_tblDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.Payroll_deduction_tblDataGridView.Size = New System.Drawing.Size(869, 243)
         Me.Payroll_deduction_tblDataGridView.TabIndex = 148
-        '
-        'IdDataGridViewTextBoxColumn
-        '
-        Me.IdDataGridViewTextBoxColumn.DataPropertyName = "Id"
-        Me.IdDataGridViewTextBoxColumn.HeaderText = "Id"
-        Me.IdDataGridViewTextBoxColumn.Name = "IdDataGridViewTextBoxColumn"
-        Me.IdDataGridViewTextBoxColumn.ReadOnly = True
-        Me.IdDataGridViewTextBoxColumn.Visible = False
-        '
-        'DeductioncodeDataGridViewTextBoxColumn
-        '
-        Me.DeductioncodeDataGridViewTextBoxColumn.DataPropertyName = "deduction_code"
-        Me.DeductioncodeDataGridViewTextBoxColumn.HeaderText = "deduction_code"
-        Me.DeductioncodeDataGridViewTextBoxColumn.Name = "DeductioncodeDataGridViewTextBoxColumn"
-        Me.DeductioncodeDataGridViewTextBoxColumn.ReadOnly = True
-        Me.DeductioncodeDataGridViewTextBoxColumn.Visible = False
-        '
-        'DeductiondescrDataGridViewTextBoxColumn
-        '
-        Me.DeductiondescrDataGridViewTextBoxColumn.DataPropertyName = "deduction_descr"
-        Me.DeductiondescrDataGridViewTextBoxColumn.HeaderText = "Deduction"
-        Me.DeductiondescrDataGridViewTextBoxColumn.Name = "DeductiondescrDataGridViewTextBoxColumn"
-        Me.DeductiondescrDataGridViewTextBoxColumn.ReadOnly = True
-        '
-        'EmployeeidDataGridViewTextBoxColumn
-        '
-        Me.EmployeeidDataGridViewTextBoxColumn.DataPropertyName = "employee_id"
-        Me.EmployeeidDataGridViewTextBoxColumn.HeaderText = "ID No"
-        Me.EmployeeidDataGridViewTextBoxColumn.Name = "EmployeeidDataGridViewTextBoxColumn"
-        Me.EmployeeidDataGridViewTextBoxColumn.ReadOnly = True
-        '
-        'EmployeenameDataGridViewTextBoxColumn
-        '
-        Me.EmployeenameDataGridViewTextBoxColumn.DataPropertyName = "employee_name"
-        Me.EmployeenameDataGridViewTextBoxColumn.HeaderText = "Employee Name"
-        Me.EmployeenameDataGridViewTextBoxColumn.Name = "EmployeenameDataGridViewTextBoxColumn"
-        Me.EmployeenameDataGridViewTextBoxColumn.ReadOnly = True
-        '
-        'DeductperiodfromDataGridViewTextBoxColumn
-        '
-        Me.DeductperiodfromDataGridViewTextBoxColumn.DataPropertyName = "deduct_period_from"
-        Me.DeductperiodfromDataGridViewTextBoxColumn.HeaderText = "Period from"
-        Me.DeductperiodfromDataGridViewTextBoxColumn.Name = "DeductperiodfromDataGridViewTextBoxColumn"
-        Me.DeductperiodfromDataGridViewTextBoxColumn.ReadOnly = True
-        '
-        'DeductperiodtoDataGridViewTextBoxColumn
-        '
-        Me.DeductperiodtoDataGridViewTextBoxColumn.DataPropertyName = "deduct_period_to"
-        Me.DeductperiodtoDataGridViewTextBoxColumn.HeaderText = "Period to"
-        Me.DeductperiodtoDataGridViewTextBoxColumn.Name = "DeductperiodtoDataGridViewTextBoxColumn"
-        Me.DeductperiodtoDataGridViewTextBoxColumn.ReadOnly = True
-        '
-        'DeductamtDataGridViewTextBoxColumn
-        '
-        Me.DeductamtDataGridViewTextBoxColumn.DataPropertyName = "deduct_amt"
-        DataGridViewCellStyle1.Format = "N2"
-        DataGridViewCellStyle1.NullValue = Nothing
-        Me.DeductamtDataGridViewTextBoxColumn.DefaultCellStyle = DataGridViewCellStyle1
-        Me.DeductamtDataGridViewTextBoxColumn.HeaderText = "Deduct Amount"
-        Me.DeductamtDataGridViewTextBoxColumn.Name = "DeductamtDataGridViewTextBoxColumn"
-        Me.DeductamtDataGridViewTextBoxColumn.ReadOnly = True
         '
         'PayrolldeductiontblBindingSource
         '
@@ -459,6 +398,73 @@ Partial Class Deduction
         Me.Button2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
         Me.Button2.UseVisualStyleBackColor = True
         '
+        'IdDataGridViewTextBoxColumn
+        '
+        Me.IdDataGridViewTextBoxColumn.DataPropertyName = "Id"
+        Me.IdDataGridViewTextBoxColumn.HeaderText = "Id"
+        Me.IdDataGridViewTextBoxColumn.Name = "IdDataGridViewTextBoxColumn"
+        Me.IdDataGridViewTextBoxColumn.ReadOnly = True
+        Me.IdDataGridViewTextBoxColumn.Visible = False
+        '
+        'DeductioncodeDataGridViewTextBoxColumn
+        '
+        Me.DeductioncodeDataGridViewTextBoxColumn.DataPropertyName = "deduction_code"
+        Me.DeductioncodeDataGridViewTextBoxColumn.HeaderText = "deduction_code"
+        Me.DeductioncodeDataGridViewTextBoxColumn.Name = "DeductioncodeDataGridViewTextBoxColumn"
+        Me.DeductioncodeDataGridViewTextBoxColumn.ReadOnly = True
+        Me.DeductioncodeDataGridViewTextBoxColumn.Visible = False
+        '
+        'DeductiondescrDataGridViewTextBoxColumn
+        '
+        Me.DeductiondescrDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.DeductiondescrDataGridViewTextBoxColumn.DataPropertyName = "deduction_descr"
+        Me.DeductiondescrDataGridViewTextBoxColumn.HeaderText = "Deduction"
+        Me.DeductiondescrDataGridViewTextBoxColumn.Name = "DeductiondescrDataGridViewTextBoxColumn"
+        Me.DeductiondescrDataGridViewTextBoxColumn.ReadOnly = True
+        '
+        'EmployeeidDataGridViewTextBoxColumn
+        '
+        Me.EmployeeidDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.EmployeeidDataGridViewTextBoxColumn.DataPropertyName = "employee_id"
+        Me.EmployeeidDataGridViewTextBoxColumn.HeaderText = "ID No"
+        Me.EmployeeidDataGridViewTextBoxColumn.Name = "EmployeeidDataGridViewTextBoxColumn"
+        Me.EmployeeidDataGridViewTextBoxColumn.ReadOnly = True
+        '
+        'EmployeenameDataGridViewTextBoxColumn
+        '
+        Me.EmployeenameDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.EmployeenameDataGridViewTextBoxColumn.DataPropertyName = "employee_name"
+        Me.EmployeenameDataGridViewTextBoxColumn.HeaderText = "Employee Name"
+        Me.EmployeenameDataGridViewTextBoxColumn.Name = "EmployeenameDataGridViewTextBoxColumn"
+        Me.EmployeenameDataGridViewTextBoxColumn.ReadOnly = True
+        '
+        'DeductperiodfromDataGridViewTextBoxColumn
+        '
+        Me.DeductperiodfromDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.DeductperiodfromDataGridViewTextBoxColumn.DataPropertyName = "deduct_period_from"
+        Me.DeductperiodfromDataGridViewTextBoxColumn.HeaderText = "Period from"
+        Me.DeductperiodfromDataGridViewTextBoxColumn.Name = "DeductperiodfromDataGridViewTextBoxColumn"
+        Me.DeductperiodfromDataGridViewTextBoxColumn.ReadOnly = True
+        '
+        'DeductperiodtoDataGridViewTextBoxColumn
+        '
+        Me.DeductperiodtoDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.DeductperiodtoDataGridViewTextBoxColumn.DataPropertyName = "deduct_period_to"
+        Me.DeductperiodtoDataGridViewTextBoxColumn.HeaderText = "Period to"
+        Me.DeductperiodtoDataGridViewTextBoxColumn.Name = "DeductperiodtoDataGridViewTextBoxColumn"
+        Me.DeductperiodtoDataGridViewTextBoxColumn.ReadOnly = True
+        '
+        'DeductamtDataGridViewTextBoxColumn
+        '
+        Me.DeductamtDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.DeductamtDataGridViewTextBoxColumn.DataPropertyName = "deduct_amt"
+        DataGridViewCellStyle1.Format = "N2"
+        DataGridViewCellStyle1.NullValue = Nothing
+        Me.DeductamtDataGridViewTextBoxColumn.DefaultCellStyle = DataGridViewCellStyle1
+        Me.DeductamtDataGridViewTextBoxColumn.HeaderText = "Deduct Amount"
+        Me.DeductamtDataGridViewTextBoxColumn.Name = "DeductamtDataGridViewTextBoxColumn"
+        Me.DeductamtDataGridViewTextBoxColumn.ReadOnly = True
+        '
         'Deduction
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -499,14 +505,6 @@ Partial Class Deduction
     Friend WithEvents Payroll_deduction_tblTableAdapter As payrolldbDataSetTableAdapters.payroll_deduction_tblTableAdapter
     Friend WithEvents GroupBox1 As GroupBox
     Friend WithEvents Label14 As Label
-    Friend WithEvents IdDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
-    Friend WithEvents DeductioncodeDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
-    Friend WithEvents DeductiondescrDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
-    Friend WithEvents EmployeeidDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
-    Friend WithEvents EmployeenameDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
-    Friend WithEvents DeductperiodfromDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
-    Friend WithEvents DeductperiodtoDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
-    Friend WithEvents DeductamtDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents GroupBox2 As GroupBox
     Friend WithEvents btnCreate As Button
     Friend WithEvents Panel1 As Panel
@@ -515,4 +513,12 @@ Partial Class Deduction
     Friend WithEvents btndel As FontAwesome.Sharp.IconButton
     Friend WithEvents Button2 As FontAwesome.Sharp.IconButton
     Friend WithEvents Label13 As Label
+    Friend WithEvents IdDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents DeductioncodeDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents DeductiondescrDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents EmployeeidDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents EmployeenameDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents DeductperiodfromDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents DeductperiodtoDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents DeductamtDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
 End Class

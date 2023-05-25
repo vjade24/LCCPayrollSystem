@@ -1,6 +1,6 @@
 ﻿Imports System.Data.SqlClient
 Module CommonClasses
-    Public expire_date = "2023-05-20"
+    Public expire_date = "2023-05-25"
     'Public connection = "Data Source=DESKTOP-AD3I7I5\SQLEXPRESS;Initial Catalog=payrolldb;Integrated Security=True"
 
     Public connection = My.Settings.payrolldbConnectionString
