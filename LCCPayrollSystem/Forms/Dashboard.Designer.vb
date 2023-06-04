@@ -22,20 +22,21 @@ Partial Class Dashboard
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Dashboard))
         Me.btnEmployee = New System.Windows.Forms.Button()
         Me.btnPayroll = New System.Windows.Forms.Button()
         Me.btnReport = New System.Windows.Forms.Button()
-        Me.btnAttendance = New System.Windows.Forms.Button()
         Me.btnDashboard = New System.Windows.Forms.Button()
         Me.picEmployee = New System.Windows.Forms.PictureBox()
         Me.picPayroll = New System.Windows.Forms.PictureBox()
-        Me.PictureBox4 = New System.Windows.Forms.PictureBox()
         Me.picReport = New System.Windows.Forms.PictureBox()
         Me.picDashboard = New System.Windows.Forms.PictureBox()
         Me.btnLogout = New System.Windows.Forms.Button()
         Me.lbl_welcome = New System.Windows.Forms.Label()
         Me.PanelMenu = New System.Windows.Forms.Panel()
+        Me.picHoliday = New System.Windows.Forms.PictureBox()
+        Me.btnHoliday = New System.Windows.Forms.Button()
         Me.picRegister = New System.Windows.Forms.PictureBox()
         Me.btnRegister = New System.Windows.Forms.Button()
         Me.picDeduction = New System.Windows.Forms.PictureBox()
@@ -47,14 +48,16 @@ Partial Class Dashboard
         Me.PictureBox13 = New System.Windows.Forms.PictureBox()
         Me.LblBreadCrump = New System.Windows.Forms.Label()
         Me.Panel2 = New System.Windows.Forms.Panel()
+        Me.lbl_datetime = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.PanelMain = New System.Windows.Forms.Panel()
+        Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         CType(Me.picEmployee, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.picPayroll, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.picReport, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.picDashboard, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.PanelMenu.SuspendLayout()
+        CType(Me.picHoliday, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.picRegister, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.picDeduction, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.picAttendance, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -96,18 +99,6 @@ Partial Class Dashboard
         Me.btnReport.Text = "Report"
         Me.btnReport.UseVisualStyleBackColor = False
         '
-        'btnAttendance
-        '
-        Me.btnAttendance.BackColor = System.Drawing.Color.White
-        Me.btnAttendance.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnAttendance.Location = New System.Drawing.Point(12, 461)
-        Me.btnAttendance.Name = "btnAttendance"
-        Me.btnAttendance.Size = New System.Drawing.Size(179, 46)
-        Me.btnAttendance.TabIndex = 23
-        Me.btnAttendance.Text = "      Attendance"
-        Me.btnAttendance.UseVisualStyleBackColor = False
-        Me.btnAttendance.Visible = False
-        '
         'btnDashboard
         '
         Me.btnDashboard.BackColor = System.Drawing.Color.White
@@ -143,19 +134,6 @@ Partial Class Dashboard
         Me.picPayroll.TabIndex = 26
         Me.picPayroll.TabStop = False
         '
-        'PictureBox4
-        '
-        Me.PictureBox4.BackColor = System.Drawing.Color.Transparent
-        Me.PictureBox4.Image = CType(resources.GetObject("PictureBox4.Image"), System.Drawing.Image)
-        Me.PictureBox4.Location = New System.Drawing.Point(30, 467)
-        Me.PictureBox4.Margin = New System.Windows.Forms.Padding(2)
-        Me.PictureBox4.Name = "PictureBox4"
-        Me.PictureBox4.Size = New System.Drawing.Size(27, 30)
-        Me.PictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PictureBox4.TabIndex = 27
-        Me.PictureBox4.TabStop = False
-        Me.PictureBox4.Visible = False
-        '
         'picReport
         '
         Me.picReport.BackColor = System.Drawing.Color.Transparent
@@ -184,9 +162,9 @@ Partial Class Dashboard
         '
         Me.btnLogout.BackColor = System.Drawing.Color.White
         Me.btnLogout.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnLogout.Location = New System.Drawing.Point(12, 513)
+        Me.btnLogout.Location = New System.Drawing.Point(0, 525)
         Me.btnLogout.Name = "btnLogout"
-        Me.btnLogout.Size = New System.Drawing.Size(179, 44)
+        Me.btnLogout.Size = New System.Drawing.Size(217, 44)
         Me.btnLogout.TabIndex = 30
         Me.btnLogout.Text = "Logout"
         Me.btnLogout.UseVisualStyleBackColor = False
@@ -206,6 +184,8 @@ Partial Class Dashboard
         'PanelMenu
         '
         Me.PanelMenu.BackColor = System.Drawing.SystemColors.ActiveBorder
+        Me.PanelMenu.Controls.Add(Me.picHoliday)
+        Me.PanelMenu.Controls.Add(Me.btnHoliday)
         Me.PanelMenu.Controls.Add(Me.picRegister)
         Me.PanelMenu.Controls.Add(Me.btnRegister)
         Me.PanelMenu.Controls.Add(Me.picDeduction)
@@ -216,11 +196,9 @@ Partial Class Dashboard
         Me.PanelMenu.Controls.Add(Me.btnLogout)
         Me.PanelMenu.Controls.Add(Me.picDashboard)
         Me.PanelMenu.Controls.Add(Me.picReport)
-        Me.PanelMenu.Controls.Add(Me.PictureBox4)
         Me.PanelMenu.Controls.Add(Me.picPayroll)
         Me.PanelMenu.Controls.Add(Me.picEmployee)
         Me.PanelMenu.Controls.Add(Me.btnDashboard)
-        Me.PanelMenu.Controls.Add(Me.btnAttendance)
         Me.PanelMenu.Controls.Add(Me.btnReport)
         Me.PanelMenu.Controls.Add(Me.btnPayroll)
         Me.PanelMenu.Controls.Add(Me.btnEmployee)
@@ -229,6 +207,29 @@ Partial Class Dashboard
         Me.PanelMenu.Name = "PanelMenu"
         Me.PanelMenu.Size = New System.Drawing.Size(217, 569)
         Me.PanelMenu.TabIndex = 7
+        '
+        'picHoliday
+        '
+        Me.picHoliday.BackColor = System.Drawing.Color.Transparent
+        Me.picHoliday.Image = CType(resources.GetObject("picHoliday.Image"), System.Drawing.Image)
+        Me.picHoliday.Location = New System.Drawing.Point(30, 464)
+        Me.picHoliday.Margin = New System.Windows.Forms.Padding(2)
+        Me.picHoliday.Name = "picHoliday"
+        Me.picHoliday.Size = New System.Drawing.Size(27, 30)
+        Me.picHoliday.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.picHoliday.TabIndex = 39
+        Me.picHoliday.TabStop = False
+        '
+        'btnHoliday
+        '
+        Me.btnHoliday.BackColor = System.Drawing.Color.White
+        Me.btnHoliday.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnHoliday.Location = New System.Drawing.Point(12, 457)
+        Me.btnHoliday.Name = "btnHoliday"
+        Me.btnHoliday.Size = New System.Drawing.Size(179, 46)
+        Me.btnHoliday.TabIndex = 38
+        Me.btnHoliday.Text = "      Holiday List"
+        Me.btnHoliday.UseVisualStyleBackColor = False
         '
         'picRegister
         '
@@ -349,12 +350,25 @@ Partial Class Dashboard
         'Panel2
         '
         Me.Panel2.BackColor = System.Drawing.Color.Green
+        Me.Panel2.Controls.Add(Me.lbl_datetime)
         Me.Panel2.Controls.Add(Me.Label1)
         Me.Panel2.Dock = System.Windows.Forms.DockStyle.Top
         Me.Panel2.Location = New System.Drawing.Point(0, 0)
         Me.Panel2.Name = "Panel2"
         Me.Panel2.Size = New System.Drawing.Size(1122, 55)
         Me.Panel2.TabIndex = 1
+        '
+        'lbl_datetime
+        '
+        Me.lbl_datetime.AutoSize = True
+        Me.lbl_datetime.BackColor = System.Drawing.Color.Transparent
+        Me.lbl_datetime.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbl_datetime.ForeColor = System.Drawing.Color.White
+        Me.lbl_datetime.Location = New System.Drawing.Point(14, 24)
+        Me.lbl_datetime.Name = "lbl_datetime"
+        Me.lbl_datetime.Size = New System.Drawing.Size(13, 13)
+        Me.lbl_datetime.TabIndex = 46
+        Me.lbl_datetime.Text = "--"
         '
         'Label1
         '
@@ -375,6 +389,9 @@ Partial Class Dashboard
         Me.PanelMain.Size = New System.Drawing.Size(905, 525)
         Me.PanelMain.TabIndex = 9
         '
+        'Timer1
+        '
+        '
         'Dashboard
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -390,11 +407,11 @@ Partial Class Dashboard
         Me.Text = "Dashboard"
         CType(Me.picEmployee, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.picPayroll, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.picReport, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.picDashboard, System.ComponentModel.ISupportInitialize).EndInit()
         Me.PanelMenu.ResumeLayout(False)
         Me.PanelMenu.PerformLayout()
+        CType(Me.picHoliday, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.picRegister, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.picDeduction, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.picAttendance, System.ComponentModel.ISupportInitialize).EndInit()
@@ -409,11 +426,9 @@ Partial Class Dashboard
     Friend WithEvents btnEmployee As Button
     Friend WithEvents btnPayroll As Button
     Friend WithEvents btnReport As Button
-    Friend WithEvents btnAttendance As Button
     Friend WithEvents btnDashboard As Button
     Friend WithEvents picEmployee As PictureBox
     Friend WithEvents picPayroll As PictureBox
-    Friend WithEvents PictureBox4 As PictureBox
     Friend WithEvents picReport As PictureBox
     Friend WithEvents picDashboard As PictureBox
     Friend WithEvents btnLogout As Button
@@ -432,4 +447,8 @@ Partial Class Dashboard
     Friend WithEvents btnDeduction As Button
     Friend WithEvents picRegister As PictureBox
     Friend WithEvents btnRegister As Button
+    Friend WithEvents picHoliday As PictureBox
+    Friend WithEvents btnHoliday As Button
+    Friend WithEvents lbl_datetime As Label
+    Friend WithEvents Timer1 As Timer
 End Class

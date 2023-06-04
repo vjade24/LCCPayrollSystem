@@ -148,7 +148,7 @@ Partial Class Employee
         Me.lblactive.AutoSize = True
         Me.lblactive.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lblactive.ForeColor = System.Drawing.Color.White
-        Me.lblactive.Location = New System.Drawing.Point(186, 56)
+        Me.lblactive.Location = New System.Drawing.Point(174, 56)
         Me.lblactive.Name = "lblactive"
         Me.lblactive.Size = New System.Drawing.Size(19, 20)
         Me.lblactive.TabIndex = 5
@@ -159,7 +159,7 @@ Partial Class Employee
         Me.lbltotalemployee.AutoSize = True
         Me.lbltotalemployee.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.lbltotalemployee.ForeColor = System.Drawing.Color.White
-        Me.lbltotalemployee.Location = New System.Drawing.Point(186, 24)
+        Me.lbltotalemployee.Location = New System.Drawing.Point(174, 24)
         Me.lbltotalemployee.Name = "lbltotalemployee"
         Me.lbltotalemployee.Size = New System.Drawing.Size(19, 20)
         Me.lbltotalemployee.TabIndex = 4

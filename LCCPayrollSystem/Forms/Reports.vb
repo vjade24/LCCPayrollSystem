@@ -19,6 +19,13 @@ Public Class Reports
         CommonQuery(query2, Vw_payroll_tblDataGridView)
         department_assigned.SelectedItem = 0
         'Payroll_noComboBox.SelectedItem = 0
+
+        lbl_total_gross.Text = "00,000.00"
+        lbl_total_net.Text = "00,000.00"
+
+        lbl_total_gross_overall.Text = "00,000.00"
+        lbl_total_net_overall.Text = "00,000.00"
+        OverAllTotals()
     End Sub
 
     Private Sub department_assigned_SelectedIndexChanged_1(sender As Object, e As EventArgs) Handles department_assigned.SelectedIndexChanged
@@ -27,6 +34,7 @@ Public Class Reports
 
         Dim query1 As String = "select * from vw_payroll_tbl where department_assigned = '" + department_assigned.Text.ToString().Trim() + "' and (period_from BETWEEN '" + Period_fromDateTimePicker.Value.ToString().Trim() + "' AND '" + Period_toDateTimePicker.Value.ToString().Trim() + "' OR period_to BETWEEN '" + Period_fromDateTimePicker.Value.ToString().Trim() + "' AND '" + Period_toDateTimePicker.Value.ToString().Trim() + "') ORDER BY employee_name"
         CommonQuery(query1, Vw_payroll_tblDataGridView)
+        Totals()
     End Sub
 
     'Private Sub Payroll_noComboBox_SelectedIndexChanged(sender As Object, e As EventArgs)
@@ -80,10 +88,60 @@ Public Class Reports
     Private Sub Period_fromDateTimePicker_ValueChanged(sender As Object, e As EventArgs) Handles Period_fromDateTimePicker.ValueChanged
         Dim query2 As String = "select * from vw_payroll_tbl where department_assigned = '" + department_assigned.Text.ToString().Trim() + "' and (period_from BETWEEN '" + Period_fromDateTimePicker.Value.ToString().Trim() + "' AND '" + Period_toDateTimePicker.Value.ToString().Trim() + "' OR period_to BETWEEN '" + Period_fromDateTimePicker.Value.ToString().Trim() + "' AND '" + Period_toDateTimePicker.Value.ToString().Trim() + "') ORDER BY employee_name"
         CommonQuery(query2, Vw_payroll_tblDataGridView)
+        Totals()
     End Sub
 
     Private Sub Period_toDateTimePicker_ValueChanged(sender As Object, e As EventArgs) Handles Period_toDateTimePicker.ValueChanged
         Dim query2 As String = "select * from vw_payroll_tbl where department_assigned = '" + department_assigned.Text.ToString().Trim() + "' and (period_from BETWEEN '" + Period_fromDateTimePicker.Value.ToString().Trim() + "' AND '" + Period_toDateTimePicker.Value.ToString().Trim() + "' OR period_to BETWEEN '" + Period_fromDateTimePicker.Value.ToString().Trim() + "' AND '" + Period_toDateTimePicker.Value.ToString().Trim() + "') ORDER BY employee_name"
         CommonQuery(query2, Vw_payroll_tblDataGridView)
+        Totals()
+    End Sub
+
+    Private Sub Totals()
+        Dim query As String = "select SUM(gross_pay) AS total_gross_pay,SUM(net_pay) AS total_net_pay from vw_payroll_tbl where department_assigned = '" + department_assigned.Text.ToString().Trim() + "' and (period_from BETWEEN '" + Period_fromDateTimePicker.Value.ToString().Trim() + "' AND '" + Period_toDateTimePicker.Value.ToString().Trim() + "' OR period_to BETWEEN '" + Period_fromDateTimePicker.Value.ToString().Trim() + "' AND '" + Period_toDateTimePicker.Value.ToString().Trim() + "')"
+        lbl_total_gross.Text = "00,000.00"
+        lbl_total_net.Text = "00,000.00"
+        Try
+            Dim conn As SqlConnection = New SqlConnection(connection)
+            Dim cmd As SqlCommand = New SqlCommand(query, conn)
+            Dim da As New SqlDataAdapter
+            da.SelectCommand = cmd
+            Dim dt As New DataTable
+            da.Fill(dt)
+            If dt.Rows.Count > 0 Then
+                lbl_total_gross.Text = Double.Parse(dt.Rows(0)("total_gross_pay").ToString()).ToString("##,##0.00")
+                lbl_total_net.Text = Double.Parse(dt.Rows(0)("total_net_pay").ToString()).ToString("##,##0.00")
+            Else
+                lbl_total_gross.Text = "00,000.00"
+                lbl_total_net.Text = "00,000.00"
+            End If
+        Catch ex As Exception
+            'MsgBox("Something went wrong!" + ex.Message.ToString(), MsgBoxStyle.Critical)
+            'Return
+        End Try
+    End Sub
+
+    Private Sub OverAllTotals()
+        Dim query As String = "select SUM(gross_pay) AS total_gross_pay,SUM(net_pay) AS total_net_pay from vw_payroll_tbl"
+        lbl_total_gross_overall.Text = "00,000.00"
+        lbl_total_net_overall.Text = "00,000.00"
+        Try
+            Dim conn As SqlConnection = New SqlConnection(connection)
+            Dim cmd As SqlCommand = New SqlCommand(query, conn)
+            Dim da As New SqlDataAdapter
+            da.SelectCommand = cmd
+            Dim dt As New DataTable
+            da.Fill(dt)
+            If dt.Rows.Count > 0 Then
+                lbl_total_gross_overall.Text = Double.Parse(dt.Rows(0)("total_gross_pay").ToString()).ToString("##,##0.00")
+                lbl_total_net_overall.Text = Double.Parse(dt.Rows(0)("total_net_pay").ToString()).ToString("##,##0.00")
+            Else
+                lbl_total_gross_overall.Text = "00,000.00"
+                lbl_total_net_overall.Text = "00,000.00"
+            End If
+        Catch ex As Exception
+            'MsgBox("Something went wrong!" + ex.Message.ToString(), MsgBoxStyle.Critical)
+            'Return
+        End Try
     End Sub
 End Class

@@ -3,7 +3,7 @@ Public Class DTR
 
     Private Sub btnGenerate_Click(sender As Object, e As EventArgs) Handles btnGenerate.Click
         Generate_DTR()
-        RefreshData()
+        RefreshData(TextBox_employee_id.Text, DateTimePicker_PeriodFrom.Value, DateTimePicker_PeriodTo.Value)
     End Sub
 
 
@@ -23,12 +23,12 @@ Public Class DTR
 
     End Sub
 
-    Public Sub RefreshData()
-        Dim query As String = "select * from dtr_tbl where employee_id = '" + TextBox_employee_id.Text + "' AND dtr_date between '" + DateTimePicker_PeriodFrom.Value + "' and '" + DateTimePicker_PeriodTo.Value + "' and id = (SELECT MAX(A1.id) FROM dtr_tbl A1 WHERE A1.employee_id = dtr_tbl.employee_id AND A1.dtr_date = dtr_tbl.dtr_date) ORDER BY dtr_date"
+    Public Sub RefreshData(employee_id, period_from, period_to)
+        Dim query As String = "select * from dtr_tbl where employee_id = '" + employee_id + "' AND dtr_date between '" + period_from + "' and '" + period_to + "' and id = (SELECT MAX(A1.id) FROM dtr_tbl A1 WHERE A1.employee_id = dtr_tbl.employee_id AND A1.dtr_date = dtr_tbl.dtr_date) ORDER BY dtr_date"
         CommonQuery(query, Dtr_tblDataGridView)
 
         Dim conn As SqlConnection = New SqlConnection(connection)
-        Dim cmd1 As SqlCommand = New SqlCommand("select employee_name,ISNULL(SUM(late_time_min),0) AS late_time_min,ISNULL(SUM(under_time_min),0) AS under_time_min,ISNULL(SUM(ot_min),0) AS ot_min from dtr_tbl where employee_id = '" + TextBox_employee_id.Text + "' AND dtr_date between '" + DateTimePicker_PeriodFrom.Value + "' and '" + DateTimePicker_PeriodTo.Value + "' and id = (SELECT MAX(A1.id) FROM dtr_tbl A1 WHERE A1.employee_id = dtr_tbl.employee_id AND A1.dtr_date = dtr_tbl.dtr_date) GROUP BY employee_name", conn)
+        Dim cmd1 As SqlCommand = New SqlCommand("select employee_name,ISNULL(SUM(late_time_min),0) AS late_time_min,ISNULL(SUM(under_time_min),0) AS under_time_min,ISNULL(SUM(ot_min),0) AS ot_min from dtr_tbl where employee_id = '" + employee_id + "' AND dtr_date between '" + period_from + "' and '" + period_to + "' and id = (SELECT MAX(A1.id) FROM dtr_tbl A1 WHERE A1.employee_id = dtr_tbl.employee_id AND A1.dtr_date = dtr_tbl.dtr_date) GROUP BY employee_name", conn)
         Dim sda As SqlDataAdapter = New SqlDataAdapter(cmd1)
         Dim dt As DataTable = New DataTable
         sda.Fill(dt)
@@ -39,19 +39,19 @@ Public Class DTR
         TextBox_Overtime.Text = ""
 
         TextBox_employeename.Text = dt.Rows(0)("employee_name").ToString()
-        TextBox_Late.Text = dt.Rows(0)("late_time_min").ToString()
-        TextBox_UnderTime.Text = dt.Rows(0)("under_time_min").ToString()
-        TextBox_Overtime.Text = dt.Rows(0)("ot_min").ToString()
+        TextBox_Late.Text = Double.Parse(dt.Rows(0)("late_time_min").ToString()).ToString()
+        TextBox_UnderTime.Text = Double.Parse(dt.Rows(0)("under_time_min").ToString())
+        TextBox_Overtime.Text = Double.Parse(dt.Rows(0)("ot_min").ToString())
 
         ' ******************************************************************************
         ' **** Calculate Late, undertime and Overtime **********************************
         ' ******************************************************************************
-        Dim cmd_absent As SqlCommand = New SqlCommand("select employee_name,COUNT(ISNULL(is_absent,0)) AS is_absent from dtr_tbl where employee_id = '" + TextBox_employee_id.Text.ToString().Trim() + "' AND dtr_date between '" + DateTimePicker_PeriodFrom.Value.ToString.Trim + "' and '" + DateTimePicker_PeriodTo.Value.ToString.Trim + "' AND ISNULL(is_absent,0)<> 0 and id = (SELECT MAX(A1.id) FROM dtr_tbl A1 WHERE A1.employee_id = dtr_tbl.employee_id AND A1.dtr_date = dtr_tbl.dtr_date)  GROUP BY employee_name", conn)
+        Dim cmd_absent As SqlCommand = New SqlCommand("select employee_name,COUNT(ISNULL(is_absent,0)) AS is_absent from dtr_tbl where employee_id = '" + employee_id + "' AND dtr_date between '" + period_from + "' and '" + period_to + "' AND ISNULL(is_absent,0)<> 0 and id = (SELECT MAX(A1.id) FROM dtr_tbl A1 WHERE A1.employee_id = dtr_tbl.employee_id AND A1.dtr_date = dtr_tbl.dtr_date)  GROUP BY employee_name", conn)
         Dim sda_absent As SqlDataAdapter = New SqlDataAdapter(cmd_absent)
         Dim dt_absent As DataTable = New DataTable
         sda_absent.Fill(dt_absent)
 
-        TextBox_Absent.Text = "0.00"
+        TextBox_Absent.Text = "0"
         If dt_absent.Rows.Count > 0 Then
             TextBox_Absent.Text = Double.Parse(dt_absent.Rows(0)("is_absent").ToString())
         End If
@@ -119,7 +119,7 @@ Public Class DTR
                 End If
 
                 Generate_DTR()
-                RefreshData()
+                RefreshData(TextBox_employee_id.Text, DateTimePicker_PeriodFrom.Value, DateTimePicker_PeriodTo.Value)
 
 
             End If
@@ -156,7 +156,7 @@ Public Class DTR
                 End If
 
                 Generate_DTR()
-                RefreshData()
+                RefreshData(TextBox_employee_id.Text, DateTimePicker_PeriodFrom.Value, DateTimePicker_PeriodTo.Value)
 
             Catch ex As Exception
                 MessageBox.Show(ex.Message.ToString)

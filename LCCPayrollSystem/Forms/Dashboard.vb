@@ -45,7 +45,7 @@
         OpenChildForm(New Payroll, "Create New Payroll")
     End Sub
 
-    Private Sub btnAttendance_Click(sender As Object, e As EventArgs) Handles btnAttendance.Click
+    Private Sub btnAttendance_Click(sender As Object, e As EventArgs)
         ActiveButton(sender, Color.ForestGreen)
         OpenChildForm(New Attendance, "Attendance")
     End Sub
@@ -57,6 +57,8 @@
 
     Private Sub Dashboard_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         OpenChildForm(New Dashboard1, "Dashboard")
+        lbl_datetime.Text = DateTime.Now.ToLongDateString + " " + DateTime.Now.ToShortTimeString
+
     End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
@@ -78,5 +80,14 @@
     Private Sub btnRegister_Click(sender As Object, e As EventArgs) Handles btnRegister.Click
         ActiveButton(sender, Color.ForestGreen)
         OpenChildForm(New Register, "Register")
+    End Sub
+
+    Private Sub btnHoliday_Click(sender As Object, e As EventArgs) Handles btnHoliday.Click
+        ActiveButton(sender, Color.ForestGreen)
+        OpenChildForm(New Holiday, "Holiday")
+    End Sub
+
+    Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
+        lbl_datetime.Text = DateTime.Now.ToLongDateString + " " + DateTime.Now.ToShortTimeString
     End Sub
 End Class

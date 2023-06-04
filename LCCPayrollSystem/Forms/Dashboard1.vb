@@ -5,8 +5,9 @@ Imports System.IO
 Public Class Dashboard1
     Private Sub Dashboard1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         reload_dashboard()
-        Label16.Text = DateTime.Now.ToShortTimeString
-        Label17.Text = DateTime.Now.ToLongDateString
+        OverAllTotals()
+        'Label16.Text = DateTime.Now.ToShortTimeString
+        'Label17.Text = DateTime.Now.ToLongDateString
     End Sub
     Private Sub Button7_Click(sender As Object, e As EventArgs)
         'Me.Close()
@@ -100,12 +101,36 @@ Public Class Dashboard1
             MsgBox(ex.Message.ToString().Trim(), MsgBoxStyle.Exclamation)
         End Try
     End Sub
-    Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
-        Label16.Text = DateTime.Now.ToShortTimeString
-        Label17.Text = DateTime.Now.ToLongDateString
-    End Sub
+    'Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
+    '    Label16.Text = DateTime.Now.ToShortTimeString
+    '    Label17.Text = DateTime.Now.ToLongDateString
+    'End Sub
 
     Private Sub btnAttendance_Click(sender As Object, e As EventArgs)
         Attendance.Show()
+    End Sub
+
+    Private Sub OverAllTotals()
+        Dim query As String = "select SUM(gross_pay) AS total_gross_pay,SUM(net_pay) AS total_net_pay from vw_payroll_tbl"
+        lbl_total_gross_overall.Text = "00,000.00"
+        lbl_total_net_overall.Text = "00,000.00"
+        Try
+            Dim conn As SqlConnection = New SqlConnection(connection)
+            Dim cmd As SqlCommand = New SqlCommand(query, conn)
+            Dim da As New SqlDataAdapter
+            da.SelectCommand = cmd
+            Dim dt As New DataTable
+            da.Fill(dt)
+            If dt.Rows.Count > 0 Then
+                lbl_total_gross_overall.Text = Double.Parse(dt.Rows(0)("total_gross_pay").ToString()).ToString("##,##0.00")
+                lbl_total_net_overall.Text = Double.Parse(dt.Rows(0)("total_net_pay").ToString()).ToString("##,##0.00")
+            Else
+                lbl_total_gross_overall.Text = "00,000.00"
+                lbl_total_net_overall.Text = "00,000.00"
+            End If
+        Catch ex As Exception
+            'MsgBox("Something went wrong!" + ex.Message.ToString(), MsgBoxStyle.Critical)
+            'Return
+        End Try
     End Sub
 End Class
