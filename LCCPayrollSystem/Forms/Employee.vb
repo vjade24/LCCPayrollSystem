@@ -13,7 +13,7 @@ Public Class Employee
     End Sub
 
     Private Sub txtbSearch_TextChanged(sender As Object, e As EventArgs) Handles txtbSearch.TextChanged
-        Dim query As String = "select id AS Id,first_name AS FirstName,last_name AS LastName,middle_name as MiddleName,date_hire as DateHired,employee_status AS EmployeeStatus from employee_tbl where last_name like '%" + txtbSearch.Text.ToString().Trim() + "%' or first_name like '%" + txtbSearch.Text.ToString().Trim() + "%'"
+        Dim query As String = "select id AS Id,first_name AS FirstName,last_name AS LastName,middle_name as MiddleName,date_hire as DateHired,employee_status AS EmployeeStatus from employee_tbl where last_name like '%" + txtbSearch.Text.ToString().Trim() + "%' or first_name like '%" + txtbSearch.Text.ToString().Trim() + "%' or Id like '%" + txtbSearch.Text.ToString().Trim() + "%'"
         CommonQuery(query, Employee_tblDataGridView)
     End Sub
 

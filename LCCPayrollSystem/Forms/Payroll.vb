@@ -10,6 +10,8 @@ Public Class Payroll
     End Sub
 
     Private Sub Payroll_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        'TODO: This line of code loads data into the 'PayrolldbDataSet.employee_tbl' table. You can move, or remove it, as needed.
+        Me.Employee_tblTableAdapter.Fill(Me.PayrolldbDataSet.employee_tbl)
         'TODO: This line of code loads data into the 'PayrolldbDataSet1.vw_payroll_tbl' table. You can move, or remove it, as needed.
         Me.Vw_payroll_tblTableAdapter.Fill(Me.PayrolldbDataSet1.vw_payroll_tbl)
         'TODO: This line of code loads data into the 'PayrolldbDataSet.payroll_tbl' table. You can move, or remove it, as needed.
@@ -25,9 +27,15 @@ Public Class Payroll
         ComboboxQuery(query, Payroll_noComboBox, "payroll_no", "payroll_no")
 
         btn_save.Enabled = False
-        btnCancel.Enabled = False
+        'btnCancel.Enabled = False
         btnupdate.Enabled = False
         btndel.Enabled = False
+
+
+        GroupBoxPayrollInfo.Visible = False
+        GroupBoxEmployeeInfo.Visible = False
+        GroupBoxIncomeInfo.Visible = False
+        GroupBoxDeductionnfo.Visible = False
     End Sub
 
     Private Sub calculate_gross()
@@ -64,6 +72,7 @@ Public Class Payroll
         Dim Regular_wages As Double
         If rate_basis_ComboBox.Text.ToString().Trim() = "Monthly" Then
             Regular_wages = Monthly_rateTextBox.Text
+            Worked_daysTextBox.Text = Monthly_rateTextBox.Text
         ElseIf rate_basis_ComboBox.Text.ToString().Trim() = "Daily" Then
             Regular_wages = Double.Parse(Daily_rateTextBox.Text) * Double.Parse(Worked_daysTextBox.Text)
         ElseIf rate_basis_ComboBox.Text.ToString().Trim() = "Hourly" Then
@@ -76,13 +85,29 @@ Public Class Payroll
 
     Private Sub calculate_lates_undertime()
         Dim lates_undertime_amt As Double
-        lates_undertime_amt = (Double.Parse(Hourly_rateTextBox.Text) / 60) * Double.Parse(Lates_in_minTextBox.Text)
+        If rate_basis_ComboBox.Text.ToString().Trim() = "Monthly" Then
+            lates_undertime_amt = (Double.Parse(Daily_rateTextBox.Text) / 8 / 60) * Double.Parse(Lates_in_minTextBox.Text)
+        ElseIf rate_basis_ComboBox.Text.ToString().Trim() = "Daily" Then
+            lates_undertime_amt = (Double.Parse(Daily_rateTextBox.Text) / 8 / 60) * Double.Parse(Lates_in_minTextBox.Text)
+        ElseIf rate_basis_ComboBox.Text.ToString().Trim() = "Hourly" Then
+            lates_undertime_amt = (Double.Parse(Hourly_rateTextBox.Text) / 60) * Double.Parse(Lates_in_minTextBox.Text)
+        ElseIf rate_basis_ComboBox.Text.ToString().Trim() = "Per Unit" Then
+            lates_undertime_amt = (Double.Parse(Daily_rateTextBox.Text) / 8 / 60) * Double.Parse(Lates_in_minTextBox.Text)
+        End If
         Lates_in_amtTextBox.Text = lates_undertime_amt.ToString("###,##0.00")
     End Sub
 
     Private Sub calculate_absent()
         Dim absent_amt As Double
-        absent_amt = Double.Parse(Daily_rateTextBox.Text) * Double.Parse(Absent_daysTextBox.Text)
+        If rate_basis_ComboBox.Text.ToString().Trim() = "Monthly" Then
+            absent_amt = Double.Parse(Daily_rateTextBox.Text) * Double.Parse(Absent_daysTextBox.Text)
+        ElseIf rate_basis_ComboBox.Text.ToString().Trim() = "Daily" Then
+            absent_amt = Double.Parse(Daily_rateTextBox.Text) * Double.Parse(Absent_daysTextBox.Text)
+        ElseIf rate_basis_ComboBox.Text.ToString().Trim() = "Hourly" Then
+            absent_amt = (Double.Parse(Hourly_rateTextBox.Text) * 8) * Double.Parse(Absent_daysTextBox.Text)
+        ElseIf rate_basis_ComboBox.Text.ToString().Trim() = "Per Unit" Then
+            absent_amt = (Double.Parse(Hourly_rateTextBox.Text) * 8) * Double.Parse(Absent_daysTextBox.Text)
+        End If
         Absent_amtTextBox.Text = absent_amt.ToString("###,##0.00")
     End Sub
     Private Sub calculate_overtime()
@@ -100,7 +125,18 @@ Public Class Payroll
             LabelOvertime.Text = "(hourly rate / 60 * '" + Double.Parse(dt.Rows(0)("ot_min").ToString()).ToString("###,##0") + "')"
             ovtm_min = Double.Parse(dt.Rows(0)("ot_min").ToString())
         End If
-        ovtm_amt = (Double.Parse(Hourly_rateTextBox.Text) / 60) * Double.Parse(ovtm_min)
+
+        If rate_basis_ComboBox.Text.ToString().Trim() = "Monthly" Then
+            ovtm_amt = (Double.Parse(Daily_rateTextBox.Text) / 8 / 60) * Double.Parse(ovtm_min)
+        ElseIf rate_basis_ComboBox.Text.ToString().Trim() = "Daily" Then
+            ovtm_amt = (Double.Parse(Daily_rateTextBox.Text) / 8 / 60) * Double.Parse(ovtm_min)
+        ElseIf rate_basis_ComboBox.Text.ToString().Trim() = "Hourly" Then
+            ovtm_amt = (Double.Parse(Hourly_rateTextBox.Text) / 60) * Double.Parse(ovtm_min)
+        ElseIf rate_basis_ComboBox.Text.ToString().Trim() = "Per Unit" Then
+            ovtm_amt = (Double.Parse(Daily_rateTextBox.Text) / 8 / 60) * Double.Parse(ovtm_min)
+        End If
+
+
         Overtime_amtTextBox.Text = ovtm_amt.ToString("###,##0.00")
     End Sub
 
@@ -110,6 +146,7 @@ Public Class Payroll
         calculate_gross()
         calculate_absent()
         calculate_lates_undertime()
+        calculate_deductionFixed()
         calculate_deductions()
         calculate_net_pay()
     End Sub
@@ -165,7 +202,20 @@ Public Class Payroll
 
     Private Sub Employee_idComboBox_SelectionChangeCommitted(sender As Object, e As EventArgs) Handles Employee_idComboBox.SelectionChangeCommitted
         If Employee_idComboBox.SelectedValue.ToString().Trim() <> "" Then
-            Dim conn As SqlConnection = New SqlConnection(connection)
+
+
+            Dim cmd_chk As SqlCommand = New SqlCommand("select * from payroll_tbl where employee_id='" + Employee_idComboBox.SelectedValue.ToString().Trim() + "' AND (period_from BETWEEN '" + Period_fromDateTimePicker.Value.ToString.Trim + "' AND '" + Period_toDateTimePicker.Value.ToString.Trim + "' OR period_to BETWEEN '" + Period_fromDateTimePicker.Value.ToString.Trim + "' AND '" + Period_toDateTimePicker.Value.ToString.Trim + "')", conn)
+            Dim sda_ckk As SqlDataAdapter = New SqlDataAdapter(cmd_chk)
+            Dim dt_chk As DataTable = New DataTable
+            sda_ckk.Fill(dt_chk)
+
+            If dt_chk.Rows.Count > 0 Then
+                MsgBox("This employee has already payroll for this period covered!", MsgBoxStyle.Exclamation)
+                clearentry()
+                Return
+            End If
+
+
             Dim cmd As SqlCommand = New SqlCommand("select * from employee_tbl where Id='" + Employee_idComboBox.SelectedValue.ToString().Trim() + "'", conn)
             Dim sda As SqlDataAdapter = New SqlDataAdapter(cmd)
             Dim dt As DataTable = New DataTable
@@ -178,6 +228,7 @@ Public Class Payroll
                 Middle_nameTextBox.Text = dt.Rows(0)("middle_name").ToString()
                 'department_assigned.Text = dt.Rows(0)("department_assigned").ToString()
                 rate_basis_ComboBox.Text = dt.Rows(0)("rate_basis_descr").ToString()
+                Employment_statusComboBox.Text = dt.Rows(0)("employment_status").ToString()
                 Monthly_rateTextBox.Text = Double.Parse(dt.Rows(0)("monthly_rate").ToString()).ToString("###,##0.00")
                 Daily_rateTextBox.Text = Double.Parse(dt.Rows(0)("daily_rate").ToString()).ToString("###,##0.00")
                 Hourly_rateTextBox.Text = Double.Parse(dt.Rows(0)("hourly_rate").ToString()).ToString("###,##0.00")
@@ -198,59 +249,65 @@ Public Class Payroll
                 Dim dt_cash_advance_amt As New DataTable
                 Dim dt_other_ded_amt As New DataTable
                 Dim dt_other_loans_amt As New DataTable
-                Dim dt_pag_ibig_amt As New DataTable
-                Dim dt_phic_amt As New DataTable
                 Dim dt_sss_loan_amt As New DataTable
-                Dim dt_sss_med_amt As New DataTable
                 Dim dt_wtax_amt As New DataTable
                 Dim dt_king_coop_loan As New DataTable
                 Dim dt_lbp_loan As New DataTable
 
+                'Dim dt_pag_ibig_amt As New DataTable
+                'Dim dt_phic_amt As New DataTable
+                'Dim dt_sss_med_amt As New DataTable
 
                 Dim query_cash_advance_amt As String
                 Dim query_other_ded_amt As String
                 Dim query_other_loans_amt As String
-                Dim query_pag_ibig_amt As String
-                Dim query_phic_amt As String
                 Dim query_sss_loan_amt As String
-                Dim query_sss_med_amt As String
                 Dim query_wtax_amt As String
                 Dim query_dt_king_coop_loan As String
                 Dim query_lbp_loan As String
 
+                'Dim query_pag_ibig_amt As String
+                'Dim query_phic_amt As String
+                'Dim query_sss_med_amt As String
+
                 query_cash_advance_amt = "SELECT ISNULL(SUM(deduct_amt),0) AS deduct_amt FROM payroll_deduction_tbl WHERE employee_id = '" + Employee_idComboBox.SelectedValue.ToString.Trim() + "' AND deduction_code = 'cash_advance_amt'	AND (deduct_period_from BETWEEN '" + Period_fromDateTimePicker.Value.ToString.Trim + "' AND '" + Period_toDateTimePicker.Value.ToString.Trim + "' OR deduct_period_to BETWEEN '" + Period_fromDateTimePicker.Value.ToString.Trim + "' AND '" + Period_toDateTimePicker.Value.ToString.Trim + "')"
                 query_other_ded_amt = "SELECT ISNULL(SUM(deduct_amt),0) AS deduct_amt FROM payroll_deduction_tbl WHERE employee_id = '" + Employee_idComboBox.SelectedValue.ToString.Trim() + "' AND deduction_code = 'other_ded_amt'	AND (deduct_period_from BETWEEN '" + Period_fromDateTimePicker.Value.ToString.Trim + "' AND '" + Period_toDateTimePicker.Value.ToString.Trim + "' OR deduct_period_to BETWEEN '" + Period_fromDateTimePicker.Value.ToString.Trim + "' AND '" + Period_toDateTimePicker.Value.ToString.Trim + "')"
                 query_other_loans_amt = "SELECT ISNULL(SUM(deduct_amt),0) AS deduct_amt FROM payroll_deduction_tbl WHERE employee_id = '" + Employee_idComboBox.SelectedValue.ToString.Trim() + "' AND deduction_code = 'other_loans_amt'	AND (deduct_period_from BETWEEN '" + Period_fromDateTimePicker.Value.ToString.Trim + "' AND '" + Period_toDateTimePicker.Value.ToString.Trim + "' OR deduct_period_to BETWEEN '" + Period_fromDateTimePicker.Value.ToString.Trim + "' AND '" + Period_toDateTimePicker.Value.ToString.Trim + "')"
-                query_pag_ibig_amt = "SELECT ISNULL(SUM(deduct_amt),0) AS deduct_amt FROM payroll_deduction_tbl WHERE employee_id = '" + Employee_idComboBox.SelectedValue.ToString.Trim() + "' AND deduction_code = 'pag_ibig_amt'	AND (deduct_period_from BETWEEN '" + Period_fromDateTimePicker.Value.ToString.Trim + "' AND '" + Period_toDateTimePicker.Value.ToString.Trim + "' OR deduct_period_to BETWEEN '" + Period_fromDateTimePicker.Value.ToString.Trim + "' AND '" + Period_toDateTimePicker.Value.ToString.Trim + "')"
-                query_phic_amt = "SELECT ISNULL(SUM(deduct_amt),0) AS deduct_amt FROM payroll_deduction_tbl WHERE employee_id = '" + Employee_idComboBox.SelectedValue.ToString.Trim() + "' AND deduction_code = 'phic_amt'	AND (deduct_period_from BETWEEN '" + Period_fromDateTimePicker.Value.ToString.Trim + "' AND '" + Period_toDateTimePicker.Value.ToString.Trim + "' OR deduct_period_to BETWEEN '" + Period_fromDateTimePicker.Value.ToString.Trim + "' AND '" + Period_toDateTimePicker.Value.ToString.Trim + "')"
                 query_sss_loan_amt = "SELECT ISNULL(SUM(deduct_amt),0) AS deduct_amt FROM payroll_deduction_tbl WHERE employee_id = '" + Employee_idComboBox.SelectedValue.ToString.Trim() + "' AND deduction_code = 'sss_loan_amt'	AND (deduct_period_from BETWEEN '" + Period_fromDateTimePicker.Value.ToString.Trim + "' AND '" + Period_toDateTimePicker.Value.ToString.Trim + "' OR deduct_period_to BETWEEN '" + Period_fromDateTimePicker.Value.ToString.Trim + "' AND '" + Period_toDateTimePicker.Value.ToString.Trim + "')"
-                query_sss_med_amt = "SELECT ISNULL(SUM(deduct_amt),0) AS deduct_amt FROM payroll_deduction_tbl WHERE employee_id = '" + Employee_idComboBox.SelectedValue.ToString.Trim() + "' AND deduction_code = 'sss_med_amt'	AND (deduct_period_from BETWEEN '" + Period_fromDateTimePicker.Value.ToString.Trim + "' AND '" + Period_toDateTimePicker.Value.ToString.Trim + "' OR deduct_period_to BETWEEN '" + Period_fromDateTimePicker.Value.ToString.Trim + "' AND '" + Period_toDateTimePicker.Value.ToString.Trim + "')"
                 query_wtax_amt = "SELECT ISNULL(SUM(deduct_amt),0) AS deduct_amt FROM payroll_deduction_tbl WHERE employee_id = '" + Employee_idComboBox.SelectedValue.ToString.Trim() + "' AND deduction_code = 'wtax_amt'	AND (deduct_period_from BETWEEN '" + Period_fromDateTimePicker.Value.ToString.Trim + "' AND '" + Period_toDateTimePicker.Value.ToString.Trim + "' OR deduct_period_to BETWEEN '" + Period_fromDateTimePicker.Value.ToString.Trim + "' AND '" + Period_toDateTimePicker.Value.ToString.Trim + "')"
                 query_dt_king_coop_loan = "SELECT ISNULL(SUM(deduct_amt),0) AS deduct_amt FROM payroll_deduction_tbl WHERE employee_id = '" + Employee_idComboBox.SelectedValue.ToString.Trim() + "' AND deduction_code = 'king_coop_loan'	AND (deduct_period_from BETWEEN '" + Period_fromDateTimePicker.Value.ToString.Trim + "' AND '" + Period_toDateTimePicker.Value.ToString.Trim + "' OR deduct_period_to BETWEEN '" + Period_fromDateTimePicker.Value.ToString.Trim + "' AND '" + Period_toDateTimePicker.Value.ToString.Trim + "')"
                 query_lbp_loan = "SELECT ISNULL(SUM(deduct_amt),0) AS deduct_amt FROM payroll_deduction_tbl WHERE employee_id = '" + Employee_idComboBox.SelectedValue.ToString.Trim() + "' AND deduction_code = 'lbp_loan'	AND (deduct_period_from BETWEEN '" + Period_fromDateTimePicker.Value.ToString.Trim + "' AND '" + Period_toDateTimePicker.Value.ToString.Trim + "' OR deduct_period_to BETWEEN '" + Period_fromDateTimePicker.Value.ToString.Trim + "' AND '" + Period_toDateTimePicker.Value.ToString.Trim + "')"
 
+                'query_pag_ibig_amt = "SELECT ISNULL(SUM(deduct_amt),0) AS deduct_amt FROM payroll_deduction_tbl WHERE employee_id = '" + Employee_idComboBox.SelectedValue.ToString.Trim() + "' AND deduction_code = 'pag_ibig_amt'	AND (deduct_period_from BETWEEN '" + Period_fromDateTimePicker.Value.ToString.Trim + "' AND '" + Period_toDateTimePicker.Value.ToString.Trim + "' OR deduct_period_to BETWEEN '" + Period_fromDateTimePicker.Value.ToString.Trim + "' AND '" + Period_toDateTimePicker.Value.ToString.Trim + "')"
+                'query_phic_amt = "SELECT ISNULL(SUM(deduct_amt),0) AS deduct_amt FROM payroll_deduction_tbl WHERE employee_id = '" + Employee_idComboBox.SelectedValue.ToString.Trim() + "' AND deduction_code = 'phic_amt'	AND (deduct_period_from BETWEEN '" + Period_fromDateTimePicker.Value.ToString.Trim + "' AND '" + Period_toDateTimePicker.Value.ToString.Trim + "' OR deduct_period_to BETWEEN '" + Period_fromDateTimePicker.Value.ToString.Trim + "' AND '" + Period_toDateTimePicker.Value.ToString.Trim + "')"
+                'query_sss_med_amt = "SELECT ISNULL(SUM(deduct_amt),0) AS deduct_amt FROM payroll_deduction_tbl WHERE employee_id = '" + Employee_idComboBox.SelectedValue.ToString.Trim() + "' AND deduction_code = 'sss_med_amt'	AND (deduct_period_from BETWEEN '" + Period_fromDateTimePicker.Value.ToString.Trim + "' AND '" + Period_toDateTimePicker.Value.ToString.Trim + "' OR deduct_period_to BETWEEN '" + Period_fromDateTimePicker.Value.ToString.Trim + "' AND '" + Period_toDateTimePicker.Value.ToString.Trim + "')"
+
                 dt_cash_advance_amt = RetrieveData(query_cash_advance_amt)
                 dt_other_ded_amt = RetrieveData(query_other_ded_amt)
                 dt_other_loans_amt = RetrieveData(query_other_loans_amt)
-                dt_pag_ibig_amt = RetrieveData(query_pag_ibig_amt)
-                dt_phic_amt = RetrieveData(query_phic_amt)
                 dt_sss_loan_amt = RetrieveData(query_sss_loan_amt)
-                dt_sss_med_amt = RetrieveData(query_sss_med_amt)
                 dt_wtax_amt = RetrieveData(query_wtax_amt)
                 dt_king_coop_loan = RetrieveData(query_dt_king_coop_loan)
                 dt_lbp_loan = RetrieveData(query_lbp_loan)
 
+                'dt_pag_ibig_amt = RetrieveData(query_pag_ibig_amt)
+                'dt_phic_amt = RetrieveData(query_phic_amt)
+                'dt_sss_med_amt = RetrieveData(query_sss_med_amt)
+
+
                 Cash_advance_amtTextBox.Text = Double.Parse(dt_cash_advance_amt.Rows(0)("deduct_amt").ToString()).ToString("###,##0.00")
                 Other_ded_amtTextBox.Text = Double.Parse(dt_other_ded_amt.Rows(0)("deduct_amt").ToString()).ToString("###,##0.00")
                 Other_loans_amtTextBox.Text = Double.Parse(dt_other_loans_amt.Rows(0)("deduct_amt").ToString()).ToString("###,##0.00")
-                Pag_ibig_amtTextBox.Text = Double.Parse(dt_pag_ibig_amt.Rows(0)("deduct_amt").ToString()).ToString("###,##0.00")
-                Phic_amtTextBox.Text = Double.Parse(dt_phic_amt.Rows(0)("deduct_amt").ToString()).ToString("###,##0.00")
                 Sss_loan_amtTextBox.Text = Double.Parse(dt_sss_loan_amt.Rows(0)("deduct_amt").ToString()).ToString("###,##0.00")
-                Sss_med_amtTextBox.Text = Double.Parse(dt_sss_med_amt.Rows(0)("deduct_amt").ToString()).ToString("###,##0.00")
                 Wtax_amtTextBox.Text = Double.Parse(dt_wtax_amt.Rows(0)("deduct_amt").ToString()).ToString("###,##0.00")
                 King_coop_loanTextBox.Text = Double.Parse(dt_king_coop_loan.Rows(0)("deduct_amt").ToString()).ToString("###,##0.00")
                 Lbp_loanTextBox.Text = Double.Parse(dt_lbp_loan.Rows(0)("deduct_amt").ToString()).ToString("###,##0.00")
 
+
+
+                'Pag_ibig_amtTextBox.Text = Double.Parse(dt_pag_ibig_amt.Rows(0)("deduct_amt").ToString()).ToString("###,##0.00")
+                'Phic_amtTextBox.Text = Double.Parse(dt_phic_amt.Rows(0)("deduct_amt").ToString()).ToString("###,##0.00")
+                'Sss_med_amtTextBox.Text = Double.Parse(dt_sss_med_amt.Rows(0)("deduct_amt").ToString()).ToString("###,##0.00")
                 ' ******************************************************************************
                 ' **** This portion is to Get the Deduction amount of Individual Employee ******
                 ' ******************************************************************************
@@ -292,20 +349,61 @@ Public Class Payroll
                 ' **** Calculate Late, undertime and Overtime **********************************
                 ' ******************************************************************************
 
-                calculate_all()
+                calculate_wages()
+                calculate_overtime()
+                calculate_gross()
+                calculate_absent()
+                calculate_lates_undertime()
+                calculate_deductionFixed()
+                calculate_deductions()
+                calculate_net_pay()
             Else
                 MsgBox("No Employee Found!", MsgBoxStyle.Critical)
             End If
         End If
     End Sub
 
-    'Private Sub department_assigned_SelectionChangeCommitted(sender As Object, e As EventArgs) Handles department_assigned.SelectionChangeCommitted
-    '    clearentry()
-    '    Dim query As String = "select Id,concat(last_name,',', first_name,' ', middle_name) as employee_name from employee_tbl where department_assigned = '" + department_assigned.Text.ToString().Trim() + "'"
-    '    ComboboxQuery(query, Employee_idComboBox, "Id", "employee_name")
+    Private Sub calculate_deductionFixed()
 
-    '    Employee_idComboBox.Text = ""
-    'End Sub
+        Dim dt_pag_ibig_amt As New DataTable
+        Dim dt_phic_amt As New DataTable
+        Dim dt_sss_med_amt As New DataTable
+
+        Dim query_pag_ibig_amt As String
+        Dim query_phic_amt As String
+        Dim query_sss_med_amt As String
+
+        If Employment_statusComboBox.Text.ToString().Trim() = "Full-Time" Then
+
+            query_pag_ibig_amt = "SELECT ISNULL(SUM(FixedAmount),0) AS deduct_amt FROM payroll_deduction_fixed_tbl WHERE DeductionCode = 'pag_ibig_amt' AND EmploymentStatus = 'Full-Time'"
+            query_phic_amt = "SELECT ISNULL(SUM(FixedAmount),0) AS deduct_amt FROM payroll_deduction_fixed_tbl WHERE DeductionCode = 'phic_amt' AND EmploymentStatus = 'Full-Time'"
+            query_sss_med_amt = "SELECT ISNULL(SUM(FixedAmount),0) AS deduct_amt FROM payroll_deduction_fixed_tbl WHERE DeductionCode = 'sss_med_amt' AND EmploymentStatus = 'Full-Time'"
+
+            dt_pag_ibig_amt = RetrieveData(query_pag_ibig_amt)
+            dt_phic_amt = RetrieveData(query_phic_amt)
+            dt_sss_med_amt = RetrieveData(query_sss_med_amt)
+
+            Pag_ibig_amtTextBox.Text = Double.Parse(dt_pag_ibig_amt.Rows(0)("deduct_amt").ToString()).ToString("###,##0.00")
+            Phic_amtTextBox.Text = Double.Parse(dt_phic_amt.Rows(0)("deduct_amt").ToString()).ToString("###,##0.00")
+            Sss_med_amtTextBox.Text = Double.Parse(dt_sss_med_amt.Rows(0)("deduct_amt").ToString()).ToString("###,##0.00")
+
+        ElseIf Employment_statusComboBox.Text.ToString().Trim() = "Staff" Then
+
+            query_pag_ibig_amt = "SELECT ISNULL(SUM(FixedAmount),0) AS deduct_amt FROM payroll_deduction_fixed_tbl WHERE DeductionCode = 'pag_ibig_amt' AND EmploymentStatus = 'Staff'"
+            query_phic_amt = "SELECT ISNULL(SUM(FixedAmount),0) AS deduct_amt FROM payroll_deduction_fixed_tbl WHERE DeductionCode = 'phic_amt' AND EmploymentStatus = 'Staff'"
+            query_sss_med_amt = "SELECT ISNULL(SUM(FixedAmount),0) AS deduct_amt FROM payroll_deduction_fixed_tbl WHERE DeductionCode = 'sss_med_amt' AND EmploymentStatus = 'Staff'"
+
+            dt_pag_ibig_amt = RetrieveData(query_pag_ibig_amt)
+            dt_phic_amt = RetrieveData(query_phic_amt)
+            dt_sss_med_amt = RetrieveData(query_sss_med_amt)
+
+            Pag_ibig_amtTextBox.Text = Double.Parse(dt_pag_ibig_amt.Rows(0)("deduct_amt").ToString()).ToString("###,##0.00")
+            Phic_amtTextBox.Text = Double.Parse(dt_phic_amt.Rows(0)("deduct_amt").ToString()).ToString("###,##0.00")
+            Sss_med_amtTextBox.Text = Double.Parse(dt_sss_med_amt.Rows(0)("deduct_amt").ToString()).ToString("###,##0.00")
+        End If
+
+    End Sub
+
 
     Private Sub clearentry()
         'Period_fromDateTimePicker.Value = DateTime.Now.Month.ToString().Trim() + "/01/" + DateTime.Now.Year().ToString().Trim()
@@ -376,7 +474,7 @@ Public Class Payroll
 
     Private Sub department_assigned_SelectedIndexChanged(sender As Object, e As EventArgs) Handles department_assigned.SelectedIndexChanged
         clearentry()
-        Dim query As String = "select Id,concat(last_name,',', first_name,' ', middle_name) as employee_name from employee_tbl where department_assigned = '" + department_assigned.Text.ToString().Trim() + "'"
+        Dim query As String = "select Id,concat(last_name,',', first_name,' ', middle_name) as employee_name from employee_tbl where department_assigned = '" + department_assigned.Text.ToString().Trim() + "' AND employee_status = 'Active'"
         ComboboxQuery(query, Employee_idComboBox, "Id", "employee_name")
         Employee_idComboBox.Text = ""
     End Sub
@@ -404,15 +502,19 @@ Public Class Payroll
                     Period_toDateTimePicker.Enabled = True
                     department_assigned.Enabled = True
                     Employee_idComboBox.Enabled = True
-                    rate_basis_ComboBox.Enabled = True
-                    Monthly_rateTextBox.Enabled = True
-                    Daily_rateTextBox.Enabled = True
-                    Hourly_rateTextBox.Enabled = True
-                    Unit_rateTextBox.Enabled = True
+                    'rate_basis_ComboBox.Enabled = True
+                    'Monthly_rateTextBox.Enabled = True
+                    'Daily_rateTextBox.Enabled = True
+                    'Hourly_rateTextBox.Enabled = True
+                    'Unit_rateTextBox.Enabled = True
 
                     'TODO: This line of code loads data into the 'PayrolldbDataSet.vw_payroll_tbl' table. You can move, or remove it, as needed.
                     Me.Vw_payroll_tblTableAdapter.Fill(Me.PayrolldbDataSet.vw_payroll_tbl)
 
+                    GroupBoxPayrollInfo.Visible = False
+                    GroupBoxEmployeeInfo.Visible = False
+                    GroupBoxIncomeInfo.Visible = False
+                    GroupBoxDeductionnfo.Visible = False
 
                 End If
                 conn.Close()
@@ -491,14 +593,19 @@ Public Class Payroll
                 Period_toDateTimePicker.Enabled = True
                 department_assigned.Enabled = True
                 Employee_idComboBox.Enabled = True
-                rate_basis_ComboBox.Enabled = True
-                Monthly_rateTextBox.Enabled = True
-                Daily_rateTextBox.Enabled = True
-                Hourly_rateTextBox.Enabled = True
-                Unit_rateTextBox.Enabled = True
+                'rate_basis_ComboBox.Enabled = True
+                'Monthly_rateTextBox.Enabled = True
+                'Daily_rateTextBox.Enabled = True
+                'Hourly_rateTextBox.Enabled = True
+                'Unit_rateTextBox.Enabled = True
 
                 'TODO: This line of code loads data into the 'PayrolldbDataSet.vw_payroll_tbl' table. You can move, or remove it, as needed.
                 Me.Vw_payroll_tblTableAdapter.Fill(Me.PayrolldbDataSet.vw_payroll_tbl)
+
+                GroupBoxPayrollInfo.Visible = False
+                GroupBoxEmployeeInfo.Visible = False
+                GroupBoxIncomeInfo.Visible = False
+                GroupBoxDeductionnfo.Visible = False
             End If
             conn.Close()
 
@@ -569,14 +676,19 @@ Public Class Payroll
                     Period_toDateTimePicker.Enabled = True
                     department_assigned.Enabled = True
                     Employee_idComboBox.Enabled = True
-                    rate_basis_ComboBox.Enabled = True
-                    Monthly_rateTextBox.Enabled = True
-                    Daily_rateTextBox.Enabled = True
-                    Hourly_rateTextBox.Enabled = True
-                    Unit_rateTextBox.Enabled = True
+                    'rate_basis_ComboBox.Enabled = True
+                    'Monthly_rateTextBox.Enabled = True
+                    'Daily_rateTextBox.Enabled = True
+                    'Hourly_rateTextBox.Enabled = True
+                    'Unit_rateTextBox.Enabled = True
 
                     'TODO: This line of code loads data into the 'PayrolldbDataSet.vw_payroll_tbl' table. You can move, or remove it, as needed.
                     Me.Vw_payroll_tblTableAdapter.Fill(Me.PayrolldbDataSet.vw_payroll_tbl)
+
+                    GroupBoxPayrollInfo.Visible = False
+                    GroupBoxEmployeeInfo.Visible = False
+                    GroupBoxIncomeInfo.Visible = False
+                    GroupBoxDeductionnfo.Visible = False
                 End If
                 conn.Close()
 
@@ -590,12 +702,12 @@ Public Class Payroll
 
     Private Sub Vw_payroll_tblDataGridView_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles Vw_payroll_tblDataGridView.CellClick
 
-        Dim result As DialogResult = MessageBox.Show("You can Update or Delete this Record", "Update or Delete Record", MessageBoxButtons.YesNo)
-        If result = DialogResult.No Then
-            'MessageBox.Show("You pressed No, Record will be remain")
-            clearentry()
-        ElseIf result = DialogResult.Yes Then
-            clearentry()
+        'Dim result As DialogResult = MessageBox.Show("You can Update or Delete this Record", "Update or Delete Record", MessageBoxButtons.YesNo)
+        'If result = DialogResult.No Then
+        '    'MessageBox.Show("You pressed No, Record will be remain")
+        '    clearentry()
+        'ElseIf result = DialogResult.Yes Then
+        clearentry()
             Payroll_noComboBox.Text = Vw_payroll_tblDataGridView.CurrentRow.Cells(1).Value.ToString.Trim()
             Period_fromDateTimePicker.Value = Vw_payroll_tblDataGridView.CurrentRow.Cells(2).Value.ToString.Trim()
             Period_toDateTimePicker.Value = Vw_payroll_tblDataGridView.CurrentRow.Cells(3).Value.ToString.Trim()
@@ -648,7 +760,7 @@ Public Class Payroll
             calculate_net_pay()
 
             btn_save.Enabled = False
-            btnCancel.Enabled = True
+            'btnCancel.Enabled = True
             btnupdate.Enabled = True
             btndel.Enabled = True
 
@@ -656,13 +768,13 @@ Public Class Payroll
             Period_toDateTimePicker.Enabled = False
             department_assigned.Enabled = False
             Employee_idComboBox.Enabled = False
-            rate_basis_ComboBox.Enabled = False
-            Monthly_rateTextBox.Enabled = False
-            Daily_rateTextBox.Enabled = False
-            Hourly_rateTextBox.Enabled = False
-            Unit_rateTextBox.Enabled = False
+        'rate_basis_ComboBox.Enabled = False
+        'Monthly_rateTextBox.Enabled = False
+        'Daily_rateTextBox.Enabled = False
+        'Hourly_rateTextBox.Enabled = False
+        'Unit_rateTextBox.Enabled = False
 
-        End If
+        'End If
 
 
     End Sub
@@ -675,7 +787,7 @@ Public Class Payroll
             'MessageBox.Show("Transaction Cancelled!")
             clearentry()
             btn_save.Enabled = True
-            btnCancel.Enabled = True
+            'btnCancel.Enabled = True
             btnupdate.Enabled = False
             btndel.Enabled = False
 
@@ -683,11 +795,16 @@ Public Class Payroll
             Period_toDateTimePicker.Enabled = True
             department_assigned.Enabled = True
             Employee_idComboBox.Enabled = True
-            rate_basis_ComboBox.Enabled = True
-            Monthly_rateTextBox.Enabled = True
-            Daily_rateTextBox.Enabled = True
-            Hourly_rateTextBox.Enabled = True
-            Unit_rateTextBox.Enabled = True
+            'rate_basis_ComboBox.Enabled = True
+            'Monthly_rateTextBox.Enabled = True
+            'Daily_rateTextBox.Enabled = True
+            'Hourly_rateTextBox.Enabled = True
+            'Unit_rateTextBox.Enabled = True
+
+            GroupBoxPayrollInfo.Visible = True
+            GroupBoxEmployeeInfo.Visible = True
+            GroupBoxIncomeInfo.Visible = True
+            GroupBoxDeductionnfo.Visible = True
 
             Try
                 Dim conn As SqlConnection = New SqlConnection(connection)
@@ -709,29 +826,7 @@ Public Class Payroll
         End If
     End Sub
 
-    Private Sub btnCancel_Click(sender As Object, e As EventArgs) Handles btnCancel.Click
-        Dim result As DialogResult = MessageBox.Show("Are you sure you want to Cancel transaction?", "Cancel Record", MessageBoxButtons.YesNo)
-        If result = DialogResult.No Then
-            'MessageBox.Show("You pressed No, Record will be remain")
-        ElseIf result = DialogResult.Yes Then
-            MessageBox.Show("Transaction Cancelled!")
-            clearentry()
-            btn_save.Enabled = False
-            btnCancel.Enabled = False
-            btnupdate.Enabled = False
-            btndel.Enabled = False
 
-            Period_fromDateTimePicker.Enabled = True
-            Period_toDateTimePicker.Enabled = True
-            department_assigned.Enabled = True
-            Employee_idComboBox.Enabled = True
-            rate_basis_ComboBox.Enabled = True
-            Monthly_rateTextBox.Enabled = True
-            Daily_rateTextBox.Enabled = True
-            Hourly_rateTextBox.Enabled = True
-            Unit_rateTextBox.Enabled = True
-        End If
-    End Sub
 
     Private Sub txtbSearch_TextChanged(sender As Object, e As EventArgs) Handles txtbSearch.TextChanged
         Dim query As String

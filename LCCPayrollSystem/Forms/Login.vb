@@ -9,7 +9,6 @@ Public Class login
         Dim date2 As DateTime = DateTime.Parse(expire_date)
 
         If date1.Date > date2.Date Then
-
             MsgBox("Application is Expired!, Contact the Administrator", MsgBoxStyle.Exclamation)
         Else
 
@@ -31,8 +30,12 @@ Public Class login
                     FormDashboard1.textbox_login.Text = dt.Rows(0)("full_name").ToString() + " (" + dt.Rows(0)("user_type").ToString().Trim + ")"
                     FormDashboard1.Show()
 
+                    user_login = dt.Rows(0)("user_type").ToString().Trim
+
                     txtb_username.Text = ""
                     txtb_userpassword.Text = ""
+
+                    Dim fmDTRUpload As New DTRUpload
 
                     If dt.Rows(0)("user_type").ToString().Trim = "Admin" Then
 
@@ -45,6 +48,7 @@ Public Class login
                         FormDashboard1.btnDeduction.Visible = True
                         FormDashboard1.btnRegister.Visible = True
                         FormDashboard1.btnHoliday.Visible = True
+                        FormDashboard1.btnDeductionFixed.Visible = True
 
                         FormDashboard1.picDashboard.Visible = True
                         FormDashboard1.picPayroll.Visible = True
@@ -54,29 +58,13 @@ Public Class login
                         FormDashboard1.picDeduction.Visible = True
                         FormDashboard1.picRegister.Visible = True
                         FormDashboard1.picHoliday.Visible = True
+                        FormDashboard1.picDeductionFixed.Visible = True
+
+                        fmDTRUpload.btnUpload.Visible = True
+                        fmDTRUpload.btnLoad.Visible = True
+                        fmDTRUpload.btnShowGenerate.Visible = True
 
                     ElseIf dt.Rows(0)("user_type").ToString().Trim = "Staff" Then
-
-                        FormDashboard1.btnDashboard.Visible = True
-                        FormDashboard1.btnPayroll.Visible = True
-                        'FormDashboard1.btnAttendance.Visible = True
-                        FormDashboard1.Button1.Visible = True
-                        FormDashboard1.btnReport.Visible = False
-                        FormDashboard1.btnEmployee.Visible = False
-                        FormDashboard1.btnDeduction.Visible = False
-                        FormDashboard1.btnRegister.Visible = False
-                        FormDashboard1.btnHoliday.Visible = False
-
-                        FormDashboard1.picDashboard.Visible = True
-                        FormDashboard1.picPayroll.Visible = True
-                        FormDashboard1.picAttendance.Visible = True
-                        FormDashboard1.picReport.Visible = False
-                        FormDashboard1.picEmployee.Visible = False
-                        FormDashboard1.picDeduction.Visible = False
-                        FormDashboard1.picRegister.Visible = False
-                        FormDashboard1.picHoliday.Visible = False
-
-                    ElseIf dt.Rows(0)("user_type").ToString().Trim = "Employee" Then
 
                         FormDashboard1.btnDashboard.Visible = True
                         FormDashboard1.btnPayroll.Visible = False
@@ -87,6 +75,7 @@ Public Class login
                         FormDashboard1.btnDeduction.Visible = False
                         FormDashboard1.btnRegister.Visible = False
                         FormDashboard1.btnHoliday.Visible = False
+                        FormDashboard1.btnDeductionFixed.Visible = False
 
                         FormDashboard1.picDashboard.Visible = True
                         FormDashboard1.picPayroll.Visible = False
@@ -96,6 +85,38 @@ Public Class login
                         FormDashboard1.picDeduction.Visible = False
                         FormDashboard1.picRegister.Visible = False
                         FormDashboard1.picHoliday.Visible = False
+                        FormDashboard1.picDeductionFixed.Visible = False
+
+                        fmDTRUpload.btnUpload.Visible = False
+                        fmDTRUpload.btnLoad.Visible = False
+                        fmDTRUpload.btnShowGenerate.Visible = False
+
+                        'ElseIf dt.Rows(0)("user_type").ToString().Trim = "Employee" Then
+
+                        '    FormDashboard1.btnDashboard.Visible = True
+                        '    FormDashboard1.btnPayroll.Visible = False
+                        '    'FormDashboard1.btnAttendance.Visible = True
+                        '    FormDashboard1.Button1.Visible = True
+                        '    FormDashboard1.btnReport.Visible = True
+                        '    FormDashboard1.btnEmployee.Visible = False
+                        '    FormDashboard1.btnDeduction.Visible = False
+                        '    FormDashboard1.btnRegister.Visible = False
+                        '    FormDashboard1.btnHoliday.Visible = False
+                        '    FormDashboard1.btnDeductionFixed.Visible = False
+
+                        '    FormDashboard1.picDashboard.Visible = True
+                        '    FormDashboard1.picPayroll.Visible = False
+                        '    FormDashboard1.picAttendance.Visible = True
+                        '    FormDashboard1.picReport.Visible = True
+                        '    FormDashboard1.picEmployee.Visible = False
+                        '    FormDashboard1.picDeduction.Visible = False
+                        '    FormDashboard1.picRegister.Visible = False
+                        '    FormDashboard1.picHoliday.Visible = False
+                        '    FormDashboard1.picDeductionFixed.Visible = False
+
+                        '    fmDTRUpload.btnUpload.Visible = False
+                        '    fmDTRUpload.btnLoad.Visible = False
+                        '    fmDTRUpload.btnShowGenerate.Visible = False
                     Else
 
                         MsgBox("This User is no User Type", MsgBoxStyle.Information)
@@ -108,6 +129,7 @@ Public Class login
                         FormDashboard1.btnDeduction.Visible = False
                         FormDashboard1.btnRegister.Visible = False
                         FormDashboard1.btnHoliday.Visible = False
+                        FormDashboard1.btnDeductionFixed.Visible = False
 
                         FormDashboard1.picDashboard.Visible = True
                         FormDashboard1.picPayroll.Visible = False
@@ -117,6 +139,11 @@ Public Class login
                         FormDashboard1.picDeduction.Visible = False
                         FormDashboard1.picRegister.Visible = False
                         FormDashboard1.picHoliday.Visible = False
+                        FormDashboard1.picDeductionFixed.Visible = False
+
+                        fmDTRUpload.btnUpload.Visible = False
+                        fmDTRUpload.btnLoad.Visible = False
+                        fmDTRUpload.btnShowGenerate.Visible = False
 
                     End If
                     conn.Dispose()

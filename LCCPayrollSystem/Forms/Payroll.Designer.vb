@@ -58,16 +58,20 @@ Partial Class Payroll
         Dim IdLabel As System.Windows.Forms.Label
         Dim King_coop_loanLabel As System.Windows.Forms.Label
         Dim Lbp_loanLabel As System.Windows.Forms.Label
+        Dim Employment_statusLabel As System.Windows.Forms.Label
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Payroll))
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Me.GroupBox5 = New System.Windows.Forms.GroupBox()
+        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Me.GroupBoxPayrollInfo = New System.Windows.Forms.GroupBox()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Period_toDateTimePicker = New System.Windows.Forms.DateTimePicker()
         Me.Period_fromDateTimePicker = New System.Windows.Forms.DateTimePicker()
         Me.department_assigned = New System.Windows.Forms.ComboBox()
         Me.Payroll_noComboBox = New System.Windows.Forms.ComboBox()
-        Me.GroupBox2 = New System.Windows.Forms.GroupBox()
+        Me.GroupBoxEmployeeInfo = New System.Windows.Forms.GroupBox()
+        Me.Employment_statusComboBox = New System.Windows.Forms.ComboBox()
+        Me.Employee_tblBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.PayrolldbDataSet = New LCCPayrollSystem.payrolldbDataSet()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.PhotoPictureBox = New System.Windows.Forms.PictureBox()
         Me.Employee_idComboBox = New System.Windows.Forms.ComboBox()
@@ -79,7 +83,8 @@ Partial Class Payroll
         Me.btn_calculate = New System.Windows.Forms.Button()
         Me.RemarksTextBox = New System.Windows.Forms.TextBox()
         Me.Net_payTextBox = New System.Windows.Forms.TextBox()
-        Me.GroupBox4 = New System.Windows.Forms.GroupBox()
+        Me.GroupBoxIncomeInfo = New System.Windows.Forms.GroupBox()
+        Me.LabelOvertime = New System.Windows.Forms.Label()
         Me.Worked_daysLabel = New System.Windows.Forms.Label()
         Me.Worked_daysTextBox = New System.Windows.Forms.TextBox()
         Me.Regular_wagesTextBox = New System.Windows.Forms.TextBox()
@@ -87,12 +92,16 @@ Partial Class Payroll
         Me.Gross_payTextBox = New System.Windows.Forms.TextBox()
         Me.Adjustments_amtTextBox = New System.Windows.Forms.TextBox()
         Me.Allowances_amtTextBox = New System.Windows.Forms.TextBox()
-        Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.GroupBoxDeductionnfo = New System.Windows.Forms.GroupBox()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.Label1 = New System.Windows.Forms.Label()
         Me.Lbp_loanTextBox = New System.Windows.Forms.TextBox()
+        Me.btn_save = New System.Windows.Forms.Button()
         Me.King_coop_loanTextBox = New System.Windows.Forms.TextBox()
         Me.Payroll_tblBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.PayrolldbDataSet = New LCCPayrollSystem.payrolldbDataSet()
+        Me.btnupdate = New System.Windows.Forms.Button()
         Me.total_deduction_TextBox = New System.Windows.Forms.TextBox()
+        Me.btndel = New System.Windows.Forms.Button()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Absent_daysTextBox = New System.Windows.Forms.TextBox()
         Me.Other_loans_amtTextBox = New System.Windows.Forms.TextBox()
@@ -106,9 +115,6 @@ Partial Class Payroll
         Me.Lates_in_amtTextBox = New System.Windows.Forms.TextBox()
         Me.Lates_in_minTextBox = New System.Windows.Forms.TextBox()
         Me.Absent_amtTextBox = New System.Windows.Forms.TextBox()
-        Me.btnCancel = New System.Windows.Forms.Button()
-        Me.btnupdate = New System.Windows.Forms.Button()
-        Me.btn_save = New System.Windows.Forms.Button()
         Me.GroupBox6 = New System.Windows.Forms.GroupBox()
         Me.Middle_nameTextBox = New System.Windows.Forms.TextBox()
         Me.IdTextBox = New System.Windows.Forms.TextBox()
@@ -159,14 +165,11 @@ Partial Class Payroll
         Me.Label14 = New System.Windows.Forms.Label()
         Me.txtbSearch = New System.Windows.Forms.TextBox()
         Me.btnCreate = New System.Windows.Forms.Button()
-        Me.btndel = New System.Windows.Forms.Button()
         Me.Vw_payroll_tblTableAdapter = New LCCPayrollSystem.payrolldbDataSetTableAdapters.vw_payroll_tblTableAdapter()
         Me.Payroll_tblTableAdapter = New LCCPayrollSystem.payrolldbDataSetTableAdapters.payroll_tblTableAdapter()
         Me.TableAdapterManager = New LCCPayrollSystem.payrolldbDataSetTableAdapters.TableAdapterManager()
         Me.PayrolldbDataSet1 = New LCCPayrollSystem.payrolldbDataSet()
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.Label2 = New System.Windows.Forms.Label()
-        Me.LabelOvertime = New System.Windows.Forms.Label()
+        Me.Employee_tblTableAdapter = New LCCPayrollSystem.payrolldbDataSetTableAdapters.employee_tblTableAdapter()
         Period_toLabel = New System.Windows.Forms.Label()
         Period_fromLabel = New System.Windows.Forms.Label()
         Payroll_noLabel = New System.Windows.Forms.Label()
@@ -202,13 +205,15 @@ Partial Class Payroll
         IdLabel = New System.Windows.Forms.Label()
         King_coop_loanLabel = New System.Windows.Forms.Label()
         Lbp_loanLabel = New System.Windows.Forms.Label()
-        Me.GroupBox5.SuspendLayout()
-        Me.GroupBox2.SuspendLayout()
-        CType(Me.PhotoPictureBox, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.GroupBox4.SuspendLayout()
-        Me.GroupBox1.SuspendLayout()
-        CType(Me.Payroll_tblBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        Employment_statusLabel = New System.Windows.Forms.Label()
+        Me.GroupBoxPayrollInfo.SuspendLayout()
+        Me.GroupBoxEmployeeInfo.SuspendLayout()
+        CType(Me.Employee_tblBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PayrolldbDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PhotoPictureBox, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.GroupBoxIncomeInfo.SuspendLayout()
+        Me.GroupBoxDeductionnfo.SuspendLayout()
+        CType(Me.Payroll_tblBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox6.SuspendLayout()
         CType(Me.Vw_payroll_tblDataGridView, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.VwpayrolltblBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -255,7 +260,8 @@ Partial Class Payroll
         'Unit_rateLabel
         '
         Unit_rateLabel.AutoSize = True
-        Unit_rateLabel.Location = New System.Drawing.Point(87, 188)
+        Unit_rateLabel.Enabled = False
+        Unit_rateLabel.Location = New System.Drawing.Point(87, 225)
         Unit_rateLabel.Name = "Unit_rateLabel"
         Unit_rateLabel.Size = New System.Drawing.Size(50, 14)
         Unit_rateLabel.TabIndex = 27
@@ -264,7 +270,8 @@ Partial Class Payroll
         'Hourly_rateLabel
         '
         Hourly_rateLabel.AutoSize = True
-        Hourly_rateLabel.Location = New System.Drawing.Point(8, 188)
+        Hourly_rateLabel.Enabled = False
+        Hourly_rateLabel.Location = New System.Drawing.Point(8, 225)
         Hourly_rateLabel.Name = "Hourly_rateLabel"
         Hourly_rateLabel.Size = New System.Drawing.Size(63, 14)
         Hourly_rateLabel.TabIndex = 25
@@ -273,7 +280,7 @@ Partial Class Payroll
         'Daily_rateLabel
         '
         Daily_rateLabel.AutoSize = True
-        Daily_rateLabel.Location = New System.Drawing.Point(87, 136)
+        Daily_rateLabel.Location = New System.Drawing.Point(87, 182)
         Daily_rateLabel.Name = "Daily_rateLabel"
         Daily_rateLabel.Size = New System.Drawing.Size(55, 14)
         Daily_rateLabel.TabIndex = 23
@@ -282,7 +289,7 @@ Partial Class Payroll
         'Monthly_rateLabel
         '
         Monthly_rateLabel.AutoSize = True
-        Monthly_rateLabel.Location = New System.Drawing.Point(8, 136)
+        Monthly_rateLabel.Location = New System.Drawing.Point(8, 182)
         Monthly_rateLabel.Name = "Monthly_rateLabel"
         Monthly_rateLabel.Size = New System.Drawing.Size(69, 14)
         Monthly_rateLabel.TabIndex = 21
@@ -457,9 +464,9 @@ Partial Class Payroll
         Lates_in_minLabel.AutoSize = True
         Lates_in_minLabel.Location = New System.Drawing.Point(9, 63)
         Lates_in_minLabel.Name = "Lates_in_minLabel"
-        Lates_in_minLabel.Size = New System.Drawing.Size(61, 14)
+        Lates_in_minLabel.Size = New System.Drawing.Size(67, 14)
         Lates_in_minLabel.TabIndex = 41
-        Lates_in_minLabel.Text = "Last in min."
+        Lates_in_minLabel.Text = "Lates in min."
         '
         'Absent_amtLabel
         '
@@ -537,24 +544,33 @@ Partial Class Payroll
         Lbp_loanLabel.TabIndex = 118
         Lbp_loanLabel.Text = "LBP Loan:"
         '
-        'GroupBox5
+        'Employment_statusLabel
         '
-        Me.GroupBox5.Controls.Add(Me.Label4)
-        Me.GroupBox5.Controls.Add(Me.Period_toDateTimePicker)
-        Me.GroupBox5.Controls.Add(Period_toLabel)
-        Me.GroupBox5.Controls.Add(Me.Period_fromDateTimePicker)
-        Me.GroupBox5.Controls.Add(Period_fromLabel)
-        Me.GroupBox5.Controls.Add(Me.department_assigned)
-        Me.GroupBox5.Controls.Add(Me.Payroll_noComboBox)
-        Me.GroupBox5.Controls.Add(Payroll_noLabel)
-        Me.GroupBox5.Controls.Add(Department_assignedLabel)
-        Me.GroupBox5.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.GroupBox5.Location = New System.Drawing.Point(341, 12)
-        Me.GroupBox5.Name = "GroupBox5"
-        Me.GroupBox5.Size = New System.Drawing.Size(182, 217)
-        Me.GroupBox5.TabIndex = 121
-        Me.GroupBox5.TabStop = False
-        Me.GroupBox5.Text = "Payroll Information"
+        Employment_statusLabel.AutoSize = True
+        Employment_statusLabel.Location = New System.Drawing.Point(8, 134)
+        Employment_statusLabel.Name = "Employment_statusLabel"
+        Employment_statusLabel.Size = New System.Drawing.Size(101, 14)
+        Employment_statusLabel.TabIndex = 121
+        Employment_statusLabel.Text = "Employment Status:"
+        '
+        'GroupBoxPayrollInfo
+        '
+        Me.GroupBoxPayrollInfo.Controls.Add(Me.Label4)
+        Me.GroupBoxPayrollInfo.Controls.Add(Me.Period_toDateTimePicker)
+        Me.GroupBoxPayrollInfo.Controls.Add(Period_toLabel)
+        Me.GroupBoxPayrollInfo.Controls.Add(Me.Period_fromDateTimePicker)
+        Me.GroupBoxPayrollInfo.Controls.Add(Period_fromLabel)
+        Me.GroupBoxPayrollInfo.Controls.Add(Me.department_assigned)
+        Me.GroupBoxPayrollInfo.Controls.Add(Me.Payroll_noComboBox)
+        Me.GroupBoxPayrollInfo.Controls.Add(Payroll_noLabel)
+        Me.GroupBoxPayrollInfo.Controls.Add(Department_assignedLabel)
+        Me.GroupBoxPayrollInfo.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.GroupBoxPayrollInfo.Location = New System.Drawing.Point(341, 12)
+        Me.GroupBoxPayrollInfo.Name = "GroupBoxPayrollInfo"
+        Me.GroupBoxPayrollInfo.Size = New System.Drawing.Size(182, 217)
+        Me.GroupBoxPayrollInfo.TabIndex = 121
+        Me.GroupBoxPayrollInfo.TabStop = False
+        Me.GroupBoxPayrollInfo.Text = "Payroll Information"
         '
         'Label4
         '
@@ -586,7 +602,7 @@ Partial Class Payroll
         'department_assigned
         '
         Me.department_assigned.FormattingEnabled = True
-        Me.department_assigned.Items.AddRange(New Object() {"College", "Senior High School", "Junior High School", "Elementary"})
+        Me.department_assigned.Items.AddRange(New Object() {"College", "Senior High School", "Junior High School", "Elementary", "Staff"})
         Me.department_assigned.Location = New System.Drawing.Point(7, 180)
         Me.department_assigned.Name = "department_assigned"
         Me.department_assigned.Size = New System.Drawing.Size(165, 22)
@@ -601,29 +617,53 @@ Partial Class Payroll
         Me.Payroll_noComboBox.Size = New System.Drawing.Size(89, 22)
         Me.Payroll_noComboBox.TabIndex = 70
         '
-        'GroupBox2
+        'GroupBoxEmployeeInfo
         '
-        Me.GroupBox2.Controls.Add(Me.Label5)
-        Me.GroupBox2.Controls.Add(Me.PhotoPictureBox)
-        Me.GroupBox2.Controls.Add(Me.Employee_idComboBox)
-        Me.GroupBox2.Controls.Add(Me.Unit_rateTextBox)
-        Me.GroupBox2.Controls.Add(Unit_rateLabel)
-        Me.GroupBox2.Controls.Add(Me.rate_basis_ComboBox)
-        Me.GroupBox2.Controls.Add(Me.Hourly_rateTextBox)
-        Me.GroupBox2.Controls.Add(Hourly_rateLabel)
-        Me.GroupBox2.Controls.Add(Me.Daily_rateTextBox)
-        Me.GroupBox2.Controls.Add(Daily_rateLabel)
-        Me.GroupBox2.Controls.Add(Me.Monthly_rateTextBox)
-        Me.GroupBox2.Controls.Add(Monthly_rateLabel)
-        Me.GroupBox2.Controls.Add(Rate_basis_descrLabel)
-        Me.GroupBox2.Controls.Add(Employee_idLabel)
-        Me.GroupBox2.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.GroupBox2.Location = New System.Drawing.Point(341, 235)
-        Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Size = New System.Drawing.Size(182, 278)
-        Me.GroupBox2.TabIndex = 118
-        Me.GroupBox2.TabStop = False
-        Me.GroupBox2.Text = "Employee Information"
+        Me.GroupBoxEmployeeInfo.Controls.Add(Me.Employment_statusComboBox)
+        Me.GroupBoxEmployeeInfo.Controls.Add(Employment_statusLabel)
+        Me.GroupBoxEmployeeInfo.Controls.Add(Me.Label5)
+        Me.GroupBoxEmployeeInfo.Controls.Add(Me.PhotoPictureBox)
+        Me.GroupBoxEmployeeInfo.Controls.Add(Me.Employee_idComboBox)
+        Me.GroupBoxEmployeeInfo.Controls.Add(Me.Unit_rateTextBox)
+        Me.GroupBoxEmployeeInfo.Controls.Add(Unit_rateLabel)
+        Me.GroupBoxEmployeeInfo.Controls.Add(Me.rate_basis_ComboBox)
+        Me.GroupBoxEmployeeInfo.Controls.Add(Me.Hourly_rateTextBox)
+        Me.GroupBoxEmployeeInfo.Controls.Add(Hourly_rateLabel)
+        Me.GroupBoxEmployeeInfo.Controls.Add(Me.Daily_rateTextBox)
+        Me.GroupBoxEmployeeInfo.Controls.Add(Daily_rateLabel)
+        Me.GroupBoxEmployeeInfo.Controls.Add(Me.Monthly_rateTextBox)
+        Me.GroupBoxEmployeeInfo.Controls.Add(Monthly_rateLabel)
+        Me.GroupBoxEmployeeInfo.Controls.Add(Rate_basis_descrLabel)
+        Me.GroupBoxEmployeeInfo.Controls.Add(Employee_idLabel)
+        Me.GroupBoxEmployeeInfo.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.GroupBoxEmployeeInfo.Location = New System.Drawing.Point(341, 235)
+        Me.GroupBoxEmployeeInfo.Name = "GroupBoxEmployeeInfo"
+        Me.GroupBoxEmployeeInfo.Size = New System.Drawing.Size(182, 278)
+        Me.GroupBoxEmployeeInfo.TabIndex = 118
+        Me.GroupBoxEmployeeInfo.TabStop = False
+        Me.GroupBoxEmployeeInfo.Text = "Employee Information"
+        '
+        'Employment_statusComboBox
+        '
+        Me.Employment_statusComboBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.Employee_tblBindingSource, "employment_status", True))
+        Me.Employment_statusComboBox.Enabled = False
+        Me.Employment_statusComboBox.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Employment_statusComboBox.FormattingEnabled = True
+        Me.Employment_statusComboBox.Items.AddRange(New Object() {"Full-Time", "Part-Time", "Staff"})
+        Me.Employment_statusComboBox.Location = New System.Drawing.Point(9, 151)
+        Me.Employment_statusComboBox.Name = "Employment_statusComboBox"
+        Me.Employment_statusComboBox.Size = New System.Drawing.Size(163, 22)
+        Me.Employment_statusComboBox.TabIndex = 137
+        '
+        'Employee_tblBindingSource
+        '
+        Me.Employee_tblBindingSource.DataMember = "employee_tbl"
+        Me.Employee_tblBindingSource.DataSource = Me.PayrolldbDataSet
+        '
+        'PayrolldbDataSet
+        '
+        Me.PayrolldbDataSet.DataSetName = "payrolldbDataSet"
+        Me.PayrolldbDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
         '
         'Label5
         '
@@ -658,7 +698,8 @@ Partial Class Payroll
         '
         'Unit_rateTextBox
         '
-        Me.Unit_rateTextBox.Location = New System.Drawing.Point(87, 211)
+        Me.Unit_rateTextBox.Enabled = False
+        Me.Unit_rateTextBox.Location = New System.Drawing.Point(87, 242)
         Me.Unit_rateTextBox.Name = "Unit_rateTextBox"
         Me.Unit_rateTextBox.Size = New System.Drawing.Size(69, 20)
         Me.Unit_rateTextBox.TabIndex = 28
@@ -667,6 +708,7 @@ Partial Class Payroll
         '
         'rate_basis_ComboBox
         '
+        Me.rate_basis_ComboBox.Enabled = False
         Me.rate_basis_ComboBox.FormattingEnabled = True
         Me.rate_basis_ComboBox.Items.AddRange(New Object() {"Monthly", "Daily", "Hourly", "Per Unit"})
         Me.rate_basis_ComboBox.Location = New System.Drawing.Point(8, 105)
@@ -676,7 +718,8 @@ Partial Class Payroll
         '
         'Hourly_rateTextBox
         '
-        Me.Hourly_rateTextBox.Location = New System.Drawing.Point(8, 211)
+        Me.Hourly_rateTextBox.Enabled = False
+        Me.Hourly_rateTextBox.Location = New System.Drawing.Point(8, 242)
         Me.Hourly_rateTextBox.Name = "Hourly_rateTextBox"
         Me.Hourly_rateTextBox.Size = New System.Drawing.Size(69, 20)
         Me.Hourly_rateTextBox.TabIndex = 26
@@ -685,7 +728,8 @@ Partial Class Payroll
         '
         'Daily_rateTextBox
         '
-        Me.Daily_rateTextBox.Location = New System.Drawing.Point(87, 159)
+        Me.Daily_rateTextBox.Enabled = False
+        Me.Daily_rateTextBox.Location = New System.Drawing.Point(87, 199)
         Me.Daily_rateTextBox.Name = "Daily_rateTextBox"
         Me.Daily_rateTextBox.Size = New System.Drawing.Size(69, 20)
         Me.Daily_rateTextBox.TabIndex = 24
@@ -694,7 +738,8 @@ Partial Class Payroll
         '
         'Monthly_rateTextBox
         '
-        Me.Monthly_rateTextBox.Location = New System.Drawing.Point(8, 159)
+        Me.Monthly_rateTextBox.Enabled = False
+        Me.Monthly_rateTextBox.Location = New System.Drawing.Point(8, 199)
         Me.Monthly_rateTextBox.Name = "Monthly_rateTextBox"
         Me.Monthly_rateTextBox.Size = New System.Drawing.Size(69, 20)
         Me.Monthly_rateTextBox.TabIndex = 22
@@ -734,28 +779,39 @@ Partial Class Payroll
         Me.Net_payTextBox.Text = "0.00"
         Me.Net_payTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
-        'GroupBox4
+        'GroupBoxIncomeInfo
         '
-        Me.GroupBox4.Controls.Add(Me.LabelOvertime)
-        Me.GroupBox4.Controls.Add(Me.Worked_daysLabel)
-        Me.GroupBox4.Controls.Add(Me.Worked_daysTextBox)
-        Me.GroupBox4.Controls.Add(Regular_wagesLabel)
-        Me.GroupBox4.Controls.Add(Me.Regular_wagesTextBox)
-        Me.GroupBox4.Controls.Add(Me.Overtime_amtTextBox)
-        Me.GroupBox4.Controls.Add(Me.Gross_payTextBox)
-        Me.GroupBox4.Controls.Add(Gross_payLabel)
-        Me.GroupBox4.Controls.Add(Me.Adjustments_amtTextBox)
-        Me.GroupBox4.Controls.Add(Adjustments_amtLabel)
-        Me.GroupBox4.Controls.Add(Me.Allowances_amtTextBox)
-        Me.GroupBox4.Controls.Add(Allowances_amtLabel)
-        Me.GroupBox4.Controls.Add(Overtime_amtLabel)
-        Me.GroupBox4.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.GroupBox4.Location = New System.Drawing.Point(529, 15)
-        Me.GroupBox4.Name = "GroupBox4"
-        Me.GroupBox4.Size = New System.Drawing.Size(370, 116)
-        Me.GroupBox4.TabIndex = 120
-        Me.GroupBox4.TabStop = False
-        Me.GroupBox4.Text = "Income"
+        Me.GroupBoxIncomeInfo.Controls.Add(Me.LabelOvertime)
+        Me.GroupBoxIncomeInfo.Controls.Add(Me.Worked_daysLabel)
+        Me.GroupBoxIncomeInfo.Controls.Add(Me.Worked_daysTextBox)
+        Me.GroupBoxIncomeInfo.Controls.Add(Regular_wagesLabel)
+        Me.GroupBoxIncomeInfo.Controls.Add(Me.Regular_wagesTextBox)
+        Me.GroupBoxIncomeInfo.Controls.Add(Me.Overtime_amtTextBox)
+        Me.GroupBoxIncomeInfo.Controls.Add(Me.Gross_payTextBox)
+        Me.GroupBoxIncomeInfo.Controls.Add(Gross_payLabel)
+        Me.GroupBoxIncomeInfo.Controls.Add(Me.Adjustments_amtTextBox)
+        Me.GroupBoxIncomeInfo.Controls.Add(Adjustments_amtLabel)
+        Me.GroupBoxIncomeInfo.Controls.Add(Me.Allowances_amtTextBox)
+        Me.GroupBoxIncomeInfo.Controls.Add(Allowances_amtLabel)
+        Me.GroupBoxIncomeInfo.Controls.Add(Overtime_amtLabel)
+        Me.GroupBoxIncomeInfo.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.GroupBoxIncomeInfo.Location = New System.Drawing.Point(529, 15)
+        Me.GroupBoxIncomeInfo.Name = "GroupBoxIncomeInfo"
+        Me.GroupBoxIncomeInfo.Size = New System.Drawing.Size(370, 116)
+        Me.GroupBoxIncomeInfo.TabIndex = 120
+        Me.GroupBoxIncomeInfo.TabStop = False
+        Me.GroupBoxIncomeInfo.Text = "Income"
+        '
+        'LabelOvertime
+        '
+        Me.LabelOvertime.AutoSize = True
+        Me.LabelOvertime.Font = New System.Drawing.Font("Century Gothic", 6.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LabelOvertime.ForeColor = System.Drawing.Color.Red
+        Me.LabelOvertime.Location = New System.Drawing.Point(74, 70)
+        Me.LabelOvertime.Name = "LabelOvertime"
+        Me.LabelOvertime.Size = New System.Drawing.Size(11, 12)
+        Me.LabelOvertime.TabIndex = 124
+        Me.LabelOvertime.Text = "--"
         '
         'Worked_daysLabel
         '
@@ -824,52 +880,77 @@ Partial Class Payroll
         Me.Allowances_amtTextBox.Text = "0.00"
         Me.Allowances_amtTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
         '
-        'GroupBox1
+        'GroupBoxDeductionnfo
         '
-        Me.GroupBox1.Controls.Add(Me.Label2)
-        Me.GroupBox1.Controls.Add(Me.Label1)
-        Me.GroupBox1.Controls.Add(Lbp_loanLabel)
-        Me.GroupBox1.Controls.Add(Me.Lbp_loanTextBox)
-        Me.GroupBox1.Controls.Add(King_coop_loanLabel)
-        Me.GroupBox1.Controls.Add(Me.King_coop_loanTextBox)
-        Me.GroupBox1.Controls.Add(Me.RemarksTextBox)
-        Me.GroupBox1.Controls.Add(Me.btn_calculate)
-        Me.GroupBox1.Controls.Add(Me.total_deduction_TextBox)
-        Me.GroupBox1.Controls.Add(RemarksLabel)
-        Me.GroupBox1.Controls.Add(Net_payLabel)
-        Me.GroupBox1.Controls.Add(Me.Label3)
-        Me.GroupBox1.Controls.Add(Me.Net_payTextBox)
-        Me.GroupBox1.Controls.Add(Me.Absent_daysTextBox)
-        Me.GroupBox1.Controls.Add(Me.Other_loans_amtTextBox)
-        Me.GroupBox1.Controls.Add(Other_loans_amtLabel)
-        Me.GroupBox1.Controls.Add(Me.Other_ded_amtTextBox)
-        Me.GroupBox1.Controls.Add(Other_ded_amtLabel)
-        Me.GroupBox1.Controls.Add(Me.Wtax_amtTextBox)
-        Me.GroupBox1.Controls.Add(Wtax_amtLabel)
-        Me.GroupBox1.Controls.Add(Me.Phic_amtTextBox)
-        Me.GroupBox1.Controls.Add(Phic_amtLabel)
-        Me.GroupBox1.Controls.Add(Me.Pag_ibig_amtTextBox)
-        Me.GroupBox1.Controls.Add(Pag_ibig_amtLabel)
-        Me.GroupBox1.Controls.Add(Me.Sss_loan_amtTextBox)
-        Me.GroupBox1.Controls.Add(Sss_loan_amtLabel)
-        Me.GroupBox1.Controls.Add(Me.Sss_med_amtTextBox)
-        Me.GroupBox1.Controls.Add(Sss_med_amtLabel)
-        Me.GroupBox1.Controls.Add(Me.Cash_advance_amtTextBox)
-        Me.GroupBox1.Controls.Add(Cash_advance_amtLabel)
-        Me.GroupBox1.Controls.Add(Me.Lates_in_amtTextBox)
-        Me.GroupBox1.Controls.Add(Lates_in_amtLabel)
-        Me.GroupBox1.Controls.Add(Me.Lates_in_minTextBox)
-        Me.GroupBox1.Controls.Add(Lates_in_minLabel)
-        Me.GroupBox1.Controls.Add(Me.Absent_amtTextBox)
-        Me.GroupBox1.Controls.Add(Absent_amtLabel)
-        Me.GroupBox1.Controls.Add(Absent_daysLabel)
-        Me.GroupBox1.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.GroupBox1.Location = New System.Drawing.Point(528, 137)
-        Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(369, 342)
-        Me.GroupBox1.TabIndex = 117
-        Me.GroupBox1.TabStop = False
-        Me.GroupBox1.Text = "Deductions"
+        Me.GroupBoxDeductionnfo.Controls.Add(Me.Label2)
+        Me.GroupBoxDeductionnfo.Controls.Add(Me.Label1)
+        Me.GroupBoxDeductionnfo.Controls.Add(Lbp_loanLabel)
+        Me.GroupBoxDeductionnfo.Controls.Add(Me.Lbp_loanTextBox)
+        Me.GroupBoxDeductionnfo.Controls.Add(Me.btn_save)
+        Me.GroupBoxDeductionnfo.Controls.Add(King_coop_loanLabel)
+        Me.GroupBoxDeductionnfo.Controls.Add(Me.King_coop_loanTextBox)
+        Me.GroupBoxDeductionnfo.Controls.Add(Me.RemarksTextBox)
+        Me.GroupBoxDeductionnfo.Controls.Add(Me.btnupdate)
+        Me.GroupBoxDeductionnfo.Controls.Add(Me.btn_calculate)
+        Me.GroupBoxDeductionnfo.Controls.Add(Me.total_deduction_TextBox)
+        Me.GroupBoxDeductionnfo.Controls.Add(Me.btndel)
+        Me.GroupBoxDeductionnfo.Controls.Add(RemarksLabel)
+        Me.GroupBoxDeductionnfo.Controls.Add(Net_payLabel)
+        Me.GroupBoxDeductionnfo.Controls.Add(Me.Label3)
+        Me.GroupBoxDeductionnfo.Controls.Add(Me.Net_payTextBox)
+        Me.GroupBoxDeductionnfo.Controls.Add(Me.Absent_daysTextBox)
+        Me.GroupBoxDeductionnfo.Controls.Add(Me.Other_loans_amtTextBox)
+        Me.GroupBoxDeductionnfo.Controls.Add(Other_loans_amtLabel)
+        Me.GroupBoxDeductionnfo.Controls.Add(Me.Other_ded_amtTextBox)
+        Me.GroupBoxDeductionnfo.Controls.Add(Other_ded_amtLabel)
+        Me.GroupBoxDeductionnfo.Controls.Add(Me.Wtax_amtTextBox)
+        Me.GroupBoxDeductionnfo.Controls.Add(Wtax_amtLabel)
+        Me.GroupBoxDeductionnfo.Controls.Add(Me.Phic_amtTextBox)
+        Me.GroupBoxDeductionnfo.Controls.Add(Phic_amtLabel)
+        Me.GroupBoxDeductionnfo.Controls.Add(Me.Pag_ibig_amtTextBox)
+        Me.GroupBoxDeductionnfo.Controls.Add(Pag_ibig_amtLabel)
+        Me.GroupBoxDeductionnfo.Controls.Add(Me.Sss_loan_amtTextBox)
+        Me.GroupBoxDeductionnfo.Controls.Add(Sss_loan_amtLabel)
+        Me.GroupBoxDeductionnfo.Controls.Add(Me.Sss_med_amtTextBox)
+        Me.GroupBoxDeductionnfo.Controls.Add(Sss_med_amtLabel)
+        Me.GroupBoxDeductionnfo.Controls.Add(Me.Cash_advance_amtTextBox)
+        Me.GroupBoxDeductionnfo.Controls.Add(Cash_advance_amtLabel)
+        Me.GroupBoxDeductionnfo.Controls.Add(Me.Lates_in_amtTextBox)
+        Me.GroupBoxDeductionnfo.Controls.Add(Lates_in_amtLabel)
+        Me.GroupBoxDeductionnfo.Controls.Add(Me.Lates_in_minTextBox)
+        Me.GroupBoxDeductionnfo.Controls.Add(Lates_in_minLabel)
+        Me.GroupBoxDeductionnfo.Controls.Add(Me.Absent_amtTextBox)
+        Me.GroupBoxDeductionnfo.Controls.Add(Absent_amtLabel)
+        Me.GroupBoxDeductionnfo.Controls.Add(Absent_daysLabel)
+        Me.GroupBoxDeductionnfo.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.GroupBoxDeductionnfo.Location = New System.Drawing.Point(528, 137)
+        Me.GroupBoxDeductionnfo.Name = "GroupBoxDeductionnfo"
+        Me.GroupBoxDeductionnfo.Size = New System.Drawing.Size(369, 376)
+        Me.GroupBoxDeductionnfo.TabIndex = 117
+        Me.GroupBoxDeductionnfo.TabStop = False
+        Me.GroupBoxDeductionnfo.Text = "Deductions"
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Font = New System.Drawing.Font("Century Gothic", 6.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.ForeColor = System.Drawing.Color.Red
+        Me.Label2.Location = New System.Drawing.Point(260, 11)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(102, 12)
+        Me.Label2.TabIndex = 123
+        Me.Label2.Text = "(daily rate * days absent)"
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Font = New System.Drawing.Font("Century Gothic", 6.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.ForeColor = System.Drawing.Color.Red
+        Me.Label1.Location = New System.Drawing.Point(251, 45)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(111, 12)
+        Me.Label1.TabIndex = 122
+        Me.Label1.Text = "(hourly rate / 60 * lates min."
         '
         'Lbp_loanTextBox
         '
@@ -879,6 +960,19 @@ Partial Class Payroll
         Me.Lbp_loanTextBox.TabIndex = 119
         Me.Lbp_loanTextBox.Text = "0.00"
         Me.Lbp_loanTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
+        '
+        'btn_save
+        '
+        Me.btn_save.BackColor = System.Drawing.SystemColors.Control
+        Me.btn_save.FlatStyle = System.Windows.Forms.FlatStyle.System
+        Me.btn_save.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btn_save.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.btn_save.Location = New System.Drawing.Point(277, 338)
+        Me.btn_save.Name = "btn_save"
+        Me.btn_save.Size = New System.Drawing.Size(83, 28)
+        Me.btn_save.TabIndex = 148
+        Me.btn_save.Text = "Create"
+        Me.btn_save.UseVisualStyleBackColor = False
         '
         'King_coop_loanTextBox
         '
@@ -895,10 +989,18 @@ Partial Class Payroll
         Me.Payroll_tblBindingSource.DataMember = "payroll_tbl"
         Me.Payroll_tblBindingSource.DataSource = Me.PayrolldbDataSet
         '
-        'PayrolldbDataSet
+        'btnupdate
         '
-        Me.PayrolldbDataSet.DataSetName = "payrolldbDataSet"
-        Me.PayrolldbDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        Me.btnupdate.BackColor = System.Drawing.SystemColors.Control
+        Me.btnupdate.FlatStyle = System.Windows.Forms.FlatStyle.System
+        Me.btnupdate.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnupdate.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.btnupdate.Location = New System.Drawing.Point(187, 338)
+        Me.btnupdate.Name = "btnupdate"
+        Me.btnupdate.Size = New System.Drawing.Size(83, 28)
+        Me.btnupdate.TabIndex = 150
+        Me.btnupdate.Text = "Update"
+        Me.btnupdate.UseVisualStyleBackColor = False
         '
         'total_deduction_TextBox
         '
@@ -911,6 +1013,19 @@ Partial Class Payroll
         Me.total_deduction_TextBox.TabIndex = 62
         Me.total_deduction_TextBox.Text = "0.00"
         Me.total_deduction_TextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
+        '
+        'btndel
+        '
+        Me.btndel.BackColor = System.Drawing.SystemColors.Control
+        Me.btndel.FlatStyle = System.Windows.Forms.FlatStyle.System
+        Me.btndel.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btndel.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.btndel.Location = New System.Drawing.Point(7, 338)
+        Me.btndel.Name = "btndel"
+        Me.btndel.Size = New System.Drawing.Size(83, 28)
+        Me.btndel.TabIndex = 149
+        Me.btndel.Text = "Delete"
+        Me.btndel.UseVisualStyleBackColor = False
         '
         'Label3
         '
@@ -1029,46 +1144,6 @@ Partial Class Payroll
         Me.Absent_amtTextBox.TabIndex = 40
         Me.Absent_amtTextBox.Text = "0.00"
         Me.Absent_amtTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
-        '
-        'btnCancel
-        '
-        Me.btnCancel.BackColor = System.Drawing.SystemColors.Control
-        Me.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.System
-        Me.btnCancel.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnCancel.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.btnCancel.ImageKey = "(none)"
-        Me.btnCancel.Location = New System.Drawing.Point(623, 485)
-        Me.btnCancel.Name = "btnCancel"
-        Me.btnCancel.Size = New System.Drawing.Size(88, 28)
-        Me.btnCancel.TabIndex = 151
-        Me.btnCancel.Text = "Cancel"
-        Me.btnCancel.UseVisualStyleBackColor = False
-        '
-        'btnupdate
-        '
-        Me.btnupdate.BackColor = System.Drawing.SystemColors.Control
-        Me.btnupdate.FlatStyle = System.Windows.Forms.FlatStyle.System
-        Me.btnupdate.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnupdate.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.btnupdate.Location = New System.Drawing.Point(716, 485)
-        Me.btnupdate.Name = "btnupdate"
-        Me.btnupdate.Size = New System.Drawing.Size(88, 28)
-        Me.btnupdate.TabIndex = 150
-        Me.btnupdate.Text = "Update"
-        Me.btnupdate.UseVisualStyleBackColor = False
-        '
-        'btn_save
-        '
-        Me.btn_save.BackColor = System.Drawing.SystemColors.Control
-        Me.btn_save.FlatStyle = System.Windows.Forms.FlatStyle.System
-        Me.btn_save.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btn_save.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.btn_save.Location = New System.Drawing.Point(809, 485)
-        Me.btn_save.Name = "btn_save"
-        Me.btn_save.Size = New System.Drawing.Size(88, 28)
-        Me.btn_save.TabIndex = 148
-        Me.btn_save.Text = "Create"
-        Me.btn_save.UseVisualStyleBackColor = False
         '
         'GroupBox6
         '
@@ -1393,10 +1468,10 @@ Partial Class Payroll
         'GrosspayDataGridViewTextBoxColumn
         '
         Me.GrosspayDataGridViewTextBoxColumn.DataPropertyName = "gross_pay"
-        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
-        DataGridViewCellStyle1.Format = "N2"
-        DataGridViewCellStyle1.NullValue = Nothing
-        Me.GrosspayDataGridViewTextBoxColumn.DefaultCellStyle = DataGridViewCellStyle1
+        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
+        DataGridViewCellStyle3.Format = "N2"
+        DataGridViewCellStyle3.NullValue = Nothing
+        Me.GrosspayDataGridViewTextBoxColumn.DefaultCellStyle = DataGridViewCellStyle3
         Me.GrosspayDataGridViewTextBoxColumn.HeaderText = "Gross Pay"
         Me.GrosspayDataGridViewTextBoxColumn.Name = "GrosspayDataGridViewTextBoxColumn"
         Me.GrosspayDataGridViewTextBoxColumn.ReadOnly = True
@@ -1404,10 +1479,10 @@ Partial Class Payroll
         'NetpayDataGridViewTextBoxColumn
         '
         Me.NetpayDataGridViewTextBoxColumn.DataPropertyName = "net_pay"
-        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
-        DataGridViewCellStyle2.Format = "N2"
-        DataGridViewCellStyle2.NullValue = Nothing
-        Me.NetpayDataGridViewTextBoxColumn.DefaultCellStyle = DataGridViewCellStyle2
+        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
+        DataGridViewCellStyle4.Format = "N2"
+        DataGridViewCellStyle4.NullValue = Nothing
+        Me.NetpayDataGridViewTextBoxColumn.DefaultCellStyle = DataGridViewCellStyle4
         Me.NetpayDataGridViewTextBoxColumn.HeaderText = "Net Pay"
         Me.NetpayDataGridViewTextBoxColumn.Name = "NetpayDataGridViewTextBoxColumn"
         Me.NetpayDataGridViewTextBoxColumn.ReadOnly = True
@@ -1500,21 +1575,8 @@ Partial Class Payroll
         Me.btnCreate.Name = "btnCreate"
         Me.btnCreate.Size = New System.Drawing.Size(163, 33)
         Me.btnCreate.TabIndex = 1
-        Me.btnCreate.Text = "Create New Payroll"
+        Me.btnCreate.Text = "Create/View Payroll"
         Me.btnCreate.UseVisualStyleBackColor = True
-        '
-        'btndel
-        '
-        Me.btndel.BackColor = System.Drawing.SystemColors.Control
-        Me.btndel.FlatStyle = System.Windows.Forms.FlatStyle.System
-        Me.btndel.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btndel.ForeColor = System.Drawing.SystemColors.ControlText
-        Me.btndel.Location = New System.Drawing.Point(530, 485)
-        Me.btndel.Name = "btndel"
-        Me.btndel.Size = New System.Drawing.Size(88, 28)
-        Me.btndel.TabIndex = 149
-        Me.btndel.Text = "Delete"
-        Me.btndel.UseVisualStyleBackColor = False
         '
         'Vw_payroll_tblTableAdapter
         '
@@ -1532,6 +1594,8 @@ Partial Class Payroll
         Me.TableAdapterManager.dtr_tblTableAdapter = Nothing
         Me.TableAdapterManager.dtr_upload_tblTableAdapter = Nothing
         Me.TableAdapterManager.employee_tblTableAdapter = Nothing
+        Me.TableAdapterManager.holidays_tblTableAdapter = Nothing
+        Me.TableAdapterManager.payroll_deduction_fixed_tblTableAdapter = Nothing
         Me.TableAdapterManager.payroll_deduction_tblTableAdapter = Nothing
         Me.TableAdapterManager.payroll_tblTableAdapter = Me.Payroll_tblTableAdapter
         Me.TableAdapterManager.time_schedule_empl_tblTableAdapter = Nothing
@@ -1543,69 +1607,37 @@ Partial Class Payroll
         Me.PayrolldbDataSet1.DataSetName = "payrolldbDataSet"
         Me.PayrolldbDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
         '
-        'Label1
+        'Employee_tblTableAdapter
         '
-        Me.Label1.AutoSize = True
-        Me.Label1.Font = New System.Drawing.Font("Century Gothic", 6.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.ForeColor = System.Drawing.Color.Red
-        Me.Label1.Location = New System.Drawing.Point(251, 45)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(111, 12)
-        Me.Label1.TabIndex = 122
-        Me.Label1.Text = "(hourly rate / 60 * lates min."
-        '
-        'Label2
-        '
-        Me.Label2.AutoSize = True
-        Me.Label2.Font = New System.Drawing.Font("Century Gothic", 6.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.ForeColor = System.Drawing.Color.Red
-        Me.Label2.Location = New System.Drawing.Point(260, 11)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(102, 12)
-        Me.Label2.TabIndex = 123
-        Me.Label2.Text = "(daily rate * days absent)"
-        '
-        'LabelOvertime
-        '
-        Me.LabelOvertime.AutoSize = True
-        Me.LabelOvertime.Font = New System.Drawing.Font("Century Gothic", 6.0!, CType((System.Drawing.FontStyle.Bold Or System.Drawing.FontStyle.Italic), System.Drawing.FontStyle), System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LabelOvertime.ForeColor = System.Drawing.Color.Red
-        Me.LabelOvertime.Location = New System.Drawing.Point(74, 70)
-        Me.LabelOvertime.Name = "LabelOvertime"
-        Me.LabelOvertime.Size = New System.Drawing.Size(11, 12)
-        Me.LabelOvertime.TabIndex = 124
-        Me.LabelOvertime.Text = "--"
+        Me.Employee_tblTableAdapter.ClearBeforeFill = True
         '
         'Payroll
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(905, 525)
+        Me.ClientSize = New System.Drawing.Size(908, 525)
         Me.Controls.Add(Me.GroupBox7)
-        Me.Controls.Add(Me.GroupBox5)
-        Me.Controls.Add(Me.btnCancel)
-        Me.Controls.Add(Me.GroupBox2)
-        Me.Controls.Add(Me.btn_save)
-        Me.Controls.Add(Me.GroupBox4)
+        Me.Controls.Add(Me.GroupBoxPayrollInfo)
+        Me.Controls.Add(Me.GroupBoxEmployeeInfo)
+        Me.Controls.Add(Me.GroupBoxIncomeInfo)
         Me.Controls.Add(Me.GroupBox6)
-        Me.Controls.Add(Me.btnupdate)
-        Me.Controls.Add(Me.GroupBox1)
-        Me.Controls.Add(Me.btndel)
+        Me.Controls.Add(Me.GroupBoxDeductionnfo)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.Name = "Payroll"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Payroll"
-        Me.GroupBox5.ResumeLayout(False)
-        Me.GroupBox5.PerformLayout()
-        Me.GroupBox2.ResumeLayout(False)
-        Me.GroupBox2.PerformLayout()
-        CType(Me.PhotoPictureBox, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.GroupBox4.ResumeLayout(False)
-        Me.GroupBox4.PerformLayout()
-        Me.GroupBox1.ResumeLayout(False)
-        Me.GroupBox1.PerformLayout()
-        CType(Me.Payroll_tblBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.GroupBoxPayrollInfo.ResumeLayout(False)
+        Me.GroupBoxPayrollInfo.PerformLayout()
+        Me.GroupBoxEmployeeInfo.ResumeLayout(False)
+        Me.GroupBoxEmployeeInfo.PerformLayout()
+        CType(Me.Employee_tblBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PayrolldbDataSet, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PhotoPictureBox, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.GroupBoxIncomeInfo.ResumeLayout(False)
+        Me.GroupBoxIncomeInfo.PerformLayout()
+        Me.GroupBoxDeductionnfo.ResumeLayout(False)
+        Me.GroupBoxDeductionnfo.PerformLayout()
+        CType(Me.Payroll_tblBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox6.ResumeLayout(False)
         Me.GroupBox6.PerformLayout()
         CType(Me.Vw_payroll_tblDataGridView, System.ComponentModel.ISupportInitialize).EndInit()
@@ -1616,12 +1648,12 @@ Partial Class Payroll
         Me.ResumeLayout(False)
 
     End Sub
-    Friend WithEvents GroupBox5 As GroupBox
+    Friend WithEvents GroupBoxPayrollInfo As GroupBox
     Friend WithEvents Period_toDateTimePicker As DateTimePicker
     Friend WithEvents Period_fromDateTimePicker As DateTimePicker
     Friend WithEvents department_assigned As ComboBox
     Friend WithEvents Payroll_noComboBox As ComboBox
-    Friend WithEvents GroupBox2 As GroupBox
+    Friend WithEvents GroupBoxEmployeeInfo As GroupBox
     Friend WithEvents PhotoPictureBox As PictureBox
     Friend WithEvents Employee_idComboBox As ComboBox
     Friend WithEvents Unit_rateTextBox As TextBox
@@ -1632,7 +1664,7 @@ Partial Class Payroll
     Friend WithEvents btn_calculate As Button
     Friend WithEvents RemarksTextBox As TextBox
     Friend WithEvents Net_payTextBox As TextBox
-    Friend WithEvents GroupBox4 As GroupBox
+    Friend WithEvents GroupBoxIncomeInfo As GroupBox
     Friend WithEvents Worked_daysLabel As Label
     Friend WithEvents Worked_daysTextBox As TextBox
     Friend WithEvents Regular_wagesTextBox As TextBox
@@ -1640,7 +1672,7 @@ Partial Class Payroll
     Friend WithEvents Gross_payTextBox As TextBox
     Friend WithEvents Adjustments_amtTextBox As TextBox
     Friend WithEvents Allowances_amtTextBox As TextBox
-    Friend WithEvents GroupBox1 As GroupBox
+    Friend WithEvents GroupBoxDeductionnfo As GroupBox
     Friend WithEvents total_deduction_TextBox As TextBox
     Friend WithEvents Label3 As Label
     Friend WithEvents Absent_daysTextBox As TextBox
@@ -1660,7 +1692,6 @@ Partial Class Payroll
     Friend WithEvents IdTextBox As TextBox
     Friend WithEvents First_nameTextBox As TextBox
     Friend WithEvents Last_nameTextBox As TextBox
-    Friend WithEvents btnCancel As Button
     Friend WithEvents btnupdate As Button
     Friend WithEvents btn_save As Button
     Friend WithEvents Vw_payroll_tblDataGridView As DataGridView
@@ -1722,4 +1753,7 @@ Partial Class Payroll
     Friend WithEvents Label2 As Label
     Friend WithEvents Label1 As Label
     Friend WithEvents LabelOvertime As Label
+    Friend WithEvents Employee_tblBindingSource As BindingSource
+    Friend WithEvents Employee_tblTableAdapter As payrolldbDataSetTableAdapters.employee_tblTableAdapter
+    Friend WithEvents Employment_statusComboBox As ComboBox
 End Class

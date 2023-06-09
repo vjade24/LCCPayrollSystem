@@ -469,6 +469,7 @@ Partial Class EmployeeAddUpdate
         Date_resignedLabel.Size = New System.Drawing.Size(77, 14)
         Date_resignedLabel.TabIndex = 98
         Date_resignedLabel.Text = "Date resigned:"
+        Date_resignedLabel.Visible = False
         '
         'User_idLabel
         '
@@ -479,6 +480,7 @@ Partial Class EmployeeAddUpdate
         User_idLabel.Size = New System.Drawing.Size(44, 14)
         User_idLabel.TabIndex = 103
         User_idLabel.Text = "User id:"
+        User_idLabel.Visible = False
         '
         'Civil_statusLabel
         '
@@ -719,6 +721,7 @@ Partial Class EmployeeAddUpdate
         Me.Date_resignedDateTimePicker.Name = "Date_resignedDateTimePicker"
         Me.Date_resignedDateTimePicker.Size = New System.Drawing.Size(200, 20)
         Me.Date_resignedDateTimePicker.TabIndex = 99
+        Me.Date_resignedDateTimePicker.Visible = False
         '
         'PhotoPictureBox
         '
@@ -759,7 +762,11 @@ Partial Class EmployeeAddUpdate
         Me.TableAdapterManager.BackupDataSetBeforeUpdate = False
         Me.TableAdapterManager.deduction_list_tblTableAdapter = Nothing
         Me.TableAdapterManager.dtr_conso_tblTableAdapter = Nothing
+        Me.TableAdapterManager.dtr_tblTableAdapter = Nothing
+        Me.TableAdapterManager.dtr_upload_tblTableAdapter = Nothing
         Me.TableAdapterManager.employee_tblTableAdapter = Me.Employee_tblTableAdapter
+        Me.TableAdapterManager.holidays_tblTableAdapter = Nothing
+        Me.TableAdapterManager.payroll_deduction_fixed_tblTableAdapter = Nothing
         Me.TableAdapterManager.payroll_deduction_tblTableAdapter = Nothing
         Me.TableAdapterManager.payroll_tblTableAdapter = Nothing
         Me.TableAdapterManager.time_schedule_empl_tblTableAdapter = Nothing
@@ -782,6 +789,7 @@ Partial Class EmployeeAddUpdate
         Me.User_idComboBox.Size = New System.Drawing.Size(199, 22)
         Me.User_idComboBox.TabIndex = 104
         Me.User_idComboBox.ValueMember = "Id"
+        Me.User_idComboBox.Visible = False
         '
         'UsertblBindingSource
         '
@@ -829,7 +837,7 @@ Partial Class EmployeeAddUpdate
         Me.Employment_statusComboBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.Employee_tblBindingSource, "employment_status", True))
         Me.Employment_statusComboBox.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Employment_statusComboBox.FormattingEnabled = True
-        Me.Employment_statusComboBox.Items.AddRange(New Object() {"Full-Time", "Part-Time"})
+        Me.Employment_statusComboBox.Items.AddRange(New Object() {"Full-Time", "Part-Time", "Staff"})
         Me.Employment_statusComboBox.Location = New System.Drawing.Point(216, 81)
         Me.Employment_statusComboBox.Name = "Employment_statusComboBox"
         Me.Employment_statusComboBox.Size = New System.Drawing.Size(203, 22)

@@ -1,10 +1,12 @@
 ﻿Imports System.Data.SqlClient
 Module CommonClasses
-    Public expire_date = "2023-06-05"
+    Public expire_date = "2023-06-12"
     'Public connection = "Data Source=DESKTOP-AD3I7I5\SQLEXPRESS;Initial Catalog=payrolldb;Integrated Security=True"
 
     Public connection = My.Settings.payrolldbConnectionString
     'Public connection = My.Settings.development
+
+    Public user_login As String
 
     Dim result As Integer
     Public Sub CommonQuery(query, DataGridView)

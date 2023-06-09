@@ -28,27 +28,17 @@ Partial Class Reports
         Dim Period_toLabel As System.Windows.Forms.Label
         Dim Label1 As System.Windows.Forms.Label
         Dim Label2 As System.Windows.Forms.Label
-        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim Label3 As System.Windows.Forms.Label
         Dim Label4 As System.Windows.Forms.Label
         Dim Label7 As System.Windows.Forms.Label
         Dim Label8 As System.Windows.Forms.Label
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.PayrolldbDataSet = New LCCPayrollSystem.payrolldbDataSet()
         Me.Vw_payroll_tblBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.Vw_payroll_tblTableAdapter = New LCCPayrollSystem.payrolldbDataSetTableAdapters.vw_payroll_tblTableAdapter()
         Me.TableAdapterManager = New LCCPayrollSystem.payrolldbDataSetTableAdapters.TableAdapterManager()
         Me.Vw_payroll_tblDataGridView = New System.Windows.Forms.DataGridView()
-        Me.Button1 = New System.Windows.Forms.Button()
-        Me.Button2 = New System.Windows.Forms.Button()
-        Me.department_assigned = New System.Windows.Forms.ComboBox()
-        Me.Payroll_tblBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.Payroll_tblTableAdapter = New LCCPayrollSystem.payrolldbDataSetTableAdapters.payroll_tblTableAdapter()
-        Me.Period_fromDateTimePicker = New System.Windows.Forms.DateTimePicker()
-        Me.Period_toDateTimePicker = New System.Windows.Forms.DateTimePicker()
-        Me.IconPictureBox1 = New FontAwesome.Sharp.IconPictureBox()
-        Me.lbl_total_gross = New System.Windows.Forms.Label()
-        Me.lbl_total_net = New System.Windows.Forms.Label()
         Me.DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -85,6 +75,16 @@ Partial Class Reports
         Me.DataGridViewTextBoxColumn34 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn35 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewImageColumn1 = New System.Windows.Forms.DataGridViewImageColumn()
+        Me.Button1 = New System.Windows.Forms.Button()
+        Me.Button2 = New System.Windows.Forms.Button()
+        Me.department_assigned = New System.Windows.Forms.ComboBox()
+        Me.Payroll_tblBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.Payroll_tblTableAdapter = New LCCPayrollSystem.payrolldbDataSetTableAdapters.payroll_tblTableAdapter()
+        Me.Period_fromDateTimePicker = New System.Windows.Forms.DateTimePicker()
+        Me.Period_toDateTimePicker = New System.Windows.Forms.DateTimePicker()
+        Me.IconPictureBox1 = New FontAwesome.Sharp.IconPictureBox()
+        Me.lbl_total_gross = New System.Windows.Forms.Label()
+        Me.lbl_total_net = New System.Windows.Forms.Label()
         Me.IconPictureBox2 = New FontAwesome.Sharp.IconPictureBox()
         Me.lbl_total_net_overall = New System.Windows.Forms.Label()
         Me.lbl_total_gross_overall = New System.Windows.Forms.Label()
@@ -135,6 +135,68 @@ Partial Class Reports
         Period_toLabel.TabIndex = 111
         Period_toLabel.Text = "Period to"
         '
+        'Label1
+        '
+        Label1.AutoSize = True
+        Label1.ForeColor = System.Drawing.Color.Black
+        Label1.Location = New System.Drawing.Point(116, 403)
+        Label1.Name = "Label1"
+        Label1.Size = New System.Drawing.Size(82, 13)
+        Label1.TabIndex = 114
+        Label1.Text = "Total Gross Pay"
+        '
+        'Label2
+        '
+        Label2.AutoSize = True
+        Label2.ForeColor = System.Drawing.Color.Black
+        Label2.Location = New System.Drawing.Point(116, 454)
+        Label2.Name = "Label2"
+        Label2.Size = New System.Drawing.Size(72, 13)
+        Label2.TabIndex = 115
+        Label2.Text = "Total Net Pay"
+        '
+        'Label3
+        '
+        Label3.AutoSize = True
+        Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Label3.ForeColor = System.Drawing.Color.Black
+        Label3.Location = New System.Drawing.Point(12, 379)
+        Label3.Name = "Label3"
+        Label3.Size = New System.Drawing.Size(128, 13)
+        Label3.TabIndex = 119
+        Label3.Text = "Total Per Department"
+        '
+        'Label4
+        '
+        Label4.AutoSize = True
+        Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Label4.ForeColor = System.Drawing.Color.Black
+        Label4.Location = New System.Drawing.Point(275, 379)
+        Label4.Name = "Label4"
+        Label4.Size = New System.Drawing.Size(86, 13)
+        Label4.TabIndex = 120
+        Label4.Text = "Overall Totals"
+        '
+        'Label7
+        '
+        Label7.AutoSize = True
+        Label7.ForeColor = System.Drawing.Color.Black
+        Label7.Location = New System.Drawing.Point(381, 454)
+        Label7.Name = "Label7"
+        Label7.Size = New System.Drawing.Size(72, 13)
+        Label7.TabIndex = 122
+        Label7.Text = "Total Net Pay"
+        '
+        'Label8
+        '
+        Label8.AutoSize = True
+        Label8.ForeColor = System.Drawing.Color.Black
+        Label8.Location = New System.Drawing.Point(381, 403)
+        Label8.Name = "Label8"
+        Label8.Size = New System.Drawing.Size(82, 13)
+        Label8.TabIndex = 121
+        Label8.Text = "Total Gross Pay"
+        '
         'PayrolldbDataSet
         '
         Me.PayrolldbDataSet.DataSetName = "payrolldbDataSet"
@@ -178,116 +240,6 @@ Partial Class Reports
         Me.Vw_payroll_tblDataGridView.ReadOnly = True
         Me.Vw_payroll_tblDataGridView.Size = New System.Drawing.Size(880, 299)
         Me.Vw_payroll_tblDataGridView.TabIndex = 35
-        '
-        'Button1
-        '
-        Me.Button1.Location = New System.Drawing.Point(786, 14)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(107, 39)
-        Me.Button1.TabIndex = 36
-        Me.Button1.Text = "Print Payroll"
-        Me.Button1.UseVisualStyleBackColor = True
-        '
-        'Button2
-        '
-        Me.Button2.Location = New System.Drawing.Point(673, 14)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(107, 39)
-        Me.Button2.TabIndex = 37
-        Me.Button2.Text = "Print Payslip"
-        Me.Button2.UseVisualStyleBackColor = True
-        '
-        'department_assigned
-        '
-        Me.department_assigned.FormattingEnabled = True
-        Me.department_assigned.Items.AddRange(New Object() {"College", "Senior High School", "Junior High School", "Elementary"})
-        Me.department_assigned.Location = New System.Drawing.Point(13, 30)
-        Me.department_assigned.Name = "department_assigned"
-        Me.department_assigned.Size = New System.Drawing.Size(216, 21)
-        Me.department_assigned.TabIndex = 110
-        '
-        'Payroll_tblBindingSource
-        '
-        Me.Payroll_tblBindingSource.DataMember = "payroll_tbl"
-        Me.Payroll_tblBindingSource.DataSource = Me.PayrolldbDataSet
-        '
-        'Payroll_tblTableAdapter
-        '
-        Me.Payroll_tblTableAdapter.ClearBeforeFill = True
-        '
-        'Period_fromDateTimePicker
-        '
-        Me.Period_fromDateTimePicker.DataBindings.Add(New System.Windows.Forms.Binding("Value", Me.Payroll_tblBindingSource, "period_from", True))
-        Me.Period_fromDateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.Period_fromDateTimePicker.Location = New System.Drawing.Point(239, 30)
-        Me.Period_fromDateTimePicker.Name = "Period_fromDateTimePicker"
-        Me.Period_fromDateTimePicker.Size = New System.Drawing.Size(147, 20)
-        Me.Period_fromDateTimePicker.TabIndex = 111
-        '
-        'Period_toDateTimePicker
-        '
-        Me.Period_toDateTimePicker.DataBindings.Add(New System.Windows.Forms.Binding("Value", Me.Payroll_tblBindingSource, "period_to", True))
-        Me.Period_toDateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.Period_toDateTimePicker.Location = New System.Drawing.Point(392, 30)
-        Me.Period_toDateTimePicker.Name = "Period_toDateTimePicker"
-        Me.Period_toDateTimePicker.Size = New System.Drawing.Size(147, 20)
-        Me.Period_toDateTimePicker.TabIndex = 112
-        '
-        'IconPictureBox1
-        '
-        Me.IconPictureBox1.ActiveColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.IconPictureBox1.BackColor = System.Drawing.Color.Transparent
-        Me.IconPictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
-        Me.IconPictureBox1.IconChar = FontAwesome.Sharp.IconChar.Usd
-        Me.IconPictureBox1.InActiveColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.IconPictureBox1.Location = New System.Drawing.Point(13, 398)
-        Me.IconPictureBox1.Name = "IconPictureBox1"
-        Me.IconPictureBox1.Size = New System.Drawing.Size(97, 112)
-        Me.IconPictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage
-        Me.IconPictureBox1.TabIndex = 113
-        Me.IconPictureBox1.TabStop = False
-        '
-        'Label1
-        '
-        Label1.AutoSize = True
-        Label1.ForeColor = System.Drawing.Color.Black
-        Label1.Location = New System.Drawing.Point(116, 403)
-        Label1.Name = "Label1"
-        Label1.Size = New System.Drawing.Size(82, 13)
-        Label1.TabIndex = 114
-        Label1.Text = "Total Gross Pay"
-        '
-        'Label2
-        '
-        Label2.AutoSize = True
-        Label2.ForeColor = System.Drawing.Color.Black
-        Label2.Location = New System.Drawing.Point(116, 454)
-        Label2.Name = "Label2"
-        Label2.Size = New System.Drawing.Size(72, 13)
-        Label2.TabIndex = 115
-        Label2.Text = "Total Net Pay"
-        '
-        'lbl_total_gross
-        '
-        Me.lbl_total_gross.AutoSize = True
-        Me.lbl_total_gross.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbl_total_gross.ForeColor = System.Drawing.Color.Black
-        Me.lbl_total_gross.Location = New System.Drawing.Point(116, 416)
-        Me.lbl_total_gross.Name = "lbl_total_gross"
-        Me.lbl_total_gross.Size = New System.Drawing.Size(135, 31)
-        Me.lbl_total_gross.TabIndex = 116
-        Me.lbl_total_gross.Text = "00,000.00"
-        '
-        'lbl_total_net
-        '
-        Me.lbl_total_net.AutoSize = True
-        Me.lbl_total_net.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lbl_total_net.ForeColor = System.Drawing.Color.Black
-        Me.lbl_total_net.Location = New System.Drawing.Point(116, 467)
-        Me.lbl_total_net.Name = "lbl_total_net"
-        Me.lbl_total_net.Size = New System.Drawing.Size(135, 31)
-        Me.lbl_total_net.TabIndex = 117
-        Me.lbl_total_net.Text = "00,000.00"
         '
         'DataGridViewTextBoxColumn1
         '
@@ -549,10 +501,10 @@ Partial Class Reports
         '
         Me.DataGridViewTextBoxColumn33.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
         Me.DataGridViewTextBoxColumn33.DataPropertyName = "gross_pay"
-        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
-        DataGridViewCellStyle3.Format = "N2"
-        DataGridViewCellStyle3.NullValue = Nothing
-        Me.DataGridViewTextBoxColumn33.DefaultCellStyle = DataGridViewCellStyle3
+        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
+        DataGridViewCellStyle1.Format = "N2"
+        DataGridViewCellStyle1.NullValue = Nothing
+        Me.DataGridViewTextBoxColumn33.DefaultCellStyle = DataGridViewCellStyle1
         Me.DataGridViewTextBoxColumn33.HeaderText = "Gross pay"
         Me.DataGridViewTextBoxColumn33.Name = "DataGridViewTextBoxColumn33"
         Me.DataGridViewTextBoxColumn33.ReadOnly = True
@@ -561,10 +513,10 @@ Partial Class Reports
         '
         Me.DataGridViewTextBoxColumn34.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
         Me.DataGridViewTextBoxColumn34.DataPropertyName = "net_pay"
-        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
-        DataGridViewCellStyle4.Format = "N2"
-        DataGridViewCellStyle4.NullValue = Nothing
-        Me.DataGridViewTextBoxColumn34.DefaultCellStyle = DataGridViewCellStyle4
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight
+        DataGridViewCellStyle2.Format = "N2"
+        DataGridViewCellStyle2.NullValue = Nothing
+        Me.DataGridViewTextBoxColumn34.DefaultCellStyle = DataGridViewCellStyle2
         Me.DataGridViewTextBoxColumn34.HeaderText = "Net pay"
         Me.DataGridViewTextBoxColumn34.Name = "DataGridViewTextBoxColumn34"
         Me.DataGridViewTextBoxColumn34.ReadOnly = True
@@ -585,6 +537,96 @@ Partial Class Reports
         Me.DataGridViewImageColumn1.ReadOnly = True
         Me.DataGridViewImageColumn1.Visible = False
         '
+        'Button1
+        '
+        Me.Button1.Location = New System.Drawing.Point(786, 14)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(107, 39)
+        Me.Button1.TabIndex = 36
+        Me.Button1.Text = "Print Payroll"
+        Me.Button1.UseVisualStyleBackColor = True
+        '
+        'Button2
+        '
+        Me.Button2.Location = New System.Drawing.Point(673, 14)
+        Me.Button2.Name = "Button2"
+        Me.Button2.Size = New System.Drawing.Size(107, 39)
+        Me.Button2.TabIndex = 37
+        Me.Button2.Text = "Print Payslip"
+        Me.Button2.UseVisualStyleBackColor = True
+        '
+        'department_assigned
+        '
+        Me.department_assigned.FormattingEnabled = True
+        Me.department_assigned.Items.AddRange(New Object() {"College", "Senior High School", "Junior High School", "Elementary", "Staff"})
+        Me.department_assigned.Location = New System.Drawing.Point(13, 30)
+        Me.department_assigned.Name = "department_assigned"
+        Me.department_assigned.Size = New System.Drawing.Size(216, 21)
+        Me.department_assigned.TabIndex = 110
+        '
+        'Payroll_tblBindingSource
+        '
+        Me.Payroll_tblBindingSource.DataMember = "payroll_tbl"
+        Me.Payroll_tblBindingSource.DataSource = Me.PayrolldbDataSet
+        '
+        'Payroll_tblTableAdapter
+        '
+        Me.Payroll_tblTableAdapter.ClearBeforeFill = True
+        '
+        'Period_fromDateTimePicker
+        '
+        Me.Period_fromDateTimePicker.DataBindings.Add(New System.Windows.Forms.Binding("Value", Me.Payroll_tblBindingSource, "period_from", True))
+        Me.Period_fromDateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
+        Me.Period_fromDateTimePicker.Location = New System.Drawing.Point(239, 30)
+        Me.Period_fromDateTimePicker.Name = "Period_fromDateTimePicker"
+        Me.Period_fromDateTimePicker.Size = New System.Drawing.Size(147, 20)
+        Me.Period_fromDateTimePicker.TabIndex = 111
+        '
+        'Period_toDateTimePicker
+        '
+        Me.Period_toDateTimePicker.DataBindings.Add(New System.Windows.Forms.Binding("Value", Me.Payroll_tblBindingSource, "period_to", True))
+        Me.Period_toDateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
+        Me.Period_toDateTimePicker.Location = New System.Drawing.Point(392, 30)
+        Me.Period_toDateTimePicker.Name = "Period_toDateTimePicker"
+        Me.Period_toDateTimePicker.Size = New System.Drawing.Size(147, 20)
+        Me.Period_toDateTimePicker.TabIndex = 112
+        '
+        'IconPictureBox1
+        '
+        Me.IconPictureBox1.ActiveColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.IconPictureBox1.BackColor = System.Drawing.Color.Transparent
+        Me.IconPictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center
+        Me.IconPictureBox1.IconChar = FontAwesome.Sharp.IconChar.Usd
+        Me.IconPictureBox1.InActiveColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.IconPictureBox1.Location = New System.Drawing.Point(13, 398)
+        Me.IconPictureBox1.Name = "IconPictureBox1"
+        Me.IconPictureBox1.Size = New System.Drawing.Size(97, 112)
+        Me.IconPictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage
+        Me.IconPictureBox1.TabIndex = 113
+        Me.IconPictureBox1.TabStop = False
+        '
+        'lbl_total_gross
+        '
+        Me.lbl_total_gross.AutoSize = True
+        Me.lbl_total_gross.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbl_total_gross.ForeColor = System.Drawing.Color.Black
+        Me.lbl_total_gross.Location = New System.Drawing.Point(116, 416)
+        Me.lbl_total_gross.Name = "lbl_total_gross"
+        Me.lbl_total_gross.Size = New System.Drawing.Size(135, 31)
+        Me.lbl_total_gross.TabIndex = 116
+        Me.lbl_total_gross.Text = "00,000.00"
+        '
+        'lbl_total_net
+        '
+        Me.lbl_total_net.AutoSize = True
+        Me.lbl_total_net.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lbl_total_net.ForeColor = System.Drawing.Color.Black
+        Me.lbl_total_net.Location = New System.Drawing.Point(116, 467)
+        Me.lbl_total_net.Name = "lbl_total_net"
+        Me.lbl_total_net.Size = New System.Drawing.Size(135, 31)
+        Me.lbl_total_net.TabIndex = 117
+        Me.lbl_total_net.Text = "00,000.00"
+        '
         'IconPictureBox2
         '
         Me.IconPictureBox2.ActiveColor = System.Drawing.Color.DodgerBlue
@@ -598,28 +640,6 @@ Partial Class Reports
         Me.IconPictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage
         Me.IconPictureBox2.TabIndex = 118
         Me.IconPictureBox2.TabStop = False
-        '
-        'Label3
-        '
-        Label3.AutoSize = True
-        Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Label3.ForeColor = System.Drawing.Color.Black
-        Label3.Location = New System.Drawing.Point(12, 379)
-        Label3.Name = "Label3"
-        Label3.Size = New System.Drawing.Size(128, 13)
-        Label3.TabIndex = 119
-        Label3.Text = "Total Per Department"
-        '
-        'Label4
-        '
-        Label4.AutoSize = True
-        Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Label4.ForeColor = System.Drawing.Color.Black
-        Label4.Location = New System.Drawing.Point(275, 379)
-        Label4.Name = "Label4"
-        Label4.Size = New System.Drawing.Size(86, 13)
-        Label4.TabIndex = 120
-        Label4.Text = "Overall Totals"
         '
         'lbl_total_net_overall
         '
@@ -642,26 +662,6 @@ Partial Class Reports
         Me.lbl_total_gross_overall.Size = New System.Drawing.Size(135, 31)
         Me.lbl_total_gross_overall.TabIndex = 123
         Me.lbl_total_gross_overall.Text = "00,000.00"
-        '
-        'Label7
-        '
-        Label7.AutoSize = True
-        Label7.ForeColor = System.Drawing.Color.Black
-        Label7.Location = New System.Drawing.Point(381, 454)
-        Label7.Name = "Label7"
-        Label7.Size = New System.Drawing.Size(72, 13)
-        Label7.TabIndex = 122
-        Label7.Text = "Total Net Pay"
-        '
-        'Label8
-        '
-        Label8.AutoSize = True
-        Label8.ForeColor = System.Drawing.Color.Black
-        Label8.Location = New System.Drawing.Point(381, 403)
-        Label8.Name = "Label8"
-        Label8.Size = New System.Drawing.Size(82, 13)
-        Label8.TabIndex = 121
-        Label8.Text = "Total Gross Pay"
         '
         'Reports
         '

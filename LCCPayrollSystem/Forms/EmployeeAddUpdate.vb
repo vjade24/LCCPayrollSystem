@@ -51,7 +51,7 @@ Public Class EmployeeAddUpdate
                 Hourly_rateTextBox.Text = dt.Rows(0)("hourly_rate").ToString()
                 Unit_rateTextBox.Text = dt.Rows(0)("unit_rate").ToString()
                 Employee_statusComboBox.Text = dt.Rows(0)("employee_status").ToString()
-                Date_resignedDateTimePicker.Value = dt.Rows(0)("date_resigned").ToString()
+                'Date_resignedDateTimePicker.Value = dt.Rows(0)("date_resigned").ToString()
 
                 Try
                     Dim lb() As Byte = dt.Rows(0)("photo")
@@ -162,7 +162,7 @@ Public Class EmployeeAddUpdate
         User_idComboBox.SelectedIndex = 0
         PhotoPictureBox.Image = My.Resources.DefaultUserImg
         PhotoPictureBox.SizeMode = PictureBoxSizeMode.StretchImage
-        rate_basis_ComboBox.Text = "Monthly"
+        rate_basis_ComboBox.SelectedIndex = 0
         Monthly_rateTextBox.Text = ""
         Daily_rateTextBox.Text = ""
         Hourly_rateTextBox.Text = ""
@@ -178,17 +178,27 @@ Public Class EmployeeAddUpdate
         'birthdate = DateTime.Parse(Birth_dateDateTimePicker.Value)
 
         'age = (DateTime.Parse(Birth_dateDateTimePicker.Value) - DateTime.Now.Year)
+        Try
+            Dim age As Integer
+            Dim date_from As New DateTime
+            Dim date_to As New DateTime
 
-        Dim age As Integer
-        Dim date_from As New DateTime
-        Dim date_to As New DateTime
+            date_from = DateTime.Parse(Birth_dateDateTimePicker.Text.ToString().Trim())
+            date_to = DateTime.Parse(DateTime.Now.ToString())
 
-        date_from = DateTime.Parse(Birth_dateDateTimePicker.Text.ToString().Trim())
-        date_to = DateTime.Parse(DateTime.Now.ToString())
+            If DateTime.Parse(Birth_dateDateTimePicker.Text.ToString().Trim()).Month < DateTime.Now.Month Then
 
-        age = (date_to.Year - date_from.Year)
+                age = (date_to.Year - date_from.Year) - 1
+            Else
+                age = (date_to.Year - date_from.Year)
 
-        AgeNumericUpDown.Value = age.ToString()
+            End If
+
+            AgeNumericUpDown.Value = age.ToString()
+
+        Catch ex As Exception
+
+        End Try
     End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs)
@@ -228,7 +238,7 @@ Public Class EmployeeAddUpdate
         command1.Parameters.Add("@employment_status", SqlDbType.VarChar).Value = Employment_statusComboBox.Text.ToString().Trim()
         command1.Parameters.Add("@position", SqlDbType.VarChar).Value = PositionTextBox.Text.ToString().Trim()
         command1.Parameters.Add("@spouse_name", SqlDbType.VarChar).Value = Spouse_nameTextBox.Text.ToString().Trim()
-        command1.Parameters.Add("@user_id", SqlDbType.VarChar).Value = User_idComboBox.SelectedValue.ToString().Trim()
+        command1.Parameters.Add("@user_id", SqlDbType.VarChar).Value = ""
         command1.Parameters.Add("@photo", SqlDbType.Image).Value = ms.ToArray
         command1.Parameters.Add("@rate_basis_descr", SqlDbType.VarChar).Value = rate_basis_ComboBox.Text.ToString().Trim()
         command1.Parameters.Add("@monthly_rate", SqlDbType.VarChar).Value = Monthly_rateTextBox.Text.ToString().Trim()
@@ -236,7 +246,7 @@ Public Class EmployeeAddUpdate
         command1.Parameters.Add("@hourly_rate", SqlDbType.VarChar).Value = Hourly_rateTextBox.Text.ToString().Trim()
         command1.Parameters.Add("@unit_rate", SqlDbType.VarChar).Value = Unit_rateTextBox.Text.ToString().Trim()
         command1.Parameters.Add("@employee_status", SqlDbType.VarChar).Value = Employee_statusComboBox.Text.ToString().Trim()
-        command1.Parameters.Add("@date_resigned", SqlDbType.Date).Value = Date_resignedDateTimePicker.Value.ToString().Trim()
+        command1.Parameters.Add("@date_resigned", SqlDbType.Date).Value = DateTime.Now.ToString()
         Try
             conn.Open()
             result = command1.ExecuteNonQuery()
@@ -299,7 +309,7 @@ Public Class EmployeeAddUpdate
             command1.Parameters.Add("@employment_status", SqlDbType.VarChar).Value = Employment_statusComboBox.Text.ToString().Trim()
             command1.Parameters.Add("@position", SqlDbType.VarChar).Value = PositionTextBox.Text.ToString().Trim()
             command1.Parameters.Add("@spouse_name", SqlDbType.VarChar).Value = Spouse_nameTextBox.Text.ToString().Trim()
-            command1.Parameters.Add("@user_id", SqlDbType.VarChar).Value = User_idComboBox.SelectedValue.ToString().Trim()
+            command1.Parameters.Add("@user_id", SqlDbType.VarChar).Value = ""
             command1.Parameters.Add("@photo", SqlDbType.Image).Value = ms.ToArray
             command1.Parameters.Add("@rate_basis_descr", SqlDbType.VarChar).Value = rate_basis_ComboBox.Text.ToString().Trim()
             command1.Parameters.Add("@monthly_rate", SqlDbType.VarChar).Value = Monthly_rateTextBox.Text.ToString().Trim()
@@ -307,7 +317,7 @@ Public Class EmployeeAddUpdate
             command1.Parameters.Add("@hourly_rate", SqlDbType.VarChar).Value = Hourly_rateTextBox.Text.ToString().Trim()
             command1.Parameters.Add("@unit_rate", SqlDbType.VarChar).Value = Unit_rateTextBox.Text.ToString().Trim()
             command1.Parameters.Add("@employee_status", SqlDbType.VarChar).Value = Employee_statusComboBox.Text.ToString().Trim()
-            command1.Parameters.Add("@date_resigned", SqlDbType.Date).Value = Date_resignedDateTimePicker.Value.ToString().Trim()
+            command1.Parameters.Add("@date_resigned", SqlDbType.Date).Value = DateTime.Now.ToString()
             Try
                 conn.Open()
                 result = command1.ExecuteNonQuery()

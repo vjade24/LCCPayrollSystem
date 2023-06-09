@@ -82,6 +82,17 @@ Public Class DTRUpload
         ComboBoxYear.Text = DateTime.Now.Year.ToString()
         ComboBoxMonth.Text = MonthName(DateTime.Now.Month)
         RefreshData()
+
+
+        If user_login = "Staff" Then
+            btnUpload.Visible = False
+            btnLoad.Visible = False
+            btnShowGenerate.Visible = False
+        ElseIf user_login = "Admin" Then
+            btnUpload.Visible = True
+            btnLoad.Visible = True
+            btnShowGenerate.Visible = True
+        End If
     End Sub
 
     Private Sub RefreshData()

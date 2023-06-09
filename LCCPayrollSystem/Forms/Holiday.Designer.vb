@@ -23,11 +23,12 @@ Partial Class Holiday
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Holiday))
         Dim HolidayDateLabel As System.Windows.Forms.Label
         Dim HolidayNameLabel As System.Windows.Forms.Label
-        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Holiday))
+        Dim HolidayTypeLabel As System.Windows.Forms.Label
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.Panel1 = New System.Windows.Forms.Panel()
         Me.BtnSave = New FontAwesome.Sharp.IconButton()
         Me.BtnDelete = New FontAwesome.Sharp.IconButton()
@@ -36,31 +37,52 @@ Partial Class Holiday
         Me.BtnAdd = New System.Windows.Forms.Button()
         Me.Label14 = New System.Windows.Forms.Label()
         Me.Payroll_deduction_tblDataGridView = New System.Windows.Forms.DataGridView()
-        Me.HolidaystblBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.PayrolldbDataSet = New LCCPayrollSystem.payrolldbDataSet()
         Me.TextBoxSearch = New System.Windows.Forms.TextBox()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
-        Me.LblAddEditMode = New System.Windows.Forms.Label()
-        Me.Holidays_tblBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.Holidays_tblTableAdapter = New LCCPayrollSystem.payrolldbDataSetTableAdapters.holidays_tblTableAdapter()
-        Me.TableAdapterManager = New LCCPayrollSystem.payrolldbDataSetTableAdapters.TableAdapterManager()
         Me.HolidayDateDateTimePicker = New System.Windows.Forms.DateTimePicker()
         Me.HolidayNameTextBox = New System.Windows.Forms.TextBox()
         Me.IsWithPayCheckBox = New System.Windows.Forms.CheckBox()
+        Me.LblAddEditMode = New System.Windows.Forms.Label()
+        Me.HolidaystblBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.PayrolldbDataSet = New LCCPayrollSystem.payrolldbDataSet()
+        Me.Holidays_tblBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.Holidays_tblTableAdapter = New LCCPayrollSystem.payrolldbDataSetTableAdapters.holidays_tblTableAdapter()
+        Me.TableAdapterManager = New LCCPayrollSystem.payrolldbDataSetTableAdapters.TableAdapterManager()
+        Me.HolidayTypeComboBox = New System.Windows.Forms.ComboBox()
         Me.HolidayDateDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.HolidayNameDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.IsWithPayDataGridViewCheckBoxColumn = New System.Windows.Forms.DataGridViewCheckBoxColumn()
+        Me.HolidayType = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.HolidayDate = New System.Windows.Forms.DataGridViewTextBoxColumn()
         HolidayDateLabel = New System.Windows.Forms.Label()
         HolidayNameLabel = New System.Windows.Forms.Label()
+        HolidayTypeLabel = New System.Windows.Forms.Label()
         Me.Panel1.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         CType(Me.Payroll_deduction_tblDataGridView, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.GroupBox1.SuspendLayout()
         CType(Me.HolidaystblBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PayrolldbDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.GroupBox1.SuspendLayout()
         CType(Me.Holidays_tblBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
+        '
+        'HolidayDateLabel
+        '
+        HolidayDateLabel.AutoSize = True
+        HolidayDateLabel.Location = New System.Drawing.Point(158, 55)
+        HolidayDateLabel.Name = "HolidayDateLabel"
+        HolidayDateLabel.Size = New System.Drawing.Size(70, 14)
+        HolidayDateLabel.TabIndex = 141
+        HolidayDateLabel.Text = "Holiday Date:"
+        '
+        'HolidayNameLabel
+        '
+        HolidayNameLabel.AutoSize = True
+        HolidayNameLabel.Location = New System.Drawing.Point(158, 80)
+        HolidayNameLabel.Name = "HolidayNameLabel"
+        HolidayNameLabel.Size = New System.Drawing.Size(75, 14)
+        HolidayNameLabel.TabIndex = 143
+        HolidayNameLabel.Text = "Holiday Name:"
         '
         'Panel1
         '
@@ -112,9 +134,9 @@ Partial Class Holiday
         Me.GroupBox2.Controls.Add(Me.TextBoxSearch)
         Me.GroupBox2.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.GroupBox2.ForeColor = System.Drawing.Color.Black
-        Me.GroupBox2.Location = New System.Drawing.Point(18, 140)
+        Me.GroupBox2.Location = New System.Drawing.Point(18, 188)
         Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Size = New System.Drawing.Size(881, 323)
+        Me.GroupBox2.Size = New System.Drawing.Size(881, 275)
         Me.GroupBox2.TabIndex = 155
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "Holiday List"
@@ -158,24 +180,14 @@ Partial Class Holiday
         Me.Payroll_deduction_tblDataGridView.AllowUserToDeleteRows = False
         Me.Payroll_deduction_tblDataGridView.AutoGenerateColumns = False
         Me.Payroll_deduction_tblDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.Payroll_deduction_tblDataGridView.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.HolidayDateDataGridViewTextBoxColumn, Me.HolidayNameDataGridViewTextBoxColumn, Me.IsWithPayDataGridViewCheckBoxColumn, Me.HolidayDate})
+        Me.Payroll_deduction_tblDataGridView.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.HolidayDateDataGridViewTextBoxColumn, Me.HolidayNameDataGridViewTextBoxColumn, Me.IsWithPayDataGridViewCheckBoxColumn, Me.HolidayType, Me.HolidayDate})
         Me.Payroll_deduction_tblDataGridView.DataSource = Me.HolidaystblBindingSource
         Me.Payroll_deduction_tblDataGridView.Location = New System.Drawing.Point(6, 74)
         Me.Payroll_deduction_tblDataGridView.Name = "Payroll_deduction_tblDataGridView"
         Me.Payroll_deduction_tblDataGridView.ReadOnly = True
         Me.Payroll_deduction_tblDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.Payroll_deduction_tblDataGridView.Size = New System.Drawing.Size(869, 243)
+        Me.Payroll_deduction_tblDataGridView.Size = New System.Drawing.Size(869, 195)
         Me.Payroll_deduction_tblDataGridView.TabIndex = 148
-        '
-        'HolidaystblBindingSource
-        '
-        Me.HolidaystblBindingSource.DataMember = "holidays_tbl"
-        Me.HolidaystblBindingSource.DataSource = Me.PayrolldbDataSet
-        '
-        'PayrolldbDataSet
-        '
-        Me.PayrolldbDataSet.DataSetName = "payrolldbDataSet"
-        Me.PayrolldbDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
         '
         'TextBoxSearch
         '
@@ -188,6 +200,8 @@ Partial Class Holiday
         '
         'GroupBox1
         '
+        Me.GroupBox1.Controls.Add(HolidayTypeLabel)
+        Me.GroupBox1.Controls.Add(Me.HolidayTypeComboBox)
         Me.GroupBox1.Controls.Add(HolidayDateLabel)
         Me.GroupBox1.Controls.Add(Me.HolidayDateDateTimePicker)
         Me.GroupBox1.Controls.Add(HolidayNameLabel)
@@ -198,10 +212,39 @@ Partial Class Holiday
         Me.GroupBox1.ForeColor = System.Drawing.Color.Black
         Me.GroupBox1.Location = New System.Drawing.Point(18, 1)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(881, 152)
+        Me.GroupBox1.Size = New System.Drawing.Size(881, 186)
         Me.GroupBox1.TabIndex = 154
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "Holiday Information"
+        '
+        'HolidayDateDateTimePicker
+        '
+        Me.HolidayDateDateTimePicker.DataBindings.Add(New System.Windows.Forms.Binding("Value", Me.Holidays_tblBindingSource, "HolidayDate", True))
+        Me.HolidayDateDateTimePicker.Location = New System.Drawing.Point(239, 51)
+        Me.HolidayDateDateTimePicker.Name = "HolidayDateDateTimePicker"
+        Me.HolidayDateDateTimePicker.Size = New System.Drawing.Size(200, 20)
+        Me.HolidayDateDateTimePicker.TabIndex = 142
+        '
+        'HolidayNameTextBox
+        '
+        Me.HolidayNameTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.Holidays_tblBindingSource, "HolidayName", True))
+        Me.HolidayNameTextBox.Location = New System.Drawing.Point(239, 77)
+        Me.HolidayNameTextBox.Multiline = True
+        Me.HolidayNameTextBox.Name = "HolidayNameTextBox"
+        Me.HolidayNameTextBox.Size = New System.Drawing.Size(410, 47)
+        Me.HolidayNameTextBox.TabIndex = 144
+        '
+        'IsWithPayCheckBox
+        '
+        Me.IsWithPayCheckBox.Checked = True
+        Me.IsWithPayCheckBox.CheckState = System.Windows.Forms.CheckState.Checked
+        Me.IsWithPayCheckBox.DataBindings.Add(New System.Windows.Forms.Binding("CheckState", Me.Holidays_tblBindingSource, "IsWithPay", True))
+        Me.IsWithPayCheckBox.Location = New System.Drawing.Point(449, 51)
+        Me.IsWithPayCheckBox.Name = "IsWithPayCheckBox"
+        Me.IsWithPayCheckBox.Size = New System.Drawing.Size(200, 24)
+        Me.IsWithPayCheckBox.TabIndex = 146
+        Me.IsWithPayCheckBox.Text = "Is WithPay"
+        Me.IsWithPayCheckBox.UseVisualStyleBackColor = True
         '
         'LblAddEditMode
         '
@@ -214,6 +257,16 @@ Partial Class Holiday
         Me.LblAddEditMode.TabIndex = 141
         Me.LblAddEditMode.Text = "--"
         Me.LblAddEditMode.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        '
+        'HolidaystblBindingSource
+        '
+        Me.HolidaystblBindingSource.DataMember = "holidays_tbl"
+        Me.HolidaystblBindingSource.DataSource = Me.PayrolldbDataSet
+        '
+        'PayrolldbDataSet
+        '
+        Me.PayrolldbDataSet.DataSetName = "payrolldbDataSet"
+        Me.PayrolldbDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
         '
         'Holidays_tblBindingSource
         '
@@ -239,60 +292,32 @@ Partial Class Holiday
         Me.TableAdapterManager.UpdateOrder = LCCPayrollSystem.payrolldbDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
         Me.TableAdapterManager.user_tblTableAdapter = Nothing
         '
-        'HolidayDateLabel
+        'HolidayTypeLabel
         '
-        HolidayDateLabel.AutoSize = True
-        HolidayDateLabel.Location = New System.Drawing.Point(158, 55)
-        HolidayDateLabel.Name = "HolidayDateLabel"
-        HolidayDateLabel.Size = New System.Drawing.Size(70, 14)
-        HolidayDateLabel.TabIndex = 141
-        HolidayDateLabel.Text = "Holiday Date:"
+        HolidayTypeLabel.AutoSize = True
+        HolidayTypeLabel.Location = New System.Drawing.Point(162, 133)
+        HolidayTypeLabel.Name = "HolidayTypeLabel"
+        HolidayTypeLabel.Size = New System.Drawing.Size(71, 14)
+        HolidayTypeLabel.TabIndex = 146
+        HolidayTypeLabel.Text = "Holiday Type:"
         '
-        'HolidayDateDateTimePicker
+        'HolidayTypeComboBox
         '
-        Me.HolidayDateDateTimePicker.DataBindings.Add(New System.Windows.Forms.Binding("Value", Me.Holidays_tblBindingSource, "HolidayDate", True))
-        Me.HolidayDateDateTimePicker.Location = New System.Drawing.Point(239, 51)
-        Me.HolidayDateDateTimePicker.Name = "HolidayDateDateTimePicker"
-        Me.HolidayDateDateTimePicker.Size = New System.Drawing.Size(200, 20)
-        Me.HolidayDateDateTimePicker.TabIndex = 142
-        '
-        'HolidayNameLabel
-        '
-        HolidayNameLabel.AutoSize = True
-        HolidayNameLabel.Location = New System.Drawing.Point(158, 80)
-        HolidayNameLabel.Name = "HolidayNameLabel"
-        HolidayNameLabel.Size = New System.Drawing.Size(75, 14)
-        HolidayNameLabel.TabIndex = 143
-        HolidayNameLabel.Text = "Holiday Name:"
-        '
-        'HolidayNameTextBox
-        '
-        Me.HolidayNameTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.Holidays_tblBindingSource, "HolidayName", True))
-        Me.HolidayNameTextBox.Location = New System.Drawing.Point(239, 77)
-        Me.HolidayNameTextBox.Multiline = True
-        Me.HolidayNameTextBox.Name = "HolidayNameTextBox"
-        Me.HolidayNameTextBox.Size = New System.Drawing.Size(410, 47)
-        Me.HolidayNameTextBox.TabIndex = 144
-        '
-        'IsWithPayCheckBox
-        '
-        Me.IsWithPayCheckBox.Checked = True
-        Me.IsWithPayCheckBox.CheckState = System.Windows.Forms.CheckState.Checked
-        Me.IsWithPayCheckBox.DataBindings.Add(New System.Windows.Forms.Binding("CheckState", Me.Holidays_tblBindingSource, "IsWithPay", True))
-        Me.IsWithPayCheckBox.Location = New System.Drawing.Point(449, 51)
-        Me.IsWithPayCheckBox.Name = "IsWithPayCheckBox"
-        Me.IsWithPayCheckBox.Size = New System.Drawing.Size(200, 24)
-        Me.IsWithPayCheckBox.TabIndex = 146
-        Me.IsWithPayCheckBox.Text = "Is WithPay"
-        Me.IsWithPayCheckBox.UseVisualStyleBackColor = True
+        Me.HolidayTypeComboBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.Holidays_tblBindingSource, "HolidayType", True))
+        Me.HolidayTypeComboBox.FormattingEnabled = True
+        Me.HolidayTypeComboBox.Items.AddRange(New Object() {"Regular Holiday", "Special Holiday"})
+        Me.HolidayTypeComboBox.Location = New System.Drawing.Point(239, 130)
+        Me.HolidayTypeComboBox.Name = "HolidayTypeComboBox"
+        Me.HolidayTypeComboBox.Size = New System.Drawing.Size(200, 22)
+        Me.HolidayTypeComboBox.TabIndex = 147
         '
         'HolidayDateDataGridViewTextBoxColumn
         '
         Me.HolidayDateDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
         Me.HolidayDateDataGridViewTextBoxColumn.DataPropertyName = "HolidayDate"
-        DataGridViewCellStyle3.Format = "D"
-        DataGridViewCellStyle3.NullValue = Nothing
-        Me.HolidayDateDataGridViewTextBoxColumn.DefaultCellStyle = DataGridViewCellStyle3
+        DataGridViewCellStyle1.Format = "D"
+        DataGridViewCellStyle1.NullValue = Nothing
+        Me.HolidayDateDataGridViewTextBoxColumn.DefaultCellStyle = DataGridViewCellStyle1
         Me.HolidayDateDataGridViewTextBoxColumn.HeaderText = "HolidayDate"
         Me.HolidayDateDataGridViewTextBoxColumn.Name = "HolidayDateDataGridViewTextBoxColumn"
         Me.HolidayDateDataGridViewTextBoxColumn.ReadOnly = True
@@ -314,15 +339,24 @@ Partial Class Holiday
         Me.IsWithPayDataGridViewCheckBoxColumn.ReadOnly = True
         Me.IsWithPayDataGridViewCheckBoxColumn.Visible = False
         '
+        'HolidayType
+        '
+        Me.HolidayType.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.HolidayType.DataPropertyName = "HolidayType"
+        Me.HolidayType.HeaderText = "HolidayType"
+        Me.HolidayType.Name = "HolidayType"
+        Me.HolidayType.ReadOnly = True
+        '
         'HolidayDate
         '
         Me.HolidayDate.DataPropertyName = "HolidayDate"
-        DataGridViewCellStyle4.Format = "y"
-        DataGridViewCellStyle4.NullValue = Nothing
-        Me.HolidayDate.DefaultCellStyle = DataGridViewCellStyle4
+        DataGridViewCellStyle2.Format = "y"
+        DataGridViewCellStyle2.NullValue = Nothing
+        Me.HolidayDate.DefaultCellStyle = DataGridViewCellStyle2
         Me.HolidayDate.HeaderText = "HolidayMonthYear"
         Me.HolidayDate.Name = "HolidayDate"
         Me.HolidayDate.ReadOnly = True
+        Me.HolidayDate.Visible = False
         '
         'Holiday
         '
@@ -340,10 +374,10 @@ Partial Class Holiday
         Me.GroupBox2.ResumeLayout(False)
         Me.GroupBox2.PerformLayout()
         CType(Me.Payroll_deduction_tblDataGridView, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.HolidaystblBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PayrolldbDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
+        CType(Me.HolidaystblBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PayrolldbDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.Holidays_tblBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
@@ -368,8 +402,10 @@ Partial Class Holiday
     Friend WithEvents HolidayDateDateTimePicker As DateTimePicker
     Friend WithEvents HolidayNameTextBox As TextBox
     Friend WithEvents IsWithPayCheckBox As CheckBox
+    Friend WithEvents HolidayTypeComboBox As ComboBox
     Friend WithEvents HolidayDateDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents HolidayNameDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents IsWithPayDataGridViewCheckBoxColumn As DataGridViewCheckBoxColumn
+    Friend WithEvents HolidayType As DataGridViewTextBoxColumn
     Friend WithEvents HolidayDate As DataGridViewTextBoxColumn
 End Class

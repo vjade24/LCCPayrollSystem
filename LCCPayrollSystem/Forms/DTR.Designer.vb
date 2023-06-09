@@ -28,17 +28,16 @@ Partial Class DTR
         Dim Time_out_amLabel As System.Windows.Forms.Label
         Dim Time_in_pmLabel As System.Windows.Forms.Label
         Dim Time_out_pmLabel As System.Windows.Forms.Label
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle7 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle15 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle16 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle17 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle18 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle19 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle20 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle21 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(DTR))
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.btnGenerate = New System.Windows.Forms.Button()
         Me.TextBox_employee_id = New System.Windows.Forms.TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.DateTimePicker_PeriodFrom = New System.Windows.Forms.DateTimePicker()
@@ -50,24 +49,6 @@ Partial Class DTR
         Me.Dtr_tblTableAdapter = New LCCPayrollSystem.payrolldbDataSetTableAdapters.dtr_tblTableAdapter()
         Me.TableAdapterManager = New LCCPayrollSystem.payrolldbDataSetTableAdapters.TableAdapterManager()
         Me.Dtr_tblDataGridView = New System.Windows.Forms.DataGridView()
-        Me.Label5 = New System.Windows.Forms.Label()
-        Me.TextBox_Late = New System.Windows.Forms.TextBox()
-        Me.TextBox_UnderTime = New System.Windows.Forms.TextBox()
-        Me.Label6 = New System.Windows.Forms.Label()
-        Me.TextBox_Overtime = New System.Windows.Forms.TextBox()
-        Me.Label7 = New System.Windows.Forms.Label()
-        Me.TextBox_employeename = New System.Windows.Forms.TextBox()
-        Me.Label8 = New System.Windows.Forms.Label()
-        Me.TextBox_Absent = New System.Windows.Forms.TextBox()
-        Me.Label9 = New System.Windows.Forms.Label()
-        Me.Dtr_dateDateTimePicker = New System.Windows.Forms.DateTimePicker()
-        Me.Tse_in_amDateTimePicker = New System.Windows.Forms.DateTimePicker()
-        Me.Tse_out_amDateTimePicker = New System.Windows.Forms.DateTimePicker()
-        Me.Tse_in_pmDateTimePicker = New System.Windows.Forms.DateTimePicker()
-        Me.Tse_out_pmDateTimePicker = New System.Windows.Forms.DateTimePicker()
-        Me.btnSave = New System.Windows.Forms.Button()
-        Me.GroupBox1 = New System.Windows.Forms.GroupBox()
-        Me.BackgroundWorker1 = New System.ComponentModel.BackgroundWorker()
         Me.DataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewButtonColumn()
         Me.DataGridViewTextBoxColumn2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DataGridViewTextBoxColumn3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -85,6 +66,28 @@ Partial Class DTR
         Me.DataGridViewCheckBoxColumn3 = New System.Windows.Forms.DataGridViewCheckBoxColumn()
         Me.DataGridViewTextBoxColumn13 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Edit = New System.Windows.Forms.DataGridViewButtonColumn()
+        Me.Label5 = New System.Windows.Forms.Label()
+        Me.TextBox_Late = New System.Windows.Forms.TextBox()
+        Me.TextBox_UnderTime = New System.Windows.Forms.TextBox()
+        Me.Label6 = New System.Windows.Forms.Label()
+        Me.TextBox_Overtime = New System.Windows.Forms.TextBox()
+        Me.Label7 = New System.Windows.Forms.Label()
+        Me.TextBox_employeename = New System.Windows.Forms.TextBox()
+        Me.Label8 = New System.Windows.Forms.Label()
+        Me.TextBox_Absent = New System.Windows.Forms.TextBox()
+        Me.Label9 = New System.Windows.Forms.Label()
+        Me.Dtr_dateDateTimePicker = New System.Windows.Forms.DateTimePicker()
+        Me.Tse_in_amDateTimePicker = New System.Windows.Forms.DateTimePicker()
+        Me.Tse_out_amDateTimePicker = New System.Windows.Forms.DateTimePicker()
+        Me.Tse_in_pmDateTimePicker = New System.Windows.Forms.DateTimePicker()
+        Me.Tse_out_pmDateTimePicker = New System.Windows.Forms.DateTimePicker()
+        Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.BackgroundWorker1 = New System.ComponentModel.BackgroundWorker()
+        Me.IconButton1 = New FontAwesome.Sharp.IconButton()
+        Me.btnSave = New FontAwesome.Sharp.IconButton()
+        Me.btnRemove = New FontAwesome.Sharp.IconButton()
+        Me.TextBox_DaysRendered = New System.Windows.Forms.TextBox()
+        Me.Label10 = New System.Windows.Forms.Label()
         Dtr_dateLabel = New System.Windows.Forms.Label()
         Time_in_amLabel = New System.Windows.Forms.Label()
         Time_out_amLabel = New System.Windows.Forms.Label()
@@ -101,7 +104,7 @@ Partial Class DTR
         '
         Dtr_dateLabel.AutoSize = True
         Dtr_dateLabel.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Dtr_dateLabel.Location = New System.Drawing.Point(75, 11)
+        Dtr_dateLabel.Location = New System.Drawing.Point(43, 21)
         Dtr_dateLabel.Name = "Dtr_dateLabel"
         Dtr_dateLabel.Size = New System.Drawing.Size(29, 14)
         Dtr_dateLabel.TabIndex = 160
@@ -111,7 +114,7 @@ Partial Class DTR
         '
         Time_in_amLabel.AutoSize = True
         Time_in_amLabel.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Time_in_amLabel.Location = New System.Drawing.Point(75, 52)
+        Time_in_amLabel.Location = New System.Drawing.Point(43, 62)
         Time_in_amLabel.Name = "Time_in_amLabel"
         Time_in_amLabel.Size = New System.Drawing.Size(58, 14)
         Time_in_amLabel.TabIndex = 162
@@ -121,7 +124,7 @@ Partial Class DTR
         '
         Time_out_amLabel.AutoSize = True
         Time_out_amLabel.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Time_out_amLabel.Location = New System.Drawing.Point(76, 91)
+        Time_out_amLabel.Location = New System.Drawing.Point(44, 101)
         Time_out_amLabel.Name = "Time_out_amLabel"
         Time_out_amLabel.Size = New System.Drawing.Size(57, 14)
         Time_out_amLabel.TabIndex = 163
@@ -131,7 +134,7 @@ Partial Class DTR
         '
         Time_in_pmLabel.AutoSize = True
         Time_in_pmLabel.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Time_in_pmLabel.Location = New System.Drawing.Point(192, 52)
+        Time_in_pmLabel.Location = New System.Drawing.Point(160, 62)
         Time_in_pmLabel.Name = "Time_in_pmLabel"
         Time_in_pmLabel.Size = New System.Drawing.Size(65, 14)
         Time_in_pmLabel.TabIndex = 164
@@ -141,7 +144,7 @@ Partial Class DTR
         '
         Time_out_pmLabel.AutoSize = True
         Time_out_pmLabel.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Time_out_pmLabel.Location = New System.Drawing.Point(193, 91)
+        Time_out_pmLabel.Location = New System.Drawing.Point(161, 101)
         Time_out_pmLabel.Name = "Time_out_pmLabel"
         Time_out_pmLabel.Size = New System.Drawing.Size(64, 14)
         Time_out_pmLabel.TabIndex = 165
@@ -168,19 +171,9 @@ Partial Class DTR
         Me.Label1.TabIndex = 104
         Me.Label1.Text = "Generate Employee Daily Time Record"
         '
-        'btnGenerate
-        '
-        Me.btnGenerate.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnGenerate.Location = New System.Drawing.Point(464, 89)
-        Me.btnGenerate.Name = "btnGenerate"
-        Me.btnGenerate.Size = New System.Drawing.Size(111, 59)
-        Me.btnGenerate.TabIndex = 144
-        Me.btnGenerate.Text = "Generate"
-        Me.btnGenerate.UseVisualStyleBackColor = True
-        '
         'TextBox_employee_id
         '
-        Me.TextBox_employee_id.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBox_employee_id.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TextBox_employee_id.Location = New System.Drawing.Point(17, 88)
         Me.TextBox_employee_id.Name = "TextBox_employee_id"
         Me.TextBox_employee_id.Size = New System.Drawing.Size(104, 20)
@@ -189,16 +182,16 @@ Partial Class DTR
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label2.Location = New System.Drawing.Point(14, 70)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(65, 14)
+        Me.Label2.Size = New System.Drawing.Size(67, 13)
         Me.Label2.TabIndex = 146
         Me.Label2.Text = "Employee ID"
         '
         'DateTimePicker_PeriodFrom
         '
-        Me.DateTimePicker_PeriodFrom.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.DateTimePicker_PeriodFrom.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.DateTimePicker_PeriodFrom.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
         Me.DateTimePicker_PeriodFrom.Location = New System.Drawing.Point(156, 88)
         Me.DateTimePicker_PeriodFrom.Name = "DateTimePicker_PeriodFrom"
@@ -207,7 +200,7 @@ Partial Class DTR
         '
         'DateTimePicker_PeriodTo
         '
-        Me.DateTimePicker_PeriodTo.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.DateTimePicker_PeriodTo.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.DateTimePicker_PeriodTo.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
         Me.DateTimePicker_PeriodTo.Location = New System.Drawing.Point(315, 88)
         Me.DateTimePicker_PeriodTo.Name = "DateTimePicker_PeriodTo"
@@ -217,20 +210,20 @@ Partial Class DTR
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label3.Location = New System.Drawing.Point(153, 69)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(61, 14)
+        Me.Label3.Size = New System.Drawing.Size(59, 13)
         Me.Label3.TabIndex = 149
         Me.Label3.Text = "Dater from:"
         '
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label4.Location = New System.Drawing.Point(312, 70)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(48, 14)
+        Me.Label4.Size = New System.Drawing.Size(48, 13)
         Me.Label4.TabIndex = 150
         Me.Label4.Text = "Dater to:"
         '
@@ -257,6 +250,7 @@ Partial Class DTR
         Me.TableAdapterManager.dtr_upload_tblTableAdapter = Nothing
         Me.TableAdapterManager.employee_tblTableAdapter = Nothing
         Me.TableAdapterManager.holidays_tblTableAdapter = Nothing
+        Me.TableAdapterManager.payroll_deduction_fixed_tblTableAdapter = Nothing
         Me.TableAdapterManager.payroll_deduction_tblTableAdapter = Nothing
         Me.TableAdapterManager.payroll_tblTableAdapter = Nothing
         Me.TableAdapterManager.time_schedule_empl_tblTableAdapter = Nothing
@@ -271,195 +265,12 @@ Partial Class DTR
         Me.Dtr_tblDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.Dtr_tblDataGridView.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DataGridViewTextBoxColumn1, Me.DataGridViewTextBoxColumn2, Me.DataGridViewTextBoxColumn3, Me.DataGridViewTextBoxColumn4, Me.DataGridViewTextBoxColumn5, Me.DataGridViewTextBoxColumn6, Me.DataGridViewTextBoxColumn7, Me.DataGridViewTextBoxColumn8, Me.DataGridViewTextBoxColumn9, Me.DataGridViewTextBoxColumn10, Me.DataGridViewTextBoxColumn11, Me.DataGridViewTextBoxColumn12, Me.DataGridViewCheckBoxColumn1, Me.DataGridViewCheckBoxColumn2, Me.DataGridViewCheckBoxColumn3, Me.DataGridViewTextBoxColumn13, Me.Edit})
         Me.Dtr_tblDataGridView.DataSource = Me.Dtr_tblBindingSource
-        Me.Dtr_tblDataGridView.Location = New System.Drawing.Point(17, 208)
+        Me.Dtr_tblDataGridView.Location = New System.Drawing.Point(17, 217)
         Me.Dtr_tblDataGridView.Name = "Dtr_tblDataGridView"
         Me.Dtr_tblDataGridView.ReadOnly = True
         Me.Dtr_tblDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.Dtr_tblDataGridView.Size = New System.Drawing.Size(1098, 558)
+        Me.Dtr_tblDataGridView.Size = New System.Drawing.Size(1098, 624)
         Me.Dtr_tblDataGridView.TabIndex = 151
-        '
-        'Label5
-        '
-        Me.Label5.AutoSize = True
-        Me.Label5.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label5.Location = New System.Drawing.Point(14, 156)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(55, 14)
-        Me.Label5.TabIndex = 152
-        Me.Label5.Text = "Late (min)"
-        '
-        'TextBox_Late
-        '
-        Me.TextBox_Late.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox_Late.Location = New System.Drawing.Point(17, 170)
-        Me.TextBox_Late.Name = "TextBox_Late"
-        Me.TextBox_Late.ReadOnly = True
-        Me.TextBox_Late.Size = New System.Drawing.Size(104, 20)
-        Me.TextBox_Late.TabIndex = 153
-        Me.TextBox_Late.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
-        '
-        'TextBox_UnderTime
-        '
-        Me.TextBox_UnderTime.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox_UnderTime.Location = New System.Drawing.Point(129, 170)
-        Me.TextBox_UnderTime.Name = "TextBox_UnderTime"
-        Me.TextBox_UnderTime.ReadOnly = True
-        Me.TextBox_UnderTime.Size = New System.Drawing.Size(104, 20)
-        Me.TextBox_UnderTime.TabIndex = 155
-        Me.TextBox_UnderTime.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
-        '
-        'Label6
-        '
-        Me.Label6.AutoSize = True
-        Me.Label6.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label6.Location = New System.Drawing.Point(126, 156)
-        Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(82, 14)
-        Me.Label6.TabIndex = 154
-        Me.Label6.Text = "Undertime (min)"
-        '
-        'TextBox_Overtime
-        '
-        Me.TextBox_Overtime.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox_Overtime.Location = New System.Drawing.Point(241, 170)
-        Me.TextBox_Overtime.Name = "TextBox_Overtime"
-        Me.TextBox_Overtime.ReadOnly = True
-        Me.TextBox_Overtime.Size = New System.Drawing.Size(104, 20)
-        Me.TextBox_Overtime.TabIndex = 157
-        Me.TextBox_Overtime.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
-        '
-        'Label7
-        '
-        Me.Label7.AutoSize = True
-        Me.Label7.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label7.Location = New System.Drawing.Point(238, 156)
-        Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(77, 14)
-        Me.Label7.TabIndex = 156
-        Me.Label7.Text = "Overtime (min)"
-        '
-        'TextBox_employeename
-        '
-        Me.TextBox_employeename.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox_employeename.Location = New System.Drawing.Point(17, 127)
-        Me.TextBox_employeename.Name = "TextBox_employeename"
-        Me.TextBox_employeename.ReadOnly = True
-        Me.TextBox_employeename.Size = New System.Drawing.Size(440, 20)
-        Me.TextBox_employeename.TabIndex = 159
-        '
-        'Label8
-        '
-        Me.Label8.AutoSize = True
-        Me.Label8.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label8.Location = New System.Drawing.Point(14, 111)
-        Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(82, 14)
-        Me.Label8.TabIndex = 158
-        Me.Label8.Text = "Employee name"
-        '
-        'TextBox_Absent
-        '
-        Me.TextBox_Absent.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TextBox_Absent.Location = New System.Drawing.Point(353, 170)
-        Me.TextBox_Absent.Name = "TextBox_Absent"
-        Me.TextBox_Absent.ReadOnly = True
-        Me.TextBox_Absent.Size = New System.Drawing.Size(104, 20)
-        Me.TextBox_Absent.TabIndex = 173
-        Me.TextBox_Absent.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
-        '
-        'Label9
-        '
-        Me.Label9.AutoSize = True
-        Me.Label9.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label9.Location = New System.Drawing.Point(350, 156)
-        Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(80, 14)
-        Me.Label9.TabIndex = 172
-        Me.Label9.Text = "Absent (day/s)"
-        '
-        'Dtr_dateDateTimePicker
-        '
-        Me.Dtr_dateDateTimePicker.Enabled = False
-        Me.Dtr_dateDateTimePicker.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Dtr_dateDateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.Dtr_dateDateTimePicker.Location = New System.Drawing.Point(78, 28)
-        Me.Dtr_dateDateTimePicker.Name = "Dtr_dateDateTimePicker"
-        Me.Dtr_dateDateTimePicker.Size = New System.Drawing.Size(230, 20)
-        Me.Dtr_dateDateTimePicker.TabIndex = 161
-        '
-        'Tse_in_amDateTimePicker
-        '
-        Me.Tse_in_amDateTimePicker.CustomFormat = "h:mmtt"
-        Me.Tse_in_amDateTimePicker.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Tse_in_amDateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom
-        Me.Tse_in_amDateTimePicker.Location = New System.Drawing.Point(78, 68)
-        Me.Tse_in_amDateTimePicker.Name = "Tse_in_amDateTimePicker"
-        Me.Tse_in_amDateTimePicker.ShowUpDown = True
-        Me.Tse_in_amDateTimePicker.Size = New System.Drawing.Size(112, 20)
-        Me.Tse_in_amDateTimePicker.TabIndex = 166
-        '
-        'Tse_out_amDateTimePicker
-        '
-        Me.Tse_out_amDateTimePicker.CustomFormat = "h:mmtt"
-        Me.Tse_out_amDateTimePicker.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Tse_out_amDateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom
-        Me.Tse_out_amDateTimePicker.Location = New System.Drawing.Point(195, 68)
-        Me.Tse_out_amDateTimePicker.Name = "Tse_out_amDateTimePicker"
-        Me.Tse_out_amDateTimePicker.ShowUpDown = True
-        Me.Tse_out_amDateTimePicker.Size = New System.Drawing.Size(112, 20)
-        Me.Tse_out_amDateTimePicker.TabIndex = 167
-        '
-        'Tse_in_pmDateTimePicker
-        '
-        Me.Tse_in_pmDateTimePicker.CustomFormat = "h:mmtt"
-        Me.Tse_in_pmDateTimePicker.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Tse_in_pmDateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom
-        Me.Tse_in_pmDateTimePicker.Location = New System.Drawing.Point(79, 107)
-        Me.Tse_in_pmDateTimePicker.Name = "Tse_in_pmDateTimePicker"
-        Me.Tse_in_pmDateTimePicker.ShowUpDown = True
-        Me.Tse_in_pmDateTimePicker.Size = New System.Drawing.Size(112, 20)
-        Me.Tse_in_pmDateTimePicker.TabIndex = 168
-        '
-        'Tse_out_pmDateTimePicker
-        '
-        Me.Tse_out_pmDateTimePicker.CustomFormat = "h:mmtt"
-        Me.Tse_out_pmDateTimePicker.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Tse_out_pmDateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom
-        Me.Tse_out_pmDateTimePicker.Location = New System.Drawing.Point(196, 107)
-        Me.Tse_out_pmDateTimePicker.Name = "Tse_out_pmDateTimePicker"
-        Me.Tse_out_pmDateTimePicker.ShowUpDown = True
-        Me.Tse_out_pmDateTimePicker.Size = New System.Drawing.Size(112, 20)
-        Me.Tse_out_pmDateTimePicker.TabIndex = 169
-        '
-        'btnSave
-        '
-        Me.btnSave.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnSave.Location = New System.Drawing.Point(313, 30)
-        Me.btnSave.Name = "btnSave"
-        Me.btnSave.Size = New System.Drawing.Size(112, 59)
-        Me.btnSave.TabIndex = 170
-        Me.btnSave.Text = "Save"
-        Me.btnSave.UseVisualStyleBackColor = True
-        '
-        'GroupBox1
-        '
-        Me.GroupBox1.Controls.Add(Dtr_dateLabel)
-        Me.GroupBox1.Controls.Add(Me.Dtr_dateDateTimePicker)
-        Me.GroupBox1.Controls.Add(Time_in_amLabel)
-        Me.GroupBox1.Controls.Add(Me.btnSave)
-        Me.GroupBox1.Controls.Add(Time_out_amLabel)
-        Me.GroupBox1.Controls.Add(Me.Tse_out_pmDateTimePicker)
-        Me.GroupBox1.Controls.Add(Time_in_pmLabel)
-        Me.GroupBox1.Controls.Add(Me.Tse_in_pmDateTimePicker)
-        Me.GroupBox1.Controls.Add(Time_out_pmLabel)
-        Me.GroupBox1.Controls.Add(Me.Tse_out_amDateTimePicker)
-        Me.GroupBox1.Controls.Add(Me.Tse_in_amDateTimePicker)
-        Me.GroupBox1.Location = New System.Drawing.Point(596, 61)
-        Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(519, 141)
-        Me.GroupBox1.TabIndex = 174
-        Me.GroupBox1.TabStop = False
-        Me.GroupBox1.Text = "Update Entries"
         '
         'DataGridViewTextBoxColumn1
         '
@@ -499,19 +310,21 @@ Partial Class DTR
         '
         'DataGridViewTextBoxColumn5
         '
+        Me.DataGridViewTextBoxColumn5.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
         Me.DataGridViewTextBoxColumn5.DataPropertyName = "dtr_date_day"
         Me.DataGridViewTextBoxColumn5.HeaderText = "Day"
         Me.DataGridViewTextBoxColumn5.Name = "DataGridViewTextBoxColumn5"
         Me.DataGridViewTextBoxColumn5.ReadOnly = True
+        Me.DataGridViewTextBoxColumn5.Width = 51
         '
         'DataGridViewTextBoxColumn6
         '
         Me.DataGridViewTextBoxColumn6.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
         Me.DataGridViewTextBoxColumn6.DataPropertyName = "time_in_am"
-        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle1.Format = "T"
-        DataGridViewCellStyle1.NullValue = Nothing
-        Me.DataGridViewTextBoxColumn6.DefaultCellStyle = DataGridViewCellStyle1
+        DataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle15.Format = "T"
+        DataGridViewCellStyle15.NullValue = Nothing
+        Me.DataGridViewTextBoxColumn6.DefaultCellStyle = DataGridViewCellStyle15
         Me.DataGridViewTextBoxColumn6.HeaderText = "Time in AMs"
         Me.DataGridViewTextBoxColumn6.Name = "DataGridViewTextBoxColumn6"
         Me.DataGridViewTextBoxColumn6.ReadOnly = True
@@ -520,10 +333,10 @@ Partial Class DTR
         '
         Me.DataGridViewTextBoxColumn7.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
         Me.DataGridViewTextBoxColumn7.DataPropertyName = "time_out_am"
-        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle2.Format = "t"
-        DataGridViewCellStyle2.NullValue = Nothing
-        Me.DataGridViewTextBoxColumn7.DefaultCellStyle = DataGridViewCellStyle2
+        DataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle16.Format = "t"
+        DataGridViewCellStyle16.NullValue = Nothing
+        Me.DataGridViewTextBoxColumn7.DefaultCellStyle = DataGridViewCellStyle16
         Me.DataGridViewTextBoxColumn7.HeaderText = "Time out AM"
         Me.DataGridViewTextBoxColumn7.Name = "DataGridViewTextBoxColumn7"
         Me.DataGridViewTextBoxColumn7.ReadOnly = True
@@ -532,10 +345,10 @@ Partial Class DTR
         '
         Me.DataGridViewTextBoxColumn8.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
         Me.DataGridViewTextBoxColumn8.DataPropertyName = "time_in_pm"
-        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle3.Format = "t"
-        DataGridViewCellStyle3.NullValue = Nothing
-        Me.DataGridViewTextBoxColumn8.DefaultCellStyle = DataGridViewCellStyle3
+        DataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle17.Format = "t"
+        DataGridViewCellStyle17.NullValue = Nothing
+        Me.DataGridViewTextBoxColumn8.DefaultCellStyle = DataGridViewCellStyle17
         Me.DataGridViewTextBoxColumn8.HeaderText = "Time in PM"
         Me.DataGridViewTextBoxColumn8.Name = "DataGridViewTextBoxColumn8"
         Me.DataGridViewTextBoxColumn8.ReadOnly = True
@@ -544,10 +357,10 @@ Partial Class DTR
         '
         Me.DataGridViewTextBoxColumn9.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
         Me.DataGridViewTextBoxColumn9.DataPropertyName = "time_out_pm"
-        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle4.Format = "t"
-        DataGridViewCellStyle4.NullValue = Nothing
-        Me.DataGridViewTextBoxColumn9.DefaultCellStyle = DataGridViewCellStyle4
+        DataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle18.Format = "t"
+        DataGridViewCellStyle18.NullValue = Nothing
+        Me.DataGridViewTextBoxColumn9.DefaultCellStyle = DataGridViewCellStyle18
         Me.DataGridViewTextBoxColumn9.HeaderText = "Time out PM"
         Me.DataGridViewTextBoxColumn9.Name = "DataGridViewTextBoxColumn9"
         Me.DataGridViewTextBoxColumn9.ReadOnly = True
@@ -556,10 +369,10 @@ Partial Class DTR
         '
         Me.DataGridViewTextBoxColumn10.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
         Me.DataGridViewTextBoxColumn10.DataPropertyName = "late_time_min"
-        DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle5.Format = "N0"
-        DataGridViewCellStyle5.NullValue = Nothing
-        Me.DataGridViewTextBoxColumn10.DefaultCellStyle = DataGridViewCellStyle5
+        DataGridViewCellStyle19.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle19.Format = "N0"
+        DataGridViewCellStyle19.NullValue = Nothing
+        Me.DataGridViewTextBoxColumn10.DefaultCellStyle = DataGridViewCellStyle19
         Me.DataGridViewTextBoxColumn10.HeaderText = "Late (min)"
         Me.DataGridViewTextBoxColumn10.Name = "DataGridViewTextBoxColumn10"
         Me.DataGridViewTextBoxColumn10.ReadOnly = True
@@ -568,9 +381,9 @@ Partial Class DTR
         '
         Me.DataGridViewTextBoxColumn11.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
         Me.DataGridViewTextBoxColumn11.DataPropertyName = "under_time_min"
-        DataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle6.Format = "N0"
-        Me.DataGridViewTextBoxColumn11.DefaultCellStyle = DataGridViewCellStyle6
+        DataGridViewCellStyle20.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle20.Format = "N0"
+        Me.DataGridViewTextBoxColumn11.DefaultCellStyle = DataGridViewCellStyle20
         Me.DataGridViewTextBoxColumn11.HeaderText = "Undertime (min)"
         Me.DataGridViewTextBoxColumn11.Name = "DataGridViewTextBoxColumn11"
         Me.DataGridViewTextBoxColumn11.ReadOnly = True
@@ -579,9 +392,9 @@ Partial Class DTR
         '
         Me.DataGridViewTextBoxColumn12.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
         Me.DataGridViewTextBoxColumn12.DataPropertyName = "ot_min"
-        DataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle7.Format = "N0"
-        Me.DataGridViewTextBoxColumn12.DefaultCellStyle = DataGridViewCellStyle7
+        DataGridViewCellStyle21.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle21.Format = "N0"
+        Me.DataGridViewTextBoxColumn12.DefaultCellStyle = DataGridViewCellStyle21
         Me.DataGridViewTextBoxColumn12.HeaderText = "Overtime (min)"
         Me.DataGridViewTextBoxColumn12.Name = "DataGridViewTextBoxColumn12"
         Me.DataGridViewTextBoxColumn12.ReadOnly = True
@@ -598,7 +411,7 @@ Partial Class DTR
         'DataGridViewCheckBoxColumn2
         '
         Me.DataGridViewCheckBoxColumn2.DataPropertyName = "is_leave"
-        Me.DataGridViewCheckBoxColumn2.HeaderText = "is_leave"
+        Me.DataGridViewCheckBoxColumn2.HeaderText = "Leave"
         Me.DataGridViewCheckBoxColumn2.Name = "DataGridViewCheckBoxColumn2"
         Me.DataGridViewCheckBoxColumn2.ReadOnly = True
         Me.DataGridViewCheckBoxColumn2.Visible = False
@@ -613,11 +426,12 @@ Partial Class DTR
         '
         'DataGridViewTextBoxColumn13
         '
+        Me.DataGridViewTextBoxColumn13.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells
         Me.DataGridViewTextBoxColumn13.DataPropertyName = "remarks_details"
-        Me.DataGridViewTextBoxColumn13.HeaderText = "remarks_details"
+        Me.DataGridViewTextBoxColumn13.HeaderText = "Remarks"
         Me.DataGridViewTextBoxColumn13.Name = "DataGridViewTextBoxColumn13"
         Me.DataGridViewTextBoxColumn13.ReadOnly = True
-        Me.DataGridViewTextBoxColumn13.Visible = False
+        Me.DataGridViewTextBoxColumn13.Width = 74
         '
         'Edit
         '
@@ -626,33 +440,275 @@ Partial Class DTR
         Me.Edit.Name = "Edit"
         Me.Edit.ReadOnly = True
         Me.Edit.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.Edit.Text = "Update"
+        Me.Edit.Text = "Override"
         Me.Edit.UseColumnTextForButtonValue = True
+        '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label5.Location = New System.Drawing.Point(15, 160)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(58, 13)
+        Me.Label5.TabIndex = 152
+        Me.Label5.Text = "Lates (min)"
+        '
+        'TextBox_Late
+        '
+        Me.TextBox_Late.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBox_Late.Location = New System.Drawing.Point(17, 180)
+        Me.TextBox_Late.Name = "TextBox_Late"
+        Me.TextBox_Late.ReadOnly = True
+        Me.TextBox_Late.Size = New System.Drawing.Size(81, 20)
+        Me.TextBox_Late.TabIndex = 153
+        Me.TextBox_Late.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
+        '
+        'TextBox_UnderTime
+        '
+        Me.TextBox_UnderTime.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBox_UnderTime.Location = New System.Drawing.Point(104, 180)
+        Me.TextBox_UnderTime.Name = "TextBox_UnderTime"
+        Me.TextBox_UnderTime.ReadOnly = True
+        Me.TextBox_UnderTime.Size = New System.Drawing.Size(81, 20)
+        Me.TextBox_UnderTime.TabIndex = 155
+        Me.TextBox_UnderTime.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
+        '
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label6.Location = New System.Drawing.Point(101, 160)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(80, 13)
+        Me.Label6.TabIndex = 154
+        Me.Label6.Text = "Undertime (min)"
+        '
+        'TextBox_Overtime
+        '
+        Me.TextBox_Overtime.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBox_Overtime.Location = New System.Drawing.Point(191, 180)
+        Me.TextBox_Overtime.Name = "TextBox_Overtime"
+        Me.TextBox_Overtime.ReadOnly = True
+        Me.TextBox_Overtime.Size = New System.Drawing.Size(81, 20)
+        Me.TextBox_Overtime.TabIndex = 157
+        Me.TextBox_Overtime.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
+        '
+        'Label7
+        '
+        Me.Label7.AutoSize = True
+        Me.Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label7.Location = New System.Drawing.Point(188, 160)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(74, 13)
+        Me.Label7.TabIndex = 156
+        Me.Label7.Text = "Overtime (min)"
+        '
+        'TextBox_employeename
+        '
+        Me.TextBox_employeename.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBox_employeename.Location = New System.Drawing.Point(17, 131)
+        Me.TextBox_employeename.Name = "TextBox_employeename"
+        Me.TextBox_employeename.ReadOnly = True
+        Me.TextBox_employeename.Size = New System.Drawing.Size(440, 20)
+        Me.TextBox_employeename.TabIndex = 159
+        '
+        'Label8
+        '
+        Me.Label8.AutoSize = True
+        Me.Label8.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label8.Location = New System.Drawing.Point(14, 111)
+        Me.Label8.Name = "Label8"
+        Me.Label8.Size = New System.Drawing.Size(82, 13)
+        Me.Label8.TabIndex = 158
+        Me.Label8.Text = "Employee name"
+        '
+        'TextBox_Absent
+        '
+        Me.TextBox_Absent.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBox_Absent.Location = New System.Drawing.Point(278, 180)
+        Me.TextBox_Absent.Name = "TextBox_Absent"
+        Me.TextBox_Absent.ReadOnly = True
+        Me.TextBox_Absent.Size = New System.Drawing.Size(81, 20)
+        Me.TextBox_Absent.TabIndex = 173
+        Me.TextBox_Absent.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
+        '
+        'Label9
+        '
+        Me.Label9.AutoSize = True
+        Me.Label9.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label9.Location = New System.Drawing.Point(275, 160)
+        Me.Label9.Name = "Label9"
+        Me.Label9.Size = New System.Drawing.Size(76, 13)
+        Me.Label9.TabIndex = 172
+        Me.Label9.Text = "Absent (day/s)"
+        '
+        'Dtr_dateDateTimePicker
+        '
+        Me.Dtr_dateDateTimePicker.Enabled = False
+        Me.Dtr_dateDateTimePicker.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Dtr_dateDateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
+        Me.Dtr_dateDateTimePicker.Location = New System.Drawing.Point(46, 38)
+        Me.Dtr_dateDateTimePicker.Name = "Dtr_dateDateTimePicker"
+        Me.Dtr_dateDateTimePicker.Size = New System.Drawing.Size(230, 20)
+        Me.Dtr_dateDateTimePicker.TabIndex = 161
+        '
+        'Tse_in_amDateTimePicker
+        '
+        Me.Tse_in_amDateTimePicker.CustomFormat = "h:mmtt"
+        Me.Tse_in_amDateTimePicker.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Tse_in_amDateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom
+        Me.Tse_in_amDateTimePicker.Location = New System.Drawing.Point(46, 78)
+        Me.Tse_in_amDateTimePicker.Name = "Tse_in_amDateTimePicker"
+        Me.Tse_in_amDateTimePicker.ShowUpDown = True
+        Me.Tse_in_amDateTimePicker.Size = New System.Drawing.Size(112, 20)
+        Me.Tse_in_amDateTimePicker.TabIndex = 166
+        '
+        'Tse_out_amDateTimePicker
+        '
+        Me.Tse_out_amDateTimePicker.CustomFormat = "h:mmtt"
+        Me.Tse_out_amDateTimePicker.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Tse_out_amDateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom
+        Me.Tse_out_amDateTimePicker.Location = New System.Drawing.Point(163, 78)
+        Me.Tse_out_amDateTimePicker.Name = "Tse_out_amDateTimePicker"
+        Me.Tse_out_amDateTimePicker.ShowUpDown = True
+        Me.Tse_out_amDateTimePicker.Size = New System.Drawing.Size(112, 20)
+        Me.Tse_out_amDateTimePicker.TabIndex = 167
+        '
+        'Tse_in_pmDateTimePicker
+        '
+        Me.Tse_in_pmDateTimePicker.CustomFormat = "h:mmtt"
+        Me.Tse_in_pmDateTimePicker.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Tse_in_pmDateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom
+        Me.Tse_in_pmDateTimePicker.Location = New System.Drawing.Point(47, 117)
+        Me.Tse_in_pmDateTimePicker.Name = "Tse_in_pmDateTimePicker"
+        Me.Tse_in_pmDateTimePicker.ShowUpDown = True
+        Me.Tse_in_pmDateTimePicker.Size = New System.Drawing.Size(112, 20)
+        Me.Tse_in_pmDateTimePicker.TabIndex = 168
+        '
+        'Tse_out_pmDateTimePicker
+        '
+        Me.Tse_out_pmDateTimePicker.CustomFormat = "h:mmtt"
+        Me.Tse_out_pmDateTimePicker.Font = New System.Drawing.Font("Arial", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Tse_out_pmDateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom
+        Me.Tse_out_pmDateTimePicker.Location = New System.Drawing.Point(164, 117)
+        Me.Tse_out_pmDateTimePicker.Name = "Tse_out_pmDateTimePicker"
+        Me.Tse_out_pmDateTimePicker.ShowUpDown = True
+        Me.Tse_out_pmDateTimePicker.Size = New System.Drawing.Size(112, 20)
+        Me.Tse_out_pmDateTimePicker.TabIndex = 169
+        '
+        'GroupBox1
+        '
+        Me.GroupBox1.Controls.Add(Me.btnRemove)
+        Me.GroupBox1.Controls.Add(Me.btnSave)
+        Me.GroupBox1.Controls.Add(Dtr_dateLabel)
+        Me.GroupBox1.Controls.Add(Me.Dtr_dateDateTimePicker)
+        Me.GroupBox1.Controls.Add(Time_in_amLabel)
+        Me.GroupBox1.Controls.Add(Time_out_amLabel)
+        Me.GroupBox1.Controls.Add(Me.Tse_out_pmDateTimePicker)
+        Me.GroupBox1.Controls.Add(Time_in_pmLabel)
+        Me.GroupBox1.Controls.Add(Me.Tse_in_pmDateTimePicker)
+        Me.GroupBox1.Controls.Add(Time_out_pmLabel)
+        Me.GroupBox1.Controls.Add(Me.Tse_out_amDateTimePicker)
+        Me.GroupBox1.Controls.Add(Me.Tse_in_amDateTimePicker)
+        Me.GroupBox1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.GroupBox1.Location = New System.Drawing.Point(678, 61)
+        Me.GroupBox1.Name = "GroupBox1"
+        Me.GroupBox1.Size = New System.Drawing.Size(437, 150)
+        Me.GroupBox1.TabIndex = 174
+        Me.GroupBox1.TabStop = False
+        Me.GroupBox1.Text = "Update Entries"
+        '
+        'IconButton1
+        '
+        Me.IconButton1.Icon = FontAwesome.Sharp.IconChar.Qrcode
+        Me.IconButton1.IconColor = System.Drawing.Color.Black
+        Me.IconButton1.IconSize = 25
+        Me.IconButton1.Image = CType(resources.GetObject("IconButton1.Image"), System.Drawing.Image)
+        Me.IconButton1.Location = New System.Drawing.Point(478, 111)
+        Me.IconButton1.Name = "IconButton1"
+        Me.IconButton1.Padding = New System.Windows.Forms.Padding(10, 0, 0, 0)
+        Me.IconButton1.Size = New System.Drawing.Size(111, 54)
+        Me.IconButton1.TabIndex = 172
+        Me.IconButton1.Text = "Generate"
+        Me.IconButton1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.IconButton1.UseVisualStyleBackColor = True
+        '
+        'btnSave
+        '
+        Me.btnSave.Icon = FontAwesome.Sharp.IconChar.CheckSquareO
+        Me.btnSave.IconColor = System.Drawing.Color.Black
+        Me.btnSave.IconSize = 25
+        Me.btnSave.Image = CType(resources.GetObject("btnSave.Image"), System.Drawing.Image)
+        Me.btnSave.Location = New System.Drawing.Point(282, 38)
+        Me.btnSave.Name = "btnSave"
+        Me.btnSave.Padding = New System.Windows.Forms.Padding(10, 0, 0, 0)
+        Me.btnSave.Size = New System.Drawing.Size(127, 48)
+        Me.btnSave.TabIndex = 175
+        Me.btnSave.Text = "Save Override"
+        Me.btnSave.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btnSave.UseVisualStyleBackColor = True
+        '
+        'btnRemove
+        '
+        Me.btnRemove.Icon = FontAwesome.Sharp.IconChar.MinusCircle
+        Me.btnRemove.IconColor = System.Drawing.Color.Black
+        Me.btnRemove.IconSize = 25
+        Me.btnRemove.Image = CType(resources.GetObject("btnRemove.Image"), System.Drawing.Image)
+        Me.btnRemove.Location = New System.Drawing.Point(282, 90)
+        Me.btnRemove.Name = "btnRemove"
+        Me.btnRemove.Padding = New System.Windows.Forms.Padding(10, 0, 0, 0)
+        Me.btnRemove.Size = New System.Drawing.Size(127, 48)
+        Me.btnRemove.TabIndex = 176
+        Me.btnRemove.Text = "Remove Entry"
+        Me.btnRemove.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText
+        Me.btnRemove.UseVisualStyleBackColor = True
+        '
+        'TextBox_DaysRendered
+        '
+        Me.TextBox_DaysRendered.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.TextBox_DaysRendered.Location = New System.Drawing.Point(365, 180)
+        Me.TextBox_DaysRendered.Name = "TextBox_DaysRendered"
+        Me.TextBox_DaysRendered.ReadOnly = True
+        Me.TextBox_DaysRendered.Size = New System.Drawing.Size(81, 20)
+        Me.TextBox_DaysRendered.TabIndex = 176
+        Me.TextBox_DaysRendered.TextAlign = System.Windows.Forms.HorizontalAlignment.Right
+        '
+        'Label10
+        '
+        Me.Label10.AutoSize = True
+        Me.Label10.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label10.Location = New System.Drawing.Point(362, 160)
+        Me.Label10.Name = "Label10"
+        Me.Label10.Size = New System.Drawing.Size(81, 13)
+        Me.Label10.TabIndex = 175
+        Me.Label10.Text = "Days Rendered"
         '
         'DTR
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1127, 778)
-        Me.Controls.Add(Me.GroupBox1)
-        Me.Controls.Add(Me.TextBox_Absent)
-        Me.Controls.Add(Me.Label9)
-        Me.Controls.Add(Me.TextBox_employeename)
-        Me.Controls.Add(Me.Label8)
-        Me.Controls.Add(Me.TextBox_Overtime)
-        Me.Controls.Add(Me.Label7)
-        Me.Controls.Add(Me.TextBox_UnderTime)
-        Me.Controls.Add(Me.Label6)
-        Me.Controls.Add(Me.TextBox_Late)
+        Me.ClientSize = New System.Drawing.Size(1127, 853)
+        Me.Controls.Add(Me.TextBox_DaysRendered)
+        Me.Controls.Add(Me.Label10)
         Me.Controls.Add(Me.Label5)
+        Me.Controls.Add(Me.TextBox_Late)
+        Me.Controls.Add(Me.IconButton1)
+        Me.Controls.Add(Me.Label6)
+        Me.Controls.Add(Me.TextBox_Absent)
+        Me.Controls.Add(Me.GroupBox1)
+        Me.Controls.Add(Me.TextBox_UnderTime)
+        Me.Controls.Add(Me.TextBox_employeename)
+        Me.Controls.Add(Me.Label9)
+        Me.Controls.Add(Me.Label8)
+        Me.Controls.Add(Me.Label7)
         Me.Controls.Add(Me.Dtr_tblDataGridView)
+        Me.Controls.Add(Me.TextBox_Overtime)
         Me.Controls.Add(Me.Label4)
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.DateTimePicker_PeriodTo)
         Me.Controls.Add(Me.DateTimePicker_PeriodFrom)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.TextBox_employee_id)
-        Me.Controls.Add(Me.btnGenerate)
         Me.Controls.Add(Me.Panel2)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "DTR"
@@ -671,7 +727,6 @@ Partial Class DTR
 
     Friend WithEvents Panel2 As Panel
     Friend WithEvents Label1 As Label
-    Friend WithEvents btnGenerate As Button
     Friend WithEvents TextBox_employee_id As TextBox
     Friend WithEvents Label2 As Label
     Friend WithEvents DateTimePicker_PeriodFrom As DateTimePicker
@@ -698,7 +753,6 @@ Partial Class DTR
     Friend WithEvents Tse_out_amDateTimePicker As DateTimePicker
     Friend WithEvents Tse_in_pmDateTimePicker As DateTimePicker
     Friend WithEvents Tse_out_pmDateTimePicker As DateTimePicker
-    Friend WithEvents btnSave As Button
     Friend WithEvents GroupBox1 As GroupBox
     Friend WithEvents BackgroundWorker1 As System.ComponentModel.BackgroundWorker
     Friend WithEvents DataGridViewTextBoxColumn1 As DataGridViewButtonColumn
@@ -718,4 +772,9 @@ Partial Class DTR
     Friend WithEvents DataGridViewCheckBoxColumn3 As DataGridViewCheckBoxColumn
     Friend WithEvents DataGridViewTextBoxColumn13 As DataGridViewTextBoxColumn
     Friend WithEvents Edit As DataGridViewButtonColumn
+    Friend WithEvents IconButton1 As FontAwesome.Sharp.IconButton
+    Friend WithEvents btnSave As FontAwesome.Sharp.IconButton
+    Friend WithEvents btnRemove As FontAwesome.Sharp.IconButton
+    Friend WithEvents TextBox_DaysRendered As TextBox
+    Friend WithEvents Label10 As Label
 End Class

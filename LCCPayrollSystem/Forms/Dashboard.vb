@@ -90,4 +90,9 @@
     Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
         lbl_datetime.Text = DateTime.Now.ToLongDateString + " " + DateTime.Now.ToShortTimeString
     End Sub
+
+    Private Sub btnDeductionFixed_Click(sender As Object, e As EventArgs) Handles btnDeductionFixed.Click
+        ActiveButton(sender, Color.ForestGreen)
+        OpenChildForm(New DeductionFixed, "Fix Deduction")
+    End Sub
 End Class

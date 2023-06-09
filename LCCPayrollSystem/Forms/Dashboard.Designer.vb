@@ -52,6 +52,8 @@ Partial Class Dashboard
         Me.Label1 = New System.Windows.Forms.Label()
         Me.PanelMain = New System.Windows.Forms.Panel()
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
+        Me.picDeductionFixed = New System.Windows.Forms.PictureBox()
+        Me.btnDeductionFixed = New System.Windows.Forms.Button()
         CType(Me.picEmployee, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.picPayroll, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.picReport, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -64,13 +66,14 @@ Partial Class Dashboard
         Me.Panel1.SuspendLayout()
         CType(Me.PictureBox13, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel2.SuspendLayout()
+        CType(Me.picDeductionFixed, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'btnEmployee
         '
         Me.btnEmployee.BackColor = System.Drawing.Color.White
         Me.btnEmployee.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnEmployee.Location = New System.Drawing.Point(12, 281)
+        Me.btnEmployee.Location = New System.Drawing.Point(12, 257)
         Me.btnEmployee.Name = "btnEmployee"
         Me.btnEmployee.Size = New System.Drawing.Size(179, 47)
         Me.btnEmployee.TabIndex = 20
@@ -81,7 +84,7 @@ Partial Class Dashboard
         '
         Me.btnPayroll.BackColor = System.Drawing.Color.White
         Me.btnPayroll.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnPayroll.Location = New System.Drawing.Point(12, 103)
+        Me.btnPayroll.Location = New System.Drawing.Point(12, 97)
         Me.btnPayroll.Name = "btnPayroll"
         Me.btnPayroll.Size = New System.Drawing.Size(179, 46)
         Me.btnPayroll.TabIndex = 21
@@ -92,7 +95,7 @@ Partial Class Dashboard
         '
         Me.btnReport.BackColor = System.Drawing.Color.White
         Me.btnReport.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnReport.Location = New System.Drawing.Point(12, 223)
+        Me.btnReport.Location = New System.Drawing.Point(12, 205)
         Me.btnReport.Name = "btnReport"
         Me.btnReport.Size = New System.Drawing.Size(179, 44)
         Me.btnReport.TabIndex = 22
@@ -114,7 +117,7 @@ Partial Class Dashboard
         '
         Me.picEmployee.BackColor = System.Drawing.Color.Transparent
         Me.picEmployee.Image = CType(resources.GetObject("picEmployee.Image"), System.Drawing.Image)
-        Me.picEmployee.Location = New System.Drawing.Point(30, 290)
+        Me.picEmployee.Location = New System.Drawing.Point(30, 265)
         Me.picEmployee.Margin = New System.Windows.Forms.Padding(2)
         Me.picEmployee.Name = "picEmployee"
         Me.picEmployee.Size = New System.Drawing.Size(27, 30)
@@ -126,7 +129,7 @@ Partial Class Dashboard
         '
         Me.picPayroll.BackColor = System.Drawing.Color.Transparent
         Me.picPayroll.Image = CType(resources.GetObject("picPayroll.Image"), System.Drawing.Image)
-        Me.picPayroll.Location = New System.Drawing.Point(30, 110)
+        Me.picPayroll.Location = New System.Drawing.Point(30, 105)
         Me.picPayroll.Margin = New System.Windows.Forms.Padding(2)
         Me.picPayroll.Name = "picPayroll"
         Me.picPayroll.Size = New System.Drawing.Size(27, 30)
@@ -138,7 +141,7 @@ Partial Class Dashboard
         '
         Me.picReport.BackColor = System.Drawing.Color.Transparent
         Me.picReport.Image = CType(resources.GetObject("picReport.Image"), System.Drawing.Image)
-        Me.picReport.Location = New System.Drawing.Point(30, 230)
+        Me.picReport.Location = New System.Drawing.Point(30, 212)
         Me.picReport.Margin = New System.Windows.Forms.Padding(2)
         Me.picReport.Name = "picReport"
         Me.picReport.Size = New System.Drawing.Size(27, 30)
@@ -184,6 +187,8 @@ Partial Class Dashboard
         'PanelMenu
         '
         Me.PanelMenu.BackColor = System.Drawing.SystemColors.ActiveBorder
+        Me.PanelMenu.Controls.Add(Me.picDeductionFixed)
+        Me.PanelMenu.Controls.Add(Me.btnDeductionFixed)
         Me.PanelMenu.Controls.Add(Me.picHoliday)
         Me.PanelMenu.Controls.Add(Me.btnHoliday)
         Me.PanelMenu.Controls.Add(Me.picRegister)
@@ -212,7 +217,7 @@ Partial Class Dashboard
         '
         Me.picHoliday.BackColor = System.Drawing.Color.Transparent
         Me.picHoliday.Image = CType(resources.GetObject("picHoliday.Image"), System.Drawing.Image)
-        Me.picHoliday.Location = New System.Drawing.Point(30, 464)
+        Me.picHoliday.Location = New System.Drawing.Point(30, 480)
         Me.picHoliday.Margin = New System.Windows.Forms.Padding(2)
         Me.picHoliday.Name = "picHoliday"
         Me.picHoliday.Size = New System.Drawing.Size(27, 30)
@@ -224,7 +229,7 @@ Partial Class Dashboard
         '
         Me.btnHoliday.BackColor = System.Drawing.Color.White
         Me.btnHoliday.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnHoliday.Location = New System.Drawing.Point(12, 457)
+        Me.btnHoliday.Location = New System.Drawing.Point(12, 472)
         Me.btnHoliday.Name = "btnHoliday"
         Me.btnHoliday.Size = New System.Drawing.Size(179, 46)
         Me.btnHoliday.TabIndex = 38
@@ -235,7 +240,7 @@ Partial Class Dashboard
         '
         Me.picRegister.BackColor = System.Drawing.Color.Transparent
         Me.picRegister.Image = CType(resources.GetObject("picRegister.Image"), System.Drawing.Image)
-        Me.picRegister.Location = New System.Drawing.Point(30, 410)
+        Me.picRegister.Location = New System.Drawing.Point(30, 427)
         Me.picRegister.Margin = New System.Windows.Forms.Padding(2)
         Me.picRegister.Name = "picRegister"
         Me.picRegister.Size = New System.Drawing.Size(27, 30)
@@ -247,7 +252,7 @@ Partial Class Dashboard
         '
         Me.btnRegister.BackColor = System.Drawing.Color.White
         Me.btnRegister.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnRegister.Location = New System.Drawing.Point(12, 402)
+        Me.btnRegister.Location = New System.Drawing.Point(12, 420)
         Me.btnRegister.Name = "btnRegister"
         Me.btnRegister.Size = New System.Drawing.Size(179, 44)
         Me.btnRegister.TabIndex = 36
@@ -258,7 +263,7 @@ Partial Class Dashboard
         '
         Me.picDeduction.BackColor = System.Drawing.Color.Transparent
         Me.picDeduction.Image = CType(resources.GetObject("picDeduction.Image"), System.Drawing.Image)
-        Me.picDeduction.Location = New System.Drawing.Point(30, 350)
+        Me.picDeduction.Location = New System.Drawing.Point(30, 320)
         Me.picDeduction.Margin = New System.Windows.Forms.Padding(2)
         Me.picDeduction.Name = "picDeduction"
         Me.picDeduction.Size = New System.Drawing.Size(27, 30)
@@ -270,7 +275,7 @@ Partial Class Dashboard
         '
         Me.btnDeduction.BackColor = System.Drawing.Color.White
         Me.btnDeduction.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnDeduction.Location = New System.Drawing.Point(12, 342)
+        Me.btnDeduction.Location = New System.Drawing.Point(12, 312)
         Me.btnDeduction.Name = "btnDeduction"
         Me.btnDeduction.Size = New System.Drawing.Size(179, 46)
         Me.btnDeduction.TabIndex = 34
@@ -281,7 +286,7 @@ Partial Class Dashboard
         '
         Me.picAttendance.BackColor = System.Drawing.Color.Transparent
         Me.picAttendance.Image = CType(resources.GetObject("picAttendance.Image"), System.Drawing.Image)
-        Me.picAttendance.Location = New System.Drawing.Point(30, 170)
+        Me.picAttendance.Location = New System.Drawing.Point(30, 157)
         Me.picAttendance.Margin = New System.Windows.Forms.Padding(2)
         Me.picAttendance.Name = "picAttendance"
         Me.picAttendance.Size = New System.Drawing.Size(27, 30)
@@ -293,7 +298,7 @@ Partial Class Dashboard
         '
         Me.Button1.BackColor = System.Drawing.Color.White
         Me.Button1.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button1.Location = New System.Drawing.Point(12, 163)
+        Me.Button1.Location = New System.Drawing.Point(12, 151)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(179, 46)
         Me.Button1.TabIndex = 32
@@ -392,6 +397,29 @@ Partial Class Dashboard
         'Timer1
         '
         '
+        'picDeductionFixed
+        '
+        Me.picDeductionFixed.BackColor = System.Drawing.Color.Transparent
+        Me.picDeductionFixed.Image = CType(resources.GetObject("picDeductionFixed.Image"), System.Drawing.Image)
+        Me.picDeductionFixed.Location = New System.Drawing.Point(30, 374)
+        Me.picDeductionFixed.Margin = New System.Windows.Forms.Padding(2)
+        Me.picDeductionFixed.Name = "picDeductionFixed"
+        Me.picDeductionFixed.Size = New System.Drawing.Size(27, 30)
+        Me.picDeductionFixed.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.picDeductionFixed.TabIndex = 41
+        Me.picDeductionFixed.TabStop = False
+        '
+        'btnDeductionFixed
+        '
+        Me.btnDeductionFixed.BackColor = System.Drawing.Color.White
+        Me.btnDeductionFixed.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnDeductionFixed.Location = New System.Drawing.Point(12, 366)
+        Me.btnDeductionFixed.Name = "btnDeductionFixed"
+        Me.btnDeductionFixed.Size = New System.Drawing.Size(179, 46)
+        Me.btnDeductionFixed.TabIndex = 40
+        Me.btnDeductionFixed.Text = "           Fix Deduction"
+        Me.btnDeductionFixed.UseVisualStyleBackColor = False
+        '
         'Dashboard
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -420,6 +448,7 @@ Partial Class Dashboard
         CType(Me.PictureBox13, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel2.ResumeLayout(False)
         Me.Panel2.PerformLayout()
+        CType(Me.picDeductionFixed, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -451,4 +480,6 @@ Partial Class Dashboard
     Friend WithEvents btnHoliday As Button
     Friend WithEvents lbl_datetime As Label
     Friend WithEvents Timer1 As Timer
+    Friend WithEvents picDeductionFixed As PictureBox
+    Friend WithEvents btnDeductionFixed As Button
 End Class

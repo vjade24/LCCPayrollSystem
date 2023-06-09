@@ -1,11 +1,6 @@
 ﻿Imports System.Data.SqlClient
 Public Class DTR
-
-    Private Sub btnGenerate_Click(sender As Object, e As EventArgs) Handles btnGenerate.Click
-        Generate_DTR()
-        RefreshData(TextBox_employee_id.Text, DateTimePicker_PeriodFrom.Value, DateTimePicker_PeriodTo.Value)
-    End Sub
-
+    Dim conn As New SqlConnection(connection)
 
     Public Sub Generate_DTR()
         Dim conn1 As New SqlConnection(connection)
@@ -58,6 +53,23 @@ Public Class DTR
         ' ******************************************************************************
         ' **** Calculate Late, undertime and Overtime **********************************
         ' ******************************************************************************
+
+        ' ************************************************************
+        ' **** Calculate Worked Day **********************************
+        ' ************************************************************
+        Dim cmd_days_worked As SqlCommand = New SqlCommand("SELECT COUNT(*) AS days_worked FROM dtr_conso_tbl WHERE employee_id = '" + employee_id + "' AND dtr_date between '" + period_from + "' and '" + period_to + "'", conn)
+        Dim sda_days_worked As SqlDataAdapter = New SqlDataAdapter(cmd_days_worked)
+        Dim dt_days_worked As DataTable = New DataTable
+        sda_days_worked.Fill(dt_days_worked)
+
+        TextBox_DaysRendered.Text = "0"
+        If dt_days_worked.Rows.Count > 0 Then
+            TextBox_DaysRendered.Text = Double.Parse(dt_days_worked.Rows(0)("days_worked").ToString())
+        End If
+        ' ************************************************************
+        ' **** Calculate Worked Day **********************************
+        ' ************************************************************
+
     End Sub
 
     Private Sub Dtr_tblDataGridView_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles Dtr_tblDataGridView.CellClick
@@ -65,7 +77,7 @@ Public Class DTR
         Try
             If Dtr_tblDataGridView.Columns(e.ColumnIndex).Name = "Edit" Then
 
-
+                GroupBox1.Visible = True
                 Dtr_dateDateTimePicker.Value = DateTime.Parse(DateTime.Now)
                 Tse_in_amDateTimePicker.Value = DateTime.Parse("5/8/2023 08:00:00 AM")
                 Tse_out_amDateTimePicker.Value = DateTime.Parse("5/8/2023 12:00:00 PM")
@@ -111,16 +123,72 @@ Public Class DTR
                 Dim dt As DataTable = New DataTable
                 sda.Fill(dt)
                 If Dtr_tblDataGridView.CurrentRow.Cells(12).Value = False Then
-                    Dim insert_query As String = "insert into dtr_application_tbl values('" + TextBox_employee_id.Text.ToString().Trim + "','" + Dtr_tblDataGridView.CurrentRow.Cells(3).Value.ToString() + "','1','0','0')"
-                    InsertQuery(insert_query)
+
+                    Dim result As New Boolean
+                    Dim command1 As New SqlCommand("insert into dtr_application_tbl values (@employee_id,@dtr_date,@is_absent,@is_leave,@is_holiday)", conn)
+                    command1.Parameters.Add("@employee_id", SqlDbType.VarChar).Value = TextBox_employee_id.Text.ToString().Trim
+                    command1.Parameters.Add("@dtr_date", SqlDbType.VarChar).Value = Dtr_tblDataGridView.CurrentRow.Cells(3).Value.ToString()
+                    command1.Parameters.Add("@is_absent", SqlDbType.VarChar).Value = "1"
+                    command1.Parameters.Add("@is_leave", SqlDbType.VarChar).Value = "0"
+                    command1.Parameters.Add("@is_holiday", SqlDbType.VarChar).Value = "0"
+                    Try
+                        conn.Open()
+                        result = command1.ExecuteNonQuery()
+                        If result = 0 Then
+                            MsgBox("No Data Inserted!", MsgBoxStyle.Critical)
+                        Else
+
+                            Dim command111 As New SqlCommand("delete from dtr_conso_tbl where employee_id = @employee_id AND dtr_date =@dtr_date", conn)
+                            command111.Parameters.Add("@employee_id", SqlDbType.VarChar).Value = TextBox_employee_id.Text.ToString().Trim
+                            command111.Parameters.Add("@dtr_date", SqlDbType.VarChar).Value = Dtr_tblDataGridView.CurrentRow.Cells(3).Value.ToString()
+                            Try
+                                'conn.Open()
+                                result = command111.ExecuteNonQuery()
+                                If result = 0 Then
+                                    MsgBox("No Data Found!", MsgBoxStyle.Critical)
+                                Else
+                                    'MsgBox("Successfully Updated!", MsgBoxStyle.Information)
+                                End If
+                                'conn.Close()
+
+                            Catch ex As Exception
+                                MsgBox("Something went wrong!" + ex.Message.ToString(), MsgBoxStyle.Critical)
+                                'conn.Close()
+                            End Try
+                        End If
+                        conn.Close()
+                    Catch ex As Exception
+                        MsgBox("Something went wrong!" + ex.Message.ToString(), MsgBoxStyle.Critical)
+                        conn.Close()
+                    End Try
+
                 Else
-                    Dim query As String = "update dtr_application_tbl set is_absent = 0  where employee_id = '" + TextBox_employee_id.Text.ToString().Trim + "' AND dtr_date = '" + Dtr_tblDataGridView.CurrentRow.Cells(3).Value.ToString() + "'"
-                    UpdateQuery(query)
+
+                    Dim result As New Boolean
+                    Dim command1 As New SqlCommand("update dtr_application_tbl set is_absent= @is_absent where employee_id = @employee_id and dtr_date =@dtr_date", conn)
+                    command1.Parameters.Add("@employee_id", SqlDbType.VarChar).Value = TextBox_employee_id.Text.ToString().Trim
+                    command1.Parameters.Add("@dtr_date", SqlDbType.VarChar).Value = Dtr_tblDataGridView.CurrentRow.Cells(3).Value.ToString()
+                    command1.Parameters.Add("@is_absent", SqlDbType.VarChar).Value = "0"
+                    command1.Parameters.Add("@is_leave", SqlDbType.VarChar).Value = "0"
+                    command1.Parameters.Add("@is_holiday", SqlDbType.VarChar).Value = "0"
+                    Try
+                        conn.Open()
+                        result = command1.ExecuteNonQuery()
+                        If result = 0 Then
+                            MsgBox("No Data Updated!", MsgBoxStyle.Critical)
+                        Else
+                            'MsgBox("Successfully Updated!", MsgBoxStyle.Information)
+                        End If
+                        conn.Close()
+                    Catch ex As Exception
+                        MsgBox("Something went wrong!" + ex.Message.ToString(), MsgBoxStyle.Critical)
+                        conn.Close()
+                    End Try
+
                 End If
 
                 Generate_DTR()
                 RefreshData(TextBox_employee_id.Text, DateTimePicker_PeriodFrom.Value, DateTimePicker_PeriodTo.Value)
-
 
             End If
 
@@ -132,9 +200,46 @@ Public Class DTR
     Private Sub DTR_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         DateTimePicker_PeriodFrom.Value = DateTime.Now.Month.ToString().Trim() + "/01/" + DateTime.Now.Year().ToString().Trim()
         DateTimePicker_PeriodTo.Value = DateTime.Parse(DateTimePicker_PeriodFrom.Value).AddMonths(1).AddDays(-1)
+
+        GroupBox1.Visible = False
+        TextBox_employee_id.Select()
     End Sub
 
-    Private Sub btnSave_Click(sender As Object, e As EventArgs) Handles btnSave.Click
+    Private Sub IconButton1_Click(sender As Object, e As EventArgs) Handles IconButton1.Click
+        Generate_DTR()
+        RefreshData(TextBox_employee_id.Text, DateTimePicker_PeriodFrom.Value, DateTimePicker_PeriodTo.Value)
+    End Sub
+
+    Private Sub btnRemove_Click_1(sender As Object, e As EventArgs) Handles btnRemove.Click
+        Dim result As DialogResult = MessageBox.Show("Are you sure you want to remove this record?", "Remove Record", MessageBoxButtons.YesNo)
+        If result = DialogResult.No Then
+            MessageBox.Show("You pressed No")
+        ElseIf result = DialogResult.Yes Then
+            Dim command1 As New SqlCommand("delete from dtr_conso_tbl where employee_id = @employee_id AND dtr_date =@dtr_date", conn)
+            command1.Parameters.Add("@employee_id", SqlDbType.VarChar).Value = TextBox_employee_id.Text.ToString().Trim
+            command1.Parameters.Add("@dtr_date", SqlDbType.VarChar).Value = Dtr_dateDateTimePicker.Value
+            Try
+                conn.Open()
+                result = command1.ExecuteNonQuery()
+                If result = 0 Then
+                    MsgBox("No Data Found!", MsgBoxStyle.Critical)
+                Else
+                    'MsgBox("Successfully Updated!", MsgBoxStyle.Information)
+                End If
+                conn.Close()
+
+            Catch ex As Exception
+                MsgBox("Something went wrong!" + ex.Message.ToString(), MsgBoxStyle.Critical)
+                conn.Close()
+            End Try
+
+            Generate_DTR()
+            RefreshData(TextBox_employee_id.Text, DateTimePicker_PeriodFrom.Value, DateTimePicker_PeriodTo.Value)
+            GroupBox1.Visible = False
+        End If
+    End Sub
+
+    Private Sub btnSave_Click_1(sender As Object, e As EventArgs) Handles btnSave.Click
         Dim result As DialogResult = MessageBox.Show("Are you sure you want to save this record?", "Save Record", MessageBoxButtons.YesNo)
         If result = DialogResult.No Then
             MessageBox.Show("You pressed No")
@@ -148,15 +253,65 @@ Public Class DTR
                 sda.Fill(dt)
 
                 If dt.Rows.Count > 0 Then
-                    Dim query As String = "update dtr_conso_tbl set time_in_am = '" + Tse_in_amDateTimePicker.Value + "',time_out_am = '" + Tse_out_amDateTimePicker.Value + "',time_in_pm = '" + Tse_in_pmDateTimePicker.Value + "',time_out_pm = '" + Tse_out_pmDateTimePicker.Value + "' where employee_id = '" + TextBox_employee_id.Text.ToString().Trim + "' AND dtr_date = '" + Dtr_dateDateTimePicker.Value + "'"
-                    UpdateQuery(query)
+
+                    'Dim query As String = "update dtr_conso_tbl set time_in_am = '" + Tse_in_amDateTimePicker.Value + "',time_out_am = '" + Tse_out_amDateTimePicker.Value + "',time_in_pm = '" + Tse_in_pmDateTimePicker.Value + "',time_out_pm = '" + Tse_out_pmDateTimePicker.Value + "' where employee_id = '" + TextBox_employee_id.Text.ToString().Trim + "' AND dtr_date = '" + Dtr_dateDateTimePicker.Value + "'"
+                    'UpdateQuery(query)
+
+                    Dim command1 As New SqlCommand("update dtr_conso_tbl set time_in_am= @time_in_am,time_out_am =@time_out_am,time_in_pm=@time_in_pm,time_out_pm=@time_out_pm where employee_id = @employee_id AND dtr_date =@dtr_date", conn)
+                    command1.Parameters.Add("@time_in_am", SqlDbType.VarChar).Value = Tse_in_amDateTimePicker.Value
+                    command1.Parameters.Add("@time_out_am", SqlDbType.VarChar).Value = Tse_out_amDateTimePicker.Value
+                    command1.Parameters.Add("@time_in_pm", SqlDbType.VarChar).Value = Tse_in_pmDateTimePicker.Value
+                    command1.Parameters.Add("@time_out_pm", SqlDbType.VarChar).Value = Tse_out_pmDateTimePicker.Value
+                    command1.Parameters.Add("@employee_id", SqlDbType.VarChar).Value = TextBox_employee_id.Text.ToString().Trim
+                    command1.Parameters.Add("@dtr_date", SqlDbType.VarChar).Value = Dtr_dateDateTimePicker.Value
+                    Try
+                        conn.Open()
+                        result = command1.ExecuteNonQuery()
+                        If result = 0 Then
+                            MsgBox("No Data Updated!", MsgBoxStyle.Critical)
+                        Else
+                            'MsgBox("Successfully Updated!", MsgBoxStyle.Information)
+                        End If
+                        conn.Close()
+                    Catch ex As Exception
+                        MsgBox("Something went wrong!" + ex.Message.ToString(), MsgBoxStyle.Critical)
+                        conn.Close()
+                    End Try
+
                 Else
-                    Dim insert_query As String = "insert into dtr_conso_tbl values('" + TextBox_employee_id.Text.ToString().Trim + "','" + Dtr_dateDateTimePicker.Value.ToString() + "','" + Tse_in_amDateTimePicker.Value.ToString() + "','" + Tse_out_amDateTimePicker.Value.ToString() + "','" + Tse_in_pmDateTimePicker.Value.ToString() + "','" + Tse_out_pmDateTimePicker.Value.ToString() + "','" + "Admin" + "','" + DateTime.Now.ToString() + "','" + "" + "','" + "" + "')"
-                    InsertQuery(insert_query)
+
+                    'Dim insert_query As String = "insert into dtr_conso_tbl values('" + TextBox_employee_id.Text.ToString().Trim + "','" + Dtr_dateDateTimePicker.Value.ToString() + "','" + Tse_in_amDateTimePicker.Value.ToString() + "','" + Tse_out_amDateTimePicker.Value.ToString() + "','" + Tse_in_pmDateTimePicker.Value.ToString() + "','" + Tse_out_pmDateTimePicker.Value.ToString() + "','" + "Admin" + "','" + DateTime.Now.ToString() + "','" + "" + "','" + "" + "')"
+                    'InsertQuery(insert_query)
+
+                    Dim command1 As New SqlCommand("insert into dtr_conso_tbl values (@employee_id,@dtr_date,@time_in_am,@time_out_am,@time_in_pm,@time_out_pm,@created_by,@created_dttm,@updated_by,@updated_dttm)", conn)
+                    command1.Parameters.Add("@time_in_am", SqlDbType.VarChar).Value = Tse_in_amDateTimePicker.Value
+                    command1.Parameters.Add("@time_out_am", SqlDbType.VarChar).Value = Tse_out_amDateTimePicker.Value
+                    command1.Parameters.Add("@time_in_pm", SqlDbType.VarChar).Value = Tse_in_pmDateTimePicker.Value
+                    command1.Parameters.Add("@time_out_pm", SqlDbType.VarChar).Value = Tse_out_pmDateTimePicker.Value
+                    command1.Parameters.Add("@employee_id", SqlDbType.VarChar).Value = TextBox_employee_id.Text.ToString().Trim
+                    command1.Parameters.Add("@dtr_date", SqlDbType.VarChar).Value = Dtr_dateDateTimePicker.Value
+                    command1.Parameters.Add("@created_by", SqlDbType.VarChar).Value = "Admin"
+                    command1.Parameters.Add("@created_dttm", SqlDbType.VarChar).Value = DateTime.Now
+                    command1.Parameters.Add("@updated_by", SqlDbType.VarChar).Value = ""
+                    command1.Parameters.Add("@updated_dttm", SqlDbType.VarChar).Value = ""
+                    Try
+                        conn.Open()
+                        result = command1.ExecuteNonQuery()
+                        If result = 0 Then
+                            MsgBox("No Data Inserted!", MsgBoxStyle.Critical)
+                        Else
+                            'MsgBox("Successfully Inserted!", MsgBoxStyle.Information)
+                        End If
+                        conn.Close()
+                    Catch ex As Exception
+                        MsgBox("Something went wrong!" + ex.Message.ToString(), MsgBoxStyle.Critical)
+                        conn.Close()
+                    End Try
                 End If
 
                 Generate_DTR()
                 RefreshData(TextBox_employee_id.Text, DateTimePicker_PeriodFrom.Value, DateTimePicker_PeriodTo.Value)
+                GroupBox1.Visible = False
 
             Catch ex As Exception
                 MessageBox.Show(ex.Message.ToString)
@@ -164,5 +319,4 @@ Public Class DTR
 
         End If
     End Sub
-
 End Class
