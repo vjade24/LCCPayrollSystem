@@ -186,8 +186,7 @@ Public Class EmployeeAddUpdate
             date_from = DateTime.Parse(Birth_dateDateTimePicker.Text.ToString().Trim())
             date_to = DateTime.Parse(DateTime.Now.ToString())
 
-            If DateTime.Parse(Birth_dateDateTimePicker.Text.ToString().Trim()).Month < DateTime.Now.Month Then
-
+            If DateTime.Parse(Birth_dateDateTimePicker.Text.ToString().Trim()).Year < DateTime.Now.Year And DateTime.Parse(Birth_dateDateTimePicker.Text.ToString().Trim()).Month < DateTime.Now.Month Then
                 age = (date_to.Year - date_from.Year) - 1
             Else
                 age = (date_to.Year - date_from.Year)

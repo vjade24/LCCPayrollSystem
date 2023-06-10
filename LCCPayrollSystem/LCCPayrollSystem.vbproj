@@ -329,6 +329,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Database\payrolldb_20230525.bak" />
+    <None Include="Database\payrolldb_20230609.bak" />
     <None Include="LCC Payroll System Docs\1_attlog.dat" />
     <None Include="LCC Payroll System Docs\ANNEX-MARCH-11-2523.xls" />
     <None Include="LCC Payroll System Docs\EMPLOYEES-MASTERLIST.xlsx" />
