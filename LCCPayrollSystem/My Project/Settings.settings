@@ -10,5 +10,11 @@
 &lt;/SerializableConnectionString&gt;</DesignTimeValue>
       <Value Profile="(Default)">Data Source=DESKTOP-FL91M4S\SQLEXPRESS;Initial Catalog=payrolldb;User ID=sa;Password=systemadmin</Value>
     </Setting>
+    <Setting Name="exp" Type="System.DateTime" Scope="Application">
+      <Value Profile="(Default)">2023-06-12</Value>
+    </Setting>
+    <Setting Name="exp_msg" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">Application is Expired!, Contact the Administrator</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

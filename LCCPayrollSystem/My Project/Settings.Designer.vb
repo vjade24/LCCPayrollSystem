@@ -64,6 +64,24 @@ Namespace My
                 Return CType(Me("payrolldbConnectionString"),String)
             End Get
         End Property
+        
+        <Global.System.Configuration.ApplicationScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("2023-06-12")>  _
+        Public ReadOnly Property exp() As Date
+            Get
+                Return CType(Me("exp"),Date)
+            End Get
+        End Property
+        
+        <Global.System.Configuration.ApplicationScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("Application is Expired!, Contact the Administrator")>  _
+        Public ReadOnly Property exp_msg() As String
+            Get
+                Return CType(Me("exp_msg"),String)
+            End Get
+        End Property
     End Class
 End Namespace
 
