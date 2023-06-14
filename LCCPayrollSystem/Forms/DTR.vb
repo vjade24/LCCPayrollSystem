@@ -206,8 +206,17 @@ Public Class DTR
     End Sub
 
     Private Sub IconButton1_Click(sender As Object, e As EventArgs) Handles IconButton1.Click
-        Generate_DTR()
-        RefreshData(TextBox_employee_id.Text, DateTimePicker_PeriodFrom.Value, DateTimePicker_PeriodTo.Value)
+        Dim conn As SqlConnection = New SqlConnection(connection)
+        Dim cmd1 As SqlCommand = New SqlCommand("select  * FROM employee_tbl where Id = '" + TextBox_employee_id.Text.ToString().Trim + "'", conn)
+        Dim sda As SqlDataAdapter = New SqlDataAdapter(cmd1)
+        Dim dt As DataTable = New DataTable
+        sda.Fill(dt)
+        If dt.Rows.Count > 0 Then
+            Generate_DTR()
+            RefreshData(TextBox_employee_id.Text, DateTimePicker_PeriodFrom.Value, DateTimePicker_PeriodTo.Value)
+        Else
+            MsgBox("Employee not Found!", MsgBoxStyle.Critical)
+        End If
     End Sub
 
     Private Sub btnRemove_Click_1(sender As Object, e As EventArgs) Handles btnRemove.Click

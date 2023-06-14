@@ -157,7 +157,11 @@ Public Class DeductionFixed
 
     Private Sub DeductionDescrComboBox_SelectedIndexChanged(sender As Object, e As EventArgs) Handles DeductionDescrComboBox.SelectedIndexChanged
         Try
-            DeductionCodeTextBox.Text = DeductionDescrComboBox.SelectedValue.ToString()
+            If DeductionDescrComboBox.SelectedValue IsNot "" Or DeductionDescrComboBox.SelectedValue = Nothing Then
+                DeductionCodeTextBox.Text = ""
+            Else
+                DeductionCodeTextBox.Text = DeductionDescrComboBox.SelectedValue.ToString()
+            End If
         Catch ex As Exception
 
         End Try
